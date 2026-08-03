@@ -135,3 +135,29 @@ def test_fetch_for_shanghai_date_filters_updates(atom_xml: str) -> None:
     first_query = requests[0].url.params["search_query"]
     assert "submittedDate:[202608021600 TO 202608031559]" in first_query
     assert "cat:cs.RO OR cat:cs.AI" in first_query
+
+
+def test_fetch_single_id_for_reading_pool(atom_xml: str) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        assert request.url.params["id_list"] == "2608.00001"
+        return httpx.Response(200, text=atom_xml, request=request)
+
+    config = FetchConfig(
+        endpoint="https://example.invalid/api",
+        user_agent="Test/1.0",
+        page_size=100,
+        max_pages=1,
+        page_delay_seconds=3,
+        timeout_seconds=1,
+        retries=1,
+    )
+    client = ArxivClient(
+        config,
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+        sleep=lambda _: None,
+    )
+
+    paper = client.fetch_by_id("2608.00001v1")
+
+    assert paper.base_id == "2608.00001"
+    assert paper.title == "Whole-Body Control for Agile Quadruped Robots"

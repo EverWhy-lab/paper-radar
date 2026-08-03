@@ -4,7 +4,7 @@ site:
 
 fetch:
   endpoint: "https://export.arxiv.org/api/query"
-  user_agent: "EverWhyPaperRadar/0.1.1 (personal non-commercial research tool)"
+  user_agent: "EverWhyPaperRadar/0.1.2 (personal non-commercial research tool)"
   page_size: 100
   max_pages: 40
   page_delay_seconds: 3.1
@@ -143,3 +143,57 @@ sections:
   expanded_min_score: 20
   expanded_min_count: 3
   expanded_limit: 5
+
+recommendations:
+  max_total: 5
+  selection_order: [recent_new, important_update, reading_pool]
+  recent_new:
+    max_count: 3
+    min_research_fit: 40
+    min_core_topic_matches: 1
+    min_non_generic_keyword_matches: 1
+    cooldown_days: 14
+    max_same_primary_topic: 1
+    max_topic_overlap: 0.66
+  reading_pool:
+    max_count: 2
+    default_priority: 50
+    min_priority: 1
+    cooldown_days: 14
+    eligible_statuses: [unread, queued]
+  important_update:
+    max_count: 1
+    min_research_fit: 60
+    min_core_topic_matches: 1
+    min_non_generic_keyword_matches: 1
+    cooldown_days: 7
+  core_topic_ids:
+    - legged_humanoid
+    - mobile_manipulation
+    - optimal_control
+    - robot_learning
+    - diffusion_visuomotor
+    - vla_foundation
+    - llm_agent_robotics
+    - pose_rescue
+  generic_keywords:
+    - robot learning
+    - reinforcement learning
+    - imitation learning
+    - behavior cloning
+    - large language model
+    - LLM
+    - agentic planning
+    - robot planning
+    - task planning
+    - optimal control
+  excluded_terms:
+    - autonomous cyber
+    - cyber operations
+    - evolutionary game
+    - autonomous driving
+    - traffic prediction
+    - wireless communication
+    - recommendation system
+    - medical image
+    - molecule generation

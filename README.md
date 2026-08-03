@@ -1,13 +1,10 @@
 # EverWhy Paper Radar
 
-EverWhy Paper Radar is a local, static daily reading site for robotics and embodied-intelligence papers from the official arXiv API. It uses configurable keyword rules—not an LLM—to produce transparent `research_fit` and `video_potential` scores.
+EverWhy Paper Radar is a local personal reading selector for robotics and embodied-intelligence papers. It scans arXiv metadata in the background, but shows at most five papers per day. Selection uses configurable keyword rules—never an LLM—and every recommendation includes its rule-derived reasons.
 
-## Requirements and installation
+## Install
 
-- Python 3.11
-- Internet access to `https://export.arxiv.org/api/query` for live runs
-
-From the project directory:
+Requirements: Python 3.11 and network access to the official arXiv API for live runs.
 
 ```bash
 python3.11 -m venv .venv
@@ -15,66 +12,80 @@ python3.11 -m venv .venv
 .venv/bin/python -m pip install -e '.[dev]'
 ```
 
-The system `python3` on some Macs is older than 3.11. Use `.venv/bin/python` explicitly if the virtual environment is not activated.
+## Daily run
 
-## Build the radar
-
-Run the normal incremental radar:
+Normal incremental run:
 
 ```bash
 .venv/bin/python -m paper_radar run
 ```
 
-The default command searches a rolling seven-day metadata window, compares every result with `data/seen_ids.json`, and records only:
+This scans the configured seven-day window, compares results with version state, stores candidate metadata, and generates a shortlist of zero to five papers. It never lowers thresholds to fill the page.
 
-- `new_submission`: a base arXiv ID never seen locally before
-- `version_update`: a known base ID whose arXiv version number increased
-
-Repeated retrieval of the same version updates `last_seen_at` but does not create another paper event. New submissions drive the main recommendation sections; version updates appear in a separate folded section.
-
-Build or rebuild an exact Asia/Shanghai calendar date for historical backfill or deterministic checks:
+Exact-day historical run:
 
 ```bash
 .venv/bin/python -m paper_radar run --date 2026-08-03
 ```
 
-Output is written to:
+The `--date` form keeps Asia/Shanghai natural-day semantics for deterministic backfill. arXiv normally announces papers Sunday through Thursday evening in US Eastern time—usually the following morning around 08:00 or 09:00 in Shanghai. Weekends, holidays, or an early run can produce no new papers. A future scheduler should run around **10:15 Asia/Shanghai**; V0.1.2 does not include deployment or GitHub Actions.
 
-- `data/daily/YYYY-MM-DD.json`: readable daily snapshots
-- `data/seen_ids.json`: schema-v2 state keyed by base arXiv ID, including version and first/last-seen timestamps
-- `site/index.html`: latest useful radar plus current-run status
-- `site/archive/`: dated pages
+## Three separate data layers
 
-`--date` retains exact-day semantics: submissions and updates whose arXiv metadata timestamp falls within that Asia/Shanghai natural day. The default command uses rolling discovery instead. If a run finds no new papers, the empty dated archive is retained while the homepage continues to show the most recent non-empty radar and links to both dates. If the API fails, existing data, state, and pages are preserved.
+1. **Candidate metadata** — `data/candidates/YYYY-MM-DD.json`
+   - Full background metadata for scoring, version tracking, and audits.
+   - Never rendered as an all-paper user page.
+2. **Reading pool** — `data/reading_pool.json`
+   - Only papers explicitly added by the user.
+   - Stores status, priority, dismissal, consideration, and recommendation history.
+3. **Daily recommendations** — `data/recommendations/YYYY-MM-DD.json`
+   - Only the zero to five papers actually selected for the user page.
 
-### arXiv announcement timing
+Version and discovery state remains in `data/seen_ids.json`. Legacy V0.1.1 files under `data/daily/` and the 485-paper `site/archive/2026-07-31.html` audit sample are retained but are not part of the V0.1.2 homepage flow.
 
-arXiv normally announces new papers Sunday through Thursday evening in US Eastern time, after its daily submission cutoff. This is usually the following morning in Asia/Shanghai, around 08:00 during US daylight-saving time and 09:00 during standard time. There are normally no new announcements on Friday or Saturday evenings, and holidays or processing delays can also produce empty or late results.
+## Recommendation policy
 
-For a future cloud scheduler, approximately **10:15 Asia/Shanghai** is a practical daily run time with some margin after the usual announcement. V0.1.1 does not create GitHub Actions or any deployment workflow.
+All limits and thresholds live in `config/research_profile.yaml`:
 
-## View the site
+- Total: at most 5
+- Recent new papers: at most 3, `research_fit ≥ 40`
+- Manual reading-pool papers: at most 2
+- Important version updates: at most 1, `research_fit ≥ 60`
+- Recent and update candidates must match a core topic and at least one non-generic keyword
+- Generic learning, agent, planning, or control terms cannot qualify alone
+- Excluded off-topic terms, topic diversity, dismissal, `read` status, and cooldowns are enforced
+- Selection order is recent papers, important updates, then reading-pool papers within the remaining total capacity
 
-The generated HTML can be opened directly, or served locally for the best experience:
+An empty day is valid and displays: “今日没有发现足够值得推荐的论文。” The page may link to the previous non-empty recommendation but never substitutes it as today's content.
+
+## Reading pool
+
+Add a paper using its arXiv ID. Metadata is fetched from the official API:
+
+```bash
+.venv/bin/python -m paper_radar pool add 2401.01234
+.venv/bin/python -m paper_radar pool list
+.venv/bin/python -m paper_radar pool status 2401.01234 queued
+.venv/bin/python -m paper_radar pool dismiss 2401.01234
+```
+
+Valid statuses are `unread`, `queued`, `reading`, and `read`. Dismissed and read papers are not recommended. The reading pool makes no claim that a paper is classic, highly cited, or objectively high quality.
+
+## View
 
 ```bash
 .venv/bin/python -m paper_radar serve
 ```
 
-Then open <http://127.0.0.1:8000/>. Use `--host` and `--port` to change the bind address, for example `serve --port 8080`.
+Open <http://127.0.0.1:8000/>. Recommendation archives are under `site/recommendations/`.
 
-## Tune the research profile
+Fixture demonstrations:
 
-Edit `config/research_profile.yaml` to change:
+- `site/demo/recommendations-5.html`
+- `site/demo/recommendations-partial.html`
+- `site/demo/recommendations-0.html`
 
-- arXiv categories and category bonuses
-- research topics, aliases, and weights
-- exclusions and penalties
-- video-potential signals
-- section thresholds and API pagination limits
-- the default rolling lookback window
-
-Scoring is additive and capped to 0–100. A topic scores once per paper: a title hit receives its full weight and an abstract-only hit receives the configured multiplier. Every contribution is visible on the paper card.
+They are visibly labelled fixture pages and use stored arXiv metadata.
 
 ## Test
 
@@ -82,9 +93,7 @@ Scoring is additive and capped to 0–100. A topic scores once per paper: a titl
 .venv/bin/python -m pytest
 ```
 
-Tests use local Atom fixtures and mocked HTTP transports; they never require live network access.
-
-Manual viewport and interaction checks are documented in `reports/manual_visual_checklist.md`.
+Tests use local Atom fixtures and fake fetchers only. Network failure tests verify that candidate state, reading pool, recommendations, and existing pages are unchanged.
 
 ## Data and affiliation
 

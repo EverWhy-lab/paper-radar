@@ -2,36 +2,42 @@
 
 ## Project map
 
-- `config/research_profile.yaml`: user-editable categories, keywords, weights, exclusions, fetch limits
-- `src/paper_radar/`: CLI, arXiv client/parser, scoring, JSON storage, rendering
-- `src/paper_radar/templates/` and `assets/`: static site source
-- `tests/fixtures/`: local Atom metadata used by tests
-- `data/daily/` and `data/seen_ids.json`: Git-trackable generated history
-- `site/`: generated static website
-- `reports/`: rule-derived relevance audit and manual visual checklist
+- `config/research_profile.yaml`: research scoring plus all recommendation thresholds, caps, exclusions, diversity, and cooldown rules
+- `src/paper_radar/fetchers/`, `scoring.py`, `storage.py`: candidate ingestion and version state
+- `reader_models.py`, `reader_storage.py`, `recommendation.py`, `reader_pipeline.py`: V0.1.2 three-layer data and selection flow
+- `reader_rendering.py`, `templates/reader.html`, `assets/reader.css`: shortlist-only static site
+- `data/candidates/`: background candidate metadata; never render all candidates
+- `data/reading_pool.json`: manually admitted historical papers
+- `data/recommendations/`: zero-to-five daily selections
+- `data/daily/` and `site/archive/`: retained V0.1.1 audit history
+- `site/recommendations/`: V0.1.2 recommendation archives
+- `site/demo/`: clearly labelled fixture scenarios
 
 ## Commands
 
 ```bash
 .venv/bin/python -m paper_radar run
 .venv/bin/python -m paper_radar run --date YYYY-MM-DD
+.venv/bin/python -m paper_radar pool add ARXIV_ID
+.venv/bin/python -m paper_radar pool list
+.venv/bin/python -m paper_radar pool status ARXIV_ID queued
+.venv/bin/python -m paper_radar pool dismiss ARXIV_ID
 .venv/bin/python -m paper_radar serve
 .venv/bin/python -m pytest
 ```
 
-## Constraints
+## Invariants
 
-- Require Python 3.11; do not introduce Node, frontend frameworks, databases, or a persistent backend.
-- Fetch only the official arXiv Atom API with the configured User-Agent, timeout, retries, and at least 3 seconds between API requests.
-- Keep all date semantics in Asia/Shanghai and deduplicate by base arXiv ID while retaining version updates.
-- Default `run` uses the configured rolling window and state comparison. `run --date` must remain exact-day, deterministic historical backfill.
-- `seen_ids.json` schema v2 is keyed by base ID and retains `latest_version`, metadata timestamps, `first_seen_at`, and `last_seen_at`; migrate schema v1 only after a successful fetch.
-- Never put `version_update` events into Must Read, Highly Relevant, or Broaden the View; render them in the separate folded updates section.
-- When the latest daily file has no new submissions, preserve its archive and render the latest non-empty radar as the homepage body with an explicit run-status banner.
-- Never invent paper metadata, summaries, conclusions, or scoring evidence. Rules must remain configurable and explainable.
-- Tests must be deterministic and offline. Preserve existing JSON and site files when live fetching fails.
-- Keep generated JSON readable, stable, and suitable for Git review.
+- Require Python 3.11; no Node build chain, frontend framework, database, LLM API, deployment, or external scholarly index.
+- Fetch only official arXiv Atom metadata with the configured User-Agent, retries, timeout, and ≥3-second request spacing.
+- Candidate metadata, reading pool, and recommendations are separate schemas and directories. Never render candidate collections as user cards.
+- Daily recommendations: total ≤5, recent ≤3, pool ≤2, important updates ≤1. Do not lower thresholds to fill a quota.
+- Generic keywords cannot qualify alone. Apply configured off-topic exclusions and recent-paper topic diversity.
+- Dismissed and read pool entries never qualify. Enforce cooldown history. New versions only reappear through the important-update rule.
+- Pool add must fetch real arXiv metadata before writing. Never invent titles, abstracts, citations, quality claims, or recommendation explanations.
+- Network failure must preserve `seen_ids.json`, candidate metadata, reading pool, recommendation JSON, and existing pages.
+- Keep the legacy 2026-07-31 data and page as an audit sample; do not link it as the new reader experience.
 
 ## Completion standard
 
-A change is complete when the full offline pytest suite passes, historical JSON record counts are preserved, the latest empty-run fallback works, local assets resolve, search/filter/sort remain efficient for the 485-paper fixture, and README/AGENTS commands remain accurate. Do not claim screenshot-based visual QA when no browser instance is available.
+The full offline pytest suite passes; generated homepage and archives contain only selected papers; 5/partial/0 demos render; all local assets resolve; legacy 485-paper data remains intact; and documentation matches CLI behavior. Do not claim screenshot QA without an available browser.

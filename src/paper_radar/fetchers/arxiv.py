@@ -198,6 +198,16 @@ class ArxivClient:
         end_local = start_local + timedelta(days=1)
         return self.fetch_for_window(start_local, end_local, categories)
 
+    def fetch_by_id(self, arxiv_id: str) -> Paper:
+        base_id, _ = split_arxiv_id(arxiv_id)
+        if not base_id or any(character.isspace() for character in base_id):
+            raise ArxivFetchError(f"Invalid arXiv ID: {arxiv_id}")
+        papers = parse_atom(self._get({"id_list": base_id, "max_results": 1}))
+        paper = next((item for item in papers if item.base_id == base_id), None)
+        if paper is None:
+            raise ArxivFetchError(f"arXiv ID was not found: {base_id}")
+        return paper
+
     def fetch_recent(
         self,
         now: datetime,

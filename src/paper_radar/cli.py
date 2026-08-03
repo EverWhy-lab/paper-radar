@@ -9,10 +9,15 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from paper_radar.config import ConfigError, load_profile
-from paper_radar.fetchers.arxiv import ArxivFetchError
-from paper_radar.pipeline import execute_incremental_run, execute_run
-from paper_radar.rendering import SiteRenderer
-from paper_radar.storage import RadarStorage, StorageError
+from paper_radar.fetchers.arxiv import ArxivClient, ArxivFetchError, split_arxiv_id
+from paper_radar.reader_models import READING_STATUSES, ReadingPoolEntry
+from paper_radar.reader_pipeline import (
+    execute_reader_historical_run,
+    execute_reader_incremental_run,
+)
+from paper_radar.reader_storage import PoolError, ReadingPoolStorage
+from paper_radar.scoring import score_paper
+from paper_radar.storage import StorageError
 
 
 def _date_argument(value: str) -> date:
@@ -28,12 +33,25 @@ def build_parser() -> argparse.ArgumentParser:
         description="Build the local EverWhy Paper Radar site.",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
-    run_parser = subparsers.add_parser("run", help="fetch, score, save, and render one daily radar")
+    run_parser = subparsers.add_parser(
+        "run", help="fetch candidates and render a zero-to-five-paper shortlist"
+    )
     run_parser.add_argument("--date", type=_date_argument, help="Asia/Shanghai date (YYYY-MM-DD)")
 
     serve_parser = subparsers.add_parser("serve", help="serve the generated static site")
     serve_parser.add_argument("--host", default="127.0.0.1")
     serve_parser.add_argument("--port", default=8000, type=int)
+
+    pool_parser = subparsers.add_parser("pool", help="manage the manual historical reading pool")
+    pool_subparsers = pool_parser.add_subparsers(dest="pool_command", required=True)
+    pool_add = pool_subparsers.add_parser("add", help="fetch and add one arXiv paper")
+    pool_add.add_argument("arxiv_id")
+    pool_subparsers.add_parser("list", help="list reading-pool entries")
+    pool_status = pool_subparsers.add_parser("status", help="change reading status")
+    pool_status.add_argument("arxiv_id")
+    pool_status.add_argument("status", choices=sorted(READING_STATUSES))
+    pool_dismiss = pool_subparsers.add_parser("dismiss", help="exclude a pool paper")
+    pool_dismiss.add_argument("arxiv_id")
     return parser
 
 
@@ -41,43 +59,76 @@ def _run(project_root: Path, requested_date: date | None) -> int:
     try:
         profile = load_profile(project_root / "config" / "research_profile.yaml")
         if requested_date is not None:
-            result = execute_run(project_root, requested_date, profile=profile)
+            result = execute_reader_historical_run(
+                project_root, requested_date, profile=profile
+            )
         else:
-            result = execute_incremental_run(project_root, profile=profile)
+            result = execute_reader_incremental_run(project_root, profile=profile)
     except (ArxivFetchError, ConfigError, StorageError) as exc:
         print(f"Paper Radar could not complete the run: {exc}", file=sys.stderr)
-        index_path = project_root / "site" / "index.html"
-        if not index_path.exists():
-            try:
-                profile = load_profile(project_root / "config" / "research_profile.yaml")
-                target_date = requested_date or datetime.now(ZoneInfo(profile.timezone)).date()
-                generated_at = datetime.now(ZoneInfo(profile.timezone)).isoformat(timespec="seconds")
-                renderer = SiteRenderer(
-                    project_root / "site",
-                    RadarStorage(project_root / "data"),
-                    profile,
-                )
-                renderer.render_unavailable(
-                    target_date.isoformat(),
-                    generated_at,
-                    "The arXiv API is temporarily unavailable. No paper metadata was replaced.",
-                )
-                print(f"Created an honest offline status page at {index_path}", file=sys.stderr)
-            except Exception as render_error:  # pragma: no cover - final safety net
-                print(f"Unable to create the offline status page: {render_error}", file=sys.stderr)
+        print("Existing candidate state, reading pool, and pages were preserved.", file=sys.stderr)
         return 1
 
-    print(
-        f"Generated radar for {result.date}: "
-        f"{result.new_submission_count} new submissions, "
-        f"{result.version_update_count} version updates "
-        f"from {result.candidate_count} rolling-window candidates"
-    )
-    print(f"Daily archive now contains {result.paper_count} paper events")
-    print(f"Daily data: {result.daily_path}")
+    print(f"Generated personal shortlist for {result.date}: {result.recommendation_count} recommendations")
+    print(f"Background candidates scanned: {result.candidate_count}")
+    print(f"Candidate metadata: {result.candidate_path}")
+    print(f"Daily recommendations: {result.recommendation_path}")
     print(f"Site index: {result.index_path}")
     print(f"Archive: {result.archive_path}")
     return 0
+
+
+def _pool(project_root: Path, args: argparse.Namespace) -> int:
+    try:
+        profile = load_profile(project_root / "config" / "research_profile.yaml")
+        storage = ReadingPoolStorage(project_root / "data")
+        base_id, _ = split_arxiv_id(args.arxiv_id) if hasattr(args, "arxiv_id") else ("", 1)
+        if args.pool_command == "add":
+            paper = ArxivClient(profile.fetch).fetch_by_id(base_id)
+            score_paper(paper, profile)
+            now = datetime.now(ZoneInfo(profile.timezone)).isoformat(timespec="seconds")
+            entry = ReadingPoolEntry(
+                base_arxiv_id=paper.base_id,
+                title=paper.title,
+                source="arXiv API",
+                topic_tags=paper.matched_topics,
+                recommendation_reason="Manually added via `pool add`",
+                added_at=now,
+                last_considered_at=None,
+                recommended_at=None,
+                recommendation_count=0,
+                reading_status="unread",
+                dismissed=False,
+                priority=int(profile.recommendations["reading_pool"]["default_priority"]),
+                paper=paper,
+            )
+            storage.add(entry)
+            print(f"Added {paper.base_id}: {paper.title}")
+            return 0
+        if args.pool_command == "list":
+            entries = storage.load()
+            if not entries:
+                print("Reading pool is empty.")
+                return 0
+            for entry in entries:
+                marker = "dismissed" if entry.dismissed else entry.reading_status
+                print(
+                    f"{entry.base_arxiv_id}\t{marker}\tpriority={entry.priority}\t"
+                    f"recommended={entry.recommendation_count}\t{entry.title}"
+                )
+            return 0
+        if args.pool_command == "status":
+            storage.set_status(base_id, args.status)
+            print(f"Updated {base_id} to {args.status}")
+            return 0
+        if args.pool_command == "dismiss":
+            storage.dismiss(base_id)
+            print(f"Dismissed {base_id}")
+            return 0
+    except (ArxivFetchError, ConfigError, StorageError, PoolError) as exc:
+        print(f"Reading pool command failed: {exc}", file=sys.stderr)
+        return 1
+    return 2
 
 
 def _serve(project_root: Path, host: str, port: int) -> int:
@@ -108,4 +159,6 @@ def main(argv: list[str] | None = None) -> int:
         return _run(project_root, args.date)
     if args.command == "serve":
         return _serve(project_root, args.host, args.port)
+    if args.command == "pool":
+        return _pool(project_root, args)
     return 2

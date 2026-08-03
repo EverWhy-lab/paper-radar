@@ -32,6 +32,7 @@ class ResearchProfile:
     scoring: dict[str, Any]
     video_scoring: dict[str, Any]
     sections: dict[str, Any]
+    recommendations: dict[str, Any]
 
     @property
     def topic_labels(self) -> dict[str, str]:
@@ -71,6 +72,7 @@ def load_profile(path: Path) -> ResearchProfile:
             scoring=dict(raw["scoring"]),
             video_scoring=dict(raw["video_scoring"]),
             sections=dict(raw["sections"]),
+            recommendations=dict(raw["recommendations"]),
         )
     except (KeyError, TypeError, ValueError) as exc:
         raise ConfigError(f"Missing or invalid research profile field: {exc}") from exc
@@ -83,4 +85,13 @@ def load_profile(path: Path) -> ResearchProfile:
         raise ConfigError("page_size, max_pages, retries, and lookback_days must be positive")
     if fetch.page_delay_seconds < 3:
         raise ConfigError("arXiv API page delay must be at least 3 seconds")
+    recommendation_limits = profile.recommendations
+    if not 0 <= int(recommendation_limits.get("max_total", 5)) <= 5:
+        raise ConfigError("recommendations.max_total must be between 0 and 5")
+    for category, ceiling in (("recent_new", 3), ("reading_pool", 2), ("important_update", 1)):
+        value = int(recommendation_limits[category]["max_count"])
+        if not 0 <= value <= ceiling:
+            raise ConfigError(
+                f"recommendations.{category}.max_count must be between 0 and {ceiling}"
+            )
     return profile
