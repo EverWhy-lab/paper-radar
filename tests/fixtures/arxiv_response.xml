@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"
+      xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <title>ArXiv Query: fixture</title>
+  <id>https://arxiv.org/api/test</id>
+  <updated>2026-08-03T12:00:00Z</updated>
+  <opensearch:totalResults>2</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <opensearch:itemsPerPage>2</opensearch:itemsPerPage>
+  <entry>
+    <id>https://arxiv.org/abs/2608.00001v1</id>
+    <updated>2026-08-03T08:30:00Z</updated>
+    <published>2026-08-03T08:30:00Z</published>
+    <title>
+      Whole-Body Control for Agile Quadruped Robots
+    </title>
+    <summary>
+      We present a model predictive control method for legged locomotion and
+      report real-world robot experiments.
+    </summary>
+    <author><name>Ada Researcher</name></author>
+    <author><name>Lin Roboticist</name></author>
+    <arxiv:primary_category term="cs.RO"/>
+    <category term="cs.RO"/>
+    <category term="eess.SY"/>
+    <link href="https://arxiv.org/abs/2608.00001v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="https://arxiv.org/pdf/2608.00001v1" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/2608.00002v2</id>
+    <updated>2026-08-03T09:45:00Z</updated>
+    <published>2026-07-28T04:00:00Z</published>
+    <title>Vision-Language-Action Policies for Mobile Manipulation</title>
+    <summary>A benchmark for an embodied agent using imitation learning and visuomotor control.</summary>
+    <author><name>Grace Example</name></author>
+    <arxiv:primary_category term="cs.AI"/>
+    <category term="cs.AI"/>
+    <category term="cs.RO"/>
+    <link href="https://arxiv.org/abs/2608.00002v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="https://arxiv.org/pdf/2608.00002v2" rel="related" type="application/pdf"/>
+  </entry>
+</feed>

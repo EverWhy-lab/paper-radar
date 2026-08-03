@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "everwhy-paper-radar"
+version = "0.1.1"
+description = "A transparent, rule-based daily arXiv radar for robotics research."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27,<1",
+  "Jinja2>=3.1,<4",
+  "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+paper-radar = "paper_radar.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+paper_radar = ["templates/*.html", "assets/*.css", "assets/*.js", "assets/*.svg"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]

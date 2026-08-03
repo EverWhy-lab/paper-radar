@@ -1,0 +1,145 @@
+site:
+  name: "EverWhy Paper Radar"
+  timezone: "Asia/Shanghai"
+
+fetch:
+  endpoint: "https://export.arxiv.org/api/query"
+  user_agent: "EverWhyPaperRadar/0.1.1 (personal non-commercial research tool)"
+  page_size: 100
+  max_pages: 40
+  page_delay_seconds: 3.1
+  timeout_seconds: 30
+  retries: 3
+  lookback_days: 7
+
+categories:
+  cs.RO: 20
+  eess.SY: 12
+  cs.AI: 8
+  cs.LG: 8
+
+scoring:
+  abstract_multiplier: 0.65
+  topics:
+    - id: legged_humanoid
+      label: "Legged & Humanoid"
+      weight: 20
+      keywords:
+        - quadruped robot
+        - quadruped robots
+        - quadrupedal robot
+        - legged robot
+        - legged robots
+        - legged locomotion
+        - humanoid robot
+        - humanoid robots
+        - humanoid locomotion
+        - bipedal robot
+    - id: mobile_manipulation
+      label: "Mobile Manipulation"
+      weight: 20
+      keywords:
+        - mobile manipulation
+        - locomotion and manipulation
+        - loco-manipulation
+        - loco manipulation
+        - whole-body manipulation
+    - id: optimal_control
+      label: "WBC / MPC / Optimization"
+      weight: 18
+      keywords:
+        - whole-body control
+        - whole body control
+        - WBC
+        - model predictive control
+        - MPC
+        - trajectory optimization
+        - optimal control
+    - id: robot_learning
+      label: "Robot Learning"
+      weight: 16
+      keywords:
+        - robot learning
+        - reinforcement learning
+        - imitation learning
+        - behavior cloning
+        - sim-to-real
+    - id: diffusion_visuomotor
+      label: "Diffusion & Visuomotor Policy"
+      weight: 17
+      keywords:
+        - diffusion policy
+        - diffusion model
+        - visuomotor policy
+        - visuomotor control
+        - action diffusion
+    - id: vla_foundation
+      label: "VLA & Foundation Models"
+      weight: 17
+      keywords:
+        - vision-language-action
+        - vision language action
+        - VLA
+        - robot foundation model
+        - robotics foundation model
+        - embodied foundation model
+        - embodied agent
+    - id: llm_agent_robotics
+      label: "LLM / Agent Robotics"
+      weight: 14
+      keywords:
+        - large language model
+        - LLM
+        - agentic planning
+        - robot planning
+        - task planning
+        - language-conditioned control
+    - id: pose_rescue
+      label: "Pose & Rescue Robotics"
+      weight: 14
+      keywords:
+        - human pose estimation
+        - keypoint detection
+        - pose estimation
+        - rescue robot
+        - rescue robotics
+        - search and rescue
+  exclusions:
+    - term: autonomous driving
+      penalty: 18
+    - term: recommendation system
+      penalty: 22
+    - term: wireless communication
+      penalty: 18
+    - term: medical image segmentation
+      penalty: 18
+    - term: molecule generation
+      penalty: 22
+
+video_scoring:
+  research_fit_factor: 0.25
+  abstract_multiplier: 0.65
+  signals:
+    - label: "Physical robot demonstration"
+      weight: 24
+      keywords: [real-world robot, physical robot, hardware experiment, robot demonstration, real robot]
+    - label: "Visually distinctive platform"
+      weight: 20
+      keywords: [quadruped, humanoid, legged robot, mobile manipulator, aerial manipulator]
+    - label: "Dynamic task"
+      weight: 18
+      keywords: [locomotion, manipulation, parkour, whole-body, dexterous, navigation]
+    - label: "Learning policy"
+      weight: 14
+      keywords: [policy learning, reinforcement learning, imitation learning, diffusion policy, visuomotor]
+    - label: "Benchmark or comparison"
+      weight: 10
+      keywords: [benchmark, evaluation, outperform, comparison, ablation]
+
+sections:
+  highly_relevant_min_score: 50
+  highly_relevant_min_count: 5
+  highly_relevant_limit: 10
+  expanded_min_score: 20
+  expanded_min_count: 3
+  expanded_limit: 5

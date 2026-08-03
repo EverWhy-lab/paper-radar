@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EverWhy Paper Radar">
+  <rect width="64" height="64" rx="14" fill="#11161d"/>
+  <circle cx="32" cy="32" r="21" fill="none" stroke="#27313d" stroke-width="3"/>
+  <path d="M32 32 49 20" fill="none" stroke="#61d4b3" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="4" fill="#61d4b3"/>
+  <path d="M18 18h20M18 25h13M18 46h28" fill="none" stroke="#e8edf2" stroke-width="3" stroke-linecap="round"/>
+</svg>
