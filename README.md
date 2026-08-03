@@ -1,10 +1,10 @@
 # EverWhy Paper Radar
 
-EverWhy Paper Radar is a local personal reading selector for robotics and embodied-intelligence papers. It scans arXiv metadata in the background, but shows at most five papers per day. Selection uses configurable keyword rules—never an LLM—and every recommendation includes its rule-derived reasons.
+EverWhy Paper Radar is a local personal reader for robotics and embodied-intelligence research. It tracks relevant arXiv frontiers and builds a separate OpenAlex-backed historical discovery pool, then shows at most five papers per day. It does not use an LLM, infer claims from full text, or equate citation counts with paper quality.
 
 ## Install
 
-Requirements: Python 3.11 and network access to the official arXiv API for live runs.
+Requirements: Python 3.11. Live recent-paper runs need access to the official arXiv API. Historical discovery additionally needs an OpenAlex API key.
 
 ```bash
 python3.11 -m venv .venv
@@ -12,7 +12,15 @@ python3.11 -m venv .venv
 .venv/bin/python -m pip install -e '.[dev]'
 ```
 
-## Daily run
+Copying `.env.example` is optional, but the application does not load `.env` files. Export the key in the process environment when using live historical commands:
+
+```bash
+export OPENALEX_API_KEY='your-key-from-openalex'
+```
+
+The key is read only from `OPENALEX_API_KEY`. `.env` files and OpenAlex response caches are ignored by Git. The program never prints or writes the key into data, cache, pages, or provider statistics.
+
+## Daily reader
 
 Normal incremental run:
 
@@ -20,47 +28,93 @@ Normal incremental run:
 .venv/bin/python -m paper_radar run
 ```
 
-This scans the configured seven-day window, compares results with version state, stores candidate metadata, and generates a shortlist of zero to five papers. It never lowers thresholds to fill the page.
+This scans the configured seven-day arXiv window, compares metadata with version state, reads the local historical discovery pool, and writes a zero-to-five-paper recommendation. It does not call OpenAlex automatically.
 
-Exact-day historical run:
+Exact-day arXiv backfill:
 
 ```bash
 .venv/bin/python -m paper_radar run --date 2026-08-03
 ```
 
-The `--date` form keeps Asia/Shanghai natural-day semantics for deterministic backfill. arXiv normally announces papers Sunday through Thursday evening in US Eastern time—usually the following morning around 08:00 or 09:00 in Shanghai. Weekends, holidays, or an early run can produce no new papers. A future scheduler should run around **10:15 Asia/Shanghai**; V0.1.2 does not include deployment or GitHub Actions.
+The `--date` form retains Asia/Shanghai natural-day semantics for deterministic backfill. arXiv normally announces papers Sunday through Thursday evening in US Eastern time—usually the following morning around 08:00 or 09:00 in Shanghai. Weekends, holidays, and early runs can have no new papers. A future scheduler should run around **10:15 Asia/Shanghai**; this repository contains no deployment or GitHub Actions.
 
-## Three separate data layers
+## Historical discovery
 
-1. **Candidate metadata** — `data/candidates/YYYY-MM-DD.json`
-   - Full background metadata for scoring, version tracking, and audits.
-   - Never rendered as an all-paper user page.
-2. **Reading pool** — `data/reading_pool.json`
-   - Only papers explicitly added by the user.
-   - Stores status, priority, dismissal, consideration, and recommendation history.
-3. **Daily recommendations** — `data/recommendations/YYYY-MM-DD.json`
-   - Only the zero to five papers actually selected for the user page.
+Seed papers accept an arXiv ID, DOI, or OpenAlex Work ID:
 
-Version and discovery state remains in `data/seen_ids.json`. Legacy V0.1.1 files under `data/daily/` and the 485-paper `site/archive/2026-07-31.html` audit sample are retained but are not part of the V0.1.2 homepage flow.
+```bash
+.venv/bin/python -m paper_radar history seed add 2401.01234
+.venv/bin/python -m paper_radar history seed add 10.1234/example
+.venv/bin/python -m paper_radar history seed add W1234567890
+.venv/bin/python -m paper_radar history seed list
+.venv/bin/python -m paper_radar history seed remove 2401.01234
+```
 
-## Recommendation policy
+Preview a discovery plan without API calls or writes:
 
-All limits and thresholds live in `config/research_profile.yaml`:
+```bash
+.venv/bin/python -m paper_radar history discover --dry-run
+.venv/bin/python -m paper_radar history discover --dry-run --limit 20
+```
 
-- Total: at most 5
-- Recent new papers: at most 3, `research_fit ≥ 40`
-- Manual reading-pool papers: at most 2
-- Important version updates: at most 1, `research_fit ≥ 60`
-- Recent and update candidates must match a core topic and at least one non-generic keyword
-- Generic learning, agent, planning, or control terms cannot qualify alone
-- Excluded off-topic terms, topic diversity, dismissal, `read` status, and cooldowns are enforced
-- Selection order is recent papers, important updates, then reading-pool papers within the remaining total capacity
+Run discovery or refresh metadata:
 
-An empty day is valid and displays: “今日没有发现足够值得推荐的论文。” The page may link to the previous non-empty recommendation but never substitutes it as today's content.
+```bash
+.venv/bin/python -m paper_radar history discover
+.venv/bin/python -m paper_radar history discover --limit 20
+.venv/bin/python -m paper_radar history list --top 20
+.venv/bin/python -m paper_radar history refresh W1234567890
+```
 
-## Reading pool
+Discovery uses three source types:
 
-Add a paper using its arXiv ID. Metadata is fetched from the official API:
+- Eleven configured robotics topic queries from `config/research_profile.yaml`.
+- Separate review, survey, tutorial, taxonomy, and benchmark queries.
+- One-hop seed expansion through referenced works, citing works, and OpenAlex related works.
+
+Per-query, per-seed, per-run, depth, year, cache lifetime, and request-budget limits are all configurable. Successful JSON responses are cached under ignored `data/history/cache/openalex/`. Aggregate request counts, cache hits, and remaining configured daily budget are written to `data/history/provider_stats.json`. A failed provider run never replaces the discovery pool or reader pages.
+
+## Four separate data layers
+
+1. **Recent candidates** — `data/candidates/YYYY-MM-DD.json`
+   - Background arXiv metadata used for scoring, deduplication, and version tracking.
+2. **Historical discovery pool** — `data/history/discovery_pool.json`
+   - OpenAlex/topic/seed candidates with canonical identifiers, provenance, citation signals, and explainable historical scores.
+3. **Reading pool** — `data/reading_pool.json`
+   - Papers explicitly added by the user, with reading state, priority, and dismissal state.
+4. **Daily recommendations** — `data/recommendations/YYYY-MM-DD.json`
+   - Only the zero to five selected papers rendered on the homepage and recommendation archives.
+
+Seed definitions are stored in `data/history/seeds.json`. arXiv version state remains in `data/seen_ids.json`. The legacy 485-paper `data/daily/2026-07-31.json` and `site/archive/2026-07-31.html` remain as V0.1.1 audit samples and are not part of the current reader experience.
+
+## Scoring and recommendation policy
+
+Historical eligibility first requires `research_fit ≥ 18`, at least one configured core topic, and at least one non-generic keyword. Configured off-topic exclusions are applied before impact signals. A highly cited but irrelevant paper cannot qualify.
+
+`historical_value_score` is a transparent weighted score:
+
+- Research relevance: 35%
+- OpenAlex field/year-normalized citation percentile, with an age-adjusted annual-citation fallback: 20%
+- FWCI: 10%
+- Recent citation momentum: 10%
+- Independent seed-graph provenance: 10%
+- Review/tutorial or method-rule signal: 5%
+- Metadata completeness: 10%
+
+Unavailable citation, FWCI, or yearly-count fields remain `null` and are omitted from the weighted mean; they are not treated as zero. The available-component mean is multiplied by `0.78 + 0.22 × available_weight/total_weight`, so missing evidence produces a bounded, visible downgrade. Raw citation count is never the direct sort key. The fallback annualizes citations by paper age and caps them against the configured reference of 20 citations/year; OpenAlex normalized percentile is preferred whenever present.
+
+Current daily gates and caps are configurable:
+
+- Total recommendations: at most 5
+- Frontier recent papers: at most 2; `research_fit ≥ 40`
+- Historical-impact candidates: at most 3; `historical_value_score ≥ 42`
+- Review/knowledge-map candidates: at most 1; `historical_value_score ≥ 50`
+
+Historical categories are considered first, but no category has a guaranteed quota. Thresholds are never lowered to fill the page. A paper can occupy only one category. Canonical aliases, topic diversity, dismissal, `read` status, and a 45-day historical cooldown are enforced. Empty days display “今日没有发现足够值得推荐的论文。”
+
+Citation and impact metadata is a screening signal only. The site uses neutral wording such as “领域内高影响力” and does not label papers “classic,” “best,” or objectively high quality.
+
+## Manual reading pool
 
 ```bash
 .venv/bin/python -m paper_radar pool add 2401.01234
@@ -69,32 +123,15 @@ Add a paper using its arXiv ID. Metadata is fetched from the official API:
 .venv/bin/python -m paper_radar pool dismiss 2401.01234
 ```
 
-Valid statuses are `unread`, `queued`, `reading`, and `read`. Dismissed and read papers are not recommended. The reading pool makes no claim that a paper is classic, highly cited, or objectively high quality.
+Valid statuses are `unread`, `queued`, `reading`, and `read`. Pool add fetches real metadata from the official arXiv API. Dismissed and read papers are not recommended by default.
 
-## View
+## View and test
 
 ```bash
 .venv/bin/python -m paper_radar serve
-```
-
-Open <http://127.0.0.1:8000/>. Recommendation archives are under `site/recommendations/`.
-
-Fixture demonstrations:
-
-- `site/demo/recommendations-5.html`
-- `site/demo/recommendations-partial.html`
-- `site/demo/recommendations-0.html`
-
-They are visibly labelled fixture pages and use stored arXiv metadata.
-
-## Test
-
-```bash
 .venv/bin/python -m pytest
 ```
 
-Tests use local Atom fixtures and fake fetchers only. Network failure tests verify that candidate state, reading pool, recommendations, and existing pages are unchanged.
+Open <http://127.0.0.1:8000/>. Recommendation archives are under `site/recommendations/`. Tests use local Atom/OpenAlex fixtures and mocked transports only; they do not need an API key or live network.
 
-## Data and affiliation
-
-Paper titles, authors, dates, categories, abstracts, and links come from arXiv metadata. EverWhy Paper Radar is independent and is not affiliated with or endorsed by arXiv.
+Recent metadata comes from arXiv. Historical citation and influence metadata comes from OpenAlex. EverWhy Paper Radar is independent and is not affiliated with or endorsed by either provider.

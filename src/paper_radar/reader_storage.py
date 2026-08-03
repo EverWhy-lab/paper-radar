@@ -131,14 +131,14 @@ class RecommendationStorage:
                 continue
             daily = self.load(date_string)
             for recommendation in daily.recommendations:
-                history.setdefault(recommendation.paper.base_id, []).append(
-                    {
-                        "date": daily.date,
-                        "generated_at": daily.generated_at,
-                        "category": recommendation.category,
-                        "version": recommendation.paper.version,
-                    }
-                )
+                event = {
+                    "date": daily.date,
+                    "generated_at": daily.generated_at,
+                    "category": recommendation.category,
+                    "version": recommendation.paper.version,
+                }
+                for identifier in recommendation.aliases:
+                    history.setdefault(identifier, []).append(event)
         return history
 
     def previous_nonempty(self, before_date: str) -> DailyRecommendations | None:

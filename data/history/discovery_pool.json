@@ -1,0 +1,4504 @@
+{
+  "schema_version": 1,
+  "paper_count": 20,
+  "papers": [
+    {
+      "canonical_paper_id": "openalex:W1951089663",
+      "openalex_id": "W1951089663",
+      "base_arxiv_id": null,
+      "doi": "10.1002/rob.21566",
+      "title": "Mobile Manipulation and Mobility as Manipulation—Design and Algorithms of RoboSimian",
+      "authors": [
+        "Paul D. N. Hebert",
+        "Max Bajracharya",
+        "Jeremy Ma",
+        "Nicolas Hudson",
+        "Alper Aydemir",
+        "Jason Reid",
+        "Charles Bergh",
+        "James Borders",
+        "Matthew Frost",
+        "Michael Hagman",
+        "John Leichty",
+        "Paul Backes",
+        "Brett Kennedy",
+        "Paul Karplus",
+        "Brian Satzinger",
+        "Katie Byl",
+        "Krishna Shankar",
+        "Joel W. Burdick"
+      ],
+      "abstract": "This article presents the hardware design and software algorithms of RoboSimian, a statically stable quadrupedal robot capable of both dexterous manipulation and versatile mobility in difficult terrain. The robot has generalized limbs and hands capable of mobility and manipulation, along with almost fully hemispherical three‐dimensional sensing with passive stereo cameras. The system is semiautonomous, enabling low‐bandwidth, high latency control operated from a standard laptop. Because limbs are used for mobility and manipulation, a single unified mobile manipulation planner is used to generate autonomous behaviors, including walking, sitting, climbing, grasping, and manipulating. The remote operator interface is optimized to designate, parametrize, sequence, and preview behaviors, which are then executed by the robot. RoboSimian placed fifth in the DARPA Robotics Challenge Trials, demonstrating its ability to perform disaster recovery tasks in degraded human environments.",
+      "publication_date": "2015-02-13",
+      "publication_year": 2015,
+      "source_name": "Journal of Field Robotics",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10586",
+          "display_name": "Robotic Path Planning Algorithms",
+          "score": 0.9997000098228455
+        },
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.9995999932289124
+        },
+        {
+          "id": "https://openalex.org/T10191",
+          "display_name": "Robotics and Sensor-Based Localization",
+          "score": 0.9993000030517578
+        }
+      ],
+      "cited_by_count": 132,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 14
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 14
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 11
+        }
+      ],
+      "fwci": 13.4714,
+      "citation_normalized_percentile": 0.99176412,
+      "referenced_works": [
+        "W102190310",
+        "W1504992226",
+        "W1983959451",
+        "W1984641630",
+        "W1994648061",
+        "W2015034312",
+        "W2029256820",
+        "W2048806631",
+        "W2090302437",
+        "W2141664020",
+        "W2172158418",
+        "W2229412420",
+        "W2249773824",
+        "W2505763307",
+        "W2998649743",
+        "W4233857083",
+        "W6721399632",
+        "W7919856"
+      ],
+      "related_works": [
+        "W1516398359",
+        "W1901656956",
+        "W2045444909",
+        "W2122871747",
+        "W2376300433",
+        "W2941659365",
+        "W2990805456",
+        "W3114279067",
+        "W3153292769",
+        "W4239210160"
+      ],
+      "discovery_source": [
+        "topic_search:mobile manipulation"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:06",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W1951089663",
+      "landing_page_url": "https://doi.org/10.1002/rob.21566",
+      "open_access_url": "https://doi.org/10.1002/rob.21566",
+      "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/rob.21566",
+      "research_fit": 33,
+      "video_potential": 26,
+      "matched_topics": [
+        "legged_humanoid",
+        "mobile_manipulation"
+      ],
+      "matched_keywords": [
+        "quadrupedal robot",
+        "mobile manipulation"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "quadrupedal robot"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "topic",
+          "label": "Mobile Manipulation",
+          "keywords": [
+            "mobile manipulation"
+          ],
+          "location": "title",
+          "points": 20.0
+        }
+      ],
+      "historical_value_score": 63.7,
+      "historical_score_components": {
+        "research_relevance": 33.0,
+        "normalized_citation": 99.2,
+        "fwci": 100.0,
+        "citation_momentum": 22.2,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2015 年",
+        "同领域同年份引用标准化位于前 0.8%",
+        "OpenAlex FWCI 13.47",
+        "近 2 年年均引用 4.0；此前 2 年年均 9.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W2046481736",
+      "openalex_id": "W2046481736",
+      "base_arxiv_id": null,
+      "doi": "10.1108/01439911211201582",
+      "title": "Autonomous industrial mobile manipulation (AIMM): past, present and future",
+      "authors": [
+        "Mads Hvilshøj",
+        "Simon Bøgh",
+        "Oluf Skov Nielsen",
+        "Ole Madsen"
+      ],
+      "abstract": "Purpose The purpose of this paper is to provide a review of the interdisciplinary research field, autonomous industrial mobile manipulation (AIMM), with an emphasis on physical implementations and applications. Design/methodology/approach Following an introduction to AIMM, this paper investigates the missing links and gaps between the research and developments efforts and the real‐world application requirements, in order to bring the AIMM technology from laboratories to manufacturing environments. The investigation is based on 12 general application requirements for robotics: sustainability, configuration, adaptation, autonomy, positioning, manipulation and grasping, robot‐robot interaction, human‐robot interaction, process quality, dependability, and physical properties. Findings The concise yet comprehensive review provides both researchers (academia) and practitioners (industry) with a quick and gentle overview of AIMM. Furthermore, the paper identifies key open issues and promising research directions to realize real‐world integration and maturation of the AIMM technology. Originality/value This paper reviews the interdisciplinary research field, autonomous industrial mobile manipulation (AIMM).",
+      "publication_date": "2012-03-02",
+      "publication_year": 2012,
+      "source_name": "Industrial Robot the international journal of robotics research and application",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9995999932289124
+        },
+        {
+          "id": "https://openalex.org/T12784",
+          "display_name": "Modular Robots and Swarm Intelligence",
+          "score": 0.9939000010490417
+        },
+        {
+          "id": "https://openalex.org/T10868",
+          "display_name": "Soft Robotics and Applications",
+          "score": 0.9904999732971191
+        }
+      ],
+      "cited_by_count": 126,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 13
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 11
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 13
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 11
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 1
+        }
+      ],
+      "fwci": 6.4178,
+      "citation_normalized_percentile": 0.95915802,
+      "referenced_works": [
+        "W1544631301",
+        "W1558319233",
+        "W1602614133",
+        "W1612615998",
+        "W166492055",
+        "W1772822779",
+        "W179163131",
+        "W1881357295",
+        "W1908284809",
+        "W1965464852",
+        "W1970390593",
+        "W1980049827",
+        "W198094285",
+        "W1990915636",
+        "W1993999483",
+        "W2003613217",
+        "W2006738510",
+        "W2006817210",
+        "W2009701213",
+        "W2016505519",
+        "W2016609054",
+        "W2019601800",
+        "W2022813413",
+        "W2034449702",
+        "W2036288719",
+        "W2042428748",
+        "W2046365304",
+        "W2070092132",
+        "W2073924944",
+        "W2075061097",
+        "W2087756606",
+        "W2091797369",
+        "W2096828184",
+        "W2102306632",
+        "W2107678031",
+        "W2108149603",
+        "W2111688325",
+        "W2112547815",
+        "W2114504956",
+        "W2116139612",
+        "W2116151288",
+        "W2117746175",
+        "W2118577171",
+        "W2122270496",
+        "W2123616386",
+        "W2125618836",
+        "W2126514592",
+        "W2127514693",
+        "W2131444840",
+        "W2136379480",
+        "W2143412251",
+        "W2143684600",
+        "W2143819333",
+        "W2143907646",
+        "W2148970883",
+        "W2157427290",
+        "W2159754437",
+        "W2164474021",
+        "W2164714694",
+        "W2167398712",
+        "W2167783228",
+        "W2259831107",
+        "W2294729144",
+        "W2337392266",
+        "W2499457802",
+        "W2530980785",
+        "W2544884917",
+        "W255922872",
+        "W2737267365",
+        "W3145767302",
+        "W4233366286",
+        "W4285719527",
+        "W6676254659",
+        "W6677359915",
+        "W7055104640"
+      ],
+      "related_works": [
+        "W1506225852",
+        "W1523265213",
+        "W1976489385",
+        "W2141414364",
+        "W2233357156",
+        "W2363668972",
+        "W2376514150",
+        "W2409287660",
+        "W4252527915",
+        "W4256317220"
+      ],
+      "discovery_source": [
+        "topic_search:mobile manipulation"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:06",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W2046481736",
+      "landing_page_url": "https://doi.org/10.1108/01439911211201582",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 20,
+      "video_potential": 23,
+      "matched_topics": [
+        "mobile_manipulation"
+      ],
+      "matched_keywords": [
+        "mobile manipulation"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Mobile Manipulation",
+          "keywords": [
+            "mobile manipulation"
+          ],
+          "location": "title",
+          "points": 20.0
+        }
+      ],
+      "historical_value_score": 61.4,
+      "historical_score_components": {
+        "research_relevance": 20.0,
+        "normalized_citation": 95.9,
+        "fwci": 100.0,
+        "citation_momentum": 52.8,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2012 年",
+        "同领域同年份引用标准化位于前 4.1%",
+        "OpenAlex FWCI 6.42",
+        "近 2 年年均引用 9.5；此前 2 年年均 9.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W2087485438",
+      "openalex_id": "W2087485438",
+      "base_arxiv_id": null,
+      "doi": "10.1080/01691864.2012.686345",
+      "title": "Humanoid Robot Locomotion and Manipulation Step Planning",
+      "authors": [
+        "Karim Bouyarmane",
+        "Abderrahmane Kheddar"
+      ],
+      "abstract": "We aim at planning multi-contact sequences of stances and postures for humanoid robots. The output sequence defines the contact transitions that allow our robot to realize different kind of tasks, ranging from biped locomotion to dexterous manipulation. The central component of the planning framework is a best-first algorithm that performs a search of the contacts to be added or removed at each step, following an input collision-free guide path, and making calls to an optimization-based inverse kinematics solver under static equilibrium constraints. The planner can handle systems made of multiple robots and/or manipulated objects through a centralized multi-agent approach, opening the way for multi-robot collaborative locomotion and manipulation planning. Results are presented in virtual environments, with discussion on execution on the real robot HRP-2 in an example situation.",
+      "publication_date": "2012-06-01",
+      "publication_year": 2012,
+      "source_name": "Advanced Robotics",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.9998000264167786
+        },
+        {
+          "id": "https://openalex.org/T10586",
+          "display_name": "Robotic Path Planning Algorithms",
+          "score": 0.9994999766349792
+        },
+        {
+          "id": "https://openalex.org/T12290",
+          "display_name": "Human Motion and Animation",
+          "score": 0.9937000274658203
+        }
+      ],
+      "cited_by_count": 102,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 14
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 15
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 15
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 1
+        }
+      ],
+      "fwci": 4.9345,
+      "citation_normalized_percentile": 0.95774787,
+      "referenced_works": [
+        "W101508493",
+        "W124445416",
+        "W1424654272",
+        "W1508300292",
+        "W1509235676",
+        "W1510488513",
+        "W1587837820",
+        "W1863997888",
+        "W1906034729",
+        "W1962169445",
+        "W2007193228",
+        "W2020742378",
+        "W2096498654",
+        "W2105366725",
+        "W2112337604",
+        "W2114171536",
+        "W2119881003",
+        "W2123871098",
+        "W2125356896",
+        "W2127895608",
+        "W2128990851",
+        "W2130469643",
+        "W2137496616",
+        "W2142468282",
+        "W2153731877",
+        "W2164288353",
+        "W2165739402",
+        "W2166162370",
+        "W2166316739",
+        "W2166462345",
+        "W2169791696",
+        "W2264082307",
+        "W2545385919",
+        "W2611243847",
+        "W4300449797"
+      ],
+      "related_works": [
+        "W1969999327",
+        "W1996912299",
+        "W2002186699",
+        "W2051357145",
+        "W2090619052",
+        "W2143327155",
+        "W2412081987",
+        "W2651794802",
+        "W2658242077",
+        "W3110674428"
+      ],
+      "discovery_source": [
+        "topic_search:humanoid locomotion and manipulation"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:08",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W2087485438",
+      "landing_page_url": "https://doi.org/10.1080/01691864.2012.686345",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 40,
+      "video_potential": 64,
+      "matched_topics": [
+        "legged_humanoid",
+        "mobile_manipulation"
+      ],
+      "matched_keywords": [
+        "humanoid robot",
+        "humanoid robots",
+        "locomotion and manipulation"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "humanoid robot",
+            "humanoid robots"
+          ],
+          "location": "title",
+          "points": 20.0
+        },
+        {
+          "kind": "topic",
+          "label": "Mobile Manipulation",
+          "keywords": [
+            "locomotion and manipulation"
+          ],
+          "location": "title",
+          "points": 20.0
+        }
+      ],
+      "historical_value_score": 64.0,
+      "historical_score_components": {
+        "research_relevance": 40.0,
+        "normalized_citation": 95.8,
+        "fwci": 100.0,
+        "citation_momentum": 27.8,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2012 年",
+        "同领域同年份引用标准化位于前 4.2%",
+        "OpenAlex FWCI 4.93",
+        "近 2 年年均引用 2.5；此前 2 年年均 4.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W2744484133",
+      "openalex_id": "W2744484133",
+      "base_arxiv_id": null,
+      "doi": "10.1109/iros.2017.8206174",
+      "title": "Dynamic locomotion and whole-body control for quadrupedal robots",
+      "authors": [
+        "C. Dario Bellicoso",
+        "Fabian Jenelten",
+        "Péter Fankhauser",
+        "Christian Gehring",
+        "Jemin Hwangbo",
+        "Marco Hutter"
+      ],
+      "abstract": "This paper presents a framework which allows a quadrupedal robot to execute dynamic gaits including trot, pace and dynamic lateral walk, as well as a smooth transition between them. Our method relies on an online ZMP based motion planner which continuously updates the reference motion trajectory as a function of the contact schedule and the state of the robot. The planner is coupled with a hierarchical whole-body controller which optimizes the whole-body motion and contact forces by solving a cascade of prioritized tasks. We tested our framework on ANYmal, a fully torque controllable quadrupedal robot which is actuated by series-elastic actuators.",
+      "publication_date": "2017-09-01",
+      "publication_year": 2017,
+      "source_name": null,
+      "source_type": "conference-paper",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 1.0
+        },
+        {
+          "id": "https://openalex.org/T12784",
+          "display_name": "Modular Robots and Swarm Intelligence",
+          "score": 0.9943000078201294
+        },
+        {
+          "id": "https://openalex.org/T11023",
+          "display_name": "Prosthetics and Rehabilitation Robotics",
+          "score": 0.993399977684021
+        }
+      ],
+      "cited_by_count": 152,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 13
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 31
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 26
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 22
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 17
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 18
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 13
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 3
+        }
+      ],
+      "fwci": 12.6168,
+      "citation_normalized_percentile": 0.99347169,
+      "referenced_works": [
+        "W1502718064",
+        "W2005805981",
+        "W2037729465",
+        "W2054577881",
+        "W2065238107",
+        "W2073288601",
+        "W2111904757",
+        "W2127763473",
+        "W2154139861",
+        "W2159307101",
+        "W2294151168",
+        "W2548802954",
+        "W2549216668",
+        "W2571115941",
+        "W2746481701",
+        "W3099855898",
+        "W4250058668",
+        "W618254468"
+      ],
+      "related_works": [
+        "W1532677580",
+        "W1966935220",
+        "W2008498579",
+        "W2064963663",
+        "W2386719143",
+        "W2559825912",
+        "W2806616984",
+        "W2923272690",
+        "W2979398413",
+        "W4388251424"
+      ],
+      "discovery_source": [
+        "topic_search:whole-body control robotics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:11",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W2744484133",
+      "landing_page_url": "https://doi.org/10.1109/iros.2017.8206174",
+      "open_access_url": "http://hdl.handle.net/20.500.11850/174751",
+      "pdf_url": null,
+      "research_fit": 31,
+      "video_potential": 26,
+      "matched_topics": [
+        "legged_humanoid",
+        "optimal_control"
+      ],
+      "matched_keywords": [
+        "quadrupedal robot",
+        "whole-body control",
+        "whole body control"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "quadrupedal robot"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "topic",
+          "label": "WBC / MPC / Optimization",
+          "keywords": [
+            "whole-body control",
+            "whole body control"
+          ],
+          "location": "title",
+          "points": 18.0
+        }
+      ],
+      "historical_value_score": 62.0,
+      "historical_score_components": {
+        "research_relevance": 31.0,
+        "normalized_citation": 99.3,
+        "fwci": 100.0,
+        "citation_momentum": 45.8,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2017 年",
+        "同领域同年份引用标准化位于前 0.7%",
+        "OpenAlex FWCI 12.62",
+        "近 2 年年均引用 22.0；此前 2 年年均 24.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W2911087563",
+      "openalex_id": "W2911087563",
+      "base_arxiv_id": "1901.08652",
+      "doi": "10.1126/scirobotics.aau5872",
+      "title": "Learning agile and dynamic motor skills for legged robots",
+      "authors": [
+        "Jemin Hwangbo",
+        "Joonho Lee",
+        "Alexey Dosovitskiy",
+        "C. Dario Bellicoso",
+        "Vassilios Tsounis",
+        "Vladlen Koltun",
+        "Marco Hutter"
+      ],
+      "abstract": "Legged robots pose one of the greatest challenges in robotics. Dynamic and agile maneuvers of animals cannot be imitated by existing methods that are crafted by humans. A compelling alternative is reinforcement learning, which requires minimal craftsmanship and promotes the natural evolution of a control policy. However, so far, reinforcement learning research for legged robots is mainly limited to simulation, and only few and comparably simple examples have been deployed on real systems. The primary reason is that training with real robots, particularly with dynamically balancing systems, is complicated and expensive. In the present work, we introduce a method for training a neural network policy in simulation and transferring it to a state-of-the-art legged system, thereby leveraging fast, automated, and cost-effective data generation schemes. The approach is applied to the ANYmal robot, a sophisticated medium-dog-sized quadrupedal system. Using policies trained in simulation, the quadrupedal machine achieves locomotion skills that go beyond what had been achieved with prior methods: ANYmal is capable of precisely and energy-efficiently following high-level body velocity commands, running faster than before, and recovering from falling even in complex configurations.",
+      "publication_date": "2019-01-17",
+      "publication_year": 2019,
+      "source_name": "Science Robotics",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.9998000264167786
+        },
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.9765999913215637
+        },
+        {
+          "id": "https://openalex.org/T12810",
+          "display_name": "Real-time simulation and control systems",
+          "score": 0.972100019454956
+        }
+      ],
+      "cited_by_count": 1430,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 100
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 278
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 219
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 228
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 184
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 198
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 152
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 70
+        }
+      ],
+      "fwci": 49.7903,
+      "citation_normalized_percentile": 0.99988231,
+      "referenced_works": [
+        "W1191599655",
+        "W1481659984",
+        "W1487434675",
+        "W1565928583",
+        "W1607633572",
+        "W1771410628",
+        "W1822001265",
+        "W1975230295",
+        "W1979445726",
+        "W2001685400",
+        "W2007864935",
+        "W2016958754",
+        "W2026582138",
+        "W2042408133",
+        "W2065238107",
+        "W2071939188",
+        "W2073373795",
+        "W2098491426",
+        "W2101340954",
+        "W2109008048",
+        "W2111253117",
+        "W2111904757",
+        "W2121863487",
+        "W2122827816",
+        "W2129224530",
+        "W2132600856",
+        "W2147032798",
+        "W2167647761",
+        "W2205975260",
+        "W2294151168",
+        "W2296073425",
+        "W2296360731",
+        "W2396471471",
+        "W2477400028",
+        "W2491414412",
+        "W2529220408",
+        "W2539534359",
+        "W2546975091",
+        "W2549216668",
+        "W2618245409",
+        "W2726187156",
+        "W2733312032",
+        "W2736601468",
+        "W2739330054",
+        "W2767050701",
+        "W2779458783",
+        "W2784449021",
+        "W2792628366",
+        "W2793991136",
+        "W2798273187",
+        "W2850053679",
+        "W2949608212",
+        "W2952578114",
+        "W2962736495",
+        "W2963184939",
+        "W2964114602",
+        "W3101442004",
+        "W3105372678",
+        "W3105609823",
+        "W3106462682",
+        "W3197589",
+        "W34308023",
+        "W4214717370",
+        "W4230987057",
+        "W4241459016",
+        "W4248871477",
+        "W4250058668",
+        "W4300892751",
+        "W618254468"
+      ],
+      "related_works": [
+        "W1511563303",
+        "W1533660521",
+        "W1580637061",
+        "W2084951977",
+        "W2153192722",
+        "W3080852575",
+        "W4246053446",
+        "W4323555934",
+        "W4368755191",
+        "W582091997"
+      ],
+      "discovery_source": [
+        "topic_search:quadrupedal and legged robots",
+        "topic_search:robot learning"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:06",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W2911087563",
+      "landing_page_url": "https://doi.org/10.1126/scirobotics.aau5872",
+      "open_access_url": "http://arxiv.org/abs/1901.08652",
+      "pdf_url": "https://arxiv.org/pdf/1901.08652",
+      "research_fit": 30,
+      "video_potential": 28,
+      "matched_topics": [
+        "legged_humanoid",
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "legged robots",
+        "reinforcement learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "legged robots"
+          ],
+          "location": "title",
+          "points": 20.0
+        },
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "reinforcement learning"
+          ],
+          "location": "abstract",
+          "points": 10.4
+        }
+      ],
+      "historical_value_score": 62.7,
+      "historical_score_components": {
+        "research_relevance": 30.0,
+        "normalized_citation": 100.0,
+        "fwci": 100.0,
+        "citation_momentum": 42.3,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2019 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 49.79",
+        "近 2 年年均引用 189.0；此前 2 年年均 223.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W2914653242",
+      "openalex_id": "W2914653242",
+      "base_arxiv_id": "1901.08100",
+      "doi": "10.1177/0278364920918014",
+      "title": "Dynamic locomotion for passive-ankle biped robots and humanoids using whole-body locomotion control",
+      "authors": [
+        "Donghyun Kim",
+        "Steven Jens Jorgensen",
+        "Jaemin Lee",
+        "Junhyeok Ahn",
+        "Jianwen Luo",
+        "Luis Sentis"
+      ],
+      "abstract": "Whole-body control (WBC) is a generic task-oriented control method for feedback control of loco-manipulation behaviors in humanoid robots. The combination of WBC and model-based walking controllers has been widely utilized in various humanoid robots. However, to date, the WBC method has not been employed for unsupported passive-ankle dynamic locomotion. As such, in this article, we devise a new WBC, dubbed the whole-body locomotion controller (WBLC), that can achieve experimental dynamic walking on unsupported passive-ankle biped robots. A key aspect of WBLC is the relaxation of contact constraints such that the control commands produce reduced jerk when switching foot contacts. To achieve robust dynamic locomotion, we conduct an in-depth analysis of uncertainty for our dynamic walking algorithm called the time-to-velocity-reversal (TVR) planner. The uncertainty study is fundamental as it allows us to improve the control algorithms and mechanical structure of our robot to fulfill the tolerated uncertainty. In addition, we conduct extensive experimentation for: (1) unsupported dynamic balancing (i.e., in-place stepping) with a six-degree-of-freedom biped, Mercury; (2) unsupported directional walking with Mercury; (3) walking over an irregular and slippery terrain with Mercury; and 4) in-place walking with our newly designed ten-DoF viscoelastic liquid-cooled biped, DRACO. Overall, the main contributions of this work are on: (a) achieving various modalities of unsupported dynamic locomotion of passive-ankle bipeds using a WBLC controller and a TVR planner; (b) conducting an uncertainty analysis to improve the mechanical structure and the controllers of Mercury; and (c) devising a whole-body control strategy that reduces movement jerk during walking.",
+      "publication_date": "2020-06-10",
+      "publication_year": 2020,
+      "source_name": "The International Journal of Robotics Research",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 1.0
+        },
+        {
+          "id": "https://openalex.org/T11023",
+          "display_name": "Prosthetics and Rehabilitation Robotics",
+          "score": 0.9987000226974487
+        },
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9959999918937683
+        }
+      ],
+      "cited_by_count": 134,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 35
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 26
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 23
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 18
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 17
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        }
+      ],
+      "fwci": 4.7164,
+      "citation_normalized_percentile": 0.96160809,
+      "referenced_works": [
+        "W1499277207",
+        "W1504362584",
+        "W1507646238",
+        "W152725453",
+        "W1820821744",
+        "W1853143499",
+        "W1898154573",
+        "W1945123189",
+        "W1963750790",
+        "W1998568767",
+        "W2019606703",
+        "W2029058516",
+        "W2061063863",
+        "W2061350632",
+        "W2079995373",
+        "W2081683070",
+        "W2120675177",
+        "W2144351850",
+        "W2158457615",
+        "W2160049112",
+        "W2163668399",
+        "W2239166089",
+        "W2295584263",
+        "W2335044248",
+        "W2413990562",
+        "W2547678094",
+        "W2573227850",
+        "W2761235830",
+        "W2804790641",
+        "W2908233537",
+        "W2963317054",
+        "W3044706119",
+        "W4210990956"
+      ],
+      "related_works": [
+        "W2067477688",
+        "W2171912896",
+        "W2542723153",
+        "W2940850594",
+        "W3029431726",
+        "W4231453746",
+        "W4242718759",
+        "W4361230927",
+        "W4376605692",
+        "W4390135167"
+      ],
+      "discovery_source": [
+        "topic_search:humanoid locomotion and manipulation",
+        "topic_search:whole-body control robotics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:08",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W2914653242",
+      "landing_page_url": "https://doi.org/10.1177/0278364920918014",
+      "open_access_url": "http://arxiv.org/abs/1901.08100",
+      "pdf_url": "https://arxiv.org/pdf/1901.08100",
+      "research_fit": 38,
+      "video_potential": 40,
+      "matched_topics": [
+        "legged_humanoid",
+        "mobile_manipulation",
+        "optimal_control"
+      ],
+      "matched_keywords": [
+        "humanoid robots",
+        "loco-manipulation",
+        "loco manipulation",
+        "whole-body control",
+        "whole body control",
+        "WBC"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "humanoid robots"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "topic",
+          "label": "Mobile Manipulation",
+          "keywords": [
+            "loco-manipulation",
+            "loco manipulation"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "topic",
+          "label": "WBC / MPC / Optimization",
+          "keywords": [
+            "whole-body control",
+            "whole body control",
+            "WBC"
+          ],
+          "location": "abstract",
+          "points": 11.7
+        }
+      ],
+      "historical_value_score": 65.1,
+      "historical_score_components": {
+        "research_relevance": 38.0,
+        "normalized_citation": 96.2,
+        "fwci": 100.0,
+        "citation_momentum": 43.9,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 3.8%",
+        "OpenAlex FWCI 4.72",
+        "近 2 年年均引用 21.5；此前 2 年年均 24.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W2920812058",
+      "openalex_id": "W2920812058",
+      "base_arxiv_id": null,
+      "doi": "10.1109/lra.2019.2908502",
+      "title": "Passive Whole-Body Control for Quadruped Robots: Experimental Validation Over Challenging Terrain",
+      "authors": [
+        "Shamel Fahmi",
+        "Carlos Mastalli",
+        "Michele Focchi",
+        "Claudio Semini"
+      ],
+      "abstract": "We present experimental results using a passive whole-body control approach for quadruped robots that achieves dynamic locomotion while compliantly balancing the robot's trunk. We formulate the motion tracking as a quadratic program that takes into account the full robot rigid body dynamics, the actuation limits, the joint limits, and the contact interaction. We analyze the controller's robustness against inaccurate friction coefficient estimates and unstable footholds, as well as its capability to redistribute the load as a consequence of enforcing actuation limits. Additionally, we present practical implementation details gained from the experience with the real platform. Extensive experimental trials on the 90 kg hydraulically actuated quadruped robot validate the capabilities of this controller under various terrain conditions and gaits. The proposed approach is superior for accurate execution of highly dynamic motions with respect to the current state of the art.",
+      "publication_date": "2019-04-01",
+      "publication_year": 2019,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.9998999834060669
+        },
+        {
+          "id": "https://openalex.org/T11372",
+          "display_name": "Hydraulic and Pneumatic Systems",
+          "score": 0.9742000102996826
+        },
+        {
+          "id": "https://openalex.org/T11023",
+          "display_name": "Prosthetics and Rehabilitation Robotics",
+          "score": 0.9700000286102295
+        }
+      ],
+      "cited_by_count": 134,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 18
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 17
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 22
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 14
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 30
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 22
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 6
+        }
+      ],
+      "fwci": 5.9353,
+      "citation_normalized_percentile": 0.97258863,
+      "referenced_works": [
+        "W1499277207",
+        "W1522935148",
+        "W1661823234",
+        "W2003132288",
+        "W2046636826",
+        "W2062940189",
+        "W2080421646",
+        "W2104181254",
+        "W2144355672",
+        "W2300435054",
+        "W2335044248",
+        "W2461181622",
+        "W2470094176",
+        "W2738799195",
+        "W2762555062",
+        "W2773174577",
+        "W2774366155",
+        "W2793991136",
+        "W2900391154",
+        "W2909331752",
+        "W2952026684",
+        "W2963153688",
+        "W3102051120",
+        "W3102715624",
+        "W3103075896",
+        "W3105612804",
+        "W6786332548"
+      ],
+      "related_works": [
+        "W1743191351",
+        "W1992962589",
+        "W2100910774",
+        "W2139139490",
+        "W2168918646",
+        "W2283275227",
+        "W2292078036",
+        "W2517926463",
+        "W2655458901",
+        "W3032871857"
+      ],
+      "discovery_source": [
+        "topic_search:whole-body control robotics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:11",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W2920812058",
+      "landing_page_url": "https://doi.org/10.1109/lra.2019.2908502",
+      "open_access_url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8678400",
+      "pdf_url": "https://iris.unitn.it/bitstream/11572/348170/2/fahmi19ral.pdf",
+      "research_fit": 38,
+      "video_potential": 48,
+      "matched_topics": [
+        "legged_humanoid",
+        "optimal_control"
+      ],
+      "matched_keywords": [
+        "quadruped robots",
+        "quadruped robot",
+        "whole-body control",
+        "whole body control"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "quadruped robots",
+            "quadruped robot"
+          ],
+          "location": "title",
+          "points": 20.0
+        },
+        {
+          "kind": "topic",
+          "label": "WBC / MPC / Optimization",
+          "keywords": [
+            "whole-body control",
+            "whole body control"
+          ],
+          "location": "title",
+          "points": 18.0
+        }
+      ],
+      "historical_value_score": 63.8,
+      "historical_score_components": {
+        "research_relevance": 38.0,
+        "normalized_citation": 97.3,
+        "fwci": 100.0,
+        "citation_momentum": 29.5,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2019 年",
+        "同领域同年份引用标准化位于前 2.7%",
+        "OpenAlex FWCI 5.94",
+        "近 2 年年均引用 11.5；此前 2 年年均 19.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W2963184939",
+      "openalex_id": "W2963184939",
+      "base_arxiv_id": null,
+      "doi": "10.15607/rss.2018.xiv.010",
+      "title": "Sim-to-Real: Learning Agile Locomotion For Quadruped Robots",
+      "authors": [
+        "Jie Tan",
+        "Tingnan Zhang",
+        "Erwin Coumans",
+        "Atıl Işçen",
+        "Yunfei Bai",
+        "Danijar Hafner",
+        "Steven Bohez",
+        "Vincent Vanhoucke"
+      ],
+      "abstract": "Designing agile locomotion for quadruped robots often requires extensive expertise and tedious manual tuning. In this paper, we present a system to automate this process by leveraging deep reinforcement learning techniques. Our system can learn quadruped locomotion from scratch using simple reward signals. In addition, users can provide an open loop reference to guide the learning process when more control over the learned gait is needed. The control policies are learned in a physics simulator and then deployed on real robots. In robotics, policies trained in simulation often do not transfer to the real world. We narrow this reality gap by improving the physics simulator and learning robust policies. We improve the simulation using system identification, developing an accurate actuator model and simulating latency. We learn robust controllers by randomizing the physical environments, adding perturbations and designing a compact observation space. We evaluate our system on two agile locomotion gaits: trotting and galloping. After learning in simulation, a quadruped robot can successfully perform both gaits in the real world.",
+      "publication_date": "2018-06-26",
+      "publication_year": 2018,
+      "source_name": null,
+      "source_type": "conference-paper",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.9997000098228455
+        },
+        {
+          "id": "https://openalex.org/T10812",
+          "display_name": "Human Pose and Action Recognition",
+          "score": 0.9513000249862671
+        },
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9271000027656555
+        }
+      ],
+      "cited_by_count": 685,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 23
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 94
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 97
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 86
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 94
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 116
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 101
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 64
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 10
+        }
+      ],
+      "fwci": 150.7475,
+      "citation_normalized_percentile": 1.0,
+      "referenced_works": [
+        "W1481659984",
+        "W1517081929",
+        "W1738827650",
+        "W1768536314",
+        "W1974461875",
+        "W1977655452",
+        "W1994923984",
+        "W2001685400",
+        "W2014505645",
+        "W2081329272",
+        "W2089016645",
+        "W2089087399",
+        "W2095008141",
+        "W2109008048",
+        "W2137633880",
+        "W2139053308",
+        "W2144834630",
+        "W2147032798",
+        "W2161427949",
+        "W2174364281",
+        "W2205975260",
+        "W2288732521",
+        "W2293467699",
+        "W2295130897",
+        "W2342662072",
+        "W2460299708",
+        "W2477400028",
+        "W2534269850",
+        "W2546975091",
+        "W2562736583",
+        "W2586431331",
+        "W2595845486",
+        "W2597681922",
+        "W2602963933",
+        "W2605102758",
+        "W2726187156",
+        "W2736601468",
+        "W2739930441",
+        "W2756071177",
+        "W2758237641",
+        "W2765237784",
+        "W2766447205",
+        "W2766937718",
+        "W2767425040",
+        "W2781585732",
+        "W2786706252",
+        "W2788643836",
+        "W2952629144",
+        "W2962736495",
+        "W2962837436",
+        "W2962899390",
+        "W2963184463",
+        "W2963614114",
+        "W2963864421",
+        "W3101442004",
+        "W4211089519",
+        "W4248871477",
+        "W4297687493",
+        "W4297824641",
+        "W4297918469",
+        "W44140225",
+        "W770013183"
+      ],
+      "related_works": [
+        "W1973385172",
+        "W2022021367",
+        "W2031695474",
+        "W2138720691",
+        "W2586732548",
+        "W2656997359",
+        "W4240110559",
+        "W4306904969",
+        "W4362501864",
+        "W4380318855"
+      ],
+      "discovery_source": [
+        "topic_search:sim-to-real robotics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:15",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W2963184939",
+      "landing_page_url": "https://doi.org/10.15607/rss.2018.xiv.010",
+      "open_access_url": "https://doi.org/10.15607/rss.2018.xiv.010",
+      "pdf_url": "https://doi.org/10.15607/rss.2018.xiv.010",
+      "research_fit": 36,
+      "video_potential": 56,
+      "matched_topics": [
+        "legged_humanoid",
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "quadruped robots",
+        "quadruped robot",
+        "sim-to-real",
+        "reinforcement learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "quadruped robots",
+            "quadruped robot"
+          ],
+          "location": "title",
+          "points": 20.0
+        },
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "sim-to-real",
+            "reinforcement learning"
+          ],
+          "location": "title",
+          "points": 16.0
+        }
+      ],
+      "historical_value_score": 62.5,
+      "historical_score_components": {
+        "research_relevance": 36.0,
+        "normalized_citation": 100.0,
+        "fwci": 100.0,
+        "citation_momentum": 32.0,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2018 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 150.75",
+        "近 2 年年均引用 58.5；此前 2 年年均 91.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W3007769740",
+      "openalex_id": "W3007769740",
+      "base_arxiv_id": null,
+      "doi": "10.1109/lra.2020.2974707",
+      "title": "RLBench: The Robot Learning Benchmark &amp; Learning Environment",
+      "authors": [
+        "Stephen James",
+        "Zicong Ma",
+        "David Rovick Arrojo",
+        "Andrew J. Davison"
+      ],
+      "abstract": "We present a challenging new benchmark and learning-environment for robot learning: RLBench. The benchmark features 100 completely unique, hand-designed tasks, ranging in difficulty from simple target reaching and door opening to longer multi-stage tasks, such as opening an oven and placing a tray in it. We provide an array of both proprioceptive observations and visual observations, which include rgb, depth, and segmentation masks from an over-the-shoulder stereo camera and an eye-in-hand monocular camera. Uniquely, each task comes with an infinite supply of demos through the use of motion planners operating on a series of waypoints given during task creation time; enabling an exciting flurry of demonstration-based learning possibilities. RLBench has been designed with scalability in mind; new tasks, along with their motion-planned demos, can be easily created and then verified by a series of tools, allowing users to submit their own tasks to the RLBench task repository. This large-scale benchmark aims to accelerate progress in a number of vision-guided manipulation research areas, including: reinforcement learning, imitation learning, multi-task learning, geometric computer vision, and in particular, few-shot learning. With the benchmark's breadth of tasks and demonstrations, we propose the first large-scale few-shot challenge in robotics. We hope that the scale and diversity of RLBench offers unparalleled research opportunities in the robot learning community and beyond. Benchmarking code and videos can be found at https://sites.google.com/view/rlbench.",
+      "publication_date": "2020-02-18",
+      "publication_year": 2020,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9994999766349792
+        },
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.9961000084877014
+        },
+        {
+          "id": "https://openalex.org/T11307",
+          "display_name": "Domain Adaptation and Few-Shot Learning",
+          "score": 0.9930999875068665
+        }
+      ],
+      "cited_by_count": 330,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 43
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 85
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 71
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 36
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 25
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 47
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 23
+        }
+      ],
+      "fwci": 15.4511,
+      "citation_normalized_percentile": 0.99639073,
+      "referenced_works": [
+        "W1771410628",
+        "W1861492603",
+        "W1987648924",
+        "W2005756025",
+        "W2037227137",
+        "W2039918963",
+        "W2082511574",
+        "W2106638738",
+        "W2110762409",
+        "W2112742338",
+        "W2117539524",
+        "W2145339207",
+        "W2158782408",
+        "W2163605009",
+        "W2257979135",
+        "W2466591533",
+        "W2472819217",
+        "W2521863123",
+        "W2578206533",
+        "W2601450892",
+        "W2604763608",
+        "W2618530766",
+        "W2725320964",
+        "W2736601468",
+        "W2755546070",
+        "W2766447205",
+        "W2767050701",
+        "W2781585732",
+        "W2781726626",
+        "W2785342287",
+        "W2787501667",
+        "W2787938642",
+        "W2794549886",
+        "W2810785043",
+        "W2888144883",
+        "W2895558617",
+        "W2911087563",
+        "W2951262671",
+        "W2954718200",
+        "W2962899390",
+        "W2963188159",
+        "W2963341924",
+        "W2963390419",
+        "W2963394817",
+        "W2963504951",
+        "W2963703448",
+        "W2963864421",
+        "W2964112702",
+        "W2964137828",
+        "W2964262254",
+        "W2981344907",
+        "W2988445697",
+        "W3003195743",
+        "W3028676366",
+        "W3099587965",
+        "W3101442004",
+        "W4297686387",
+        "W4297818513",
+        "W4300047986",
+        "W6638018090",
+        "W6639102338",
+        "W6684921986",
+        "W6717697761",
+        "W6719358946",
+        "W6720057410",
+        "W6726908607",
+        "W6731982132",
+        "W6735236233",
+        "W6736057607",
+        "W6740023956",
+        "W6741002519",
+        "W6744181227",
+        "W6747387971",
+        "W6747473740",
+        "W6747943641",
+        "W6748566876",
+        "W6748839928",
+        "W6749858761",
+        "W6752818329",
+        "W6753243525",
+        "W6753311412",
+        "W6754628760",
+        "W6764769363",
+        "W6769596995",
+        "W6769609827",
+        "W6780559895"
+      ],
+      "related_works": [
+        "W112744582",
+        "W1763389228",
+        "W2099788234",
+        "W2343019076",
+        "W2593649365",
+        "W2950577464",
+        "W4287183196",
+        "W4289979017",
+        "W4302612983",
+        "W4381245711"
+      ],
+      "discovery_source": [
+        "topic_search:robot learning"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:13",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W3007769740",
+      "landing_page_url": "https://doi.org/10.1109/lra.2020.2974707",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 16,
+      "video_potential": 35,
+      "matched_topics": [
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "robot learning",
+        "reinforcement learning",
+        "imitation learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "robot learning",
+            "reinforcement learning",
+            "imitation learning"
+          ],
+          "location": "title",
+          "points": 16.0
+        }
+      ],
+      "historical_value_score": 61.4,
+      "historical_score_components": {
+        "research_relevance": 16.0,
+        "normalized_citation": 99.6,
+        "fwci": 100.0,
+        "citation_momentum": 59.8,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 0.4%",
+        "OpenAlex FWCI 15.45",
+        "近 2 年年均引用 64.0；此前 2 年年均 53.5",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W3012010640",
+      "openalex_id": "W3012010640",
+      "base_arxiv_id": "2005.11431",
+      "doi": "10.1109/lra.2020.2979625",
+      "title": "LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops",
+      "authors": [
+        "Victor Klemm",
+        "Alessandro Morra",
+        "Lionel Gulich",
+        "Dominik Mannhart",
+        "David Rohr",
+        "Mina Kamel",
+        "Yvain de Viragh",
+        "Roland Siegwart"
+      ],
+      "abstract": "We present a hierarchical whole-body controller leveraging the full rigid body dynamics of the wheeled bipedal robot Ascento. We derive closed-form expressions for the dynamics of its kinematic loops in a way that readily generalizes to more complex systems. The rolling constraint is incorporated using a compact analytic solution based on rotation matrices. The non-minimum phase balancing dynamics are accounted for by including a linear-quadratic regulator as a motion task. Robustness when driving curves is increased by regulating the lean angle as a function of the zero-moment point. The proposed controller is computationally lightweight and significantly extends the rough-terrain capabilities and robustness of the system, as we demonstrate in several experiments.",
+      "publication_date": "2020-03-09",
+      "publication_year": 2020,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.9998999834060669
+        },
+        {
+          "id": "https://openalex.org/T11615",
+          "display_name": "Control and Dynamics of Mobile Robots",
+          "score": 0.989799976348877
+        },
+        {
+          "id": "https://openalex.org/T11170",
+          "display_name": "Biomimetic flight and propulsion mechanisms",
+          "score": 0.987500011920929
+        }
+      ],
+      "cited_by_count": 183,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 57
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 38
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 28
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 27
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 15
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 2
+        }
+      ],
+      "fwci": 5.3044,
+      "citation_normalized_percentile": 0.96943124,
+      "referenced_works": [
+        "W1560270123",
+        "W1592294156",
+        "W1967117511",
+        "W1969140852",
+        "W1969366849",
+        "W1981141114",
+        "W2015996585",
+        "W201697872",
+        "W2019606703",
+        "W2033541559",
+        "W2037729465",
+        "W2054577881",
+        "W2099544223",
+        "W2113265921",
+        "W2135929901",
+        "W2177270305",
+        "W2296360731",
+        "W2565660673",
+        "W2571115941",
+        "W2744484133",
+        "W2779458783",
+        "W2783824884",
+        "W2913792742",
+        "W2951633861",
+        "W2963153688",
+        "W2963190023",
+        "W2968031102",
+        "W3099530328",
+        "W3099855898",
+        "W3101817006",
+        "W4241459016",
+        "W4243385754",
+        "W4297819560",
+        "W6608173742"
+      ],
+      "related_works": [
+        "W122584421",
+        "W1987749388",
+        "W2066693961",
+        "W2138228021",
+        "W2259616189",
+        "W2331332883",
+        "W2368363778",
+        "W2373921823",
+        "W2789522126",
+        "W4244295168"
+      ],
+      "discovery_source": [
+        "topic_search:whole-body control robotics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:11",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": "2026-08-04T00:26:18+08:00",
+      "recommendation_count": 1,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W3012010640",
+      "landing_page_url": "https://doi.org/10.1109/lra.2020.2979625",
+      "open_access_url": "http://hdl.handle.net/20.500.11850/411183",
+      "pdf_url": null,
+      "research_fit": 38,
+      "video_potential": 28,
+      "matched_topics": [
+        "legged_humanoid",
+        "optimal_control"
+      ],
+      "matched_keywords": [
+        "bipedal robot",
+        "whole-body control",
+        "whole body control"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "bipedal robot"
+          ],
+          "location": "title",
+          "points": 20.0
+        },
+        {
+          "kind": "topic",
+          "label": "WBC / MPC / Optimization",
+          "keywords": [
+            "whole-body control",
+            "whole body control"
+          ],
+          "location": "title",
+          "points": 18.0
+        }
+      ],
+      "historical_value_score": 66.5,
+      "historical_score_components": {
+        "research_relevance": 38.0,
+        "normalized_citation": 96.9,
+        "fwci": 100.0,
+        "citation_momentum": 55.3,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 3.1%",
+        "OpenAlex FWCI 5.30",
+        "近 2 年年均引用 36.5；此前 2 年年均 33.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W3023846712",
+      "openalex_id": "W3023846712",
+      "base_arxiv_id": null,
+      "doi": "10.1109/lra.2020.2990720",
+      "title": "Trajectory Optimization for Wheeled-Legged Quadrupedal Robots Driving in Challenging Terrain",
+      "authors": [
+        "Vivian Suzano Medeiros",
+        "Edo Jelavić",
+        "Marko Bjelonic",
+        "Roland Siegwart",
+        "Marco Antônio Meggiolaro",
+        "Marco Hutter"
+      ],
+      "abstract": "Wheeled-legged robots are an attractive solution for versatile locomotion in challenging terrain. They combine the speed and efficiency of wheels with the ability of legs to traverse challenging terrain. In this letter, we present a trajectory optimization formulation for wheeled-legged robots that optimizes over the base and wheels' positions and forces and takes into account the terrain information while computing the plans. This enables us to find optimal driving motions over challenging terrain. The robot is modeled as a single rigid-body, which allows us to plan complex motions and still keep a low computational complexity to solve the optimization quickly. The terrain map, together with the use of a stability constraint, allows the optimizer to generate feasible motions that cannot be discovered without taking the terrain information into account. The optimization is formulated as a Nonlinear Programming (NLP) problem and the reference motions are tracked by a hierarchical whole-body controller that computes the torque actuation commands for the robot. The trajectories have been experimentally verified on quadrupedal robot ANYmal equipped with non-steerable torque-controlled wheels. Our trajectory optimization framework enables wheeled quadrupedal robots to drive over challenging terrain, e.g., steps, slopes, stairs, while negotiating these obstacles with dynamic motions.",
+      "publication_date": "2020-04-27",
+      "publication_year": 2020,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 1.0
+        },
+        {
+          "id": "https://openalex.org/T10586",
+          "display_name": "Robotic Path Planning Algorithms",
+          "score": 0.9958000183105469
+        },
+        {
+          "id": "https://openalex.org/T11615",
+          "display_name": "Control and Dynamics of Mobile Robots",
+          "score": 0.9890000224113464
+        }
+      ],
+      "cited_by_count": 102,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 26
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 22
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 20
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 2
+        }
+      ],
+      "fwci": 3.463,
+      "citation_normalized_percentile": 0.93606729,
+      "referenced_works": [
+        "W1528217929",
+        "W1971379688",
+        "W1972855608",
+        "W1987175021",
+        "W1998480117",
+        "W1999852035",
+        "W2080132051",
+        "W2101340954",
+        "W2104571279",
+        "W2123871098",
+        "W2133844819",
+        "W2296360731",
+        "W2419326772",
+        "W2471969791",
+        "W2549216668",
+        "W2788030459",
+        "W2793991136",
+        "W2809054577",
+        "W2811027829",
+        "W2890433751",
+        "W2913792742",
+        "W2949209865",
+        "W2951633861",
+        "W2952867577",
+        "W2968031102",
+        "W3003188160",
+        "W3003397085",
+        "W3006305830",
+        "W3011481717",
+        "W3090829738",
+        "W3101817006",
+        "W3102734218",
+        "W3103345480",
+        "W4241459016",
+        "W4250058668",
+        "W6774110809",
+        "W6822935082"
+      ],
+      "related_works": [
+        "W1643150164",
+        "W2156329176",
+        "W2793035520",
+        "W3005657145",
+        "W3139820740",
+        "W4200195314",
+        "W4285102152",
+        "W4294690775",
+        "W4383097398",
+        "W4389574494"
+      ],
+      "discovery_source": [
+        "topic_search:quadrupedal and legged robots"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:06",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W3023846712",
+      "landing_page_url": "https://doi.org/10.1109/lra.2020.2990720",
+      "open_access_url": "http://hdl.handle.net/20.500.11850/632175",
+      "pdf_url": null,
+      "research_fit": 31,
+      "video_potential": 19,
+      "matched_topics": [
+        "legged_humanoid",
+        "optimal_control"
+      ],
+      "matched_keywords": [
+        "quadrupedal robot",
+        "legged robots",
+        "trajectory optimization"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "quadrupedal robot",
+            "legged robots"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "topic",
+          "label": "WBC / MPC / Optimization",
+          "keywords": [
+            "trajectory optimization"
+          ],
+          "location": "title",
+          "points": 18.0
+        }
+      ],
+      "historical_value_score": 61.4,
+      "historical_score_components": {
+        "research_relevance": 31.0,
+        "normalized_citation": 93.6,
+        "fwci": 100.0,
+        "citation_momentum": 39.3,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 6.4%",
+        "OpenAlex FWCI 3.46",
+        "近 2 年年均引用 16.5；此前 2 年年均 21.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W3093922502",
+      "openalex_id": "W3093922502",
+      "base_arxiv_id": "2010.11251",
+      "doi": "10.1126/scirobotics.abc5986",
+      "title": "Learning quadrupedal locomotion over challenging terrain",
+      "authors": [
+        "Joonho Lee",
+        "Jemin Hwangbo",
+        "Lorenz Wellhausen",
+        "Vladlen Koltun",
+        "Marco Hutter"
+      ],
+      "abstract": "Legged locomotion can extend the operational domain of robots to some of the most challenging environments on Earth. However, conventional controllers for legged locomotion are based on elaborate state machines that explicitly trigger the execution of motion primitives and reflexes. These designs have increased in complexity but fallen short of the generality and robustness of animal locomotion. Here, we present a robust controller for blind quadrupedal locomotion in challenging natural environments. Our approach incorporates proprioceptive feedback in locomotion control and demonstrates zero-shot generalization from simulation to natural environments. The controller is trained by reinforcement learning in simulation. The controller is driven by a neural network policy that acts on a stream of proprioceptive signals. The controller retains its robustness under conditions that were never encountered during training: deformable terrains such as mud and snow, dynamic footholds such as rubble, and overground impediments such as thick vegetation and gushing water. The presented work indicates that robust locomotion in natural environments can be achieved by training in simple domains.",
+      "publication_date": "2020-10-21",
+      "publication_year": 2020,
+      "source_name": "Science Robotics",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.6197999715805054
+        },
+        {
+          "id": "https://openalex.org/T11170",
+          "display_name": "Biomimetic flight and propulsion mechanisms",
+          "score": 0.06030000001192093
+        },
+        {
+          "id": "https://openalex.org/T11486",
+          "display_name": "Micro and Nano Robotics",
+          "score": 0.049400001764297485
+        }
+      ],
+      "cited_by_count": 1046,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 85
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 294
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 238
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 210
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 136
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 81
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 2
+        }
+      ],
+      "fwci": 31.6143,
+      "citation_normalized_percentile": 0.99959458,
+      "referenced_works": [
+        "W2029058516",
+        "W2073288601",
+        "W2094444216",
+        "W2139710904",
+        "W2150333870",
+        "W2577008596",
+        "W2725489675",
+        "W2736557071",
+        "W2755158994",
+        "W2767050701",
+        "W2779458783",
+        "W2784449021",
+        "W2793991136",
+        "W2803575051",
+        "W2889693550",
+        "W2907537824",
+        "W2911087563",
+        "W2963184939",
+        "W2963465704",
+        "W2964168254",
+        "W2968774764",
+        "W2972758308",
+        "W2972798201",
+        "W3039737909",
+        "W4214746323",
+        "W4236914428",
+        "W4241015692",
+        "W4241459016",
+        "W4250058668"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "topic_search:quadrupedal and legged robots"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:06",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W3093922502",
+      "landing_page_url": "https://doi.org/10.1126/scirobotics.abc5986",
+      "open_access_url": "http://arxiv.org/abs/2010.11251",
+      "pdf_url": "https://arxiv.org/pdf/2010.11251",
+      "research_fit": 23,
+      "video_potential": 33,
+      "matched_topics": [
+        "legged_humanoid",
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "legged locomotion",
+        "reinforcement learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "legged locomotion"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "reinforcement learning"
+          ],
+          "location": "abstract",
+          "points": 10.4
+        }
+      ],
+      "historical_value_score": 60.1,
+      "historical_score_components": {
+        "research_relevance": 23.0,
+        "normalized_citation": 100.0,
+        "fwci": 100.0,
+        "citation_momentum": 42.3,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 31.61",
+        "近 2 年年均引用 189.5；此前 2 年年均 224.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W3128528928",
+      "openalex_id": "W3128528928",
+      "base_arxiv_id": "2102.03861",
+      "doi": "10.1177/02783649231201196",
+      "title": "Dynamic movement primitives in robotics: A tutorial survey",
+      "authors": [
+        "Matteo Saveriano",
+        "Fares J. Abu‐Dakka",
+        "Aljaž Kramberger",
+        "Luka Peternel"
+      ],
+      "abstract": "Biological systems, including human beings, have the innate ability to perform complex tasks in a versatile and agile manner. Researchers in sensorimotor control have aimed to comprehend and formally define this innate characteristic. The idea, supported by several experimental findings, that biological systems are able to combine and adapt basic units of motion into complex tasks finally leads to the formulation of the motor primitives’ theory. In this respect, Dynamic Movement Primitives (DMPs) represent an elegant mathematical formulation of the motor primitives as stable dynamical systems and are well suited to generate motor commands for artificial systems like robots. In the last decades, DMPs have inspired researchers in different robotic fields including imitation and reinforcement learning, optimal control, physical interaction, and human–robot co-working, resulting in a considerable amount of published papers. The goal of this tutorial survey is two-fold. On one side, we present the existing DMP formulations in rigorous mathematical terms and discuss the advantages and limitations of each approach as well as practical implementation details. In the tutorial vein, we also search for existing implementations of presented approaches and release several others. On the other side, we provide a systematic and comprehensive review of existing literature and categorize state-of-the-art work on DMP. The paper concludes with a discussion on the limitations of DMPs and an outline of possible research directions.",
+      "publication_date": "2023-09-23",
+      "publication_year": 2023,
+      "source_name": "The International Journal of Robotics Research",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9997000098228455
+        },
+        {
+          "id": "https://openalex.org/T11023",
+          "display_name": "Prosthetics and Rehabilitation Robotics",
+          "score": 0.9976000189781189
+        },
+        {
+          "id": "https://openalex.org/T10784",
+          "display_name": "Muscle activation and electromyography studies",
+          "score": 0.9975000023841858
+        }
+      ],
+      "cited_by_count": 214,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 35
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 91
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 65
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 7
+        }
+      ],
+      "fwci": 23.1081,
+      "citation_normalized_percentile": 0.99886292,
+      "referenced_works": [
+        "W114056620",
+        "W1163812319",
+        "W130216483",
+        "W131961952",
+        "W137878081",
+        "W1483373940",
+        "W1483423851",
+        "W1501226982",
+        "W1511026151",
+        "W1516801383",
+        "W1517823811",
+        "W1541925238",
+        "W1551864151",
+        "W1581870850",
+        "W1588671388",
+        "W1590216291",
+        "W1604739850",
+        "W1689445748",
+        "W1726426282",
+        "W1746819321",
+        "W1779930666",
+        "W1824348304",
+        "W1836704973",
+        "W1894373409",
+        "W1919426159",
+        "W1919683222",
+        "W1925816294",
+        "W1964985369",
+        "W1967377907",
+        "W1967407878",
+        "W1969976050",
+        "W1972063518",
+        "W1973310077",
+        "W1974221809",
+        "W1975059663",
+        "W1975185678",
+        "W1976536305",
+        "W1977013839",
+        "W1977655452",
+        "W1979117064",
+        "W1982803779",
+        "W1987889581",
+        "W1991667713",
+        "W1993897290",
+        "W1995086487",
+        "W2007979181",
+        "W2008491851",
+        "W2010953845",
+        "W2012058822",
+        "W2012204020",
+        "W2012392077",
+        "W2016765487",
+        "W2018420590",
+        "W2019005487",
+        "W2019048916",
+        "W2020168303",
+        "W2022638737",
+        "W2022760091",
+        "W2025460877",
+        "W2026157703",
+        "W2028867938",
+        "W2029705953",
+        "W2029910730",
+        "W2030363462",
+        "W2030624015",
+        "W2031580264",
+        "W2031967471",
+        "W2037609755",
+        "W2038648922",
+        "W2041051914",
+        "W2041242313",
+        "W2043535450",
+        "W2047191624",
+        "W2048503610",
+        "W2051453180",
+        "W2053858918",
+        "W2056114668",
+        "W2056518977",
+        "W2059206273",
+        "W2060914855",
+        "W2062349701",
+        "W2063471043",
+        "W2063911805",
+        "W2064347646",
+        "W2068923975",
+        "W2069324174",
+        "W2069361969",
+        "W2070678636",
+        "W2071444114",
+        "W2071841410",
+        "W2072073951",
+        "W2074274296",
+        "W2075861930",
+        "W2078763164",
+        "W2080487795",
+        "W2081571407",
+        "W2083726503",
+        "W2083990312",
+        "W2084678008",
+        "W2085180319",
+        "W2093037264",
+        "W2094697883",
+        "W2099171748",
+        "W2100642335",
+        "W2100993276",
+        "W2101143083",
+        "W2103713793",
+        "W2103787878",
+        "W2108579172",
+        "W2108965296",
+        "W2109572794",
+        "W2110304639",
+        "W2110328543",
+        "W2111528514",
+        "W2111644340",
+        "W2113698995",
+        "W2115166552",
+        "W2115730616",
+        "W2115817551",
+        "W2115905066",
+        "W2116226448",
+        "W2118459920",
+        "W2120044059",
+        "W2121562849",
+        "W2122777916",
+        "W2123967136",
+        "W2125612430",
+        "W2129202194",
+        "W2129999383",
+        "W2130405068",
+        "W2130840753",
+        "W2131908539",
+        "W2132037810",
+        "W2133932631",
+        "W2136719407",
+        "W2139652285",
+        "W2140020305",
+        "W2140801763",
+        "W2144576818",
+        "W2144994235",
+        "W2147501341",
+        "W2148163433",
+        "W2149192758",
+        "W2149797038",
+        "W2149860990",
+        "W2151044655",
+        "W2155307968",
+        "W2156430693",
+        "W2158641818",
+        "W2160362981",
+        "W2160609165",
+        "W2161395589",
+        "W2162438232",
+        "W2166302491",
+        "W2167804690",
+        "W2169136412",
+        "W2170832633",
+        "W2172158418",
+        "W2180051414",
+        "W218992145",
+        "W2197436471",
+        "W2202850001",
+        "W2205427871",
+        "W2207912390",
+        "W2209173607",
+        "W2210993424",
+        "W2213467466",
+        "W2217503414",
+        "W2221921493",
+        "W2244449411",
+        "W2277108862",
+        "W2295362572",
+        "W2295405141",
+        "W2295809278",
+        "W2336500300",
+        "W2344260694",
+        "W2391561458",
+        "W2400535959",
+        "W2410605974",
+        "W2414517470",
+        "W2471581187",
+        "W2474375319",
+        "W2478063815",
+        "W2500624988",
+        "W2514290042",
+        "W2524925237",
+        "W2528951757",
+        "W2531282941",
+        "W2532828317",
+        "W2552320543",
+        "W2558355904",
+        "W2558597819",
+        "W2560573001",
+        "W2561015862",
+        "W2561336464",
+        "W2562952297",
+        "W2564924180",
+        "W2565989828",
+        "W2566801424",
+        "W2567017688",
+        "W2567946639",
+        "W2568232068",
+        "W2568343704",
+        "W2568710935",
+        "W2568797152",
+        "W2569181534",
+        "W2569188472",
+        "W2569700948",
+        "W2570161222",
+        "W2570764145",
+        "W2570803472",
+        "W2571111750",
+        "W2573443546",
+        "W2585105539",
+        "W2587192910",
+        "W2588535899",
+        "W2604272474",
+        "W2605902560",
+        "W2606499982",
+        "W2611146760",
+        "W2613462707",
+        "W2626885185",
+        "W2722424650",
+        "W2730083658",
+        "W2737109780",
+        "W2737635200",
+        "W2737943148",
+        "W2738231311",
+        "W2738836907",
+        "W2740826260",
+        "W2742824650",
+        "W2751554013",
+        "W2761210343",
+        "W2765142410",
+        "W2765218414",
+        "W2766203889",
+        "W2768688842",
+        "W2771896380",
+        "W2773925937",
+        "W2782580911",
+        "W2783034017",
+        "W2783849467",
+        "W2789070477",
+        "W2789738248",
+        "W2791542133",
+        "W2791700548",
+        "W2793384610",
+        "W2794308328",
+        "W2797679738",
+        "W2799842444",
+        "W2802700851",
+        "W2805810890",
+        "W2806332488",
+        "W2883170262",
+        "W2884325870",
+        "W2885414200",
+        "W2887296417",
+        "W2888202529",
+        "W2890480185",
+        "W2890486280",
+        "W2891162089",
+        "W2891297436",
+        "W2891746250",
+        "W2903857705",
+        "W2904113001",
+        "W2905316250",
+        "W2906148830",
+        "W2909238590",
+        "W2909404881",
+        "W2909693109",
+        "W2910988768",
+        "W2913137369",
+        "W2914707001",
+        "W2918049070",
+        "W2919115771",
+        "W2942674537",
+        "W2944455043",
+        "W2946148800",
+        "W2946362902",
+        "W2947017371",
+        "W2947964965",
+        "W2949071206",
+        "W2952102303",
+        "W2957140978",
+        "W2961077157",
+        "W2964319110",
+        "W2964619142",
+        "W2965187964",
+        "W2968187318",
+        "W2968817079",
+        "W2972159861",
+        "W2976842253",
+        "W2979471310",
+        "W2980798007",
+        "W2981922616",
+        "W2994746643",
+        "W2998166838",
+        "W2999905431",
+        "W3001711609",
+        "W3003213754",
+        "W3003534191",
+        "W3004105558",
+        "W3004240582",
+        "W3004503628",
+        "W3006033038",
+        "W3006184833",
+        "W3006598353",
+        "W3007107443",
+        "W3011565689",
+        "W3015150646",
+        "W3016483845",
+        "W3030328006",
+        "W3037308396",
+        "W3038740010",
+        "W3043276431",
+        "W3043852396",
+        "W3046170640",
+        "W3049389301",
+        "W3083523983",
+        "W3089798071",
+        "W3089886842",
+        "W3090682325",
+        "W3091349796",
+        "W3091703975",
+        "W3093877783",
+        "W3093886716",
+        "W3094605036",
+        "W3096933490",
+        "W3098433902",
+        "W3100310560",
+        "W3101081151",
+        "W3103803758",
+        "W3104681832",
+        "W3106803573",
+        "W3110995848",
+        "W3115157241",
+        "W3118688377",
+        "W3124270948",
+        "W3126759148",
+        "W3128104326",
+        "W3131474428",
+        "W3132530406",
+        "W3141571829",
+        "W3148869941",
+        "W3149774477",
+        "W3153455765",
+        "W3162229654",
+        "W3164396990",
+        "W3173693019",
+        "W3181705464",
+        "W3199740299",
+        "W3200480656",
+        "W3201276701",
+        "W3203588980",
+        "W3206385822",
+        "W3207025907",
+        "W3207100792",
+        "W3207906551",
+        "W3215492280",
+        "W4200173225",
+        "W4206159759",
+        "W4206576842",
+        "W4206759694",
+        "W4211049957",
+        "W4212774754",
+        "W4224330413",
+        "W4225724687",
+        "W4226277223",
+        "W4226460496",
+        "W4232568907",
+        "W4237733001",
+        "W4246215071",
+        "W4246252528",
+        "W4254005064",
+        "W4280509564",
+        "W4285129493",
+        "W4291653239",
+        "W4293811787",
+        "W4300982816",
+        "W4308994242",
+        "W4313316164",
+        "W4313563043",
+        "W4317233761",
+        "W4317796347",
+        "W4321607911",
+        "W4321795072",
+        "W4323338316",
+        "W4323913780",
+        "W4361191717",
+        "W4379033996",
+        "W574505275",
+        "W779291494"
+      ],
+      "related_works": [
+        "W1969219540",
+        "W1987484445",
+        "W2143413548",
+        "W2165912799",
+        "W2370459448",
+        "W2382615723",
+        "W2623658258",
+        "W2735662278",
+        "W4311804456",
+        "W4405331580"
+      ],
+      "discovery_source": [
+        "knowledge_map_search:mobile manipulation survey review tutorial",
+        "knowledge_map_search:whole-body control robotics survey tutorial",
+        "topic_search:mobile manipulation survey review tutorial",
+        "topic_search:whole-body control robotics survey tutorial"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:16",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W3128528928",
+      "landing_page_url": "https://doi.org/10.1177/02783649231201196",
+      "open_access_url": "https://doi.org/10.1177/02783649231201196",
+      "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/02783649231201196",
+      "research_fit": 22,
+      "video_potential": 26,
+      "matched_topics": [
+        "optimal_control",
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "optimal control",
+        "reinforcement learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "WBC / MPC / Optimization",
+          "keywords": [
+            "optimal control"
+          ],
+          "location": "abstract",
+          "points": 11.7
+        },
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "reinforcement learning"
+          ],
+          "location": "abstract",
+          "points": 10.4
+        }
+      ],
+      "historical_value_score": 66.4,
+      "historical_score_components": {
+        "research_relevance": 22.0,
+        "normalized_citation": 99.9,
+        "fwci": 100.0,
+        "citation_momentum": 84.0,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 23.11",
+        "近 2 年年均引用 63.0；此前 2 年年均 37.5",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W3212580602",
+      "openalex_id": "W3212580602",
+      "base_arxiv_id": null,
+      "doi": "10.1109/access.2021.3126658",
+      "title": "Crossing the Reality Gap: A Survey on Sim-to-Real Transferability of Robot Controllers in Reinforcement Learning",
+      "authors": [
+        "Erica Salvato",
+        "Gianfranco Fenu",
+        "Eric Medvet",
+        "Felice Andrea Pellegrino"
+      ],
+      "abstract": "The growing demand for robots able to act autonomously in complex scenarios has widely accelerated the introduction of Reinforcement Learning (RL) in robots control applications. However, the trial and error intrinsic nature of RL may result in long training time on real robots and, moreover, it may lead to dangerous outcomes. While simulators are useful tools to accelerate RL training and to ensure safety, they often are provided only with an approximated model of robot dynamics and of its interaction with the surrounding environment, thus resulting in what is called the reality gap (RG): a mismatch of simulated and real control-law performances caused by the inaccurate representation of the real environment in simulation. The most undesirable result occurs when the controller learnt in simulation fails the task on the real robot, thus resulting in an unsuccessful sim-to-real transfer. The goal of the present survey is threefold: (1) to identify the main approaches to face the RG problem in the context of robot control with RL, (2) to point out their shortcomings, and (3) to outline new potential research areas.",
+      "publication_date": "2021-01-01",
+      "publication_year": 2021,
+      "source_name": "IEEE Access",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.9998000264167786
+        },
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9840999841690063
+        },
+        {
+          "id": "https://openalex.org/T10142",
+          "display_name": "Formal Methods in Verification",
+          "score": 0.98089998960495
+        }
+      ],
+      "cited_by_count": 182,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 28
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 51
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 50
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 38
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 3
+        }
+      ],
+      "fwci": 13.392,
+      "citation_normalized_percentile": 0.99066192,
+      "referenced_works": [
+        "W102487131",
+        "W1481659984",
+        "W1493656486",
+        "W1501416815",
+        "W1520597402",
+        "W1534712813",
+        "W1540685400",
+        "W1542941925",
+        "W1626155273",
+        "W1673923490",
+        "W1755458803",
+        "W1771410628",
+        "W1945616565",
+        "W1949804828",
+        "W1965336746",
+        "W1966784014",
+        "W1972197206",
+        "W1975318316",
+        "W1977655452",
+        "W1978161072",
+        "W1988071341",
+        "W1990277704",
+        "W1996579288",
+        "W2012587148",
+        "W2018705428",
+        "W2033110403",
+        "W2034600737",
+        "W2042106612",
+        "W2048226872",
+        "W2056653303",
+        "W2097381042",
+        "W2099471712",
+        "W2105143952",
+        "W2111956227",
+        "W2112483970",
+        "W2119070716",
+        "W2120478326",
+        "W2121863487",
+        "W2139053308",
+        "W2140135625",
+        "W2144658257",
+        "W2145339207",
+        "W2146398222",
+        "W2155968351",
+        "W2158782408",
+        "W2159096063",
+        "W2168921921",
+        "W2169209873",
+        "W2172968643",
+        "W2205975260",
+        "W2280163991",
+        "W2291973609",
+        "W2296073425",
+        "W2342662072",
+        "W2426267443",
+        "W2530944449",
+        "W2534269850",
+        "W2554830522",
+        "W2595845486",
+        "W2602963933",
+        "W2605102758",
+        "W2612129918",
+        "W2725320964",
+        "W2727037355",
+        "W2727840223",
+        "W2736601468",
+        "W2741122588",
+        "W2746553466",
+        "W2767050701",
+        "W2773691349",
+        "W2773867744",
+        "W2788904251",
+        "W2792514232",
+        "W2793955514",
+        "W2822752092",
+        "W2874746074",
+        "W2890728188",
+        "W2898758998",
+        "W2899460553",
+        "W2927642453",
+        "W2952629144",
+        "W2953127211",
+        "W2953431737",
+        "W2962957005",
+        "W2963073614",
+        "W2963184939",
+        "W2963207607",
+        "W2963390419",
+        "W2963484919",
+        "W2963504951",
+        "W2963544079",
+        "W2963641140",
+        "W2963938771",
+        "W2964001908",
+        "W2964043796",
+        "W2964084913",
+        "W2964153729",
+        "W2964310273",
+        "W2967292964",
+        "W2967452881",
+        "W2969201578",
+        "W2979869797",
+        "W2981030070",
+        "W2997896361",
+        "W2999228461",
+        "W3015606043",
+        "W3088310808",
+        "W3100789280",
+        "W3101442004",
+        "W3103559770",
+        "W3113139432",
+        "W3120778962",
+        "W3122928565",
+        "W3126300335",
+        "W3127556163",
+        "W3128433320",
+        "W3152331843",
+        "W3154227779",
+        "W3162157701",
+        "W3163842339",
+        "W3176539729",
+        "W3176880374",
+        "W3206620955",
+        "W3214643126",
+        "W3216747129",
+        "W4214717370",
+        "W4245108548",
+        "W4297686387",
+        "W4297818513",
+        "W4297918469",
+        "W4300799055",
+        "W4319988532",
+        "W4320013936",
+        "W592312525",
+        "W6632235069",
+        "W6637162671",
+        "W6638018090",
+        "W6640425456",
+        "W6674600207",
+        "W6675708744",
+        "W6680657880",
+        "W6681404798",
+        "W6681781451",
+        "W6685331716",
+        "W6692846177",
+        "W6695011786",
+        "W6696783566",
+        "W6704571135",
+        "W6728367041",
+        "W6728925229",
+        "W6731094094",
+        "W6734827232",
+        "W6735677848",
+        "W6740023956",
+        "W6740801417",
+        "W6741002519",
+        "W6742103744",
+        "W6742461812",
+        "W6746722099",
+        "W6748600884",
+        "W6749146968",
+        "W6752818329",
+        "W6753069059",
+        "W6755890616",
+        "W6756581457",
+        "W6768791272",
+        "W6776331362",
+        "W6780559895",
+        "W6785784373",
+        "W6789905126",
+        "W6849896277",
+        "W755046805"
+      ],
+      "related_works": [
+        "W2122871747",
+        "W2126211886",
+        "W2165180011",
+        "W2351343564",
+        "W2930863966",
+        "W3114279067",
+        "W3127551068",
+        "W3153786280",
+        "W3165944253",
+        "W4220829754"
+      ],
+      "discovery_source": [
+        "topic_search:sim-to-real robotics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:15",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W3212580602",
+      "landing_page_url": "https://doi.org/10.1109/access.2021.3126658",
+      "open_access_url": "https://doi.org/10.1109/access.2021.3126658",
+      "pdf_url": null,
+      "research_fit": 16,
+      "video_potential": 45,
+      "matched_topics": [
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "reinforcement learning",
+        "sim-to-real"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "reinforcement learning",
+            "sim-to-real"
+          ],
+          "location": "title",
+          "points": 16.0
+        }
+      ],
+      "historical_value_score": 59.7,
+      "historical_score_components": {
+        "research_relevance": 16.0,
+        "normalized_citation": 99.1,
+        "fwci": 100.0,
+        "citation_momentum": 44.9,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2021 年",
+        "同领域同年份引用标准化位于前 0.9%",
+        "OpenAlex FWCI 13.39",
+        "近 2 年年均引用 39.5；此前 2 年年均 44.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W3215201135",
+      "openalex_id": "W3215201135",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.caeai.2021.100041",
+      "title": "Conceptualizing AI literacy: An exploratory review",
+      "authors": [
+        "Davy Tsz Kit Ng",
+        "Jac Ka Lok Leung",
+        "Samuel Kai Wah Chu",
+        "Shen Qiao"
+      ],
+      "abstract": "Artificial Intelligence (AI) has spread across industries (e.g., business, science, art, education) to enhance user experience, improve work efficiency, and create many future job opportunities. However, public understanding of AI technologies and how to define AI literacy is under-explored. This vision poses upcoming challenges for our next generation to learn about AI. On this note, an exploratory review was conducted to conceptualize the newly emerging concept “AI literacy”, in search for a sound theoretical foundation to define, teach and evaluate AI literacy. Grounded in literature on 30 existing peer-reviewed articles, this review proposed four aspects (i.e., know and understand, use and apply, evaluate and create, and ethical issues) for fostering AI literacy based on the adaptation of classic literacies. This study sheds light on the consolidated definition, teaching, and ethical concerns on AI literacy, establishing the groundwork for future research such as competency development and assessment criteria on AI literacy.",
+      "publication_date": "2021-01-01",
+      "publication_year": 2021,
+      "source_name": "Computers and Education Artificial Intelligence",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10883",
+          "display_name": "Ethics and Social Impacts of AI",
+          "score": 0.9904000163078308
+        },
+        {
+          "id": "https://openalex.org/T11122",
+          "display_name": "Online Learning and Analytics",
+          "score": 0.9869999885559082
+        },
+        {
+          "id": "https://openalex.org/T11636",
+          "display_name": "Artificial Intelligence in Healthcare and Education",
+          "score": 0.9782000184059143
+        }
+      ],
+      "cited_by_count": 1635,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 520
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 613
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 349
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 130
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 22
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        }
+      ],
+      "fwci": 106.2267,
+      "citation_normalized_percentile": 1.0,
+      "referenced_works": [
+        "W11851134",
+        "W1767272795",
+        "W2010456449",
+        "W2018811100",
+        "W2039639480",
+        "W2061221060",
+        "W2104647037",
+        "W2118137218",
+        "W2122410182",
+        "W2129618861",
+        "W2171789166",
+        "W2324082804",
+        "W2418428641",
+        "W2542575942",
+        "W2557717610",
+        "W2615974185",
+        "W2623293810",
+        "W2787887017",
+        "W2790603024",
+        "W2801816216",
+        "W2914333217",
+        "W2941382599",
+        "W2951146358",
+        "W2956066828",
+        "W2959063074",
+        "W2965058023",
+        "W2969912247",
+        "W2971581810",
+        "W2980583347",
+        "W2981863007",
+        "W2988585267",
+        "W3000232414",
+        "W3003385079",
+        "W3005057438",
+        "W3006030984",
+        "W3006367853",
+        "W3011386933",
+        "W3016229568",
+        "W3029022390",
+        "W3047690188",
+        "W3049508719",
+        "W3092083327",
+        "W3092595724",
+        "W3095974871",
+        "W3104119924",
+        "W3110261028",
+        "W3111260019",
+        "W3111539725",
+        "W3112534076",
+        "W3126017685",
+        "W3131540942",
+        "W3132204078",
+        "W3134442660",
+        "W3135828953",
+        "W3143849734",
+        "W3160042174",
+        "W3161021660",
+        "W3168967568",
+        "W3174157531",
+        "W3184396411",
+        "W3205271445",
+        "W3214861879",
+        "W4205571956",
+        "W4211238491",
+        "W4232082898",
+        "W4233330221",
+        "W4235402669",
+        "W4235487001",
+        "W4239250045",
+        "W4240091174",
+        "W4240818995",
+        "W4243552002",
+        "W4253318587",
+        "W4253763531",
+        "W4253832925",
+        "W4365806374",
+        "W4382987554",
+        "W4394645559",
+        "W6600468407",
+        "W6728839822",
+        "W6730117106",
+        "W6749001189",
+        "W6759356643",
+        "W6764032386",
+        "W6765634517",
+        "W6766455730",
+        "W6768952961",
+        "W6772816636",
+        "W6773121223",
+        "W6778369530",
+        "W6781702437",
+        "W6784193764",
+        "W6785318345",
+        "W6787213956",
+        "W6787403322",
+        "W6790663241",
+        "W6792847262",
+        "W6796967156",
+        "W6991993748"
+      ],
+      "related_works": [
+        "W1506621672",
+        "W1532305657",
+        "W1533421371",
+        "W1800941385",
+        "W2012995101",
+        "W2150121875",
+        "W2365764375",
+        "W2997567050",
+        "W3175855711",
+        "W4244212374"
+      ],
+      "discovery_source": [
+        "knowledge_map_search:embodied robotics foundation models survey review",
+        "topic_search:embodied robotics foundation models survey review"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:20",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W3215201135",
+      "landing_page_url": "https://doi.org/10.1016/j.caeai.2021.100041",
+      "open_access_url": "https://doi.org/10.1016/j.caeai.2021.100041",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2666920X21000357/pdf",
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 59.8,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 100.0,
+        "fwci": 100.0,
+        "citation_momentum": 100.0,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2021 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 106.23",
+        "近 2 年年均引用 566.5；此前 2 年年均 239.5",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W4362672763",
+      "openalex_id": "W4362672763",
+      "base_arxiv_id": null,
+      "doi": "10.3390/s23073762",
+      "title": "A Survey on Deep Reinforcement Learning Algorithms for Robotic Manipulation",
+      "authors": [
+        "Dong Han",
+        "Beni Mulyana",
+        "Vladimir Stanković",
+        "Samuel Cheng"
+      ],
+      "abstract": "Robotic manipulation challenges, such as grasping and object manipulation, have been tackled successfully with the help of deep reinforcement learning systems. We give an overview of the recent advances in deep reinforcement learning algorithms for robotic manipulation tasks in this review. We begin by outlining the fundamental ideas of reinforcement learning and the parts of a reinforcement learning system. The many deep reinforcement learning algorithms, such as value-based methods, policy-based methods, and actor-critic approaches, that have been suggested for robotic manipulation tasks are then covered. We also examine the numerous issues that have arisen when applying these algorithms to robotics tasks, as well as the various solutions that have been put forth to deal with these issues. Finally, we highlight several unsolved research issues and talk about possible future directions for the subject.",
+      "publication_date": "2023-04-05",
+      "publication_year": 2023,
+      "source_name": "Sensors",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.9995999932289124
+        },
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.991599977016449
+        },
+        {
+          "id": "https://openalex.org/T12784",
+          "display_name": "Modular Robots and Swarm Intelligence",
+          "score": 0.9440000057220459
+        }
+      ],
+      "cited_by_count": 226,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 53
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 92
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 60
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 21
+        }
+      ],
+      "fwci": 29.5528,
+      "citation_normalized_percentile": 0.99790433,
+      "referenced_works": [
+        "W1591675293",
+        "W1977655452",
+        "W2017957151",
+        "W2064675550",
+        "W2070665593",
+        "W2098774185",
+        "W2109910161",
+        "W2140135625",
+        "W2145339207",
+        "W2155027007",
+        "W2163605009",
+        "W2166681504",
+        "W2173564293",
+        "W2257979135",
+        "W2260756217",
+        "W2290104316",
+        "W2296073425",
+        "W2404399993",
+        "W2554830522",
+        "W2575705757",
+        "W2594103415",
+        "W2604763608",
+        "W2624431344",
+        "W2740210681",
+        "W2746553466",
+        "W2755546070",
+        "W2766736793",
+        "W2767050701",
+        "W2773987374",
+        "W2787938642",
+        "W2788781499",
+        "W2789839425",
+        "W2799544270",
+        "W2889939141",
+        "W2894663205",
+        "W2911087563",
+        "W2911426134",
+        "W2935588605",
+        "W2962775887",
+        "W2963099939",
+        "W2963276406",
+        "W2963277051",
+        "W2963703448",
+        "W2972758308",
+        "W2978938326",
+        "W2990747716",
+        "W3002176019",
+        "W3017409624",
+        "W3022324591",
+        "W3045988483",
+        "W3089482831",
+        "W3089949728",
+        "W3100751385",
+        "W3101442004",
+        "W3102899483",
+        "W3106302274",
+        "W3127561923",
+        "W3128707967",
+        "W3131966994",
+        "W3133026276",
+        "W3133866887",
+        "W3141423234",
+        "W3162578993",
+        "W3173896065",
+        "W3175891028",
+        "W3177021459",
+        "W3195968524",
+        "W3196158767",
+        "W3201276701",
+        "W3203657119",
+        "W3204657926",
+        "W3205270746",
+        "W3206394619",
+        "W3206827162",
+        "W3209643285",
+        "W3210516907",
+        "W3210579454",
+        "W3211352205",
+        "W3212211932",
+        "W32403112",
+        "W4205096660",
+        "W4205584165",
+        "W4205601925",
+        "W4205788769",
+        "W4206697161",
+        "W4214902667",
+        "W4221120003",
+        "W4226088469",
+        "W4226353934",
+        "W4280542770",
+        "W4284673391",
+        "W4296010390",
+        "W4304142069",
+        "W4309624566",
+        "W4311043838",
+        "W4311794022",
+        "W4312000469",
+        "W4312372540",
+        "W4312702129",
+        "W4313287904",
+        "W4313350218",
+        "W4313442619",
+        "W4313559023",
+        "W4315630678",
+        "W4317383443",
+        "W4318464334",
+        "W4320029005",
+        "W4320735163",
+        "W4383172093",
+        "W4386076088",
+        "W6631149375",
+        "W6638018090",
+        "W6683195989",
+        "W6684191040",
+        "W6684205842",
+        "W6718092244",
+        "W6728925229",
+        "W6765399202",
+        "W6768078163",
+        "W6784396901",
+        "W6806481072",
+        "W6839015768"
+      ],
+      "related_works": [
+        "W2024136090",
+        "W2031695474",
+        "W20361778",
+        "W2138720691",
+        "W2586732548",
+        "W3049728571",
+        "W4306904969",
+        "W4362501864",
+        "W4375867731",
+        "W4380318855"
+      ],
+      "discovery_source": [
+        "knowledge_map_search:legged robot locomotion survey review benchmark",
+        "knowledge_map_search:mobile manipulation survey review tutorial",
+        "topic_search:legged robot locomotion survey review benchmark",
+        "topic_search:mobile manipulation survey review tutorial"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:16",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W4362672763",
+      "landing_page_url": "https://doi.org/10.3390/s23073762",
+      "open_access_url": "https://doi.org/10.3390/s23073762",
+      "pdf_url": "https://www.mdpi.com/1424-8220/23/7/3762/pdf?version=1680753458",
+      "research_fit": 16,
+      "video_potential": 36,
+      "matched_topics": [
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "reinforcement learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "reinforcement learning"
+          ],
+          "location": "title",
+          "points": 16.0
+        }
+      ],
+      "historical_value_score": 64.7,
+      "historical_score_components": {
+        "research_relevance": 16.0,
+        "normalized_citation": 99.8,
+        "fwci": 100.0,
+        "citation_momentum": 89.5,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 0.2%",
+        "OpenAlex FWCI 29.55",
+        "近 2 年年均引用 72.5；此前 2 年年均 40.5",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W4393065402",
+      "openalex_id": "W4393065402",
+      "base_arxiv_id": null,
+      "doi": "10.1007/s11704-024-40231-1",
+      "title": "A survey on large language model based autonomous agents",
+      "authors": [
+        "Lei Wang",
+        "Chen Ma",
+        "Xueyang Feng",
+        "Zeyu Zhang",
+        "Hao Yang",
+        "Jingsen Zhang",
+        "Zhiyuan Chen",
+        "Jiakai Tang",
+        "Xu Chen",
+        "Yankai Lin",
+        "Wayne Xin Zhao",
+        "Zhewei Wei",
+        "Ji-Rong Wen"
+      ],
+      "abstract": "Abstract Autonomous agents have long been a research focus in academic and industry communities. Previous research often focuses on training agents with limited knowledge within isolated environments, which diverges significantly from human learning processes, and makes the agents hard to achieve human-like decisions. Recently, through the acquisition of vast amounts of Web knowledge, large language models (LLMs) have shown potential in human-level intelligence, leading to a surge in research on LLM-based autonomous agents. In this paper, we present a comprehensive survey of these studies, delivering a systematic review of LLM-based autonomous agents from a holistic perspective. We first discuss the construction of LLM-based autonomous agents, proposing a unified framework that encompasses much of previous work. Then, we present a overview of the diverse applications of LLM-based autonomous agents in social science, natural science, and engineering. Finally, we delve into the evaluation strategies commonly used for LLM-based autonomous agents. Based on the previous studies, we also present several challenges and future directions in this field.",
+      "publication_date": "2024-03-22",
+      "publication_year": 2024,
+      "source_name": "Frontiers of Computer Science",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.9987999796867371
+        },
+        {
+          "id": "https://openalex.org/T10028",
+          "display_name": "Topic Modeling",
+          "score": 0.9969000220298767
+        },
+        {
+          "id": "https://openalex.org/T11714",
+          "display_name": "Multimodal Machine Learning Applications",
+          "score": 0.9944999814033508
+        }
+      ],
+      "cited_by_count": 1311,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 519
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 592
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 199
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 1
+        }
+      ],
+      "fwci": 313.6324,
+      "citation_normalized_percentile": 0.99997147,
+      "referenced_works": [
+        "W1583837637",
+        "W1981276685",
+        "W2046759284",
+        "W2084335597",
+        "W2145339207",
+        "W2602856279",
+        "W4224912544",
+        "W4238095402",
+        "W4289523162",
+        "W4296343374",
+        "W4307475457",
+        "W4309674289",
+        "W4321455981",
+        "W4363624465",
+        "W4367165010",
+        "W4376504550",
+        "W4378676756",
+        "W4380763235",
+        "W4384345748",
+        "W4384918448",
+        "W4385567201",
+        "W4385571689",
+        "W4385571775",
+        "W4386200967",
+        "W4386566629",
+        "W4387394580",
+        "W4387567460",
+        "W4387835442",
+        "W4387993371",
+        "W4388040387",
+        "W4388483618",
+        "W4388626886",
+        "W4388691863",
+        "W4388744821",
+        "W4389518608",
+        "W4389518771",
+        "W4389519042",
+        "W4389519250",
+        "W4389520747",
+        "W4389523771",
+        "W4389524373",
+        "W4389544300",
+        "W4389636360",
+        "W4389667233",
+        "W4389667254",
+        "W4390481193",
+        "W4390772308",
+        "W4390872747",
+        "W4390874280",
+        "W4391136507",
+        "W4391584331",
+        "W4392240262",
+        "W4393147219",
+        "W4393160302",
+        "W4401042703",
+        "W4403275638",
+        "W6600075759",
+        "W6600669965",
+        "W6602838585",
+        "W6798182279"
+      ],
+      "related_works": [
+        "W2001405890",
+        "W2350741829",
+        "W2358668433",
+        "W2376932109",
+        "W2382290278",
+        "W2390279801",
+        "W2478288626",
+        "W2530322880",
+        "W2748952813",
+        "W4391913857"
+      ],
+      "discovery_source": [
+        "knowledge_map_search:embodied robotics foundation models survey review",
+        "topic_search:embodied robotics foundation models survey review"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:20",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W4393065402",
+      "landing_page_url": "https://doi.org/10.1007/s11704-024-40231-1",
+      "open_access_url": "https://doi.org/10.1007/s11704-024-40231-1",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11704-024-40231-1.pdf",
+      "research_fit": 24,
+      "video_potential": 22,
+      "matched_topics": [
+        "robot_learning",
+        "llm_agent_robotics"
+      ],
+      "matched_keywords": [
+        "reinforcement learning",
+        "large language model",
+        "LLM"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "reinforcement learning"
+          ],
+          "location": "abstract",
+          "points": 10.4
+        },
+        {
+          "kind": "topic",
+          "label": "LLM / Agent Robotics",
+          "keywords": [
+            "large language model",
+            "LLM"
+          ],
+          "location": "title",
+          "points": 14.0
+        }
+      ],
+      "historical_value_score": 68.9,
+      "historical_score_components": {
+        "research_relevance": 24.0,
+        "normalized_citation": 100.0,
+        "fwci": 100.0,
+        "citation_momentum": 100.0,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 313.63",
+        "近 2 年年均引用 555.5；此前 2 年年均 100.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W4402354138",
+      "openalex_id": "W4402354138",
+      "base_arxiv_id": null,
+      "doi": "10.15607/rss.2024.xx.061",
+      "title": "HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation",
+      "authors": [
+        "Carmelo Sferrazza",
+        "Dun-Ming Huang",
+        "Xingyu Lin",
+        "Youngwoon Lee",
+        "Pieter Abbeel"
+      ],
+      "abstract": null,
+      "publication_date": "2024-07-15",
+      "publication_year": 2024,
+      "source_name": null,
+      "source_type": "conference-paper",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.9663000106811523
+        }
+      ],
+      "cited_by_count": 20,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 14
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 2
+        }
+      ],
+      "fwci": 21.0307,
+      "citation_normalized_percentile": 0.99700209,
+      "referenced_works": [],
+      "related_works": [
+        "W1569471492",
+        "W2028665553",
+        "W2129850190",
+        "W2130974462",
+        "W2295425790",
+        "W2378211422",
+        "W2745001401",
+        "W2745063183",
+        "W4256317079",
+        "W4321353415"
+      ],
+      "discovery_source": [
+        "topic_search:humanoid locomotion and manipulation"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:08",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W4402354138",
+      "landing_page_url": "https://doi.org/10.15607/rss.2024.xx.061",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 20,
+      "video_potential": 53,
+      "matched_topics": [
+        "mobile_manipulation"
+      ],
+      "matched_keywords": [
+        "locomotion and manipulation"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Mobile Manipulation",
+          "keywords": [
+            "locomotion and manipulation"
+          ],
+          "location": "title",
+          "points": 20.0
+        }
+      ],
+      "historical_value_score": 64.6,
+      "historical_score_components": {
+        "research_relevance": 20.0,
+        "normalized_citation": 99.7,
+        "fwci": 100.0,
+        "citation_momentum": 100.0,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 75.0
+      },
+      "historical_score_reasons": [
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 0.3%",
+        "OpenAlex FWCI 21.03",
+        "近 2 年年均引用 9.0；此前 1 年年均 2.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 75%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W4402890475",
+      "openalex_id": "W4402890475",
+      "base_arxiv_id": null,
+      "doi": "10.1177/02783649241281508",
+      "title": "Foundation models in robotics: Applications, challenges, and the future",
+      "authors": [
+        "Roya Firoozi",
+        "Johnathan Tucker",
+        "Stephen Tian",
+        "Anirudha Majumdar",
+        "Jiankai Sun",
+        "Weiyu Liu",
+        "Yuke Zhu",
+        "Shuran Song",
+        "Ashish Kapoor",
+        "Karol Hausman",
+        "Brian Ichter",
+        "Danny Driess",
+        "Jia-Jun Wu",
+        "Cewu Lu",
+        "Mac Schwager"
+      ],
+      "abstract": "We survey applications of pretrained foundation models in robotics. Traditional deep learning models in robotics are trained on small datasets tailored for specific tasks, which limits their adaptability across diverse applications. In contrast, foundation models pretrained on internet-scale data appear to have superior generalization capabilities, and in some instances display an emergent ability to find zero-shot solutions to problems that are not present in the training data. Foundation models may hold the potential to enhance various components of the robot autonomy stack, from perception to decision-making and control. For example, large language models can generate code or provide common sense reasoning, while vision-language models enable open-vocabulary visual recognition. However, significant open research challenges remain, particularly around the scarcity of robot-relevant training data, safety guarantees and uncertainty quantification, and real-time execution. In this survey, we study recent papers that have used or built foundation models to solve robotics problems. We explore how foundation models contribute to improving robot capabilities in the domains of perception, decision-making, and control. We discuss the challenges hindering the adoption of foundation models in robot autonomy and provide opportunities and potential pathways for future advancements. The GitHub project corresponding to this paper can be found here: https://github.com/robotics-survey/Awesome-Robotics-Foundation-Models .",
+      "publication_date": "2024-09-25",
+      "publication_year": 2024,
+      "source_name": "The International Journal of Robotics Research",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9997000098228455
+        },
+        {
+          "id": "https://openalex.org/T10586",
+          "display_name": "Robotic Path Planning Algorithms",
+          "score": 0.9984999895095825
+        },
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.9962999820709229
+        }
+      ],
+      "cited_by_count": 178,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 52
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 94
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 32
+        }
+      ],
+      "fwci": 33.0569,
+      "citation_normalized_percentile": 0.99964848,
+      "referenced_works": [
+        "W2068920275",
+        "W2128019145",
+        "W2592023122",
+        "W2615547864",
+        "W2619383789",
+        "W2620629206",
+        "W2798991696",
+        "W2799002257",
+        "W2799054028",
+        "W2896457183",
+        "W2951019013",
+        "W2953127211",
+        "W2962784628",
+        "W2963150697",
+        "W2963800628",
+        "W2964110616",
+        "W2964242760",
+        "W2964339842",
+        "W2965373594",
+        "W2981852735",
+        "W3009928773",
+        "W3027099759",
+        "W3034201026",
+        "W3035198432",
+        "W3043075211",
+        "W3096158519",
+        "W3109097593",
+        "W3128894241",
+        "W3130800560",
+        "W3132270109",
+        "W3159481202",
+        "W3172942063",
+        "W3176445421",
+        "W3176484337",
+        "W3185341429",
+        "W3185826690",
+        "W3199332348",
+        "W4200150166",
+        "W4206706211",
+        "W4214520160",
+        "W4221141448",
+        "W4221142845",
+        "W4221143046",
+        "W4221148693",
+        "W4221159977",
+        "W4224035735",
+        "W4226352076",
+        "W4285102336",
+        "W4285428875",
+        "W4296413526",
+        "W4297808394",
+        "W4304697829",
+        "W4306729030",
+        "W4307572631",
+        "W4308068347",
+        "W4310822469",
+        "W4310995519",
+        "W4311428907",
+        "W4311443220",
+        "W4311559655",
+        "W4311991529",
+        "W4312270234",
+        "W4312289535",
+        "W4312347618",
+        "W4312396403",
+        "W4312445439",
+        "W4312818263",
+        "W4312933868",
+        "W4312956471",
+        "W4312960937",
+        "W4312971576",
+        "W4313026212",
+        "W4313156423",
+        "W4321512591",
+        "W4321650235",
+        "W4322718191",
+        "W4323651349",
+        "W4324128075",
+        "W4361807267",
+        "W4366208220",
+        "W4366781106",
+        "W4367721889",
+        "W4376652979",
+        "W4376653718",
+        "W4377121665",
+        "W4378465306",
+        "W4378505261",
+        "W4378718320",
+        "W4378768661",
+        "W4378938809",
+        "W4378942562",
+        "W4379251980",
+        "W4379260375",
+        "W4379539380",
+        "W4380551927",
+        "W4380994417",
+        "W4381586603",
+        "W4381713891",
+        "W4382322597",
+        "W4383066231",
+        "W4383097638",
+        "W4383108296",
+        "W4383108457",
+        "W4383109478",
+        "W4383175539",
+        "W4383503807",
+        "W4383994288",
+        "W4385318467",
+        "W4385403813",
+        "W4385403849",
+        "W4385430559",
+        "W4385430679",
+        "W4385431288",
+        "W4385644834",
+        "W4385894687",
+        "W4386065350",
+        "W4386065963",
+        "W4386071604",
+        "W4386072118",
+        "W4386076084",
+        "W4386076668",
+        "W4386083015",
+        "W4386721518",
+        "W4386794722",
+        "W4386942651",
+        "W4386973901",
+        "W4387764390",
+        "W4387835442",
+        "W4388328894",
+        "W4388660746",
+        "W4388901983",
+        "W4389471009",
+        "W4389665702",
+        "W4389820524",
+        "W4390647672",
+        "W4390872744",
+        "W4390874575",
+        "W4392019819",
+        "W4393969211",
+        "W4395065737",
+        "W4396822062",
+        "W4401417048",
+        "W4402716288",
+        "W4402726993",
+        "W4402776554",
+        "W6687483927",
+        "W6687484953",
+        "W6778883912",
+        "W6797745144",
+        "W6798182279",
+        "W6800751262",
+        "W6810081322",
+        "W6810655313",
+        "W6838557027",
+        "W6847015065",
+        "W6848655625",
+        "W6848909144",
+        "W6850503672",
+        "W6850616582",
+        "W6851688577",
+        "W6852276098",
+        "W6853219587",
+        "W6855425132",
+        "W6856012975",
+        "W6857018219",
+        "W6857274923",
+        "W6857383478",
+        "W6857904955",
+        "W6858836066",
+        "W6860325043",
+        "W6892563872"
+      ],
+      "related_works": [
+        "W192849109",
+        "W2131444840",
+        "W2332779545",
+        "W2381393187",
+        "W2414929284",
+        "W2767518918",
+        "W2962829499",
+        "W4231626925",
+        "W4233452137",
+        "W4254857216"
+      ],
+      "discovery_source": [
+        "knowledge_map_search:embodied robotics foundation models survey review",
+        "topic_search:embodied robotics foundation models survey review",
+        "topic_search:robot foundation models"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:15",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W4402890475",
+      "landing_page_url": "https://doi.org/10.1177/02783649241281508",
+      "open_access_url": "https://doi.org/10.1177/02783649241281508",
+      "pdf_url": "https://journals.sagepub.com/history/e3eb5469-f176-4c99-8231-efe683fe6399/02783649241281508.17904978.pdf",
+      "research_fit": 10,
+      "video_potential": 23,
+      "matched_topics": [
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "reinforcement learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "reinforcement learning"
+          ],
+          "location": "abstract",
+          "points": 10.4
+        }
+      ],
+      "historical_value_score": 63.6,
+      "historical_score_components": {
+        "research_relevance": 10.0,
+        "normalized_citation": 100.0,
+        "fwci": 100.0,
+        "citation_momentum": 100.0,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 33.06",
+        "近 2 年年均引用 73.0；此前 1 年年均 32.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W7140452175",
+      "openalex_id": "W7140452175",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tmech.2025.3579247",
+      "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+      "authors": [
+        "Zhaoyuan Gu",
+        "Junheng Li",
+        "Wenlan Shen",
+        "Wenhao Yu",
+        "Zhaoming Xie",
+        "Stephen McCrory",
+        "Xianyi Cheng",
+        "Abdulaziz Shamsah",
+        "Robert J. Griffin",
+        "C. Karen Liu",
+        "Abderrahmane Kheddar",
+        "Xue Bin Peng",
+        "Yuke Zhu",
+        "Guanya Shi",
+        "Quan Nguyen",
+        "Gordon Cheng",
+        "Huijun Gao",
+        "Ye Zhao"
+      ],
+      "abstract": "Humanoid robots hold great potential to perform various human-level skills, involving unified locomotion and manipulation in real-world settings. Driven by advances in machine learning and the strength of existing model-based approaches, these capabilities have progressed rapidly, but often separately. This survey offers a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, with a focus on control, planning, and learning methods. We first review the model-based methods that have been the backbone of humanoid robotics for the past three decades. We discuss contact planning, motion planning, and whole-body control, highlighting the tradeoffs between model fidelity and computational efficiency. Then, the focus is shifted to examine emerging learning-based methods, with an emphasis on reinforcement and imitation learning that enhance the robustness and versatility of loco-manipulation skills. Furthermore, we assess the potential of integrating foundation models with humanoid embodiments to enable the development of generalist humanoid agents. This survey also highlights the emerging role of tactile sensing, particularly whole-body tactile feedback, as a crucial modality for handling contact-rich interactions. Finally, we compare the strengths and limitations of model-based and learning-based paradigms from multiple perspectives, such as robustness, computational efficiency, versatility, and generalizability, and suggest potential solutions to existing challenges.",
+      "publication_date": "2026-03-26",
+      "publication_year": 2026,
+      "source_name": "IEEE/ASME Transactions on Mechatronics",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.6565999984741211
+        },
+        {
+          "id": "https://openalex.org/T10709",
+          "display_name": "Social Robot Interaction and HRI",
+          "score": 0.10199999809265137
+        },
+        {
+          "id": "https://openalex.org/T12290",
+          "display_name": "Human Motion and Animation",
+          "score": 0.05209999904036522
+        }
+      ],
+      "cited_by_count": 5,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 5
+        }
+      ],
+      "fwci": 16.0899,
+      "citation_normalized_percentile": 0.9925981,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "topic_search:humanoid locomotion and manipulation"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-04T00:25:08",
+      "last_considered_at": "2026-08-04T00:26:18+08:00",
+      "recommended_at": "2026-08-04T00:26:18+08:00",
+      "recommendation_count": 1,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-04T00:25:54",
+      "openalex_url": "https://openalex.org/W7140452175",
+      "landing_page_url": "https://doi.org/10.1109/tmech.2025.3579247",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 62,
+      "video_potential": 63,
+      "matched_topics": [
+        "legged_humanoid",
+        "mobile_manipulation",
+        "optimal_control",
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "humanoid locomotion",
+        "humanoid robots",
+        "locomotion and manipulation",
+        "loco-manipulation",
+        "loco manipulation",
+        "whole-body control",
+        "whole body control",
+        "imitation learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Legged & Humanoid",
+          "keywords": [
+            "humanoid locomotion",
+            "humanoid robots"
+          ],
+          "location": "title",
+          "points": 20.0
+        },
+        {
+          "kind": "topic",
+          "label": "Mobile Manipulation",
+          "keywords": [
+            "locomotion and manipulation",
+            "loco-manipulation",
+            "loco manipulation"
+          ],
+          "location": "title",
+          "points": 20.0
+        },
+        {
+          "kind": "topic",
+          "label": "WBC / MPC / Optimization",
+          "keywords": [
+            "whole-body control",
+            "whole body control"
+          ],
+          "location": "abstract",
+          "points": 11.7
+        },
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "imitation learning"
+          ],
+          "location": "abstract",
+          "points": 10.4
+        }
+      ],
+      "historical_value_score": 75.0,
+      "historical_score_components": {
+        "research_relevance": 62.0,
+        "normalized_citation": 99.3,
+        "fwci": 100.0,
+        "citation_momentum": 25.0,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 0.7%",
+        "OpenAlex FWCI 16.09",
+        "近年年均 OpenAlex 引用 5.0（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true
+    }
+  ]
+}

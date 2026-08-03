@@ -6,3 +6,7 @@ __pycache__/
 htmlcov/
 *.egg-info/
 .DS_Store
+.env
+.env.*
+!.env.example
+data/history/cache/

@@ -15,12 +15,12 @@
       <div>
         <p class="eyebrow">PERSONAL ROBOTICS READING SHORTLIST</p>
         <h1>EverWhy Paper Radar</h1>
-        <p class="subtitle">At most five papers, selected by configurable and inspectable rules.</p>
+        <p class="subtitle">Research frontiers and historical impact candidates, selected by inspectable rules.</p>
       </div>
       <div class="date-block">
         <span>Recommendation date</span>
         <strong>2026-08-03</strong>
-        <small>Updated 2026-08-03 22:55 Asia/Shanghai</small>
+        <small>Updated 2026-08-03 23:45 Asia/Shanghai</small>
       </div>
     </div>
   </header>
@@ -28,7 +28,7 @@
   <main class="shell">
     <section class="daily-summary">
       <div><strong>0</strong><span>today's recommendations</span></div>
-      <p>2095 background candidates were considered. Only selected papers appear here.</p>
+      <p>2067 background candidates from arXiv and 0 historical candidates were considered. Only selected papers appear here.</p>
     </section>
 
     <div class="navigation-row">
@@ -46,10 +46,11 @@
 
     <section class="method-note">
       <h2>筛选说明</h2>
-      <p>The page is capped at 5 papers. Recent papers require research_fit ≥ 40, a configured core topic, and at least one non-generic keyword. Generic learning, agent, or control terms cannot qualify by themselves. Topic diversity, reading status, dismissal, and recommendation cooldowns are applied before selection.</p>
+      <p>The page is capped at 5 papers: frontier papers ≤ 2, historical-impact candidates ≤ 3, and review/knowledge-map papers ≤ 1. Recent papers require research_fit ≥ 40. Historical papers require research relevance and historical_value_score ≥ 42.0. Generic learning, agent, or control terms cannot qualify alone. Dismissal, read status, cooldown, canonical deduplication, and topic diversity apply before selection.</p>
+      <p class="impact-disclaimer">引用和影响力数据来自 OpenAlex，仅作为论文筛选信号，不等同于论文质量评价。</p>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="shell"><p>Metadata comes from the arXiv API. EverWhy Paper Radar is independent and not affiliated with arXiv.</p></div></footer>
+  <footer class="site-footer"><div class="shell"><p>Recent-paper metadata comes from the arXiv API; historical citation and impact metadata comes from OpenAlex. EverWhy Paper Radar is independent and is not affiliated with or endorsed by either source.</p></div></footer>
 </body>
 </html>

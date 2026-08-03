@@ -1,0 +1,586 @@
+{
+  "schema_version": 2,
+  "date": "2026-08-04",
+  "generated_at": "2026-08-04T00:26:18+08:00",
+  "mode": "historical",
+  "candidate_count": 0,
+  "historical_candidate_count": 20,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "selection_order": [
+      "review_knowledge_map",
+      "high_impact_historical",
+      "frontier_recent"
+    ],
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 3,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "research_fit 62 ≥ 18",
+        "核心方向：legged_humanoid, mobile_manipulation, optimal_control, robot_learning",
+        "特定关键词：humanoid locomotion, humanoid robots, locomotion and manipulation, loco-manipulation, loco manipulation, whole-body control, whole body control",
+        "historical_value_score 75.0 ≥ 50.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 0.7%",
+        "OpenAlex FWCI 16.09",
+        "近年年均 OpenAlex 引用 5.0（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T00:25:54"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7140452175",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7140452175",
+        "openalex_id": "W7140452175",
+        "base_arxiv_id": null,
+        "doi": "10.1109/tmech.2025.3579247",
+        "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+        "authors": [
+          "Zhaoyuan Gu",
+          "Junheng Li",
+          "Wenlan Shen",
+          "Wenhao Yu",
+          "Zhaoming Xie",
+          "Stephen McCrory",
+          "Xianyi Cheng",
+          "Abdulaziz Shamsah",
+          "Robert J. Griffin",
+          "C. Karen Liu",
+          "Abderrahmane Kheddar",
+          "Xue Bin Peng",
+          "Yuke Zhu",
+          "Guanya Shi",
+          "Quan Nguyen",
+          "Gordon Cheng",
+          "Huijun Gao",
+          "Ye Zhao"
+        ],
+        "abstract": "Humanoid robots hold great potential to perform various human-level skills, involving unified locomotion and manipulation in real-world settings. Driven by advances in machine learning and the strength of existing model-based approaches, these capabilities have progressed rapidly, but often separately. This survey offers a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, with a focus on control, planning, and learning methods. We first review the model-based methods that have been the backbone of humanoid robotics for the past three decades. We discuss contact planning, motion planning, and whole-body control, highlighting the tradeoffs between model fidelity and computational efficiency. Then, the focus is shifted to examine emerging learning-based methods, with an emphasis on reinforcement and imitation learning that enhance the robustness and versatility of loco-manipulation skills. Furthermore, we assess the potential of integrating foundation models with humanoid embodiments to enable the development of generalist humanoid agents. This survey also highlights the emerging role of tactile sensing, particularly whole-body tactile feedback, as a crucial modality for handling contact-rich interactions. Finally, we compare the strengths and limitations of model-based and learning-based paradigms from multiple perspectives, such as robustness, computational efficiency, versatility, and generalizability, and suggest potential solutions to existing challenges.",
+        "publication_date": "2026-03-26",
+        "publication_year": 2026,
+        "source_name": "IEEE/ASME Transactions on Mechatronics",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.6565999984741211
+          },
+          {
+            "id": "https://openalex.org/T10709",
+            "display_name": "Social Robot Interaction and HRI",
+            "score": 0.10199999809265137
+          },
+          {
+            "id": "https://openalex.org/T12290",
+            "display_name": "Human Motion and Animation",
+            "score": 0.05209999904036522
+          }
+        ],
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          }
+        ],
+        "fwci": 16.0899,
+        "citation_normalized_percentile": 0.9925981,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "topic_search:humanoid locomotion and manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T00:25:08",
+        "last_considered_at": "2026-08-04T00:26:18+08:00",
+        "recommended_at": "2026-08-04T00:26:18+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T00:25:54",
+        "openalex_url": "https://openalex.org/W7140452175",
+        "landing_page_url": "https://doi.org/10.1109/tmech.2025.3579247",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 62,
+        "video_potential": 63,
+        "matched_topics": [
+          "legged_humanoid",
+          "mobile_manipulation",
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion",
+          "humanoid robots",
+          "locomotion and manipulation",
+          "loco-manipulation",
+          "loco manipulation",
+          "whole-body control",
+          "whole body control",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "humanoid locomotion",
+              "humanoid robots"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "locomotion and manipulation",
+              "loco-manipulation",
+              "loco manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "whole-body control",
+              "whole body control"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          }
+        ],
+        "historical_value_score": 75.0,
+        "historical_score_components": {
+          "research_relevance": 62.0,
+          "normalized_citation": 99.3,
+          "fwci": 100.0,
+          "citation_momentum": 25.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.7%",
+          "OpenAlex FWCI 16.09",
+          "近年年均 OpenAlex 引用 5.0（无更早窗口可比较）",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "paper": {
+        "arxiv_id": "openalex:W7140452175",
+        "base_id": "openalex:W7140452175",
+        "version": 1,
+        "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+        "authors": [
+          "Zhaoyuan Gu",
+          "Junheng Li",
+          "Wenlan Shen",
+          "Wenhao Yu",
+          "Zhaoming Xie",
+          "Stephen McCrory",
+          "Xianyi Cheng",
+          "Abdulaziz Shamsah",
+          "Robert J. Griffin",
+          "C. Karen Liu",
+          "Abderrahmane Kheddar",
+          "Xue Bin Peng",
+          "Yuke Zhu",
+          "Guanya Shi",
+          "Quan Nguyen",
+          "Gordon Cheng",
+          "Huijun Gao",
+          "Ye Zhao"
+        ],
+        "published": "2026-03-26T00:00:00Z",
+        "updated": "2026-03-26T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Humanoid robots hold great potential to perform various human-level skills, involving unified locomotion and manipulation in real-world settings. Driven by advances in machine learning and the strength of existing model-based approaches, these capabilities have progressed rapidly, but often separately. This survey offers a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, with a focus on control, planning, and learning methods. We first review the model-based methods that have been the backbone of humanoid robotics for the past three decades. We discuss contact planning, motion planning, and whole-body control, highlighting the tradeoffs between model fidelity and computational efficiency. Then, the focus is shifted to examine emerging learning-based methods, with an emphasis on reinforcement and imitation learning that enhance the robustness and versatility of loco-manipulation skills. Furthermore, we assess the potential of integrating foundation models with humanoid embodiments to enable the development of generalist humanoid agents. This survey also highlights the emerging role of tactile sensing, particularly whole-body tactile feedback, as a crucial modality for handling contact-rich interactions. Finally, we compare the strengths and limitations of model-based and learning-based paradigms from multiple perspectives, such as robustness, computational efficiency, versatility, and generalizability, and suggest potential solutions to existing challenges.",
+        "abs_url": "https://doi.org/10.1109/tmech.2025.3579247",
+        "pdf_url": "",
+        "research_fit": 62,
+        "video_potential": 63,
+        "matched_topics": [
+          "legged_humanoid",
+          "mobile_manipulation",
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion",
+          "humanoid robots",
+          "locomotion and manipulation",
+          "loco-manipulation",
+          "loco manipulation",
+          "whole-body control",
+          "whole body control",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "humanoid locomotion",
+              "humanoid robots"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "locomotion and manipulation",
+              "loco-manipulation",
+              "loco manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "whole-body control",
+              "whole body control"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 38 ≥ 18",
+        "核心方向：legged_humanoid, optimal_control",
+        "特定关键词：bipedal robot, whole-body control, whole body control",
+        "historical_value_score 66.5 ≥ 42.0",
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 3.1%",
+        "OpenAlex FWCI 5.30",
+        "近 2 年年均引用 36.5；此前 2 年年均 33.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T00:25:54"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3012010640",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3012010640",
+        "openalex_id": "W3012010640",
+        "base_arxiv_id": "2005.11431",
+        "doi": "10.1109/lra.2020.2979625",
+        "title": "LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops",
+        "authors": [
+          "Victor Klemm",
+          "Alessandro Morra",
+          "Lionel Gulich",
+          "Dominik Mannhart",
+          "David Rohr",
+          "Mina Kamel",
+          "Yvain de Viragh",
+          "Roland Siegwart"
+        ],
+        "abstract": "We present a hierarchical whole-body controller leveraging the full rigid body dynamics of the wheeled bipedal robot Ascento. We derive closed-form expressions for the dynamics of its kinematic loops in a way that readily generalizes to more complex systems. The rolling constraint is incorporated using a compact analytic solution based on rotation matrices. The non-minimum phase balancing dynamics are accounted for by including a linear-quadratic regulator as a motion task. Robustness when driving curves is increased by regulating the lean angle as a function of the zero-moment point. The proposed controller is computationally lightweight and significantly extends the rough-terrain capabilities and robustness of the system, as we demonstrate in several experiments.",
+        "publication_date": "2020-03-09",
+        "publication_year": 2020,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9998999834060669
+          },
+          {
+            "id": "https://openalex.org/T11615",
+            "display_name": "Control and Dynamics of Mobile Robots",
+            "score": 0.989799976348877
+          },
+          {
+            "id": "https://openalex.org/T11170",
+            "display_name": "Biomimetic flight and propulsion mechanisms",
+            "score": 0.987500011920929
+          }
+        ],
+        "cited_by_count": 183,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 57
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 5.3044,
+        "citation_normalized_percentile": 0.96943124,
+        "referenced_works": [
+          "W1560270123",
+          "W1592294156",
+          "W1967117511",
+          "W1969140852",
+          "W1969366849",
+          "W1981141114",
+          "W2015996585",
+          "W201697872",
+          "W2019606703",
+          "W2033541559",
+          "W2037729465",
+          "W2054577881",
+          "W2099544223",
+          "W2113265921",
+          "W2135929901",
+          "W2177270305",
+          "W2296360731",
+          "W2565660673",
+          "W2571115941",
+          "W2744484133",
+          "W2779458783",
+          "W2783824884",
+          "W2913792742",
+          "W2951633861",
+          "W2963153688",
+          "W2963190023",
+          "W2968031102",
+          "W3099530328",
+          "W3099855898",
+          "W3101817006",
+          "W4241459016",
+          "W4243385754",
+          "W4297819560",
+          "W6608173742"
+        ],
+        "related_works": [
+          "W122584421",
+          "W1987749388",
+          "W2066693961",
+          "W2138228021",
+          "W2259616189",
+          "W2331332883",
+          "W2368363778",
+          "W2373921823",
+          "W2789522126",
+          "W4244295168"
+        ],
+        "discovery_source": [
+          "topic_search:whole-body control robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T00:25:11",
+        "last_considered_at": "2026-08-04T00:26:18+08:00",
+        "recommended_at": "2026-08-04T00:26:18+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T00:25:54",
+        "openalex_url": "https://openalex.org/W3012010640",
+        "landing_page_url": "https://doi.org/10.1109/lra.2020.2979625",
+        "open_access_url": "http://hdl.handle.net/20.500.11850/411183",
+        "pdf_url": null,
+        "research_fit": 38,
+        "video_potential": 28,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "bipedal robot",
+          "whole-body control",
+          "whole body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "bipedal robot"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "whole-body control",
+              "whole body control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "historical_value_score": 66.5,
+        "historical_score_components": {
+          "research_relevance": 38.0,
+          "normalized_citation": 96.9,
+          "fwci": 100.0,
+          "citation_momentum": 55.3,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2020 年",
+          "同领域同年份引用标准化位于前 3.1%",
+          "OpenAlex FWCI 5.30",
+          "近 2 年年均引用 36.5；此前 2 年年均 33.0",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "2005.11431",
+        "base_id": "2005.11431",
+        "version": 1,
+        "title": "LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops",
+        "authors": [
+          "Victor Klemm",
+          "Alessandro Morra",
+          "Lionel Gulich",
+          "Dominik Mannhart",
+          "David Rohr",
+          "Mina Kamel",
+          "Yvain de Viragh",
+          "Roland Siegwart"
+        ],
+        "published": "2020-03-09T00:00:00Z",
+        "updated": "2020-03-09T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "We present a hierarchical whole-body controller leveraging the full rigid body dynamics of the wheeled bipedal robot Ascento. We derive closed-form expressions for the dynamics of its kinematic loops in a way that readily generalizes to more complex systems. The rolling constraint is incorporated using a compact analytic solution based on rotation matrices. The non-minimum phase balancing dynamics are accounted for by including a linear-quadratic regulator as a motion task. Robustness when driving curves is increased by regulating the lean angle as a function of the zero-moment point. The proposed controller is computationally lightweight and significantly extends the rough-terrain capabilities and robustness of the system, as we demonstrate in several experiments.",
+        "abs_url": "https://arxiv.org/abs/2005.11431",
+        "pdf_url": "https://arxiv.org/pdf/2005.11431",
+        "research_fit": 38,
+        "video_potential": 28,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "bipedal robot",
+          "whole-body control",
+          "whole body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "bipedal robot"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "whole-body control",
+              "whole body control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}

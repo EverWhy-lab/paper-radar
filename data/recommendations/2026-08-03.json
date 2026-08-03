@@ -1,24 +1,25 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "date": "2026-08-03",
-  "generated_at": "2026-08-03T22:55:14+08:00",
+  "generated_at": "2026-08-03T23:45:28+08:00",
   "mode": "incremental",
-  "candidate_count": 2095,
+  "candidate_count": 2067,
+  "historical_candidate_count": 0,
   "recommendation_count": 0,
   "category_counts": {
-    "important_update": 0,
-    "reading_pool": 0,
-    "recent_new": 0
+    "frontier_recent": 0,
+    "high_impact_historical": 0,
+    "review_knowledge_map": 0
   },
   "selection_config": {
     "max_total": 5,
     "selection_order": [
-      "recent_new",
-      "important_update",
-      "reading_pool"
+      "review_knowledge_map",
+      "high_impact_historical",
+      "frontier_recent"
     ],
-    "recent_new": {
-      "max_count": 3,
+    "frontier_recent": {
+      "max_count": 2,
       "min_research_fit": 40,
       "min_core_topic_matches": 1,
       "min_non_generic_keyword_matches": 1,
@@ -26,56 +27,33 @@
       "max_same_primary_topic": 1,
       "max_topic_overlap": 0.66
     },
-    "reading_pool": {
-      "max_count": 2,
-      "default_priority": 50,
-      "min_priority": 1,
-      "cooldown_days": 14,
+    "high_impact_historical": {
+      "max_count": 3,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
       "eligible_statuses": [
         "unread",
         "queued"
-      ]
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
     },
-    "important_update": {
+    "review_knowledge_map": {
       "max_count": 1,
-      "min_research_fit": 60,
-      "min_core_topic_matches": 1,
-      "min_non_generic_keyword_matches": 1,
-      "cooldown_days": 7
-    },
-    "core_topic_ids": [
-      "legged_humanoid",
-      "mobile_manipulation",
-      "optimal_control",
-      "robot_learning",
-      "diffusion_visuomotor",
-      "vla_foundation",
-      "llm_agent_robotics",
-      "pose_rescue"
-    ],
-    "generic_keywords": [
-      "robot learning",
-      "reinforcement learning",
-      "imitation learning",
-      "behavior cloning",
-      "large language model",
-      "LLM",
-      "agentic planning",
-      "robot planning",
-      "task planning",
-      "optimal control"
-    ],
-    "excluded_terms": [
-      "autonomous cyber",
-      "cyber operations",
-      "evolutionary game",
-      "autonomous driving",
-      "traffic prediction",
-      "wireless communication",
-      "recommendation system",
-      "medical image",
-      "molecule generation"
-    ]
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
   },
   "recommendations": []
 }

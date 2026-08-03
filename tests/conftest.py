@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 import pytest
 
@@ -16,3 +17,12 @@ def profile() -> ResearchProfile:
 @pytest.fixture
 def atom_xml() -> str:
     return (PROJECT_ROOT / "tests" / "fixtures" / "arxiv_response.xml").read_text(encoding="utf-8")
+
+
+@pytest.fixture
+def openalex_payload() -> dict:
+    return json.loads(
+        (PROJECT_ROOT / "tests" / "fixtures" / "openalex_works.json").read_text(
+            encoding="utf-8"
+        )
+    )

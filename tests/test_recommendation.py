@@ -340,6 +340,7 @@ def test_reader_network_failure_preserves_all_three_layers_and_page(
         tmp_path / "data" / "reading_pool.json": "stable pool",
         tmp_path / "data" / "candidates" / "2026-08-03.json": "stable candidates",
         tmp_path / "data" / "recommendations" / "2026-08-03.json": "stable recommendations",
+        tmp_path / "data" / "history" / "discovery_pool.json": "stable historical candidates",
         tmp_path / "site" / "index.html": "stable page",
     }
     for path, content in paths.items():

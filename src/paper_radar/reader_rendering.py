@@ -18,6 +18,9 @@ CATEGORY_LABELS = {
     "recent_new": "近期新论文",
     "reading_pool": "历史阅读",
     "important_update": "重要更新",
+    "frontier_recent": "前沿新论文",
+    "high_impact_historical": "领域内高影响力",
+    "review_knowledge_map": "综述 / 知识地图",
 }
 
 
@@ -64,6 +67,7 @@ class RecommendationSiteRenderer:
         previous = self.storage.previous_nonempty(daily.date) if demo_label is None else None
         archive_dates = self.storage.available_dates() if demo_label is None else []
         config = self.profile.recommendations
+        daily_mix = config["daily_mix"]
         return {
             "site_name": self.profile.site_name,
             "daily": daily,
@@ -82,8 +86,11 @@ class RecommendationSiteRenderer:
                 {"date": date_string, "url": f"{archive_prefix}{date_string}.html"}
                 for date_string in archive_dates
             ],
-            "recent_threshold": int(config["recent_new"]["min_research_fit"]),
-            "max_total": int(config["max_total"]),
+            "recent_threshold": int(daily_mix["frontier_recent"]["min_research_fit"]),
+            "historical_threshold": float(
+                daily_mix["high_impact_historical"]["min_historical_value_score"]
+            ),
+            "max_total": int(daily_mix["max_total"]),
             "demo_label": demo_label,
         }
 

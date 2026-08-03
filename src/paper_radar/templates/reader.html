@@ -15,7 +15,7 @@
       <div>
         <p class="eyebrow">PERSONAL ROBOTICS READING SHORTLIST</p>
         <h1>{{ site_name }}</h1>
-        <p class="subtitle">At most five papers, selected by configurable and inspectable rules.</p>
+        <p class="subtitle">Research frontiers and historical impact candidates, selected by inspectable rules.</p>
       </div>
       <div class="date-block">
         <span>Recommendation date</span>
@@ -29,7 +29,7 @@
     {% if demo_label %}<div class="demo-banner">Fixture demonstration · {{ demo_label }}</div>{% endif %}
     <section class="daily-summary">
       <div><strong>{{ daily.recommendations | length }}</strong><span>today's recommendations</span></div>
-      <p>{{ daily.candidate_count }} background candidates were considered. Only selected papers appear here.</p>
+      <p>{{ daily.candidate_count }} background candidates from arXiv and {{ daily.historical_candidate_count }} historical candidates were considered. Only selected papers appear here.</p>
     </section>
 
     <div class="navigation-row">
@@ -47,34 +47,58 @@
       <div class="section-heading"><span>SELECTED</span><h2>今日精选论文</h2></div>
       {% for recommendation in daily.recommendations %}
       {% set paper = recommendation.paper %}
-      <article class="paper-card" data-paper-id="{{ paper.base_id }}" data-category="{{ recommendation.category }}">
+      {% set historical = recommendation.historical_paper %}
+      <article class="paper-card" data-paper-id="{{ recommendation.canonical_paper_id }}" data-category="{{ recommendation.category }}">
         <div class="card-topline">
           <span class="category category--{{ recommendation.category }}">{{ category_labels[recommendation.category] }}</span>
-          <span class="arxiv-id">{{ paper.arxiv_id }}</span>
+          <span class="arxiv-id">{{ historical.openalex_id if historical and historical.openalex_id else paper.arxiv_id }}</span>
         </div>
         <h3>{{ paper.title }}</h3>
         <p class="authors">{{ paper.authors | join(', ') }}</p>
         <div class="metadata">
+          {% if historical %}
+          <span><b>Published</b> {{ historical.publication_date or historical.publication_year or 'unknown' }}</span>
+          {% if historical.source_name %}<span><b>Source</b> {{ historical.source_name }}</span>{% endif %}
+          <span><b>OpenAlex citations</b> {{ historical.cited_by_count if historical.cited_by_count is not none else 'unknown' }}</span>
+          <span><b>Citation data updated</b> {{ historical.metadata_updated_at | display_datetime }}</span>
+          {% else %}
           <span><b>Published</b> {{ paper.published | display_datetime }}</span>
           <span><b>Categories</b> {{ paper.categories | join(', ') }}</span>
+          {% endif %}
         </div>
         <div class="scores">
           <span><strong>{{ paper.research_fit }}</strong><small>research fit</small></span>
           <span><strong>{{ paper.video_potential }}</strong><small>video potential</small></span>
+          {% if historical and historical.historical_value_score is not none %}<span><strong>{{ '%.1f' | format(historical.historical_value_score) }}</strong><small>historical value</small></span>{% endif %}
         </div>
+        {% if historical %}
+        <div class="impact-signals">
+          {% if historical.citation_normalized_percentile is not none %}<span>同领域 / 同年份前 {{ '%.1f' | format((1 - historical.citation_normalized_percentile) * 100) }}%</span>{% endif %}
+          {% if historical.fwci is not none %}<span>FWCI {{ '%.2f' | format(historical.fwci) }}</span>{% endif %}
+          <span>发现来源：{{ historical.discovery_source | join(' · ') }}</span>
+        </div>
+        {% endif %}
         {% if paper.matched_topics %}
         <div class="topic-list">{% for topic in paper.matched_topics %}<span>{{ topic_labels.get(topic, topic) }}</span>{% endfor %}</div>
         {% endif %}
         <div class="selection-reasons">
-          <h4>Why selected by the rules</h4>
+          <h4>Why selected now by the rules</h4>
           <ul>{% for reason in recommendation.reasons %}<li>{{ reason }}</li>{% endfor %}</ul>
           {% if recommendation.pool_reason %}<p><b>Pool note:</b> {{ recommendation.pool_reason }}</p>{% endif %}
         </div>
-        <details class="abstract"><summary>Original abstract</summary><p>{{ paper.summary }}</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>{{ historical.abstract if historical else paper.summary }}{% if historical and not historical.abstract %}OpenAlex metadata did not include an abstract.{% endif %}</p></details>
         <div class="actions">
+          {% if historical %}
+          {% if historical.openalex_url %}<a href="{{ historical.openalex_url }}" target="_blank" rel="noopener noreferrer">OpenAlex</a>{% endif %}
+          {% if historical.base_arxiv_id %}<a href="https://arxiv.org/abs/{{ historical.base_arxiv_id }}" target="_blank" rel="noopener noreferrer">arXiv</a>{% endif %}
+          {% if historical.pdf_url %}<a href="{{ historical.pdf_url }}" target="_blank" rel="noopener noreferrer">PDF</a>{% endif %}
+          {% if historical.doi %}<a href="https://doi.org/{{ historical.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+          {% if historical.base_arxiv_id %}<a href="https://arxiv.org/bibtex/{{ historical.base_arxiv_id }}" target="_blank" rel="noopener noreferrer">BibTeX</a>{% endif %}
+          {% else %}
           <a href="{{ paper.abs_url }}" target="_blank" rel="noopener noreferrer">arXiv</a>
           <a href="{{ paper.pdf_url }}" target="_blank" rel="noopener noreferrer">PDF</a>
           <a href="https://arxiv.org/bibtex/{{ paper.base_id }}" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          {% endif %}
         </div>
       </article>
       {% endfor %}
@@ -89,10 +113,11 @@
 
     <section class="method-note">
       <h2>筛选说明</h2>
-      <p>The page is capped at {{ max_total }} papers. Recent papers require research_fit ≥ {{ recent_threshold }}, a configured core topic, and at least one non-generic keyword. Generic learning, agent, or control terms cannot qualify by themselves. Topic diversity, reading status, dismissal, and recommendation cooldowns are applied before selection.</p>
+      <p>The page is capped at {{ max_total }} papers: frontier papers ≤ 2, historical-impact candidates ≤ 3, and review/knowledge-map papers ≤ 1. Recent papers require research_fit ≥ {{ recent_threshold }}. Historical papers require research relevance and historical_value_score ≥ {{ historical_threshold }}. Generic learning, agent, or control terms cannot qualify alone. Dismissal, read status, cooldown, canonical deduplication, and topic diversity apply before selection.</p>
+      <p class="impact-disclaimer">引用和影响力数据来自 OpenAlex，仅作为论文筛选信号，不等同于论文质量评价。</p>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="shell"><p>Metadata comes from the arXiv API. EverWhy Paper Radar is independent and not affiliated with arXiv.</p></div></footer>
+  <footer class="site-footer"><div class="shell"><p>Recent-paper metadata comes from the arXiv API; historical citation and impact metadata comes from OpenAlex. EverWhy Paper Radar is independent and is not affiliated with or endorsed by either source.</p></div></footer>
 </body>
 </html>

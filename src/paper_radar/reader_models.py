@@ -4,10 +4,18 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from paper_radar.models import Paper
+from paper_radar.history_models import HistoricalPaper
 
 
 READING_STATUSES = {"unread", "queued", "reading", "read"}
-RECOMMENDATION_CATEGORIES = {"recent_new", "reading_pool", "important_update"}
+RECOMMENDATION_CATEGORIES = {
+    "recent_new",
+    "reading_pool",
+    "important_update",
+    "frontier_recent",
+    "high_impact_historical",
+    "review_knowledge_map",
+}
 
 
 @dataclass
@@ -103,12 +111,29 @@ class RecommendationEntry:
     paper: Paper
     reasons: list[str] = field(default_factory=list)
     pool_reason: str | None = None
+    historical_paper: HistoricalPaper | None = None
+
+    @property
+    def canonical_paper_id(self) -> str:
+        if self.historical_paper is not None:
+            return self.historical_paper.canonical_paper_id
+        return f"arxiv:{self.paper.base_id}"
+
+    @property
+    def aliases(self) -> set[str]:
+        if self.historical_paper is not None:
+            return self.historical_paper.aliases
+        return {self.canonical_paper_id.casefold()}
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "category": self.category,
             "reasons": self.reasons,
             "pool_reason": self.pool_reason,
+            "canonical_paper_id": self.canonical_paper_id,
+            "historical_paper": (
+                self.historical_paper.to_dict() if self.historical_paper else None
+            ),
             "paper": self.paper.to_dict(),
         }
 
@@ -118,6 +143,11 @@ class RecommendationEntry:
             category=str(value["category"]),
             reasons=list(value.get("reasons", [])),
             pool_reason=value.get("pool_reason"),
+            historical_paper=(
+                HistoricalPaper.from_dict(value["historical_paper"])
+                if value.get("historical_paper")
+                else None
+            ),
             paper=Paper.from_dict(value["paper"]),
         )
 
@@ -130,12 +160,16 @@ class DailyRecommendations:
     candidate_count: int
     mode: str
     selection_config: dict[str, Any]
-    schema_version: int = 1
+    historical_candidate_count: int = 0
+    schema_version: int = 2
 
     def to_dict(self) -> dict[str, Any]:
+        configured_categories = set(self.selection_config.get("selection_order", []))
+        actual_categories = {entry.category for entry in self.recommendations}
+        categories = configured_categories | actual_categories
         counts = {
             category: sum(1 for entry in self.recommendations if entry.category == category)
-            for category in sorted(RECOMMENDATION_CATEGORIES)
+            for category in sorted(categories or RECOMMENDATION_CATEGORIES)
         }
         return {
             "schema_version": self.schema_version,
@@ -143,6 +177,7 @@ class DailyRecommendations:
             "generated_at": self.generated_at,
             "mode": self.mode,
             "candidate_count": self.candidate_count,
+            "historical_candidate_count": self.historical_candidate_count,
             "recommendation_count": len(self.recommendations),
             "category_counts": counts,
             "selection_config": self.selection_config,
@@ -157,6 +192,7 @@ class DailyRecommendations:
             generated_at=str(value["generated_at"]),
             mode=str(value.get("mode", "incremental")),
             candidate_count=int(value.get("candidate_count", 0)),
+            historical_candidate_count=int(value.get("historical_candidate_count", 0)),
             selection_config=dict(value.get("selection_config", {})),
             recommendations=[
                 RecommendationEntry.from_dict(entry)

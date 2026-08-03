@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-04",
+  "fetched_at": "2026-08-04T00:26:18+08:00",
+  "mode": "historical",
+  "window_start": "2026-08-04T00:00:00+08:00",
+  "window_end": "2026-08-05T00:00:00+08:00",
+  "candidate_count": 0,
+  "papers": []
+}

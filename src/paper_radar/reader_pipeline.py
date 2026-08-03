@@ -6,6 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from paper_radar.config import ResearchProfile, load_profile
+from paper_radar.curation import CuratedRecommendationEngine
 from paper_radar.fetchers.arxiv import ArxivClient
 from paper_radar.pipeline import (
     PaperFetcher,
@@ -16,7 +17,7 @@ from paper_radar.pipeline import (
 from paper_radar.reader_models import CandidateBatch, DailyRecommendations, RecommendationEntry
 from paper_radar.reader_rendering import RecommendationSiteRenderer
 from paper_radar.reader_storage import CandidateStorage, ReadingPoolStorage, RecommendationStorage
-from paper_radar.recommendation import RecommendationEngine
+from paper_radar.history_storage import HistoricalPaperStorage
 from paper_radar.scoring import score_papers
 from paper_radar.storage import RadarStorage
 
@@ -30,6 +31,7 @@ class ReaderRunResult:
     candidate_path: Path
     index_path: Path
     archive_path: Path
+    historical_candidate_count: int = 0
 
 
 def _merge_recommendations(
@@ -39,26 +41,26 @@ def _merge_recommendations(
 ) -> list[RecommendationEntry]:
     existing_entries = existing.recommendations if existing else []
     groups: dict[str, list[RecommendationEntry]] = {
-        "recent_new": [],
-        "reading_pool": [],
-        "important_update": [],
+        category: [] for category in config["selection_order"]
     }
     for entry in existing_entries + additions:
-        if any(item.paper.base_id == entry.paper.base_id for item in groups[entry.category]):
+        if entry.category not in groups:
+            continue
+        if any(item.aliases & entry.aliases for item in groups[entry.category]):
             continue
         groups[entry.category].append(entry)
     for category in groups:
         groups[category] = groups[category][: int(config[category]["max_count"])]
 
     final: list[RecommendationEntry] = []
-    used_ids: set[str] = set()
+    used_aliases: set[str] = set()
     for category in config["selection_order"]:
         for entry in groups[category]:
             if len(final) >= min(5, int(config["max_total"])):
                 break
-            if entry.paper.base_id not in used_ids:
+            if not (entry.aliases & used_aliases):
                 final.append(entry)
-                used_ids.add(entry.paper.base_id)
+                used_aliases.update(entry.aliases)
     return final
 
 
@@ -76,6 +78,7 @@ def _run_reader(
     candidate_storage = CandidateStorage(data_dir)
     pool_storage = ReadingPoolStorage(data_dir)
     recommendation_storage = RecommendationStorage(data_dir)
+    historical_storage = HistoricalPaperStorage(data_dir)
     seen_before = state_storage.load_seen(migrated_at=run_at.isoformat(timespec="seconds"))
 
     if mode == "historical":
@@ -112,13 +115,13 @@ def _run_reader(
         papers=scored_candidates,
     )
     pool_entries = pool_storage.load()
+    historical_papers = historical_storage.load()
     history = recommendation_storage.history(exclude_date=target_date.isoformat())
-    selection = RecommendationEngine(profile).select(
+    selection = CuratedRecommendationEngine(profile).select(
         recent_new=scored_new,
-        version_updates=scored_updates,
+        historical_papers=historical_papers,
         reading_pool=pool_entries,
         history=history,
-        seen_before=seen_before,
         target_date=target_date.isoformat(),
         considered_at=generated_at,
     )
@@ -131,18 +134,25 @@ def _run_reader(
     final_entries = _merge_recommendations(
         existing if mode == "incremental" else None,
         selection.recommendations,
-        profile.recommendations,
+        profile.recommendations["daily_mix"],
     )
-    existing_ids = {
-        entry.paper.base_id for entry in (existing.recommendations if existing else [])
+    existing_aliases = {
+        alias
+        for entry in (existing.recommendations if existing else [])
+        for alias in entry.aliases
     }
-    newly_selected_pool_ids = {
-        entry.paper.base_id
-        for entry in final_entries
-        if entry.category == "reading_pool" and entry.paper.base_id not in existing_ids
+    newly_selected = [
+        entry for entry in final_entries if not (entry.aliases & existing_aliases)
+    ]
+    newly_selected_aliases = {
+        alias for entry in newly_selected for alias in entry.aliases
     }
+    for paper in selection.historical_papers:
+        if paper.aliases & newly_selected_aliases:
+            paper.recommended_at = generated_at
+            paper.recommendation_count += 1
     for entry in selection.reading_pool:
-        if entry.base_arxiv_id in newly_selected_pool_ids:
+        if f"arxiv:{entry.base_arxiv_id}".casefold() in newly_selected_aliases:
             entry.recommended_at = generated_at
             entry.recommendation_count += 1
 
@@ -152,7 +162,8 @@ def _run_reader(
         recommendations=final_entries,
         candidate_count=len(scored_candidates),
         mode=mode,
-        selection_config=profile.recommendations,
+        selection_config=profile.recommendations["daily_mix"],
+        historical_candidate_count=len(historical_papers),
     )
     updated_seen = state_storage.updated_seen(seen_before, scored_candidates, generated_at)
     updated_seen.last_run_mode = f"reader_{mode}"
@@ -165,6 +176,7 @@ def _run_reader(
     candidate_path = candidate_storage.save(batch)
     recommendation_path = recommendation_storage.save(daily)
     pool_storage.save(selection.reading_pool)
+    historical_storage.save(selection.historical_papers)
     state_storage.save_seen(updated_seen)
     renderer = RecommendationSiteRenderer(
         project_root / "site", recommendation_storage, profile
@@ -178,6 +190,7 @@ def _run_reader(
         candidate_path=candidate_path,
         index_path=index_path,
         archive_path=archive_path,
+        historical_candidate_count=len(historical_papers),
     )
 
 

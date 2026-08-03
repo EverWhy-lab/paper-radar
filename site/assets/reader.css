@@ -47,6 +47,9 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spa
 .category--recent_new { background: rgba(97,212,179,.13); color: var(--accent); }
 .category--reading_pool { background: rgba(182,157,248,.13); color: var(--violet); }
 .category--important_update { background: rgba(122,162,247,.13); color: var(--blue); }
+.category--frontier_recent { background: rgba(97,212,179,.13); color: var(--accent); }
+.category--high_impact_historical { background: rgba(182,157,248,.13); color: var(--violet); }
+.category--review_knowledge_map { background: rgba(122,162,247,.13); color: var(--blue); }
 .arxiv-id { color: var(--faint); font: 11px ui-monospace, monospace; }
 .paper-card h3 { margin: 14px 0 6px; overflow-wrap: anywhere; font-size: 21px; line-height: 1.35; letter-spacing: -.02em; }
 .authors { margin: 0 0 13px; color: var(--muted); font-size: 13px; }
@@ -58,6 +61,8 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spa
 .scores small { color: var(--muted); font-size: 10px; text-transform: uppercase; }
 .topic-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .topic-list span { padding: 3px 7px; border: 1px solid var(--line-strong); border-radius: 4px; color: var(--muted); font-size: 10px; }
+.impact-signals { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.impact-signals span { padding: 4px 8px; border-radius: 4px; background: rgba(182,157,248,.08); color: #b7a8d8; font-size: 10px; }
 .selection-reasons { margin-top: 15px; padding: 12px 14px; border-left: 2px solid var(--accent); background: var(--surface-2); }
 .selection-reasons h4 { margin: 0 0 5px; font-size: 12px; }
 .selection-reasons ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 12px; }
@@ -74,6 +79,7 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spa
 .method-note { margin: 50px 0; padding-top: 20px; border-top: 1px solid var(--line); }
 .method-note h2 { margin: 0 0 7px; font-size: 16px; }
 .method-note p { margin: 0; color: var(--muted); font-size: 12px; }
+.method-note .impact-disclaimer { margin-top: 9px; color: #b7a8d8; }
 .site-footer { padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--faint); font-size: 11px; }
 @media (max-width: 768px) {
   .header-row { display: grid; }

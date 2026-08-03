@@ -24,6 +24,18 @@ class FetchConfig:
 
 
 @dataclass(frozen=True)
+class OpenAlexConfig:
+    endpoint: str
+    user_agent: str
+    timeout_seconds: float
+    retries: int
+    retry_delay_seconds: float
+    cache_ttl_days: int
+    daily_request_budget: int
+    default_per_page: int
+
+
+@dataclass(frozen=True)
 class ResearchProfile:
     site_name: str
     timezone: str
@@ -33,6 +45,9 @@ class ResearchProfile:
     video_scoring: dict[str, Any]
     sections: dict[str, Any]
     recommendations: dict[str, Any]
+    openalex: OpenAlexConfig
+    historical_discovery: dict[str, Any]
+    historical_scoring: dict[str, Any]
 
     @property
     def topic_labels(self) -> dict[str, str]:
@@ -64,6 +79,17 @@ def load_profile(path: Path) -> ResearchProfile:
             retries=int(fetch_raw["retries"]),
             lookback_days=int(fetch_raw.get("lookback_days", 7)),
         )
+        openalex_raw = raw["openalex"]
+        openalex = OpenAlexConfig(
+            endpoint=str(openalex_raw["endpoint"]).rstrip("/"),
+            user_agent=str(openalex_raw["user_agent"]),
+            timeout_seconds=float(openalex_raw["timeout_seconds"]),
+            retries=int(openalex_raw["retries"]),
+            retry_delay_seconds=float(openalex_raw["retry_delay_seconds"]),
+            cache_ttl_days=int(openalex_raw["cache_ttl_days"]),
+            daily_request_budget=int(openalex_raw["daily_request_budget"]),
+            default_per_page=int(openalex_raw["default_per_page"]),
+        )
         profile = ResearchProfile(
             site_name=str(site["name"]),
             timezone=str(site["timezone"]),
@@ -73,6 +99,9 @@ def load_profile(path: Path) -> ResearchProfile:
             video_scoring=dict(raw["video_scoring"]),
             sections=dict(raw["sections"]),
             recommendations=dict(raw["recommendations"]),
+            openalex=openalex,
+            historical_discovery=dict(raw["historical_discovery"]),
+            historical_scoring=dict(raw["historical_scoring"]),
         )
     except (KeyError, TypeError, ValueError) as exc:
         raise ConfigError(f"Missing or invalid research profile field: {exc}") from exc
@@ -85,6 +114,15 @@ def load_profile(path: Path) -> ResearchProfile:
         raise ConfigError("page_size, max_pages, retries, and lookback_days must be positive")
     if fetch.page_delay_seconds < 3:
         raise ConfigError("arXiv API page delay must be at least 3 seconds")
+    if (
+        openalex.timeout_seconds <= 0
+        or openalex.retries < 1
+        or openalex.retry_delay_seconds < 0
+        or openalex.cache_ttl_days < 1
+        or openalex.daily_request_budget < 1
+        or not 1 <= openalex.default_per_page <= 200
+    ):
+        raise ConfigError("OpenAlex timeout, retries, cache, budget, and page size are invalid")
     recommendation_limits = profile.recommendations
     if not 0 <= int(recommendation_limits.get("max_total", 5)) <= 5:
         raise ConfigError("recommendations.max_total must be between 0 and 5")
@@ -94,4 +132,26 @@ def load_profile(path: Path) -> ResearchProfile:
             raise ConfigError(
                 f"recommendations.{category}.max_count must be between 0 and {ceiling}"
             )
+    daily_mix = recommendation_limits["daily_mix"]
+    if not 0 <= int(daily_mix["max_total"]) <= 5:
+        raise ConfigError("recommendations.daily_mix.max_total must be between 0 and 5")
+    for category, ceiling in (
+        ("frontier_recent", 2),
+        ("high_impact_historical", 3),
+        ("review_knowledge_map", 1),
+    ):
+        value = int(daily_mix[category]["max_count"])
+        if not 0 <= value <= ceiling:
+            raise ConfigError(
+                f"recommendations.daily_mix.{category}.max_count must be between 0 and {ceiling}"
+            )
+    discovery = profile.historical_discovery
+    if int(discovery["expansion_depth"]) != 1:
+        raise ConfigError("historical_discovery.expansion_depth must be exactly 1 in V0.1.3")
+    for field in ("per_query_limit", "per_seed_limit", "global_candidate_limit"):
+        if int(discovery[field]) < 1:
+            raise ConfigError(f"historical_discovery.{field} must be positive")
+    weights = profile.historical_scoring.get("weights", {})
+    if not weights or any(float(value) < 0 for value in weights.values()):
+        raise ConfigError("historical_scoring.weights must contain non-negative values")
     return profile
