@@ -4,146 +4,146 @@
     {
       "identifier": "1603.06937",
       "added_at": "2026-08-04T12:41:10+08:00",
-      "openalex_id": null,
+      "openalex_id": "W2950762923",
       "base_arxiv_id": "1603.06937",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.1603.06937",
+      "title": "Stacked Hourglass Networks for Human Pose Estimation"
     },
     {
       "identifier": "1812.08008",
       "added_at": "2026-08-04T12:41:10+08:00",
-      "openalex_id": null,
+      "openalex_id": "W2903831537",
       "base_arxiv_id": "1812.08008",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.1812.08008",
+      "title": "OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields"
     },
     {
       "identifier": "2112.05124",
       "added_at": "2026-08-04T12:41:11+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4225541140",
       "base_arxiv_id": "2112.05124",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2112.05124",
+      "title": "Neural Descriptor Fields: SE(3)-Equivariant Object Representations for Manipulation"
     },
     {
       "identifier": "2204.01691",
       "added_at": "2026-08-04T12:42:50+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4224912544",
       "base_arxiv_id": "2204.01691",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2204.01691",
+      "title": "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"
     },
     {
       "identifier": "2205.08316",
       "added_at": "2026-08-04T12:41:11+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4280597627",
       "base_arxiv_id": "2205.08316",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2205.08316",
+      "title": "Self-Supervised Learning of Multi-Object Keypoints for Robotic Manipulation"
     },
     {
       "identifier": "2207.05608",
       "added_at": "2026-08-04T12:42:51+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4285428875",
       "base_arxiv_id": "2207.05608",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2207.05608",
+      "title": "Inner Monologue: Embodied Reasoning through Planning with Language Models"
     },
     {
       "identifier": "2209.11302",
       "added_at": "2026-08-04T12:42:51+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4297161808",
       "base_arxiv_id": "2209.11302",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2209.11302",
+      "title": "ProgPrompt: Generating Situated Robot Task Plans using Large Language Models"
     },
     {
       "identifier": "2212.06817",
       "added_at": "2026-08-04T12:42:50+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4311559655",
       "base_arxiv_id": "2212.06817",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2212.06817",
+      "title": "RT-1: Robotics Transformer for Real-World Control at Scale"
     },
     {
       "identifier": "2303.03378",
       "added_at": "2026-08-04T12:42:51+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4323572061",
       "base_arxiv_id": "2303.03378",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2303.03378",
+      "title": "PaLM-E: An Embodied Multimodal Language Model"
     },
     {
       "identifier": "2305.16291",
       "added_at": "2026-08-04T12:42:51+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4378505261",
       "base_arxiv_id": "2305.16291",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2305.16291",
+      "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models"
     },
     {
       "identifier": "2307.15818",
       "added_at": "2026-08-04T12:42:51+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4385473486",
       "base_arxiv_id": "2307.15818",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2307.15818",
+      "title": "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control"
     },
     {
       "identifier": "2310.08864",
       "added_at": "2026-08-04T12:42:51+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4387764390",
       "base_arxiv_id": "2310.08864",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2310.08864",
+      "title": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models"
     },
     {
       "identifier": "10.1002/rob.21683",
       "added_at": "2026-08-04T12:41:11+08:00",
-      "openalex_id": null,
+      "openalex_id": "W2556468286",
       "base_arxiv_id": null,
       "doi": "10.1002/rob.21683",
-      "title": null
+      "title": "The DARPA Robotics Challenge Finals: Results and Perspectives"
     },
     {
       "identifier": "10.1007/s10514-015-9479-3",
       "added_at": "2026-08-04T12:41:11+08:00",
-      "openalex_id": null,
+      "openalex_id": "W1945123189",
       "base_arxiv_id": null,
       "doi": "10.1007/s10514-015-9479-3",
-      "title": null
+      "title": "Optimization-based locomotion planning, estimation, and control design for the atlas humanoid robot"
     },
     {
       "identifier": "10.1038/s41593-018-0209-y",
       "added_at": "2026-08-04T12:41:10+08:00",
-      "openalex_id": null,
+      "openalex_id": "W2887114371",
       "base_arxiv_id": null,
       "doi": "10.1038/s41593-018-0209-y",
-      "title": null
+      "title": "DeepLabCut: markerless pose estimation of user-defined body parts with deep learning"
     },
     {
       "identifier": "10.1109/access.2020.3030190",
       "added_at": "2026-08-04T12:41:11+08:00",
-      "openalex_id": null,
+      "openalex_id": "W3096656822",
       "base_arxiv_id": null,
       "doi": "10.1109/access.2020.3030190",
-      "title": null
+      "title": "Collaborative Multi-Robot Search and Rescue: Planning, Coordination, Perception, and Active Vision"
     },
     {
       "identifier": "10.1109/icra48891.2023.10160591",
       "added_at": "2026-08-04T12:42:51+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4383097638",
       "base_arxiv_id": null,
       "doi": "10.1109/icra48891.2023.10160591",
-      "title": null
+      "title": "Code as Policies: Language Model Programs for Embodied Control"
     },
     {
       "identifier": "10.15607/rss.2012.viii.003",
       "added_at": "2026-08-04T12:41:11+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4237726214",
       "base_arxiv_id": null,
       "doi": "10.15607/rss.2012.viii.003",
-      "title": null
+      "title": "State Estimation for Legged Robots - Consistent Fusion of Leg Kinematics and"
     }
   ]
 }
