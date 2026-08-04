@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "date": "2026-08-04",
-  "fetched_at": "2026-08-04T11:24:38+08:00",
+  "fetched_at": "2026-08-04T11:43:28+08:00",
   "mode": "incremental",
-  "window_start": "2026-07-28T11:24:38.584791+08:00",
-  "window_end": "2026-08-04T11:24:38.584791+08:00",
-  "candidate_count": 3065,
+  "window_start": "2026-07-28T11:43:28.883703+08:00",
+  "window_end": "2026-08-04T11:43:28.883703+08:00",
+  "candidate_count": 3063,
   "papers": [
     {
       "arxiv_id": "2603.13707v3",
@@ -22324,82 +22324,6 @@
           "keywords": [
             "evaluation",
             "ablation"
-          ],
-          "location": "abstract",
-          "points": 6.5
-        }
-      ]
-    },
-    {
-      "arxiv_id": "2607.25241v1",
-      "base_id": "2607.25241",
-      "version": 1,
-      "title": "Learning from the Unseen: Offline Reinforcement Learning with Hidden Actions",
-      "authors": [
-        "Zeyu Bian",
-        "Ying Zhou",
-        "Yifan Cui"
-      ],
-      "published": "2026-07-28T03:32:31Z",
-      "updated": "2026-07-28T03:32:31Z",
-      "primary_category": "stat.ML",
-      "categories": [
-        "stat.ML",
-        "cs.LG"
-      ],
-      "summary": "Standard offline reinforcement learning (RL) algorithms typically assume that the actions in the dataset are observed without error. However, in many real-world applications, the true actions are unobserved and only noisy proxies are available, causing existing RL methods to yield biased and potentially misleading conclusions. We study off-policy evaluation in infinite-horizon discounted Markov decision processes with hidden actions. By leveraging the next-state variable as a natural proxy for the unobserved action, we establish identification of the policy value and propose an influence-function-based estimator called LURE (Learning from the Unseen: Robust Estimator). LURE is multiply robust, remaining consistent under several combinations of correctly specified nuisance components, and is asymptotically normal, enabling valid statistical inference. To our knowledge, this is the first work to address offline RL with hidden actions. We demonstrate LURE's effectiveness through simulations and a sepsis management application using the MIMIC-III database.",
-      "abs_url": "https://arxiv.org/abs/2607.25241v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.25241v1",
-      "research_fit": 24,
-      "video_potential": 26,
-      "matched_topics": [
-        "robot_learning"
-      ],
-      "matched_keywords": [
-        "reinforcement learning"
-      ],
-      "research_reasons": [
-        {
-          "kind": "topic",
-          "label": "Robot Learning",
-          "keywords": [
-            "reinforcement learning"
-          ],
-          "location": "title",
-          "points": 16.0
-        },
-        {
-          "kind": "category",
-          "label": "cs.LG",
-          "keywords": [
-            "cs.LG"
-          ],
-          "location": "category",
-          "points": 8.0
-        }
-      ],
-      "video_reasons": [
-        {
-          "kind": "research_fit",
-          "label": "Research alignment component",
-          "keywords": [],
-          "location": "score",
-          "points": 6.0
-        },
-        {
-          "kind": "video_signal",
-          "label": "Learning policy",
-          "keywords": [
-            "reinforcement learning"
-          ],
-          "location": "title",
-          "points": 14.0
-        },
-        {
-          "kind": "video_signal",
-          "label": "Benchmark or comparison",
-          "keywords": [
-            "evaluation"
           ],
           "location": "abstract",
           "points": 6.5
@@ -69712,74 +69636,6 @@
           "label": "Benchmark or comparison",
           "keywords": [
             "evaluation"
-          ],
-          "location": "abstract",
-          "points": 6.5
-        }
-      ]
-    },
-    {
-      "arxiv_id": "2607.25244v1",
-      "base_id": "2607.25244",
-      "version": 1,
-      "title": "CADENCE: A Cardiac Atom Dictionary for Interpretable Neural Concept Extraction from ECG Foundation Models",
-      "authors": [
-        "Yixuan Duan",
-        "Arjun Naik",
-        "Sadeer Al-Kindi",
-        "Wei Qiu"
-      ],
-      "published": "2026-07-28T03:38:03Z",
-      "updated": "2026-07-28T03:38:03Z",
-      "primary_category": "cs.AI",
-      "categories": [
-        "cs.AI"
-      ],
-      "summary": "Foundation models for 12-lead electrocardiograms (ECGs) transfer well across clinical tasks, but the physiological knowledge encoded in their representations remains opaque. We present CADENCE, a framework that decomposes an ECG foundation model into a human-interpretable, queryable dictionary of physiological concepts. Using a BatchTopK sparse autoencoder, CADENCE factorizes Layer-6 embeddings from more than nine million ECG tokens into 8,192 sparse cardiac atoms. These atoms align better than individual dense embedding dimensions with clinical phenotypes and waveform morphology, recovering arrhythmias, conduction abnormalities, infarction and repolarization patterns, chamber and axis findings, and lead- and beat-phase-specific waveform primitives. At Layer 6, the best atoms achieve mean AUROCs of 0.88 for clinical phenotypes and 0.90 for morphology, versus 0.78 and 0.83 for the best dense dimensions. Sparse atom probes match or outperform dense probes for phenotype, morphology, and age prediction while attributing each prediction to a small set of interpretable atoms; phenotype AUROC improves from 0.93 to 0.95. Atom-space geometry recovers physiologically coherent relationships, and targeted atom ablation selectively changes frozen downstream outputs. An automated LLM pipeline generates and quantitatively validates atom descriptions by predicting held-out activations. On independent external ECG datasets, CADENCE recovers overlapping concepts and maintains consistent phenotype-prediction performance. CADENCE provides a scalable framework for discovering and auditing the physiological knowledge encoded by ECG foundation models.",
-      "abs_url": "https://arxiv.org/abs/2607.25244v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.25244v1",
-      "research_fit": 17,
-      "video_potential": 11,
-      "matched_topics": [
-        "llm_agent_robotics"
-      ],
-      "matched_keywords": [
-        "LLM"
-      ],
-      "research_reasons": [
-        {
-          "kind": "topic",
-          "label": "LLM / Agent Robotics",
-          "keywords": [
-            "LLM"
-          ],
-          "location": "abstract",
-          "points": 9.1
-        },
-        {
-          "kind": "category",
-          "label": "cs.AI",
-          "keywords": [
-            "cs.AI"
-          ],
-          "location": "category",
-          "points": 8.0
-        }
-      ],
-      "video_reasons": [
-        {
-          "kind": "research_fit",
-          "label": "Research alignment component",
-          "keywords": [],
-          "location": "score",
-          "points": 4.2
-        },
-        {
-          "kind": "video_signal",
-          "label": "Benchmark or comparison",
-          "keywords": [
-            "outperform",
-            "ablation"
           ],
           "location": "abstract",
           "points": 6.5
