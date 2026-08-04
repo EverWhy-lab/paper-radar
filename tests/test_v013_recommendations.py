@@ -206,5 +206,4 @@ def test_unselected_history_never_appears_in_homepage_or_archive(
         html = page.read_text(encoding="utf-8")
         assert "SELECTED Whole-Body Control Method" in html
         assert "HIDDEN HISTORICAL CANDIDATE" not in html
-        assert "引用和影响力数据来自 OpenAlex" in html
         assert "OpenAlex citations" in html

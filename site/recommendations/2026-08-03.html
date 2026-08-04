@@ -13,9 +13,7 @@
   <header class="site-header">
     <div class="shell header-row">
       <div>
-        <p class="eyebrow">PERSONAL ROBOTICS READING SHORTLIST</p>
         <h1>Paper Radar</h1>
-        <p class="subtitle">Research frontiers and historical impact candidates, selected by inspectable rules.</p>
       </div>
       <div class="date-block">
         <span>Recommendation date</span>
@@ -28,7 +26,6 @@
   <main class="shell">
     <section class="daily-summary">
       <div><strong>0</strong><span>today's recommendations</span></div>
-      <p>2067 background candidates from arXiv and 0 historical candidates were considered. Only selected papers appear here.</p>
     </section>
 
     <div class="navigation-row">
@@ -40,20 +37,9 @@
 
 
     <section class="empty-state">
-      <span>0 recommendations</span>
       <h2>今日没有发现足够值得推荐的论文。</h2>
-      <p>The selector does not lower its thresholds to fill a quota.</p>
-    </section>
-
-    <section class="method-note">
-      <h2>筛选说明</h2>
-      <p>The page is capped at 5 papers: frontier papers ≤ 2, historical-impact candidates ≤ 3, and review/knowledge-map papers ≤ 1. Recent papers require research_fit ≥ 40. Historical papers require research relevance and historical_value_score ≥ 42.0. Generic learning, agent, or control terms cannot qualify alone. Dismissal, read status, cooldown, canonical deduplication, and topic diversity apply before selection.</p>
-      <p>Papers marked “not relevant” are permanently excluded; papers sharing their primary topic are reduced for a short window.</p>
-      <p class="impact-disclaimer">引用和影响力数据来自 OpenAlex，仅作为论文筛选信号，不等同于论文质量评价。</p>
     </section>
   </main>
-
-  <footer class="site-footer"><div class="shell"><p>Recent-paper metadata comes from the arXiv API; historical citation and impact metadata comes from OpenAlex. Paper Radar is independent and is not affiliated with or endorsed by either source.</p></div></footer>
   <script>
     (function () {
       var repo = document.body.getAttribute("data-repo") || "";

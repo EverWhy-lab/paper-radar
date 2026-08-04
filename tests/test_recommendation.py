@@ -326,7 +326,6 @@ def test_empty_recommendation_page_has_exact_message(tmp_path: Path, profile) ->
     for path in (index, archive):
         html = path.read_text(encoding="utf-8")
         assert "今日没有发现足够值得推荐的论文。" in html
-        assert "200 background candidates" in html
         assert 'class="paper-card"' not in html
     assert 'href="assets/reader.css"' in index.read_text(encoding="utf-8")
     assert 'href="../assets/reader.css"' in archive.read_text(encoding="utf-8")
