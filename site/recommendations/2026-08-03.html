@@ -9,7 +9,7 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/reader.css">
 </head>
-<body>
+<body data-repo="lpredoomy/paper-radar">
   <header class="site-header">
     <div class="shell header-row">
       <div>
@@ -48,10 +48,48 @@
     <section class="method-note">
       <h2>筛选说明</h2>
       <p>The page is capped at 5 papers: frontier papers ≤ 2, historical-impact candidates ≤ 3, and review/knowledge-map papers ≤ 1. Recent papers require research_fit ≥ 40. Historical papers require research relevance and historical_value_score ≥ 42.0. Generic learning, agent, or control terms cannot qualify alone. Dismissal, read status, cooldown, canonical deduplication, and topic diversity apply before selection.</p>
+      <p>Papers marked “not relevant” are permanently excluded; papers sharing their primary topic are reduced for a short window.</p>
       <p class="impact-disclaimer">引用和影响力数据来自 OpenAlex，仅作为论文筛选信号，不等同于论文质量评价。</p>
     </section>
   </main>
 
   <footer class="site-footer"><div class="shell"><p>Recent-paper metadata comes from the arXiv API; historical citation and impact metadata comes from OpenAlex. Paper Radar is independent and is not affiliated with or endorsed by either source.</p></div></footer>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button"));
+      function markedIds() {
+        try { return JSON.parse(localStorage.getItem("paper-radar-dismissed") || "[]"); } catch (e) { return []; }
+      }
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      markedIds().forEach(function (id) {
+        buttons.forEach(function (button) {
+          if (button.getAttribute("data-paper-id") === id) { markFilled(button); }
+        });
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          if (button.classList.contains("active")) { return; }
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          markFilled(button);
+          var seen = markedIds();
+          if (seen.indexOf(id) === -1) {
+            seen.push(id);
+            localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
+          }
+          if (repo) {
+            var url = "https://github.com/" + repo + "/issues/new?title=" +
+              encodeURIComponent("feedback: not-interested " + id) +
+              "&body=" + encodeURIComponent("Paper: " + title + "\n\nThis issue is created automatically by the paper page. Submitting it permanently excludes this paper and temporarily reduces papers sharing its primary topic.");
+            window.open(url, "_blank", "noopener");
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
