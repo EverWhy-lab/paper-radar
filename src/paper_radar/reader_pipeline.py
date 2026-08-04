@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -14,10 +15,17 @@ from paper_radar.pipeline import (
     classify_historical_papers,
     classify_incremental_papers,
 )
-from paper_radar.reader_models import CandidateBatch, DailyRecommendations, RecommendationEntry
+from paper_radar.reader_models import (
+    CandidateBatch,
+    DailyRecommendations,
+    LLMAnalysis,
+    RecommendationEntry,
+)
 from paper_radar.reader_rendering import RecommendationSiteRenderer
 from paper_radar.reader_storage import CandidateStorage, ReadingPoolStorage, RecommendationStorage
 from paper_radar.history_storage import HistoricalPaperStorage
+from paper_radar.providers.base import LLMAnalysisProvider
+from paper_radar.providers.deepseek import DeepSeekClient
 from paper_radar.scoring import score_papers
 from paper_radar.storage import RadarStorage
 
@@ -32,6 +40,7 @@ class ReaderRunResult:
     index_path: Path
     archive_path: Path
     historical_candidate_count: int = 0
+    llm_analysis_count: int = 0
 
 
 def _merge_recommendations(
@@ -72,6 +81,7 @@ def _run_reader(
     mode: str,
     profile: ResearchProfile,
     fetcher: PaperFetcher,
+    llm_provider: LLMAnalysisProvider | None,
 ) -> ReaderRunResult:
     data_dir = project_root / "data"
     state_storage = RadarStorage(data_dir)
@@ -156,6 +166,14 @@ def _run_reader(
             entry.recommended_at = generated_at
             entry.recommendation_count += 1
 
+    llm_analyses: list[LLMAnalysis] | None = None
+    if llm_provider is not None:
+        try:
+            llm_analyses = llm_provider.analyze_recommendations(final_entries)
+        except Exception as exc:  # optional enrichment; never block the daily page
+            print(f"LLM daily guide skipped: {exc}", file=sys.stderr)
+            llm_analyses = None
+
     daily = DailyRecommendations(
         date=target_date.isoformat(),
         generated_at=generated_at,
@@ -164,6 +182,7 @@ def _run_reader(
         mode=mode,
         selection_config=profile.recommendations["daily_mix"],
         historical_candidate_count=len(historical_papers),
+        llm_analysis=llm_analyses,
     )
     updated_seen = state_storage.updated_seen(seen_before, scored_candidates, generated_at)
     updated_seen.last_run_mode = f"reader_{mode}"
@@ -191,7 +210,14 @@ def _run_reader(
         index_path=index_path,
         archive_path=archive_path,
         historical_candidate_count=len(historical_papers),
+        llm_analysis_count=len(llm_analyses or []),
     )
+
+
+def _default_llm_provider(profile: ResearchProfile) -> DeepSeekClient | None:
+    if not profile.llm_analysis.enabled:
+        return None
+    return DeepSeekClient(profile.llm_analysis)
 
 
 def execute_reader_incremental_run(
@@ -200,6 +226,7 @@ def execute_reader_incremental_run(
     profile: ResearchProfile | None = None,
     fetcher: PaperFetcher | None = None,
     now: datetime | None = None,
+    llm_provider: LLMAnalysisProvider | None = None,
 ) -> ReaderRunResult:
     profile = profile or load_profile(project_root / "config" / "research_profile.yaml")
     zone = ZoneInfo(profile.timezone)
@@ -211,6 +238,9 @@ def execute_reader_incremental_run(
         mode="incremental",
         profile=profile,
         fetcher=fetcher or ArxivClient(profile.fetch),
+        llm_provider=(
+            llm_provider if llm_provider is not None else _default_llm_provider(profile)
+        ),
     )
 
 
@@ -221,6 +251,7 @@ def execute_reader_historical_run(
     profile: ResearchProfile | None = None,
     fetcher: PaperFetcher | None = None,
     now: datetime | None = None,
+    llm_provider: LLMAnalysisProvider | None = None,
 ) -> ReaderRunResult:
     profile = profile or load_profile(project_root / "config" / "research_profile.yaml")
     zone = ZoneInfo(profile.timezone)
@@ -232,4 +263,7 @@ def execute_reader_historical_run(
         mode="historical",
         profile=profile,
         fetcher=fetcher or ArxivClient(profile.fetch),
+        llm_provider=(
+            llm_provider if llm_provider is not None else _default_llm_provider(profile)
+        ),
     )

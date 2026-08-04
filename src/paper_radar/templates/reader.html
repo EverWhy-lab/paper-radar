@@ -42,13 +42,28 @@
       {% endif %}
     </div>
 
+    {% if daily.llm_analysis %}
+    <section class="llm-guide" aria-label="LLM daily guide">
+      <div class="section-heading"><span>AI GUIDE</span><h2>今日导读</h2></div>
+      {% for analysis in daily.llm_analysis %}
+      <article class="guide-card">
+        <h3><a href="#{{ analysis.canonical_paper_id }}">{{ analysis.title }}</a></h3>
+        <p>{{ analysis.summary }}</p>
+        <p class="guide-why"><b>为什么值得读：</b>{{ analysis.why_relevant }}</p>
+        <p class="guide-verdict"><b>一句话：</b>{{ analysis.one_line_verdict }}</p>
+      </article>
+      {% endfor %}
+      <p class="guide-note">本导读由 DeepSeek 生成，仅供阅读辅助；筛选、评分与排序仍由透明规则完成。</p>
+    </section>
+    {% endif %}
+
     {% if daily.recommendations %}
     <section class="recommendations" aria-label="Today's selected papers">
       <div class="section-heading"><span>SELECTED</span><h2>今日精选论文</h2></div>
       {% for recommendation in daily.recommendations %}
       {% set paper = recommendation.paper %}
       {% set historical = recommendation.historical_paper %}
-      <article class="paper-card" data-paper-id="{{ recommendation.canonical_paper_id }}" data-category="{{ recommendation.category }}">
+      <article class="paper-card" id="{{ recommendation.canonical_paper_id }}" data-paper-id="{{ recommendation.canonical_paper_id }}" data-category="{{ recommendation.category }}">
         <div class="card-topline">
           <span class="category category--{{ recommendation.category }}">{{ category_labels[recommendation.category] }}</span>
           <span class="arxiv-id">{{ historical.openalex_id if historical and historical.openalex_id else paper.arxiv_id }}</span>

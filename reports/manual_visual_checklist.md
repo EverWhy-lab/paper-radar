@@ -1,4 +1,4 @@
-# Paper Radar V0.1.3 — Manual Visual Checklist
+# Paper Radar V0.2.0 — Manual Visual Checklist
 
 Automated tests validate rendered markup and data boundaries, but do not replace a manual browser check. Do not install a large browser solely for this checklist.
 
@@ -21,6 +21,7 @@ Run `.venv/bin/python -m paper_radar serve`, then inspect:
 - The abstract is folded by default. The missing-abstract note appears only when OpenAlex supplied no abstract.
 - The OpenAlex screening-signal disclaimer is visible and does not imply that citations equal paper quality.
 - No historical discovery candidate appears unless it is present in the day's recommendation JSON.
+- The “今日导读” section appears only when the day's recommendation JSON contains `llm_analysis`; a missing guide never affects the recommendation cards or page layout.
 
 ## 375 px phone
 

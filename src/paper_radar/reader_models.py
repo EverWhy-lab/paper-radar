@@ -153,6 +153,40 @@ class RecommendationEntry:
 
 
 @dataclass
+class LLMAnalysis:
+    canonical_paper_id: str
+    title: str
+    summary: str
+    why_relevant: str
+    one_line_verdict: str
+    generated_at: str
+    model: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "canonical_paper_id": self.canonical_paper_id,
+            "title": self.title,
+            "summary": self.summary,
+            "why_relevant": self.why_relevant,
+            "one_line_verdict": self.one_line_verdict,
+            "generated_at": self.generated_at,
+            "model": self.model,
+        }
+
+    @classmethod
+    def from_dict(cls, value: dict[str, Any]) -> "LLMAnalysis":
+        return cls(
+            canonical_paper_id=str(value["canonical_paper_id"]),
+            title=str(value.get("title", "")),
+            summary=str(value.get("summary", "")),
+            why_relevant=str(value.get("why_relevant", "")),
+            one_line_verdict=str(value.get("one_line_verdict", "")),
+            generated_at=str(value.get("generated_at", "")),
+            model=str(value.get("model", "")),
+        )
+
+
+@dataclass
 class DailyRecommendations:
     date: str
     generated_at: str
@@ -161,7 +195,8 @@ class DailyRecommendations:
     mode: str
     selection_config: dict[str, Any]
     historical_candidate_count: int = 0
-    schema_version: int = 2
+    llm_analysis: list[LLMAnalysis] | None = None
+    schema_version: int = 3
 
     def to_dict(self) -> dict[str, Any]:
         configured_categories = set(self.selection_config.get("selection_order", []))
@@ -181,6 +216,11 @@ class DailyRecommendations:
             "recommendation_count": len(self.recommendations),
             "category_counts": counts,
             "selection_config": self.selection_config,
+            "llm_analysis": (
+                [analysis.to_dict() for analysis in self.llm_analysis]
+                if self.llm_analysis
+                else None
+            ),
             "recommendations": [entry.to_dict() for entry in self.recommendations],
         }
 
@@ -194,6 +234,10 @@ class DailyRecommendations:
             candidate_count=int(value.get("candidate_count", 0)),
             historical_candidate_count=int(value.get("historical_candidate_count", 0)),
             selection_config=dict(value.get("selection_config", {})),
+            llm_analysis=(
+                [LLMAnalysis.from_dict(item) for item in value.get("llm_analysis") or []]
+                or None
+            ),
             recommendations=[
                 RecommendationEntry.from_dict(entry)
                 for entry in value.get("recommendations", [])

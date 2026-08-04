@@ -4,7 +4,7 @@ site:
 
 fetch:
   endpoint: "https://export.arxiv.org/api/query"
-  user_agent: "PaperRadar/0.1.3 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.0 (personal non-commercial research tool)"
   page_size: 100
   max_pages: 40
   page_delay_seconds: 5.0
@@ -226,7 +226,7 @@ recommendations:
 
 openalex:
   endpoint: "https://api.openalex.org"
-  user_agent: "PaperRadar/0.1.3 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.0 (personal non-commercial research tool)"
   timeout_seconds: 30
   retries: 3
   retry_delay_seconds: 1.0
@@ -282,3 +282,14 @@ historical_scoring:
     seed_provenance: 10
     work_signal: 5
     metadata_completeness: 10
+
+llm_analysis:
+  enabled: true
+  provider: deepseek
+  endpoint: "https://api.deepseek.com/chat/completions"
+  model: "deepseek-chat"
+  timeout_seconds: 60
+  retries: 2
+  retry_delay_seconds: 2.0
+  max_tokens: 1500
+  language: "zh"

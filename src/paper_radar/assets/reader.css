@@ -42,6 +42,14 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spa
 .section-heading span { color: var(--accent); font: 700 10px ui-monospace, monospace; letter-spacing: .12em; }
 .section-heading h2 { margin: 0; font-size: 21px; }
 .paper-card { margin-bottom: 18px; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.llm-guide { margin-bottom: 34px; }
+.guide-card { margin-bottom: 12px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.guide-card h3 { margin: 0 0 8px; overflow-wrap: anywhere; font-size: 17px; line-height: 1.4; }
+.guide-card h3 a { text-decoration: none; }
+.guide-card p { margin: 5px 0; color: var(--muted); font-size: 14px; }
+.guide-card p.guide-why, .guide-card p.guide-verdict { color: var(--text); }
+.guide-card b { color: var(--accent); font-weight: 700; }
+.guide-note { margin-top: 10px; color: var(--faint); font-size: 12px; }
 .card-topline { display: flex; justify-content: space-between; gap: 15px; }
 .category { padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 750; letter-spacing: .04em; }
 .category--recent_new { background: rgba(97,212,179,.13); color: var(--accent); }

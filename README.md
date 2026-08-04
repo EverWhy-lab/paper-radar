@@ -1,10 +1,10 @@
 # Paper Radar
 
-Paper Radar is a local personal reader for robotics and embodied-intelligence research. It tracks relevant arXiv frontiers and builds a separate OpenAlex-backed historical discovery pool, then shows at most five papers per day. It does not use an LLM, infer claims from full text, or equate citation counts with paper quality.
+Paper Radar is a local personal reader for robotics and embodied-intelligence research. It tracks relevant arXiv frontiers and builds a separate OpenAlex-backed historical discovery pool, then shows at most five papers per day. Selection is transparent and rule-based: the reader does not infer claims from full text or equate citation counts with paper quality. Optionally, DeepSeek writes a short Chinese daily guide for the already-selected papers only.
 
 ## Install
 
-Requirements: Python 3.11. Live recent-paper runs need access to the official arXiv API. Historical discovery additionally needs an OpenAlex API key.
+Requirements: Python 3.11. Live recent-paper runs need access to the official arXiv API. Historical discovery additionally needs an OpenAlex API key, and the optional daily guide needs a DeepSeek API key.
 
 ```bash
 python3.11 -m venv .venv
@@ -53,6 +53,7 @@ Prerequisites:
 1. Push this repository to GitHub. Free GitHub Pages requires a **public** repository; private repositories need a paid plan.
 2. In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
 3. Optional: add `OPENALEX_API_KEY` as a repository secret (**Settings → Secrets and variables → Actions**) to enable the optional historical discovery.
+4. Optional: add `DEEPSEEK_API_KEY` as a repository secret to enable the Chinese daily guide.
 
 After the first successful run, the site is available from any device, including a phone, at:
 
@@ -61,6 +62,14 @@ https://<owner>.github.io/<repository-name>/
 ```
 
 If the scheduled run fails (for example arXiv is unreachable), nothing is committed or published and the previously deployed page stays intact.
+
+## LLM daily guide (DeepSeek, optional)
+
+The rule-based selector remains authoritative: it chooses at most five papers with transparent thresholds. If `DEEPSEEK_API_KEY` is set and `llm_analysis.enabled` is true in `config/research_profile.yaml`, DeepSeek writes a Chinese daily guide for those already-selected papers only. The guide never screens candidates, never ranks papers, and never labels quality.
+
+- One API call per run (all selected papers in a single request); abstracts are sent, never full text or PDFs.
+- If the call fails or the key is missing, the page is still generated without the guide.
+- The key is read only from `DEEPSEEK_API_KEY` (export it locally, or set it as a repository secret for GitHub runs). It is never written to data, cache, provider stats, or pages.
 
 ## Historical discovery
 

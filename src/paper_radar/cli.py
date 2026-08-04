@@ -107,6 +107,10 @@ def _run(project_root: Path, requested_date: date | None) -> int:
     print(f"Generated personal shortlist for {result.date}: {result.recommendation_count} recommendations")
     print(f"Background candidates scanned: {result.candidate_count}")
     print(f"Historical candidates considered: {result.historical_candidate_count}")
+    if result.llm_analysis_count:
+        print(f"LLM daily guide: {result.llm_analysis_count} papers analyzed")
+    else:
+        print("LLM daily guide: not generated (feature disabled or DEEPSEEK_API_KEY missing)")
     print(f"Candidate metadata: {result.candidate_path}")
     print(f"Daily recommendations: {result.recommendation_path}")
     print(f"Site index: {result.index_path}")

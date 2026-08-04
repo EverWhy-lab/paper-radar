@@ -36,6 +36,19 @@ class OpenAlexConfig:
 
 
 @dataclass(frozen=True)
+class LLMAnalysisConfig:
+    enabled: bool
+    provider: str
+    endpoint: str
+    model: str
+    timeout_seconds: float
+    retries: int
+    retry_delay_seconds: float
+    max_tokens: int
+    language: str
+
+
+@dataclass(frozen=True)
 class ResearchProfile:
     site_name: str
     timezone: str
@@ -46,6 +59,7 @@ class ResearchProfile:
     sections: dict[str, Any]
     recommendations: dict[str, Any]
     openalex: OpenAlexConfig
+    llm_analysis: LLMAnalysisConfig
     historical_discovery: dict[str, Any]
     historical_scoring: dict[str, Any]
 
@@ -90,6 +104,22 @@ def load_profile(path: Path) -> ResearchProfile:
             daily_request_budget=int(openalex_raw["daily_request_budget"]),
             default_per_page=int(openalex_raw["default_per_page"]),
         )
+        llm_raw = raw.get("llm_analysis") or {}
+        llm_analysis = LLMAnalysisConfig(
+            enabled=bool(llm_raw.get("enabled", False)),
+            provider=str(llm_raw.get("provider", "deepseek")),
+            endpoint=str(
+                llm_raw.get(
+                    "endpoint", "https://api.deepseek.com/chat/completions"
+                )
+            ).rstrip("/"),
+            model=str(llm_raw.get("model", "deepseek-chat")),
+            timeout_seconds=float(llm_raw.get("timeout_seconds", 60)),
+            retries=int(llm_raw.get("retries", 2)),
+            retry_delay_seconds=float(llm_raw.get("retry_delay_seconds", 2.0)),
+            max_tokens=int(llm_raw.get("max_tokens", 1500)),
+            language=str(llm_raw.get("language", "zh")),
+        )
         profile = ResearchProfile(
             site_name=str(site["name"]),
             timezone=str(site["timezone"]),
@@ -100,6 +130,7 @@ def load_profile(path: Path) -> ResearchProfile:
             sections=dict(raw["sections"]),
             recommendations=dict(raw["recommendations"]),
             openalex=openalex,
+            llm_analysis=llm_analysis,
             historical_discovery=dict(raw["historical_discovery"]),
             historical_scoring=dict(raw["historical_scoring"]),
         )
@@ -123,6 +154,15 @@ def load_profile(path: Path) -> ResearchProfile:
         or not 1 <= openalex.default_per_page <= 200
     ):
         raise ConfigError("OpenAlex timeout, retries, cache, budget, and page size are invalid")
+    if llm_analysis.enabled and (
+        llm_analysis.timeout_seconds <= 0
+        or llm_analysis.retries < 1
+        or llm_analysis.max_tokens < 1
+        or not llm_analysis.language
+    ):
+        raise ConfigError("llm_analysis timeout, retries, max_tokens, and language are invalid")
+    if llm_analysis.enabled and llm_analysis.provider != "deepseek":
+        raise ConfigError("Only the deepseek LLM provider is supported in V0.2")
     recommendation_limits = profile.recommendations
     if not 0 <= int(recommendation_limits.get("max_total", 5)) <= 5:
         raise ConfigError("recommendations.max_total must be between 0 and 5")
@@ -147,7 +187,7 @@ def load_profile(path: Path) -> ResearchProfile:
             )
     discovery = profile.historical_discovery
     if int(discovery["expansion_depth"]) != 1:
-        raise ConfigError("historical_discovery.expansion_depth must be exactly 1 in V0.1.3")
+        raise ConfigError("historical_discovery.expansion_depth must be exactly 1 in V0.2")
     for field in ("per_query_limit", "per_seed_limit", "global_candidate_limit"):
         if int(discovery[field]) < 1:
             raise ConfigError(f"historical_discovery.{field} must be positive")

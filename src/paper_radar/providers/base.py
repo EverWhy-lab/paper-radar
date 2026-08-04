@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
-from typing import Protocol
+from typing import Any, Protocol
 
 from paper_radar.history_models import HistoricalPaper
 
@@ -61,3 +61,9 @@ class HistoricalProvider(Protocol):
     ) -> list[HistoricalPaper]: ...
 
     def save_stats(self) -> None: ...
+
+
+class LLMAnalysisProvider(Protocol):
+    """Writes optional Chinese commentary for already-selected papers only."""
+
+    def analyze_recommendations(self, recommendations: list[Any]) -> list[Any]: ...
