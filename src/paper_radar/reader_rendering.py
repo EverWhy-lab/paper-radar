@@ -71,6 +71,7 @@ class RecommendationSiteRenderer:
         guide_zh = self.profile.llm_analysis.language == "zh"
         return {
             "site_name": self.profile.site_name,
+            "github_repo": self.profile.site_github_repo,
             "daily": daily,
             "asset_prefix": asset_prefix,
             "category_labels": CATEGORY_LABELS,

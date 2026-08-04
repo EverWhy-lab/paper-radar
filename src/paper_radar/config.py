@@ -52,6 +52,7 @@ class LLMAnalysisConfig:
 class ResearchProfile:
     site_name: str
     timezone: str
+    site_github_repo: str
     fetch: FetchConfig
     categories: dict[str, float]
     scoring: dict[str, Any]
@@ -60,6 +61,7 @@ class ResearchProfile:
     recommendations: dict[str, Any]
     openalex: OpenAlexConfig
     llm_analysis: LLMAnalysisConfig
+    dismissals: dict[str, Any]
     historical_discovery: dict[str, Any]
     historical_scoring: dict[str, Any]
 
@@ -123,6 +125,7 @@ def load_profile(path: Path) -> ResearchProfile:
         profile = ResearchProfile(
             site_name=str(site["name"]),
             timezone=str(site["timezone"]),
+            site_github_repo=str(site.get("github_repo", "")),
             fetch=fetch,
             categories=categories,
             scoring=dict(raw["scoring"]),
@@ -131,6 +134,7 @@ def load_profile(path: Path) -> ResearchProfile:
             recommendations=dict(raw["recommendations"]),
             openalex=openalex,
             llm_analysis=llm_analysis,
+            dismissals=dict(raw.get("dismissals", {})),
             historical_discovery=dict(raw["historical_discovery"]),
             historical_scoring=dict(raw["historical_scoring"]),
         )
@@ -163,6 +167,14 @@ def load_profile(path: Path) -> ResearchProfile:
         raise ConfigError("llm_analysis timeout, retries, max_tokens, and language are invalid")
     if llm_analysis.enabled and llm_analysis.provider != "deepseek":
         raise ConfigError("Only the deepseek LLM provider is supported in V0.2")
+    dismissals = profile.dismissals
+    for field in (
+        "topic_cooldown_window_days",
+        "min_dismissals_for_topic_cooldown",
+        "topic_cooldown_days",
+    ):
+        if int(dismissals.get(field, 0)) < 0:
+            raise ConfigError(f"dismissals.{field} must be non-negative")
     recommendation_limits = profile.recommendations
     if not 0 <= int(recommendation_limits.get("max_total", 5)) <= 5:
         raise ConfigError("recommendations.max_total must be between 0 and 5")

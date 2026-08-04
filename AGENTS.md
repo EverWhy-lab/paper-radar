@@ -10,6 +10,8 @@
 - `curation.py`, `reader_pipeline.py`: V0.2 four-layer selection flow plus optional guide wiring
 - `reader_models.py`, `reader_storage.py`: candidate, reading-pool, final recommendation, and guide schemas
 - `reader_rendering.py`, `templates/reader.html`, `assets/reader.css`: shortlist-only static site
+- `reader_storage.py`, `data/dismissals.json`: not-interested feedback from the web button or CLI; excluded papers and topic cooldowns apply at selection time
+- `.github/workflows/feedback.yml`: applies web-button dismissals recorded as GitHub issues
 - `.github/workflows/openalex-discover.yml`, `.github/workflows/openalex-refresh.yml`: weekly discovery and monthly pool refresh; skip when the OpenAlex key is missing
 - `data/candidates/`: recent background candidates; never render as a bulk list
 - `data/history/discovery_pool.json`: historical background candidates; never render as a bulk list
@@ -27,6 +29,9 @@
 .venv/bin/python -m paper_radar pool list
 .venv/bin/python -m paper_radar pool status ARXIV_ID queued
 .venv/bin/python -m paper_radar pool dismiss ARXIV_ID
+.venv/bin/python -m paper_radar dismiss add IDENTIFIER
+.venv/bin/python -m paper_radar dismiss list
+.venv/bin/python -m paper_radar dismiss remove IDENTIFIER
 .venv/bin/python -m paper_radar history seed add IDENTIFIER
 .venv/bin/python -m paper_radar history seed list
 .venv/bin/python -m paper_radar history seed remove IDENTIFIER
@@ -52,6 +57,7 @@
 - Render only selected recommendations. Never add bulk candidate search or cards to the user site.
 - Daily caps: total ≤5, frontier recent ≤2, historical impact ≤3, review/knowledge map ≤1. Do not lower thresholds or guarantee quotas.
 - Enforce canonical alias deduplication, topic diversity, dismissal, read status, and cooldowns.
+- Dismissals from the web button or CLI permanently exclude the paper and temporarily reduce papers sharing its primary topic; never render dismissed papers.
 - Complete all network work before replacing pool, state, recommendation, or page files. Use atomic JSON/page writes.
 - Preserve the 2026-07-31 legacy data and page as an audit sample.
 

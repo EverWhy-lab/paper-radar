@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, timedelta
 from typing import Any
 
 from paper_radar.config import ResearchProfile
@@ -11,7 +12,7 @@ from paper_radar.historical_scoring import (
 )
 from paper_radar.history_models import HistoricalPaper, canonical_paper_id
 from paper_radar.models import Paper
-from paper_radar.reader_models import ReadingPoolEntry, RecommendationEntry
+from paper_radar.reader_models import DismissalEntry, ReadingPoolEntry, RecommendationEntry
 
 
 def _normalise(value: str) -> str:
@@ -60,6 +61,7 @@ class CuratedRecommendationEngine:
         self.generic_keywords = {
             _normalise(term) for term in profile.recommendations["generic_keywords"]
         }
+        self.dismissal_config = profile.dismissals
         self.excluded_terms = [
             _normalise(term) for term in profile.recommendations["excluded_terms"]
         ]
@@ -184,6 +186,8 @@ class CuratedRecommendationEngine:
             paper.last_considered_at = considered_at
             if paper.dismissed or paper.reading_status not in eligible_statuses:
                 continue
+            if paper.aliases & self._dismissed_aliases:
+                continue
             relevant, relevance_reasons = historical_relevance_eligible(
                 paper, self.profile
             )
@@ -196,6 +200,9 @@ class CuratedRecommendationEngine:
             threshold = float(config["min_historical_value_score"])
             if paper.historical_value_score is None or paper.historical_value_score < threshold:
                 continue
+            primary = self._primary_topic(paper.matched_topics)
+            if primary in self._cooldown_topics:
+                continue
             if _cooling(
                 paper.aliases,
                 history,
@@ -205,7 +212,6 @@ class CuratedRecommendationEngine:
                 continue
             if any(paper.aliases & entry.aliases for entry in already_selected + selected):
                 continue
-            primary = self._primary_topic(paper.matched_topics)
             if category == "high_impact_historical":
                 if topic_counts.get(primary, 0) >= int(config["max_same_primary_topic"]):
                     continue
@@ -256,10 +262,14 @@ class CuratedRecommendationEngine:
                 aliases, history, target_date, int(config["cooldown_days"])
             ):
                 continue
+            if aliases & self._dismissed_aliases:
+                continue
             if any(aliases & entry.aliases for entry in already_selected + selected):
                 continue
             core, strong = signals
             primary = self._primary_topic(paper.matched_topics)
+            if primary in self._cooldown_topics:
+                continue
             if topic_counts.get(primary, 0) >= int(config["max_same_primary_topic"]):
                 continue
             if any(
@@ -294,7 +304,33 @@ class CuratedRecommendationEngine:
         history: dict[str, list[dict[str, Any]]],
         target_date: str,
         considered_at: str,
+        dismissals: list[DismissalEntry] | None = None,
     ) -> CuratedSelectionResult:
+        dismissals = dismissals or []
+        self._dismissed_aliases = {
+            entry.canonical_paper_id.casefold() for entry in dismissals
+        }
+        window_days = int(self.dismissal_config.get("topic_cooldown_window_days", 30))
+        min_dismissals = int(
+            self.dismissal_config.get("min_dismissals_for_topic_cooldown", 2)
+        )
+        target = date.fromisoformat(target_date)
+        cutoff = target - timedelta(days=window_days)
+        recent_dismissals = [
+            entry
+            for entry in dismissals
+            if entry.dismissed_at
+            and date.fromisoformat(entry.dismissed_at[:10]) >= cutoff
+        ]
+        topic_counts: Counter[str] = Counter()
+        for entry in recent_dismissals:
+            for topic in entry.topics:
+                topic_counts[topic] += 1
+        self._cooldown_topics = {
+            topic
+            for topic, count in topic_counts.items()
+            if count >= min_dismissals
+        }
         combined, pool_by_alias = self._combine_historical_sources(
             historical_papers, reading_pool
         )

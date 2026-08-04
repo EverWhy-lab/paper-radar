@@ -1,0 +1,58 @@
+name: feedback
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  apply-dismissal:
+    if: "startsWith(github.event.issue.title, 'feedback: not-interested')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+
+      - name: Extract paper identifier
+        id: extract
+        run: |
+          TITLE="${{ github.event.issue.title }}"
+          ID="${TITLE#feedback: not-interested }"
+          ID="${ID%% *}"
+          echo "paper_id=$ID" >> "$GITHUB_OUTPUT"
+
+      - name: Apply dismissal
+        run: python -m paper_radar dismiss add "${{ steps.extract.outputs.paper_id }}" --reason not_interested
+
+      - name: Commit dismissal state
+        run: |
+          git config user.name "paper-radar-bot"
+          git config user.email "paper-radar-bot@users.noreply.github.com"
+          git add data/dismissals.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: dismiss paper via web feedback $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git pull --rebase
+            git push
+          fi
+
+      - name: Close feedback issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue close "${{ github.event.issue.number }}" --comment "已记录：这篇论文将不再推荐，同主题近期也会减少推荐。"

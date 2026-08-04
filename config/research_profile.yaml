@@ -1,6 +1,7 @@
 site:
   name: "Paper Radar"
   timezone: "Asia/Shanghai"
+  github_repo: "lpredoomy/paper-radar"
 
 fetch:
   endpoint: "https://export.arxiv.org/api/query"
@@ -293,3 +294,8 @@ llm_analysis:
   retry_delay_seconds: 3.0
   max_tokens: 1500
   language: "en"
+
+dismissals:
+  topic_cooldown_window_days: 30
+  min_dismissals_for_topic_cooldown: 2
+  topic_cooldown_days: 14

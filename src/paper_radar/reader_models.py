@@ -243,3 +243,31 @@ class DailyRecommendations:
                 for entry in value.get("recommendations", [])
             ],
         )
+
+
+@dataclass
+class DismissalEntry:
+    canonical_paper_id: str
+    title: str
+    topics: list[str]
+    reason: str
+    dismissed_at: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "canonical_paper_id": self.canonical_paper_id,
+            "title": self.title,
+            "topics": self.topics,
+            "reason": self.reason,
+            "dismissed_at": self.dismissed_at,
+        }
+
+    @classmethod
+    def from_dict(cls, value: dict[str, Any]) -> "DismissalEntry":
+        return cls(
+            canonical_paper_id=str(value["canonical_paper_id"]).casefold(),
+            title=str(value.get("title", "")),
+            topics=list(value.get("topics", [])),
+            reason=str(value.get("reason", "not_interested")),
+            dismissed_at=str(value.get("dismissed_at", "")),
+        )

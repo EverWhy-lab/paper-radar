@@ -15,15 +15,24 @@ from paper_radar.history_storage import (
     HistoricalPaperStorage,
     HistoryStorageError,
     SeedStorage,
+    identifier_key,
 )
 from paper_radar.providers.base import HistoricalProviderError
 from paper_radar.providers.openalex import OpenAlexProvider
-from paper_radar.reader_models import READING_STATUSES, ReadingPoolEntry
+from paper_radar.reader_models import (
+    DismissalEntry,
+    READING_STATUSES,
+    ReadingPoolEntry,
+)
 from paper_radar.reader_pipeline import (
     execute_reader_historical_run,
     execute_reader_incremental_run,
 )
-from paper_radar.reader_storage import PoolError, ReadingPoolStorage
+from paper_radar.reader_storage import (
+    DismissalStorage,
+    PoolError,
+    ReadingPoolStorage,
+)
 from paper_radar.scoring import score_paper
 from paper_radar.storage import StorageError
 
@@ -92,7 +101,88 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="refresh every paper in the historical discovery pool",
     )
+
+    dismiss_parser = subparsers.add_parser(
+        "dismiss", help="manage papers marked not interested"
+    )
+    dismiss_subparsers = dismiss_parser.add_subparsers(
+        dest="dismiss_command", required=True
+    )
+    dismiss_add = dismiss_subparsers.add_parser(
+        "add", help="mark a paper as not interested"
+    )
+    dismiss_add.add_argument("identifier")
+    dismiss_add.add_argument(
+        "--reason", default="not_interested", help="feedback reason"
+    )
+    dismiss_subparsers.add_parser("list", help="list dismissed papers")
+    dismiss_remove = dismiss_subparsers.add_parser(
+        "remove", help="remove a dismissal"
+    )
+    dismiss_remove.add_argument("identifier")
     return parser
+
+
+def _dismiss(project_root: Path, args: argparse.Namespace) -> int:
+    data_dir = project_root / "data"
+    storage = DismissalStorage(data_dir)
+    now = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(timespec="seconds")
+    if args.dismiss_command == "list":
+        entries = storage.load()
+        if not entries:
+            print("No dismissed papers.")
+            return 0
+        for entry in entries:
+            print(
+                f"{entry.canonical_paper_id}\t{entry.dismissed_at}\t"
+                f"{entry.reason}\t{entry.title}"
+            )
+        return 0
+
+    try:
+        canonical = identifier_key(args.identifier)
+    except HistoryStorageError as exc:
+        print(f"Dismissal command failed: {exc}", file=sys.stderr)
+        return 1
+
+    if args.dismiss_command == "remove":
+        try:
+            removed = storage.remove(canonical)
+        except PoolError as exc:
+            print(f"Dismissal command failed: {exc}", file=sys.stderr)
+            return 1
+        print(f"Removed dismissal: {removed.canonical_paper_id} ({removed.title})")
+        return 0
+
+    title, topics = _dismissal_metadata(data_dir, canonical)
+    try:
+        storage.add(
+            DismissalEntry(
+                canonical_paper_id=canonical,
+                title=title,
+                topics=topics,
+                reason=args.reason,
+                dismissed_at=now,
+            )
+        )
+    except PoolError as exc:
+        print(f"Dismissal command failed: {exc}", file=sys.stderr)
+        return 1
+    print(f"Marked not interested: {canonical} ({title or 'title unknown'})")
+    return 0
+
+
+def _dismissal_metadata(data_dir: Path, canonical: str) -> tuple[str, list[str]]:
+    for paper in HistoricalPaperStorage(data_dir).load():
+        if canonical in paper.aliases:
+            return paper.title, paper.matched_topics
+    recommendation_storage = RecommendationStorage(data_dir)
+    for date_string in recommendation_storage.available_dates():
+        daily = recommendation_storage.load(date_string)
+        for entry in daily.recommendations:
+            if canonical in entry.aliases or canonical == entry.canonical_paper_id:
+                return entry.paper.title, entry.paper.matched_topics
+    return "", []
 
 
 def _run(project_root: Path, requested_date: date | None) -> int:
@@ -322,4 +412,6 @@ def main(argv: list[str] | None = None) -> int:
         return _pool(project_root, args)
     if args.command == "history":
         return _history(project_root, args)
+    if args.command == "dismiss":
+        return _dismiss(project_root, args)
     return 2

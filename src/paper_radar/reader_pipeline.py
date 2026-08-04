@@ -22,7 +22,12 @@ from paper_radar.reader_models import (
     RecommendationEntry,
 )
 from paper_radar.reader_rendering import RecommendationSiteRenderer
-from paper_radar.reader_storage import CandidateStorage, ReadingPoolStorage, RecommendationStorage
+from paper_radar.reader_storage import (
+    CandidateStorage,
+    DismissalStorage,
+    ReadingPoolStorage,
+    RecommendationStorage,
+)
 from paper_radar.history_storage import HistoricalPaperStorage
 from paper_radar.providers.base import LLMAnalysisProvider
 from paper_radar.providers.deepseek import DeepSeekClient
@@ -126,6 +131,7 @@ def _run_reader(
     )
     pool_entries = pool_storage.load()
     historical_papers = historical_storage.load()
+    dismissals = DismissalStorage(data_dir).load()
     history = recommendation_storage.history(exclude_date=target_date.isoformat())
     selection = CuratedRecommendationEngine(profile).select(
         recent_new=scored_new,
@@ -134,6 +140,7 @@ def _run_reader(
         history=history,
         target_date=target_date.isoformat(),
         considered_at=generated_at,
+        dismissals=dismissals,
     )
 
     existing = (

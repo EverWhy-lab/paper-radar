@@ -75,6 +75,26 @@ The rule-based selector remains authoritative: it chooses at most five papers wi
 - If the call fails or the key is missing, the page is still generated without the guide.
 - The key is read only from `DEEPSEEK_API_KEY` (export it locally, or set it as a repository secret for GitHub runs). It is never written to data, cache, provider stats, or pages.
 
+## Marking papers as not interested
+
+Every recommended paper card has a **不感兴趣** button. Clicking it immediately hides the card on that device and opens a pre-filled GitHub issue (submit it once to persist the feedback). A `feedback` workflow then records the dismissal and closes the issue automatically.
+
+Effects on future selection:
+
+- The dismissed paper itself is permanently excluded.
+- If two or more dismissals share the same primary topic within 30 days, that topic enters a 14-day cooldown and its papers are reduced. Thresholds live in the `dismissals` block of `config/research_profile.yaml`.
+
+The same state can be managed from the CLI:
+
+```bash
+.venv/bin/python -m paper_radar dismiss add 2608.02571
+.venv/bin/python -m paper_radar dismiss add openalex:W1234567890 --reason not_interested
+.venv/bin/python -m paper_radar dismiss list
+.venv/bin/python -m paper_radar dismiss remove 2608.02571
+```
+
+Dismissals are stored in `data/dismissals.json` and committed like the rest of the state.
+
 ## Historical discovery
 
 Seed papers accept an arXiv ID, DOI, or OpenAlex Work ID:
