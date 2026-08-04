@@ -128,8 +128,10 @@ def test_english_system_prompt_keeps_paper_terms(profile) -> None:
     assert "Use professional terminology exactly as it appears in the paper" in body
     assert "model names" in body
     assert "classic" in body
-    assert "write one concise Takeaway in English" in body
-    assert "the problem the paper solves" in body
+    assert "write one coherent Takeaway in English" in body
+    assert "the research background" in body
+    assert "what the user can do with it" in body
+    assert "do not write a mechanical list" in body
 
 
 def test_parses_code_fenced_json(profile) -> None:
