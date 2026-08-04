@@ -47,6 +47,10 @@ The `--date` form retains Asia/Shanghai natural-day semantics for deterministic 
 - Manual runs are available under **Actions → daily-run → Run workflow**, with two optional inputs:
   - `date`: exact-day backfill in `YYYY-MM-DD` form;
   - `discover_history`: also run OpenAlex historical discovery (requires the `OPENALEX_API_KEY` repository secret).
+- Separate maintenance workflows keep the OpenAlex pool fresh:
+  - `openalex-discover` runs every **Monday 10:30 Asia/Shanghai** (`history discover`) to expand the historical discovery pool;
+  - `openalex-refresh` runs on the **1st of every month** (`history refresh --all`) to update citation metadata for every pool paper.
+  Both skip silently when `OPENALEX_API_KEY` is not set, and both auto-commit pool changes back to the repository.
 
 Prerequisites:
 
@@ -97,6 +101,7 @@ Run discovery or refresh metadata:
 .venv/bin/python -m paper_radar history discover --limit 20
 .venv/bin/python -m paper_radar history list --top 20
 .venv/bin/python -m paper_radar history refresh W1234567890
+.venv/bin/python -m paper_radar history refresh --all
 ```
 
 Discovery uses three source types:

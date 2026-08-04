@@ -86,7 +86,12 @@ def build_parser() -> argparse.ArgumentParser:
     refresh = history_subparsers.add_parser(
         "refresh", help="refresh one historical candidate"
     )
-    refresh.add_argument("identifier")
+    refresh.add_argument("identifier", nargs="?")
+    refresh.add_argument(
+        "--all",
+        action="store_true",
+        help="refresh every paper in the historical discovery pool",
+    )
     return parser
 
 
@@ -242,6 +247,14 @@ def _history(project_root: Path, args: argparse.Namespace) -> int:
 
         provider = OpenAlexProvider(profile.openalex, data_dir)
         service = HistoricalDiscoveryService(data_dir, profile, provider, now=now)
+        if args.history_command == "refresh" and args.all:
+            result = service.refresh_all()
+            print(f"Refreshed {result.refreshed_count} papers; {result.failed_count} failed")
+            print(f"Historical discovery pool: {result.pool_count}")
+            print(f"OpenAlex requests: {provider.run_request_count}")
+            print(f"OpenAlex cache hits: {provider.run_cache_hits}")
+            print(f"Remaining configured call budget: {result.remaining_call_budget}")
+            return 0
         if args.history_command == "discover":
             result = service.discover(limit=args.limit)
             print(f"Historical candidates discovered this run: {result.discovered_count}")
@@ -252,6 +265,8 @@ def _history(project_root: Path, args: argparse.Namespace) -> int:
             print(f"Saved: {result.pool_path}")
             return 0
         if args.history_command == "refresh":
+            if not args.identifier:
+                raise HistoryStorageError("history refresh requires an identifier or --all")
             paper = service.refresh(args.identifier)
             print(f"Refreshed {paper.canonical_paper_id}: {paper.title}")
             print(f"OpenAlex requests: {provider.run_request_count}")

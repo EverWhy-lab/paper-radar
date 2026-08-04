@@ -11,7 +11,7 @@ from paper_radar.config import ResearchProfile
 from paper_radar.historical_scoring import score_historical_papers
 from paper_radar.history_models import HistoricalPaper, SeedPaper
 from paper_radar.history_storage import HistoricalPaperStorage, SeedStorage, deduplicate_historical
-from paper_radar.providers.base import HistoricalProvider
+from paper_radar.providers.base import HistoricalProvider, HistoricalProviderError
 
 
 @dataclass(frozen=True)
@@ -32,6 +32,14 @@ class DiscoveryResult:
     cache_hits: int
     remaining_call_budget: int
     pool_path: Path
+
+
+@dataclass(frozen=True)
+class RefreshAllResult:
+    refreshed_count: int
+    failed_count: int
+    pool_count: int
+    remaining_call_budget: int
 
 
 def build_discovery_plan(
@@ -216,4 +224,35 @@ class HistoricalDiscoveryService:
             paper
             for paper in merged
             if paper.aliases & scored.aliases
+        )
+
+    def refresh_all(self) -> RefreshAllResult:
+        """Refresh every pool paper, stopping when the daily budget runs out."""
+        if self.provider is None:
+            raise ValueError("A provider is required for refresh")
+        papers = self.paper_storage.load()
+        refreshed: list[HistoricalPaper] = []
+        failed = 0
+        for paper in papers:
+            if self.provider.stats.remaining_call_budget <= 0:
+                break
+            try:
+                item = self.provider.get_work(paper.canonical_paper_id)
+                refreshed.append(
+                    score_historical_papers(
+                        [item], self.profile, as_of_year=self.now.year
+                    )[0]
+                )
+            except (HistoricalProviderError, ValueError):
+                failed += 1
+        if refreshed:
+            merged = self.paper_storage.merge(refreshed)
+            self.paper_storage.save(merged)
+        self.provider.save_stats()
+        stats = self.provider.stats
+        return RefreshAllResult(
+            refreshed_count=len(refreshed),
+            failed_count=failed,
+            pool_count=len(self.paper_storage.load()),
+            remaining_call_budget=stats.remaining_call_budget,
         )

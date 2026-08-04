@@ -10,6 +10,7 @@
 - `curation.py`, `reader_pipeline.py`: V0.2 four-layer selection flow plus optional guide wiring
 - `reader_models.py`, `reader_storage.py`: candidate, reading-pool, final recommendation, and guide schemas
 - `reader_rendering.py`, `templates/reader.html`, `assets/reader.css`: shortlist-only static site
+- `.github/workflows/openalex-discover.yml`, `.github/workflows/openalex-refresh.yml`: weekly discovery and monthly pool refresh; skip when the OpenAlex key is missing
 - `data/candidates/`: recent background candidates; never render as a bulk list
 - `data/history/discovery_pool.json`: historical background candidates; never render as a bulk list
 - `data/history/seeds.json`: manually maintained discovery seeds
@@ -33,6 +34,7 @@
 .venv/bin/python -m paper_radar history discover --limit 20
 .venv/bin/python -m paper_radar history list --top 20
 .venv/bin/python -m paper_radar history refresh IDENTIFIER
+.venv/bin/python -m paper_radar history refresh --all
 .venv/bin/python -m paper_radar serve
 .venv/bin/python -m pytest
 ```

@@ -204,3 +204,65 @@ def test_openalex_failure_preserves_pool_stats_and_page(
 
     for path, value in paths.items():
         assert path.read_text(encoding="utf-8") == value
+
+
+def test_refresh_all_refreshes_every_pool_paper(tmp_path: Path, profile, openalex_payload) -> None:
+    storage = HistoricalPaperStorage(tmp_path / "data")
+    storage.save(
+        [
+            parse_openalex_work(
+                deepcopy(openalex_payload["results"][0]),
+                discovered_at="2026-08-03T10:15:00+08:00",
+                discovery_source="fixture",
+            )
+        ]
+    )
+    provider = FixtureProvider(openalex_payload)
+    service = HistoricalDiscoveryService(
+        tmp_path / "data",
+        profile,
+        provider,
+        now=datetime(2026, 8, 3, 10, 15),
+    )
+
+    result = service.refresh_all()
+
+    assert result.refreshed_count == 1
+    assert result.failed_count == 0
+    assert result.pool_count == 1
+    assert provider.calls == [("resolve", "openalex:W100")]
+    assert provider.saved_stats
+
+
+def test_refresh_all_counts_failures_and_preserves_pool(
+    tmp_path: Path, profile, openalex_payload
+) -> None:
+    storage = HistoricalPaperStorage(tmp_path / "data")
+    storage.save(
+        [
+            parse_openalex_work(
+                deepcopy(openalex_payload["results"][0]),
+                discovered_at="2026-08-03T10:15:00+08:00",
+                discovery_source="fixture",
+            ),
+            parse_openalex_work(
+                deepcopy(openalex_payload["results"][1]),
+                discovered_at="2026-08-03T10:15:00+08:00",
+                discovery_source="fixture",
+            ),
+        ]
+    )
+    provider = FixtureProvider(openalex_payload, fail_after=0)
+    service = HistoricalDiscoveryService(
+        tmp_path / "data",
+        profile,
+        provider,
+        now=datetime(2026, 8, 3, 10, 15),
+    )
+
+    result = service.refresh_all()
+
+    assert result.refreshed_count == 0
+    assert result.failed_count == 2
+    assert result.pool_count == 2
+    assert provider.saved_stats
