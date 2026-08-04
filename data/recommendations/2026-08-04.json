@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "date": "2026-08-04",
-  "generated_at": "2026-08-04T15:20:47+08:00",
+  "generated_at": "2026-08-04T17:51:20+08:00",
   "mode": "incremental",
-  "candidate_count": 2993,
+  "candidate_count": 2931,
   "historical_candidate_count": 149,
   "recommendation_count": 5,
   "category_counts": {
@@ -59,46 +59,36 @@
     {
       "canonical_paper_id": "openalex:W7140452175",
       "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
-      "summary": "This survey provides a comprehensive overview of humanoid locomotion and manipulation, covering model-based methods such as contact planning, motion planning, and whole-body control, as well as learning-based approaches including reinforcement and imitation learning, and the integration of foundation models and tactile sensing.",
-      "why_relevant": "It directly addresses the user's interests in legged humanoids, mobile manipulation, optimal control, and robot learning, offering a structured synthesis of current progress and challenges across these areas.",
-      "one_line_verdict": "A useful reference for understanding the state of the art and open problems in unified humanoid loco-manipulation.",
-      "generated_at": "2026-08-04T07:25:25",
+      "takeaway": "This survey provides a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, covering model-based methods (contact planning, motion planning, whole-body control) and learning-based approaches (reinforcement and imitation learning), while also discussing the integration of foundation models for generalist humanoid agents. For the user, this is a valuable resource to quickly grasp the current progress and challenges in unified loco-manipulation, helping to identify research gaps and promising directions for combining optimal control with robot learning in legged humanoid systems.",
+      "generated_at": "2026-08-04T09:56:06",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W3012010640",
       "title": "LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops",
-      "summary": "This paper presents a hierarchical whole-body controller for the wheeled bipedal robot Ascento, using closed-form dynamics for kinematic loops, a linear-quadratic regulator to handle non-minimum phase balancing, and lean angle regulation based on the zero-moment point for robust curve driving.",
-      "why_relevant": "It demonstrates a computationally lightweight optimal control approach for a legged robot with kinematic loops, relevant to the user's focus on optimal control and legged humanoid systems.",
-      "one_line_verdict": "A practical example of LQR-assisted whole-body control that improves rough-terrain robustness in a wheeled biped.",
-      "generated_at": "2026-08-04T07:25:25",
+      "takeaway": "This paper presents a hierarchical whole-body controller for the wheeled bipedal robot Ascento, leveraging full rigid body dynamics with closed-form expressions for kinematic loops and a linear-quadratic regulator to handle non-minimum phase balancing dynamics. The controller is computationally lightweight and improves rough-terrain robustness, as demonstrated in experiments. For the user, this work offers a concrete example of integrating optimal control (LQR) into whole-body control for legged robots, which can be adapted or extended to other wheeled bipedal or humanoid platforms, particularly for balancing and locomotion tasks.",
+      "generated_at": "2026-08-04T09:56:06",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W2236233024",
       "title": "Understanding Natural Language Commands for Robotic Navigation and Mobile Manipulation",
-      "summary": "This paper introduces Generalized Grounding Graphs, a framework that dynamically instantiates a probabilistic graphical model based on the compositional semantics of natural language commands to infer and execute plans for navigation and mobile manipulation tasks.",
-      "why_relevant": "It addresses natural language understanding for mobile manipulation, which is relevant to the user's interest in mobile manipulation and robot learning, particularly for human-robot interaction.",
-      "one_line_verdict": "An early but influential model for grounding natural language commands into executable robot plans.",
-      "generated_at": "2026-08-04T07:25:25",
+      "takeaway": "This paper introduces Generalized Grounding Graphs, a framework that dynamically instantiates a probabilistic graphical model for understanding natural language commands in navigation and mobile manipulation tasks. The model is trained on a crowdsourced corpus and successfully executes commands like 'Put the tire pallet on the truck' in simulation. For the user, this work is foundational for integrating natural language interfaces into mobile manipulation systems, offering a method to bridge high-level human instructions with low-level robot actions, which could be combined with modern learning-based approaches for more flexible human-robot interaction.",
+      "generated_at": "2026-08-04T09:56:06",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W2963945659",
       "title": "Data-Driven Model Predictive Control for Trajectory Tracking With a Robotic Arm",
-      "summary": "This paper presents a data-driven model predictive control scheme for trajectory tracking with a compliant robotic arm, combining inverse dynamics feedback linearization with a Gaussian process error model and an extended Kalman filter for offset-free tracking.",
-      "why_relevant": "It illustrates a hybrid approach integrating learning-based error models with optimal control, relevant to the user's interests in optimal control and robot learning for manipulation.",
-      "one_line_verdict": "A clear demonstration of offset-free GPMPC improving tracking performance on a compliant arm.",
-      "generated_at": "2026-08-04T07:25:25",
+      "takeaway": "This paper presents a data-driven model predictive control (GPMPC) scheme for trajectory tracking with a compliant robotic arm, combining inverse dynamics feedback linearization with a Gaussian process error model and an extended Kalman filter for offset-free tracking. The approach significantly improves tracking performance compared to other control algorithms, as demonstrated on a 6-DOF arm. For the user, this work is relevant to optimal control and robot learning, showing how to integrate learned error models into MPC to enhance accuracy in compliant systems, which can be applied to legged robots or mobile manipulators where model uncertainty is significant.",
+      "generated_at": "2026-08-04T09:56:06",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "arxiv:2608.02571",
       "title": "Situation Aware Frontier Prioritization for Quadruped Search and Rescue",
-      "summary": "This paper proposes a situation-aware frontier prioritization method for quadruped search and rescue, extending frontier ranking with information gain, observation deficit, rescue relevance, terrain penalty, and travel cost, and evaluates it in Gazebo simulations.",
-      "why_relevant": "It addresses autonomous exploration for legged robots in rescue scenarios, relevant to the user's interest in legged humanoid systems and practical deployment in complex environments.",
-      "one_line_verdict": "A targeted improvement to frontier exploration that enhances victim recovery in cluttered rescue settings.",
-      "generated_at": "2026-08-04T07:25:25",
+      "takeaway": "This paper proposes a situation-aware frontier prioritization method for quadruped search and rescue, extending classical frontier exploration with information gain, observation deficit, rescue relevance, terrain penalty, and travel cost. The method is evaluated in Gazebo simulations, achieving the highest completion rate and victim recovery in a complex indoor scenario. For the user, this work addresses the challenge of balancing exploration and task-specific objectives (victim finding) in legged robots, which is relevant to autonomous navigation and mission planning in unstructured environments, and could be integrated with whole-body control or learning-based policies for real-world deployment.",
+      "generated_at": "2026-08-04T09:56:06",
       "model": "deepseek-chat"
     }
   ],
