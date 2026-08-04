@@ -32,6 +32,35 @@ def test_openalex_work_parser_preserves_identifiers_and_unknowns(openalex_payloa
     assert paper.referenced_works == ["W101", "W102"]
 
 
+def test_get_work_resolves_arxiv_via_http_landing_page(
+    tmp_path: Path, profile, openalex_payload
+) -> None:
+    captured: dict = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["params"] = dict(request.url.params)
+        return httpx.Response(
+            200, request=request, json=deepcopy(openalex_payload)
+        )
+
+    provider = OpenAlexProvider(
+        profile.openalex,
+        tmp_path / "data",
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+        environment={"OPENALEX_API_KEY": "secret"},
+        now=lambda: datetime(2026, 8, 3, 10, 15),
+        sleep=lambda _: None,
+    )
+
+    paper = provider.get_work("1603.06937")
+
+    assert (
+        "locations.landing_page_url:http://arxiv.org/abs/1603.06937"
+        in captured["params"]["filter"]
+    )
+    assert paper.base_arxiv_id == "2201.00001"
+
+
 def test_openalex_cache_prevents_duplicate_requests_and_never_stores_key(
     tmp_path: Path, profile, openalex_payload
 ) -> None:

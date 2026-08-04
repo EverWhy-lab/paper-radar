@@ -262,6 +262,11 @@ def _history(project_root: Path, args: argparse.Namespace) -> int:
             print(f"OpenAlex requests: {result.request_count}")
             print(f"OpenAlex cache hits: {result.cache_hits}")
             print(f"Remaining configured call budget: {result.remaining_call_budget}")
+            if result.failed_seed_ids:
+                print(
+                    "Seeds that could not be resolved: "
+                    + ", ".join(result.failed_seed_ids)
+                )
             print(f"Saved: {result.pool_path}")
             return 0
         if args.history_command == "refresh":

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -32,6 +32,7 @@ class DiscoveryResult:
     cache_hits: int
     remaining_call_budget: int
     pool_path: Path
+    failed_seed_ids: list[str] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
@@ -173,17 +174,23 @@ class HistoricalDiscoveryService:
                 )
                 candidates.extend(self._retag(batch, f"knowledge_map_search:{query}"))
 
-            updated_seeds: list[SeedPaper] = []
-            for seed in self.seed_storage.load():
-                seed_batch, updated = self._seed_candidates(
-                    seed, int(config["per_seed_limit"])
-                )
-                candidates.extend(seed_batch)
-                updated_seeds.append(updated)
         except Exception:
             # Failed calls still consume provider budget; persist only aggregate counters.
             self.provider.save_stats()
             raise
+
+        updated_seeds: list[SeedPaper] = []
+        failed_seed_ids: list[str] = []
+        for seed in self.seed_storage.load():
+            try:
+                seed_batch, updated = self._seed_candidates(
+                    seed, int(config["per_seed_limit"])
+                )
+            except (HistoricalProviderError, ValueError):
+                failed_seed_ids.append(str(seed.identifier))
+                continue
+            candidates.extend(seed_batch)
+            updated_seeds.append(updated)
 
         unique = deduplicate_historical(candidates)
         scored = score_historical_papers(
@@ -204,6 +211,7 @@ class HistoricalDiscoveryService:
             cache_hits=self.provider.run_cache_hits,
             remaining_call_budget=stats.remaining_call_budget,
             pool_path=pool_path,
+            failed_seed_ids=failed_seed_ids,
         )
 
     def refresh(self, identifier: str) -> HistoricalPaper:

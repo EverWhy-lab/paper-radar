@@ -78,6 +78,19 @@ class FixtureProvider:
         return [self._paper("W105", "seed_graph:citing_works", seed_paper_id)][:limit]
 
 
+class FailingSeedProvider(FixtureProvider):
+    def __init__(self, payload, *, fail_ids):
+        super().__init__(payload)
+        self.fail_ids = set(fail_ids)
+
+    def get_work(self, identifier):
+        if identifier in self.fail_ids:
+            raise HistoricalProviderError(
+                f"OpenAlex did not resolve identifier: {identifier}"
+            )
+        return super().get_work(identifier)
+
+
 def test_arxiv_doi_openalex_aliases_deduplicate(openalex_payload) -> None:
     first = parse_openalex_work(
         deepcopy(openalex_payload["results"][0]),
@@ -265,4 +278,25 @@ def test_refresh_all_counts_failures_and_preserves_pool(
     assert result.refreshed_count == 0
     assert result.failed_count == 2
     assert result.pool_count == 2
+    assert provider.saved_stats
+
+
+def test_discover_skips_unresolvable_seed_and_continues(
+    tmp_path: Path, profile, openalex_payload
+) -> None:
+    SeedStorage(tmp_path / "data").add("1603.06937", "2026-08-03T10:15:00+08:00")
+    SeedStorage(tmp_path / "data").add("W100", "2026-08-03T10:15:00+08:00")
+    provider = FailingSeedProvider(openalex_payload, fail_ids={"1603.06937"})
+    service = HistoricalDiscoveryService(
+        tmp_path / "data",
+        profile,
+        provider,
+        now=datetime(2026, 8, 3, 10, 15),
+    )
+
+    result = service.discover(limit=20)
+
+    assert result.failed_seed_ids == ["1603.06937"]
+    assert result.discovered_count > 0
+    assert result.pool_count > 0
     assert provider.saved_stats

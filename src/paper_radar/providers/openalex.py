@@ -386,17 +386,23 @@ class OpenAlexProvider:
             )
         if not arxiv_id:
             raise HistoricalProviderError(f"Unsupported seed identifier: {identifier}")
-        payload = self._request(
-            "/works",
-            {
-                "filter": f"locations.landing_page_url:https://arxiv.org/abs/{arxiv_id}",
-                "per-page": 1,
-            },
-        )
-        works = self._results(payload, discovery_source="seed_resolution")
-        if not works:
-            raise HistoricalProviderError(f"OpenAlex did not resolve identifier: {identifier}")
-        return works[0]
+        # OpenAlex records arXiv landing pages as http:// for most older works;
+        # fall back across schemes before giving up.
+        for landing_url in (
+            f"http://arxiv.org/abs/{arxiv_id}",
+            f"https://arxiv.org/abs/{arxiv_id}",
+        ):
+            payload = self._request(
+                "/works",
+                {
+                    "filter": f"locations.landing_page_url:{landing_url}",
+                    "per-page": 1,
+                },
+            )
+            works = self._results(payload, discovery_source="seed_resolution")
+            if works:
+                return works[0]
+        raise HistoricalProviderError(f"OpenAlex did not resolve identifier: {identifier}")
 
     def get_works_by_ids(
         self,
