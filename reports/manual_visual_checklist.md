@@ -1,4 +1,4 @@
-# EverWhy Paper Radar V0.1.3 — Manual Visual Checklist
+# Paper Radar V0.1.3 — Manual Visual Checklist
 
 Automated tests validate rendered markup and data boundaries, but do not replace a manual browser check. Do not install a large browser solely for this checklist.
 

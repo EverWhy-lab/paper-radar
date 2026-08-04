@@ -1,6 +1,6 @@
-# EverWhy Paper Radar
+# Paper Radar
 
-EverWhy Paper Radar is a local personal reader for robotics and embodied-intelligence research. It tracks relevant arXiv frontiers and builds a separate OpenAlex-backed historical discovery pool, then shows at most five papers per day. It does not use an LLM, infer claims from full text, or equate citation counts with paper quality.
+Paper Radar is a local personal reader for robotics and embodied-intelligence research. It tracks relevant arXiv frontiers and builds a separate OpenAlex-backed historical discovery pool, then shows at most five papers per day. It does not use an LLM, infer claims from full text, or equate citation counts with paper quality.
 
 ## Install
 
@@ -158,4 +158,4 @@ Valid statuses are `unread`, `queued`, `reading`, and `read`. Pool add fetches r
 
 Open <http://127.0.0.1:8000/>. Recommendation archives are under `site/recommendations/`. Tests use local Atom/OpenAlex fixtures and mocked transports only; they do not need an API key or live network.
 
-Recent metadata comes from arXiv. Historical citation and influence metadata comes from OpenAlex. EverWhy Paper Radar is independent and is not affiliated with or endorsed by either provider.
+Recent metadata comes from arXiv. Historical citation and influence metadata comes from OpenAlex. Paper Radar is independent and is not affiliated with or endorsed by either provider.

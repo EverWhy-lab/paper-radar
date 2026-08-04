@@ -55,7 +55,7 @@ def test_html_index_and_archive_generation(tmp_path: Path, atom_xml: str, profil
     index = index_path.read_text(encoding="utf-8")
     archive = archive_path.read_text(encoding="utf-8")
 
-    assert "EverWhy Paper Radar" in index
+    assert "Paper Radar" in index
     assert "Whole-Body &lt;Control&gt; &amp; Safety" in index
     assert "Original abstract" in index
     assert "Why these scores?" in index

@@ -38,7 +38,7 @@ def _date_argument(value: str) -> date:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="python -m paper_radar",
-        description="Build the local EverWhy Paper Radar site.",
+        description="Build the local Paper Radar site.",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
     run_parser = subparsers.add_parser(
@@ -274,7 +274,7 @@ def _serve(project_root: Path, host: str, port: int) -> int:
     except OSError as exc:
         print(f"Unable to start preview server on {host}:{port}: {exc}", file=sys.stderr)
         return 1
-    print(f"EverWhy Paper Radar is available at http://{host}:{port}/")
+    print(f"Paper Radar is available at http://{host}:{port}/")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
