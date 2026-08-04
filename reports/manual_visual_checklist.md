@@ -21,7 +21,7 @@ Run `.venv/bin/python -m paper_radar serve`, then inspect:
 - The abstract is folded by default. The missing-abstract note appears only when OpenAlex supplied no abstract.
 - The OpenAlex screening-signal disclaimer is visible and does not imply that citations equal paper quality.
 - No historical discovery candidate appears unless it is present in the day's recommendation JSON.
-- The DeepSeek guide (AI · DeepSeek) renders inside each recommendation card when `llm_analysis` exists; there is no separate guide section, and a missing guide never affects the cards.
+- The guide labeled **Importance** renders inside each recommendation card when `llm_analysis` exists; there is no separate guide section, no AI/DeepSeek branding on the page, and a missing guide never affects the cards.
 - Every recommendation card has a thumbs-down **Not Relevant** button; clicking it fills the thumb and opens a pre-filled GitHub issue link, and the card itself stays visible.
 
 ## 375 px phone
