@@ -80,9 +80,9 @@ def test_parses_english_guide_and_sends_bearer_token(profile) -> None:
             200,
             json=deepseek_response(
                 '{"analyses":[{"paper_id":"arxiv:2608.00001",'
-                '"summary":"Introduces a whole-body control method for humanoid robots.",'
-                '"why_relevant":"Directly relevant to legged humanoid and optimal control.",'
-                '"one_line_verdict":"A novel method worth reading."}]}'
+                '"takeaway":"Introduces a whole-body control method for humanoid robots. '
+                'Solves offset-free tracking on compliant arms and is directly usable in '
+                'whole-body control research."}]}'
             ),
             request=request,
         )
@@ -99,9 +99,7 @@ def test_parses_english_guide_and_sends_bearer_token(profile) -> None:
     assert len(results) == 1
     analysis = results[0]
     assert analysis.canonical_paper_id == "arxiv:2608.00001"
-    assert "whole-body control" in analysis.summary
-    assert analysis.why_relevant
-    assert analysis.one_line_verdict
+    assert "whole-body control" in analysis.takeaway
     assert analysis.model == profile.llm_analysis.model
     assert analysis.generated_at
 
@@ -115,7 +113,7 @@ def test_english_system_prompt_keeps_paper_terms(profile) -> None:
             200,
             json=deepseek_response(
                 '{"analyses":[{"paper_id":"arxiv:2608.00001",'
-                '"summary":"Summary.","why_relevant":"Relevant.","one_line_verdict":"Readable."}]}'
+                '"takeaway":"Takeaway text."}]}'
             ),
             request=request,
         )
@@ -130,7 +128,8 @@ def test_english_system_prompt_keeps_paper_terms(profile) -> None:
     assert "Use professional terminology exactly as it appears in the paper" in body
     assert "model names" in body
     assert "classic" in body
-    assert "write a short 2-3 sentence guide in English" in body
+    assert "write one concise Takeaway in English" in body
+    assert "the problem the paper solves" in body
 
 
 def test_parses_code_fenced_json(profile) -> None:
@@ -139,7 +138,7 @@ def test_parses_code_fenced_json(profile) -> None:
             200,
             json=deepseek_response(
                 '```json\n{"analyses":[{"paper_id":"arxiv:2608.00001",'
-                '"summary":"Guide text.","why_relevant":"Relevant.","one_line_verdict":"Readable."}]}\n```'
+                '"takeaway":"Guide text."}]}\n```'
             ),
             request=request,
         )
@@ -151,7 +150,7 @@ def test_parses_code_fenced_json(profile) -> None:
     )
     results = client.analyze_recommendations([entry()])
     assert len(results) == 1
-    assert results[0].summary == "Guide text."
+    assert results[0].takeaway == "Guide text."
 
 
 def test_parses_json_embedded_in_prose(profile) -> None:
@@ -161,8 +160,7 @@ def test_parses_json_embedded_in_prose(profile) -> None:
             json=deepseek_response(
                 'Sure, here is the guide:\n'
                 '{"analyses":[{"paper_id":"arxiv:2608.00001",'
-                '"summary":"Prose-wrapped summary.","why_relevant":"Relevant.",'
-                '"one_line_verdict":"Readable."}]}\nHope that helps.'
+                '"takeaway":"Prose-wrapped takeaway."}]}\nHope that helps.'
             ),
             request=request,
         )
@@ -174,7 +172,7 @@ def test_parses_json_embedded_in_prose(profile) -> None:
     )
     results = client.analyze_recommendations([entry()])
     assert len(results) == 1
-    assert results[0].summary == "Prose-wrapped summary."
+    assert results[0].takeaway == "Prose-wrapped takeaway."
 
 
 def test_parses_content_as_list_of_text_parts(profile) -> None:
@@ -185,11 +183,10 @@ def test_parses_content_as_list_of_text_parts(profile) -> None:
                 "choices": [
                     {
                         "message": {
-                            "content": [
-                                {"type": "text", "text": '{"analyses":[{"paper_id":"arxiv:2608.00001",'},
-                                {"type": "text", "text": '"summary":"Parted summary.","why_relevant":"Relevant.",'},
-                                {"type": "text", "text": '"one_line_verdict":"Readable."}]}'},
-                            ]
+                                "content": [
+                                    {"type": "text", "text": '{"analyses":[{"paper_id":"arxiv:2608.00001",'},
+                                    {"type": "text", "text": '"takeaway":"Parted takeaway."}]}'},
+                                ]
                         }
                     }
                 ]
@@ -204,7 +201,7 @@ def test_parses_content_as_list_of_text_parts(profile) -> None:
     )
     results = client.analyze_recommendations([entry()])
     assert len(results) == 1
-    assert results[0].summary == "Parted summary."
+    assert results[0].takeaway == "Parted takeaway."
 
 
 def test_malformed_json_returns_empty(profile) -> None:
@@ -229,7 +226,7 @@ def test_unknown_paper_id_is_ignored(profile) -> None:
             200,
             json=deepseek_response(
                 '{"analyses":[{"paper_id":"arxiv:9999.99999",'
-                '"summary":"Unknown paper.","why_relevant":"","one_line_verdict":""}]}'
+                '"takeaway":"Unknown paper."}]}'
             ),
             request=request,
         )

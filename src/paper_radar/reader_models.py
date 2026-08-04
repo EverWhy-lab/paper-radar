@@ -156,9 +156,7 @@ class RecommendationEntry:
 class LLMAnalysis:
     canonical_paper_id: str
     title: str
-    summary: str
-    why_relevant: str
-    one_line_verdict: str
+    takeaway: str
     generated_at: str
     model: str
 
@@ -166,21 +164,26 @@ class LLMAnalysis:
         return {
             "canonical_paper_id": self.canonical_paper_id,
             "title": self.title,
-            "summary": self.summary,
-            "why_relevant": self.why_relevant,
-            "one_line_verdict": self.one_line_verdict,
+            "takeaway": self.takeaway,
             "generated_at": self.generated_at,
             "model": self.model,
         }
 
     @classmethod
     def from_dict(cls, value: dict[str, Any]) -> "LLMAnalysis":
+        takeaway = str(value.get("takeaway", "")).strip()
+        if not takeaway:
+            # Backward compatibility with the previous three-part guide.
+            parts = [
+                str(value.get("summary", "")).strip(),
+                str(value.get("why_relevant", "")).strip(),
+                str(value.get("one_line_verdict", "")).strip(),
+            ]
+            takeaway = " ".join(part for part in parts if part)
         return cls(
             canonical_paper_id=str(value["canonical_paper_id"]),
             title=str(value.get("title", "")),
-            summary=str(value.get("summary", "")),
-            why_relevant=str(value.get("why_relevant", "")),
-            one_line_verdict=str(value.get("one_line_verdict", "")),
+            takeaway=takeaway,
             generated_at=str(value.get("generated_at", "")),
             model=str(value.get("model", "")),
         )

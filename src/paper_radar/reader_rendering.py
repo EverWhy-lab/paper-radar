@@ -91,8 +91,6 @@ class RecommendationSiteRenderer:
                 for date_string in archive_dates
             ],
             "demo_label": demo_label,
-            "guide_why_label": "为什么值得读：" if guide_zh else "Why it matters: ",
-            "guide_verdict_label": "一句话：" if guide_zh else "In one line: ",
         }
 
     def _render_document(

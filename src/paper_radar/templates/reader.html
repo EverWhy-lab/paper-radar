@@ -65,10 +65,8 @@
         {% set analysis = analysis_by_id.get(recommendation.canonical_paper_id) %}
         {% if analysis %}
         <div class="card-guide">
-          <p class="guide-tag">AI · DeepSeek</p>
-          <p>{{ analysis.summary }}</p>
-          <p class="guide-why"><b>{{ guide_why_label }}</b>{{ analysis.why_relevant }}</p>
-          <p class="guide-verdict"><b>{{ guide_verdict_label }}</b>{{ analysis.one_line_verdict }}</p>
+          <p class="guide-tag">AI · DeepSeek · Takeaway</p>
+          <p>{{ analysis.takeaway }}</p>
         </div>
         {% endif %}
         <details class="abstract"><summary>Original abstract</summary><p>{{ historical.abstract if historical else paper.summary }}{% if historical and not historical.abstract %}OpenAlex metadata did not include an abstract.{% endif %}</p></details>

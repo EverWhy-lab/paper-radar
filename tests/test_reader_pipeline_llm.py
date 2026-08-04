@@ -53,9 +53,11 @@ class FakeLLMProvider:
             LLMAnalysis(
                 canonical_paper_id=entry.canonical_paper_id,
                 title=entry.paper.title,
-                summary="Introduces a whole-body control method for humanoid robots.",
-                why_relevant="Directly relevant to legged humanoid and optimal control.",
-                one_line_verdict="A novel method worth reading.",
+                takeaway=(
+                    "Introduces a whole-body control method for humanoid robots. "
+                    "Solves offset-free tracking and is directly usable in whole-body "
+                    "control research."
+                ),
                 generated_at="2026-08-04T10:30:00+08:00",
                 model="deepseek-chat",
             )
@@ -83,11 +85,11 @@ def test_reader_run_generates_guide_and_renders_section(tmp_path: Path, profile)
     recommendation = json.loads(
         (tmp_path / "data" / "recommendations" / "2026-08-04.json").read_text(encoding="utf-8")
     )
-    assert recommendation["llm_analysis"][0]["summary"].startswith("Introduces")
+    assert recommendation["llm_analysis"][0]["takeaway"].startswith("Introduces")
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
     assert "Today&#39;s Guide" not in index
-    assert "AI · DeepSeek" in index
-    assert "Why it matters: " in index
+    assert "AI · DeepSeek · Takeaway" in index
+    assert "Why it matters" not in index
     assert index.count("Whole-Body Control for Agile Humanoid Robots") >= 1
 
 
@@ -97,7 +99,7 @@ def test_reader_run_without_provider_has_no_guide(tmp_path: Path, profile) -> No
     assert result.recommendation_count == 1
     assert result.llm_analysis_count == 0
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
-    assert "AI · DeepSeek" not in index
+    assert "AI · DeepSeek · Takeaway" not in index
 
 
 def test_failing_llm_provider_never_blocks_the_page(tmp_path: Path, profile) -> None:
@@ -109,7 +111,7 @@ def test_failing_llm_provider_never_blocks_the_page(tmp_path: Path, profile) -> 
     assert provider.calls == 1
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
     assert "今日精选论文" in index
-    assert "AI · DeepSeek" not in index
+    assert "AI · DeepSeek · Takeaway" not in index
 
 
 def test_real_client_key_never_lands_in_data_files(tmp_path: Path, profile) -> None:
@@ -122,12 +124,11 @@ def test_real_client_key_never_lands_in_data_files(tmp_path: Path, profile) -> N
                 "choices": [
                     {
                         "message": {
-                            "content": (
-                                '{"analyses":[{"paper_id":"arxiv:2608.00001",'
-                                '"summary":"Introduces a whole-body control method.",'
-                                '"why_relevant":"Relevant to the direction.",'
-                                '"one_line_verdict":"Worth reading."}]}'
-                            )
+                                "content": (
+                                    '{"analyses":[{"paper_id":"arxiv:2608.00001",'
+                                    '"takeaway":"Introduces a whole-body control method. '
+                                    'Solves offset-free tracking for legged platforms."}]}'
+                                )
                         }
                     }
                 ]
@@ -157,9 +158,7 @@ def test_daily_recommendations_round_trip_preserves_guide(profile) -> None:
     analysis = LLMAnalysis(
         canonical_paper_id="arxiv:2608.00001",
         title="Whole-Body Control for Agile Humanoid Robots 1",
-        summary="Guide text.",
-        why_relevant="Relevant.",
-        one_line_verdict="Readable.",
+        takeaway="Guide text for the paper.",
         generated_at="2026-08-04T10:30:00+08:00",
         model="deepseek-chat",
     )
@@ -175,9 +174,25 @@ def test_daily_recommendations_round_trip_preserves_guide(profile) -> None:
     restored = DailyRecommendations.from_dict(daily.to_dict())
 
     assert restored.llm_analysis is not None
-    assert restored.llm_analysis[0].summary == "Guide text."
+    assert restored.llm_analysis[0].takeaway == "Guide text for the paper."
     assert restored.llm_analysis[0].canonical_paper_id == "arxiv:2608.00001"
     assert restored.schema_version == 3
+
+
+def test_old_three_part_guide_is_merged_into_takeaway() -> None:
+    restored = LLMAnalysis.from_dict(
+        {
+            "canonical_paper_id": "arxiv:2608.00001",
+            "title": "Paper",
+            "summary": "Does X.",
+            "why_relevant": "Relevant to Y.",
+            "one_line_verdict": "Worth reading.",
+            "generated_at": "2026-08-04T10:30:00+08:00",
+            "model": "deepseek-chat",
+        }
+    )
+
+    assert restored.takeaway == "Does X. Relevant to Y. Worth reading."
 
 
 def test_older_archive_page_is_rerendered_with_newer_date_link(tmp_path: Path, profile) -> None:
