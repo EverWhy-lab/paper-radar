@@ -32,13 +32,13 @@ concurrency:
 jobs:
   run-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.11"
 
@@ -52,10 +52,14 @@ jobs:
 
       - name: Daily reader run (with arXiv retries)
         run: |
-          max_attempts=3
-          wait_seconds=120
+          # arXiv rate-limits shared runner IPs with transient 429 responses.
+          # Retry for up to about an hour with five-minute spacing so a
+          # short-lived block clears before we give up.
+          max_attempts=12
+          wait_seconds=300
           attempt=1
           while [ "$attempt" -le "$max_attempts" ]; do
+            echo "--- Attempt $attempt/$max_attempts at $(date -u +%H:%M:%SZ) ---"
             if [ -n "${{ inputs.date }}" ]; then
               python -m paper_radar run --date "${{ inputs.date }}"
             else
@@ -63,6 +67,7 @@ jobs:
             fi
             status=$?
             if [ "$status" -eq 0 ]; then
+              echo "Daily reader run succeeded on attempt $attempt."
               exit 0
             fi
             if [ "$attempt" -lt "$max_attempts" ]; then
