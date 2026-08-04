@@ -71,6 +71,10 @@ class RecommendationSiteRenderer:
             "site_name": self.profile.site_name,
             "github_repo": self.profile.site_github_repo,
             "daily": daily,
+            "analysis_by_id": {
+                analysis.canonical_paper_id: analysis
+                for analysis in (daily.llm_analysis or [])
+            },
             "asset_prefix": asset_prefix,
             "category_labels": CATEGORY_LABELS,
             "topic_labels": self.profile.topic_labels,
@@ -87,7 +91,6 @@ class RecommendationSiteRenderer:
                 for date_string in archive_dates
             ],
             "demo_label": demo_label,
-            "guide_heading": "今日导读" if guide_zh else "Today's Guide",
             "guide_why_label": "为什么值得读：" if guide_zh else "Why it matters: ",
             "guide_verdict_label": "一句话：" if guide_zh else "In one line: ",
         }

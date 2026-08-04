@@ -39,21 +39,6 @@
       {% endif %}
     </div>
 
-    {% if daily.llm_analysis %}
-    <section class="llm-guide" aria-label="LLM daily guide">
-      <div class="section-heading"><span>AI GUIDE</span><h2>{{ guide_heading }}</h2></div>
-      {% for analysis in daily.llm_analysis %}
-      <article class="guide-card">
-        <h3><a href="#{{ analysis.canonical_paper_id }}">{{ analysis.title }}</a></h3>
-        <p>{{ analysis.summary }}</p>
-        <p class="guide-why"><b>{{ guide_why_label }}</b>{{ analysis.why_relevant }}</p>
-        <p class="guide-verdict"><b>{{ guide_verdict_label }}</b>{{ analysis.one_line_verdict }}</p>
-      </article>
-      {% endfor %}
-      <p class="guide-note">AI guide · DeepSeek</p>
-    </section>
-    {% endif %}
-
     {% if daily.recommendations %}
     <section class="recommendations" aria-label="Today's selected papers">
       <div class="section-heading"><span>SELECTED</span><h2>今日精选论文</h2></div>
@@ -77,6 +62,15 @@
           <span><b>Categories</b> {{ paper.categories | join(', ') }}</span>
           {% endif %}
         </div>
+        {% set analysis = analysis_by_id.get(recommendation.canonical_paper_id) %}
+        {% if analysis %}
+        <div class="card-guide">
+          <p class="guide-tag">AI · DeepSeek</p>
+          <p>{{ analysis.summary }}</p>
+          <p class="guide-why"><b>{{ guide_why_label }}</b>{{ analysis.why_relevant }}</p>
+          <p class="guide-verdict"><b>{{ guide_verdict_label }}</b>{{ analysis.one_line_verdict }}</p>
+        </div>
+        {% endif %}
         <details class="abstract"><summary>Original abstract</summary><p>{{ historical.abstract if historical else paper.summary }}{% if historical and not historical.abstract %}OpenAlex metadata did not include an abstract.{% endif %}</p></details>
         <div class="actions">
           {% if historical %}

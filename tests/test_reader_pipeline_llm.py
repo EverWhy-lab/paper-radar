@@ -85,9 +85,10 @@ def test_reader_run_generates_guide_and_renders_section(tmp_path: Path, profile)
     )
     assert recommendation["llm_analysis"][0]["summary"].startswith("Introduces")
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
-    assert "Today&#39;s Guide" in index
-    assert "AI guide · DeepSeek" in index
-    assert "Whole-Body Control for Agile Humanoid Robots" in index
+    assert "Today&#39;s Guide" not in index
+    assert "AI · DeepSeek" in index
+    assert "Why it matters: " in index
+    assert index.count("Whole-Body Control for Agile Humanoid Robots") >= 1
 
 
 def test_reader_run_without_provider_has_no_guide(tmp_path: Path, profile) -> None:
@@ -96,7 +97,7 @@ def test_reader_run_without_provider_has_no_guide(tmp_path: Path, profile) -> No
     assert result.recommendation_count == 1
     assert result.llm_analysis_count == 0
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
-    assert "Today&#39;s Guide" not in index
+    assert "AI · DeepSeek" not in index
 
 
 def test_failing_llm_provider_never_blocks_the_page(tmp_path: Path, profile) -> None:
@@ -108,7 +109,7 @@ def test_failing_llm_provider_never_blocks_the_page(tmp_path: Path, profile) -> 
     assert provider.calls == 1
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
     assert "今日精选论文" in index
-    assert "Today&#39;s Guide" not in index
+    assert "AI · DeepSeek" not in index
 
 
 def test_real_client_key_never_lands_in_data_files(tmp_path: Path, profile) -> None:
