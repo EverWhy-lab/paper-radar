@@ -36,13 +36,13 @@ Exact-day arXiv backfill:
 .venv/bin/python -m paper_radar run --date 2026-08-03
 ```
 
-The `--date` form retains Asia/Shanghai natural-day semantics for deterministic backfill. arXiv normally announces papers Sunday through Thursday evening in US Eastern time—usually the following morning around 08:00 or 09:00 in Shanghai. Weekends, holidays, and early runs can have no new papers. The bundled GitHub Actions workflow (`.github/workflows/daily-run.yml`) runs the incremental command around **10:15 Asia/Shanghai** every day and publishes the rendered site to GitHub Pages.
+The `--date` form retains Asia/Shanghai natural-day semantics for deterministic backfill. arXiv posts new papers Sunday through Thursday evening in US Eastern time—usually the following morning around 08:00 or 09:00 in Shanghai, and makes no announcements Friday or Saturday. Weekends, holidays, and early runs can have no new papers. The bundled GitHub Actions workflow (`.github/workflows/daily-run.yml`) runs the incremental command around **09:30 Asia/Shanghai** every day and publishes the rendered site to GitHub Pages.
 
 ## Daily automation and mobile access (GitHub)
 
 `.github/workflows/daily-run.yml` automates the daily run and publishes the site:
 
-- A scheduled run executes `python -m paper_radar run` every day at **10:15 Asia/Shanghai** (02:15 UTC). The daily reader never calls OpenAlex, so no API key is needed for the scheduled run.
+- A scheduled run executes `python -m paper_radar run` every day at **09:30 Asia/Shanghai** (01:30 UTC). The daily reader never calls OpenAlex, so no API key is needed for the scheduled run.
 - The workflow commits the updated `data/` state and `site/` pages back to the repository, then deploys `site/` to GitHub Pages.
 - Manual runs are available under **Actions → daily-run → Run workflow**, with two optional inputs:
   - `date`: exact-day backfill in `YYYY-MM-DD` form;
