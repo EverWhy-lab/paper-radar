@@ -110,7 +110,10 @@ def _run(project_root: Path, requested_date: date | None) -> int:
     if result.llm_analysis_count:
         print(f"LLM daily guide: {result.llm_analysis_count} papers analyzed")
     else:
-        print("LLM daily guide: not generated (feature disabled or DEEPSEEK_API_KEY missing)")
+        print(
+            "LLM daily guide: not generated "
+            "(no papers selected, feature disabled, or DEEPSEEK_API_KEY missing)"
+        )
     print(f"Candidate metadata: {result.candidate_path}")
     print(f"Daily recommendations: {result.recommendation_path}")
     print(f"Site index: {result.index_path}")
