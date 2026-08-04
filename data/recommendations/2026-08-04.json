@@ -1,14 +1,14 @@
 {
   "schema_version": 3,
   "date": "2026-08-04",
-  "generated_at": "2026-08-04T12:22:42+08:00",
+  "generated_at": "2026-08-04T14:59:44+08:00",
   "mode": "incremental",
-  "candidate_count": 3054,
-  "historical_candidate_count": 20,
-  "recommendation_count": 3,
+  "candidate_count": 3003,
+  "historical_candidate_count": 149,
+  "recommendation_count": 5,
   "category_counts": {
     "frontier_recent": 1,
-    "high_impact_historical": 1,
+    "high_impact_historical": 3,
     "review_knowledge_map": 1
   },
   "selection_config": {
@@ -59,28 +59,46 @@
     {
       "canonical_paper_id": "openalex:W7140452175",
       "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
-      "summary": "This survey provides a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, reviewing model-based methods (contact planning, motion planning, whole-body control) and emerging learning-based approaches (reinforcement and imitation learning), and assessing the potential of integrating foundation models with humanoid embodiments.",
-      "why_relevant": "Directly aligns with your interests in legged humanoids, mobile manipulation, optimal control, and robot learning, offering a structured synthesis of current progress and challenges across these areas.",
-      "one_line_verdict": "A broad and current survey that maps the landscape of humanoid loco-manipulation methods and future directions.",
-      "generated_at": "2026-08-04T04:27:32",
+      "summary": "This survey provides a comprehensive overview of humanoid locomotion and manipulation, reviewing model-based methods such as contact planning, motion planning, and whole-body control, as well as emerging learning-based approaches including reinforcement and imitation learning, and the integration of foundation models and tactile sensing.",
+      "why_relevant": "It directly addresses your interests in legged humanoids, mobile manipulation, optimal control, and robot learning by synthesizing the current state and challenges across these areas, offering a broad perspective for identifying research gaps.",
+      "one_line_verdict": "A useful survey for framing research directions in unified humanoid loco-manipulation.",
+      "generated_at": "2026-08-04T07:05:31",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W3012010640",
       "title": "LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops",
-      "summary": "This paper presents a hierarchical whole-body controller for the wheeled bipedal robot Ascento, leveraging full rigid body dynamics with closed-form kinematic loop expressions, a compact rolling constraint solution, and an LQR motion task to handle non-minimum phase balancing dynamics.",
-      "why_relevant": "Provides a concrete example of whole-body optimal control for a legged robot with kinematic loops, relevant to your work on optimal control and legged humanoid systems.",
-      "one_line_verdict": "A computationally lightweight whole-body control approach that enhances robustness and rough-terrain capability for wheeled bipedal robots.",
-      "generated_at": "2026-08-04T04:27:32",
+      "summary": "This paper presents a hierarchical whole-body controller for the wheeled bipedal robot Ascento, using full rigid body dynamics with closed-form kinematic loop expressions, a linear-quadratic regulator for non-minimum phase balancing, and lean angle regulation based on the zero-moment point for robust curve driving.",
+      "why_relevant": "It demonstrates a practical optimal control approach for a legged robot with kinematic loops, relevant to your interest in whole-body control and optimal control for legged systems.",
+      "one_line_verdict": "A solid example of LQR-assisted whole-body control enhancing robustness in a wheeled bipedal robot.",
+      "generated_at": "2026-08-04T07:05:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2236233024",
+      "title": "Understanding Natural Language Commands for Robotic Navigation and Mobile Manipulation",
+      "summary": "This paper introduces Generalized Grounding Graphs, a framework that dynamically instantiates a probabilistic graphical model to understand natural language commands for navigation and mobile manipulation, trained via crowdsourced data and evaluated in a realistic simulator.",
+      "why_relevant": "It addresses natural language understanding for mobile manipulation, which is relevant to your interest in mobile manipulation and could inform human-robot interaction aspects of your research.",
+      "one_line_verdict": "An early but influential model for grounding natural language commands in robotic tasks.",
+      "generated_at": "2026-08-04T07:05:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2963945659",
+      "title": "Data-Driven Model Predictive Control for Trajectory Tracking With a Robotic Arm",
+      "summary": "This paper presents a data-driven model predictive control approach for trajectory tracking with a compliant robotic arm, combining inverse dynamics feedback linearization with a Gaussian process error model and an extended Kalman filter for offset-free tracking.",
+      "why_relevant": "It combines optimal control with learning-based error modeling, relevant to your interest in optimal control and robot learning, particularly for compliant manipulators.",
+      "one_line_verdict": "A practical demonstration of GPMPC improving tracking performance on a compliant arm.",
+      "generated_at": "2026-08-04T07:05:31",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "arxiv:2608.02571",
       "title": "Situation Aware Frontier Prioritization for Quadruped Search and Rescue",
-      "summary": "This paper proposes a situation-aware frontier prioritization method for quadruped search and rescue, extending classical frontier exploration with information gain, observation deficit, rescue relevance, terrain penalty, and travel cost, and evaluates it in Gazebo simulations across two indoor rescue scenarios.",
-      "why_relevant": "Addresses autonomous exploration for legged robots in rescue contexts, complementing your interests in legged locomotion and practical deployment scenarios.",
-      "one_line_verdict": "A frontier-based exploration method that improves victim recovery in complex indoor rescue environments for quadruped robots.",
-      "generated_at": "2026-08-04T04:27:32",
+      "summary": "This paper proposes a situation-aware frontier prioritization method for quadruped search and rescue, extending frontier ranking with information gain, observation deficit, rescue relevance, terrain penalty, and travel cost, and evaluates it in Gazebo simulations.",
+      "why_relevant": "It addresses autonomous exploration for legged robots in rescue scenarios, relevant to your interest in legged robots and could inform exploration strategies in your work.",
+      "one_line_verdict": "A targeted method for improving victim recovery in quadruped search and rescue.",
+      "generated_at": "2026-08-04T07:05:31",
       "model": "deepseek-chat"
     }
   ],
@@ -603,6 +621,537 @@
             "keywords": [
               "whole-body control",
               "whole body control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 20 ≥ 18",
+        "核心方向：mobile_manipulation",
+        "特定关键词：mobile manipulation",
+        "historical_value_score 60.0 ≥ 42.0",
+        "发表于 2011 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 30.24",
+        "近 2 年年均引用 24.0；此前 2 年年均 29.5",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:01"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2236233024",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2236233024",
+        "openalex_id": "W2236233024",
+        "base_arxiv_id": null,
+        "doi": "10.1609/aaai.v25i1.7979",
+        "title": "Understanding Natural Language Commands for Robotic Navigation and Mobile Manipulation",
+        "authors": [
+          "Stefanie Tellex",
+          "Thomas Kollar",
+          "Steven Dickerson",
+          "Matthew R. Walter",
+          "Ashis G. Banerjee",
+          "Seth Teller",
+          "Nicholas Roy"
+        ],
+        "abstract": "This paper describes a new model for understanding natural language commands given to autonomous systems that perform navigation and mobile manipulation in semi-structured environments. Previous approaches have used models with fixed structure to infer the likelihood of a sequence of actions given the environment and the command. In contrast, our framework, called Generalized Grounding Graphs, dynamically instantiates a probabilistic graphical model for a particular natural language command according to the command's hierarchical and compositional semantic structure. Our system performs inference in the model to successfully find and execute plans corresponding to natural language commands such as \"Put the tire pallet on the truck.\" The model is trained using a corpus of commands collected using crowdsourcing. We pair each command with robot actions and use the corpus to learn the parameters of the model. We evaluate the robot's performance by inferring plans from natural language commands, executing each plan in a realistic robot simulator, and asking users to evaluate the system's performance. We demonstrate that our system can successfully follow many natural language commands from the corpus.",
+        "publication_date": "2011-08-04",
+        "publication_year": 2011,
+        "source_name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10181",
+            "display_name": "Natural Language Processing Techniques",
+            "score": 0.9998999834060669
+          },
+          {
+            "id": "https://openalex.org/T10028",
+            "display_name": "Topic Modeling",
+            "score": 0.9998000264167786
+          },
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.9987000226974487
+          }
+        ],
+        "cited_by_count": 680,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 34
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 65
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 67
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 73
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 64
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 64
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 42
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 57
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 49
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 25
+          }
+        ],
+        "fwci": 30.2372,
+        "citation_normalized_percentile": 0.99879838,
+        "referenced_works": [
+          "W1508977358",
+          "W1519791307",
+          "W1525482321",
+          "W1602500555",
+          "W1983599491",
+          "W2027123861",
+          "W2031249239",
+          "W2032846947",
+          "W2069809153",
+          "W2070789508",
+          "W2099217059",
+          "W2107537133",
+          "W2111526438",
+          "W2123987305",
+          "W2147880316",
+          "W2160091052",
+          "W2161002933",
+          "W2281797375",
+          "W2481295655",
+          "W2484559640",
+          "W2492390975",
+          "W3022035132",
+          "W4233091368",
+          "W4242421948",
+          "W4247293626",
+          "W55989445",
+          "W6631193708",
+          "W6723158049",
+          "W7024467038",
+          "W7058266407"
+        ],
+        "related_works": [
+          "W2367925007",
+          "W2542958340",
+          "W2900126711",
+          "W2967994095",
+          "W3015724364",
+          "W3202115945",
+          "W4225162083",
+          "W4285240985",
+          "W4286930972",
+          "W4288263119"
+        ],
+        "discovery_source": [
+          "seed_graph:referenced_works",
+          "topic_search:mobile manipulation"
+        ],
+        "seed_paper_id": [
+          "openalex:W4383097638"
+        ],
+        "discovered_at": "2026-08-04T06:56:01",
+        "last_considered_at": "2026-08-04T14:59:44+08:00",
+        "recommended_at": "2026-08-04T14:59:44+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:01",
+        "openalex_url": "https://openalex.org/W2236233024",
+        "landing_page_url": "https://doi.org/10.1609/aaai.v25i1.7979",
+        "open_access_url": "https://doi.org/10.1609/aaai.v25i1.7979",
+        "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/7979/7838",
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "historical_value_score": 60.0,
+        "historical_score_components": {
+          "research_relevance": 20.0,
+          "normalized_citation": 99.9,
+          "fwci": 100.0,
+          "citation_momentum": 40.7,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2011 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "OpenAlex FWCI 30.24",
+          "近 2 年年均引用 24.0；此前 2 年年均 29.5",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W2236233024",
+        "base_id": "openalex:W2236233024",
+        "version": 1,
+        "title": "Understanding Natural Language Commands for Robotic Navigation and Mobile Manipulation",
+        "authors": [
+          "Stefanie Tellex",
+          "Thomas Kollar",
+          "Steven Dickerson",
+          "Matthew R. Walter",
+          "Ashis G. Banerjee",
+          "Seth Teller",
+          "Nicholas Roy"
+        ],
+        "published": "2011-08-04T00:00:00Z",
+        "updated": "2011-08-04T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "This paper describes a new model for understanding natural language commands given to autonomous systems that perform navigation and mobile manipulation in semi-structured environments. Previous approaches have used models with fixed structure to infer the likelihood of a sequence of actions given the environment and the command. In contrast, our framework, called Generalized Grounding Graphs, dynamically instantiates a probabilistic graphical model for a particular natural language command according to the command's hierarchical and compositional semantic structure. Our system performs inference in the model to successfully find and execute plans corresponding to natural language commands such as \"Put the tire pallet on the truck.\" The model is trained using a corpus of commands collected using crowdsourcing. We pair each command with robot actions and use the corpus to learn the parameters of the model. We evaluate the robot's performance by inferring plans from natural language commands, executing each plan in a realistic robot simulator, and asking users to evaluate the system's performance. We demonstrate that our system can successfully follow many natural language commands from the corpus.",
+        "abs_url": "https://doi.org/10.1609/aaai.v25i1.7979",
+        "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/7979/7838",
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 18 ≥ 18",
+        "核心方向：optimal_control",
+        "特定关键词：model predictive control",
+        "historical_value_score 58.3 ≥ 42.0",
+        "发表于 2019 年",
+        "同领域同年份引用标准化位于前 1.4%",
+        "OpenAlex FWCI 9.43",
+        "近 2 年年均引用 40.5；此前 2 年年均 43.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:02"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2963945659",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2963945659",
+        "openalex_id": "W2963945659",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2019.2929987",
+        "title": "Data-Driven Model Predictive Control for Trajectory Tracking With a Robotic Arm",
+        "authors": [
+          "Andrea Carron",
+          "Elena Arcari",
+          "Martin Wermelinger",
+          "Lukas Hewing",
+          "Marco Hutter",
+          "Melanie N. Zeilinger"
+        ],
+        "abstract": "High-precision trajectory tracking is fundamental in robotic manipulation. While industrial robots address this through stiffness and high-performance hardware, compliant and cost-effective robots require advanced control to achieve accurate position tracking. In this letter, we present a model-based control approach, which makes use of data gathered during operation to improve the model of the robotic arm and thereby the tracking performance. The proposed scheme is based on an inverse dynamics feedback linearization and a data-driven error model, which are integrated into a model predictive control formulation. In particular, we show how offset-free tracking can be achieved by augmenting a nominal model with both a Gaussian process, which makes use of offline data, and an additive disturbance model suitable for efficient online estimation of the residual disturbance via an extended Kalman filter. The performance of the proposed offset-free GPMPC scheme is demonstrated on a compliant 6 degrees of freedom robotic arm, showing significant performance improvements compared to other robot control algorithms.",
+        "publication_date": "2019-07-22",
+        "publication_year": 2019,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11749",
+            "display_name": "Iterative Learning Control Systems",
+            "score": 0.9994999766349792
+          },
+          {
+            "id": "https://openalex.org/T10791",
+            "display_name": "Advanced Control Systems Optimization",
+            "score": 0.9988999962806702
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.9876000285148621
+          }
+        ],
+        "cited_by_count": 241,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 61
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 52
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 34
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 9.4293,
+        "citation_normalized_percentile": 0.9861977,
+        "referenced_works": [
+          "W137285897",
+          "W1870250857",
+          "W1998179438",
+          "W2006859604",
+          "W2042795879",
+          "W2042882799",
+          "W2051106844",
+          "W2079775715",
+          "W2081598159",
+          "W2083483041",
+          "W2093516101",
+          "W2099768828",
+          "W2112474089",
+          "W2113265921",
+          "W2123687908",
+          "W2136013451",
+          "W2140135625",
+          "W2146764783",
+          "W2157918371",
+          "W2159038290",
+          "W2163000344",
+          "W2168826207",
+          "W2179284380",
+          "W2197726977",
+          "W2275892128",
+          "W2396317032",
+          "W2549216668",
+          "W2560978298",
+          "W2578978590",
+          "W2622604310",
+          "W2700407638",
+          "W2765311358",
+          "W2771059967",
+          "W2771401938",
+          "W2771827793",
+          "W2783813470",
+          "W2786131129",
+          "W2791704483",
+          "W2823479997",
+          "W2898162031",
+          "W2913442308",
+          "W2951386724",
+          "W2962730459",
+          "W2962775887",
+          "W2963809569",
+          "W2963983021",
+          "W3003660171",
+          "W3023355409",
+          "W3105252106",
+          "W3122412888",
+          "W4250058668",
+          "W6605566567",
+          "W6674989108",
+          "W6678027535",
+          "W6678165021",
+          "W6680657880",
+          "W6685744914",
+          "W6738980247",
+          "W6740033195",
+          "W6745992682",
+          "W6746075849",
+          "W6749363318",
+          "W6752719633",
+          "W6758546661",
+          "W6786165652",
+          "W7038125596"
+        ],
+        "related_works": [
+          "W2020144404",
+          "W2089114113",
+          "W2096038130",
+          "W2149615975",
+          "W2229640938",
+          "W2352634297",
+          "W2389555968",
+          "W3200213266",
+          "W4372347353",
+          "W80107739"
+        ],
+        "discovery_source": [
+          "topic_search:model predictive control in robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:02",
+        "last_considered_at": "2026-08-04T14:59:44+08:00",
+        "recommended_at": "2026-08-04T14:59:44+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:02",
+        "openalex_url": "https://openalex.org/W2963945659",
+        "landing_page_url": "https://doi.org/10.1109/lra.2019.2929987",
+        "open_access_url": "http://hdl.handle.net/20.500.11850/363021",
+        "pdf_url": null,
+        "research_fit": 18,
+        "video_potential": 16,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "historical_value_score": 58.3,
+        "historical_score_components": {
+          "research_relevance": 18.0,
+          "normalized_citation": 98.6,
+          "fwci": 100.0,
+          "citation_momentum": 46.6,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2019 年",
+          "同领域同年份引用标准化位于前 1.4%",
+          "OpenAlex FWCI 9.43",
+          "近 2 年年均引用 40.5；此前 2 年年均 43.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W2963945659",
+        "base_id": "openalex:W2963945659",
+        "version": 1,
+        "title": "Data-Driven Model Predictive Control for Trajectory Tracking With a Robotic Arm",
+        "authors": [
+          "Andrea Carron",
+          "Elena Arcari",
+          "Martin Wermelinger",
+          "Lukas Hewing",
+          "Marco Hutter",
+          "Melanie N. Zeilinger"
+        ],
+        "published": "2019-07-22T00:00:00Z",
+        "updated": "2019-07-22T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "High-precision trajectory tracking is fundamental in robotic manipulation. While industrial robots address this through stiffness and high-performance hardware, compliant and cost-effective robots require advanced control to achieve accurate position tracking. In this letter, we present a model-based control approach, which makes use of data gathered during operation to improve the model of the robotic arm and thereby the tracking performance. The proposed scheme is based on an inverse dynamics feedback linearization and a data-driven error model, which are integrated into a model predictive control formulation. In particular, we show how offset-free tracking can be achieved by augmenting a nominal model with both a Gaussian process, which makes use of offline data, and an additive disturbance model suitable for efficient online estimation of the residual disturbance via an extended Kalman filter. The performance of the proposed offset-free GPMPC scheme is demonstrated on a compliant 6 degrees of freedom robotic arm, showing significant performance improvements compared to other robot control algorithms.",
+        "abs_url": "https://doi.org/10.1109/lra.2019.2929987",
+        "pdf_url": "",
+        "research_fit": 18,
+        "video_potential": 16,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
             ],
             "location": "title",
             "points": 18.0
