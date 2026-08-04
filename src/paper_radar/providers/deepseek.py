@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import time
 from datetime import datetime
 from typing import Any, Callable, Mapping
@@ -57,6 +58,24 @@ def _strip_code_fences(value: str) -> str:
         if stripped.startswith("json"):
             stripped = stripped[4:].strip()
     return stripped
+
+
+def _extract_json_object(text: str) -> dict[str, Any] | None:
+    stripped = _strip_code_fences(text)
+    try:
+        value = json.loads(stripped)
+        return value if isinstance(value, dict) else None
+    except json.JSONDecodeError:
+        pass
+    start = stripped.find("{")
+    end = stripped.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        return None
+    try:
+        value = json.loads(stripped[start : end + 1])
+        return value if isinstance(value, dict) else None
+    except json.JSONDecodeError:
+        return None
 
 
 class DeepSeekClient:
@@ -169,13 +188,25 @@ class DeepSeekClient:
         recommendations: list[RecommendationEntry],
     ) -> list[LLMAnalysis]:
         try:
-            content = str(payload["choices"][0]["message"]["content"])
-            data = json.loads(_strip_code_fences(content))
+            message = payload["choices"][0]["message"]
+            content = message.get("content")
+            if isinstance(content, list):
+                content = "".join(
+                    str(part.get("text", "")) if isinstance(part, dict) else str(part)
+                    for part in content
+                )
+            data = _extract_json_object(str(content or ""))
+            if data is None:
+                return []
             by_id = {entry.canonical_paper_id: entry for entry in recommendations}
+            by_id_folded = {key.casefold(): entry for key, entry in by_id.items()}
+            analyses = data.get("analyses")
+            if analyses is None and isinstance(data, dict):
+                return []
             results: list[LLMAnalysis] = []
-            for item in data["analyses"]:
+            for item in analyses:
                 paper_id = str(item.get("paper_id", ""))
-                entry = by_id.get(paper_id)
+                entry = by_id.get(paper_id) or by_id_folded.get(paper_id.casefold())
                 if entry is None:
                     continue
                 summary = str(item.get("summary", "")).strip()
@@ -205,4 +236,13 @@ class DeepSeekClient:
             return []
         payload = self._build_payload(recommendations)
         response = self._post(payload)
-        return self._parse(response, recommendations)
+        results = self._parse(response, recommendations)
+        if not results:
+            message = (response.get("choices") or [{}])[0].get("message") or {}
+            content = message.get("content") or ""
+            print(
+                "DeepSeek guide: API call succeeded but no analyses were parsed; "
+                f"raw response head: {str(content)[:400]!r}",
+                file=sys.stderr,
+            )
+        return results

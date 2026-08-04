@@ -154,6 +154,59 @@ def test_parses_code_fenced_json(profile) -> None:
     assert results[0].summary == "Guide text."
 
 
+def test_parses_json_embedded_in_prose(profile) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json=deepseek_response(
+                'Sure, here is the guide:\n'
+                '{"analyses":[{"paper_id":"arxiv:2608.00001",'
+                '"summary":"Prose-wrapped summary.","why_relevant":"Relevant.",'
+                '"one_line_verdict":"Readable."}]}\nHope that helps.'
+            ),
+            request=request,
+        )
+
+    client = DeepSeekClient(
+        profile.llm_analysis,
+        environment={"DEEPSEEK_API_KEY": "secret"},
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    results = client.analyze_recommendations([entry()])
+    assert len(results) == 1
+    assert results[0].summary == "Prose-wrapped summary."
+
+
+def test_parses_content_as_list_of_text_parts(profile) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "choices": [
+                    {
+                        "message": {
+                            "content": [
+                                {"type": "text", "text": '{"analyses":[{"paper_id":"arxiv:2608.00001",'},
+                                {"type": "text", "text": '"summary":"Parted summary.","why_relevant":"Relevant.",'},
+                                {"type": "text", "text": '"one_line_verdict":"Readable."}]}'},
+                            ]
+                        }
+                    }
+                ]
+            },
+            request=request,
+        )
+
+    client = DeepSeekClient(
+        profile.llm_analysis,
+        environment={"DEEPSEEK_API_KEY": "secret"},
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    results = client.analyze_recommendations([entry()])
+    assert len(results) == 1
+    assert results[0].summary == "Parted summary."
+
+
 def test_malformed_json_returns_empty(profile) -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(

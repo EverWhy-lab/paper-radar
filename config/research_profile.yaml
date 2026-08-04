@@ -289,7 +289,7 @@ llm_analysis:
   endpoint: "https://api.deepseek.com/chat/completions"
   model: "deepseek-chat"
   timeout_seconds: 60
-  retries: 2
-  retry_delay_seconds: 2.0
+  retries: 3
+  retry_delay_seconds: 3.0
   max_tokens: 1500
   language: "en"
