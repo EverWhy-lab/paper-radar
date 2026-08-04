@@ -124,14 +124,20 @@ class ArxivClient:
         if response is not None and response.headers.get("Retry-After"):
             value = response.headers["Retry-After"]
             try:
-                return max(self.config.page_delay_seconds, float(value))
+                seconds = float(value)
             except ValueError:
-                parsed = email.utils.parsedate_to_datetime(value)
-                return max(
-                    self.config.page_delay_seconds,
-                    (parsed - datetime.now(timezone.utc)).total_seconds(),
-                )
-        return max(self.config.page_delay_seconds, float(2**attempt))
+                try:
+                    parsed = email.utils.parsedate_to_datetime(value)
+                    seconds = (parsed - datetime.now(timezone.utc)).total_seconds()
+                except (TypeError, ValueError):
+                    seconds = 0.0
+            if seconds <= 0:
+                seconds = self.config.page_delay_seconds
+            # Honor the server's instruction, but never let one wait exceed two
+            # minutes inside a single request so the job can fail fast and let
+            # the workflow-level retry handle longer arXiv throttling windows.
+            return min(seconds, 120.0)
+        return self.config.page_delay_seconds * (2**attempt)
 
     def _get(self, params: dict[str, str | int]) -> str:
         last_error: Exception | None = None

@@ -30,7 +30,7 @@ concurrency:
 jobs:
   run-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -48,13 +48,30 @@ jobs:
       - name: Offline tests
         run: python -m pytest -q
 
-      - name: Daily reader run
+      - name: Daily reader run (with arXiv retries)
         run: |
-          if [ -n "${{ inputs.date }}" ]; then
-            python -m paper_radar run --date "${{ inputs.date }}"
-          else
-            python -m paper_radar run
-          fi
+          max_attempts=3
+          wait_seconds=120
+          attempt=1
+          while [ "$attempt" -le "$max_attempts" ]; do
+            if [ -n "${{ inputs.date }}" ]; then
+              python -m paper_radar run --date "${{ inputs.date }}"
+            else
+              python -m paper_radar run
+            fi
+            status=$?
+            if [ "$status" -eq 0 ]; then
+              exit 0
+            fi
+            if [ "$attempt" -lt "$max_attempts" ]; then
+              echo "Attempt $attempt failed with exit code $status; waiting ${wait_seconds}s before retry."
+              sleep "$wait_seconds"
+              wait_seconds=$((wait_seconds * 2))
+            fi
+            attempt=$((attempt + 1))
+          done
+          echo "Daily reader run failed after $max_attempts attempts."
+          exit 1
 
       - name: Historical discovery (optional)
         if: ${{ inputs.discover_history }}

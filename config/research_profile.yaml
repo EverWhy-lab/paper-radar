@@ -7,9 +7,9 @@ fetch:
   user_agent: "PaperRadar/0.1.3 (personal non-commercial research tool)"
   page_size: 100
   max_pages: 40
-  page_delay_seconds: 3.1
+  page_delay_seconds: 5.0
   timeout_seconds: 30
-  retries: 3
+  retries: 5
   lookback_days: 7
 
 categories:
