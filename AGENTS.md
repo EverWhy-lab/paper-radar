@@ -5,7 +5,7 @@
 - `config/research_profile.yaml`: arXiv/OpenAlex settings, research rules, historical-score weights, limits, cooldowns, and daily category caps
 - `fetchers/arxiv.py`, `scoring.py`, `storage.py`: recent candidate ingestion and arXiv version state
 - `providers/base.py`, `providers/openalex.py`: historical provider boundary, safe OpenAlex HTTP, cache, and budget statistics
-- `providers/deepseek.py`: optional DeepSeek Chinese daily guide for already-selected papers only
+- `providers/deepseek.py`: optional DeepSeek English daily guide for already-selected papers only, using each paper's own professional terms
 - `history_models.py`, `history_storage.py`, `history_discovery.py`, `historical_scoring.py`: canonical historical metadata, seeds, one-hop discovery, deduplication, and explainable scoring
 - `curation.py`, `reader_pipeline.py`: V0.2 four-layer selection flow plus optional guide wiring
 - `reader_models.py`, `reader_storage.py`: candidate, reading-pool, final recommendation, and guide schemas

@@ -16,14 +16,30 @@ class LLMAnalysisError(RuntimeError):
     """Raised when the LLM provider cannot safely complete a request."""
 
 
-_SYSTEM_PROMPT = (
-    "你是一位机器人研究方向（腿部机器人、移动操作、最优控制、机器人学习等）的个人阅读助手。"
-    "你只会收到规则引擎已经选出的 0-5 篇论文。对每篇论文用简体中文写 2-3 句话的导读，包含："
-    "summary（这篇论文做了什么）、why_relevant（为什么值得读，与用户机器人研究方向的关系）、"
-    "one_line_verdict（一句话结论）。只输出一个 JSON 对象，不要输出任何其他文字："
-    '{"analyses":[{"paper_id":"...","summary":"...","why_relevant":"...","one_line_verdict":"..."}]}。'
-    "要求客观中立，不要使用“经典”“最佳”“最重要”等绝对化评价；引用数和评分只是筛选信号，不是质量标签。"
-)
+def _system_prompt(language: str) -> str:
+    if language == "zh":
+        return (
+            "你是一位机器人研究方向（腿部机器人、移动操作、最优控制、机器人学习等）的个人阅读助手。"
+            "你只会收到规则引擎已经选出的 0-5 篇论文。对每篇论文用简体中文写 2-3 句话的导读，包含："
+            "summary（这篇论文做了什么）、why_relevant（为什么值得读，与用户机器人研究方向的关系）、"
+            "one_line_verdict（一句话结论）。只输出一个 JSON 对象，不要输出任何其他文字："
+            '{"analyses":[{"paper_id":"...","summary":"...","why_relevant":"...","one_line_verdict":"..."}]}。'
+            "要求客观中立，不要使用“经典”“最佳”“最重要”等绝对化评价；引用数和评分只是筛选信号，不是质量标签。"
+        )
+    return (
+        "You are a personal reading assistant for robotics research (legged robots, "
+        "mobile manipulation, optimal control, robot learning, and related fields). "
+        "You only receive 0-5 papers already selected by a rule engine. For each paper, "
+        "write a short 2-3 sentence guide in English covering: summary (what the paper does), "
+        "why_relevant (why it is worth reading, tied to the user's robotics research interests), "
+        "and one_line_verdict (a one-sentence verdict). "
+        "Use professional terminology exactly as it appears in the paper: keep model names, "
+        "method names, acronyms, and technical vocabulary unchanged. "
+        "Output only one JSON object with no other text: "
+        '{"analyses":[{"paper_id":"...","summary":"...","why_relevant":"...","one_line_verdict":"..."}]}. '
+        "Be objective and neutral; never use absolute labels such as \"classic\", \"best\", or "
+        "\"most important\"; citation counts and scores are screening signals, not quality labels."
+    )
 
 
 def _abstract_for(entry: RecommendationEntry, limit: int = 1200) -> str:
@@ -109,7 +125,7 @@ class DeepSeekClient:
         return {
             "model": self.config.model,
             "messages": [
-                {"role": "system", "content": _SYSTEM_PROMPT},
+                {"role": "system", "content": _system_prompt(self.config.language)},
                 {"role": "user", "content": user_content},
             ],
             "temperature": 0.3,

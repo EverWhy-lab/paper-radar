@@ -69,7 +69,7 @@ def test_disabled_config_makes_no_request(profile) -> None:
     assert client.run_request_count == 0
 
 
-def test_parses_chinese_guide_and_sends_bearer_token(profile) -> None:
+def test_parses_english_guide_and_sends_bearer_token(profile) -> None:
     secret = "sk-test-123"
     captured: dict = {}
 
@@ -80,9 +80,9 @@ def test_parses_chinese_guide_and_sends_bearer_token(profile) -> None:
             200,
             json=deepseek_response(
                 '{"analyses":[{"paper_id":"arxiv:2608.00001",'
-                '"summary":"提出一种面向人形机器人的全身控制方法。",'
-                '"why_relevant":"与腿部人形和最优控制方向直接相关。",'
-                '"one_line_verdict":"方法新颖，值得一读。"}]}'
+                '"summary":"Introduces a whole-body control method for humanoid robots.",'
+                '"why_relevant":"Directly relevant to legged humanoid and optimal control.",'
+                '"one_line_verdict":"A novel method worth reading."}]}'
             ),
             request=request,
         )
@@ -99,11 +99,38 @@ def test_parses_chinese_guide_and_sends_bearer_token(profile) -> None:
     assert len(results) == 1
     analysis = results[0]
     assert analysis.canonical_paper_id == "arxiv:2608.00001"
-    assert "全身控制" in analysis.summary
+    assert "whole-body control" in analysis.summary
     assert analysis.why_relevant
     assert analysis.one_line_verdict
     assert analysis.model == profile.llm_analysis.model
     assert analysis.generated_at
+
+
+def test_english_system_prompt_keeps_paper_terms(profile) -> None:
+    captured: dict = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["body"] = request.content
+        return httpx.Response(
+            200,
+            json=deepseek_response(
+                '{"analyses":[{"paper_id":"arxiv:2608.00001",'
+                '"summary":"Summary.","why_relevant":"Relevant.","one_line_verdict":"Readable."}]}'
+            ),
+            request=request,
+        )
+
+    client = DeepSeekClient(
+        profile.llm_analysis,
+        environment={"DEEPSEEK_API_KEY": "secret"},
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    client.analyze_recommendations([entry()])
+    body = captured["body"].decode("utf-8")
+    assert "Use professional terminology exactly as it appears in the paper" in body
+    assert "model names" in body
+    assert "classic" in body
+    assert "write a short 2-3 sentence guide in English" in body
 
 
 def test_parses_code_fenced_json(profile) -> None:
@@ -112,7 +139,7 @@ def test_parses_code_fenced_json(profile) -> None:
             200,
             json=deepseek_response(
                 '```json\n{"analyses":[{"paper_id":"arxiv:2608.00001",'
-                '"summary":"导读内容。","why_relevant":"相关。","one_line_verdict":"可读。"}]}\n```'
+                '"summary":"Guide text.","why_relevant":"Relevant.","one_line_verdict":"Readable."}]}\n```'
             ),
             request=request,
         )
@@ -124,7 +151,7 @@ def test_parses_code_fenced_json(profile) -> None:
     )
     results = client.analyze_recommendations([entry()])
     assert len(results) == 1
-    assert results[0].summary == "导读内容。"
+    assert results[0].summary == "Guide text."
 
 
 def test_malformed_json_returns_empty(profile) -> None:
@@ -149,7 +176,7 @@ def test_unknown_paper_id_is_ignored(profile) -> None:
             200,
             json=deepseek_response(
                 '{"analyses":[{"paper_id":"arxiv:9999.99999",'
-                '"summary":"不存在的论文。","why_relevant":"","one_line_verdict":""}]}'
+                '"summary":"Unknown paper.","why_relevant":"","one_line_verdict":""}]}'
             ),
             request=request,
         )

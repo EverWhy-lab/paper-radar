@@ -44,16 +44,16 @@
 
     {% if daily.llm_analysis %}
     <section class="llm-guide" aria-label="LLM daily guide">
-      <div class="section-heading"><span>AI GUIDE</span><h2>今日导读</h2></div>
+      <div class="section-heading"><span>AI GUIDE</span><h2>{{ guide_heading }}</h2></div>
       {% for analysis in daily.llm_analysis %}
       <article class="guide-card">
         <h3><a href="#{{ analysis.canonical_paper_id }}">{{ analysis.title }}</a></h3>
         <p>{{ analysis.summary }}</p>
-        <p class="guide-why"><b>为什么值得读：</b>{{ analysis.why_relevant }}</p>
-        <p class="guide-verdict"><b>一句话：</b>{{ analysis.one_line_verdict }}</p>
+        <p class="guide-why"><b>{{ guide_why_label }}</b>{{ analysis.why_relevant }}</p>
+        <p class="guide-verdict"><b>{{ guide_verdict_label }}</b>{{ analysis.one_line_verdict }}</p>
       </article>
       {% endfor %}
-      <p class="guide-note">本导读由 DeepSeek 生成，仅供阅读辅助；筛选、评分与排序仍由透明规则完成。</p>
+      <p class="guide-note">{{ guide_note }}</p>
     </section>
     {% endif %}
 

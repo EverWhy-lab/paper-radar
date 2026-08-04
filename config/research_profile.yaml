@@ -292,4 +292,4 @@ llm_analysis:
   retries: 2
   retry_delay_seconds: 2.0
   max_tokens: 1500
-  language: "zh"
+  language: "en"
