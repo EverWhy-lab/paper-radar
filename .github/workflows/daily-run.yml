@@ -57,14 +57,15 @@ jobs:
           fi
 
       - name: Historical discovery (optional)
-        if: ${{ inputs.discover_history && secrets.OPENALEX_API_KEY != '' }}
+        if: ${{ inputs.discover_history }}
         env:
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
-        run: python -m paper_radar history discover
-
-      - name: Note skipped discovery
-        if: ${{ inputs.discover_history && secrets.OPENALEX_API_KEY == '' }}
-        run: echo "discover_history was requested but OPENALEX_API_KEY is not set as a repository secret; skipping."
+        run: |
+          if [ -z "$OPENALEX_API_KEY" ]; then
+            echo "discover_history was requested but OPENALEX_API_KEY is not set as a repository secret; skipping."
+            exit 0
+          fi
+          python -m paper_radar history discover
 
       - name: Commit updated data and site
         run: |
