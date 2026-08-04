@@ -1,4 +1,77 @@
 {
   "schema_version": 1,
-  "seeds": []
+  "seeds": [
+    {
+      "identifier": "1603.06937",
+      "added_at": "2026-08-04T12:41:10+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "1603.06937",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "1812.08008",
+      "added_at": "2026-08-04T12:41:10+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "1812.08008",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2112.05124",
+      "added_at": "2026-08-04T12:41:11+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2112.05124",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2205.08316",
+      "added_at": "2026-08-04T12:41:11+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2205.08316",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "10.1002/rob.21683",
+      "added_at": "2026-08-04T12:41:11+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.1002/rob.21683",
+      "title": null
+    },
+    {
+      "identifier": "10.1007/s10514-015-9479-3",
+      "added_at": "2026-08-04T12:41:11+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.1007/s10514-015-9479-3",
+      "title": null
+    },
+    {
+      "identifier": "10.1038/s41593-018-0209-y",
+      "added_at": "2026-08-04T12:41:10+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.1038/s41593-018-0209-y",
+      "title": null
+    },
+    {
+      "identifier": "10.1109/access.2020.3030190",
+      "added_at": "2026-08-04T12:41:11+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.1109/access.2020.3030190",
+      "title": null
+    },
+    {
+      "identifier": "10.15607/rss.2012.viii.003",
+      "added_at": "2026-08-04T12:41:11+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.15607/rss.2012.viii.003",
+      "title": null
+    }
+  ]
 }
