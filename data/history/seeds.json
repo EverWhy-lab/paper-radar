@@ -26,10 +26,74 @@
       "title": null
     },
     {
+      "identifier": "2204.01691",
+      "added_at": "2026-08-04T12:42:50+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2204.01691",
+      "doi": null,
+      "title": null
+    },
+    {
       "identifier": "2205.08316",
       "added_at": "2026-08-04T12:41:11+08:00",
       "openalex_id": null,
       "base_arxiv_id": "2205.08316",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2207.05608",
+      "added_at": "2026-08-04T12:42:51+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2207.05608",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2209.11302",
+      "added_at": "2026-08-04T12:42:51+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2209.11302",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2212.06817",
+      "added_at": "2026-08-04T12:42:50+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2212.06817",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2303.03378",
+      "added_at": "2026-08-04T12:42:51+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2303.03378",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2305.16291",
+      "added_at": "2026-08-04T12:42:51+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2305.16291",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2307.15818",
+      "added_at": "2026-08-04T12:42:51+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2307.15818",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2310.08864",
+      "added_at": "2026-08-04T12:42:51+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2310.08864",
       "doi": null,
       "title": null
     },
@@ -63,6 +127,14 @@
       "openalex_id": null,
       "base_arxiv_id": null,
       "doi": "10.1109/access.2020.3030190",
+      "title": null
+    },
+    {
+      "identifier": "10.1109/icra48891.2023.10160591",
+      "added_at": "2026-08-04T12:42:51+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.1109/icra48891.2023.10160591",
       "title": null
     },
     {
