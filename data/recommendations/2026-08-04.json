@@ -1,13 +1,13 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "date": "2026-08-04",
-  "generated_at": "2026-08-04T00:26:18+08:00",
-  "mode": "historical",
-  "candidate_count": 0,
+  "generated_at": "2026-08-04T11:24:38+08:00",
+  "mode": "incremental",
+  "candidate_count": 3065,
   "historical_candidate_count": 20,
-  "recommendation_count": 2,
+  "recommendation_count": 3,
   "category_counts": {
-    "frontier_recent": 0,
+    "frontier_recent": 1,
     "high_impact_historical": 1,
     "review_knowledge_map": 1
   },
@@ -55,6 +55,35 @@
       ]
     }
   },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7140452175",
+      "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+      "summary": "这篇综述全面梳理了人形机器人 locomotion 与 manipulation 统一控制的最新进展，涵盖模型基方法（接触规划、运动规划、全身控制）与学习基方法（强化学习、模仿学习），并探讨了基础模型与人形本体结合的可能性。",
+      "why_relevant": "该综述直接覆盖你的研究方向（腿部机器人、移动操作、最优控制、机器人学习），可帮助你快速建立领域全局视图，识别控制与学习方法的互补性及未来融合趋势。",
+      "one_line_verdict": "一份系统性的人形机器人控制与学习综述，适合作为领域入门和方向定位的参考。",
+      "generated_at": "2026-08-04T03:31:49",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3012010640",
+      "title": "LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops",
+      "summary": "该论文提出一种分层全身控制器，利用轮式双足机器人 Ascento 的完整刚体动力学，通过闭式解处理运动学闭环，并集成 LQR 作为运动任务以应对非最小相位平衡动力学，实验验证了其鲁棒性和计算效率。",
+      "why_relevant": "该工作展示了如何将最优控制（LQR）与全身控制结合解决实际腿部机器人（轮式双足）的平衡与鲁棒性问题，对你在最优控制方向的研究有直接借鉴意义。",
+      "one_line_verdict": "一个计算轻量且鲁棒的轮式双足全身控制方案，体现了模型基控制与最优控制的实用结合。",
+      "generated_at": "2026-08-04T03:31:49",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.02571",
+      "title": "Situation Aware Frontier Prioritization for Quadruped Search and Rescue",
+      "summary": "该论文提出一种情境感知的前沿优先化方法，用于四足机器人搜索救援任务，在经典前沿探索框架中引入信息增益、观测缺失、救援相关性、地形惩罚和旅行成本等指标，并在 Gazebo 仿真中验证了复杂场景下的完成率和受害者恢复率。",
+      "why_relevant": "该研究将腿部机器人与自主探索、任务导向决策结合，展示了如何将环境感知与救援目标融入规划，对你在移动操作和机器人学习方向的应用场景有参考价值。",
+      "one_line_verdict": "一种面向搜索救援的四足机器人探索策略，通过多因素前沿排序提升复杂环境下的任务效率。",
+      "generated_at": "2026-08-04T03:31:49",
+      "model": "deepseek-chat"
+    }
+  ],
   "recommendations": [
     {
       "category": "review_knowledge_map",
@@ -580,6 +609,102 @@
           }
         ],
         "video_reasons": []
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 47 ≥ 40",
+        "Core topics matched: legged_humanoid, pose_rescue",
+        "Specific keywords matched: quadruped robot, quadruped robots, search and rescue",
+        "Diversity topic: legged_humanoid"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.02571",
+      "historical_paper": null,
+      "paper": {
+        "arxiv_id": "2608.02571v1",
+        "base_id": "2608.02571",
+        "version": 1,
+        "title": "Situation Aware Frontier Prioritization for Quadruped Search and Rescue",
+        "authors": [
+          "Kevin Farias",
+          "Santiago Martin",
+          "Barbara Flores",
+          "Vinicio Melgar",
+          "Igor Nunes",
+          "Hiago Sodre",
+          "Pablo Moraes",
+          "Ricardo B. Grando"
+        ],
+        "published": "2026-08-03T17:48:16Z",
+        "updated": "2026-08-03T17:48:16Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Quadruped robots are a promising platform for search and rescue missions because they can navigate cluttered indoor environments that may be restrictive for wheeled systems. However, in unknown rescue scenarios, autonomous exploration must balance map expansion with the likelihood of finding victims, which is not explicitly addressed by clas- sical frontier selection strategies. This paper presents a situation aware frontier prioritization method for single robot quadruped search and rescue. The proposed approach preserves the frontier exploration framework, but extends frontier ranking with information gain, observation deficit, rescue relevance, terrain penalty, and travel cost. The method is eval- uated in Gazebo simulation with a quadruped robot in two indoor rescue scenarios with different levels of difficulty. The first scenario is used as a sanity check, while the second introduces stronger clutter and frontier ambiguity. Experimental results show that all methods perform reliably in a simple scenario, whereas in a complex scenario is different. In that setting, the proposed method achieves the highest completion rate and the highest victim recovery among the evaluated approaches. These results indicate that situation aware frontier prioritization is beneficial when frontier choice becomes nontrivial and rescue utility must be balanced against generic exploration objectives.",
+        "abs_url": "https://arxiv.org/abs/2608.02571v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.02571v1",
+        "research_fit": 47,
+        "video_potential": 32,
+        "matched_topics": [
+          "legged_humanoid",
+          "pose_rescue"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "quadruped robots",
+          "search and rescue"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadruped robot",
+              "quadruped robots"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Pose & Rescue Robotics",
+            "keywords": [
+              "search and rescue"
+            ],
+            "location": "title",
+            "points": 14.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 11.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "quadruped"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ]
       }
     }
   ]
