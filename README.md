@@ -36,7 +36,31 @@ Exact-day arXiv backfill:
 .venv/bin/python -m paper_radar run --date 2026-08-03
 ```
 
-The `--date` form retains Asia/Shanghai natural-day semantics for deterministic backfill. arXiv normally announces papers Sunday through Thursday evening in US Eastern time—usually the following morning around 08:00 or 09:00 in Shanghai. Weekends, holidays, and early runs can have no new papers. A future scheduler should run around **10:15 Asia/Shanghai**; this repository contains no deployment or GitHub Actions.
+The `--date` form retains Asia/Shanghai natural-day semantics for deterministic backfill. arXiv normally announces papers Sunday through Thursday evening in US Eastern time—usually the following morning around 08:00 or 09:00 in Shanghai. Weekends, holidays, and early runs can have no new papers. The bundled GitHub Actions workflow (`.github/workflows/daily-run.yml`) runs the incremental command around **10:15 Asia/Shanghai** every day and publishes the rendered site to GitHub Pages.
+
+## Daily automation and mobile access (GitHub)
+
+`.github/workflows/daily-run.yml` automates the daily run and publishes the site:
+
+- A scheduled run executes `python -m paper_radar run` every day at **10:15 Asia/Shanghai** (02:15 UTC). The daily reader never calls OpenAlex, so no API key is needed for the scheduled run.
+- The workflow commits the updated `data/` state and `site/` pages back to the repository, then deploys `site/` to GitHub Pages.
+- Manual runs are available under **Actions → daily-run → Run workflow**, with two optional inputs:
+  - `date`: exact-day backfill in `YYYY-MM-DD` form;
+  - `discover_history`: also run OpenAlex historical discovery (requires the `OPENALEX_API_KEY` repository secret).
+
+Prerequisites:
+
+1. Push this repository to GitHub. Free GitHub Pages requires a **public** repository; private repositories need a paid plan.
+2. In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
+3. Optional: add `OPENALEX_API_KEY` as a repository secret (**Settings → Secrets and variables → Actions**) to enable the optional historical discovery.
+
+After the first successful run, the site is available from any device, including a phone, at:
+
+```text
+https://<owner>.github.io/<repository-name>/
+```
+
+If the scheduled run fails (for example arXiv is unreachable), nothing is committed or published and the previously deployed page stays intact.
 
 ## Historical discovery
 

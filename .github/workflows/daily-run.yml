@@ -1,0 +1,92 @@
+name: daily-run
+
+on:
+  schedule:
+    # 10:15 Asia/Shanghai = 02:15 UTC. arXiv usually announces its morning
+    # batch before this window, matching the README recommendation.
+    - cron: "15 2 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: Optional exact-day backfill (YYYY-MM-DD); leave empty for an incremental run
+        required: false
+        default: ""
+        type: string
+      discover_history:
+        description: Also run OpenAlex historical discovery (requires the OPENALEX_API_KEY repository secret)
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: paper-radar-daily
+  cancel-in-progress: false
+
+jobs:
+  run-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Offline tests
+        run: python -m pytest -q
+
+      - name: Daily reader run
+        run: |
+          if [ -n "${{ inputs.date }}" ]; then
+            python -m paper_radar run --date "${{ inputs.date }}"
+          else
+            python -m paper_radar run
+          fi
+
+      - name: Historical discovery (optional)
+        if: ${{ inputs.discover_history && secrets.OPENALEX_API_KEY != '' }}
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: python -m paper_radar history discover
+
+      - name: Note skipped discovery
+        if: ${{ inputs.discover_history && secrets.OPENALEX_API_KEY == '' }}
+        run: echo "discover_history was requested but OPENALEX_API_KEY is not set as a repository secret; skipping."
+
+      - name: Commit updated data and site
+        run: |
+          git config user.name "paper-radar-bot"
+          git config user.email "paper-radar-bot@users.noreply.github.com"
+          git add data site
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: daily reader run $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git pull --rebase
+            git push
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
