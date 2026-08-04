@@ -50,9 +50,11 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spa
 .guide-card p.guide-why, .guide-card p.guide-verdict { color: var(--text); }
 .guide-card b { color: var(--accent); font-weight: 700; }
 .guide-note { margin-top: 10px; color: var(--faint); font-size: 12px; }
-.dismiss-button { margin-top: 14px; padding: 7px 14px; border: 1px solid var(--line-strong); border-radius: 7px; background: var(--surface-2); color: var(--faint); font: 650 12px Inter, ui-sans-serif, sans-serif; cursor: pointer; }
-.dismiss-button:hover { border-color: #d17a7a; color: #e8a1a1; }
-.dismiss-button:disabled { opacity: .55; cursor: default; }
+.dismiss-button { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; padding: 6px 13px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface-2); color: var(--muted); font: 650 12px Inter, ui-sans-serif, sans-serif; cursor: pointer; }
+.dismiss-button:hover { color: var(--text); border-color: var(--line-strong); }
+.dismiss-button .dismiss-icon { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.dismiss-button.active { color: #e8a1a1; border-color: #d17a7a; background: rgba(209, 122, 122, .12); }
+.dismiss-button.active .dismiss-icon { fill: currentColor; stroke: currentColor; }
 .card-topline { display: flex; justify-content: space-between; gap: 15px; }
 .category { padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 750; letter-spacing: .04em; }
 .category--recent_new { background: rgba(97,212,179,.13); color: var(--accent); }

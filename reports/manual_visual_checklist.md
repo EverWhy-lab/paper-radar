@@ -22,7 +22,7 @@ Run `.venv/bin/python -m paper_radar serve`, then inspect:
 - The OpenAlex screening-signal disclaimer is visible and does not imply that citations equal paper quality.
 - No historical discovery candidate appears unless it is present in the day's recommendation JSON.
 - The “今日导读” section appears only when the day's recommendation JSON contains `llm_analysis`; a missing guide never affects the recommendation cards or page layout.
-- Every recommendation card has a working 不感兴趣 button; clicking it hides the card immediately and opens a pre-filled GitHub issue link.
+- Every recommendation card has a thumbs-down **Not Relevant** button; clicking it fills the thumb and opens a pre-filled GitHub issue link, and the card itself stays visible.
 
 ## 375 px phone
 

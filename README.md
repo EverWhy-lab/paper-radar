@@ -75,9 +75,9 @@ The rule-based selector remains authoritative: it chooses at most five papers wi
 - If the call fails or the key is missing, the page is still generated without the guide.
 - The key is read only from `DEEPSEEK_API_KEY` (export it locally, or set it as a repository secret for GitHub runs). It is never written to data, cache, provider stats, or pages.
 
-## Marking papers as not interested
+## Marking papers as not relevant
 
-Every recommended paper card has a **不感兴趣** button. Clicking it immediately hides the card on that device and opens a pre-filled GitHub issue (submit it once to persist the feedback). A `feedback` workflow then records the dismissal and closes the issue automatically.
+Every recommended paper card has a thumbs-down **Not Relevant** button, like Semantic Scholar. Clicking it fills the thumb on that device (the card stays visible) and opens a pre-filled GitHub issue; submit the issue once to persist the feedback. A `feedback` workflow then records the dismissal and closes the issue automatically.
 
 Effects on future selection:
 
