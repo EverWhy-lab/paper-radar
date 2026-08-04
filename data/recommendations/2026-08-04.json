@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "date": "2026-08-04",
-  "generated_at": "2026-08-04T11:43:28+08:00",
+  "generated_at": "2026-08-04T12:22:42+08:00",
   "mode": "incremental",
-  "candidate_count": 3063,
+  "candidate_count": 3054,
   "historical_candidate_count": 20,
   "recommendation_count": 3,
   "category_counts": {
@@ -55,7 +55,35 @@
       ]
     }
   },
-  "llm_analysis": null,
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7140452175",
+      "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+      "summary": "This survey provides a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, reviewing model-based methods (contact planning, motion planning, whole-body control) and emerging learning-based approaches (reinforcement and imitation learning), and assessing the potential of integrating foundation models with humanoid embodiments.",
+      "why_relevant": "Directly aligns with your interests in legged humanoids, mobile manipulation, optimal control, and robot learning, offering a structured synthesis of current progress and challenges across these areas.",
+      "one_line_verdict": "A broad and current survey that maps the landscape of humanoid loco-manipulation methods and future directions.",
+      "generated_at": "2026-08-04T04:27:32",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3012010640",
+      "title": "LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops",
+      "summary": "This paper presents a hierarchical whole-body controller for the wheeled bipedal robot Ascento, leveraging full rigid body dynamics with closed-form kinematic loop expressions, a compact rolling constraint solution, and an LQR motion task to handle non-minimum phase balancing dynamics.",
+      "why_relevant": "Provides a concrete example of whole-body optimal control for a legged robot with kinematic loops, relevant to your work on optimal control and legged humanoid systems.",
+      "one_line_verdict": "A computationally lightweight whole-body control approach that enhances robustness and rough-terrain capability for wheeled bipedal robots.",
+      "generated_at": "2026-08-04T04:27:32",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.02571",
+      "title": "Situation Aware Frontier Prioritization for Quadruped Search and Rescue",
+      "summary": "This paper proposes a situation-aware frontier prioritization method for quadruped search and rescue, extending classical frontier exploration with information gain, observation deficit, rescue relevance, terrain penalty, and travel cost, and evaluates it in Gazebo simulations across two indoor rescue scenarios.",
+      "why_relevant": "Addresses autonomous exploration for legged robots in rescue contexts, complementing your interests in legged locomotion and practical deployment scenarios.",
+      "one_line_verdict": "A frontier-based exploration method that improves victim recovery in complex indoor rescue environments for quadruped robots.",
+      "generated_at": "2026-08-04T04:27:32",
+      "model": "deepseek-chat"
+    }
+  ],
   "recommendations": [
     {
       "category": "review_knowledge_map",
