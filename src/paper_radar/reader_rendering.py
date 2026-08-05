@@ -161,6 +161,7 @@ class RecommendationSiteRenderer:
                 favorites=favorites,
                 asset_prefix="assets/",
                 home_url="index.html",
+                archive_url="archive.html",
             ),
         )
         return destination
