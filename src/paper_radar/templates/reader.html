@@ -16,8 +16,6 @@
         <h1>{{ site_name }}</h1>
       </div>
       <div class="date-block">
-        <span>Recommendation date</span>
-        <strong>{{ daily.date }}</strong>
         <small>Updated {{ daily.generated_at | display_datetime }}</small>
       </div>
     </div>
@@ -25,12 +23,8 @@
 
   <main class="shell">
     {% if demo_label %}<div class="demo-banner">Fixture demonstration · {{ demo_label }}</div>{% endif %}
-    <section class="daily-summary">
-      <div><strong>{{ daily.recommendations | length }}</strong><span>today's recommendations</span></div>
-    </section>
 
     <div class="navigation-row">
-      {% if previous %}<a class="previous-link" href="{{ previous.url }}">← 查看上一期推荐 · {{ previous.date }}</a>{% endif %}
       {% if archives %}
       <details class="archive-menu">
         <summary>历史推荐归档</summary>
@@ -41,7 +35,7 @@
 
     {% if daily.recommendations %}
     <section class="recommendations" aria-label="Today's selected papers">
-      <div class="section-heading"><span>SELECTED</span><h2>今日精选论文</h2></div>
+      <div class="section-heading"><h2>今日精选</h2></div>
       {% for recommendation in daily.recommendations %}
       {% set paper = recommendation.paper %}
       {% set historical = recommendation.historical_paper %}

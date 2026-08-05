@@ -111,7 +111,7 @@ def test_failing_llm_provider_never_blocks_the_page(tmp_path: Path, profile) -> 
     assert result.llm_analysis_count == 0
     assert provider.calls == 1
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
-    assert "今日精选论文" in index
+    assert "今日精选" in index
     assert "Importance" not in index
 
 

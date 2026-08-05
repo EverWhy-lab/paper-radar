@@ -64,9 +64,7 @@ class RecommendationSiteRenderer:
         archive_prefix: str,
         demo_label: str | None = None,
     ) -> dict[str, Any]:
-        previous = self.storage.previous_nonempty(daily.date) if demo_label is None else None
         archive_dates = self.storage.available_dates() if demo_label is None else []
-        guide_zh = self.profile.llm_analysis.language == "zh"
         return {
             "site_name": self.profile.site_name,
             "github_repo": self.profile.site_github_repo,
@@ -78,14 +76,6 @@ class RecommendationSiteRenderer:
             "asset_prefix": asset_prefix,
             "category_labels": CATEGORY_LABELS,
             "topic_labels": self.profile.topic_labels,
-            "previous": (
-                {
-                    "date": previous.date,
-                    "url": f"{archive_prefix}{previous.date}.html",
-                }
-                if previous
-                else None
-            ),
             "archives": [
                 {"date": date_string, "url": f"{archive_prefix}{date_string}.html"}
                 for date_string in archive_dates
