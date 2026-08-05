@@ -38,7 +38,6 @@
 
     {% if daily.recommendations %}
     <section class="recommendations" aria-label="Today's selected papers">
-      <div class="section-heading"><h2>Papers</h2></div>
       {% for recommendation in daily.recommendations %}
       {% set paper = recommendation.paper %}
       {% set historical = recommendation.historical_paper %}
