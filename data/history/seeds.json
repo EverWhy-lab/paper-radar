@@ -26,14 +26,6 @@
       "title": null
     },
     {
-      "identifier": "2205.08316",
-      "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
-      "base_arxiv_id": "2205.08316",
-      "doi": null,
-      "title": null
-    },
-    {
       "identifier": "2207.05608",
       "added_at": "2026-08-05T19:52:43+08:00",
       "openalex_id": null,
@@ -82,35 +74,11 @@
       "title": null
     },
     {
-      "identifier": "2310.08864",
-      "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
-      "base_arxiv_id": "2310.08864",
-      "doi": null,
-      "title": null
-    },
-    {
       "identifier": "10.1002/rob.21683",
       "added_at": "2026-08-05T19:52:43+08:00",
       "openalex_id": null,
       "base_arxiv_id": null,
       "doi": "10.1002/rob.21683",
-      "title": null
-    },
-    {
-      "identifier": "10.1007/s10514-015-9479-3",
-      "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
-      "base_arxiv_id": null,
-      "doi": "10.1007/s10514-015-9479-3",
-      "title": null
-    },
-    {
-      "identifier": "10.1109/access.2020.3030190",
-      "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
-      "base_arxiv_id": null,
-      "doi": "10.1109/access.2020.3030190",
       "title": null
     },
     {
