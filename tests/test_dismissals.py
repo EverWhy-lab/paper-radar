@@ -169,10 +169,10 @@ def test_topic_cooldown_reduces_related_recommendations(profile) -> None:
 
 def test_old_dismissal_does_not_trigger_topic_cooldown(profile) -> None:
     dismissals = [
-        dismissal("openalex:W901", ["pose_rescue"], days_ago=60),
-        dismissal("openalex:W902", ["pose_rescue"], days_ago=60),
+        dismissal("openalex:W901", ["vla_foundation"], days_ago=60),
+        dismissal("openalex:W902", ["vla_foundation"], days_ago=60),
     ]
-    papers = [recent(1, topic="pose_rescue", keyword="rescue robotics")]
+    papers = [recent(1, topic="vla_foundation", keyword="vision-language-action")]
 
     result = select(profile, recents=papers, dismissals=dismissals)
 

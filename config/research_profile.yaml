@@ -176,7 +176,6 @@ recommendations:
     - diffusion_visuomotor
     - vla_foundation
     - llm_agent_robotics
-    - pose_rescue
   generic_keywords:
     - robot learning
     - reinforcement learning
