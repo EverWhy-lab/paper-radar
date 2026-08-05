@@ -241,7 +241,7 @@ openalex:
   retries: 3
   retry_delay_seconds: 1.0
   cache_ttl_days: 30
-  daily_request_budget: 100
+  daily_request_budget: 150
   default_per_page: 20
 
 historical_discovery:

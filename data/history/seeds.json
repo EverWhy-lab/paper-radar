@@ -2,6 +2,22 @@
   "schema_version": 1,
   "seeds": [
     {
+      "identifier": "1509.01149",
+      "added_at": "2026-08-05T20:11:45+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "1509.01149",
+      "doi": null,
+      "title": null
+    },
+    {
+      "identifier": "2109.11978",
+      "added_at": "2026-08-05T20:11:45+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": "2109.11978",
+      "doi": null,
+      "title": null
+    },
+    {
       "identifier": "2204.01691",
       "added_at": "2026-08-05T19:52:43+08:00",
       "openalex_id": null,
@@ -106,11 +122,59 @@
       "title": null
     },
     {
+      "identifier": "10.1109/iros51168.2021.9636371",
+      "added_at": "2026-08-05T20:11:45+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.1109/iros51168.2021.9636371",
+      "title": null
+    },
+    {
+      "identifier": "10.1126/scirobotics.aau5872",
+      "added_at": "2026-08-05T20:11:45+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.1126/scirobotics.aau5872",
+      "title": null
+    },
+    {
+      "identifier": "10.1146/annurev-control-090419-075625",
+      "added_at": "2026-08-05T20:11:45+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.1146/annurev-control-090419-075625",
+      "title": null
+    },
+    {
+      "identifier": "10.1177/0278364913488805",
+      "added_at": "2026-08-05T20:11:45+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.1177/0278364913488805",
+      "title": null
+    },
+    {
       "identifier": "10.15607/rss.2012.viii.003",
       "added_at": "2026-08-05T19:52:43+08:00",
       "openalex_id": null,
       "base_arxiv_id": null,
       "doi": "10.15607/rss.2012.viii.003",
+      "title": null
+    },
+    {
+      "identifier": "10.15607/rss.2023.xix.026",
+      "added_at": "2026-08-05T20:11:45+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.15607/rss.2023.xix.026",
+      "title": null
+    },
+    {
+      "identifier": "10.48550/arxiv.1912.01603",
+      "added_at": "2026-08-05T20:11:45+08:00",
+      "openalex_id": null,
+      "base_arxiv_id": null,
+      "doi": "10.48550/arxiv.1912.01603",
       "title": null
     }
   ]
