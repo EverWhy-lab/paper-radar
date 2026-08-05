@@ -61,6 +61,39 @@ def test_get_work_resolves_arxiv_via_http_landing_page(
     assert paper.base_arxiv_id == "2201.00001"
 
 
+def test_search_source_papers_filters_by_journal_and_date(
+    tmp_path: Path, profile, openalex_payload
+) -> None:
+    captured: dict = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["filter"] = dict(request.url.params)["filter"]
+        return httpx.Response(
+            200, request=request, json=deepcopy(openalex_payload)
+        )
+
+    provider = OpenAlexProvider(
+        profile.openalex,
+        tmp_path / "data",
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+        environment={"OPENALEX_API_KEY": "secret"},
+        now=lambda: datetime(2026, 8, 3, 10, 15),
+        sleep=lambda _: None,
+    )
+
+    papers = provider.search_source_papers(
+        "S51360982",
+        limit=5,
+        from_date="2026-06-01",
+        discovery_source="journal_search:Automatica",
+    )
+
+    assert "primary_location.source.id:S51360982" in captured["filter"]
+    assert "from_publication_date:2026-06-01" in captured["filter"]
+    assert papers
+    assert papers[0].discovery_source == ["journal_search:Automatica"]
+
+
 def test_openalex_cache_prevents_duplicate_requests_and_never_stores_key(
     tmp_path: Path, profile, openalex_payload
 ) -> None:

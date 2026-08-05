@@ -62,6 +62,7 @@ class ResearchProfile:
     openalex: OpenAlexConfig
     llm_analysis: LLMAnalysisConfig
     dismissals: dict[str, Any]
+    journals: dict[str, Any]
     historical_discovery: dict[str, Any]
     historical_scoring: dict[str, Any]
 
@@ -135,6 +136,7 @@ def load_profile(path: Path) -> ResearchProfile:
             openalex=openalex,
             llm_analysis=llm_analysis,
             dismissals=dict(raw.get("dismissals", {})),
+            journals=dict(raw.get("journals", {})),
             historical_discovery=dict(raw["historical_discovery"]),
             historical_scoring=dict(raw["historical_scoring"]),
         )
@@ -191,12 +193,20 @@ def load_profile(path: Path) -> ResearchProfile:
         ("frontier_recent", 2),
         ("high_impact_historical", 3),
         ("review_knowledge_map", 1),
+        ("journal_recent", 2),
     ):
         value = int(daily_mix[category]["max_count"])
         if not 0 <= value <= ceiling:
             raise ConfigError(
                 f"recommendations.daily_mix.{category}.max_count must be between 0 and {ceiling}"
             )
+    journals = profile.journals
+    if journals.get("sources"):
+        if int(journals.get("recency_days", 60)) < 1 or int(journals.get("per_journal_limit", 15)) < 1:
+            raise ConfigError("journals.recency_days and journals.per_journal_limit must be positive")
+        for source in journals["sources"]:
+            if not str(source.get("source_id", "")).strip():
+                raise ConfigError("journals.sources entries need a source_id")
     discovery = profile.historical_discovery
     if int(discovery["expansion_depth"]) != 1:
         raise ConfigError("historical_discovery.expansion_depth must be exactly 1 in V0.2")

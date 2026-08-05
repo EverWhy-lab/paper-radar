@@ -201,7 +201,17 @@ recommendations:
   # New daily pages use daily_mix below.
   daily_mix:
     max_total: 5
-    selection_order: [review_knowledge_map, high_impact_historical, frontier_recent]
+    selection_order: [journal_recent, review_knowledge_map, high_impact_historical, frontier_recent]
+    journal_recent:
+      max_count: 2
+      min_research_fit: 40
+      min_core_topic_matches: 1
+      min_non_generic_keyword_matches: 1
+      recency_days: 60
+      cooldown_days: 14
+      max_same_primary_topic: 1
+      max_topic_overlap: 0.66
+      eligible_statuses: [unread, queued]
     frontier_recent:
       max_count: 2
       min_research_fit: 40
@@ -261,6 +271,25 @@ historical_discovery:
     - robot learning survey taxonomy benchmark
     - embodied robotics foundation models survey review
   seed_expansion_sources: [referenced_works, citing_works, related_works]
+
+journals:
+  recency_days: 60
+  per_journal_limit: 15
+  sources:
+    - name: "IEEE Transactions on Automatic Control"
+      source_id: "S184954342"
+    - name: "Automatica"
+      source_id: "S51360982"
+    - name: "IEEE Transactions on Industrial Electronics"
+      source_id: "S58031724"
+    - name: "IEEE Transactions on Control Systems Technology"
+      source_id: "S133363738"
+    - name: "IEEE Transactions on Industrial Informatics"
+      source_id: "S184777250"
+    - name: "Control Engineering Practice"
+      source_id: "S105928092"
+    - name: "Journal of Process Control"
+      source_id: "S96000363"
 
 historical_scoring:
   min_research_fit: 18

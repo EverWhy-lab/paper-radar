@@ -18,6 +18,7 @@ CATEGORY_LABELS = {
     "recent_new": "近期新论文",
     "reading_pool": "历史阅读",
     "important_update": "重要更新",
+    "journal_recent": "期刊新论文",
     "frontier_recent": "前沿新论文",
     "high_impact_historical": "领域内高影响力",
     "review_knowledge_map": "综述 / 知识地图",

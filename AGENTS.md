@@ -7,6 +7,7 @@
 - `providers/base.py`, `providers/openalex.py`: historical provider boundary, safe OpenAlex HTTP, cache, and budget statistics
 - `providers/deepseek.py`: optional DeepSeek English daily guide for already-selected papers only, using each paper's own professional terms
 - `history_models.py`, `history_storage.py`, `history_discovery.py`, `historical_scoring.py`: canonical historical metadata, seeds, one-hop discovery, deduplication, and explainable scoring
+- `config/research_profile.yaml` `journals` block + `daily_mix.journal_recent`: weekly OpenAlex journal feed (last 60 days) and the 期刊新论文 daily category
 - `curation.py`, `reader_pipeline.py`: V0.2 four-layer selection flow plus optional guide wiring
 - `reader_models.py`, `reader_storage.py`: candidate, reading-pool, final recommendation, and guide schemas
 - `reader_rendering.py`, `templates/reader.html`, `assets/reader.css`: shortlist-only static site
@@ -63,6 +64,7 @@
 - Recent candidates, historical discovery candidates, reading pool, and daily recommendations are separate persisted layers. Join only in memory for selection.
 - Render only selected recommendations. Never add bulk candidate search or cards to the user site.
 - Daily caps: total ≤5, frontier recent ≤2, historical impact ≤3, review/knowledge map ≤1. Do not lower thresholds or guarantee quotas.
+- Journal feed caps: 期刊新论文 ≤2 per day, within the total ≤5; journal candidates enter via OpenAlex discovery only and are never fetched by the daily arXiv run.
 - Enforce canonical alias deduplication, topic diversity, dismissal, read status, and cooldowns.
 - Dismissals from the web button or CLI permanently exclude the paper and temporarily reduce papers sharing its primary topic; never render dismissed papers.
 - Favorites are stored with full metadata in `data/favorites.json`; candidate cleanup never removes favorites or recommendations.

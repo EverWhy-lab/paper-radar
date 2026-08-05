@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -18,6 +18,7 @@ from paper_radar.providers.base import HistoricalProvider, HistoricalProviderErr
 class DiscoveryPlan:
     topic_query_count: int
     knowledge_map_query_count: int
+    journal_query_count: int
     seed_count: int
     expansion_depth: int
     candidate_limit: int
@@ -57,12 +58,14 @@ def build_discovery_plan(
     expansion_sources = list(config["seed_expansion_sources"])
     topic_queries = list(config["topic_queries"])
     map_queries = list(config["knowledge_map_queries"])
+    journal_count = len(profile.journals.get("sources", []))
     estimated = len(topic_queries) + len(map_queries) + len(seeds) * (
         1 + len(expansion_sources)
-    )
+    ) + journal_count
     return DiscoveryPlan(
         topic_query_count=len(topic_queries),
         knowledge_map_query_count=len(map_queries),
+        journal_query_count=journal_count,
         seed_count=len(seeds),
         expansion_depth=int(config["expansion_depth"]),
         candidate_limit=max(0, candidate_limit),
@@ -174,6 +177,19 @@ class HistoricalDiscoveryService:
                 )
                 candidates.extend(self._retag(batch, f"knowledge_map_search:{query}"))
 
+            journal_config = self.profile.journals
+            recency_days = int(journal_config.get("recency_days", 60))
+            per_journal = int(journal_config.get("per_journal_limit", 15))
+            from_date = (self.now - timedelta(days=recency_days)).date().isoformat()
+            for source in journal_config.get("sources", []):
+                batch = self.provider.search_source_papers(
+                    str(source["source_id"]),
+                    limit=per_journal,
+                    from_date=from_date,
+                    discovery_source=f"journal_search:{source['name']}",
+                )
+                candidates.extend(self._retag(batch, f"journal_search:{source['name']}"))
+
         except Exception:
             # Failed calls still consume provider budget; persist only aggregate counters.
             self.provider.save_stats()
@@ -188,6 +204,8 @@ class HistoricalDiscoveryService:
                 )
             except (HistoricalProviderError, ValueError):
                 failed_seed_ids.append(str(seed.identifier))
+                # Keep the original seed so a failed resolution never deletes it.
+                updated_seeds.append(seed)
                 continue
             candidates.extend(seed_batch)
             updated_seeds.append(updated)
@@ -195,7 +213,16 @@ class HistoricalDiscoveryService:
         unique = deduplicate_historical(candidates)
         scored = score_historical_papers(
             unique, self.profile, as_of_year=self.now.year
-        )[: plan.candidate_limit]
+        )
+        # Journal candidates sort after cited historical work by score, so put
+        # them first under the per-run candidate cap to keep the journal feed fresh.
+        scored.sort(
+            key=lambda paper: not any(
+                source.startswith("journal_search:")
+                for source in paper.discovery_source
+            )
+        )
+        scored = scored[: plan.candidate_limit]
         merged = self.paper_storage.merge(scored)
 
         # Nothing persistent is replaced until every provider request and score completes.

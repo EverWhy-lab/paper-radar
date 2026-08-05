@@ -77,6 +77,10 @@ class FixtureProvider:
         self._check("citing", openalex_id)
         return [self._paper("W105", "seed_graph:citing_works", seed_paper_id)][:limit]
 
+    def search_source_papers(self, source_id, *, limit, from_date, discovery_source):
+        self._check("journal", source_id)
+        return [self._paper("W104", discovery_source)][:limit]
+
 
 class FailingSeedProvider(FixtureProvider):
     def __init__(self, payload, *, fail_ids):
@@ -189,8 +193,36 @@ def test_dry_run_estimates_requests_without_any_write(tmp_path: Path, profile) -
         len(profile.historical_discovery["topic_queries"])
         + len(profile.historical_discovery["knowledge_map_queries"])
         + 4
+        + len(profile.journals["sources"])
     )
     assert before == after
+
+
+def test_discover_includes_journal_sources(
+    tmp_path: Path, profile, openalex_payload
+) -> None:
+    provider = FixtureProvider(openalex_payload)
+    service = HistoricalDiscoveryService(
+        tmp_path / "data",
+        profile,
+        provider,
+        now=datetime(2026, 8, 3, 10, 15),
+    )
+
+    result = service.discover(limit=20)
+
+    stored = HistoricalPaperStorage(tmp_path / "data").load()
+    journal_papers = [
+        paper
+        for paper in stored
+        if any(
+            source.startswith("journal_search:")
+            for source in paper.discovery_source
+        )
+    ]
+    assert journal_papers
+    assert any(kind == "journal" for kind, _ in provider.calls)
+    assert provider.saved_stats
 
 
 def test_openalex_failure_preserves_pool_stats_and_page(
@@ -300,3 +332,6 @@ def test_discover_skips_unresolvable_seed_and_continues(
     assert result.discovered_count > 0
     assert result.pool_count > 0
     assert provider.saved_stats
+    seeds = SeedStorage(tmp_path / "data").load()
+    assert len(seeds) == 2
+    assert any(seed.identifier == "1603.06937" for seed in seeds)

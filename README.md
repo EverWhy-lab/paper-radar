@@ -139,6 +139,13 @@ Discovery uses three source types:
 - Separate review, survey, tutorial, taxonomy, and benchmark queries.
 - One-hop seed expansion through referenced works, citing works, and OpenAlex related works.
 
+The `journals` block in `config/research_profile.yaml` adds a journal feed: every weekly
+discovery run also fetches the last 60 days from seven automation-and-control journals
+(IEEE TAC, Automatica, IEEE TIE, IEEE TCST, IEEE TII, Control Engineering Practice,
+Journal of Process Control). Fresh journal papers are tagged `journal_search:<journal>`
+and can surface in the daily selection under the **期刊新论文** category (at most two
+papers per day, total cap remains five).
+
 Per-query, per-seed, per-run, depth, year, cache lifetime, and request-budget limits are all configurable. Successful JSON responses are cached under ignored `data/history/cache/openalex/`. Aggregate request counts, cache hits, and remaining configured daily budget are written to `data/history/provider_stats.json`. A failed provider run never replaces the discovery pool or reader pages.
 
 ## Four separate data layers

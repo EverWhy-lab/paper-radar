@@ -295,6 +295,97 @@ class CuratedRecommendationEngine:
                 break
         return selected
 
+    def _select_journal(
+        self,
+        papers: list[HistoricalPaper],
+        history: dict[str, list[dict[str, Any]]],
+        target_date: str,
+        considered_at: str,
+        already_selected: list[RecommendationEntry],
+    ) -> list[RecommendationEntry]:
+        config = self.config["journal_recent"]
+        target = date.fromisoformat(target_date)
+        cutoff = target - timedelta(days=int(config.get("recency_days", 60)))
+        eligible_statuses = set(config.get("eligible_statuses", ["unread", "queued"]))
+        candidates: list[HistoricalPaper] = []
+        for paper in papers:
+            paper.last_considered_at = considered_at
+            if paper.dismissed or paper.reading_status not in eligible_statuses:
+                continue
+            if paper.aliases & self._dismissed_aliases:
+                continue
+            if not any(
+                source.startswith("journal_search:")
+                for source in paper.discovery_source
+            ):
+                continue
+            if not paper.publication_date:
+                continue
+            try:
+                published = date.fromisoformat(paper.publication_date[:10])
+            except ValueError:
+                continue
+            if not cutoff <= published <= target:
+                continue
+            reader_paper = paper.to_reader_paper()
+            if self._recent_signals(reader_paper, config) is None:
+                continue
+            candidates.append(paper)
+        candidates.sort(
+            key=lambda paper: (
+                paper.research_fit,
+                paper.publication_date or "",
+            ),
+            reverse=True,
+        )
+
+        selected: list[RecommendationEntry] = []
+        topic_counts: dict[str, int] = {}
+        for paper in candidates:
+            reader_paper = paper.to_reader_paper()
+            core, strong = self._recent_signals(reader_paper, config)
+            primary = self._primary_topic(reader_paper.matched_topics)
+            if primary in self._cooldown_topics:
+                continue
+            if _cooling(
+                paper.aliases,
+                history,
+                target_date,
+                int(config.get("cooldown_days", 14)),
+            ):
+                continue
+            if any(paper.aliases & entry.aliases for entry in already_selected + selected):
+                continue
+            if topic_counts.get(primary, 0) >= int(
+                config.get("max_same_primary_topic", 1)
+            ):
+                continue
+            journals = sorted(
+                {
+                    source.split(":", 1)[1]
+                    for source in paper.discovery_source
+                    if source.startswith("journal_search:")
+                }
+            )
+            reasons = [
+                f"期刊新论文: {', '.join(journals)}",
+                f"research_fit {reader_paper.research_fit} ≥ {int(config['min_research_fit'])}",
+                f"Core topics matched: {', '.join(core)}",
+                f"Specific keywords matched: {', '.join(strong)}",
+            ]
+            selected.append(
+                RecommendationEntry(
+                    category="journal_recent",
+                    paper=reader_paper,
+                    historical_paper=paper,
+                    reasons=reasons,
+                )
+            )
+            topic_counts[primary] = topic_counts.get(primary, 0) + 1
+            if len(selected) >= int(config["max_count"]):
+                break
+        return selected
+
     def select(
         self,
         *,
@@ -337,13 +428,20 @@ class CuratedRecommendationEngine:
         ordered_historical = score_historical_papers(
             combined, self.profile, as_of_year=date.fromisoformat(target_date).year
         )
+        journal = self._select_journal(
+            ordered_historical,
+            history,
+            target_date,
+            considered_at,
+            [],
+        )
         review = self._select_historical(
             ordered_historical,
             category="review_knowledge_map",
             history=history,
             target_date=target_date,
             considered_at=considered_at,
-            already_selected=[],
+            already_selected=journal,
         )
         impact = self._select_historical(
             ordered_historical,
@@ -351,15 +449,16 @@ class CuratedRecommendationEngine:
             history=history,
             target_date=target_date,
             considered_at=considered_at,
-            already_selected=review,
+            already_selected=journal + review,
         )
         recent = self._select_recent(
             recent_new,
             history,
             target_date,
-            review + impact,
+            journal + review + impact,
         )
         groups = {
+            "journal_recent": journal,
             "review_knowledge_map": review,
             "high_impact_historical": impact,
             "frontier_recent": recent,

@@ -12,6 +12,7 @@ RECOMMENDATION_CATEGORIES = {
     "recent_new",
     "reading_pool",
     "important_update",
+    "journal_recent",
     "frontier_recent",
     "high_impact_historical",
     "review_knowledge_map",

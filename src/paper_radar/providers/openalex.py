@@ -364,6 +364,27 @@ class OpenAlexProvider:
         )
         return self._results(payload, discovery_source=f"topic_search:{query}")[:limit]
 
+    def search_source_papers(
+        self,
+        source_id: str,
+        *,
+        limit: int,
+        from_date: str,
+        discovery_source: str,
+    ) -> list[HistoricalPaper]:
+        payload = self._request(
+            "/works",
+            {
+                "filter": (
+                    f"primary_location.source.id:{source_id},"
+                    f"from_publication_date:{from_date}"
+                ),
+                "per-page": min(200, max(1, limit)),
+                "sort": "publication_date:desc",
+            },
+        )
+        return self._results(payload, discovery_source=discovery_source)[:limit]
+
     def get_work(self, identifier: str) -> HistoricalPaper:
         openalex_id = normalize_openalex_id(identifier)
         lowered = identifier.casefold()

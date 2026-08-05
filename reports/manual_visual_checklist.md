@@ -15,6 +15,7 @@ Run `.venv/bin/python -m paper_radar serve`, then inspect:
 ## Historical cards
 
 - Category pills distinguish `前沿新论文`, `领域内高影响力`, and `综述 / 知识地图`.
+- Category pills also include `期刊新论文` (journal feed, at most two per day).
 - Publication year/date, OpenAlex citation count (or `unknown`), metric update time, normalized percentile/FWCI when available, and discovery provenance wrap without overlap.
 - `historical_value_score` remains visually distinct from `research_fit` and `video_potential`.
 - OpenAlex, arXiv, PDF, DOI, and BibTeX links appear only when corresponding metadata exists.
