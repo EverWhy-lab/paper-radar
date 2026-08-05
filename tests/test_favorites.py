@@ -137,3 +137,5 @@ def test_favorites_page_renders_from_favorite_store(
     assert "Favorites" in page
     assert paper.title in page
     assert 'href="assets/reader.css"' in page
+    assert 'href="index.html"' in page
+    assert 'href="favorites.html"' not in page

@@ -99,6 +99,7 @@ The same state can be managed from the CLI:
 .venv/bin/python -m paper_radar favorite add 2608.02571
 .venv/bin/python -m paper_radar favorite list
 .venv/bin/python -m paper_radar favorite remove 2608.02571
+.venv/bin/python -m paper_radar candidates prune --older-than 30
 .venv/bin/python -m paper_radar feedback apply feedback.txt
 ```
 

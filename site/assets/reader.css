@@ -76,6 +76,7 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spa
 .category--recent_new { background: rgba(97,212,179,.13); color: var(--accent); }
 .category--reading_pool { background: rgba(182,157,248,.13); color: var(--violet); }
 .category--important_update { background: rgba(122,162,247,.13); color: var(--blue); }
+.category--journal_recent { background: rgba(97,212,179,.13); color: var(--accent); }
 .category--frontier_recent { background: rgba(97,212,179,.13); color: var(--accent); }
 .category--high_impact_historical { background: rgba(182,157,248,.13); color: var(--violet); }
 .category--review_knowledge_map { background: rgba(122,162,247,.13); color: var(--blue); }

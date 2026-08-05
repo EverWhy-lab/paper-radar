@@ -161,7 +161,7 @@ class RecommendationSiteRenderer:
                 site_name=self.profile.site_name,
                 favorites=favorites,
                 asset_prefix="assets/",
-                favorites_url="favorites.html",
+                home_url="index.html",
             ),
         )
         return destination
