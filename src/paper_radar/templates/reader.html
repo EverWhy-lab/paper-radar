@@ -76,10 +76,11 @@
           <a href="https://arxiv.org/bibtex/{{ paper.base_id }}" target="_blank" rel="noopener noreferrer">BibTeX</a>
           {% endif %}
         </div>
-        <button type="button" class="dismiss-button" data-paper-id="{{ recommendation.canonical_paper_id }}" data-title="{{ paper.title }}" aria-pressed="false" aria-label="Mark as not relevant">
+        <button type="button" class="dismiss-button" data-paper-id="{{ recommendation.canonical_paper_id }}" data-title="{{ paper.title }}" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
+        <span class="dismiss-hint" role="status"></span>
       </article>
       {% endfor %}
     </section>
@@ -100,6 +101,20 @@
         button.classList.add("active");
         button.setAttribute("aria-pressed", "true");
       }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(button, text) {
+        var hint = button.parentElement.querySelector(".dismiss-hint");
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(button._hintTimer);
+        button._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
       markedIds().forEach(function (id) {
         buttons.forEach(function (button) {
           if (button.getAttribute("data-paper-id") === id) { markFilled(button); }
@@ -107,15 +122,25 @@
       });
       buttons.forEach(function (button) {
         button.addEventListener("click", function () {
-          if (button.classList.contains("active")) { return; }
           var id = button.getAttribute("data-paper-id");
           var title = button.getAttribute("data-title") || "";
-          markFilled(button);
           var seen = markedIds();
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = seen.indexOf(id);
+            if (index !== -1) {
+              seen.splice(index, 1);
+              localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
+            }
+            showHint(button, "已撤销本设备标记");
+            return;
+          }
+          markFilled(button);
           if (seen.indexOf(id) === -1) {
             seen.push(id);
             localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
           }
+          showHint(button, "已标记 · 提交打开的页面后永久生效");
           if (repo) {
             var url = "https://github.com/" + repo + "/issues/new?title=" +
               encodeURIComponent("feedback: not-interested " + id) +

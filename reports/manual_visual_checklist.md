@@ -22,7 +22,7 @@ Run `.venv/bin/python -m paper_radar serve`, then inspect:
 - The OpenAlex screening-signal disclaimer is visible and does not imply that citations equal paper quality.
 - No historical discovery candidate appears unless it is present in the day's recommendation JSON.
 - The guide labeled **Importance** renders inside each recommendation card when `llm_analysis` exists; there is no separate guide section, no AI/DeepSeek branding on the page, and a missing guide never affects the cards.
-- Every recommendation card has a thumbs-down **Not Relevant** button; clicking it fills the thumb and opens a pre-filled GitHub issue link, and the card itself stays visible.
+- Every recommendation card has a thumbs-down **Not Relevant** button; clicking it fills the thumb and opens a pre-filled GitHub issue link, and the card itself stays visible. Clicking again unfills the local mark (with a transient hint), and a hover title explains the permanent-submit flow.
 
 ## 375 px phone
 

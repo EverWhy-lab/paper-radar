@@ -42,6 +42,20 @@
         button.classList.add("active");
         button.setAttribute("aria-pressed", "true");
       }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(button, text) {
+        var hint = button.parentElement.querySelector(".dismiss-hint");
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(button._hintTimer);
+        button._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
       markedIds().forEach(function (id) {
         buttons.forEach(function (button) {
           if (button.getAttribute("data-paper-id") === id) { markFilled(button); }
@@ -49,15 +63,25 @@
       });
       buttons.forEach(function (button) {
         button.addEventListener("click", function () {
-          if (button.classList.contains("active")) { return; }
           var id = button.getAttribute("data-paper-id");
           var title = button.getAttribute("data-title") || "";
-          markFilled(button);
           var seen = markedIds();
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = seen.indexOf(id);
+            if (index !== -1) {
+              seen.splice(index, 1);
+              localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
+            }
+            showHint(button, "已撤销本设备标记");
+            return;
+          }
+          markFilled(button);
           if (seen.indexOf(id) === -1) {
             seen.push(id);
             localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
           }
+          showHint(button, "已标记 · 提交打开的页面后永久生效");
           if (repo) {
             var url = "https://github.com/" + repo + "/issues/new?title=" +
               encodeURIComponent("feedback: not-interested " + id) +

@@ -61,6 +61,8 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spa
 .dismiss-button .dismiss-icon { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; }
 .dismiss-button.active { color: #e8a1a1; border-color: #d17a7a; background: rgba(209, 122, 122, .12); }
 .dismiss-button.active .dismiss-icon { fill: currentColor; stroke: currentColor; }
+.dismiss-hint { display: none; margin-left: 10px; color: var(--muted); font-size: 12px; }
+.dismiss-hint.show { display: inline; }
 .card-topline { display: flex; justify-content: space-between; gap: 15px; }
 .category { padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 750; letter-spacing: .04em; }
 .category--recent_new { background: rgba(97,212,179,.13); color: var(--accent); }
