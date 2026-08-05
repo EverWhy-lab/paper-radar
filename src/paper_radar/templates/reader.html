@@ -33,8 +33,7 @@
     {% if daily.recommendations %}
     <section class="recommendations" aria-label="Today's selected papers">
       <div class="section-heading">
-        <h2>今日精选</h2>
-        <span class="updated-at">Updated {{ daily.generated_at | display_datetime }}</span>
+        <h2>Papers · <span class="updated-at">{{ daily.generated_at | display_time }}</span></h2>
       </div>
       {% for recommendation in daily.recommendations %}
       {% set paper = recommendation.paper %}

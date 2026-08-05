@@ -41,12 +41,22 @@ class RecommendationSiteRenderer:
             lstrip_blocks=True,
         )
         self.environment.filters["display_datetime"] = self._display_datetime
+        self.environment.filters["display_time"] = self._display_time
 
     def _display_datetime(self, value: str) -> str:
         try:
             parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
             return parsed.astimezone(ZoneInfo(self.profile.timezone)).strftime(
                 "%Y-%m-%d %H:%M Asia/Shanghai"
+            )
+        except ValueError:
+            return value
+
+    def _display_time(self, value: str) -> str:
+        try:
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            return parsed.astimezone(ZoneInfo(self.profile.timezone)).strftime(
+                "%Y-%m-%d %H:%M"
             )
         except ValueError:
             return value
