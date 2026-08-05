@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from paper_radar.config import ResearchProfile
-from paper_radar.reader_models import DailyRecommendations
+from paper_radar.reader_models import DailyRecommendations, FavoriteEntry
 from paper_radar.reader_storage import RecommendationStorage
 from paper_radar.storage import atomic_write_text
 
@@ -90,6 +90,9 @@ class RecommendationSiteRenderer:
                 {"date": date_string, "url": f"{archive_prefix}{date_string}.html"}
                 for date_string in archive_dates
             ],
+            "favorites_url": (
+                "favorites.html" if archive_prefix else "../favorites.html"
+            ),
             "demo_label": demo_label,
         }
 
@@ -116,7 +119,12 @@ class RecommendationSiteRenderer:
         )
         return destination
 
-    def render(self, target_date: str) -> tuple[Path, Path]:
+    def render(
+        self,
+        target_date: str,
+        *,
+        favorites: list[FavoriteEntry] | None = None,
+    ) -> tuple[Path, Path]:
         self._write_assets()
         dates = self.storage.available_dates()
         # Re-render every archive page so each page's navigation menu stays
@@ -139,7 +147,23 @@ class RecommendationSiteRenderer:
             asset_prefix="assets/",
             archive_prefix="recommendations/",
         )
+        if favorites is not None:
+            self._render_favorites(favorites)
         return index_path, self.site_dir / "recommendations" / f"{target_date}.html"
+
+    def _render_favorites(self, favorites: list[FavoriteEntry]) -> Path:
+        template = self.environment.get_template("favorites.html")
+        destination = self.site_dir / "favorites.html"
+        atomic_write_text(
+            destination,
+            template.render(
+                site_name=self.profile.site_name,
+                favorites=favorites,
+                asset_prefix="assets/",
+                favorites_url="favorites.html",
+            ),
+        )
+        return destination
 
     def render_demo(
         self,

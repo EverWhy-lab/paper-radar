@@ -56,13 +56,21 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spa
 .card-guide .guide-tag { margin: 0 0 7px; color: var(--accent); font: 700 10px ui-monospace, monospace; letter-spacing: .1em; text-transform: uppercase; }
 .card-guide p.guide-why, .card-guide p.guide-verdict { color: var(--text); }
 .card-guide b { color: var(--accent); font-weight: 700; }
-.dismiss-button { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; padding: 6px 13px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface-2); color: var(--muted); font: 650 12px Inter, ui-sans-serif, sans-serif; cursor: pointer; }
-.dismiss-button:hover { color: var(--text); border-color: var(--line-strong); }
-.dismiss-button .dismiss-icon { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.dismiss-button, .save-button { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; padding: 6px 13px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface-2); color: var(--muted); font: 650 12px Inter, ui-sans-serif, sans-serif; cursor: pointer; }
+.dismiss-button:hover, .save-button:hover { color: var(--text); border-color: var(--line-strong); }
+.dismiss-button .dismiss-icon, .save-button .dismiss-icon { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.save-button { margin-right: 8px; }
 .dismiss-button.active { color: #e8a1a1; border-color: #d17a7a; background: rgba(209, 122, 122, .12); }
 .dismiss-button.active .dismiss-icon { fill: currentColor; stroke: currentColor; }
+.save-button.active { color: #e6c069; border-color: #c9a24a; background: rgba(230, 192, 105, .12); }
+.save-button.active .dismiss-icon { fill: currentColor; stroke: currentColor; }
 .dismiss-hint { display: none; margin-left: 10px; color: var(--muted); font-size: 12px; }
 .dismiss-hint.show { display: inline; }
+.nav-left { display: flex; align-items: center; gap: 14px; }
+.favorites-link { color: var(--blue); font-size: 12px; font-weight: 650; text-decoration: none; }
+.favorites-link:hover { color: var(--accent); }
+.sync-button { padding: 5px 12px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface-2); color: var(--accent); font: 650 12px Inter, ui-sans-serif, sans-serif; cursor: pointer; }
+.sync-button:hover { border-color: var(--accent); }
 .card-topline { display: flex; justify-content: space-between; gap: 15px; }
 .category { padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 750; letter-spacing: .04em; }
 .category--recent_new { background: rgba(97,212,179,.13); color: var(--accent); }

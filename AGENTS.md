@@ -11,6 +11,8 @@
 - `reader_models.py`, `reader_storage.py`: candidate, reading-pool, final recommendation, and guide schemas
 - `reader_rendering.py`, `templates/reader.html`, `assets/reader.css`: shortlist-only static site
 - `reader_storage.py`, `data/dismissals.json`: not-interested feedback from the web button or CLI; excluded papers and topic cooldowns apply at selection time
+- `reader_models.py`, `reader_storage.py`, `data/favorites.json`, `templates/favorites.html`: saved papers with full metadata, independent of candidate cleanup
+- `feedback.py`, `cli.py`: batch apply of not-interested/favorite lines from the sync issue
 - `.github/workflows/feedback.yml`: applies web-button dismissals recorded as GitHub issues
 - `.github/workflows/openalex-discover.yml`, `.github/workflows/openalex-refresh.yml`: weekly discovery and monthly pool refresh; skip when the OpenAlex key is missing
 - `data/candidates/`: recent background candidates; never render as a bulk list
@@ -32,6 +34,11 @@
 .venv/bin/python -m paper_radar dismiss add IDENTIFIER
 .venv/bin/python -m paper_radar dismiss list
 .venv/bin/python -m paper_radar dismiss remove IDENTIFIER
+.venv/bin/python -m paper_radar favorite add IDENTIFIER
+.venv/bin/python -m paper_radar favorite list
+.venv/bin/python -m paper_radar favorite remove IDENTIFIER
+.venv/bin/python -m paper_radar candidates prune --older-than 30
+.venv/bin/python -m paper_radar feedback apply FILE
 .venv/bin/python -m paper_radar history seed add IDENTIFIER
 .venv/bin/python -m paper_radar history seed list
 .venv/bin/python -m paper_radar history seed remove IDENTIFIER
@@ -58,6 +65,7 @@
 - Daily caps: total ≤5, frontier recent ≤2, historical impact ≤3, review/knowledge map ≤1. Do not lower thresholds or guarantee quotas.
 - Enforce canonical alias deduplication, topic diversity, dismissal, read status, and cooldowns.
 - Dismissals from the web button or CLI permanently exclude the paper and temporarily reduce papers sharing its primary topic; never render dismissed papers.
+- Favorites are stored with full metadata in `data/favorites.json`; candidate cleanup never removes favorites or recommendations.
 - Complete all network work before replacing pool, state, recommendation, or page files. Use atomic JSON/page writes.
 - Preserve the 2026-07-31 legacy data and page as an audit sample.
 

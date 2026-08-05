@@ -25,6 +25,7 @@ from paper_radar.reader_rendering import RecommendationSiteRenderer
 from paper_radar.reader_storage import (
     CandidateStorage,
     DismissalStorage,
+    FavoriteStorage,
     ReadingPoolStorage,
     RecommendationStorage,
 )
@@ -207,7 +208,10 @@ def _run_reader(
     renderer = RecommendationSiteRenderer(
         project_root / "site", recommendation_storage, profile
     )
-    index_path, archive_path = renderer.render(daily.date)
+    index_path, archive_path = renderer.render(
+        daily.date,
+        favorites=FavoriteStorage(data_dir).load(),
+    )
     return ReaderRunResult(
         date=daily.date,
         candidate_count=len(scored_candidates),

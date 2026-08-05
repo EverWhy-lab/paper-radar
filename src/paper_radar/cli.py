@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 
 from paper_radar.config import ConfigError, load_profile
 from paper_radar.fetchers.arxiv import ArxivClient, ArxivFetchError, split_arxiv_id
+from paper_radar.feedback import _resolve_metadata, apply_feedback_lines
 from paper_radar.history_discovery import HistoricalDiscoveryService
 from paper_radar.history_storage import (
     HistoricalPaperStorage,
@@ -21,6 +22,7 @@ from paper_radar.providers.base import HistoricalProviderError
 from paper_radar.providers.openalex import OpenAlexProvider
 from paper_radar.reader_models import (
     DismissalEntry,
+    FavoriteEntry,
     READING_STATUSES,
     ReadingPoolEntry,
 )
@@ -30,6 +32,7 @@ from paper_radar.reader_pipeline import (
 )
 from paper_radar.reader_storage import (
     DismissalStorage,
+    FavoriteStorage,
     PoolError,
     ReadingPoolStorage,
 )
@@ -120,6 +123,44 @@ def build_parser() -> argparse.ArgumentParser:
         "remove", help="remove a dismissal"
     )
     dismiss_remove.add_argument("identifier")
+
+    favorite_parser = subparsers.add_parser(
+        "favorite", help="manage saved papers"
+    )
+    favorite_subparsers = favorite_parser.add_subparsers(
+        dest="favorite_command", required=True
+    )
+    favorite_add = favorite_subparsers.add_parser(
+        "add", help="save a paper to favorites"
+    )
+    favorite_add.add_argument("identifier")
+    favorite_subparsers.add_parser("list", help="list favorite papers")
+    favorite_remove = favorite_subparsers.add_parser(
+        "remove", help="remove a favorite"
+    )
+    favorite_remove.add_argument("identifier")
+
+    candidates_parser = subparsers.add_parser(
+        "candidates", help="manage candidate metadata files"
+    )
+    candidates_subparsers = candidates_parser.add_subparsers(
+        dest="candidates_command", required=True
+    )
+    prune = candidates_subparsers.add_parser(
+        "prune", help="remove candidate files older than N days"
+    )
+    prune.add_argument("--older-than", type=int, default=30)
+
+    feedback_parser = subparsers.add_parser(
+        "feedback", help="apply feedback captured as a GitHub issue"
+    )
+    feedback_subparsers = feedback_parser.add_subparsers(
+        dest="feedback_command", required=True
+    )
+    feedback_apply = feedback_subparsers.add_parser(
+        "apply", help="apply not-interested/favorite lines from a file"
+    )
+    feedback_apply.add_argument("file")
     return parser
 
 
@@ -183,6 +224,105 @@ def _dismissal_metadata(data_dir: Path, canonical: str) -> tuple[str, list[str]]
             if canonical in entry.aliases or canonical == entry.canonical_paper_id:
                 return entry.paper.title, entry.paper.matched_topics
     return "", []
+
+
+def _favorite(project_root: Path, args: argparse.Namespace) -> int:
+    data_dir = project_root / "data"
+    storage = FavoriteStorage(data_dir)
+    now = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(timespec="seconds")
+    if args.favorite_command == "list":
+        entries = storage.load()
+        if not entries:
+            print("No favorite papers.")
+            return 0
+        for entry in entries:
+            print(
+                f"{entry.canonical_paper_id}\t{entry.saved_at}\t"
+                f"{entry.title}"
+            )
+        return 0
+
+    try:
+        canonical = identifier_key(args.identifier)
+    except HistoryStorageError as exc:
+        print(f"Favorite command failed: {exc}", file=sys.stderr)
+        return 1
+
+    if args.favorite_command == "remove":
+        try:
+            removed = storage.remove(canonical)
+        except PoolError as exc:
+            print(f"Favorite command failed: {exc}", file=sys.stderr)
+            return 1
+        print(f"Removed favorite: {removed.canonical_paper_id} ({removed.title})")
+        return 0
+
+    metadata = _resolve_metadata(data_dir, canonical) or {}
+    try:
+        storage.add(
+            FavoriteEntry(
+                canonical_paper_id=canonical,
+                title=metadata.get("title") or "",
+                authors=list(metadata.get("authors") or []),
+                publication_year=metadata.get("year"),
+                source_name=str(metadata.get("source") or ""),
+                abstract=str(metadata.get("abstract") or ""),
+                landing_page_url=metadata.get("landing"),
+                pdf_url=metadata.get("pdf"),
+                openalex_url=metadata.get("openalex"),
+                doi=metadata.get("doi"),
+                saved_at=now,
+            )
+        )
+    except PoolError as exc:
+        print(f"Favorite command failed: {exc}", file=sys.stderr)
+        return 1
+    print(f"Saved to favorites: {canonical} ({metadata.get('title') or 'title unknown'})")
+    return 0
+
+
+def _candidates(project_root: Path, args: argparse.Namespace) -> int:
+    if args.candidates_command != "prune":
+        return 2
+    candidate_dir = project_root / "data" / "candidates"
+    cutoff = datetime.now(ZoneInfo("Asia/Shanghai")).date() - timedelta(
+        days=args.older_than
+    )
+    removed: list[str] = []
+    if candidate_dir.exists():
+        for path in sorted(candidate_dir.glob("*.json")):
+            try:
+                day = date.fromisoformat(path.stem)
+            except ValueError:
+                continue
+            if day < cutoff:
+                path.unlink()
+                removed.append(path.name)
+    print(f"Removed {len(removed)} candidate file(s) older than {args.older_than} days")
+    for name in removed:
+        print(f" - {name}")
+    return 0
+
+
+def _feedback(project_root: Path, args: argparse.Namespace) -> int:
+    if args.feedback_command != "apply":
+        return 2
+    path = Path(args.file)
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except OSError as exc:
+        print(f"Unable to read feedback file {path}: {exc}", file=sys.stderr)
+        return 1
+    now = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(timespec="seconds")
+    result = apply_feedback_lines(lines, project_root / "data", now)
+    print(f"Applied dismissals: {result.applied_dismissals}")
+    print(f"Applied favorites: {result.applied_favorites}")
+    print(f"Skipped (already recorded): {result.skipped}")
+    if result.failed:
+        print(f"Failed lines ({len(result.failed)}):")
+        for line in result.failed:
+            print(f" - {line}")
+    return 0
 
 
 def _run(project_root: Path, requested_date: date | None) -> int:
@@ -414,4 +554,10 @@ def main(argv: list[str] | None = None) -> int:
         return _history(project_root, args)
     if args.command == "dismiss":
         return _dismiss(project_root, args)
+    if args.command == "favorite":
+        return _favorite(project_root, args)
+    if args.command == "candidates":
+        return _candidates(project_root, args)
+    if args.command == "feedback":
+        return _feedback(project_root, args)
     return 2

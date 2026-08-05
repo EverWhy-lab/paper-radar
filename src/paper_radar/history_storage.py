@@ -20,9 +20,11 @@ class HistoryStorageError(ValueError):
 
 def identifier_key(identifier: str) -> str:
     raw = identifier.strip()
+    lowered = raw.casefold()
+    if lowered.startswith("openalex:"):
+        raw = raw.split(":", 1)[1]
     if value := normalize_openalex_id(raw):
         return f"openalex:{value}".casefold()
-    lowered = raw.casefold()
     if lowered.startswith("10.") or lowered.startswith("doi:") or "doi.org/" in lowered:
         if value := normalize_doi(raw):
             return f"doi:{value}".casefold()

@@ -21,6 +21,11 @@
   <main class="shell">
 
     <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
       <details class="archive-menu">
         <summary>历史推荐归档</summary>
         <nav><a href="recommendations/2026-08-05.html">2026-08-05</a><a href="recommendations/2026-08-04.html">2026-08-04</a><a href="recommendations/2026-08-03.html">2026-08-03</a></nav>
@@ -49,7 +54,11 @@
         <details class="abstract"><summary>Original abstract</summary><p>Since the emergence of ChatGPT, research on large language models (LLMs) has actively progressed across various fields. LLMs, pre-trained on vast text datasets, have exhibited exceptional abilities in understanding natural language and planning tasks. These abilities of LLMs are promising in robotics. In general, traditional supervised learning-based robot intelligence systems have a significant lack of adaptability to dynamically changing environments. However, LLMs help a robot intelligence system to improve its generalization ability in dynamic and complex real-world environments. Indeed, findings from ongoing robotics studies indicate that LLMs can significantly improve robots’ behavior planning and execution capabilities. Additionally, vision-language models (VLMs), trained on extensive visual and linguistic data for the vision question answering (VQA) problem, excel at integrating computer vision with natural language processing. VLMs can comprehend visual contexts and execute actions through natural language. They also provide descriptions of scenes in natural language. Several studies have explored the enhancement of robot intelligence using multimodal data, including object recognition and description by VLMs, along with the execution of language-driven commands integrated with visual information. This review paper thoroughly investigates how foundation models such as LLMs and VLMs have been employed to boost robot intelligence. For clarity, the research areas are categorized into five topics: reward design in reinforcement learning, low-level control, high-level planning, manipulation, and scene understanding. This review also summarizes studies that show how foundation models, such as the Eureka model for automating reward function design in reinforcement learning, RT-2 for integrating visual data, language, and robot actions in vision-language-action models, and AutoRT for generating feasible tasks and executing robot behavior policies via LLMs, have improved robot intelligence.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4403074774" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://www.mdpi.com/2076-3417/14/19/8868/pdf?version=1728606677" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.3390/app14198868" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W4403074774" data-title="A Survey of Robot Intelligence with Large Language Models" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="openalex:W4403074774" data-title="A Survey of Robot Intelligence with Large Language Models" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W4403074774" data-title="A Survey of Robot Intelligence with Large Language Models" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -73,7 +82,11 @@
         <details class="abstract"><summary>Original abstract</summary><p>Whole-body control (WBC) is a generic task-oriented control method for feedback control of loco-manipulation behaviors in humanoid robots. The combination of WBC and model-based walking controllers has been widely utilized in various humanoid robots. However, to date, the WBC method has not been employed for unsupported passive-ankle dynamic locomotion. As such, in this article, we devise a new WBC, dubbed the whole-body locomotion controller (WBLC), that can achieve experimental dynamic walking on unsupported passive-ankle biped robots. A key aspect of WBLC is the relaxation of contact constraints such that the control commands produce reduced jerk when switching foot contacts. To achieve robust dynamic locomotion, we conduct an in-depth analysis of uncertainty for our dynamic walking algorithm called the time-to-velocity-reversal (TVR) planner. The uncertainty study is fundamental as it allows us to improve the control algorithms and mechanical structure of our robot to fulfill the tolerated uncertainty. In addition, we conduct extensive experimentation for: (1) unsupported dynamic balancing (i.e., in-place stepping) with a six-degree-of-freedom biped, Mercury; (2) unsupported directional walking with Mercury; (3) walking over an irregular and slippery terrain with Mercury; and 4) in-place walking with our newly designed ten-DoF viscoelastic liquid-cooled biped, DRACO. Overall, the main contributions of this work are on: (a) achieving various modalities of unsupported dynamic locomotion of passive-ankle bipeds using a WBLC controller and a TVR planner; (b) conducting an uncertainty analysis to improve the mechanical structure and the controllers of Mercury; and (c) devising a whole-body control strategy that reduces movement jerk during walking.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W2914653242" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/1901.08100" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/1901.08100" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1177/0278364920918014" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/1901.08100" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W2914653242" data-title="Dynamic locomotion for passive-ankle biped robots and humanoids using whole-body locomotion control" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="openalex:W2914653242" data-title="Dynamic locomotion for passive-ankle biped robots and humanoids using whole-body locomotion control" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W2914653242" data-title="Dynamic locomotion for passive-ankle biped robots and humanoids using whole-body locomotion control" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -97,7 +110,11 @@
         <details class="abstract"><summary>Original abstract</summary><p>Unstructured human environments present a substantial challenge to effective robotic operation. Mobile manipulation in human environments requires dealing with novel unknown objects, cluttered workspaces, and noisy sensor data. We present an approach to mobile pick and place in such environments using a combination of two-dimensional (2-D) and three-dimensional (3-D) visual processing, tactile and proprioceptive sensor data, fast motion planning, reactive control and monitoring, and reactive grasping. We demonstrate our approach by using a two-arm mobile manipulation system to pick and place objects. Reactive components allow our system to account for uncertainty arising from noisy sensors, inaccurate perception (e.g., object detection or registration), or dynamic changes in the environment. We also present a set of tools that allows our system to be easily configured within a short time for a new robotic system.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W2014014888" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/mra.2012.2191995" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W2014014888" data-title="Mobile Manipulation in Unstructured Environments: Perception, Planning, and Execution" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="openalex:W2014014888" data-title="Mobile Manipulation in Unstructured Environments: Perception, Planning, and Execution" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W2014014888" data-title="Mobile Manipulation in Unstructured Environments: Perception, Planning, and Execution" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -121,7 +138,11 @@
         <details class="abstract"><summary>Original abstract</summary><p>We present a distributed model predictive control (DMPC) algorithm to generate trajectories in real-time for multiple robots. We adopted the on-demand collision avoidance method presented in previous work to efficiently compute non-colliding trajectories in transition tasks. An event-triggered replanning strategy is proposed to account for disturbances. Our simulation results show that the proposed collision avoidance method can reduce, on average, around 50% of the travel time required to complete a multi-agent point-to-point transition when compared to the well-studied Buffered Voronoi Cells (BVC) approach. Additionally, it shows a higher success rate in transition tasks with a high density of agents, with more than 90% success rate with 30 palm-sized quadrotor agents in a 18 m3arena. The approach was experimentally validated with a swarm of up to 20 drones flying in close proximity.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W2972941110" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/1909.05150" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/1909.05150" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2020.2964159" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/1909.05150" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W2972941110" data-title="Online Trajectory Generation With Distributed Model Predictive Control for Multi-Robot Motion Planning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="openalex:W2972941110" data-title="Online Trajectory Generation With Distributed Model Predictive Control for Multi-Robot Motion Planning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W2972941110" data-title="Online Trajectory Generation With Distributed Model Predictive Control for Multi-Robot Motion Planning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -148,7 +169,11 @@
           <a href="https://arxiv.org/pdf/2608.03978v1" target="_blank" rel="noopener noreferrer">PDF</a>
           <a href="https://arxiv.org/bibtex/2608.03978" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2608.03978" data-title="Stochastic Multiple Shooting Trajectory Optimization via Sequential Local Policy Evaluation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="arxiv:2608.03978" data-title="Stochastic Multiple Shooting Trajectory Optimization via Sequential Local Policy Evaluation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2608.03978" data-title="Stochastic Multiple Shooting Trajectory Optimization via Sequential Local Policy Evaluation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -159,10 +184,19 @@
   <script>
     (function () {
       var repo = document.body.getAttribute("data-repo") || "";
-      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button"));
-      function markedIds() {
-        try { return JSON.parse(localStorage.getItem("paper-radar-dismissed") || "[]"); } catch (e) { return []; }
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
       }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
       function markFilled(button) {
         button.classList.add("active");
         button.setAttribute("aria-pressed", "true");
@@ -171,50 +205,87 @@
         button.classList.remove("active");
         button.setAttribute("aria-pressed", "false");
       }
-      function showHint(button, text) {
-        var hint = button.parentElement.querySelector(".dismiss-hint");
+      function showHint(hint, text) {
         if (!hint) { return; }
         hint.textContent = text;
         hint.classList.add("show");
-        clearTimeout(button._hintTimer);
-        button._hintTimer = setTimeout(function () {
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
           hint.classList.remove("show");
         }, 2600);
       }
-      markedIds().forEach(function (id) {
-        buttons.forEach(function (button) {
-          if (button.getAttribute("data-paper-id") === id) { markFilled(button); }
-        });
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
       });
       buttons.forEach(function (button) {
         button.addEventListener("click", function () {
+          var type = typeOf(button);
           var id = button.getAttribute("data-paper-id");
           var title = button.getAttribute("data-title") || "";
-          var seen = markedIds();
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
           if (button.classList.contains("active")) {
             clearFilled(button);
-            var index = seen.indexOf(id);
+            var index = list.indexOf(id);
             if (index !== -1) {
-              seen.splice(index, 1);
-              localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
             }
-            showHint(button, "已撤销本设备标记");
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
             return;
           }
           markFilled(button);
-          if (seen.indexOf(id) === -1) {
-            seen.push(id);
-            localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
           }
-          showHint(button, "已标记 · 提交打开的页面后永久生效");
-          if (repo) {
-            var url = "https://github.com/" + repo + "/issues/new?title=" +
-              encodeURIComponent("feedback: not-interested " + id) +
-              "&body=" + encodeURIComponent("Paper: " + title + "\n\nThis issue is created automatically by the paper page. Submitting it permanently excludes this paper and temporarily reduces papers sharing its primary topic.");
-            window.open(url, "_blank", "noopener");
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
           }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
         });
       });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
     })();
   </script>
 </body>

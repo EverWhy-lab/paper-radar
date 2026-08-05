@@ -8,6 +8,7 @@ from paper_radar.reader_models import (
     CandidateBatch,
     DailyRecommendations,
     DismissalEntry,
+    FavoriteEntry,
     READING_STATUSES,
     ReadingPoolEntry,
 )
@@ -203,3 +204,55 @@ class DismissalStorage:
                 self.save(entries)
                 return removed
         raise PoolError(f"Dismissal not found: {canonical_paper_id}")
+
+
+class FavoriteStorage:
+    def __init__(self, data_dir: Path) -> None:
+        self.path = data_dir / "favorites.json"
+
+    def load(self) -> list[FavoriteEntry]:
+        if not self.path.exists():
+            return []
+        try:
+            value = json.loads(self.path.read_text(encoding="utf-8"))
+            return [
+                FavoriteEntry.from_dict(item)
+                for item in value.get("entries", [])
+            ]
+        except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
+            raise StorageError(f"Unable to read favorites {self.path}: {exc}") from exc
+
+    def save(self, entries: list[FavoriteEntry]) -> Path:
+        ordered = sorted(entries, key=lambda entry: entry.saved_at)
+        atomic_write_text(
+            self.path,
+            json.dumps(
+                {
+                    "schema_version": 1,
+                    "entries": [entry.to_dict() for entry in ordered],
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+            + "\n",
+        )
+        return self.path
+
+    def add(self, entry: FavoriteEntry) -> Path:
+        entries = self.load()
+        if any(
+            item.canonical_paper_id == entry.canonical_paper_id for item in entries
+        ):
+            raise PoolError(f"Paper {entry.canonical_paper_id} is already favorited")
+        entries.append(entry)
+        return self.save(entries)
+
+    def remove(self, canonical_paper_id: str) -> FavoriteEntry:
+        key = canonical_paper_id.casefold()
+        entries = self.load()
+        for index, entry in enumerate(entries):
+            if entry.canonical_paper_id == key:
+                removed = entries.pop(index)
+                self.save(entries)
+                return removed
+        raise PoolError(f"Favorite not found: {canonical_paper_id}")

@@ -21,6 +21,11 @@
   <main class="shell">
 
     <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
       <details class="archive-menu">
         <summary>历史推荐归档</summary>
         <nav><a href="2026-08-05.html">2026-08-05</a><a href="2026-08-04.html">2026-08-04</a><a href="2026-08-03.html">2026-08-03</a></nav>
@@ -34,10 +39,19 @@
   <script>
     (function () {
       var repo = document.body.getAttribute("data-repo") || "";
-      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button"));
-      function markedIds() {
-        try { return JSON.parse(localStorage.getItem("paper-radar-dismissed") || "[]"); } catch (e) { return []; }
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
       }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
       function markFilled(button) {
         button.classList.add("active");
         button.setAttribute("aria-pressed", "true");
@@ -46,50 +60,87 @@
         button.classList.remove("active");
         button.setAttribute("aria-pressed", "false");
       }
-      function showHint(button, text) {
-        var hint = button.parentElement.querySelector(".dismiss-hint");
+      function showHint(hint, text) {
         if (!hint) { return; }
         hint.textContent = text;
         hint.classList.add("show");
-        clearTimeout(button._hintTimer);
-        button._hintTimer = setTimeout(function () {
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
           hint.classList.remove("show");
         }, 2600);
       }
-      markedIds().forEach(function (id) {
-        buttons.forEach(function (button) {
-          if (button.getAttribute("data-paper-id") === id) { markFilled(button); }
-        });
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
       });
       buttons.forEach(function (button) {
         button.addEventListener("click", function () {
+          var type = typeOf(button);
           var id = button.getAttribute("data-paper-id");
           var title = button.getAttribute("data-title") || "";
-          var seen = markedIds();
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
           if (button.classList.contains("active")) {
             clearFilled(button);
-            var index = seen.indexOf(id);
+            var index = list.indexOf(id);
             if (index !== -1) {
-              seen.splice(index, 1);
-              localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
             }
-            showHint(button, "已撤销本设备标记");
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
             return;
           }
           markFilled(button);
-          if (seen.indexOf(id) === -1) {
-            seen.push(id);
-            localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
           }
-          showHint(button, "已标记 · 提交打开的页面后永久生效");
-          if (repo) {
-            var url = "https://github.com/" + repo + "/issues/new?title=" +
-              encodeURIComponent("feedback: not-interested " + id) +
-              "&body=" + encodeURIComponent("Paper: " + title + "\n\nThis issue is created automatically by the paper page. Submitting it permanently excludes this paper and temporarily reduces papers sharing its primary topic.");
-            window.open(url, "_blank", "noopener");
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
           }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
         });
       });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
     })();
   </script>
 </body>

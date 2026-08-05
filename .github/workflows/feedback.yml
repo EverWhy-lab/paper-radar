@@ -9,8 +9,8 @@ permissions:
   issues: write
 
 jobs:
-  apply-dismissal:
-    if: "startsWith(github.event.issue.title, 'feedback: not-interested')"
+  apply-feedback:
+    if: "startsWith(github.event.issue.title, 'feedback:')"
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -27,26 +27,24 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e .
 
-      - name: Extract paper identifier
-        id: extract
+      - name: Read issue body
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          TITLE="${{ github.event.issue.title }}"
-          ID="${TITLE#feedback: not-interested }"
-          ID="${ID%% *}"
-          echo "paper_id=$ID" >> "$GITHUB_OUTPUT"
+          gh issue view "${{ github.event.issue.number }}" --json body -q .body > /tmp/feedback.txt
 
-      - name: Apply dismissal
-        run: python -m paper_radar dismiss add "${{ steps.extract.outputs.paper_id }}" --reason not_interested
+      - name: Apply feedback
+        run: python -m paper_radar feedback apply /tmp/feedback.txt
 
-      - name: Commit dismissal state
+      - name: Commit feedback state
         run: |
           git config user.name "paper-radar-bot"
           git config user.email "paper-radar-bot@users.noreply.github.com"
-          git add data/dismissals.json
+          git add data/dismissals.json data/favorites.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: dismiss paper via web feedback $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git commit -m "chore: apply web feedback $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             git pull --rebase
             git push
           fi
@@ -55,4 +53,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue close "${{ github.event.issue.number }}" --comment "已记录：这篇论文将不再推荐，同主题近期也会减少推荐。"
+          gh issue close "${{ github.event.issue.number }}" --comment "已处理：不相关与收藏反馈已记录。"

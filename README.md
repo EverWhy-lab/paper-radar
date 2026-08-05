@@ -75,9 +75,14 @@ The rule-based selector remains authoritative: it chooses at most five papers wi
 - If the call fails or the key is missing, the page is still generated without the guide.
 - The key is read only from `DEEPSEEK_API_KEY` (export it locally, or set it as a repository secret for GitHub runs). It is never written to data, cache, provider stats, or pages.
 
-## Marking papers as not relevant
+## Not relevant, favorites, and batch sync
 
-Every recommended paper card has a thumbs-down **Not Relevant** button, like Semantic Scholar. Clicking it fills the thumb on that device (the card stays visible) and opens a pre-filled GitHub issue; submit the issue once to persist the feedback. A `feedback` workflow then records the dismissal and closes the issue automatically.
+Every recommended paper card has two buttons:
+
+- **Save** (star): adds the paper to your favorites. The **Favorites** link in the navigation opens a dedicated page listing all saved papers.
+- **Not Relevant** (thumbs-down): marks a paper as not relevant.
+
+Clicks fill the icon on that device and queue the item locally. The navigation bar shows a **同步反馈 (N)** button while items are pending; clicking it opens one pre-filled GitHub issue containing the whole batch. Submitting that issue persists everything at once — a `feedback` workflow records the dismissals and favorites, then closes the issue.
 
 Effects on future selection:
 
@@ -91,9 +96,13 @@ The same state can be managed from the CLI:
 .venv/bin/python -m paper_radar dismiss add openalex:W1234567890 --reason not_interested
 .venv/bin/python -m paper_radar dismiss list
 .venv/bin/python -m paper_radar dismiss remove 2608.02571
+.venv/bin/python -m paper_radar favorite add 2608.02571
+.venv/bin/python -m paper_radar favorite list
+.venv/bin/python -m paper_radar favorite remove 2608.02571
+.venv/bin/python -m paper_radar feedback apply feedback.txt
 ```
 
-Dismissals are stored in `data/dismissals.json` and committed like the rest of the state.
+Dismissals live in `data/dismissals.json`, favorites in `data/favorites.json` (with full metadata, independent of candidate files), and both are committed like the rest of the state. The monthly maintenance run also executes `candidates prune --older-than 30`, removing candidate metadata files older than 30 days — favorites and recommendations are never touched.
 
 ## Historical discovery
 

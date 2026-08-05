@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Favorites — {{ site_name }}</title>
+  <link rel="icon" href="{{ asset_prefix }}favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ asset_prefix }}reader.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-row">
+      <div>
+        <h1>{{ site_name }}</h1>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="navigation-row">
+      <a class="previous-link" href="{{ favorites_url }}">← 返回今日精选</a>
+    </div>
+    <section class="recommendations" aria-label="Saved papers">
+      <div class="section-heading"><h2>Favorites</h2></div>
+      {% if favorites %}
+      {% for favorite in favorites %}
+      <article class="paper-card">
+        <div class="card-topline">
+          <span class="arxiv-id">{{ favorite.canonical_paper_id }}</span>
+        </div>
+        <h3>{{ favorite.title }}</h3>
+        {% if favorite.authors %}<p class="authors">{{ favorite.authors | join(', ') }}</p>{% endif %}
+        <div class="metadata">
+          {% if favorite.publication_year %}<span><b>Year</b> {{ favorite.publication_year }}</span>{% endif %}
+          {% if favorite.source_name %}<span><b>Source</b> {{ favorite.source_name }}</span>{% endif %}
+          <span><b>Saved</b> {{ favorite.saved_at }}</span>
+        </div>
+        {% if favorite.abstract %}<details class="abstract"><summary>Original abstract</summary><p>{{ favorite.abstract }}</p></details>{% endif %}
+        <div class="actions">
+          {% if favorite.landing_page_url %}<a href="{{ favorite.landing_page_url }}" target="_blank" rel="noopener noreferrer">Landing</a>{% endif %}
+          {% if favorite.pdf_url %}<a href="{{ favorite.pdf_url }}" target="_blank" rel="noopener noreferrer">PDF</a>{% endif %}
+          {% if favorite.doi %}<a href="https://doi.org/{{ favorite.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+          {% if favorite.openalex_url %}<a href="{{ favorite.openalex_url }}" target="_blank" rel="noopener noreferrer">OpenAlex</a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+      {% else %}
+      <section class="empty-state">
+        <h2>还没有收藏任何论文。</h2>
+      </section>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

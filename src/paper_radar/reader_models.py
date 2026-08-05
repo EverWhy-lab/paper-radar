@@ -274,3 +274,53 @@ class DismissalEntry:
             reason=str(value.get("reason", "not_interested")),
             dismissed_at=str(value.get("dismissed_at", "")),
         )
+
+
+@dataclass
+class FavoriteEntry:
+    canonical_paper_id: str
+    title: str
+    authors: list[str]
+    publication_year: int | None
+    source_name: str
+    abstract: str
+    landing_page_url: str | None
+    pdf_url: str | None
+    openalex_url: str | None
+    doi: str | None
+    saved_at: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "canonical_paper_id": self.canonical_paper_id,
+            "title": self.title,
+            "authors": self.authors,
+            "publication_year": self.publication_year,
+            "source_name": self.source_name,
+            "abstract": self.abstract,
+            "landing_page_url": self.landing_page_url,
+            "pdf_url": self.pdf_url,
+            "openalex_url": self.openalex_url,
+            "doi": self.doi,
+            "saved_at": self.saved_at,
+        }
+
+    @classmethod
+    def from_dict(cls, value: dict[str, Any]) -> "FavoriteEntry":
+        return cls(
+            canonical_paper_id=str(value["canonical_paper_id"]).casefold(),
+            title=str(value.get("title", "")),
+            authors=list(value.get("authors", [])),
+            publication_year=(
+                int(value["publication_year"])
+                if value.get("publication_year") is not None
+                else None
+            ),
+            source_name=str(value.get("source_name", "")),
+            abstract=str(value.get("abstract", "")),
+            landing_page_url=value.get("landing_page_url"),
+            pdf_url=value.get("pdf_url"),
+            openalex_url=value.get("openalex_url"),
+            doi=value.get("doi"),
+            saved_at=str(value.get("saved_at", "")),
+        )

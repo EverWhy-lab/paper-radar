@@ -21,6 +21,11 @@
   <main class="shell">
 
     <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
       <details class="archive-menu">
         <summary>历史推荐归档</summary>
         <nav><a href="2026-08-05.html">2026-08-05</a><a href="2026-08-04.html">2026-08-04</a><a href="2026-08-03.html">2026-08-03</a></nav>
@@ -49,7 +54,11 @@
         <details class="abstract"><summary>Original abstract</summary><p>Humanoid robots hold great potential to perform various human-level skills, involving unified locomotion and manipulation in real-world settings. Driven by advances in machine learning and the strength of existing model-based approaches, these capabilities have progressed rapidly, but often separately. This survey offers a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, with a focus on control, planning, and learning methods. We first review the model-based methods that have been the backbone of humanoid robotics for the past three decades. We discuss contact planning, motion planning, and whole-body control, highlighting the tradeoffs between model fidelity and computational efficiency. Then, the focus is shifted to examine emerging learning-based methods, with an emphasis on reinforcement and imitation learning that enhance the robustness and versatility of loco-manipulation skills. Furthermore, we assess the potential of integrating foundation models with humanoid embodiments to enable the development of generalist humanoid agents. This survey also highlights the emerging role of tactile sensing, particularly whole-body tactile feedback, as a crucial modality for handling contact-rich interactions. Finally, we compare the strengths and limitations of model-based and learning-based paradigms from multiple perspectives, such as robustness, computational efficiency, versatility, and generalizability, and suggest potential solutions to existing challenges.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W7140452175" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/tmech.2025.3579247" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7140452175" data-title="Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="openalex:W7140452175" data-title="Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7140452175" data-title="Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -73,7 +82,11 @@
         <details class="abstract"><summary>Original abstract</summary><p>We present a hierarchical whole-body controller leveraging the full rigid body dynamics of the wheeled bipedal robot Ascento. We derive closed-form expressions for the dynamics of its kinematic loops in a way that readily generalizes to more complex systems. The rolling constraint is incorporated using a compact analytic solution based on rotation matrices. The non-minimum phase balancing dynamics are accounted for by including a linear-quadratic regulator as a motion task. Robustness when driving curves is increased by regulating the lean angle as a function of the zero-moment point. The proposed controller is computationally lightweight and significantly extends the rough-terrain capabilities and robustness of the system, as we demonstrate in several experiments.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W3012010640" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2005.11431" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.1109/lra.2020.2979625" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2005.11431" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W3012010640" data-title="LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="openalex:W3012010640" data-title="LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W3012010640" data-title="LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -97,7 +110,11 @@
         <details class="abstract"><summary>Original abstract</summary><p>This paper describes a new model for understanding natural language commands given to autonomous systems that perform navigation and mobile manipulation in semi-structured environments. Previous approaches have used models with fixed structure to infer the likelihood of a sequence of actions given the environment and the command. In contrast, our framework, called Generalized Grounding Graphs, dynamically instantiates a probabilistic graphical model for a particular natural language command according to the command&#39;s hierarchical and compositional semantic structure. Our system performs inference in the model to successfully find and execute plans corresponding to natural language commands such as &#34;Put the tire pallet on the truck.&#34; The model is trained using a corpus of commands collected using crowdsourcing. We pair each command with robot actions and use the corpus to learn the parameters of the model. We evaluate the robot&#39;s performance by inferring plans from natural language commands, executing each plan in a realistic robot simulator, and asking users to evaluate the system&#39;s performance. We demonstrate that our system can successfully follow many natural language commands from the corpus.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W2236233024" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://ojs.aaai.org/index.php/AAAI/article/download/7979/7838" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1609/aaai.v25i1.7979" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W2236233024" data-title="Understanding Natural Language Commands for Robotic Navigation and Mobile Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="openalex:W2236233024" data-title="Understanding Natural Language Commands for Robotic Navigation and Mobile Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W2236233024" data-title="Understanding Natural Language Commands for Robotic Navigation and Mobile Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -121,7 +138,11 @@
         <details class="abstract"><summary>Original abstract</summary><p>High-precision trajectory tracking is fundamental in robotic manipulation. While industrial robots address this through stiffness and high-performance hardware, compliant and cost-effective robots require advanced control to achieve accurate position tracking. In this letter, we present a model-based control approach, which makes use of data gathered during operation to improve the model of the robotic arm and thereby the tracking performance. The proposed scheme is based on an inverse dynamics feedback linearization and a data-driven error model, which are integrated into a model predictive control formulation. In particular, we show how offset-free tracking can be achieved by augmenting a nominal model with both a Gaussian process, which makes use of offline data, and an additive disturbance model suitable for efficient online estimation of the residual disturbance via an extended Kalman filter. The performance of the proposed offset-free GPMPC scheme is demonstrated on a compliant 6 degrees of freedom robotic arm, showing significant performance improvements compared to other robot control algorithms.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W2963945659" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2019.2929987" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W2963945659" data-title="Data-Driven Model Predictive Control for Trajectory Tracking With a Robotic Arm" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="openalex:W2963945659" data-title="Data-Driven Model Predictive Control for Trajectory Tracking With a Robotic Arm" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W2963945659" data-title="Data-Driven Model Predictive Control for Trajectory Tracking With a Robotic Arm" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -148,7 +169,11 @@
           <a href="https://arxiv.org/pdf/2608.02571v1" target="_blank" rel="noopener noreferrer">PDF</a>
           <a href="https://arxiv.org/bibtex/2608.02571" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2608.02571" data-title="Situation Aware Frontier Prioritization for Quadruped Search and Rescue" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；提交打开的 GitHub issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="save-button" data-paper-id="arxiv:2608.02571" data-title="Situation Aware Frontier Prioritization for Quadruped Search and Rescue" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2608.02571" data-title="Situation Aware Frontier Prioritization for Quadruped Search and Rescue" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
@@ -159,10 +184,19 @@
   <script>
     (function () {
       var repo = document.body.getAttribute("data-repo") || "";
-      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button"));
-      function markedIds() {
-        try { return JSON.parse(localStorage.getItem("paper-radar-dismissed") || "[]"); } catch (e) { return []; }
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
       }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
       function markFilled(button) {
         button.classList.add("active");
         button.setAttribute("aria-pressed", "true");
@@ -171,50 +205,87 @@
         button.classList.remove("active");
         button.setAttribute("aria-pressed", "false");
       }
-      function showHint(button, text) {
-        var hint = button.parentElement.querySelector(".dismiss-hint");
+      function showHint(hint, text) {
         if (!hint) { return; }
         hint.textContent = text;
         hint.classList.add("show");
-        clearTimeout(button._hintTimer);
-        button._hintTimer = setTimeout(function () {
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
           hint.classList.remove("show");
         }, 2600);
       }
-      markedIds().forEach(function (id) {
-        buttons.forEach(function (button) {
-          if (button.getAttribute("data-paper-id") === id) { markFilled(button); }
-        });
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
       });
       buttons.forEach(function (button) {
         button.addEventListener("click", function () {
+          var type = typeOf(button);
           var id = button.getAttribute("data-paper-id");
           var title = button.getAttribute("data-title") || "";
-          var seen = markedIds();
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
           if (button.classList.contains("active")) {
             clearFilled(button);
-            var index = seen.indexOf(id);
+            var index = list.indexOf(id);
             if (index !== -1) {
-              seen.splice(index, 1);
-              localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
             }
-            showHint(button, "已撤销本设备标记");
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
             return;
           }
           markFilled(button);
-          if (seen.indexOf(id) === -1) {
-            seen.push(id);
-            localStorage.setItem("paper-radar-dismissed", JSON.stringify(seen));
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
           }
-          showHint(button, "已标记 · 提交打开的页面后永久生效");
-          if (repo) {
-            var url = "https://github.com/" + repo + "/issues/new?title=" +
-              encodeURIComponent("feedback: not-interested " + id) +
-              "&body=" + encodeURIComponent("Paper: " + title + "\n\nThis issue is created automatically by the paper page. Submitting it permanently excludes this paper and temporarily reduces papers sharing its primary topic.");
-            window.open(url, "_blank", "noopener");
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
           }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
         });
       });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
     })();
   </script>
 </body>
