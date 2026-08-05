@@ -12,8 +12,9 @@
 <body data-repo="{{ github_repo }}">
   <header class="site-header">
     <div class="shell header-row">
-      <div>
+      <div class="title-block">
         <h1>{{ site_name }}</h1>
+        <p class="header-updated">{{ daily.generated_at | display_time }}</p>
       </div>
     </div>
   </header>
@@ -29,7 +30,7 @@
       </div>
       {% if archives %}
       <details class="archive-menu">
-        <summary>历史推荐归档</summary>
+        <summary>Archive</summary>
         <nav>{% for archive in archives %}<a href="{{ archive.url }}">{{ archive.date }}</a>{% endfor %}</nav>
       </details>
       {% endif %}
@@ -37,9 +38,7 @@
 
     {% if daily.recommendations %}
     <section class="recommendations" aria-label="Today's selected papers">
-      <div class="section-heading">
-        <h2>Papers · <span class="updated-at">{{ daily.generated_at | display_time }}</span></h2>
-      </div>
+      <div class="section-heading"><h2>Papers</h2></div>
       {% for recommendation in daily.recommendations %}
       {% set paper = recommendation.paper %}
       {% set historical = recommendation.historical_paper %}

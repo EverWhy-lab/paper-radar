@@ -21,6 +21,9 @@ a:hover { color: var(--accent); }
 .shell { width: min(var(--shell), calc(100% - 40px)); margin-inline: auto; }
 .site-header { padding: 48px 0 34px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, #10161d, var(--bg)); }
 .header-row { display: flex; justify-content: space-between; align-items: end; gap: 32px; }
+.title-block { display: flex; flex-direction: column; }
+.title-block h1 { margin-bottom: 4px; }
+.header-updated { align-self: flex-end; margin: 0; color: var(--faint); font: 400 12px Inter, ui-sans-serif, -apple-system, sans-serif; }
 .eyebrow { margin: 0 0 8px; color: var(--accent); font: 700 11px ui-monospace, monospace; letter-spacing: .15em; }
 h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spacing: -.045em; }
 .subtitle { margin: 13px 0 0; color: var(--muted); }
