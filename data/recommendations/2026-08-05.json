@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "date": "2026-08-05",
-  "generated_at": "2026-08-05T20:01:01+08:00",
+  "generated_at": "2026-08-05T20:25:49+08:00",
   "mode": "incremental",
-  "candidate_count": 3013,
+  "candidate_count": 3000,
   "historical_candidate_count": 149,
   "recommendation_count": 5,
   "category_counts": {
@@ -75,36 +75,36 @@
     {
       "canonical_paper_id": "openalex:W4403074774",
       "title": "A Survey of Robot Intelligence with Large Language Models",
-      "takeaway": "This survey systematically reviews how large language models (LLMs) and vision-language models (VLMs) enhance robot intelligence, addressing the limited adaptability of traditional supervised learning in dynamic environments. It covers how LLMs improve behavior planning and execution, and how VLMs integrate visual context with natural language for scene understanding and action generation. For your research in robot learning and foundation models, this survey provides a structured map of current approaches, helping you identify gaps and promising directions for integrating LLM/VLM capabilities into legged robots or mobile manipulators, particularly for high-level task planning and human-robot interaction.",
-      "generated_at": "2026-08-05T12:10:56",
+      "takeaway": "This survey systematically reviews how large language models (LLMs) and vision-language models (VLMs) enhance robot intelligence, addressing the limited adaptability of traditional supervised learning in dynamic environments. It covers how LLMs improve behavior planning and execution, and how VLMs integrate visual context with natural language for scene understanding and action generation. For a researcher in robot learning and VLA foundations, this survey provides a structured overview of current methods and open challenges, serving as a useful reference to identify gaps and opportunities for applying LLM/VLM-based approaches to legged locomotion and mobile manipulation tasks.",
+      "generated_at": "2026-08-05T12:30:44",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W2914653242",
       "title": "Dynamic locomotion for passive-ankle biped robots and humanoids using whole-body locomotion control",
-      "takeaway": "This paper introduces the whole-body locomotion controller (WBLC), a new whole-body control method that enables dynamic walking on unsupported passive-ankle biped robots, addressing the challenge of applying WBC to passive-ankle locomotion. Key innovations include relaxing contact constraints to reduce jerk during foot contact switching and an uncertainty analysis of the time-to-velocity-reversal (TVR) planner to improve robustness. For your work on legged robots and optimal control, this offers a concrete framework for combining whole-body control with dynamic walking, and the uncertainty analysis methodology can be adapted to enhance the robustness of your own locomotion controllers.",
-      "generated_at": "2026-08-05T12:10:56",
+      "takeaway": "This paper introduces the whole-body locomotion controller (WBLC), a new whole-body control method that enables dynamic walking on unsupported passive-ankle biped robots, a capability not previously achieved with WBC. The key innovation is relaxing contact constraints to reduce jerk during foot-contact switching, combined with an uncertainty analysis of the time-to-velocity-reversal (TVR) planner to improve robustness. For researchers in legged robotics and optimal control, this work offers a concrete framework for applying WBC to passive-ankle platforms and highlights the importance of uncertainty-aware design, which can be extended to humanoid locomotion and loco-manipulation tasks.",
+      "generated_at": "2026-08-05T12:30:44",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W2014014888",
       "title": "Mobile Manipulation in Unstructured Environments: Perception, Planning, and Execution",
-      "takeaway": "This paper presents an integrated approach to mobile pick and place in unstructured human environments, combining 2D/3D visual processing, tactile and proprioceptive sensing, fast motion planning, reactive control, and reactive grasping. The system demonstrates robustness to noisy sensors and dynamic changes through reactive components, and includes tools for rapid configuration on new robotic platforms. For your mobile manipulation research, this work provides a foundational architecture for handling uncertainty in real-world settings, and its modular design can inform how you integrate perception, planning, and execution in your own systems.",
-      "generated_at": "2026-08-05T12:10:56",
+      "takeaway": "This paper presents a comprehensive approach to mobile pick-and-place in unstructured human environments, integrating 2D/3D visual processing, tactile and proprioceptive sensing, fast motion planning, and reactive control. The system's reactive components handle uncertainty from noisy sensors and dynamic changes, and the tools allow rapid configuration for new robots. For mobile manipulation research, this work provides a practical template for building robust perception-action loops and emphasizes the importance of reactive strategies, which remain relevant for modern mobile manipulators operating in cluttered, real-world settings.",
+      "generated_at": "2026-08-05T12:30:44",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W2972941110",
       "title": "Online Trajectory Generation With Distributed Model Predictive Control for Multi-Robot Motion Planning",
-      "takeaway": "This paper proposes a distributed model predictive control (DMPC) algorithm for real-time multi-robot trajectory generation, using on-demand collision avoidance and event-triggered replanning to handle disturbances. Simulation results show about 50% reduction in travel time compared to Buffered Voronoi Cells (BVC) and over 90% success rate with 30 quadrotors in a dense arena, with experimental validation on up to 20 drones. For your optimal control research, this offers a scalable and efficient approach for multi-agent coordination, which could be extended to multi-legged robot swarms or collaborative mobile manipulation tasks.",
-      "generated_at": "2026-08-05T12:10:56",
+      "takeaway": "This paper proposes a distributed model predictive control (DMPC) algorithm for real-time multi-robot trajectory generation, using on-demand collision avoidance and event-triggered replanning to handle disturbances. Simulations show about 50% reduction in travel time compared to Buffered Voronoi Cells (BVC) and over 90% success rate with 30 agents in a dense arena, with experimental validation on up to 20 drones. For optimal control researchers, this work offers an efficient, scalable DMPC framework that can be adapted to multi-legged robot coordination or multi-agent mobile manipulation, where real-time collision avoidance and disturbance handling are critical.",
+      "generated_at": "2026-08-05T12:30:44",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "arxiv:2608.03978",
       "title": "Stochastic Multiple Shooting Trajectory Optimization via Sequential Local Policy Evaluation",
-      "takeaway": "This paper presents a stochastic multiple shooting trajectory optimization method that connects short control action sequences via local feedback policies, improving sample efficiency and terminal set convergence compared to single shooting methods like MPPI. It also synthesizes approximate system Jacobians from rollouts, making it suitable for model-based reinforcement learning with black-box dynamics. For your work in optimal control and robot learning, this method is directly applicable to underactuated systems and can be used with learned dynamics, offering a way to handle long-horizon tasks more efficiently in legged robots or mobile manipulators.",
-      "generated_at": "2026-08-05T12:10:56",
+      "takeaway": "This paper presents a stochastic multiple shooting trajectory optimization method that connects short control sequences via local feedback policies to improve sample efficiency and terminal constraint satisfaction compared to single shooting methods like MPPI. It also synthesizes approximate system Jacobians from rollouts, making it applicable to black-box dynamics and model-based reinforcement learning. For researchers in optimal control and robot learning, this method offers a way to handle long-horizon tasks with probabilistic dynamics and noisy gradients, potentially improving convergence for underactuated systems such as legged robots or VTOL platforms.",
+      "generated_at": "2026-08-05T12:30:44",
       "model": "deepseek-chat"
     }
   ],
