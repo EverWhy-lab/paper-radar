@@ -1,0 +1,1326 @@
+{
+  "schema_version": 3,
+  "date": "2026-08-05",
+  "generated_at": "2026-08-05T12:44:29+08:00",
+  "mode": "incremental",
+  "candidate_count": 3200,
+  "historical_candidate_count": 149,
+  "recommendation_count": 5,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 3,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "selection_order": [
+      "review_knowledge_map",
+      "high_impact_historical",
+      "frontier_recent"
+    ],
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 3,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W4403074774",
+      "title": "A Survey of Robot Intelligence with Large Language Models",
+      "takeaway": "This survey systematically reviews how large language models (LLMs) and vision-language models (VLMs) enhance robot intelligence, addressing the limited adaptability of traditional supervised learning in dynamic environments. It covers how LLMs improve behavior planning and execution, and how VLMs integrate visual context with natural language for scene understanding and action generation. For your research in robot learning and foundation models, this survey provides a structured overview of current approaches and open challenges, helping you identify gaps and promising directions for integrating LLMs/VLMs into legged locomotion or mobile manipulation pipelines.",
+      "generated_at": "2026-08-05T04:49:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2914653242",
+      "title": "Dynamic locomotion for passive-ankle biped robots and humanoids using whole-body locomotion control",
+      "takeaway": "This paper introduces the whole-body locomotion controller (WBLC), a new whole-body control method enabling dynamic walking on unsupported passive-ankle biped robots, addressing the gap where WBC had not been applied to such locomotion. Key innovations include relaxing contact constraints to reduce jerk during foot switching and an uncertainty analysis for the time-to-velocity-reversal (TVR) planner to improve robustness. For your work on legged robots and optimal control, this offers a concrete framework for combining whole-body control with model-based walking, and the uncertainty analysis methodology can be adapted to improve robustness in your own locomotion controllers.",
+      "generated_at": "2026-08-05T04:49:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2014014888",
+      "title": "Mobile Manipulation in Unstructured Environments: Perception, Planning, and Execution",
+      "takeaway": "This paper presents a comprehensive approach to mobile pick and place in unstructured human environments, integrating 2D/3D visual processing, tactile and proprioceptive sensing, fast motion planning, reactive control, and reactive grasping. It demonstrates the system on a two-arm mobile manipulator, emphasizing reactive components to handle uncertainty from noisy sensors and dynamic changes. For your mobile manipulation research, this work provides a foundational architecture and practical tools for configuring such systems, which you can build upon to incorporate modern learning-based perception or planning methods.",
+      "generated_at": "2026-08-05T04:49:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2972941110",
+      "title": "Online Trajectory Generation With Distributed Model Predictive Control for Multi-Robot Motion Planning",
+      "takeaway": "This paper proposes a distributed model predictive control (DMPC) algorithm for real-time multi-robot trajectory generation, using on-demand collision avoidance and an event-triggered replanning strategy to handle disturbances. Simulation results show about 50% reduction in travel time compared to Buffered Voronoi Cells (BVC) and over 90% success rate with 30 agents, validated experimentally with up to 20 drones. For your optimal control research, this offers a scalable and efficient approach for multi-robot coordination, which could be adapted to multi-legged robot teams or collaborative mobile manipulation scenarios.",
+      "generated_at": "2026-08-05T04:49:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.03978",
+      "title": "Stochastic Multiple Shooting Trajectory Optimization via Sequential Local Policy Evaluation",
+      "takeaway": "This paper presents a stochastic multiple shooting trajectory optimization method that connects short control action sequences via local feedback policies, improving sample efficiency and terminal set convergence compared to single shooting methods like MPPI. It also synthesizes approximate system Jacobians purely from rollouts, making it suitable for model-based reinforcement learning with black-box dynamics. For your optimal control and robot learning research, this method is directly applicable to underactuated systems and can be integrated into learning-based control pipelines, especially when model gradients are unavailable or noisy.",
+      "generated_at": "2026-08-05T04:49:39",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "research_fit 21 ≥ 18",
+        "核心方向：robot_learning, vla_foundation",
+        "特定关键词：vision-language-action, vision language action",
+        "historical_value_score 68.2 ≥ 50.0",
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 0.9%",
+        "OpenAlex FWCI 13.41",
+        "近 2 年年均引用 27.5；此前 1 年年均 1.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T12:46:03"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4403074774",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4403074774",
+        "openalex_id": "W4403074774",
+        "base_arxiv_id": null,
+        "doi": "10.3390/app14198868",
+        "title": "A Survey of Robot Intelligence with Large Language Models",
+        "authors": [
+          "Hyeongyo Jeong",
+          "Haechan Lee",
+          "Changwon Kim",
+          "Sungtae Shin"
+        ],
+        "abstract": "Since the emergence of ChatGPT, research on large language models (LLMs) has actively progressed across various fields. LLMs, pre-trained on vast text datasets, have exhibited exceptional abilities in understanding natural language and planning tasks. These abilities of LLMs are promising in robotics. In general, traditional supervised learning-based robot intelligence systems have a significant lack of adaptability to dynamically changing environments. However, LLMs help a robot intelligence system to improve its generalization ability in dynamic and complex real-world environments. Indeed, findings from ongoing robotics studies indicate that LLMs can significantly improve robots’ behavior planning and execution capabilities. Additionally, vision-language models (VLMs), trained on extensive visual and linguistic data for the vision question answering (VQA) problem, excel at integrating computer vision with natural language processing. VLMs can comprehend visual contexts and execute actions through natural language. They also provide descriptions of scenes in natural language. Several studies have explored the enhancement of robot intelligence using multimodal data, including object recognition and description by VLMs, along with the execution of language-driven commands integrated with visual information. This review paper thoroughly investigates how foundation models such as LLMs and VLMs have been employed to boost robot intelligence. For clarity, the research areas are categorized into five topics: reward design in reinforcement learning, low-level control, high-level planning, manipulation, and scene understanding. This review also summarizes studies that show how foundation models, such as the Eureka model for automating reward function design in reinforcement learning, RT-2 for integrating visual data, language, and robot actions in vision-language-action models, and AutoRT for generating feasible tasks and executing robot behavior policies via LLMs, have improved robot intelligence.",
+        "publication_date": "2024-10-02",
+        "publication_year": 2024,
+        "source_name": "Applied Sciences",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10028",
+            "display_name": "Topic Modeling",
+            "score": 1.0
+          },
+          {
+            "id": "https://openalex.org/T10181",
+            "display_name": "Natural Language Processing Techniques",
+            "score": 0.9998000264167786
+          },
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.9934999942779541
+          }
+        ],
+        "cited_by_count": 56,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 37
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 13.4072,
+        "citation_normalized_percentile": 0.99069353,
+        "referenced_works": [
+          "W179875071",
+          "W1614298861",
+          "W2022479123",
+          "W2073147434",
+          "W2099345940",
+          "W2100506586",
+          "W2155280192",
+          "W2161563551",
+          "W2293185259",
+          "W2886527127",
+          "W2896457183",
+          "W2945260553",
+          "W2952230511",
+          "W2962739339",
+          "W3027879771",
+          "W3030520226",
+          "W3034457371",
+          "W3034999214",
+          "W3088310808",
+          "W3091195047",
+          "W3094502228",
+          "W3120778962",
+          "W3138516171",
+          "W3160939593",
+          "W3166396011",
+          "W3174770825",
+          "W3205068155",
+          "W3205423339",
+          "W3207553988",
+          "W3211490618",
+          "W4205991051",
+          "W4221143046",
+          "W4221167437",
+          "W4223891676",
+          "W4224912544",
+          "W4224925702",
+          "W4225323055",
+          "W4225591000",
+          "W4226278401",
+          "W4226317937",
+          "W4254087122",
+          "W4283395244",
+          "W4285069854",
+          "W4285428875",
+          "W4287391717",
+          "W4288089799",
+          "W4292779060",
+          "W4296414573",
+          "W4296604360",
+          "W4297161808",
+          "W4309591663",
+          "W4313156423",
+          "W4318718936",
+          "W4321011670",
+          "W4321650181",
+          "W4322716420",
+          "W4323066451",
+          "W4323066621",
+          "W4323572061",
+          "W4324299512",
+          "W4353112996",
+          "W4366850747",
+          "W4367016688",
+          "W4377130677",
+          "W4378465306",
+          "W4378509449",
+          "W4380714573",
+          "W4382202802",
+          "W4382603221",
+          "W4383066231",
+          "W4383109478",
+          "W4383472635",
+          "W4383994288",
+          "W4384130886",
+          "W4384264726",
+          "W4384268338",
+          "W4385245566",
+          "W4385262477",
+          "W4385373842",
+          "W4385430559",
+          "W4385430588",
+          "W4385430679",
+          "W4385965471",
+          "W4386187806",
+          "W4386251907",
+          "W4386320380",
+          "W4387092545",
+          "W4387211845",
+          "W4387876242",
+          "W4388624206",
+          "W4388660746",
+          "W4388720459",
+          "W4389252904",
+          "W4389524317",
+          "W4389524426",
+          "W4389524506",
+          "W4389543970",
+          "W4389665359",
+          "W4389665575",
+          "W4389666115",
+          "W4390874280",
+          "W4390874575",
+          "W4391215636",
+          "W4391232716",
+          "W4393154152",
+          "W4394828156",
+          "W4395097844",
+          "W4401413894",
+          "W4401414087",
+          "W4401414337",
+          "W4401415075",
+          "W4401415431",
+          "W4401415471",
+          "W4401416363",
+          "W4401416853",
+          "W4401417048",
+          "W4401417060",
+          "W4402354036",
+          "W4402660140",
+          "W4402671236",
+          "W4402890475",
+          "W6676373471",
+          "W6683738474",
+          "W6739901393",
+          "W6759579507",
+          "W6762122294",
+          "W6769627184",
+          "W6777615688",
+          "W6778485988",
+          "W6778883912",
+          "W6788811087",
+          "W6791353385",
+          "W6796581206",
+          "W6796761347",
+          "W6797399245",
+          "W6800875267",
+          "W6802366246",
+          "W6802754939",
+          "W6809646742",
+          "W6809771422",
+          "W6810220367",
+          "W6810327023",
+          "W6810334672",
+          "W6810640255",
+          "W6810707108",
+          "W6810738896",
+          "W6838833932",
+          "W6839459284",
+          "W6839928859",
+          "W6846310961",
+          "W6846648116",
+          "W6846746609",
+          "W6849861922",
+          "W6850069519",
+          "W6850300045",
+          "W6850495229",
+          "W6850503672",
+          "W6850876251",
+          "W6850886341",
+          "W6851592950",
+          "W6852884379",
+          "W6853251322",
+          "W6853410760",
+          "W6853465110",
+          "W6853664340",
+          "W6855158220",
+          "W6855425132",
+          "W6861980801",
+          "W6875672671"
+        ],
+        "related_works": [
+          "W4391375266",
+          "W2748952813",
+          "W2390279801",
+          "W2358668433",
+          "W4396701345",
+          "W2376932109",
+          "W2001405890",
+          "W4396696052",
+          "W2382290278",
+          "W4395014643"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W4297161808"
+        ],
+        "discovered_at": "2026-08-04T12:46:03",
+        "last_considered_at": "2026-08-05T12:44:29+08:00",
+        "recommended_at": "2026-08-05T12:44:29+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T12:46:03",
+        "openalex_url": "https://openalex.org/W4403074774",
+        "landing_page_url": "https://doi.org/10.3390/app14198868",
+        "open_access_url": "https://doi.org/10.3390/app14198868",
+        "pdf_url": "https://www.mdpi.com/2076-3417/14/19/8868/pdf?version=1728606677",
+        "research_fit": 21,
+        "video_potential": 26,
+        "matched_topics": [
+          "robot_learning",
+          "vla_foundation"
+        ],
+        "matched_keywords": [
+          "reinforcement learning",
+          "vision-language-action",
+          "vision language action"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "topic",
+            "label": "VLA & Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "vision language action"
+            ],
+            "location": "abstract",
+            "points": 11.1
+          }
+        ],
+        "historical_value_score": 68.2,
+        "historical_score_components": {
+          "research_relevance": 21.0,
+          "normalized_citation": 99.1,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2024 年",
+          "同领域同年份引用标准化位于前 0.9%",
+          "OpenAlex FWCI 13.41",
+          "近 2 年年均引用 27.5；此前 1 年年均 1.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "paper": {
+        "arxiv_id": "openalex:W4403074774",
+        "base_id": "openalex:W4403074774",
+        "version": 1,
+        "title": "A Survey of Robot Intelligence with Large Language Models",
+        "authors": [
+          "Hyeongyo Jeong",
+          "Haechan Lee",
+          "Changwon Kim",
+          "Sungtae Shin"
+        ],
+        "published": "2024-10-02T00:00:00Z",
+        "updated": "2024-10-02T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Since the emergence of ChatGPT, research on large language models (LLMs) has actively progressed across various fields. LLMs, pre-trained on vast text datasets, have exhibited exceptional abilities in understanding natural language and planning tasks. These abilities of LLMs are promising in robotics. In general, traditional supervised learning-based robot intelligence systems have a significant lack of adaptability to dynamically changing environments. However, LLMs help a robot intelligence system to improve its generalization ability in dynamic and complex real-world environments. Indeed, findings from ongoing robotics studies indicate that LLMs can significantly improve robots’ behavior planning and execution capabilities. Additionally, vision-language models (VLMs), trained on extensive visual and linguistic data for the vision question answering (VQA) problem, excel at integrating computer vision with natural language processing. VLMs can comprehend visual contexts and execute actions through natural language. They also provide descriptions of scenes in natural language. Several studies have explored the enhancement of robot intelligence using multimodal data, including object recognition and description by VLMs, along with the execution of language-driven commands integrated with visual information. This review paper thoroughly investigates how foundation models such as LLMs and VLMs have been employed to boost robot intelligence. For clarity, the research areas are categorized into five topics: reward design in reinforcement learning, low-level control, high-level planning, manipulation, and scene understanding. This review also summarizes studies that show how foundation models, such as the Eureka model for automating reward function design in reinforcement learning, RT-2 for integrating visual data, language, and robot actions in vision-language-action models, and AutoRT for generating feasible tasks and executing robot behavior policies via LLMs, have improved robot intelligence.",
+        "abs_url": "https://doi.org/10.3390/app14198868",
+        "pdf_url": "https://www.mdpi.com/2076-3417/14/19/8868/pdf?version=1728606677",
+        "research_fit": 21,
+        "video_potential": 26,
+        "matched_topics": [
+          "robot_learning",
+          "vla_foundation"
+        ],
+        "matched_keywords": [
+          "reinforcement learning",
+          "vision-language-action",
+          "vision language action"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "topic",
+            "label": "VLA & Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "vision language action"
+            ],
+            "location": "abstract",
+            "points": 11.1
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 38 ≥ 18",
+        "核心方向：legged_humanoid, mobile_manipulation, optimal_control",
+        "特定关键词：humanoid robots, loco-manipulation, loco manipulation, whole-body control, whole body control, WBC",
+        "historical_value_score 65.1 ≥ 42.0",
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 3.8%",
+        "OpenAlex FWCI 4.72",
+        "近 2 年年均引用 21.5；此前 2 年年均 24.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:02"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2914653242",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2914653242",
+        "openalex_id": "W2914653242",
+        "base_arxiv_id": "1901.08100",
+        "doi": "10.1177/0278364920918014",
+        "title": "Dynamic locomotion for passive-ankle biped robots and humanoids using whole-body locomotion control",
+        "authors": [
+          "Donghyun Kim",
+          "Steven Jens Jorgensen",
+          "Jaemin Lee",
+          "Junhyeok Ahn",
+          "Jianwen Luo",
+          "Luis Sentis"
+        ],
+        "abstract": "Whole-body control (WBC) is a generic task-oriented control method for feedback control of loco-manipulation behaviors in humanoid robots. The combination of WBC and model-based walking controllers has been widely utilized in various humanoid robots. However, to date, the WBC method has not been employed for unsupported passive-ankle dynamic locomotion. As such, in this article, we devise a new WBC, dubbed the whole-body locomotion controller (WBLC), that can achieve experimental dynamic walking on unsupported passive-ankle biped robots. A key aspect of WBLC is the relaxation of contact constraints such that the control commands produce reduced jerk when switching foot contacts. To achieve robust dynamic locomotion, we conduct an in-depth analysis of uncertainty for our dynamic walking algorithm called the time-to-velocity-reversal (TVR) planner. The uncertainty study is fundamental as it allows us to improve the control algorithms and mechanical structure of our robot to fulfill the tolerated uncertainty. In addition, we conduct extensive experimentation for: (1) unsupported dynamic balancing (i.e., in-place stepping) with a six-degree-of-freedom biped, Mercury; (2) unsupported directional walking with Mercury; (3) walking over an irregular and slippery terrain with Mercury; and 4) in-place walking with our newly designed ten-DoF viscoelastic liquid-cooled biped, DRACO. Overall, the main contributions of this work are on: (a) achieving various modalities of unsupported dynamic locomotion of passive-ankle bipeds using a WBLC controller and a TVR planner; (b) conducting an uncertainty analysis to improve the mechanical structure and the controllers of Mercury; and (c) devising a whole-body control strategy that reduces movement jerk during walking.",
+        "publication_date": "2020-06-10",
+        "publication_year": 2020,
+        "source_name": "The International Journal of Robotics Research",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 1.0
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.9987000226974487
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9959999918937683
+          }
+        ],
+        "cited_by_count": 134,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 26
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 4.7164,
+        "citation_normalized_percentile": 0.96160809,
+        "referenced_works": [
+          "W1499277207",
+          "W1504362584",
+          "W1507646238",
+          "W152725453",
+          "W1820821744",
+          "W1853143499",
+          "W1898154573",
+          "W1945123189",
+          "W1963750790",
+          "W1998568767",
+          "W2019606703",
+          "W2029058516",
+          "W2061063863",
+          "W2061350632",
+          "W2079995373",
+          "W2081683070",
+          "W2120675177",
+          "W2144351850",
+          "W2158457615",
+          "W2160049112",
+          "W2163668399",
+          "W2239166089",
+          "W2295584263",
+          "W2335044248",
+          "W2413990562",
+          "W2547678094",
+          "W2573227850",
+          "W2761235830",
+          "W2804790641",
+          "W2908233537",
+          "W2963317054",
+          "W3044706119",
+          "W4210990956"
+        ],
+        "related_works": [
+          "W2067477688",
+          "W2171912896",
+          "W2542723153",
+          "W2940850594",
+          "W3029431726",
+          "W4231453746",
+          "W4242718759",
+          "W4361230927",
+          "W4376605692",
+          "W4390135167"
+        ],
+        "discovery_source": [
+          "topic_search:humanoid locomotion and manipulation",
+          "topic_search:whole-body control robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T00:25:08",
+        "last_considered_at": "2026-08-05T12:44:29+08:00",
+        "recommended_at": "2026-08-05T12:44:29+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:02",
+        "openalex_url": "https://openalex.org/W2914653242",
+        "landing_page_url": "https://doi.org/10.1177/0278364920918014",
+        "open_access_url": "http://arxiv.org/abs/1901.08100",
+        "pdf_url": "https://arxiv.org/pdf/1901.08100",
+        "research_fit": 38,
+        "video_potential": 40,
+        "matched_topics": [
+          "legged_humanoid",
+          "mobile_manipulation",
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "humanoid robots",
+          "loco-manipulation",
+          "loco manipulation",
+          "whole-body control",
+          "whole body control",
+          "WBC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "humanoid robots"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "loco manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "whole-body control",
+              "whole body control",
+              "WBC"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ],
+        "historical_value_score": 65.1,
+        "historical_score_components": {
+          "research_relevance": 38.0,
+          "normalized_citation": 96.2,
+          "fwci": 100.0,
+          "citation_momentum": 43.9,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2020 年",
+          "同领域同年份引用标准化位于前 3.8%",
+          "OpenAlex FWCI 4.72",
+          "近 2 年年均引用 21.5；此前 2 年年均 24.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "1901.08100",
+        "base_id": "1901.08100",
+        "version": 1,
+        "title": "Dynamic locomotion for passive-ankle biped robots and humanoids using whole-body locomotion control",
+        "authors": [
+          "Donghyun Kim",
+          "Steven Jens Jorgensen",
+          "Jaemin Lee",
+          "Junhyeok Ahn",
+          "Jianwen Luo",
+          "Luis Sentis"
+        ],
+        "published": "2020-06-10T00:00:00Z",
+        "updated": "2020-06-10T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Whole-body control (WBC) is a generic task-oriented control method for feedback control of loco-manipulation behaviors in humanoid robots. The combination of WBC and model-based walking controllers has been widely utilized in various humanoid robots. However, to date, the WBC method has not been employed for unsupported passive-ankle dynamic locomotion. As such, in this article, we devise a new WBC, dubbed the whole-body locomotion controller (WBLC), that can achieve experimental dynamic walking on unsupported passive-ankle biped robots. A key aspect of WBLC is the relaxation of contact constraints such that the control commands produce reduced jerk when switching foot contacts. To achieve robust dynamic locomotion, we conduct an in-depth analysis of uncertainty for our dynamic walking algorithm called the time-to-velocity-reversal (TVR) planner. The uncertainty study is fundamental as it allows us to improve the control algorithms and mechanical structure of our robot to fulfill the tolerated uncertainty. In addition, we conduct extensive experimentation for: (1) unsupported dynamic balancing (i.e., in-place stepping) with a six-degree-of-freedom biped, Mercury; (2) unsupported directional walking with Mercury; (3) walking over an irregular and slippery terrain with Mercury; and 4) in-place walking with our newly designed ten-DoF viscoelastic liquid-cooled biped, DRACO. Overall, the main contributions of this work are on: (a) achieving various modalities of unsupported dynamic locomotion of passive-ankle bipeds using a WBLC controller and a TVR planner; (b) conducting an uncertainty analysis to improve the mechanical structure and the controllers of Mercury; and (c) devising a whole-body control strategy that reduces movement jerk during walking.",
+        "abs_url": "https://arxiv.org/abs/1901.08100",
+        "pdf_url": "https://arxiv.org/pdf/1901.08100",
+        "research_fit": 38,
+        "video_potential": 40,
+        "matched_topics": [
+          "legged_humanoid",
+          "mobile_manipulation",
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "humanoid robots",
+          "loco-manipulation",
+          "loco manipulation",
+          "whole-body control",
+          "whole body control",
+          "WBC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "humanoid robots"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "loco manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "whole-body control",
+              "whole body control",
+              "WBC"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 20 ≥ 18",
+        "核心方向：mobile_manipulation",
+        "特定关键词：mobile manipulation",
+        "historical_value_score 59.6 ≥ 42.0",
+        "发表于 2012 年",
+        "同领域同年份引用标准化位于前 0.5%",
+        "OpenAlex FWCI 23.48",
+        "近 2 年年均引用 7.5；此前 2 年年均 7.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:01"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2014014888",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2014014888",
+        "openalex_id": "W2014014888",
+        "base_arxiv_id": null,
+        "doi": "10.1109/mra.2012.2191995",
+        "title": "Mobile Manipulation in Unstructured Environments: Perception, Planning, and Execution",
+        "authors": [
+          "Sachin Chitta",
+          "Edward C. Jones",
+          "Matei Ciocarlie",
+          "Kaijen Hsiao"
+        ],
+        "abstract": "Unstructured human environments present a substantial challenge to effective robotic operation. Mobile manipulation in human environments requires dealing with novel unknown objects, cluttered workspaces, and noisy sensor data. We present an approach to mobile pick and place in such environments using a combination of two-dimensional (2-D) and three-dimensional (3-D) visual processing, tactile and proprioceptive sensor data, fast motion planning, reactive control and monitoring, and reactive grasping. We demonstrate our approach by using a two-arm mobile manipulation system to pick and place objects. Reactive components allow our system to account for uncertainty arising from noisy sensors, inaccurate perception (e.g., object detection or registration), or dynamic changes in the environment. We also present a set of tools that allows our system to be easily configured within a short time for a new robotic system.",
+        "publication_date": "2012-06-01",
+        "publication_year": 2012,
+        "source_name": "IEEE Robotics & Automation Magazine",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9998999834060669
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9970999956130981
+          },
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9970999956130981
+          }
+        ],
+        "cited_by_count": 125,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 3
+          }
+        ],
+        "fwci": 23.4781,
+        "citation_normalized_percentile": 0.99455692,
+        "referenced_works": [
+          "W1510186039",
+          "W1990470929",
+          "W1995155845",
+          "W2015312730",
+          "W2019965290",
+          "W2040227765",
+          "W2049981393",
+          "W2057299504",
+          "W2058761328",
+          "W2087551257",
+          "W2089630413",
+          "W2112645080",
+          "W2128082316",
+          "W2128378943",
+          "W2134447392",
+          "W2136354320",
+          "W2153000379",
+          "W2156047221",
+          "W2164276476",
+          "W2166947678",
+          "W2169241897",
+          "W2194057693",
+          "W2901136733",
+          "W614804429",
+          "W6602877717",
+          "W6619265336",
+          "W6684916627",
+          "W6687375543",
+          "W6756486208",
+          "W70651934"
+        ],
+        "related_works": [
+          "W1992503747",
+          "W1999333556",
+          "W2043154226",
+          "W2109948066",
+          "W2122871747",
+          "W2329043542",
+          "W2369529107",
+          "W2371519816",
+          "W3114279067",
+          "W4292830139"
+        ],
+        "discovery_source": [
+          "topic_search:mobile manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:01",
+        "last_considered_at": "2026-08-05T12:44:29+08:00",
+        "recommended_at": "2026-08-05T12:44:29+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:01",
+        "openalex_url": "https://openalex.org/W2014014888",
+        "landing_page_url": "https://doi.org/10.1109/mra.2012.2191995",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "historical_value_score": 59.6,
+        "historical_score_components": {
+          "research_relevance": 20.0,
+          "normalized_citation": 99.5,
+          "fwci": 100.0,
+          "citation_momentum": 50.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2012 年",
+          "同领域同年份引用标准化位于前 0.5%",
+          "OpenAlex FWCI 23.48",
+          "近 2 年年均引用 7.5；此前 2 年年均 7.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W2014014888",
+        "base_id": "openalex:W2014014888",
+        "version": 1,
+        "title": "Mobile Manipulation in Unstructured Environments: Perception, Planning, and Execution",
+        "authors": [
+          "Sachin Chitta",
+          "Edward C. Jones",
+          "Matei Ciocarlie",
+          "Kaijen Hsiao"
+        ],
+        "published": "2012-06-01T00:00:00Z",
+        "updated": "2012-06-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Unstructured human environments present a substantial challenge to effective robotic operation. Mobile manipulation in human environments requires dealing with novel unknown objects, cluttered workspaces, and noisy sensor data. We present an approach to mobile pick and place in such environments using a combination of two-dimensional (2-D) and three-dimensional (3-D) visual processing, tactile and proprioceptive sensor data, fast motion planning, reactive control and monitoring, and reactive grasping. We demonstrate our approach by using a two-arm mobile manipulation system to pick and place objects. Reactive components allow our system to account for uncertainty arising from noisy sensors, inaccurate perception (e.g., object detection or registration), or dynamic changes in the environment. We also present a set of tools that allows our system to be easily configured within a short time for a new robotic system.",
+        "abs_url": "https://doi.org/10.1109/mra.2012.2191995",
+        "pdf_url": "",
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 18 ≥ 18",
+        "核心方向：optimal_control",
+        "特定关键词：model predictive control",
+        "historical_value_score 57.8 ≥ 42.0",
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 0.8%",
+        "OpenAlex FWCI 11.44",
+        "近 2 年年均引用 39.0；此前 2 年年均 48.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:02"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2972941110",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2972941110",
+        "openalex_id": "W2972941110",
+        "base_arxiv_id": "1909.05150",
+        "doi": "10.1109/lra.2020.2964159",
+        "title": "Online Trajectory Generation With Distributed Model Predictive Control for Multi-Robot Motion Planning",
+        "authors": [
+          "Carlos E. Luis",
+          "Marijan Vukosavljev",
+          "Angela P. Schoellig"
+        ],
+        "abstract": "We present a distributed model predictive control (DMPC) algorithm to generate trajectories in real-time for multiple robots. We adopted the on-demand collision avoidance method presented in previous work to efficiently compute non-colliding trajectories in transition tasks. An event-triggered replanning strategy is proposed to account for disturbances. Our simulation results show that the proposed collision avoidance method can reduce, on average, around 50% of the travel time required to complete a multi-agent point-to-point transition when compared to the well-studied Buffered Voronoi Cells (BVC) approach. Additionally, it shows a higher success rate in transition tasks with a high density of agents, with more than 90% success rate with 30 palm-sized quadrotor agents in a 18 m3arena. The approach was experimentally validated with a swarm of up to 20 drones flying in close proximity.",
+        "publication_date": "2020-01-07",
+        "publication_year": 2020,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9998999834060669
+          },
+          {
+            "id": "https://openalex.org/T10791",
+            "display_name": "Advanced Control Systems Optimization",
+            "score": 0.9947999715805054
+          },
+          {
+            "id": "https://openalex.org/T11615",
+            "display_name": "Control and Dynamics of Mobile Robots",
+            "score": 0.9932000041007996
+          }
+        ],
+        "cited_by_count": 250,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 62
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 52
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 45
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 11.4446,
+        "citation_normalized_percentile": 0.99157922,
+        "referenced_works": [
+          "W1489244333",
+          "W2013439434",
+          "W2062731992",
+          "W2158400962",
+          "W2162991084",
+          "W2292985786",
+          "W2293574576",
+          "W2573311857",
+          "W2753710570",
+          "W2785331812",
+          "W2790268363",
+          "W2886374915",
+          "W2891214310",
+          "W2906572333",
+          "W2909324603",
+          "W2912909357",
+          "W2963204102",
+          "W3106159961",
+          "W3135109640"
+        ],
+        "related_works": [
+          "W1941703695",
+          "W1990079087",
+          "W2060165215",
+          "W2101105382",
+          "W2101188133",
+          "W2381210024",
+          "W2903025760",
+          "W3131574667",
+          "W3202234113",
+          "W4248731570"
+        ],
+        "discovery_source": [
+          "topic_search:model predictive control in robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:02",
+        "last_considered_at": "2026-08-05T12:44:29+08:00",
+        "recommended_at": "2026-08-05T12:44:29+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:02",
+        "openalex_url": "https://openalex.org/W2972941110",
+        "landing_page_url": "https://doi.org/10.1109/lra.2020.2964159",
+        "open_access_url": "http://arxiv.org/abs/1909.05150",
+        "pdf_url": "https://arxiv.org/pdf/1909.05150",
+        "research_fit": 18,
+        "video_potential": 4,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "historical_value_score": 57.8,
+        "historical_score_components": {
+          "research_relevance": 18.0,
+          "normalized_citation": 99.2,
+          "fwci": 100.0,
+          "citation_momentum": 40.2,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2020 年",
+          "同领域同年份引用标准化位于前 0.8%",
+          "OpenAlex FWCI 11.44",
+          "近 2 年年均引用 39.0；此前 2 年年均 48.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "1909.05150",
+        "base_id": "1909.05150",
+        "version": 1,
+        "title": "Online Trajectory Generation With Distributed Model Predictive Control for Multi-Robot Motion Planning",
+        "authors": [
+          "Carlos E. Luis",
+          "Marijan Vukosavljev",
+          "Angela P. Schoellig"
+        ],
+        "published": "2020-01-07T00:00:00Z",
+        "updated": "2020-01-07T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "We present a distributed model predictive control (DMPC) algorithm to generate trajectories in real-time for multiple robots. We adopted the on-demand collision avoidance method presented in previous work to efficiently compute non-colliding trajectories in transition tasks. An event-triggered replanning strategy is proposed to account for disturbances. Our simulation results show that the proposed collision avoidance method can reduce, on average, around 50% of the travel time required to complete a multi-agent point-to-point transition when compared to the well-studied Buffered Voronoi Cells (BVC) approach. Additionally, it shows a higher success rate in transition tasks with a high density of agents, with more than 90% success rate with 30 palm-sized quadrotor agents in a 18 m3arena. The approach was experimentally validated with a swarm of up to 20 drones flying in close proximity.",
+        "abs_url": "https://arxiv.org/abs/1909.05150",
+        "pdf_url": "https://arxiv.org/pdf/1909.05150",
+        "research_fit": 18,
+        "video_potential": 4,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 48 ≥ 40",
+        "Core topics matched: optimal_control, robot_learning",
+        "Specific keywords matched: trajectory optimization",
+        "Diversity topic: optimal_control"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.03978",
+      "historical_paper": null,
+      "paper": {
+        "arxiv_id": "2608.03978v1",
+        "base_id": "2608.03978",
+        "version": 1,
+        "title": "Stochastic Multiple Shooting Trajectory Optimization via Sequential Local Policy Evaluation",
+        "authors": [
+          "Ashwin Gupta",
+          "Joseph Moore"
+        ],
+        "published": "2026-08-04T17:43:21Z",
+        "updated": "2026-08-04T17:43:21Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Stochastic single shooting trajectory optimization methods such as Model Predictive Path Integral control (MPPI) have been widely adopted in robotics due to their ability to reason about probabilistic dynamics and provide solutions where model gradients are noisy, costly to evaluate, or unavailable. However, satisfaction of terminal constraints when shooting over long action sequences is often sample inefficient, requiring a large number of iterations for convergence. In this paper, we present a stochastic multiple shooting method that optimizes short control action sequences connected via local feedback policies to improve sample efficiency and convergence to a terminal set. Additionally, we show that we are able to synthesize approximate system Jacobians purely from rollouts, making the method suitable for model-based reinforcement learning with black-box dynamics. We demonstrate the algorithm has improved sample efficiency and terminal set convergence for three nonlinear, underactuated optimization problems: a classic cartpole swingup task with analytical dynamics, a cartpole swingup task with learned neural network dynamics, and a VTOL quadplane performing a high angle-of-attack, precision post-stall landing maneuver.",
+        "abs_url": "https://arxiv.org/abs/2608.03978v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.03978v1",
+        "research_fit": 48,
+        "video_potential": 31,
+        "matched_topics": [
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "trajectory optimization",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "trajectory optimization"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "evaluation"
+            ],
+            "location": "title",
+            "points": 10.0
+          }
+        ]
+      }
+    }
+  ]
+}
