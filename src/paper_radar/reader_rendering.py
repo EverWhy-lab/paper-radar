@@ -75,7 +75,6 @@ class RecommendationSiteRenderer:
         archive_prefix: str,
         demo_label: str | None = None,
     ) -> dict[str, Any]:
-        archive_dates = self.storage.available_dates() if demo_label is None else []
         return {
             "site_name": self.profile.site_name,
             "github_repo": self.profile.site_github_repo,
@@ -87,10 +86,9 @@ class RecommendationSiteRenderer:
             "asset_prefix": asset_prefix,
             "category_labels": CATEGORY_LABELS,
             "topic_labels": self.profile.topic_labels,
-            "archives": [
-                {"date": date_string, "url": f"{archive_prefix}{date_string}.html"}
-                for date_string in archive_dates
-            ],
+            "archive_url": (
+                "archive.html" if archive_prefix else "../archive.html"
+            ),
             "favorites_url": (
                 "favorites.html" if archive_prefix else "../favorites.html"
             ),
@@ -150,6 +148,7 @@ class RecommendationSiteRenderer:
         )
         if favorites is not None:
             self._render_favorites(favorites)
+        self._render_archive()
         return index_path, self.site_dir / "recommendations" / f"{target_date}.html"
 
     def _render_favorites(self, favorites: list[FavoriteEntry]) -> Path:
@@ -162,6 +161,34 @@ class RecommendationSiteRenderer:
                 favorites=favorites,
                 asset_prefix="assets/",
                 home_url="index.html",
+            ),
+        )
+        return destination
+
+    def _render_archive(self) -> Path:
+        entries = []
+        for date_string in self.storage.available_dates():
+            daily = self.storage.load(date_string)
+            entries.append(
+                {
+                    "date": daily.date,
+                    "url": f"recommendations/{daily.date}.html",
+                    "titles": [
+                        entry.paper.title for entry in daily.recommendations
+                    ],
+                    "count": len(daily.recommendations),
+                }
+            )
+        template = self.environment.get_template("archive.html")
+        destination = self.site_dir / "archive.html"
+        atomic_write_text(
+            destination,
+            template.render(
+                site_name=self.profile.site_name,
+                entries=entries,
+                asset_prefix="assets/",
+                home_url="index.html",
+                favorites_url="favorites.html",
             ),
         )
         return destination
