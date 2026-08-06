@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "date": "2026-08-06",
-  "generated_at": "2026-08-06T11:21:06+08:00",
+  "generated_at": "2026-08-06T12:45:11+08:00",
   "mode": "incremental",
-  "candidate_count": 3197,
-  "historical_candidate_count": 149,
+  "candidate_count": 3167,
+  "historical_candidate_count": 232,
   "recommendation_count": 5,
   "category_counts": {
     "frontier_recent": 1,
@@ -75,36 +75,36 @@
     {
       "canonical_paper_id": "openalex:W4391305509",
       "title": "Advancements in Humanoid Robots: A Comprehensive Review and Future Prospects",
-      "takeaway": "This comprehensive review surveys the state of humanoid robot research across ontology structure, control and decision-making, and perception and interaction, identifying key challenges such as understanding biological motion mechanisms, improving structural design, and enhancing energy efficiency. For the user, this paper provides a broad landscape of humanoid robotics that can inform the selection of research directions and highlight gaps where novel contributions in legged locomotion, manipulation, or learning-based control could be made. It also underscores the value of integrating bionics, brain-inspired intelligence, mechanics, and control, which aligns with the user's interests in optimal control and robot learning for legged systems.",
-      "generated_at": "2026-08-06T03:26:25",
+      "takeaway": "This comprehensive review surveys the current state of humanoid robot research, covering ontology structure, control and decision-making, and perception and interaction, while identifying emerging challenges such as the need for deeper understanding of biological motion mechanisms and improved energy efficiency. For the user, this paper provides a broad landscape of the field, helping to contextualize specific research efforts in legged humanoid robotics and highlighting promising directions such as the integration of bionics, brain-inspired intelligence, mechanics, and control. The user can use this review to identify gaps and opportunities for their own work, for example in designing novel structures or control strategies that draw on biological principles.",
+      "generated_at": "2026-08-06T04:50:20",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W2087485438",
       "title": "Humanoid Robot Locomotion and Manipulation Step Planning",
-      "takeaway": "This paper presents a multi-contact planning framework for humanoid robots that generates sequences of stances and postures for tasks ranging from biped locomotion to dexterous manipulation, using a best-first search guided by a collision-free path and an optimization-based inverse kinematics solver under static equilibrium constraints. The centralized multi-agent approach also supports multi-robot collaborative locomotion and manipulation, with results demonstrated in simulation and on the HRP-2 robot. For the user, this work offers a foundational method for contact-rich planning that can be extended or integrated with modern optimal control or learning-based approaches for legged mobile manipulation, particularly in scenarios requiring coordinated multi-contact transitions.",
-      "generated_at": "2026-08-06T03:26:25",
+      "takeaway": "This paper presents a planning framework for humanoid robots that generates multi-contact sequences of stances and postures, enabling tasks from biped locomotion to dexterous manipulation. The central component is a best-first search algorithm that adds or removes contacts following a collision-free guide path, using an optimization-based inverse kinematics solver under static equilibrium constraints, and it supports multi-robot collaborative scenarios. For the user, this work is directly relevant to mobile manipulation and legged humanoid research, offering a method to plan complex contact transitions that could be integrated with whole-body control or learning-based approaches to enhance the robot's capability in tasks requiring both locomotion and manipulation.",
+      "generated_at": "2026-08-06T04:50:20",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W2771691050",
       "title": "Whole-Body Nonlinear Model Predictive Control Through Contacts for Quadrupeds",
-      "takeaway": "This paper introduces a whole-body nonlinear model predictive control (NMPC) approach for quadrupeds that explicitly incorporates contact dynamics, allowing the solver to optimize contact locations, sequences, and timings rather than prespecifying them, and achieves control rates up to 190 Hz over a half-second horizon. Hardware experiments on two quadrupeds with different actuation systems demonstrate the approach's performance, transferability, and robustness for periodic and nonperiodic tasks. For the user, this work is directly relevant to optimal control for legged robots, providing a state-of-the-art method that can be adapted for whole-body control in mobile manipulation or extended with learning-based components to handle model uncertainties.",
-      "generated_at": "2026-08-06T03:26:25",
+      "takeaway": "This paper introduces a whole-body nonlinear model predictive control (NMPC) approach for quadrupeds that explicitly includes contact dynamics, allowing the solver to optimize contact locations, sequences, and timings rather than prespecifying them. The approach achieves control rates up to 190 Hz over a half-second horizon, outperforming prior methods by at least an order of magnitude, and is validated on two quadrupeds with different actuation systems in periodic and nonperiodic tasks. For the user, this work is highly relevant to optimal control and legged robotics, demonstrating that full-dynamic NMPC with contact optimization is computationally feasible and robust, which could be extended to humanoid or mobile manipulation systems to improve whole-body coordination and adaptability.",
+      "generated_at": "2026-08-06T04:50:20",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W2149606722",
       "title": "Tactile Sensing for Mobile Manipulation",
-      "takeaway": "This paper presents a tactile perception strategy for mobile manipulation that uses a switching velocity-force controller to safely grasp objects and measure deformation properties, and by rolling objects, extract information about their contents, enabling a robot to distinguish open/closed and full/empty bottles and cans purely from tactile sensing. The authors also show that high-frequency tactile signals can detect movement inside containers, and a comparative study with 17 human subjects confirms the difficulty of the recognition task. For the user, this work highlights the value of tactile sensing in mobile manipulation, offering techniques that can be integrated into robotic systems to enhance perception beyond vision, which is crucial for robust manipulation in unstructured environments.",
-      "generated_at": "2026-08-06T03:26:25",
+      "takeaway": "This paper presents a tactile perception strategy for mobile manipulation, where a robot with tactile sensors in its gripper measures deformation properties of objects during grasping and rolling to infer internal states, such as distinguishing open from closed bottles and full from empty ones. The approach uses a switching velocity-force controller for safe grasping and extracts high-frequency tactile information to detect movement inside containers, achieving recognition rates comparable to human subjects. For the user, this work is valuable for mobile manipulation research, as it demonstrates how tactile sensing can complement vision to provide critical object properties, which could be integrated into robot learning pipelines to improve manipulation robustness and enable more informed decision-making in tasks involving deformable or opaque objects.",
+      "generated_at": "2026-08-06T04:50:20",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "arxiv:2604.21030",
       "title": "A Systematic Review and Taxonomy of Reinforcement Learning-Model Predictive Control Integration for Linear Systems",
-      "takeaway": "This systematic literature review provides a taxonomy of RL-MPC integration for linear and linearized systems, organizing studies by RL functional roles, RL algorithm classes, MPC formulations, cost-function structures, and application domains, and synthesizing cross-dimensional patterns. It addresses the fragmented literature on RL-MPC integration, which is relevant for adaptive control under uncertainty and model mismatch. For the user, this review offers a structured overview of how RL can enhance MPC, which is valuable for developing learning-based optimal control strategies for legged robots and mobile manipulation, where model uncertainties and contact dynamics are significant challenges.",
-      "generated_at": "2026-08-06T03:26:25",
+      "takeaway": "This systematic literature review organizes the integration of Model Predictive Control (MPC) and Reinforcement Learning (RL) for linear and linearized systems, proposing a multi-dimensional taxonomy that covers RL functional roles, algorithm classes, MPC formulations, cost-function structures, and application domains. The review synthesizes cross-dimensional patterns and methodological trends, addressing the fragmented literature in this area. For the user, this paper is highly relevant to both optimal control and robot learning, providing a structured overview that can guide the design of RL-MPC hybrid controllers for legged robots or mobile manipulators, where combining MPC's constraint handling with RL's adaptability could improve performance under model uncertainty and changing environments.",
+      "generated_at": "2026-08-06T04:50:20",
       "model": "deepseek-chat"
     }
   ],
