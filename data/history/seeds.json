@@ -4,146 +4,146 @@
     {
       "identifier": "1509.01149",
       "added_at": "2026-08-05T20:11:45+08:00",
-      "openalex_id": null,
+      "openalex_id": "W2123459560",
       "base_arxiv_id": "1509.01149",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.1509.01149",
+      "title": "Model Predictive Path Integral Control using Covariance Variable Importance Sampling"
     },
     {
       "identifier": "2109.11978",
       "added_at": "2026-08-05T20:11:45+08:00",
-      "openalex_id": null,
+      "openalex_id": "W3200962355",
       "base_arxiv_id": "2109.11978",
-      "doi": null,
-      "title": null
+      "doi": "10.3929/ethz-b-000554960",
+      "title": "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning"
     },
     {
       "identifier": "2204.01691",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4224912544",
       "base_arxiv_id": "2204.01691",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2204.01691",
+      "title": "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"
     },
     {
       "identifier": "2207.05608",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4285428875",
       "base_arxiv_id": "2207.05608",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2207.05608",
+      "title": "Inner Monologue: Embodied Reasoning through Planning with Language Models"
     },
     {
       "identifier": "2209.11302",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4297161808",
       "base_arxiv_id": "2209.11302",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2209.11302",
+      "title": "ProgPrompt: Generating Situated Robot Task Plans using Large Language Models"
     },
     {
       "identifier": "2212.06817",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4311559655",
       "base_arxiv_id": "2212.06817",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2212.06817",
+      "title": "RT-1: Robotics Transformer for Real-World Control at Scale"
     },
     {
       "identifier": "2303.03378",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4323572061",
       "base_arxiv_id": "2303.03378",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2303.03378",
+      "title": "PaLM-E: An Embodied Multimodal Language Model"
     },
     {
       "identifier": "2305.16291",
       "added_at": "2026-08-05T19:52:44+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4378505261",
       "base_arxiv_id": "2305.16291",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2305.16291",
+      "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models"
     },
     {
       "identifier": "2307.15818",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4385473486",
       "base_arxiv_id": "2307.15818",
-      "doi": null,
-      "title": null
+      "doi": "10.48550/arxiv.2307.15818",
+      "title": "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control"
     },
     {
       "identifier": "10.1002/rob.21683",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
+      "openalex_id": "W2556468286",
       "base_arxiv_id": null,
       "doi": "10.1002/rob.21683",
-      "title": null
+      "title": "The DARPA Robotics Challenge Finals: Results and Perspectives"
     },
     {
       "identifier": "10.1109/icra48891.2023.10160591",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4383097638",
       "base_arxiv_id": null,
       "doi": "10.1109/icra48891.2023.10160591",
-      "title": null
+      "title": "Code as Policies: Language Model Programs for Embodied Control"
     },
     {
       "identifier": "10.1109/iros51168.2021.9636371",
       "added_at": "2026-08-05T20:11:45+08:00",
-      "openalex_id": null,
+      "openalex_id": "W3093326211",
       "base_arxiv_id": null,
       "doi": "10.1109/iros51168.2021.9636371",
-      "title": null
+      "title": "Whole-Body MPC and Online Gait Sequence Generation for Wheeled-Legged Robots"
     },
     {
       "identifier": "10.1126/scirobotics.aau5872",
       "added_at": "2026-08-05T20:11:45+08:00",
-      "openalex_id": null,
-      "base_arxiv_id": null,
+      "openalex_id": "W2911087563",
+      "base_arxiv_id": "1901.08652",
       "doi": "10.1126/scirobotics.aau5872",
-      "title": null
+      "title": "Learning agile and dynamic motor skills for legged robots"
     },
     {
       "identifier": "10.1146/annurev-control-090419-075625",
       "added_at": "2026-08-05T20:11:45+08:00",
-      "openalex_id": null,
+      "openalex_id": "W2992833799",
       "base_arxiv_id": null,
       "doi": "10.1146/annurev-control-090419-075625",
-      "title": null
+      "title": "Learning-Based Model Predictive Control: Toward Safe Learning in Control"
     },
     {
       "identifier": "10.1177/0278364913488805",
       "added_at": "2026-08-05T20:11:45+08:00",
-      "openalex_id": null,
+      "openalex_id": "W2161819990",
       "base_arxiv_id": null,
       "doi": "10.1177/0278364913488805",
-      "title": null
+      "title": "CHOMP: Covariant Hamiltonian optimization for motion planning"
     },
     {
       "identifier": "10.15607/rss.2012.viii.003",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4237726214",
       "base_arxiv_id": null,
       "doi": "10.15607/rss.2012.viii.003",
-      "title": null
+      "title": "State Estimation for Legged Robots - Consistent Fusion of Leg Kinematics and"
     },
     {
       "identifier": "10.15607/rss.2023.xix.026",
       "added_at": "2026-08-05T20:11:45+08:00",
-      "openalex_id": null,
+      "openalex_id": "W4385403811",
       "base_arxiv_id": null,
       "doi": "10.15607/rss.2023.xix.026",
-      "title": null
+      "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion"
     },
     {
       "identifier": "10.48550/arxiv.1912.01603",
       "added_at": "2026-08-05T20:11:45+08:00",
-      "openalex_id": null,
-      "base_arxiv_id": null,
+      "openalex_id": "W2992977009",
+      "base_arxiv_id": "1912.01603",
       "doi": "10.48550/arxiv.1912.01603",
-      "title": null
+      "title": "Dream to Control: Learning Behaviors by Latent Imagination"
     }
   ]
 }
