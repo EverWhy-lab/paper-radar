@@ -1,7 +1,7 @@
 site:
   name: "Paper Radar"
   timezone: "Asia/Shanghai"
-  github_repo: "lpredoomy/paper-radar"
+  github_repo: "EverWhy-lab/paper-radar"
 
 fetch:
   endpoint: "https://export.arxiv.org/api/query"
