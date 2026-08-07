@@ -197,7 +197,7 @@ def test_old_three_part_guide_is_merged_into_takeaway() -> None:
     assert restored.takeaway == "Does X. Relevant to Y. Worth reading."
 
 
-def test_archive_page_links_all_dates_after_rerender(tmp_path: Path, profile) -> None:
+def test_history_page_links_all_dates_after_rerender(tmp_path: Path, profile) -> None:
     from paper_radar.reader_rendering import RecommendationSiteRenderer
     from paper_radar.reader_storage import RecommendationStorage
 
@@ -233,12 +233,12 @@ def test_archive_page_links_all_dates_after_rerender(tmp_path: Path, profile) ->
     )
     # Per-day pages no longer embed the date list; the Archive page links all dates.
     assert 'href="2026-08-04.html"' not in old_page
-    archive = (tmp_path / "site" / "archive.html").read_text(encoding="utf-8")
+    archive = (tmp_path / "site" / "history.html").read_text(encoding="utf-8")
     assert 'href="recommendations/2026-08-04.html"' in archive
     assert 'href="recommendations/2026-08-03.html"' in archive
 
 
-def test_archive_page_lists_dates_newest_first(tmp_path: Path, profile) -> None:
+def test_history_page_lists_dates_newest_first(tmp_path: Path, profile) -> None:
     from paper_radar.reader_rendering import RecommendationSiteRenderer
     from paper_radar.reader_storage import RecommendationStorage
 
@@ -263,9 +263,9 @@ def test_archive_page_lists_dates_newest_first(tmp_path: Path, profile) -> None:
         "2026-08-05"
     )
 
-    archive = (tmp_path / "site" / "archive.html").read_text(encoding="utf-8")
+    archive = (tmp_path / "site" / "history.html").read_text(encoding="utf-8")
     assert archive.index("2026-08-05") < archive.index("2026-08-03")
     assert "Whole-Body Control for Agile Humanoid Robots 5" in archive
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
-    assert 'href="archive.html"' in index
-    assert "archive-menu" not in index
+    assert 'href="history.html"' in index
+    assert "history-menu" not in index

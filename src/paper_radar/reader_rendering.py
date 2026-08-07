@@ -72,7 +72,7 @@ class RecommendationSiteRenderer:
         daily: DailyRecommendations,
         *,
         asset_prefix: str,
-        archive_prefix: str,
+        recommendations_prefix: str,
         demo_label: str | None = None,
     ) -> dict[str, Any]:
         return {
@@ -86,11 +86,11 @@ class RecommendationSiteRenderer:
             "asset_prefix": asset_prefix,
             "category_labels": CATEGORY_LABELS,
             "topic_labels": self.profile.topic_labels,
-            "archive_url": (
-                "archive.html" if archive_prefix else "../archive.html"
+            "history_url": (
+                "history.html" if recommendations_prefix else "../history.html"
             ),
             "favorites_url": (
-                "favorites.html" if archive_prefix else "../favorites.html"
+                "favorites.html" if recommendations_prefix else "../favorites.html"
             ),
             "demo_label": demo_label,
         }
@@ -101,7 +101,7 @@ class RecommendationSiteRenderer:
         destination: Path,
         *,
         asset_prefix: str,
-        archive_prefix: str,
+        recommendations_prefix: str,
         demo_label: str | None = None,
     ) -> Path:
         template = self.environment.get_template("reader.html")
@@ -111,7 +111,7 @@ class RecommendationSiteRenderer:
                 **self._context(
                     daily,
                     asset_prefix=asset_prefix,
-                    archive_prefix=archive_prefix,
+                    recommendations_prefix=recommendations_prefix,
                     demo_label=demo_label,
                 )
             ),
@@ -135,7 +135,7 @@ class RecommendationSiteRenderer:
                 daily,
                 self.site_dir / "recommendations" / f"{date_string}.html",
                 asset_prefix="../assets/",
-                archive_prefix="",
+                recommendations_prefix="",
             )
         latest_date = dates[0]
         latest = self.storage.load(latest_date)
@@ -144,11 +144,11 @@ class RecommendationSiteRenderer:
             latest,
             index_path,
             asset_prefix="assets/",
-            archive_prefix="recommendations/",
+            recommendations_prefix="recommendations/",
         )
         if favorites is not None:
             self._render_favorites(favorites)
-        self._render_archive()
+        self._render_history()
         return index_path, self.site_dir / "recommendations" / f"{target_date}.html"
 
     def _render_favorites(self, favorites: list[FavoriteEntry]) -> Path:
@@ -161,12 +161,12 @@ class RecommendationSiteRenderer:
                 favorites=favorites,
                 asset_prefix="assets/",
                 home_url="index.html",
-                archive_url="archive.html",
+                history_url="history.html",
             ),
         )
         return destination
 
-    def _render_archive(self) -> Path:
+    def _render_history(self) -> Path:
         entries = []
         for date_string in self.storage.available_dates():
             daily = self.storage.load(date_string)
@@ -180,8 +180,8 @@ class RecommendationSiteRenderer:
                     "count": len(daily.recommendations),
                 }
             )
-        template = self.environment.get_template("archive.html")
-        destination = self.site_dir / "archive.html"
+        template = self.environment.get_template("history.html")
+        destination = self.site_dir / "history.html"
         atomic_write_text(
             destination,
             template.render(
@@ -205,6 +205,6 @@ class RecommendationSiteRenderer:
             daily,
             self.site_dir / "demo" / filename,
             asset_prefix="../assets/",
-            archive_prefix="../recommendations/",
+            recommendations_prefix="../recommendations/",
             demo_label=label,
         )

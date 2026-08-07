@@ -25,9 +25,9 @@
     </div>
     <div class="section-heading"><h2>History</h2></div>
     {% if entries %}
-    <section class="archive-list">
+    <section class="history-list">
       {% for entry in entries %}
-      <article class="archive-item">
+      <article class="history-item">
         <h3><a href="{{ entry.url }}">{{ entry.date }}</a></h3>
         {% if entry.titles %}
         <ul>{% for title in entry.titles %}<li>{{ title }}</li>{% endfor %}</ul>
@@ -38,7 +38,7 @@
       {% endfor %}
     </section>
     {% else %}
-    <section class="empty-state"><h2>No archive yet.</h2></section>
+    <section class="empty-state"><h2>No history yet.</h2></section>
     {% endif %}
   </main>
 </body>
