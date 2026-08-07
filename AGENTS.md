@@ -21,7 +21,6 @@
 - `data/history/seeds.json`: manually maintained discovery seeds
 - `data/reading_pool.json`: user-admitted reading worklist
 - `data/recommendations/`: only zero-to-five daily selections
-- `data/daily/` and `site/archive/`: retained V0.1.1 audit history
 
 ## Commands
 
@@ -69,7 +68,6 @@
 - Dismissals from the web button or CLI permanently exclude the paper and temporarily reduce papers sharing its primary topic; never render dismissed papers.
 - Favorites are stored with full metadata in `data/favorites.json`; candidate cleanup never removes favorites or recommendations.
 - Complete all network work before replacing pool, state, recommendation, or page files. Use atomic JSON/page writes.
-- Preserve the 2026-07-31 legacy data and page as an audit sample.
 
 ## Completion standard
 

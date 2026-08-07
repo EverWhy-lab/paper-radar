@@ -6,7 +6,7 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from paper_radar.models import DailyRadar, Paper, SeenState
+from paper_radar.models import Paper, SeenState
 
 
 class StorageError(RuntimeError):
@@ -40,29 +40,6 @@ class RadarStorage:
         self.data_dir = data_dir
         self.daily_dir = data_dir / "daily"
         self.seen_path = data_dir / "seen_ids.json"
-
-    def daily_path(self, date_string: str) -> Path:
-        return self.daily_dir / f"{date_string}.json"
-
-    def save_daily(self, radar: DailyRadar) -> Path:
-        path = self.daily_path(radar.date)
-        atomic_write_text(
-            path,
-            json.dumps(radar.to_dict(), ensure_ascii=False, indent=2) + "\n",
-        )
-        return path
-
-    def load_daily(self, date_string: str) -> DailyRadar:
-        path = self.daily_path(date_string)
-        try:
-            return DailyRadar.from_dict(json.loads(path.read_text(encoding="utf-8")))
-        except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
-            raise StorageError(f"Unable to read daily radar {path}: {exc}") from exc
-
-    def available_dates(self) -> list[str]:
-        if not self.daily_dir.exists():
-            return []
-        return sorted((path.stem for path in self.daily_dir.glob("*.json")), reverse=True)
 
     def _historical_paper_catalog(self) -> dict[str, dict[str, str]]:
         catalog: dict[str, dict[str, str]] = {}

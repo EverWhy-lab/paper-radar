@@ -8,8 +8,6 @@ Run `.venv/bin/python -m paper_radar serve`, then inspect:
 
 - Current reader: <http://127.0.0.1:8000/>
 - Current recommendation archive under `/recommendations/`
-- Existing five/partial/zero V0.1.2 fixtures under `/demo/`
-- Retained legacy audit only: <http://127.0.0.1:8000/archive/2026-07-31.html>
 - A test-generated or locally prepared recommendation containing one historical-impact and one review/knowledge-map card
 
 ## Historical cards

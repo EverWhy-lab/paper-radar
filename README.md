@@ -162,7 +162,7 @@ Per-query, per-seed, per-run, depth, year, cache lifetime, and request-budget li
 4. **Daily recommendations** — `data/recommendations/YYYY-MM-DD.json`
    - Only the zero to five selected papers rendered on the homepage and recommendation archives.
 
-Seed definitions are stored in `data/history/seeds.json`. arXiv version state remains in `data/seen_ids.json`. The legacy 485-paper `data/daily/2026-07-31.json` and `site/archive/2026-07-31.html` remain as V0.1.1 audit samples and are not part of the current reader experience.
+Seed definitions are stored in `data/history/seeds.json`. arXiv version state remains in `data/seen_ids.json`.
 
 ## Scoring and recommendation policy
 

@@ -194,17 +194,3 @@ class RecommendationSiteRenderer:
         )
         return destination
 
-    def render_demo(
-        self,
-        daily: DailyRecommendations,
-        filename: str,
-        label: str,
-    ) -> Path:
-        self._write_assets()
-        return self._render_document(
-            daily,
-            self.site_dir / "demo" / filename,
-            asset_prefix="../assets/",
-            recommendations_prefix="../recommendations/",
-            demo_label=label,
-        )
