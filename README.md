@@ -2,6 +2,8 @@
 
 Paper Radar is a local personal reader for robotics and embodied-intelligence research. It tracks relevant arXiv frontiers and builds a separate OpenAlex-backed historical discovery pool, then shows at most five papers per day. Selection is transparent and rule-based: the reader does not infer claims from full text or equate citation counts with paper quality. Optionally, DeepSeek writes a short English daily guide for the already-selected papers only, using each paper's own professional terminology.
 
+想自己从零搭一个？见 [docs/BUILD_TUTORIAL.md](docs/BUILD_TUTORIAL.md)（含偏好设置模板和导读提示词）。
+
 ## Install
 
 Requirements: Python 3.11. Live recent-paper runs need access to the official arXiv API. Historical discovery additionally needs an OpenAlex API key, and the optional daily guide needs a DeepSeek API key.
