@@ -1,0 +1,1464 @@
+{
+  "schema_version": 3,
+  "date": "2026-08-07",
+  "generated_at": "2026-08-07T12:11:59+08:00",
+  "mode": "incremental",
+  "candidate_count": 3109,
+  "historical_candidate_count": 232,
+  "recommendation_count": 5,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 3,
+    "journal_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "selection_order": [
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical",
+      "frontier_recent"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 3,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W4319787917",
+      "title": "Model predictive control of legged and humanoid robots: models and algorithms",
+      "takeaway": "This survey provides a structured overview of model predictive control (MPC) for legged and humanoid robots, categorizing dynamical models from reduced-order to whole-body and reviewing algorithms suited to robotic problems. It addresses the challenge of selecting appropriate models and solvers for real-time control, a core concern in optimal control for legged systems. For the user, this paper serves as a comprehensive reference to align their MPC formulations with state-of-the-art practices, potentially guiding the choice of model fidelity and optimization methods for their own legged or humanoid control stacks.",
+      "generated_at": "2026-08-07T04:18:05",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4395116617",
+      "title": "Learning robust autonomous navigation and locomotion for wheeled-legged robots",
+      "takeaway": "This work presents a fully integrated system for wheeled-legged robots combining adaptive locomotion control, mobility-aware local navigation, and large-scale path planning, trained with model-free reinforcement learning and privileged learning. It solves the challenge of seamless walking-driving transitions and robust navigation in urban environments, validated in real-world settings. For the user, this demonstrates a hierarchical RL framework that tightly couples locomotion and navigation, offering a blueprint for developing similar integrated controllers for legged robots in complex terrains, which could be adapted to their own mobile manipulation or navigation tasks.",
+      "generated_at": "2026-08-07T04:18:05",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4205300464",
+      "title": "Reinforced model predictive control (RL-MPC) for building energy management",
+      "takeaway": "This paper compares model predictive control (MPC) and reinforcement learning (RL) for building energy management and proposes a novel algorithm, RL-MPC, that merges their complementary strengths—constraint satisfaction from MPC and adaptability from RL. The results in the BOPTEST framework show that pure RL struggles with constraint satisfaction, while RL-MPC effectively combines both approaches. Although focused on buildings, the RL-MPC concept is transferable to robotics, where combining MPC's safety guarantees with RL's learning capabilities could enhance optimal control for legged robots or mobile manipulators, especially in uncertain or dynamic environments.",
+      "generated_at": "2026-08-07T04:18:05",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2143936212",
+      "title": "Combined Task and Motion Planning for Mobile Manipulation",
+      "takeaway": "This paper introduces a hierarchical planning system for mobile manipulation that integrates task and motion planning, leveraging subtask-specific irrelevance to reuse optimal solutions across the search space. It addresses the challenge of finding high-quality kinematic solutions for task-level problems, demonstrated on pick-and-place tasks. For the user, this foundational work on combined task and motion planning is relevant to mobile manipulation research, providing a framework that could be extended with modern learning-based approaches or integrated into whole-body control pipelines for more complex manipulation tasks.",
+      "generated_at": "2026-08-07T04:18:05",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.06375",
+      "title": "$ω$-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation",
+      "takeaway": "This paper presents ω-0, a latent predictive whole-body world-action model for concurrent humanoid loco-manipulation, which directly predicts controller-compatible whole-body action latents from language, vision, and proprioception, avoiding video reconstruction. It introduces a lightweight predictive objective and leverages controller-based simulation replay to ground visual-motion priors into executable actions, supported by a new 40+ hour real-world dataset (ω-HOME). For the user, this work is highly relevant to robot learning and mobile manipulation, offering a novel approach to unify locomotion and manipulation in humanoid robots, which could inspire similar latent world-action models for their own research on integrated whole-body control.",
+      "generated_at": "2026-08-07T04:18:05",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "research_fit 38 ≥ 18",
+        "核心方向：legged_humanoid, optimal_control",
+        "特定关键词：humanoid robots, model predictive control, MPC",
+        "historical_value_score 73.9 ≥ 50.0",
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 1.8%",
+        "OpenAlex FWCI 6.59",
+        "近 2 年年均引用 29.0；此前 2 年年均 12.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-06T04:28:06"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4319787917",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4319787917",
+        "openalex_id": "W4319787917",
+        "base_arxiv_id": null,
+        "doi": "10.1080/01691864.2023.2168134",
+        "title": "Model predictive control of legged and humanoid robots: models and algorithms",
+        "authors": [
+          "Sotaro Katayama",
+          "Masaki Murooka",
+          "Yuichi Tazaki"
+        ],
+        "abstract": "Model predictive control (MPC) of legged and humanoid robotic systems has been an active research topic in the past decade. While MPC for robotic systems has a long history, its paradigm such as problem formulations and algorithms has changed along with the recent drastic progress in robot hardware, computational processors, and algorithms. This survey paper reviews recent progress on MPC for legged and humanoid robotics from the following three points of view. First, we review a variety of dynamical models of robotic systems used in the MPC formulation. Second, we give an overview of MPC algorithms, particularly focusing on suitable ones for robotic problems. Finally, we introduce methods and applications of MPC for practical robotic problems from MPC based on reduced-order models to recent progress on MPC based on whole-body models.",
+        "publication_date": "2023-02-09",
+        "publication_year": 2023,
+        "source_name": "Advanced Robotics",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9995999932289124
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.9952999949455261
+          },
+          {
+            "id": "https://openalex.org/T10441",
+            "display_name": "Muscle Physiology and Disorders",
+            "score": 0.9811000227928162
+          }
+        ],
+        "cited_by_count": 82,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 49
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 6.5851,
+        "citation_normalized_percentile": 0.98227948,
+        "referenced_works": [
+          "W198732646",
+          "W393689543",
+          "W618254468",
+          "W1431688706",
+          "W1535210759",
+          "W1552665521",
+          "W1562460111",
+          "W1603657390",
+          "W1874049655",
+          "W1945123189",
+          "W1966552874",
+          "W1968859249",
+          "W1969752069",
+          "W1970101292",
+          "W1971930153",
+          "W1973195195",
+          "W1980151151",
+          "W1986621758",
+          "W1994275787",
+          "W1999502602",
+          "W2000535285",
+          "W2000975219",
+          "W2002804012",
+          "W2003132288",
+          "W2013439434",
+          "W2016468033",
+          "W2018860673",
+          "W2021848705",
+          "W2025752438",
+          "W2033480951",
+          "W2037678919",
+          "W2040164128",
+          "W2041434319",
+          "W2041550061",
+          "W2042408133",
+          "W2049670620",
+          "W2056223738",
+          "W2061983716",
+          "W2070507784",
+          "W2072241589",
+          "W2074042377",
+          "W2079995373",
+          "W2082056119",
+          "W2084891258",
+          "W2084959384",
+          "W2085897137",
+          "W2101340954",
+          "W2108447956",
+          "W2110194613",
+          "W2116528556",
+          "W2116773335",
+          "W2117271243",
+          "W2117402460",
+          "W2120693140",
+          "W2123871098",
+          "W2124659975",
+          "W2127895608",
+          "W2130527887",
+          "W2133304166",
+          "W2133859362",
+          "W2139372276",
+          "W2143729862",
+          "W2144351850",
+          "W2145148135",
+          "W2153190828",
+          "W2158058858",
+          "W2158782408",
+          "W2164957979",
+          "W2198582666",
+          "W2199168279",
+          "W2204604557",
+          "W2217484997",
+          "W2333533581",
+          "W2410758815",
+          "W2411798942",
+          "W2461181622",
+          "W2477962321",
+          "W2491414412",
+          "W2519452711",
+          "W2529220408",
+          "W2560504659",
+          "W2563439850",
+          "W2564178275",
+          "W2567729074",
+          "W2569324215",
+          "W2571129017",
+          "W2578079017",
+          "W2590305599",
+          "W2593996575",
+          "W2607001947",
+          "W2614308505",
+          "W2762555062",
+          "W2763052367",
+          "W2766984896",
+          "W2769646558",
+          "W2771123153",
+          "W2771495741",
+          "W2771691050",
+          "W2772157100",
+          "W2774990687",
+          "W2776302298",
+          "W2783824884",
+          "W2789286310",
+          "W2804452275",
+          "W2804623852",
+          "W2842089854",
+          "W2850053679",
+          "W2890933152",
+          "W2891095726",
+          "W2893725532",
+          "W2898868201",
+          "W2906487027",
+          "W2909331752",
+          "W2909553221",
+          "W2911477000",
+          "W2944561196",
+          "W2946514473",
+          "W2948652605",
+          "W2951069078",
+          "W2951805468",
+          "W2954730031",
+          "W2963536429",
+          "W2964111918",
+          "W2968213087",
+          "W2968827721",
+          "W2969111820",
+          "W2970053571",
+          "W2970228732",
+          "W2972798201",
+          "W2980301669",
+          "W3003712039",
+          "W3004162504",
+          "W3004201008",
+          "W3004240161",
+          "W3006866161",
+          "W3012148556",
+          "W3013679533",
+          "W3033272118",
+          "W3036870219",
+          "W3039843183",
+          "W3041042960",
+          "W3041567964",
+          "W3046286341",
+          "W3047960023",
+          "W3081791272",
+          "W3089750699",
+          "W3090207068",
+          "W3093326211",
+          "W3098680447",
+          "W3099530328",
+          "W3101144081",
+          "W3101798601",
+          "W3102212813",
+          "W3102337601",
+          "W3103075896",
+          "W3103727237",
+          "W3104730803",
+          "W3105372678",
+          "W3109186372",
+          "W3138294267",
+          "W3141339240",
+          "W3142410314",
+          "W3148610713",
+          "W3155272911",
+          "W3155859492",
+          "W3162655786",
+          "W3169802677",
+          "W3171189531",
+          "W3176455058",
+          "W3180158572",
+          "W3184213034",
+          "W3187891773",
+          "W3197219002",
+          "W3198442109",
+          "W3199300111",
+          "W3201707474",
+          "W3205843978",
+          "W3206338439",
+          "W3206363598",
+          "W3206363916",
+          "W3207305612",
+          "W3207637958",
+          "W3211963501",
+          "W4200630450",
+          "W4210612168",
+          "W4210990956",
+          "W4232371162",
+          "W4233061490",
+          "W4239766304",
+          "W4246876444",
+          "W4249010688",
+          "W4250058668",
+          "W4255043376",
+          "W4285028015",
+          "W4285102283",
+          "W4287080408",
+          "W4287326512",
+          "W4301014524"
+        ],
+        "related_works": [
+          "W2745063183",
+          "W4256317079",
+          "W2129850190",
+          "W2295425790",
+          "W4389009354",
+          "W1974803039",
+          "W1991876829",
+          "W2088677124",
+          "W1589423663",
+          "W1990079087"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W3093326211"
+        ],
+        "discovered_at": "2026-08-06T04:28:06",
+        "last_considered_at": "2026-08-07T12:11:59+08:00",
+        "recommended_at": "2026-08-07T12:11:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-06T04:28:06",
+        "openalex_url": "https://openalex.org/W4319787917",
+        "landing_page_url": "https://doi.org/10.1080/01691864.2023.2168134",
+        "open_access_url": "https://doi.org/10.1080/01691864.2023.2168134",
+        "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/01691864.2023.2168134?download=true",
+        "research_fit": 38,
+        "video_potential": 41,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "humanoid robots",
+          "model predictive control",
+          "MPC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "humanoid robots"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "historical_value_score": 73.9,
+        "historical_score_components": {
+          "research_relevance": 38.0,
+          "normalized_citation": 98.2,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2023 年",
+          "同领域同年份引用标准化位于前 1.8%",
+          "OpenAlex FWCI 6.59",
+          "近 2 年年均引用 29.0；此前 2 年年均 12.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "paper": {
+        "arxiv_id": "openalex:W4319787917",
+        "base_id": "openalex:W4319787917",
+        "version": 1,
+        "title": "Model predictive control of legged and humanoid robots: models and algorithms",
+        "authors": [
+          "Sotaro Katayama",
+          "Masaki Murooka",
+          "Yuichi Tazaki"
+        ],
+        "published": "2023-02-09T00:00:00Z",
+        "updated": "2023-02-09T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Model predictive control (MPC) of legged and humanoid robotic systems has been an active research topic in the past decade. While MPC for robotic systems has a long history, its paradigm such as problem formulations and algorithms has changed along with the recent drastic progress in robot hardware, computational processors, and algorithms. This survey paper reviews recent progress on MPC for legged and humanoid robotics from the following three points of view. First, we review a variety of dynamical models of robotic systems used in the MPC formulation. Second, we give an overview of MPC algorithms, particularly focusing on suitable ones for robotic problems. Finally, we introduce methods and applications of MPC for practical robotic problems from MPC based on reduced-order models to recent progress on MPC based on whole-body models.",
+        "abs_url": "https://doi.org/10.1080/01691864.2023.2168134",
+        "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/01691864.2023.2168134?download=true",
+        "research_fit": 38,
+        "video_potential": 41,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "humanoid robots",
+          "model predictive control",
+          "MPC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "humanoid robots"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 30 ≥ 18",
+        "核心方向：legged_humanoid, robot_learning",
+        "特定关键词：legged robots",
+        "historical_value_score 69.4 ≥ 42.0",
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 0.4%",
+        "OpenAlex FWCI 13.40",
+        "近 2 年年均引用 49.0；此前 1 年年均 10.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-06T04:28:06"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4395116617",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4395116617",
+        "openalex_id": "W4395116617",
+        "base_arxiv_id": "2405.01792",
+        "doi": "10.1126/scirobotics.adi9641",
+        "title": "Learning robust autonomous navigation and locomotion for wheeled-legged robots",
+        "authors": [
+          "Joonho Lee",
+          "Marko Bjelonic",
+          "Alexander Reske",
+          "Lorenz Wellhausen",
+          "Takahiro Miki",
+          "Marco Hutter"
+        ],
+        "abstract": "Autonomous wheeled-legged robots have the potential to transform logistics systems, improving operational efficiency and adaptability in urban environments. Navigating urban environments, however, poses unique challenges for robots, necessitating innovative solutions for locomotion and navigation. These challenges include the need for adaptive locomotion across varied terrains and the ability to navigate efficiently around complex dynamic obstacles. This work introduces a fully integrated system comprising adaptive locomotion control, mobility-aware local navigation planning, and large-scale path planning within the city. Using model-free reinforcement learning (RL) techniques and privileged learning, we developed a versatile locomotion controller. This controller achieves efficient and robust locomotion over various rough terrains, facilitated by smooth transitions between walking and driving modes. It is tightly integrated with a learned navigation controller through a hierarchical RL framework, enabling effective navigation through challenging terrain and various obstacles at high speed. Our controllers are integrated into a large-scale urban navigation system and validated by autonomous, kilometer-scale navigation missions conducted in Zurich, Switzerland, and Seville, Spain. These missions demonstrate the system's robustness and adaptability, underscoring the importance of integrated control systems in achieving seamless navigation in complex environments. Our findings support the feasibility of wheeled-legged robots and hierarchical RL for autonomous navigation, with implications for last-mile delivery and beyond.",
+        "publication_date": "2024-04-24",
+        "publication_year": 2024,
+        "source_name": "Science Robotics",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9995999932289124
+          },
+          {
+            "id": "https://openalex.org/T11978",
+            "display_name": "Soil Mechanics and Vehicle Dynamics",
+            "score": 0.946399986743927
+          },
+          {
+            "id": "https://openalex.org/T12644",
+            "display_name": "Wildlife-Road Interactions and Conservation",
+            "score": 0.9319999814033508
+          }
+        ],
+        "cited_by_count": 108,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 60
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 10
+          }
+        ],
+        "fwci": 13.3953,
+        "citation_normalized_percentile": 0.99635631,
+        "referenced_works": [
+          "W2005805981",
+          "W2132022337",
+          "W2159220301",
+          "W2169528473",
+          "W2173379916",
+          "W2336281863",
+          "W2725489675",
+          "W2755158994",
+          "W2793991136",
+          "W2811027829",
+          "W2911087563",
+          "W2912365230",
+          "W2951633861",
+          "W2963129648",
+          "W2963465704",
+          "W2967847744",
+          "W2968031102",
+          "W3000916453",
+          "W3003817470",
+          "W3010768390",
+          "W3011481717",
+          "W3039235589",
+          "W3080433405",
+          "W3093326211",
+          "W3093922502",
+          "W3099726730",
+          "W3101817006",
+          "W3104876774",
+          "W3110378871",
+          "W3112664346",
+          "W3127756416",
+          "W3132408792",
+          "W3140042148",
+          "W3158253560",
+          "W3202883604",
+          "W3206495137",
+          "W3214103722",
+          "W4205430897",
+          "W4210491718",
+          "W4224292538",
+          "W4226143977",
+          "W4233654529",
+          "W4250058668",
+          "W4281479885",
+          "W4293160779",
+          "W4312441173",
+          "W4312574175",
+          "W4312749288",
+          "W4312939545",
+          "W4313598842",
+          "W4317877696",
+          "W4360976217",
+          "W4387476016"
+        ],
+        "related_works": [
+          "W2357124094",
+          "W2387399993",
+          "W2389739210",
+          "W2348924972",
+          "W2365736347",
+          "W2047454415",
+          "W2070040999",
+          "W2387293848",
+          "W2250140200",
+          "W4285089922"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W3093326211"
+        ],
+        "discovered_at": "2026-08-06T04:28:06",
+        "last_considered_at": "2026-08-07T12:11:59+08:00",
+        "recommended_at": "2026-08-07T12:11:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-06T04:28:06",
+        "openalex_url": "https://openalex.org/W4395116617",
+        "landing_page_url": "https://doi.org/10.1126/scirobotics.adi9641",
+        "open_access_url": "http://arxiv.org/abs/2405.01792",
+        "pdf_url": "https://arxiv.org/pdf/2405.01792",
+        "research_fit": 30,
+        "video_potential": 35,
+        "matched_topics": [
+          "legged_humanoid",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "legged robots",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "legged robots"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          }
+        ],
+        "historical_value_score": 69.4,
+        "historical_score_components": {
+          "research_relevance": 30.0,
+          "normalized_citation": 99.6,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2024 年",
+          "同领域同年份引用标准化位于前 0.4%",
+          "OpenAlex FWCI 13.40",
+          "近 2 年年均引用 49.0；此前 1 年年均 10.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "2405.01792",
+        "base_id": "2405.01792",
+        "version": 1,
+        "title": "Learning robust autonomous navigation and locomotion for wheeled-legged robots",
+        "authors": [
+          "Joonho Lee",
+          "Marko Bjelonic",
+          "Alexander Reske",
+          "Lorenz Wellhausen",
+          "Takahiro Miki",
+          "Marco Hutter"
+        ],
+        "published": "2024-04-24T00:00:00Z",
+        "updated": "2024-04-24T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Autonomous wheeled-legged robots have the potential to transform logistics systems, improving operational efficiency and adaptability in urban environments. Navigating urban environments, however, poses unique challenges for robots, necessitating innovative solutions for locomotion and navigation. These challenges include the need for adaptive locomotion across varied terrains and the ability to navigate efficiently around complex dynamic obstacles. This work introduces a fully integrated system comprising adaptive locomotion control, mobility-aware local navigation planning, and large-scale path planning within the city. Using model-free reinforcement learning (RL) techniques and privileged learning, we developed a versatile locomotion controller. This controller achieves efficient and robust locomotion over various rough terrains, facilitated by smooth transitions between walking and driving modes. It is tightly integrated with a learned navigation controller through a hierarchical RL framework, enabling effective navigation through challenging terrain and various obstacles at high speed. Our controllers are integrated into a large-scale urban navigation system and validated by autonomous, kilometer-scale navigation missions conducted in Zurich, Switzerland, and Seville, Spain. These missions demonstrate the system's robustness and adaptability, underscoring the importance of integrated control systems in achieving seamless navigation in complex environments. Our findings support the feasibility of wheeled-legged robots and hierarchical RL for autonomous navigation, with implications for last-mile delivery and beyond.",
+        "abs_url": "https://arxiv.org/abs/2405.01792",
+        "pdf_url": "https://arxiv.org/pdf/2405.01792",
+        "research_fit": 30,
+        "video_potential": 35,
+        "matched_topics": [
+          "legged_humanoid",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "legged robots",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "legged robots"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 28 ≥ 18",
+        "核心方向：optimal_control, robot_learning",
+        "特定关键词：model predictive control, MPC",
+        "historical_value_score 64.8 ≥ 42.0",
+        "发表于 2022 年",
+        "同领域同年份引用标准化位于前 0.2%",
+        "OpenAlex FWCI 19.18",
+        "近 2 年年均引用 60.0；此前 2 年年均 50.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-06T04:28:09"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4205300464",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4205300464",
+        "openalex_id": "W4205300464",
+        "base_arxiv_id": null,
+        "doi": "10.1016/j.apenergy.2021.118346",
+        "title": "Reinforced model predictive control (RL-MPC) for building energy management",
+        "authors": [
+          "Javier Arroyo",
+          "Carlo Manna",
+          "Fred Spiessens",
+          "Lieve Helsen"
+        ],
+        "abstract": "Buildings need advanced control for the efficient and climate-neutral use of their energy systems. Model predictive control (MPC) and reinforcement learning (RL) arise as two powerful control techniques that have been extensively investigated in the literature for their application to building energy management. These methods show complementary qualities in terms of constraint satisfaction, computational demand, adaptability, and intelligibility, but usually a choice is made between both approaches. This paper compares both control approaches and proposes a novel algorithm called reinforced predictive control (RL-MPC) that merges their relative merits. First, the complementarity between RL and MPC is emphasized on a conceptual level by commenting on the main aspects of each method. Second, the RL-MPC algorithm is described that effectively combines features from each approach, namely state estimation, dynamic optimization, and learning. Finally, MPC, RL, and RL-MPC are implemented and evaluated in BOPTEST, a standardized simulation framework for the assessment of advanced control algorithms in buildings. The results indicate that pure RL cannot provide constraint satisfaction when using a control formulation equivalent to MPC and the same controller model for learning. The new RL-MPC algorithm can meet constraints and provide similar performance to MPC while enabling continuous learning and the possibility to deal with uncertain environments.",
+        "publication_date": "2022-01-07",
+        "publication_year": 2022,
+        "source_name": "Applied Energy",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10791",
+            "display_name": "Advanced Control Systems Optimization",
+            "score": 0.9988999962806702
+          },
+          {
+            "id": "https://openalex.org/T10121",
+            "display_name": "Building Energy and Comfort Optimization",
+            "score": 0.9977999925613403
+          },
+          {
+            "id": "https://openalex.org/T10603",
+            "display_name": "Smart Grid Energy Management",
+            "score": 0.9930999875068665
+          }
+        ],
+        "cited_by_count": 234,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 82
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 63
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 37
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 19.1767,
+        "citation_normalized_percentile": 0.9983723,
+        "referenced_works": [
+          "W1552654126",
+          "W1560495008",
+          "W1908007089",
+          "W1988382136",
+          "W2003514920",
+          "W2006392151",
+          "W2011938518",
+          "W2048047354",
+          "W2058023128",
+          "W2096018174",
+          "W2110706603",
+          "W2145339207",
+          "W2154892255",
+          "W2220986280",
+          "W2289385313",
+          "W2402261827",
+          "W2407388741",
+          "W2526344123",
+          "W2700407638",
+          "W2731968416",
+          "W2734611975",
+          "W2737452968",
+          "W2746553466",
+          "W2765650568",
+          "W2772709170",
+          "W2791704483",
+          "W2792270834",
+          "W2794243362",
+          "W2801379499",
+          "W2811015419",
+          "W2822752092",
+          "W2842089854",
+          "W2886605681",
+          "W2889731659",
+          "W2900981450",
+          "W2901645090",
+          "W2902257695",
+          "W2930426397",
+          "W2948652605",
+          "W2964657419",
+          "W2979599048",
+          "W2982984621",
+          "W2985363569",
+          "W2990232357",
+          "W2992833799",
+          "W2998677801",
+          "W3033217105",
+          "W3082528606",
+          "W3085930940",
+          "W3090789943",
+          "W3110911968",
+          "W3138294267",
+          "W3153654730",
+          "W3155630619",
+          "W3199664591",
+          "W3209188603",
+          "W4212997115",
+          "W4235620347",
+          "W4285822485",
+          "W4288363736",
+          "W4293396018",
+          "W4298206671",
+          "W4298857966",
+          "W4301075635",
+          "W64413007",
+          "W6633217082",
+          "W6636463642",
+          "W6637677336",
+          "W6740033195",
+          "W6752580719",
+          "W6769408332",
+          "W6798420348",
+          "W7019214804"
+        ],
+        "related_works": [
+          "W2042246031",
+          "W2086091970",
+          "W2348924972",
+          "W2357124094",
+          "W2387399993",
+          "W2389739210",
+          "W2625935233",
+          "W2767128392",
+          "W4205300464",
+          "W4313469555"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works",
+          "seed_graph:related_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W2992833799"
+        ],
+        "discovered_at": "2026-08-06T04:28:09",
+        "last_considered_at": "2026-08-07T12:11:59+08:00",
+        "recommended_at": "2026-08-07T12:11:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-06T04:28:09",
+        "openalex_url": "https://openalex.org/W4205300464",
+        "landing_page_url": "https://doi.org/10.1016/j.apenergy.2021.118346",
+        "open_access_url": "https://doi.org/10.1016/j.apenergy.2021.118346",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0306261921015932/pdf",
+        "research_fit": 28,
+        "video_potential": 16,
+        "matched_topics": [
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "model predictive control",
+          "MPC",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          }
+        ],
+        "historical_value_score": 64.8,
+        "historical_score_components": {
+          "research_relevance": 28.0,
+          "normalized_citation": 99.8,
+          "fwci": 100.0,
+          "citation_momentum": 60.0,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2022 年",
+          "同领域同年份引用标准化位于前 0.2%",
+          "OpenAlex FWCI 19.18",
+          "近 2 年年均引用 60.0；此前 2 年年均 50.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W4205300464",
+        "base_id": "openalex:W4205300464",
+        "version": 1,
+        "title": "Reinforced model predictive control (RL-MPC) for building energy management",
+        "authors": [
+          "Javier Arroyo",
+          "Carlo Manna",
+          "Fred Spiessens",
+          "Lieve Helsen"
+        ],
+        "published": "2022-01-07T00:00:00Z",
+        "updated": "2022-01-07T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Buildings need advanced control for the efficient and climate-neutral use of their energy systems. Model predictive control (MPC) and reinforcement learning (RL) arise as two powerful control techniques that have been extensively investigated in the literature for their application to building energy management. These methods show complementary qualities in terms of constraint satisfaction, computational demand, adaptability, and intelligibility, but usually a choice is made between both approaches. This paper compares both control approaches and proposes a novel algorithm called reinforced predictive control (RL-MPC) that merges their relative merits. First, the complementarity between RL and MPC is emphasized on a conceptual level by commenting on the main aspects of each method. Second, the RL-MPC algorithm is described that effectively combines features from each approach, namely state estimation, dynamic optimization, and learning. Finally, MPC, RL, and RL-MPC are implemented and evaluated in BOPTEST, a standardized simulation framework for the assessment of advanced control algorithms in buildings. The results indicate that pure RL cannot provide constraint satisfaction when using a control formulation equivalent to MPC and the same controller model for learning. The new RL-MPC algorithm can meet constraints and provide similar performance to MPC while enabling continuous learning and the possibility to deal with uncertain environments.",
+        "abs_url": "https://doi.org/10.1016/j.apenergy.2021.118346",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0306261921015932/pdf",
+        "research_fit": 28,
+        "video_potential": 16,
+        "matched_topics": [
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "model predictive control",
+          "MPC",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 20 ≥ 18",
+        "核心方向：mobile_manipulation",
+        "特定关键词：mobile manipulation",
+        "historical_value_score 56.5 ≥ 42.0",
+        "发表于 2010 年",
+        "同领域同年份引用标准化位于前 0.8%",
+        "OpenAlex FWCI 12.29",
+        "近 2 年年均引用 3.5；此前 2 年年均 8.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:01"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2143936212",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2143936212",
+        "openalex_id": "W2143936212",
+        "base_arxiv_id": null,
+        "doi": "10.1609/icaps.v20i1.13436",
+        "title": "Combined Task and Motion Planning for Mobile Manipulation",
+        "authors": [
+          "Jason Wolfe",
+          "Bhaskara Marthi",
+          "Stuart Russell"
+        ],
+        "abstract": "We present a hierarchical planning system and its application to robotic manipulation. The novel features of the system are: 1) it finds high-quality kinematic solutions to task-level problems; 2) it takes advantage of subtask-specific irrelevance information, reusing optimal solutions to state-abstracted subproblems across the search space. We briefly describe how the system handles uncertainty during plan execution, and present results on discrete problems as well as pick-and-place tasks for a mobile robot.",
+        "publication_date": "2010-05-05",
+        "publication_year": 2010,
+        "source_name": "Proceedings of the International Conference on Automated Planning and Scheduling",
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10906",
+            "display_name": "AI-based Problem Solving and Planning",
+            "score": 0.9995999932289124
+          },
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9991000294685364
+          },
+          {
+            "id": "https://openalex.org/T11010",
+            "display_name": "Logic, Reasoning, and Knowledge",
+            "score": 0.9925000071525574
+          }
+        ],
+        "cited_by_count": 207,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 11
+          }
+        ],
+        "fwci": 12.2932,
+        "citation_normalized_percentile": 0.99216675,
+        "referenced_works": [
+          "W50425026",
+          "W1594698162",
+          "W1604397311",
+          "W1816489643",
+          "W1968254796",
+          "W1976800061",
+          "W1981627423",
+          "W2101155486",
+          "W2121196653",
+          "W2121517924",
+          "W2125880285",
+          "W2147357263",
+          "W2154612730",
+          "W2180809782",
+          "W3098759087",
+          "W4301120924",
+          "W6636196753",
+          "W6645670200",
+          "W6675319670",
+          "W6681794749",
+          "W6685563238",
+          "W6785369104"
+        ],
+        "related_works": [
+          "W1904098742",
+          "W3158921809",
+          "W1980828932",
+          "W2161428574",
+          "W2618632915",
+          "W2077416514",
+          "W4292862729",
+          "W2150982344",
+          "W2157678966",
+          "W2067790096"
+        ],
+        "discovery_source": [
+          "topic_search:mobile manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:01",
+        "last_considered_at": "2026-08-07T12:11:59+08:00",
+        "recommended_at": "2026-08-07T12:11:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:01",
+        "openalex_url": "https://openalex.org/W2143936212",
+        "landing_page_url": "https://doi.org/10.1609/icaps.v20i1.13436",
+        "open_access_url": "https://doi.org/10.1609/icaps.v20i1.13436",
+        "pdf_url": "https://ojs.aaai.org/index.php/ICAPS/article/download/13436/13285",
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "historical_value_score": 56.5,
+        "historical_score_components": {
+          "research_relevance": 20.0,
+          "normalized_citation": 99.2,
+          "fwci": 100.0,
+          "citation_momentum": 21.9,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2010 年",
+          "同领域同年份引用标准化位于前 0.8%",
+          "OpenAlex FWCI 12.29",
+          "近 2 年年均引用 3.5；此前 2 年年均 8.0",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W2143936212",
+        "base_id": "openalex:W2143936212",
+        "version": 1,
+        "title": "Combined Task and Motion Planning for Mobile Manipulation",
+        "authors": [
+          "Jason Wolfe",
+          "Bhaskara Marthi",
+          "Stuart Russell"
+        ],
+        "published": "2010-05-05T00:00:00Z",
+        "updated": "2010-05-05T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "We present a hierarchical planning system and its application to robotic manipulation. The novel features of the system are: 1) it finds high-quality kinematic solutions to task-level problems; 2) it takes advantage of subtask-specific irrelevance information, reusing optimal solutions to state-abstracted subproblems across the search space. We briefly describe how the system handles uncertainty during plan execution, and present results on discrete problems as well as pick-and-place tasks for a mobile robot.",
+        "abs_url": "https://doi.org/10.1609/icaps.v20i1.13436",
+        "pdf_url": "https://ojs.aaai.org/index.php/ICAPS/article/download/13436/13285",
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 61 ≥ 40",
+        "Core topics matched: mobile_manipulation, robot_learning, vla_foundation",
+        "Specific keywords matched: loco-manipulation, loco manipulation, locomotion and manipulation, VLA",
+        "Diversity topic: mobile_manipulation"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.06375",
+      "historical_paper": null,
+      "paper": {
+        "arxiv_id": "2608.06375v1",
+        "base_id": "2608.06375",
+        "version": 1,
+        "title": "$ω$-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation",
+        "authors": [
+          "Zhe Li",
+          "Zhenzhe Zhang",
+          "Yangyang Wei",
+          "Wenjie Zhang",
+          "Xichen Yuan",
+          "Peiyuan Zhi",
+          "Gen Li",
+          "Xinying Guo",
+          "Fengjie Gao",
+          "Jianfei Yang",
+          "Shanghang Zhang"
+        ],
+        "published": "2026-08-06T17:59:31Z",
+        "updated": "2026-08-06T17:59:31Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Humanoid household tasks often require concurrent loco-manipulation, where the robot must move, adjust posture, maintain balance, and manipulate objects as a single coordinated behavior. Yet existing humanoid policies typically decompose locomotion and manipulation, while recent world-action models remain either arm-centric or video-centered. We present $ω$-0, a latent predictive whole-body world-action model for real-world humanoid concurrent loco-manipulation. Given a language instruction, current visual observation, and robot proprioceptive state, $ω$-0 directly predicts controller-compatible whole-body action latents for real-robot execution. Rather than reconstructing future videos, $ω$-0 learns compact future observation embeddings as a lightweight predictive objective, coupling latent visual foresight with diffusion-based whole-body action generation. The model supports egocentric RGB, exocentric RGB, and exocentric depth inputs, and leverages controller-based simulation replay to ground human/public visual-motion priors into robot-executable action latents. We further collect $ω$-HOME, a 40+ hour real-world household humanoid dataset with synchronized multi-view observations, whole-body SMPL motions, robot states, and action latents. Real-world experiments on 11 household tasks demonstrate that a single $ω$-0 model can produce smooth manipulate-while-moving behaviors and consistently outperform representative imitation learning, VLA, humanoid, and WAM baselines.",
+        "abs_url": "https://arxiv.org/abs/2608.06375v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.06375v1",
+        "research_fit": 61,
+        "video_potential": 84,
+        "matched_topics": [
+          "mobile_manipulation",
+          "robot_learning",
+          "vla_foundation"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "loco manipulation",
+          "locomotion and manipulation",
+          "imitation learning",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "loco manipulation",
+              "locomotion and manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "topic",
+            "label": "VLA & Foundation Models",
+            "keywords": [
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 11.1
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "locomotion",
+              "whole-body"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "outperform"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    }
+  ]
+}
