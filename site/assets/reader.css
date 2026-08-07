@@ -36,7 +36,7 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spa
 .daily-summary strong { color: var(--accent); font: 700 28px ui-monospace, monospace; }
 .daily-summary span { color: var(--muted); font-size: 12px; }
 .daily-summary p { max-width: 410px; margin: 0; color: var(--faint); font-size: 12px; text-align: right; }
-.navigation-row { display: flex; justify-content: space-between; gap: 20px; align-items: start; margin-bottom: 42px; }
+.navigation-row { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin: 10px 0 32px; }
 .section-heading { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
 .section-heading span { color: var(--accent); font: 700 10px ui-monospace, monospace; letter-spacing: .12em; }
 .section-heading h2 { margin: 0; font-size: 21px; }
