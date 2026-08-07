@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "date": "2026-08-07",
-  "generated_at": "2026-08-07T12:11:59+08:00",
+  "generated_at": "2026-08-07T18:40:48+08:00",
   "mode": "incremental",
-  "candidate_count": 3109,
+  "candidate_count": 2971,
   "historical_candidate_count": 232,
   "recommendation_count": 5,
   "category_counts": {
@@ -75,36 +75,36 @@
     {
       "canonical_paper_id": "openalex:W4319787917",
       "title": "Model predictive control of legged and humanoid robots: models and algorithms",
-      "takeaway": "This survey provides a structured overview of model predictive control (MPC) for legged and humanoid robots, categorizing dynamical models from reduced-order to whole-body and reviewing algorithms suited to robotic problems. It addresses the challenge of selecting appropriate models and solvers for real-time control, a core concern in optimal control for legged systems. For the user, this paper serves as a comprehensive reference to align their MPC formulations with state-of-the-art practices, potentially guiding the choice of model fidelity and optimization methods for their own legged or humanoid control stacks.",
-      "generated_at": "2026-08-07T04:18:05",
+      "takeaway": "This survey provides a structured overview of model predictive control (MPC) for legged and humanoid robots, categorizing dynamical models, algorithms, and applications from reduced-order to whole-body formulations. For the user, it serves as a comprehensive reference to understand the trade-offs between model fidelity and computational tractability, which is essential when designing MPC-based controllers for legged locomotion or mobile manipulation. The paper's taxonomy of algorithms helps in selecting appropriate solvers and formulations for real-time control, and its coverage of recent whole-body MPC trends can inform the integration of manipulation and locomotion tasks in a unified framework.",
+      "generated_at": "2026-08-07T10:45:38",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W4395116617",
       "title": "Learning robust autonomous navigation and locomotion for wheeled-legged robots",
-      "takeaway": "This work presents a fully integrated system for wheeled-legged robots combining adaptive locomotion control, mobility-aware local navigation, and large-scale path planning, trained with model-free reinforcement learning and privileged learning. It solves the challenge of seamless walking-driving transitions and robust navigation in urban environments, validated in real-world settings. For the user, this demonstrates a hierarchical RL framework that tightly couples locomotion and navigation, offering a blueprint for developing similar integrated controllers for legged robots in complex terrains, which could be adapted to their own mobile manipulation or navigation tasks.",
-      "generated_at": "2026-08-07T04:18:05",
+      "takeaway": "This paper presents a fully integrated system for wheeled-legged robots that combines adaptive locomotion control, mobility-aware local navigation, and large-scale path planning, using model-free reinforcement learning and privileged learning. The hierarchical RL framework enables smooth transitions between walking and driving modes, achieving robust and efficient navigation over rough terrains and around dynamic obstacles. For the user, this work demonstrates a practical approach to integrating learning-based locomotion with navigation, which is directly applicable to mobile manipulation tasks where the robot must traverse varied environments while carrying out manipulation objectives. The system's validation in urban settings provides a template for deploying learned controllers in real-world scenarios, and the hierarchical structure can be adapted to incorporate manipulation actions.",
+      "generated_at": "2026-08-07T10:45:38",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W4205300464",
       "title": "Reinforced model predictive control (RL-MPC) for building energy management",
-      "takeaway": "This paper compares model predictive control (MPC) and reinforcement learning (RL) for building energy management and proposes a novel algorithm, RL-MPC, that merges their complementary strengths—constraint satisfaction from MPC and adaptability from RL. The results in the BOPTEST framework show that pure RL struggles with constraint satisfaction, while RL-MPC effectively combines both approaches. Although focused on buildings, the RL-MPC concept is transferable to robotics, where combining MPC's safety guarantees with RL's learning capabilities could enhance optimal control for legged robots or mobile manipulators, especially in uncertain or dynamic environments.",
-      "generated_at": "2026-08-07T04:18:05",
+      "takeaway": "This paper compares model predictive control (MPC) and reinforcement learning (RL) for building energy management and proposes a novel algorithm, RL-MPC, that merges their complementary strengths, including state estimation, dynamic optimization, and learning. The results in the BOPTEST simulation framework indicate that pure RL struggles with constraint satisfaction, while RL-MPC effectively combines the advantages of both approaches. For the user, this hybrid control methodology is relevant to robotics, particularly in optimal control and robot learning, as it offers a way to leverage RL's adaptability while maintaining MPC's constraint handling. The concept of merging learned components with MPC can be transferred to legged robot control, where safety constraints are critical, and the paper's comparative analysis provides insights into when each approach is preferable.",
+      "generated_at": "2026-08-07T10:45:38",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "openalex:W2143936212",
       "title": "Combined Task and Motion Planning for Mobile Manipulation",
-      "takeaway": "This paper introduces a hierarchical planning system for mobile manipulation that integrates task and motion planning, leveraging subtask-specific irrelevance to reuse optimal solutions across the search space. It addresses the challenge of finding high-quality kinematic solutions for task-level problems, demonstrated on pick-and-place tasks. For the user, this foundational work on combined task and motion planning is relevant to mobile manipulation research, providing a framework that could be extended with modern learning-based approaches or integrated into whole-body control pipelines for more complex manipulation tasks.",
-      "generated_at": "2026-08-07T04:18:05",
+      "takeaway": "This paper presents a hierarchical planning system for mobile manipulation that integrates task and motion planning, finding high-quality kinematic solutions while reusing optimal solutions to state-abstracted subproblems. The system handles uncertainty during plan execution and demonstrates results on pick-and-place tasks for a mobile robot. For the user, this work is foundational in task and motion planning (TAMP), offering a framework that can be extended to more complex mobile manipulation scenarios, such as legged robots with whole-body constraints. The idea of subtask-specific irrelevance information and solution reuse can improve planning efficiency in long-horizon tasks, which is valuable for integrating with learning-based controllers.",
+      "generated_at": "2026-08-07T10:45:38",
       "model": "deepseek-chat"
     },
     {
       "canonical_paper_id": "arxiv:2608.06375",
       "title": "$ω$-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation",
-      "takeaway": "This paper presents ω-0, a latent predictive whole-body world-action model for concurrent humanoid loco-manipulation, which directly predicts controller-compatible whole-body action latents from language, vision, and proprioception, avoiding video reconstruction. It introduces a lightweight predictive objective and leverages controller-based simulation replay to ground visual-motion priors into executable actions, supported by a new 40+ hour real-world dataset (ω-HOME). For the user, this work is highly relevant to robot learning and mobile manipulation, offering a novel approach to unify locomotion and manipulation in humanoid robots, which could inspire similar latent world-action models for their own research on integrated whole-body control.",
-      "generated_at": "2026-08-07T04:18:05",
+      "takeaway": "This paper introduces ω-0, a latent predictive whole-body world-action model for concurrent humanoid loco-manipulation, which directly predicts controller-compatible whole-body action latents from language, visual, and proprioceptive inputs. By learning compact future observation embeddings instead of reconstructing videos, it couples latent visual foresight with diffusion-based action generation, and uses controller-based simulation replay to ground human priors into executable actions. For the user, this work addresses the challenge of integrating locomotion and manipulation in humanoid robots, which is highly relevant to mobile manipulation and robot learning. The model's support for multiple input modalities and its real-world dataset (ω-HOME) provide a foundation for developing and evaluating whole-body policies, potentially advancing the state of the art in concurrent loco-manipulation.",
+      "generated_at": "2026-08-07T10:45:38",
       "model": "deepseek-chat"
     }
   ],
