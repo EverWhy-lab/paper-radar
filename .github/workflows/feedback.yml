@@ -10,7 +10,8 @@ permissions:
 
 jobs:
   apply-feedback:
-    if: "startsWith(github.event.issue.title, 'feedback:')"
+    # Only the repository owner may apply feedback; everyone else is ignored.
+    if: ${{ github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'feedback:') }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
