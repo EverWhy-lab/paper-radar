@@ -1,0 +1,1061 @@
+{
+  "schema_version": 3,
+  "date": "2026-08-08",
+  "generated_at": "2026-08-08T11:10:23+08:00",
+  "mode": "incremental",
+  "candidate_count": 2673,
+  "historical_candidate_count": 232,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 3,
+    "journal_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "selection_order": [
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical",
+      "frontier_recent"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 3,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W4403337227",
+      "title": "Diffusion policy: Visuomotor policy learning via action diffusion",
+      "takeaway": "Diffusion Policy represents robot visuomotor policies as conditional denoising diffusion processes, achieving an average 46.9% improvement over prior state-of-the-art methods across 15 manipulation benchmarks. The approach naturally handles multimodal action distributions and high-dimensional action spaces, with key contributions including receding horizon control, visual conditioning, and a time-series diffusion transformer. For your research in robot learning and mobile manipulation, this paper provides a strong baseline for visuomotor policy learning that you can directly apply or extend to legged manipulation tasks, where multimodal action distributions are common. You could build on this framework by integrating it with your optimal control pipelines or adapting it for whole-body control on legged robots.",
+      "generated_at": "2026-08-08T03:14:40",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3200962355",
+      "title": "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning",
+      "takeaway": "This paper introduces a massively parallel deep reinforcement learning training setup that enables policy learning for the quadrupedal robot ANYmal in minutes on a single GPU, with a game-inspired curriculum for challenging terrain. The approach achieves speedups of multiple orders of magnitude compared to previous work and successfully transfers policies to the real robot. For your work on legged robots and robot learning, this paper offers a practical recipe for accelerating policy training, which you can directly adopt or adapt to your own simulation environments. The open-sourced code and the analysis of algorithm components in the massively parallel regime provide a solid foundation for scaling up your own learning experiments.",
+      "generated_at": "2026-08-08T03:14:40",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3033272118",
+      "title": "Nonlinear Model Predictive Control of Robotic Systems with Control Lyapunov Functions",
+      "takeaway": "This paper presents the first real-time realization of a unified Nonlinear Model Predictive Control (NMPC) and Control Lyapunov Function (CLF) controller on a robotic system with limited computational resources. The unified controller improves performance over both isolated NMPC and CLF controllers by combining the prediction horizon advantage with explicit stability constraints, simplifying the design process. For your research in optimal control and legged robots, this work offers a principled way to incorporate stability guarantees into NMPC, which is crucial for safe locomotion and manipulation. You could build on this framework to design controllers for legged manipulators, where stability and optimality are both critical.",
+      "generated_at": "2026-08-08T03:14:40",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2001695893",
+      "title": "Detecting and segmenting objects for mobile manipulation",
+      "takeaway": "This paper proposes a 3D scene interpretation approach for mobile manipulation using Fast Point Feature Histograms (FPFH) and Conditional Random Fields to segment objects into geometric primitives and recognize object classes in 6DOF. The system uses real-time stereo with textured light to obtain dense depth maps and achieves recognition across 20 objects in 500 table settings. For your work in mobile manipulation, this paper provides an early but relevant method for object detection and segmentation that can inform your perception pipeline. Although the techniques are dated, the two-layer classification scheme and the use of local and global features remain conceptually useful for modern learning-based approaches.",
+      "generated_at": "2026-08-08T03:14:40",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "research_fit 27 ≥ 18",
+        "核心方向：robot_learning, diffusion_visuomotor",
+        "特定关键词：diffusion policy, visuomotor policy, action diffusion",
+        "historical_value_score 70.4 ≥ 50.0",
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 92.76",
+        "近 2 年年均引用 187.0；此前 2 年年均 9.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-06T04:28:13"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4403337227",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4403337227",
+        "openalex_id": "W4403337227",
+        "base_arxiv_id": null,
+        "doi": "10.1177/02783649241273668",
+        "title": "Diffusion policy: Visuomotor policy learning via action diffusion",
+        "authors": [
+          "Cheng Chi",
+          "Zhenjia Xu",
+          "Siyuan Feng",
+          "Eric Cousineau",
+          "Yilun Du",
+          "Benjamin Burchfiel",
+          "Russ Tedrake",
+          "Shuran Song"
+        ],
+        "abstract": "This paper introduces Diffusion Policy, a new way of generating robot behavior by representing a robot’s visuomotor policy as a conditional denoising diffusion process. We benchmark Diffusion Policy across 15 different tasks from 4 different robot manipulation benchmarks and find that it consistently outperforms existing state-of-the-art robot learning methods with an average improvement of 46.9%. Diffusion Policy learns the gradient of the action-distribution score function and iteratively optimizes with respect to this gradient field during inference via a series of stochastic Langevin dynamics steps. We find that the diffusion formulation yields powerful advantages when used for robot policies, including gracefully handling multimodal action distributions, being suitable for high-dimensional action spaces, and exhibiting impressive training stability. To fully unlock the potential of diffusion models for visuomotor policy learning on physical robots, this paper presents a set of key technical contributions including the incorporation of receding horizon control, visual conditioning, and the time-series diffusion transformer. We hope this work will help motivate a new generation of policy learning techniques that are able to leverage the powerful generative modeling capabilities of diffusion models. Code, data, and training details are available (diffusion-policy.cs.columbia.edu).",
+        "publication_date": "2024-10-11",
+        "publication_year": 2024,
+        "source_name": "The International Journal of Robotics Research",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9954000115394592
+          }
+        ],
+        "cited_by_count": 392,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 123
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 251
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          }
+        ],
+        "fwci": 92.7599,
+        "citation_normalized_percentile": 0.99964351,
+        "referenced_works": [
+          "W1515020792",
+          "W1560270123",
+          "W1579853615",
+          "W1901129140",
+          "W1986014385",
+          "W1994530392",
+          "W2108598243",
+          "W2112474089",
+          "W2182977695",
+          "W2194775991",
+          "W2612690371",
+          "W2760103357",
+          "W2949924544",
+          "W2954040150",
+          "W2963669336",
+          "W2964157221",
+          "W2991276239",
+          "W2994446013",
+          "W3011813374",
+          "W3016361525",
+          "W3035524453",
+          "W3039055967",
+          "W3090369311",
+          "W3099815795",
+          "W3103334733",
+          "W3203588980",
+          "W4212774754",
+          "W4250482878",
+          "W4312610897",
+          "W4312824283",
+          "W4383109488",
+          "W4385403811",
+          "W4385430497",
+          "W4386075980"
+        ],
+        "related_works": [
+          "W4391375266",
+          "W2748952813",
+          "W2390279801",
+          "W2358668433",
+          "W4396701345",
+          "W2376932109",
+          "W2001405890",
+          "W4396696052",
+          "W4402327032",
+          "W2382290278"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W4385403811"
+        ],
+        "discovered_at": "2026-08-06T04:28:13",
+        "last_considered_at": "2026-08-08T11:10:23+08:00",
+        "recommended_at": "2026-08-08T11:10:23+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-06T04:28:13",
+        "openalex_url": "https://openalex.org/W4403337227",
+        "landing_page_url": "https://doi.org/10.1177/02783649241273668",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 27,
+        "video_potential": 39,
+        "matched_topics": [
+          "robot_learning",
+          "diffusion_visuomotor"
+        ],
+        "matched_keywords": [
+          "robot learning",
+          "reinforcement learning",
+          "diffusion policy",
+          "visuomotor policy",
+          "action diffusion"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "robot learning",
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "topic",
+            "label": "Diffusion & Visuomotor Policy",
+            "keywords": [
+              "diffusion policy",
+              "visuomotor policy",
+              "action diffusion"
+            ],
+            "location": "title",
+            "points": 17.0
+          }
+        ],
+        "historical_value_score": 70.4,
+        "historical_score_components": {
+          "research_relevance": 27.0,
+          "normalized_citation": 100.0,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2024 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "OpenAlex FWCI 92.76",
+          "近 2 年年均引用 187.0；此前 2 年年均 9.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "paper": {
+        "arxiv_id": "openalex:W4403337227",
+        "base_id": "openalex:W4403337227",
+        "version": 1,
+        "title": "Diffusion policy: Visuomotor policy learning via action diffusion",
+        "authors": [
+          "Cheng Chi",
+          "Zhenjia Xu",
+          "Siyuan Feng",
+          "Eric Cousineau",
+          "Yilun Du",
+          "Benjamin Burchfiel",
+          "Russ Tedrake",
+          "Shuran Song"
+        ],
+        "published": "2024-10-11T00:00:00Z",
+        "updated": "2024-10-11T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "This paper introduces Diffusion Policy, a new way of generating robot behavior by representing a robot’s visuomotor policy as a conditional denoising diffusion process. We benchmark Diffusion Policy across 15 different tasks from 4 different robot manipulation benchmarks and find that it consistently outperforms existing state-of-the-art robot learning methods with an average improvement of 46.9%. Diffusion Policy learns the gradient of the action-distribution score function and iteratively optimizes with respect to this gradient field during inference via a series of stochastic Langevin dynamics steps. We find that the diffusion formulation yields powerful advantages when used for robot policies, including gracefully handling multimodal action distributions, being suitable for high-dimensional action spaces, and exhibiting impressive training stability. To fully unlock the potential of diffusion models for visuomotor policy learning on physical robots, this paper presents a set of key technical contributions including the incorporation of receding horizon control, visual conditioning, and the time-series diffusion transformer. We hope this work will help motivate a new generation of policy learning techniques that are able to leverage the powerful generative modeling capabilities of diffusion models. Code, data, and training details are available (diffusion-policy.cs.columbia.edu).",
+        "abs_url": "https://doi.org/10.1177/02783649241273668",
+        "pdf_url": "",
+        "research_fit": 27,
+        "video_potential": 39,
+        "matched_topics": [
+          "robot_learning",
+          "diffusion_visuomotor"
+        ],
+        "matched_keywords": [
+          "robot learning",
+          "reinforcement learning",
+          "diffusion policy",
+          "visuomotor policy",
+          "action diffusion"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "robot learning",
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "topic",
+            "label": "Diffusion & Visuomotor Policy",
+            "keywords": [
+              "diffusion policy",
+              "visuomotor policy",
+              "action diffusion"
+            ],
+            "location": "title",
+            "points": 17.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 29 ≥ 18",
+        "核心方向：legged_humanoid, robot_learning",
+        "特定关键词：quadrupedal robot, legged locomotion",
+        "historical_value_score 68.2 ≥ 42.0",
+        "发表于 2021 年",
+        "同领域同年份引用标准化位于前 0.3%",
+        "OpenAlex FWCI 18.36",
+        "近 2 年年均引用 15.5；此前 2 年年均 8.5",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-06T04:27:54"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3200962355",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3200962355",
+        "openalex_id": "W3200962355",
+        "base_arxiv_id": "2109.11978",
+        "doi": "10.3929/ethz-b-000554960",
+        "title": "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning",
+        "authors": [
+          "Nikita Rudin",
+          "David Hoeller",
+          "Philipp Reist",
+          "Marco Hutter"
+        ],
+        "abstract": "In this work, we present and study a training set-up that achieves fast policy generation for real-world robotic tasks by using massive parallelism on a single workstation GPU. We analyze and discuss the impact of different training algorithm components in the massively parallel regime on the final policy performance and training times. In addition, we present a novel game-inspired curriculum that is well suited for training with thousands of simulated robots in parallel. We evaluate the approach by training the quadrupedal robot ANYmal to walk on challenging terrain. The parallel approach allows training policies for flat terrain in under four minutes, and in twenty minutes for uneven terrain. This represents a speedup of multiple orders of magnitude compared to previous work. Finally, we transfer the policies to the real robot to validate the approach. We open-source our training code to help accelerate further research in the field of learned legged locomotion.",
+        "publication_date": "2021-09-24",
+        "publication_year": 2021,
+        "source_name": "Repository for Publications and Research Data (ETH Zurich)",
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9914000034332275
+          },
+          {
+            "id": "https://openalex.org/T10743",
+            "display_name": "Software Testing and Debugging Techniques",
+            "score": 0.9354000091552734
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9241999983787537
+          }
+        ],
+        "cited_by_count": 48,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          }
+        ],
+        "fwci": 18.3638,
+        "citation_normalized_percentile": 0.99722404,
+        "referenced_works": [],
+        "related_works": [
+          "W2969015047",
+          "W3089695338",
+          "W3091304796",
+          "W2795561664",
+          "W3122372389",
+          "W2894779868",
+          "W2914358862",
+          "W3207061160",
+          "W3049260422",
+          "W2888235455",
+          "W2966298093",
+          "W3134395475",
+          "W2534269850",
+          "W3009584224",
+          "W2937683675",
+          "W2968217299",
+          "W2889068523",
+          "W2980523418",
+          "W3029539653",
+          "W2408978589"
+        ],
+        "discovery_source": [
+          "manual_seed",
+          "seed_resolution"
+        ],
+        "seed_paper_id": [
+          "openalex:W3200962355"
+        ],
+        "discovered_at": "2026-08-06T04:27:54",
+        "last_considered_at": "2026-08-08T11:10:23+08:00",
+        "recommended_at": "2026-08-08T11:10:23+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-06T04:27:54",
+        "openalex_url": "https://openalex.org/W3200962355",
+        "landing_page_url": "http://hdl.handle.net/20.500.11850/554960",
+        "open_access_url": "http://hdl.handle.net/20.500.11850/554960",
+        "pdf_url": null,
+        "research_fit": 29,
+        "video_potential": 49,
+        "matched_topics": [
+          "legged_humanoid",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "quadrupedal robot",
+          "legged locomotion",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadrupedal robot",
+              "legged locomotion"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 16.0
+          }
+        ],
+        "historical_value_score": 68.2,
+        "historical_score_components": {
+          "research_relevance": 29.0,
+          "normalized_citation": 99.7,
+          "fwci": 100.0,
+          "citation_momentum": 91.2,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2021 年",
+          "同领域同年份引用标准化位于前 0.3%",
+          "OpenAlex FWCI 18.36",
+          "近 2 年年均引用 15.5；此前 2 年年均 8.5",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "2109.11978",
+        "base_id": "2109.11978",
+        "version": 1,
+        "title": "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning",
+        "authors": [
+          "Nikita Rudin",
+          "David Hoeller",
+          "Philipp Reist",
+          "Marco Hutter"
+        ],
+        "published": "2021-09-24T00:00:00Z",
+        "updated": "2021-09-24T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "In this work, we present and study a training set-up that achieves fast policy generation for real-world robotic tasks by using massive parallelism on a single workstation GPU. We analyze and discuss the impact of different training algorithm components in the massively parallel regime on the final policy performance and training times. In addition, we present a novel game-inspired curriculum that is well suited for training with thousands of simulated robots in parallel. We evaluate the approach by training the quadrupedal robot ANYmal to walk on challenging terrain. The parallel approach allows training policies for flat terrain in under four minutes, and in twenty minutes for uneven terrain. This represents a speedup of multiple orders of magnitude compared to previous work. Finally, we transfer the policies to the real robot to validate the approach. We open-source our training code to help accelerate further research in the field of learned legged locomotion.",
+        "abs_url": "https://arxiv.org/abs/2109.11978",
+        "pdf_url": "https://arxiv.org/pdf/2109.11978",
+        "research_fit": 29,
+        "video_potential": 49,
+        "matched_topics": [
+          "legged_humanoid",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "quadrupedal robot",
+          "legged locomotion",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadrupedal robot",
+              "legged locomotion"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 16.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 18 ≥ 18",
+        "核心方向：optimal_control",
+        "特定关键词：model predictive control",
+        "historical_value_score 57.2 ≥ 42.0",
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 0.6%",
+        "OpenAlex FWCI 11.12",
+        "近 2 年年均引用 8.0；此前 2 年年均 8.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-04T06:56:02"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3033272118",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3033272118",
+        "openalex_id": "W3033272118",
+        "base_arxiv_id": "2006.01229",
+        "doi": "10.15607/rss.2020.xvi.098",
+        "title": "Nonlinear Model Predictive Control of Robotic Systems with Control Lyapunov Functions",
+        "authors": [
+          "Ruben Grandia",
+          "Andrew J. Taylor",
+          "Andrew Singletary",
+          "Marco Hutter",
+          "Aaron D. Ames"
+        ],
+        "abstract": "The theoretical unification of Nonlinear Model Predictive Control (NMPC) with Control Lyapunov Functions (CLFs) provides a framework for achieving optimal control performance while ensuring stability guarantees. In this paper we present the first real-time realization of a unified NMPC and CLF controller on a robotic system with limited computational resources. These limitations motivate a set of approaches for efficiently incorporating CLF stability constraints into a general NMPC formulation. We evaluate the performance of the proposed methods compared to baseline CLF and NMPC controllers with a robotic Segway platform both in simulation and on hardware. The addition of a prediction horizon provides a performance advantage over CLF based controllers, which operate optimally point-wise in time. Moreover, the explicitly imposed stability constraints remove the need for difficult cost function and parameter tuning required by NMPC. Therefore the unified controller improves the performance of each isolated controller and simplifies the overall design process.",
+        "publication_date": "2020-06-30",
+        "publication_year": 2020,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10791",
+            "display_name": "Advanced Control Systems Optimization",
+            "score": 1.0
+          },
+          {
+            "id": "https://openalex.org/T10876",
+            "display_name": "Fault Detection and Control Systems",
+            "score": 0.9955000281333923
+          },
+          {
+            "id": "https://openalex.org/T10932",
+            "display_name": "Microbial Metabolic Engineering and Bioproduction",
+            "score": 0.9864000082015991
+          }
+        ],
+        "cited_by_count": 49,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 10
+          }
+        ],
+        "fwci": 11.1162,
+        "citation_normalized_percentile": 0.99432112,
+        "referenced_works": [
+          "W1496708994",
+          "W1540341900",
+          "W1551745356",
+          "W1561445488",
+          "W1562460111",
+          "W1603030703",
+          "W1631623342",
+          "W187917816",
+          "W1970832114",
+          "W1978956894",
+          "W1986164962",
+          "W2017493230",
+          "W2018291128",
+          "W2020327078",
+          "W2023285936",
+          "W2028790617",
+          "W2041076275",
+          "W2041106619",
+          "W2041109651",
+          "W2044494131",
+          "W2073787051",
+          "W2087736926",
+          "W2094451002",
+          "W2101170197",
+          "W2105648443",
+          "W2111948593",
+          "W2115955659",
+          "W2133289369",
+          "W2134673975",
+          "W2136713885",
+          "W2139595765",
+          "W2140531311",
+          "W2142493442",
+          "W2145731676",
+          "W2161040592",
+          "W2171879251",
+          "W2283492721",
+          "W2291992886",
+          "W241118364",
+          "W2563883854",
+          "W2607187241",
+          "W2769646558",
+          "W2842089854",
+          "W2885273860",
+          "W2887154784",
+          "W2893725532",
+          "W2963190023",
+          "W2964849820",
+          "W3003340679",
+          "W3004316249",
+          "W3029645440",
+          "W4249398939",
+          "W4292078458",
+          "W4301014524",
+          "W6992833760",
+          "W7017701457",
+          "W78417637"
+        ],
+        "related_works": [
+          "W1970635650",
+          "W1976574339",
+          "W2126112326",
+          "W2147929414",
+          "W2349796700",
+          "W2358066536",
+          "W2383986032",
+          "W2475132469",
+          "W2496188264",
+          "W3217133416"
+        ],
+        "discovery_source": [
+          "topic_search:model predictive control in robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:02",
+        "last_considered_at": "2026-08-08T11:10:23+08:00",
+        "recommended_at": "2026-08-08T11:10:23+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:02",
+        "openalex_url": "https://openalex.org/W3033272118",
+        "landing_page_url": "https://doi.org/10.15607/rss.2020.xvi.098",
+        "open_access_url": "https://doi.org/10.15607/rss.2020.xvi.098",
+        "pdf_url": "https://doi.org/10.15607/rss.2020.xvi.098",
+        "research_fit": 18,
+        "video_potential": 4,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control",
+          "optimal control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control",
+              "optimal control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "historical_value_score": 57.2,
+        "historical_score_components": {
+          "research_relevance": 18.0,
+          "normalized_citation": 99.4,
+          "fwci": 100.0,
+          "citation_momentum": 47.1,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2020 年",
+          "同领域同年份引用标准化位于前 0.6%",
+          "OpenAlex FWCI 11.12",
+          "近 2 年年均引用 8.0；此前 2 年年均 8.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "2006.01229",
+        "base_id": "2006.01229",
+        "version": 1,
+        "title": "Nonlinear Model Predictive Control of Robotic Systems with Control Lyapunov Functions",
+        "authors": [
+          "Ruben Grandia",
+          "Andrew J. Taylor",
+          "Andrew Singletary",
+          "Marco Hutter",
+          "Aaron D. Ames"
+        ],
+        "published": "2020-06-30T00:00:00Z",
+        "updated": "2020-06-30T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "The theoretical unification of Nonlinear Model Predictive Control (NMPC) with Control Lyapunov Functions (CLFs) provides a framework for achieving optimal control performance while ensuring stability guarantees. In this paper we present the first real-time realization of a unified NMPC and CLF controller on a robotic system with limited computational resources. These limitations motivate a set of approaches for efficiently incorporating CLF stability constraints into a general NMPC formulation. We evaluate the performance of the proposed methods compared to baseline CLF and NMPC controllers with a robotic Segway platform both in simulation and on hardware. The addition of a prediction horizon provides a performance advantage over CLF based controllers, which operate optimally point-wise in time. Moreover, the explicitly imposed stability constraints remove the need for difficult cost function and parameter tuning required by NMPC. Therefore the unified controller improves the performance of each isolated controller and simplifies the overall design process.",
+        "abs_url": "https://arxiv.org/abs/2006.01229",
+        "pdf_url": "https://doi.org/10.15607/rss.2020.xvi.098",
+        "research_fit": 18,
+        "video_potential": 4,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control",
+          "optimal control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control",
+              "optimal control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 20 ≥ 18",
+        "核心方向：mobile_manipulation",
+        "特定关键词：mobile manipulation",
+        "historical_value_score 55.6 ≥ 42.0",
+        "发表于 2009 年",
+        "同领域同年份引用标准化位于前 0.4%",
+        "OpenAlex FWCI 20.68",
+        "近 2 年年均引用 2.5；此前 2 年年均 5.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-04T06:56:01"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2001695893",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2001695893",
+        "openalex_id": "W2001695893",
+        "base_arxiv_id": null,
+        "doi": "10.1109/iccvw.2009.5457718",
+        "title": "Detecting and segmenting objects for mobile manipulation",
+        "authors": [
+          "Radu Bogdan Rusu",
+          "Andreas Holzbach",
+          "Michael Beetz",
+          "Gary Bradski"
+        ],
+        "abstract": "This paper proposes a novel 3D scene interpretation approach for robots in mobile manipulation scenarios using a set of 3D point features (Fast Point Feature Histograms) and probabilistic graphical methods (Conditional Random Fields). Our system uses real time stereo with textured light to obtain dense depth maps in the robot's manipulators working space. For the purposes of manipulation, we want to interpret the planar supporting surfaces of the scene, recognize and segment the object classes into their primitive parts in 6 degrees of freedom (6DOF) so that the robot knows what it is attempting to use and where it may be handled. The scene interpretation algorithm uses a two-layer classification scheme: (i) we estimate Fast Point Feature Histograms (FPFH) as local 3D point features to segment the objects of interest into geometric primitives; and (ii) we learn and categorize object classes using a novel Global Fast Point Feature Histogram (GFPFH) scheme which uses the previously estimated primitives at each point. To show the validity of our approach, we analyze the proposed system for the problem of recognizing the object class of 20 objects in 500 table settings scenarios. Our algorithm identifies the planar surfaces, decomposes the scene and objects into geometric primitives with 98.27% accuracy and uses the geometric primitives to identify the object's class with an accuracy of 96.69%.",
+        "publication_date": "2009-09-01",
+        "publication_year": 2009,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9998999834060669
+          },
+          {
+            "id": "https://openalex.org/T10531",
+            "display_name": "Advanced Vision and Imaging",
+            "score": 0.9995999932289124
+          },
+          {
+            "id": "https://openalex.org/T10719",
+            "display_name": "3D Shape Modeling and Analysis",
+            "score": 0.9983999729156494
+          }
+        ],
+        "cited_by_count": 104,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 9
+          }
+        ],
+        "fwci": 20.6789,
+        "citation_normalized_percentile": 0.99584027,
+        "referenced_works": [
+          "W1548329470",
+          "W1570864891",
+          "W1602129629",
+          "W2034785770",
+          "W2046434485",
+          "W2062874246",
+          "W2099606917",
+          "W2124561101",
+          "W2125517557",
+          "W2147880316",
+          "W2153451832",
+          "W2160821342",
+          "W2162149523",
+          "W2171592532",
+          "W3157685993",
+          "W6636114426",
+          "W6682082992",
+          "W6794416818"
+        ],
+        "related_works": [
+          "W2107628111",
+          "W2394004323",
+          "W2398764543",
+          "W2027335291",
+          "W4210328553",
+          "W1980417906",
+          "W2171903035",
+          "W2122871747",
+          "W3114279067",
+          "W2533693301"
+        ],
+        "discovery_source": [
+          "topic_search:mobile manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:01",
+        "last_considered_at": "2026-08-08T11:10:23+08:00",
+        "recommended_at": "2026-08-08T11:10:23+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:01",
+        "openalex_url": "https://openalex.org/W2001695893",
+        "landing_page_url": "https://doi.org/10.1109/iccvw.2009.5457718",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "historical_value_score": 55.6,
+        "historical_score_components": {
+          "research_relevance": 20.0,
+          "normalized_citation": 99.6,
+          "fwci": 100.0,
+          "citation_momentum": 25.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2009 年",
+          "同领域同年份引用标准化位于前 0.4%",
+          "OpenAlex FWCI 20.68",
+          "近 2 年年均引用 2.5；此前 2 年年均 5.0",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W2001695893",
+        "base_id": "openalex:W2001695893",
+        "version": 1,
+        "title": "Detecting and segmenting objects for mobile manipulation",
+        "authors": [
+          "Radu Bogdan Rusu",
+          "Andreas Holzbach",
+          "Michael Beetz",
+          "Gary Bradski"
+        ],
+        "published": "2009-09-01T00:00:00Z",
+        "updated": "2009-09-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "This paper proposes a novel 3D scene interpretation approach for robots in mobile manipulation scenarios using a set of 3D point features (Fast Point Feature Histograms) and probabilistic graphical methods (Conditional Random Fields). Our system uses real time stereo with textured light to obtain dense depth maps in the robot's manipulators working space. For the purposes of manipulation, we want to interpret the planar supporting surfaces of the scene, recognize and segment the object classes into their primitive parts in 6 degrees of freedom (6DOF) so that the robot knows what it is attempting to use and where it may be handled. The scene interpretation algorithm uses a two-layer classification scheme: (i) we estimate Fast Point Feature Histograms (FPFH) as local 3D point features to segment the objects of interest into geometric primitives; and (ii) we learn and categorize object classes using a novel Global Fast Point Feature Histogram (GFPFH) scheme which uses the previously estimated primitives at each point. To show the validity of our approach, we analyze the proposed system for the problem of recognizing the object class of 20 objects in 500 table settings scenarios. Our algorithm identifies the planar surfaces, decomposes the scene and objects into geometric primitives with 98.27% accuracy and uses the geometric primitives to identify the object's class with an accuracy of 96.69%.",
+        "abs_url": "https://doi.org/10.1109/iccvw.2009.5457718",
+        "pdf_url": "",
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
