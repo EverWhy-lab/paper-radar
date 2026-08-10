@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "paper_count": 232,
+  "paper_count": 266,
   "papers": [
     {
       "canonical_paper_id": "openalex:W1505754525",
@@ -11828,8 +11828,8 @@
           "cited_by_count": 1
         }
       ],
-      "fwci": 4.7153,
-      "citation_normalized_percentile": 0.96163386,
+      "fwci": 4.7148,
+      "citation_normalized_percentile": 0.96162262,
       "referenced_works": [
         "W1499277207",
         "W1504362584",
@@ -11888,7 +11888,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:44",
+      "metadata_updated_at": "2026-08-10T04:13:37",
       "openalex_url": "https://openalex.org/W2914653242",
       "landing_page_url": "https://doi.org/10.1177/0278364920918014",
       "open_access_url": "http://arxiv.org/abs/1901.08100",
@@ -11953,7 +11953,7 @@
       "historical_score_reasons": [
         "发表于 2020 年",
         "同领域同年份引用标准化位于前 3.8%",
-        "OpenAlex FWCI 4.72",
+        "OpenAlex FWCI 4.71",
         "近 2 年年均引用 21.5；此前 2 年年均 24.5",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 100%"
@@ -16785,8 +16785,8 @@
           "cited_by_count": 2
         }
       ],
-      "fwci": 5.3047,
-      "citation_normalized_percentile": 0.96945233,
+      "fwci": 5.3041,
+      "citation_normalized_percentile": 0.96943203,
       "referenced_works": [
         "W1560270123",
         "W1592294156",
@@ -16845,7 +16845,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:44",
+      "metadata_updated_at": "2026-08-10T04:13:37",
       "openalex_url": "https://openalex.org/W3012010640",
       "landing_page_url": "https://doi.org/10.1109/lra.2020.2979625",
       "open_access_url": "http://hdl.handle.net/20.500.11850/411183",
@@ -18790,16 +18790,16 @@
         "W6779117376"
       ],
       "related_works": [
-        "W4381953457",
         "W2037557144",
-        "W2285739514",
-        "W2579089916",
+        "W2052143774",
         "W2058088690",
         "W2086597735",
-        "W2052143774",
-        "W4308297792",
+        "W2285739514",
+        "W2402852349",
+        "W2579089916",
         "W3134497028",
-        "W2402852349"
+        "W4308297792",
+        "W4381953457"
       ],
       "discovery_source": [
         "manual_seed",
@@ -18814,7 +18814,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:05",
+      "metadata_updated_at": "2026-08-10T04:13:51",
       "openalex_url": "https://openalex.org/W3093326211",
       "landing_page_url": "https://doi.org/10.1109/iros51168.2021.9636371",
       "open_access_url": null,
@@ -20780,8 +20780,8 @@
           "cited_by_count": 7
         }
       ],
-      "fwci": 23.0574,
-      "citation_normalized_percentile": 0.99886265,
+      "fwci": 23.0425,
+      "citation_normalized_percentile": 0.99886295,
       "referenced_works": [
         "W114056620",
         "W1163812319",
@@ -21201,7 +21201,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:47",
+      "metadata_updated_at": "2026-08-10T04:13:40",
       "openalex_url": "https://openalex.org/W3128528928",
       "landing_page_url": "https://doi.org/10.1177/02783649231201196",
       "open_access_url": "https://doi.org/10.1177/02783649231201196",
@@ -21249,7 +21249,7 @@
       "historical_score_reasons": [
         "发表于 2023 年",
         "同领域同年份引用标准化位于前 0.1%",
-        "OpenAlex FWCI 23.06",
+        "OpenAlex FWCI 23.04",
         "近 2 年年均引用 63.0；此前 2 年年均 37.5",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 100%"
@@ -24074,30 +24074,30 @@
           "cited_by_count": 4
         }
       ],
-      "fwci": 18.3638,
-      "citation_normalized_percentile": 0.99722404,
+      "fwci": 18.3644,
+      "citation_normalized_percentile": 0.99722434,
       "referenced_works": [],
       "related_works": [
-        "W2969015047",
-        "W3089695338",
-        "W3091304796",
+        "W2408978589",
+        "W2534269850",
         "W2795561664",
-        "W3122372389",
+        "W2888235455",
+        "W2889068523",
         "W2894779868",
         "W2914358862",
-        "W3207061160",
-        "W3049260422",
-        "W2888235455",
-        "W2966298093",
-        "W3134395475",
-        "W2534269850",
-        "W3009584224",
         "W2937683675",
+        "W2966298093",
         "W2968217299",
-        "W2889068523",
+        "W2969015047",
         "W2980523418",
+        "W3009584224",
         "W3029539653",
-        "W2408978589"
+        "W3049260422",
+        "W3089695338",
+        "W3091304796",
+        "W3122372389",
+        "W3134395475",
+        "W3207061160"
       ],
       "discovery_source": [
         "manual_seed",
@@ -24112,7 +24112,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:54",
+      "metadata_updated_at": "2026-08-10T04:13:43",
       "openalex_url": "https://openalex.org/W3200962355",
       "landing_page_url": "http://hdl.handle.net/20.500.11850/554960",
       "open_access_url": "http://hdl.handle.net/20.500.11850/554960",
@@ -24726,11 +24726,11 @@
           "score": 0.9930999875068665
         }
       ],
-      "cited_by_count": 234,
+      "cited_by_count": 235,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 38
+          "cited_by_count": 39
         },
         {
           "year": 2025,
@@ -24753,8 +24753,8 @@
           "cited_by_count": 1
         }
       ],
-      "fwci": 19.1767,
-      "citation_normalized_percentile": 0.9983723,
+      "fwci": 19.2395,
+      "citation_normalized_percentile": 0.99837718,
       "referenced_works": [
         "W1552654126",
         "W1560495008",
@@ -24855,7 +24855,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:09",
+      "metadata_updated_at": "2026-08-10T04:13:54",
       "openalex_url": "https://openalex.org/W4205300464",
       "landing_page_url": "https://doi.org/10.1016/j.apenergy.2021.118346",
       "open_access_url": "https://doi.org/10.1016/j.apenergy.2021.118346",
@@ -24897,7 +24897,7 @@
         "research_relevance": 28.0,
         "normalized_citation": 99.8,
         "fwci": 100.0,
-        "citation_momentum": 60.0,
+        "citation_momentum": 60.5,
         "seed_provenance": 60.0,
         "work_signal": 60.0,
         "metadata_completeness": 100.0
@@ -24905,8 +24905,8 @@
       "historical_score_reasons": [
         "发表于 2022 年",
         "同领域同年份引用标准化位于前 0.2%",
-        "OpenAlex FWCI 19.18",
-        "近 2 年年均引用 60.0；此前 2 年年均 50.0",
+        "OpenAlex FWCI 19.24",
+        "近 2 年年均引用 60.5；此前 2 年年均 50.0",
         "由 1 个独立种子论文的单层引用图发现",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 100%"
@@ -26165,16 +26165,16 @@
         "W6600481524"
       ],
       "related_works": [
-        "W4386150577",
-        "W2564742953",
-        "W4213299358",
-        "W3042122676",
-        "W4390110149",
+        "W2108431359",
         "W2109659895",
-        "W4385272362",
-        "W3211256740",
+        "W2564742953",
+        "W3042122676",
         "W3115340459",
-        "W2108431359"
+        "W3211256740",
+        "W4213299358",
+        "W4385272362",
+        "W4386150577",
+        "W4390110149"
       ],
       "discovery_source": [
         "seed_graph:citing_works"
@@ -26188,7 +26188,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:06",
+      "metadata_updated_at": "2026-08-10T04:13:52",
       "openalex_url": "https://openalex.org/W4293160779",
       "landing_page_url": "https://doi.org/10.1177/02783649221102473",
       "open_access_url": "https://doi.org/10.1177/02783649221102473",
@@ -26595,11 +26595,11 @@
           "score": 0.766700029373169
         }
       ],
-      "cited_by_count": 822,
+      "cited_by_count": 825,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 188
+          "cited_by_count": 191
         },
         {
           "year": 2025,
@@ -26622,11 +26622,9 @@
           "cited_by_count": 1
         }
       ],
-      "fwci": 73.5528,
-      "citation_normalized_percentile": 0.9995181,
+      "fwci": 73.8637,
+      "citation_normalized_percentile": 0.9995292,
       "referenced_works": [
-        "W32403112",
-        "W206679605",
         "W1542941925",
         "W1552830313",
         "W1965555277",
@@ -26637,6 +26635,7 @@
         "W2040870580",
         "W2045031658",
         "W2064675550",
+        "W206679605",
         "W2067707835",
         "W2076337359",
         "W2097778153",
@@ -26690,6 +26689,7 @@
         "W3127756416",
         "W3187174963",
         "W3198350258",
+        "W32403112",
         "W4205947740",
         "W4206916871",
         "W4211221179",
@@ -26776,15 +26776,15 @@
       ],
       "related_works": [
         "W2961085424",
-        "W4306674287",
         "W3046775127",
         "W3107602296",
         "W3170094116",
-        "W4386462264",
-        "W4364306694",
-        "W4312192474",
+        "W4210805261",
         "W4283697347",
-        "W4210805261"
+        "W4306674287",
+        "W4312192474",
+        "W4364306694",
+        "W4386462264"
       ],
       "discovery_source": [
         "seed_graph:citing_works"
@@ -26798,7 +26798,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:08",
+      "metadata_updated_at": "2026-08-10T04:13:53",
       "openalex_url": "https://openalex.org/W4297964528",
       "landing_page_url": "https://doi.org/10.1109/tnnls.2022.3207346",
       "open_access_url": null,
@@ -26837,8 +26837,8 @@
       "historical_score_reasons": [
         "发表于 2022 年",
         "同领域同年份引用标准化位于前 0.1%",
-        "OpenAlex FWCI 73.55",
-        "近 2 年年均引用 281.5；此前 2 年年均 128.5",
+        "OpenAlex FWCI 73.86",
+        "近 2 年年均引用 283.0；此前 2 年年均 128.5",
         "由 1 个独立种子论文的单层引用图发现",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 100%"
@@ -26926,13 +26926,13 @@
         "W1990079087",
         "W2060165215",
         "W2101188133",
-        "W4362501864",
-        "W4306904969",
-        "W3202234113",
-        "W4380318855",
-        "W4248731570",
         "W2110944602",
-        "W3213722473"
+        "W3202234113",
+        "W3213722473",
+        "W4248731570",
+        "W4306904969",
+        "W4362501864",
+        "W4380318855"
       ],
       "discovery_source": [
         "seed_graph:citing_works"
@@ -26946,7 +26946,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:55",
+      "metadata_updated_at": "2026-08-10T04:13:44",
       "openalex_url": "https://openalex.org/W4312173571",
       "landing_page_url": "https://doi.org/10.3390/app13010154",
       "open_access_url": "https://doi.org/10.3390/app13010154",
@@ -27069,12 +27069,9 @@
           "cited_by_count": 2
         }
       ],
-      "fwci": 6.5851,
-      "citation_normalized_percentile": 0.98227948,
+      "fwci": 6.5402,
+      "citation_normalized_percentile": 0.98192049,
       "referenced_works": [
-        "W198732646",
-        "W393689543",
-        "W618254468",
         "W1431688706",
         "W1535210759",
         "W1552665521",
@@ -27090,6 +27087,7 @@
         "W1973195195",
         "W1980151151",
         "W1986621758",
+        "W198732646",
         "W1994275787",
         "W1999502602",
         "W2000535285",
@@ -27255,6 +27253,7 @@
         "W3207305612",
         "W3207637958",
         "W3211963501",
+        "W393689543",
         "W4200630450",
         "W4210612168",
         "W4210990956",
@@ -27269,19 +27268,20 @@
         "W4285102283",
         "W4287080408",
         "W4287326512",
-        "W4301014524"
+        "W4301014524",
+        "W618254468"
       ],
       "related_works": [
-        "W2745063183",
-        "W4256317079",
-        "W2129850190",
-        "W2295425790",
-        "W4389009354",
+        "W1589423663",
         "W1974803039",
+        "W1990079087",
         "W1991876829",
         "W2088677124",
-        "W1589423663",
-        "W1990079087"
+        "W2129850190",
+        "W2295425790",
+        "W2745063183",
+        "W4256317079",
+        "W4389009354"
       ],
       "discovery_source": [
         "seed_graph:citing_works"
@@ -27295,7 +27295,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:06",
+      "metadata_updated_at": "2026-08-10T04:13:52",
       "openalex_url": "https://openalex.org/W4319787917",
       "landing_page_url": "https://doi.org/10.1080/01691864.2023.2168134",
       "open_access_url": "https://doi.org/10.1080/01691864.2023.2168134",
@@ -27345,7 +27345,7 @@
       "historical_score_reasons": [
         "发表于 2023 年",
         "同领域同年份引用标准化位于前 1.8%",
-        "OpenAlex FWCI 6.59",
+        "OpenAlex FWCI 6.54",
         "近 2 年年均引用 29.0；此前 2 年年均 12.0",
         "由 1 个独立种子论文的单层引用图发现",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
@@ -27752,11 +27752,11 @@
           "score": 0.9440000057220459
         }
       ],
-      "cited_by_count": 226,
+      "cited_by_count": 227,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 53
+          "cited_by_count": 54
         },
         {
           "year": 2025,
@@ -27771,8 +27771,8 @@
           "cited_by_count": 21
         }
       ],
-      "fwci": 29.4952,
-      "citation_normalized_percentile": 0.99788684,
+      "fwci": 29.6066,
+      "citation_normalized_percentile": 0.99790062,
       "referenced_works": [
         "W1591675293",
         "W1977655452",
@@ -27922,7 +27922,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:47",
+      "metadata_updated_at": "2026-08-10T04:13:39",
       "openalex_url": "https://openalex.org/W4362672763",
       "landing_page_url": "https://doi.org/10.3390/s23073762",
       "open_access_url": "https://doi.org/10.3390/s23073762",
@@ -27951,7 +27951,7 @@
         "research_relevance": 16.0,
         "normalized_citation": 99.8,
         "fwci": 100.0,
-        "citation_momentum": 89.5,
+        "citation_momentum": 90.1,
         "seed_provenance": null,
         "work_signal": 100.0,
         "metadata_completeness": 100.0
@@ -27959,8 +27959,8 @@
       "historical_score_reasons": [
         "发表于 2023 年",
         "同领域同年份引用标准化位于前 0.2%",
-        "OpenAlex FWCI 29.50",
-        "近 2 年年均引用 72.5；此前 2 年年均 40.5",
+        "OpenAlex FWCI 29.61",
+        "近 2 年年均引用 73.0；此前 2 年年均 40.5",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 100%"
       ],
@@ -28440,11 +28440,11 @@
           "score": 0.9941999912261963
         }
       ],
-      "cited_by_count": 599,
+      "cited_by_count": 604,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 106
+          "cited_by_count": 111
         },
         {
           "year": 2025,
@@ -28463,8 +28463,8 @@
           "cited_by_count": 1
         }
       ],
-      "fwci": 72.2749,
-      "citation_normalized_percentile": 0.9992872,
+      "fwci": 72.6365,
+      "citation_normalized_percentile": 0.99928694,
       "referenced_works": [
         "W1525482321",
         "W1602500555",
@@ -28572,7 +28572,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:04",
+      "metadata_updated_at": "2026-08-10T04:13:50",
       "openalex_url": "https://openalex.org/W4383097638",
       "landing_page_url": "https://doi.org/10.1109/icra48891.2023.10160591",
       "open_access_url": null,
@@ -28596,12 +28596,12 @@
           "points": 10.4
         }
       ],
-      "historical_value_score": 64.9,
+      "historical_value_score": 65.0,
       "historical_score_components": {
         "research_relevance": 10.0,
         "normalized_citation": 99.9,
         "fwci": 100.0,
-        "citation_momentum": 76.7,
+        "citation_momentum": 77.8,
         "seed_provenance": 100.0,
         "work_signal": 100.0,
         "metadata_completeness": 87.5
@@ -28609,8 +28609,8 @@
       "historical_score_reasons": [
         "发表于 2023 年",
         "同领域同年份引用标准化位于前 0.1%",
-        "OpenAlex FWCI 72.27",
-        "近 2 年年均引用 181.0；此前 2 年年均 118.0",
+        "OpenAlex FWCI 72.64",
+        "近 2 年年均引用 183.5；此前 2 年年均 118.0",
         "由 3 个独立种子论文的单层引用图发现",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 88%"
@@ -29089,16 +29089,16 @@
         "W6800004206"
       ],
       "related_works": [
+        "W1532965292",
+        "W2141098361",
+        "W2166112783",
+        "W2541058374",
+        "W2580650124",
         "W2745063183",
-        "W4386190339",
         "W2968424575",
         "W3142333283",
-        "W2580650124",
-        "W1532965292",
-        "W2541058374",
-        "W2166112783",
         "W4378364998",
-        "W2141098361"
+        "W4386190339"
       ],
       "discovery_source": [
         "seed_graph:citing_works"
@@ -29112,7 +29112,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:06",
+      "metadata_updated_at": "2026-08-10T04:13:52",
       "openalex_url": "https://openalex.org/W4383109371",
       "landing_page_url": "https://doi.org/10.1109/icra48891.2023.10160751",
       "open_access_url": null,
@@ -29521,16 +29521,16 @@
         "W4385403811"
       ],
       "related_works": [
-        "W4387497383",
-        "W3183948672",
-        "W3173606202",
-        "W3110381201",
-        "W2948807893",
-        "W2899084033",
-        "W2778153218",
-        "W2758277628",
+        "W1531601525",
         "W2748952813",
-        "W1531601525"
+        "W2758277628",
+        "W2778153218",
+        "W2899084033",
+        "W2948807893",
+        "W3110381201",
+        "W3173606202",
+        "W3183948672",
+        "W4387497383"
       ],
       "discovery_source": [
         "seed_graph:citing_works"
@@ -29544,7 +29544,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:13",
+      "metadata_updated_at": "2026-08-10T04:13:57",
       "openalex_url": "https://openalex.org/W4385430497",
       "landing_page_url": "https://doi.org/10.15607/rss.2023.xix.028",
       "open_access_url": "https://doi.org/10.15607/rss.2023.xix.028",
@@ -32139,11 +32139,11 @@
           "score": 0.9782000184059143
         }
       ],
-      "cited_by_count": 250,
+      "cited_by_count": 251,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 83
+          "cited_by_count": 84
         },
         {
           "year": 2025,
@@ -32154,8 +32154,8 @@
           "cited_by_count": 36
         }
       ],
-      "fwci": 31.0076,
-      "citation_normalized_percentile": 0.99966262,
+      "fwci": 30.9799,
+      "citation_normalized_percentile": 0.99966291,
       "referenced_works": [
         "W111003252",
         "W1490498467",
@@ -32556,7 +32556,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:03",
+      "metadata_updated_at": "2026-08-10T04:13:50",
       "openalex_url": "https://openalex.org/W4391305509",
       "landing_page_url": "https://doi.org/10.1109/jas.2023.124140",
       "open_access_url": null,
@@ -32595,8 +32595,8 @@
       "historical_score_reasons": [
         "发表于 2024 年",
         "同领域同年份引用标准化位于前 0.1%",
-        "OpenAlex FWCI 31.01",
-        "近 2 年年均引用 107.0；此前 1 年年均 36.0",
+        "OpenAlex FWCI 30.98",
+        "近 2 年年均引用 107.5；此前 1 年年均 36.0",
         "由 1 个独立种子论文的单层引用图发现",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 100%"
@@ -32646,15 +32646,15 @@
           "score": 0.9944999814033508
         }
       ],
-      "cited_by_count": 1320,
+      "cited_by_count": 1344,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 528
+          "cited_by_count": 551
         },
         {
           "year": 2025,
-          "cited_by_count": 592
+          "cited_by_count": 593
         },
         {
           "year": 2024,
@@ -32665,8 +32665,8 @@
           "cited_by_count": 1
         }
       ],
-      "fwci": 314.5251,
-      "citation_normalized_percentile": 0.99997148,
+      "fwci": 319.1651,
+      "citation_normalized_percentile": 0.99997154,
       "referenced_works": [
         "W1583837637",
         "W1981276685",
@@ -32755,7 +32755,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:56",
+      "metadata_updated_at": "2026-08-10T04:13:44",
       "openalex_url": "https://openalex.org/W4393065402",
       "landing_page_url": "https://doi.org/10.1007/s11704-024-40231-1",
       "open_access_url": "https://doi.org/10.1007/s11704-024-40231-1",
@@ -32805,8 +32805,8 @@
       "historical_score_reasons": [
         "发表于 2024 年",
         "同领域同年份引用标准化位于前 0.1%",
-        "OpenAlex FWCI 314.53",
-        "近 2 年年均引用 560.0；此前 2 年年均 100.0",
+        "OpenAlex FWCI 319.17",
+        "近 2 年年均引用 572.0；此前 2 年年均 100.0",
         "由 1 个独立种子论文的单层引用图发现",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 100%"
@@ -34237,8 +34237,8 @@
           "cited_by_count": 10
         }
       ],
-      "fwci": 13.3953,
-      "citation_normalized_percentile": 0.99635631,
+      "fwci": 13.3702,
+      "citation_normalized_percentile": 0.99634778,
       "referenced_works": [
         "W2005805981",
         "W2132022337",
@@ -34295,15 +34295,15 @@
         "W4387476016"
       ],
       "related_works": [
-        "W2357124094",
-        "W2387399993",
-        "W2389739210",
-        "W2348924972",
-        "W2365736347",
         "W2047454415",
         "W2070040999",
-        "W2387293848",
         "W2250140200",
+        "W2348924972",
+        "W2357124094",
+        "W2365736347",
+        "W2387293848",
+        "W2387399993",
+        "W2389739210",
         "W4285089922"
       ],
       "discovery_source": [
@@ -34318,7 +34318,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:06",
+      "metadata_updated_at": "2026-08-10T04:13:52",
       "openalex_url": "https://openalex.org/W4395116617",
       "landing_page_url": "https://doi.org/10.1126/scirobotics.adi9641",
       "open_access_url": "http://arxiv.org/abs/2405.01792",
@@ -34366,11 +34366,110 @@
       "historical_score_reasons": [
         "发表于 2024 年",
         "同领域同年份引用标准化位于前 0.4%",
-        "OpenAlex FWCI 13.40",
+        "OpenAlex FWCI 13.37",
         "近 2 年年均引用 49.0；此前 1 年年均 10.0",
         "由 1 个独立种子论文的单层引用图发现",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W4400141598",
+      "openalex_id": "W4400141598",
+      "base_arxiv_id": "2406.18804",
+      "doi": "10.1016/j.automatica.2026.113209",
+      "title": "Safe output-feedback adaptive optimal control of input-constrained control-affine nonlinear systems",
+      "authors": [
+        "Tochukwu Elijah Ogri",
+        "Muzaffar Qureshi",
+        "Zachary I. Bell",
+        "Rushikesh Kamalapurkar"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10040",
+          "display_name": "Adaptive Control of Nonlinear Systems",
+          "score": 0.9401999711990356
+        },
+        {
+          "id": "https://openalex.org/T10791",
+          "display_name": "Advanced Control Systems Optimization",
+          "score": 0.9160000085830688
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.00241486,
+      "referenced_works": [],
+      "related_works": [
+        "W2160263254",
+        "W2054007478",
+        "W2334516743",
+        "W2486306719",
+        "W2106487132",
+        "W2369282358",
+        "W2482257683",
+        "W2001368270",
+        "W3022029778",
+        "W2019249007"
+      ],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W4400141598",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113209",
+      "open_access_url": "http://arxiv.org/abs/2406.18804",
+      "pdf_url": "https://arxiv.org/pdf/2406.18804",
+      "research_fit": 18,
+      "video_potential": 4,
+      "matched_topics": [
+        "optimal_control"
+      ],
+      "matched_keywords": [
+        "optimal control"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "WBC / MPC / Optimization",
+          "keywords": [
+            "optimal control"
+          ],
+          "location": "title",
+          "points": 18.0
+        }
+      ],
+      "historical_value_score": 21.6,
+      "historical_score_components": {
+        "research_relevance": 18.0,
+        "normalized_citation": 0.2,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 99.8%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
       ],
       "is_knowledge_map": false
     },
@@ -37175,11 +37274,11 @@
           "score": 0.9962999820709229
         }
       ],
-      "cited_by_count": 179,
+      "cited_by_count": 181,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 53
+          "cited_by_count": 55
         },
         {
           "year": 2025,
@@ -37190,8 +37289,8 @@
           "cited_by_count": 32
         }
       ],
-      "fwci": 33.1326,
-      "citation_normalized_percentile": 0.99964855,
+      "fwci": 33.4159,
+      "citation_normalized_percentile": 0.99964966,
       "referenced_works": [
         "W2068920275",
         "W2128019145",
@@ -37394,7 +37493,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:01",
+      "metadata_updated_at": "2026-08-10T04:13:48",
       "openalex_url": "https://openalex.org/W4402890475",
       "landing_page_url": "https://doi.org/10.1177/02783649241281508",
       "open_access_url": "https://doi.org/10.1177/02783649241281508",
@@ -37418,22 +37517,22 @@
           "points": 10.4
         }
       ],
-      "historical_value_score": 68.5,
+      "historical_value_score": 66.5,
       "historical_score_components": {
         "research_relevance": 10.0,
         "normalized_citation": 100.0,
         "fwci": 100.0,
         "citation_momentum": 100.0,
-        "seed_provenance": 100.0,
+        "seed_provenance": 80.0,
         "work_signal": 100.0,
         "metadata_completeness": 100.0
       },
       "historical_score_reasons": [
         "发表于 2024 年",
         "同领域同年份引用标准化位于前 0.1%",
-        "OpenAlex FWCI 33.13",
-        "近 2 年年均引用 73.5；此前 1 年年均 32.0",
-        "由 3 个独立种子论文的单层引用图发现",
+        "OpenAlex FWCI 33.42",
+        "近 2 年年均引用 74.5；此前 1 年年均 32.0",
+        "由 2 个独立种子论文的单层引用图发现",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 100%"
       ],
@@ -37685,7 +37784,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:58",
+      "metadata_updated_at": "2026-08-10T04:13:46",
       "openalex_url": "https://openalex.org/W4403074774",
       "landing_page_url": "https://doi.org/10.3390/app14198868",
       "open_access_url": "https://doi.org/10.3390/app14198868",
@@ -37771,11 +37870,11 @@
           "score": 0.9954000115394592
         }
       ],
-      "cited_by_count": 392,
+      "cited_by_count": 396,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 123
+          "cited_by_count": 127
         },
         {
           "year": 2025,
@@ -37790,8 +37889,8 @@
           "cited_by_count": 3
         }
       ],
-      "fwci": 92.7599,
-      "citation_normalized_percentile": 0.99964351,
+      "fwci": 93.3968,
+      "citation_normalized_percentile": 0.99964429,
       "referenced_works": [
         "W1515020792",
         "W1560270123",
@@ -37829,16 +37928,16 @@
         "W4386075980"
       ],
       "related_works": [
-        "W4391375266",
-        "W2748952813",
-        "W2390279801",
-        "W2358668433",
-        "W4396701345",
-        "W2376932109",
         "W2001405890",
+        "W2358668433",
+        "W2376932109",
+        "W2382290278",
+        "W2390279801",
+        "W2748952813",
+        "W4391375266",
         "W4396696052",
-        "W4402327032",
-        "W2382290278"
+        "W4396701345",
+        "W4402327032"
       ],
       "discovery_source": [
         "seed_graph:citing_works"
@@ -37852,7 +37951,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:13",
+      "metadata_updated_at": "2026-08-10T04:13:57",
       "openalex_url": "https://openalex.org/W4403337227",
       "landing_page_url": "https://doi.org/10.1177/02783649241273668",
       "open_access_url": null,
@@ -37906,8 +38005,8 @@
       "historical_score_reasons": [
         "发表于 2024 年",
         "同领域同年份引用标准化位于前 0.1%",
-        "OpenAlex FWCI 92.76",
-        "近 2 年年均引用 187.0；此前 2 年年均 9.0",
+        "OpenAlex FWCI 93.40",
+        "近 2 年年均引用 189.0；此前 2 年年均 9.0",
         "由 1 个独立种子论文的单层引用图发现",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 100%"
@@ -39477,11 +39576,11 @@
           "score": 0.9965999722480774
         }
       ],
-      "cited_by_count": 467,
+      "cited_by_count": 478,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 220
+          "cited_by_count": 231
         },
         {
           "year": 2025,
@@ -39492,8 +39591,8 @@
           "cited_by_count": 16
         }
       ],
-      "fwci": 544.9013,
-      "citation_normalized_percentile": 0.99998121,
+      "fwci": 551.0141,
+      "citation_normalized_percentile": 0.99998123,
       "referenced_works": [
         "W108702333",
         "W1479925024",
@@ -40063,7 +40162,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:28:02",
+      "metadata_updated_at": "2026-08-10T04:13:49",
       "openalex_url": "https://openalex.org/W4406800520",
       "landing_page_url": "https://doi.org/10.1007/s11432-024-4222-0",
       "open_access_url": null,
@@ -40111,13 +40210,201 @@
       "historical_score_reasons": [
         "发表于 2025 年",
         "同领域同年份引用标准化位于前 0.1%",
-        "OpenAlex FWCI 544.90",
-        "近 2 年年均引用 225.5；此前 1 年年均 16.0",
+        "OpenAlex FWCI 551.01",
+        "近 2 年年均引用 231.0；此前 1 年年均 16.0",
         "由 5 个独立种子论文的单层引用图发现",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 88%"
       ],
       "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W4407874080",
+      "openalex_id": "W4407874080",
+      "base_arxiv_id": null,
+      "doi": "10.1109/lra.2025.3544909",
+      "title": "TinyVLA: Toward Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation",
+      "authors": [
+        "Junjie Wen",
+        "Yichen Zhu",
+        "Jinming Li",
+        "Minjie Zhu",
+        "Zhibin Tang",
+        "Kun Wu",
+        "Zhiyuan Xu",
+        "Ning Liu",
+        "Ran Cheng",
+        "Chaomin Shen",
+        "Yaxin Peng",
+        "Feifei Feng",
+        "Jian Tang"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models have shown remarkable potential in visuomotor control and instruction comprehension through end-to-end learning processes. However, current VLA models face significant challenges: they are slow during inference and require extensive pre-training on large amounts of robotic data, making real-world deployment difficult. In this letter, we introduce a new family of compact vision-language-action models, called TinyVLA, which offers two key advantages over existing VLA models: (1) faster inference speeds, and (2) improved data efficiency, eliminating the need for pre-training stage. Our framework incorporates two essential components to build TinyVLA: (1) initializing the policy backbone with robust, high-speed multimodal models, and (2) integrating a diffusion policy decoder during fine-tuning to enable precise robot actions. We conducted extensive evaluations of TinyVLA in both simulation and on real robots, demonstrating that our approach significantly outperforms the state-of-the-art VLA model, OpenVLA, in terms of speed and data efficiency, while delivering comparable or superior performance. Additionally, TinyVLA exhibits strong generalization capabilities across various dimensions, including language instructions, novel objects, unseen positions, changes in object appearance, background variations, and environmental shifts, often matching or exceeding the performance of OpenVLA. We believe that TinyVLA offers an interesting perspective on utilizing pre-trained multimodal models for policy learning.",
+      "publication_date": "2025-02-24",
+      "publication_year": 2025,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9969000220298767
+        },
+        {
+          "id": "https://openalex.org/T11714",
+          "display_name": "Multimodal Machine Learning Applications",
+          "score": 0.9754999876022339
+        },
+        {
+          "id": "https://openalex.org/T10036",
+          "display_name": "Advanced Neural Network Applications",
+          "score": 0.961899995803833
+        }
+      ],
+      "cited_by_count": 64,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 34
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 30
+        }
+      ],
+      "fwci": 31.2894,
+      "citation_normalized_percentile": 0.99922756,
+      "referenced_works": [
+        "W2760103357",
+        "W3204665606",
+        "W3212974940",
+        "W4247348637",
+        "W4253707770",
+        "W4385403811",
+        "W4385430825",
+        "W4390872705",
+        "W4396786887",
+        "W4400612090",
+        "W4401414111",
+        "W4401415287",
+        "W4401416041",
+        "W4402353985",
+        "W4402354045",
+        "W4402354098",
+        "W4402354155",
+        "W4403793633",
+        "W6769596995",
+        "W6779823529",
+        "W6785132894",
+        "W6787713516",
+        "W6796581206",
+        "W6801512601",
+        "W6802366246",
+        "W6810640255",
+        "W6838719481",
+        "W6839091850",
+        "W6839256673",
+        "W6847224448",
+        "W6851579256",
+        "W6851592950",
+        "W6851950068",
+        "W6854738657",
+        "W6854866820",
+        "W6857073604",
+        "W6857236505",
+        "W6857872576",
+        "W6858444883",
+        "W6860003303",
+        "W6861737562",
+        "W6869853401",
+        "W6870687016",
+        "W6873297565"
+      ],
+      "related_works": [
+        "W2772917594",
+        "W2036807459",
+        "W2058170566",
+        "W2755342338",
+        "W2166024367",
+        "W3116076068",
+        "W2229312674",
+        "W2951359407",
+        "W2079911747",
+        "W1969923398"
+      ],
+      "discovery_source": [
+        "seed_graph:citing_works"
+      ],
+      "seed_paper_id": [
+        "openalex:W4385403811"
+      ],
+      "discovered_at": "2026-08-10T04:13:57",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:57",
+      "openalex_url": "https://openalex.org/W4407874080",
+      "landing_page_url": "https://doi.org/10.1109/lra.2025.3544909",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 28,
+      "video_potential": 34,
+      "matched_topics": [
+        "diffusion_visuomotor",
+        "vla_foundation"
+      ],
+      "matched_keywords": [
+        "diffusion policy",
+        "visuomotor control",
+        "vision-language-action",
+        "vision language action",
+        "VLA"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Diffusion & Visuomotor Policy",
+          "keywords": [
+            "diffusion policy",
+            "visuomotor control"
+          ],
+          "location": "abstract",
+          "points": 11.1
+        },
+        {
+          "kind": "topic",
+          "label": "VLA & Foundation Models",
+          "keywords": [
+            "vision-language-action",
+            "vision language action",
+            "VLA"
+          ],
+          "location": "title",
+          "points": 17.0
+        }
+      ],
+      "historical_value_score": 68.8,
+      "historical_score_components": {
+        "research_relevance": 28.0,
+        "normalized_citation": 99.9,
+        "fwci": 100.0,
+        "citation_momentum": 100.0,
+        "seed_provenance": 60.0,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 31.29",
+        "近年年均 OpenAlex 引用 32.0（无更早窗口可比较）",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
     },
     {
       "canonical_paper_id": "openalex:W4407932084",
@@ -40622,7 +40909,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.00872241,
+      "citation_normalized_percentile": 0.00874231,
       "referenced_works": [
         "W1970537494",
         "W1971663396",
@@ -40659,16 +40946,16 @@
         "W4400722908"
       ],
       "related_works": [
-        "W2502115930",
-        "W2482350142",
-        "W4246396837",
-        "W3126451824",
         "W1561927205",
+        "W2482350142",
+        "W2502115930",
+        "W2619203976",
+        "W3126451824",
         "W3191453585",
-        "W4297672492",
-        "W4310988119",
+        "W4246396837",
         "W4285226279",
-        "W2619203976"
+        "W4297672492",
+        "W4310988119"
       ],
       "discovery_source": [
         "journal_search:Journal of Process Control"
@@ -40680,7 +40967,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W4413098046",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103803",
       "open_access_url": "https://doi.org/10.2139/ssrn.5371418",
@@ -40690,7 +40977,7 @@
       "matched_topics": [],
       "matched_keywords": [],
       "research_reasons": [],
-      "historical_value_score": 14.2,
+      "historical_value_score": 14.3,
       "historical_score_components": {
         "research_relevance": 0.0,
         "normalized_citation": 0.9,
@@ -40706,6 +40993,74 @@
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W4415345235",
+      "openalex_id": "W4415345235",
+      "base_arxiv_id": "2507.03852",
+      "doi": "10.1016/j.automatica.2026.113220",
+      "title": "Network behavioral-feedback SIR epidemic model",
+      "authors": [
+        "Martina Alutto",
+        "Leonardo Cianfanelli",
+        "Giacomo Como",
+        "Fabio Fagnani"
+      ],
+      "abstract": "We propose a network behavioral-feedback Susceptible–Infected–Recovered (SIR) epidemic model in which the interaction matrix describing the infection rates across subpopulations depends in feedback on the current epidemic state. This model captures both heterogeneities in individuals’ mixing, contact frequency, aptitude to contract and spread the infection, and endogenous behavioral responses such as voluntary social distancing or the adoption of self-protective measures. We first show that the set of equilibrium points coincides with the disease-free states and we analyze their stability. Then, we illustrate through several examples how the shape of the set of stable equilibrium points depends on the structure of the interaction matrix, providing insights for the design of effective control strategies. Finally, we analyze the transient dynamic behavior of the epidemics, showing that, in a special case of rank-1 interaction matrices, there always exists an aggregate infection curve that exhibits a unimodal behavior: this result extends the ones on unimodality of the infection curve already known in the literature of epidemic models and paves the way for future control applications.",
+      "publication_date": "2026-08-05",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T13283",
+          "display_name": "Mental Health Research Topics",
+          "score": 0.3149000108242035
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.004589,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W4415345235",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113220",
+      "open_access_url": "https://doi.org/10.1016/j.automatica.2026.113220",
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 12.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 0.5,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 99.5%",
+        "OpenAlex FWCI 0.00",
+        "元数据完整度 100%"
       ],
       "is_knowledge_map": false
     },
@@ -41129,8 +41484,8 @@
           "cited_by_count": 5
         }
       ],
-      "fwci": 16.0899,
-      "citation_normalized_percentile": 0.9925981,
+      "fwci": 15.1225,
+      "citation_normalized_percentile": 0.99163985,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -41143,7 +41498,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:43",
+      "metadata_updated_at": "2026-08-10T04:13:36",
       "openalex_url": "https://openalex.org/W7140452175",
       "landing_page_url": "https://doi.org/10.1109/tmech.2025.3579247",
       "open_access_url": null,
@@ -41211,7 +41566,7 @@
       "historical_value_score": 75.0,
       "historical_score_components": {
         "research_relevance": 62.0,
-        "normalized_citation": 99.3,
+        "normalized_citation": 99.2,
         "fwci": 100.0,
         "citation_momentum": 25.0,
         "seed_provenance": null,
@@ -41220,8 +41575,8 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 0.7%",
-        "OpenAlex FWCI 16.09",
+        "同领域同年份引用标准化位于前 0.8%",
+        "OpenAlex FWCI 15.12",
         "近年年均 OpenAlex 引用 5.0（无更早窗口可比较）",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 100%"
@@ -41264,7 +41619,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.41065532,
+      "citation_normalized_percentile": 0.352245,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -41277,7 +41632,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7155510729",
       "landing_page_url": "https://doi.org/10.1109/tii.2026.3679379",
       "open_access_url": "https://doi.org/10.1109/tii.2026.3679379",
@@ -41287,10 +41642,10 @@
       "matched_topics": [],
       "matched_keywords": [],
       "research_reasons": [],
-      "historical_value_score": 25.3,
+      "historical_value_score": 24.0,
       "historical_score_components": {
         "research_relevance": 0.0,
-        "normalized_citation": 41.1,
+        "normalized_citation": 35.2,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -41299,7 +41654,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 58.9%",
+        "同领域同年份引用标准化位于前 64.8%",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 100%"
@@ -41448,7 +41803,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7164416836",
       "landing_page_url": "https://doi.org/10.1109/tii.2026.3676267",
       "open_access_url": null,
@@ -41473,6 +41828,264 @@
         "同领域同年份引用标准化位于前 27.9%",
         "OpenAlex FWCI 0.00",
         "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7165166575",
+      "openalex_id": "W7165166575",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tii.2026.3673736",
+      "title": "A Markov Chain-Based SDDiP Method for Integrated Logistics and Hydrogen-Electric Energy Scheduling for Seaports",
+      "authors": [
+        "Wentao Lv",
+        "Yujian Ye",
+        "Tianxiang Cui",
+        "Huayan Zhang",
+        "Cun Zhang",
+        "Dezhi Xu",
+        "Di Huang",
+        "Zhiyuan Liu",
+        "Tang Li",
+        "Goran Štrbac"
+      ],
+      "abstract": null,
+      "publication_date": "2026-06-18",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Industrial Informatics",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T12126",
+          "display_name": "Maritime Transport Emissions and Efficiency",
+          "score": 0.9020000100135803
+        },
+        {
+          "id": "https://openalex.org/T11223",
+          "display_name": "Maritime Ports and Logistics",
+          "score": 0.021299999207258224
+        },
+        {
+          "id": "https://openalex.org/T11185",
+          "display_name": "Integrated Energy Systems Optimization",
+          "score": 0.01360000018030405
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.59474006,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Industrial Informatics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7165166575",
+      "landing_page_url": "https://doi.org/10.1109/tii.2026.3673736",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 28.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 59.5,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 40.5%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7165525214",
+      "openalex_id": "W7165525214",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tii.2026.3683378",
+      "title": "Unlocking Wide-FoV Perception: A Robust Targetless Sensor Calibration Framework for Fisheye–LiDAR Fusion",
+      "authors": [
+        "Weijie Zhu",
+        "Shuo Shan",
+        "Kanjian Zhang",
+        "Haikun Wei"
+      ],
+      "abstract": null,
+      "publication_date": "2026-06-22",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Industrial Informatics",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11192",
+          "display_name": "Underwater Vehicles and Communication Systems",
+          "score": 0.15230000019073486
+        },
+        {
+          "id": "https://openalex.org/T10711",
+          "display_name": "Target Tracking and Data Fusion in Sensor Networks",
+          "score": 0.1168999969959259
+        },
+        {
+          "id": "https://openalex.org/T12321",
+          "display_name": "Insect Pheromone Research and Control",
+          "score": 0.0697999969124794
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.6293188,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Industrial Informatics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7165525214",
+      "landing_page_url": "https://doi.org/10.1109/tii.2026.3683378",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 29.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 62.9,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 37.1%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7165567689",
+      "openalex_id": "W7165567689",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tii.2025.3631017",
+      "title": "Prompt-Driven Fine-Tuning Large Language Model for Multistate Coestimation of Lithium-Ion Batteries",
+      "authors": [
+        "Lifei Hou",
+        "Yunlong Shang",
+        "Tian Qiu",
+        "X Y Zhang",
+        "Yuhao Zhu",
+        "Xin Gu"
+      ],
+      "abstract": null,
+      "publication_date": "2026-06-22",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Industrial Informatics",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10663",
+          "display_name": "Advanced Battery Technologies Research",
+          "score": 0.7702999711036682
+        },
+        {
+          "id": "https://openalex.org/T10018",
+          "display_name": "Advancements in Battery Materials",
+          "score": 0.03880000114440918
+        },
+        {
+          "id": "https://openalex.org/T10363",
+          "display_name": "Low-power high-performance VLSI design",
+          "score": 0.023099999874830246
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.63355284,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Industrial Informatics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7165567689",
+      "landing_page_url": "https://doi.org/10.1109/tii.2025.3631017",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 14,
+      "video_potential": 4,
+      "matched_topics": [
+        "llm_agent_robotics"
+      ],
+      "matched_keywords": [
+        "large language model"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "LLM / Agent Robotics",
+          "keywords": [
+            "large language model"
+          ],
+          "location": "title",
+          "points": 14.0
+        }
+      ],
+      "historical_value_score": 31.5,
+      "historical_score_components": {
+        "research_relevance": 14.0,
+        "normalized_citation": 63.4,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 36.6%",
+        "OpenAlex FWCI 0.00",
+        "元数据完整度 88%"
       ],
       "is_knowledge_map": false
     },
@@ -41521,7 +42134,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:50",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7165735611",
       "landing_page_url": "https://doi.org/10.1109/tie.2026.3702398",
       "open_access_url": null,
@@ -41595,7 +42208,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:50",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7165755449",
       "landing_page_url": "https://doi.org/10.1109/tie.2026.3702392",
       "open_access_url": null,
@@ -41668,7 +42281,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:50",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7165798681",
       "landing_page_url": "https://doi.org/10.1109/tie.2026.3702396",
       "open_access_url": null,
@@ -41741,7 +42354,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:50",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7165805419",
       "landing_page_url": "https://doi.org/10.1109/tie.2026.3702394",
       "open_access_url": null,
@@ -41814,7 +42427,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7166020870",
       "landing_page_url": "https://doi.org/10.1109/tcst.2026.3703149",
       "open_access_url": null,
@@ -41887,7 +42500,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7166183430",
       "landing_page_url": "https://doi.org/10.1109/tcst.2026.3691264",
       "open_access_url": null,
@@ -41975,7 +42588,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:49",
+      "metadata_updated_at": "2026-08-10T04:13:40",
       "openalex_url": "https://openalex.org/W7166653581",
       "landing_page_url": "https://doi.org/10.1109/tac.2026.3702484",
       "open_access_url": null,
@@ -42048,7 +42661,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:49",
+      "metadata_updated_at": "2026-08-10T04:13:40",
       "openalex_url": "https://openalex.org/W7166665278",
       "landing_page_url": "https://doi.org/10.1109/tac.2026.3702488",
       "open_access_url": null,
@@ -42131,7 +42744,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:49",
+      "metadata_updated_at": "2026-08-10T04:13:40",
       "openalex_url": "https://openalex.org/W7166714421",
       "landing_page_url": "https://doi.org/10.1109/tac.2026.3691920",
       "open_access_url": null,
@@ -42205,7 +42818,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:49",
+      "metadata_updated_at": "2026-08-10T04:13:40",
       "openalex_url": "https://openalex.org/W7166738371",
       "landing_page_url": "https://doi.org/10.1109/tac.2026.3702486",
       "open_access_url": null,
@@ -42279,7 +42892,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7167454611",
       "landing_page_url": "https://doi.org/10.1109/tii.2026.3699111",
       "open_access_url": null,
@@ -42343,7 +42956,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.80610299,
+      "citation_normalized_percentile": 0.78743694,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -42356,7 +42969,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7167480159",
       "landing_page_url": "https://doi.org/10.1109/tii.2026.3679594",
       "open_access_url": null,
@@ -42366,10 +42979,10 @@
       "matched_topics": [],
       "matched_keywords": [],
       "research_reasons": [],
-      "historical_value_score": 29.7,
+      "historical_value_score": 29.3,
       "historical_score_components": {
         "research_relevance": 0.0,
-        "normalized_citation": 80.6,
+        "normalized_citation": 78.7,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -42378,7 +42991,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 19.4%",
+        "同领域同年份引用标准化位于前 21.3%",
         "OpenAlex FWCI 0.00",
         "元数据完整度 88%"
       ],
@@ -42429,7 +43042,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7167481254",
       "landing_page_url": "https://doi.org/10.1109/tii.2026.3699105",
       "open_access_url": null,
@@ -42502,7 +43115,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7167511300",
       "landing_page_url": "https://doi.org/10.1109/tii.2026.3699109",
       "open_access_url": null,
@@ -42585,7 +43198,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7167522069",
       "landing_page_url": "https://doi.org/10.1109/tii.2026.3676683",
       "open_access_url": null,
@@ -42658,7 +43271,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:51",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7167531157",
       "landing_page_url": "https://doi.org/10.1109/tii.2026.3699107",
       "open_access_url": null,
@@ -43405,7 +44018,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:50",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7170284641",
       "landing_page_url": "https://doi.org/10.1109/tie.2026.3708052",
       "open_access_url": null,
@@ -43584,7 +44197,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:50",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7170535571",
       "landing_page_url": "https://doi.org/10.1109/tie.2026.3708054",
       "open_access_url": null,
@@ -43641,7 +44254,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:50",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7170650126",
       "landing_page_url": "https://doi.org/10.1109/tie.2026.3708058",
       "open_access_url": null,
@@ -43698,7 +44311,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:50",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7170722210",
       "landing_page_url": "https://doi.org/10.1109/tie.2026.3708056",
       "open_access_url": null,
@@ -43947,7 +44560,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171094448",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103796",
       "open_access_url": null,
@@ -44867,7 +45480,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171467365",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103801",
       "open_access_url": null,
@@ -44976,7 +45589,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171540359",
       "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107172",
       "open_access_url": null,
@@ -45033,7 +45646,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:49",
+      "metadata_updated_at": "2026-08-10T04:13:40",
       "openalex_url": "https://openalex.org/W7171616447",
       "landing_page_url": "https://doi.org/10.1109/tac.2026.3714945",
       "open_access_url": null,
@@ -45192,7 +45805,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:49",
+      "metadata_updated_at": "2026-08-10T04:13:40",
       "openalex_url": "https://openalex.org/W7171623435",
       "landing_page_url": "https://doi.org/10.1109/tac.2026.3714941",
       "open_access_url": null,
@@ -45249,7 +45862,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:49",
+      "metadata_updated_at": "2026-08-10T04:13:40",
       "openalex_url": "https://openalex.org/W7171625866",
       "landing_page_url": "https://doi.org/10.1109/tac.2026.3714943",
       "open_access_url": null,
@@ -45364,7 +45977,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171685456",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103802",
       "open_access_url": null,
@@ -45457,7 +46070,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171696426",
       "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107174",
       "open_access_url": "https://doi.org/10.1016/j.conengprac.2026.107174",
@@ -45575,7 +46188,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171698135",
       "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107176",
       "open_access_url": "https://doi.org/10.1016/j.conengprac.2026.107176",
@@ -45805,7 +46418,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171821590",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103813",
       "open_access_url": null,
@@ -45908,7 +46521,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171830921",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103800",
       "open_access_url": null,
@@ -46012,7 +46625,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171869547",
       "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107177",
       "open_access_url": null,
@@ -46095,7 +46708,6 @@
       "fwci": 0.0,
       "citation_normalized_percentile": 0.87957531,
       "referenced_works": [
-        "W923818475",
         "W1965555277",
         "W1993172622",
         "W2004186751",
@@ -46127,7 +46739,8 @@
         "W4414158997",
         "W4415872279",
         "W7134131427",
-        "W7161555942"
+        "W7161555942",
+        "W923818475"
       ],
       "related_works": [],
       "discovery_source": [
@@ -46140,7 +46753,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7171943897",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103808",
       "open_access_url": null,
@@ -46567,7 +47180,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7172004900",
       "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107179",
       "open_access_url": null,
@@ -46756,7 +47369,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7172088272",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103806",
       "open_access_url": null,
@@ -46863,7 +47476,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7172122615",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103809",
       "open_access_url": null,
@@ -46928,7 +47541,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.88166075,
+      "citation_normalized_percentile": 0.87609279,
       "referenced_works": [
         "W2000651380",
         "W2024396292",
@@ -46975,7 +47588,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7172206822",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103799",
       "open_access_url": null,
@@ -46985,10 +47598,10 @@
       "matched_topics": [],
       "matched_keywords": [],
       "research_reasons": [],
-      "historical_value_score": 35.1,
+      "historical_value_score": 35.0,
       "historical_score_components": {
         "research_relevance": 0.0,
-        "normalized_citation": 88.2,
+        "normalized_citation": 87.6,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -46997,7 +47610,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 11.8%",
+        "同领域同年份引用标准化位于前 12.4%",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 88%"
@@ -47044,7 +47657,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.88403958,
+      "citation_normalized_percentile": 0.87845984,
       "referenced_works": [
         "W2095518865",
         "W2127271355",
@@ -47093,7 +47706,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7172257802",
       "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107180",
       "open_access_url": null,
@@ -47103,10 +47716,10 @@
       "matched_topics": [],
       "matched_keywords": [],
       "research_reasons": [],
-      "historical_value_score": 35.2,
+      "historical_value_score": 35.0,
       "historical_score_components": {
         "research_relevance": 0.0,
-        "normalized_citation": 88.4,
+        "normalized_citation": 87.8,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -47115,7 +47728,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 11.6%",
+        "同领域同年份引用标准化位于前 12.2%",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 88%"
@@ -47158,7 +47771,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.88717965,
+      "citation_normalized_percentile": 0.88158435,
       "referenced_works": [
         "W1973978840",
         "W2013573169",
@@ -47192,7 +47805,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7172308072",
       "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107181",
       "open_access_url": "https://doi.org/10.1016/j.conengprac.2026.107181",
@@ -47202,10 +47815,10 @@
       "matched_topics": [],
       "matched_keywords": [],
       "research_reasons": [],
-      "historical_value_score": 35.2,
+      "historical_value_score": 35.1,
       "historical_score_components": {
         "research_relevance": 0.0,
-        "normalized_citation": 88.7,
+        "normalized_citation": 88.2,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -47214,7 +47827,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 11.3%",
+        "同领域同年份引用标准化位于前 11.8%",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 88%"
@@ -47257,7 +47870,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.93918142,
+      "citation_normalized_percentile": 0.92161915,
       "referenced_works": [
         "W2027228352",
         "W3022782115",
@@ -47292,7 +47905,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:52",
+      "metadata_updated_at": "2026-08-10T04:13:42",
       "openalex_url": "https://openalex.org/W7172439451",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103810",
       "open_access_url": "https://doi.org/10.1016/j.jprocont.2026.103810",
@@ -47316,10 +47929,10 @@
           "points": 10.4
         }
       ],
-      "historical_value_score": 40.7,
+      "historical_value_score": 40.3,
       "historical_score_components": {
         "research_relevance": 10.0,
-        "normalized_citation": 93.9,
+        "normalized_citation": 92.2,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -47328,7 +47941,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 6.1%",
+        "同领域同年份引用标准化位于前 7.8%",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 88%"
@@ -47372,7 +47985,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.93367851,
+      "citation_normalized_percentile": 0.91737681,
       "referenced_works": [
         "W1510753533",
         "W1996671798",
@@ -47401,9 +48014,1509 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-08-06T04:27:50",
+      "metadata_updated_at": "2026-08-10T04:13:41",
       "openalex_url": "https://openalex.org/W7172442149",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113217",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 36.0,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 91.7,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 8.3%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7172498376",
+      "openalex_id": "W7172498376",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tii.2026.3711210",
+      "title": "IEEE Industrial Electronics Society Publication Information",
+      "authors": [],
+      "abstract": null,
+      "publication_date": "2026-08-01",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Industrial Informatics",
+      "source_type": "paratext",
+      "topics": [],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": null,
+      "citation_normalized_percentile": null,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Industrial Informatics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7172498376",
+      "landing_page_url": "https://doi.org/10.1109/tii.2026.3711210",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 8.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 0.0,
+        "fwci": null,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 62.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "OpenAlex 收录引用 0 次；按发表年限折算年均 0.0（缺少领域百分位时的降级信号）",
+        "OpenAlex 未提供 FWCI，评分按可用指标降级",
+        "元数据完整度 62%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7172499134",
+      "openalex_id": "W7172499134",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tii.2026.3711212",
+      "title": "IEEE Industrial Electronics Society Information",
+      "authors": [],
+      "abstract": null,
+      "publication_date": "2026-08-01",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Industrial Informatics",
+      "source_type": "paratext",
+      "topics": [],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": null,
+      "citation_normalized_percentile": null,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Industrial Informatics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7172499134",
+      "landing_page_url": "https://doi.org/10.1109/tii.2026.3711212",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 8.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 0.0,
+        "fwci": null,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 62.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "OpenAlex 收录引用 0 次；按发表年限折算年均 0.0（缺少领域百分位时的降级信号）",
+        "OpenAlex 未提供 FWCI，评分按可用指标降级",
+        "元数据完整度 62%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7172506433",
+      "openalex_id": "W7172506433",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tii.2026.3711214",
+      "title": "IEEE Transactions on Industrial Informatics Information for Authors",
+      "authors": [],
+      "abstract": null,
+      "publication_date": "2026-08-01",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Industrial Informatics",
+      "source_type": "paratext",
+      "topics": [],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": null,
+      "citation_normalized_percentile": null,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Industrial Informatics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7172506433",
+      "landing_page_url": "https://doi.org/10.1109/tii.2026.3711214",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 8.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 0.0,
+        "fwci": null,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 62.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "OpenAlex 收录引用 0 次；按发表年限折算年均 0.0（缺少领域百分位时的降级信号）",
+        "OpenAlex 未提供 FWCI，评分按可用指标降级",
+        "元数据完整度 62%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7172514061",
+      "openalex_id": "W7172514061",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tii.2026.3711208",
+      "title": "Table of Contents",
+      "authors": [],
+      "abstract": null,
+      "publication_date": "2026-08-01",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Industrial Informatics",
+      "source_type": "paratext",
+      "topics": [],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": null,
+      "citation_normalized_percentile": null,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Industrial Informatics"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7172514061",
+      "landing_page_url": "https://doi.org/10.1109/tii.2026.3711208",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 8.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 0.0,
+        "fwci": null,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 62.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "OpenAlex 收录引用 0 次；按发表年限折算年均 0.0（缺少领域百分位时的降级信号）",
+        "OpenAlex 未提供 FWCI，评分按可用指标降级",
+        "元数据完整度 62%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7172518702",
+      "openalex_id": "W7172518702",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.jprocont.2026.103798",
+      "title": "Few-shot fault diagnosis method with uncertainty quantification for industrial processes",
+      "authors": [
+        "Ruipeng Fan",
+        "Wei Dai",
+        "Jing Nan",
+        "Lanhao Wang",
+        "Meiqin Liu"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-05",
+      "publication_year": 2026,
+      "source_name": "Journal of Process Control",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10876",
+          "display_name": "Fault Detection and Control Systems",
+          "score": 0.7052000164985657
+        },
+        {
+          "id": "https://openalex.org/T10220",
+          "display_name": "Machine Fault Diagnosis Techniques",
+          "score": 0.2142000049352646
+        },
+        {
+          "id": "https://openalex.org/T12676",
+          "display_name": "Machine Learning and ELM",
+          "score": 0.009200000204145908
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.87204334,
+      "referenced_works": [
+        "W1983043530",
+        "W2065005304",
+        "W2148143831",
+        "W2912057957",
+        "W2953013376",
+        "W2963613787",
+        "W3019898994",
+        "W3200647619",
+        "W4205322136",
+        "W4225374983",
+        "W4225673077",
+        "W4285040511",
+        "W4313291175",
+        "W4360884927",
+        "W4361255950",
+        "W4366156325",
+        "W4367663202",
+        "W4384161834",
+        "W4385325615",
+        "W4389795886",
+        "W4390717391",
+        "W4392208038",
+        "W4400940721",
+        "W4400975550",
+        "W4403183280",
+        "W4406856243",
+        "W4412047121",
+        "W4414158997",
+        "W4415178576",
+        "W7125517539",
+        "W7128362494",
+        "W7133333217",
+        "W7143472869"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Journal of Process Control"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7172518702",
+      "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103798",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 34.9,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 87.2,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 12.8%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7196951285",
+      "openalex_id": "W7196951285",
+      "base_arxiv_id": null,
+      "doi": "10.1016/s0005-1098(26)00379-1",
+      "title": "Editorial Board",
+      "authors": [],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "paratext",
+      "topics": [],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": null,
+      "citation_normalized_percentile": null,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7196951285",
+      "landing_page_url": "https://doi.org/10.1016/s0005-1098(26)00379-1",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 8.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 0.0,
+        "fwci": null,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 62.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "OpenAlex 收录引用 0 次；按发表年限折算年均 0.0（缺少领域百分位时的降级信号）",
+        "OpenAlex 未提供 FWCI，评分按可用指标降级",
+        "元数据完整度 62%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7196963024",
+      "openalex_id": "W7196963024",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113207",
+      "title": "Star-convex position constrained containment control",
+      "authors": [
+        "Haopeng Yang",
+        "Qian Ni",
+        "Peng Lin"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T12288",
+          "display_name": "Optimization and Search Problems",
+          "score": 0.20839999616146088
+        },
+        {
+          "id": "https://openalex.org/T10791",
+          "display_name": "Advanced Control Systems Optimization",
+          "score": 0.13729999959468842
+        },
+        {
+          "id": "https://openalex.org/T10249",
+          "display_name": "Distributed Control Multi-Agent Systems",
+          "score": 0.09139999747276306
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.93099675,
+      "referenced_works": [
+        "W1969487368",
+        "W1991143797",
+        "W1994596188",
+        "W2007453291",
+        "W2012535084",
+        "W2075752243",
+        "W2114791779",
+        "W2115206688",
+        "W2122787820",
+        "W2123876595",
+        "W2140391590",
+        "W2141410403",
+        "W2144893966",
+        "W2517192452",
+        "W2537120359",
+        "W2560148479",
+        "W2893086598",
+        "W2900457719",
+        "W2901535330",
+        "W2916105681",
+        "W3034646794",
+        "W3123316466",
+        "W3162690794",
+        "W3163490008",
+        "W3165839290",
+        "W4205303314",
+        "W4282940153",
+        "W4285585322",
+        "W4388622873",
+        "W4390956278",
+        "W4391791325",
+        "W4401765135",
+        "W4404179587"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7196963024",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113207",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 36.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 93.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 6.9%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7196966124",
+      "openalex_id": "W7196966124",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113225",
+      "title": "Robust Neural IDA-PBC: Passivity-based stabilization under approximations",
+      "authors": [
+        "Santiago Sanchez-Escalonilla Plaza",
+        "Samuele Zoboli",
+        "Bayu Jayawardhana"
+      ],
+      "abstract": "We revisit and extend the Neural Interconnection and Damping Assignment Passivity-Based Control (Neural IDA-PBC) framework, which recasts IDA-PBC design as an optimization problem using Physics-Informed Neural Networks (PINNs). Despite its promise, the stability and robustness of the resulting closed-loop systems under approximate matching have remained unaddressed. We fill this gap by formally analyzing the effects of approximation residuals as additive perturbations and deriving conditions for ultimate boundedness, practical and asymptotic stability. Building on this, we introduce a renewed design pipeline with two key features: (i) a composite loss that incorporates residuals targeting passivity, dissipation, and robustness guarantees; (ii) a modular NN parameterization of the desired dynamics, allowing for structural priors such as skew-symmetry, convexity, and momentum damping. This modular approach enables learning controllers that preserve the physical structure of energy-based systems and allows fine-tuning of closed-loop transients post-training. We validate the method on a 3D underactuated quadrotor with 12 state variables, demonstrating stable energy-shaping control and structure-preserving convergence using only numerical approximations.",
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T12772",
+          "display_name": "Control and Stability of Dynamical Systems",
+          "score": 0.7696999907493591
+        },
+        {
+          "id": "https://openalex.org/T11206",
+          "display_name": "Model Reduction and Neural Networks",
+          "score": 0.07370000332593918
+        },
+        {
+          "id": "https://openalex.org/T10040",
+          "display_name": "Adaptive Control of Nonlinear Systems",
+          "score": 0.02930000051856041
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.87789474,
+      "referenced_works": [
+        "W1971767478",
+        "W2032630233",
+        "W2042657889",
+        "W2043183450",
+        "W2045666702",
+        "W2048253740",
+        "W2051434435",
+        "W2093626735",
+        "W2096876511",
+        "W2103496339",
+        "W2115103036",
+        "W2136384363",
+        "W2137983211",
+        "W2198472822",
+        "W2344730014",
+        "W2803629276",
+        "W2899283552",
+        "W3140976279",
+        "W3201579698",
+        "W3217738881",
+        "W4288039037",
+        "W4314946959",
+        "W4315488624",
+        "W4391021251",
+        "W4391969228",
+        "W4400644035"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7196966124",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113225",
+      "open_access_url": "https://doi.org/10.1016/j.automatica.2026.113225",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0005109826004097/pdf",
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 36.5,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 87.8,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 12.2%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7196967274",
+      "openalex_id": "W7196967274",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107185",
+      "title": "Guaranteed neural fault detection and control for safety-critical systems with limited computational resources",
+      "authors": [
+        "Anran Li",
+        "Mehdi Hosseinzadeh"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10876",
+          "display_name": "Fault Detection and Control Systems",
+          "score": 0.6625999808311462
+        },
+        {
+          "id": "https://openalex.org/T10220",
+          "display_name": "Machine Fault Diagnosis Techniques",
+          "score": 0.04089999943971634
+        },
+        {
+          "id": "https://openalex.org/T10320",
+          "display_name": "Neural Networks and Applications",
+          "score": 0.027899999171495438
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.87804954,
+      "referenced_works": [
+        "W2039979472",
+        "W2060297968",
+        "W2095233962",
+        "W2135670014",
+        "W2574212447",
+        "W2618792588",
+        "W2765933375",
+        "W2766900268",
+        "W2792806812",
+        "W2794389865",
+        "W2923040451",
+        "W2963137637",
+        "W3022782115",
+        "W3142744390",
+        "W3183528811",
+        "W3197959863",
+        "W3215388366",
+        "W4312782117",
+        "W4367146640",
+        "W4386174033",
+        "W4391310090",
+        "W4392049078",
+        "W4401549879",
+        "W4402399028",
+        "W4403308672",
+        "W4406736126",
+        "W4412037602",
+        "W7124140843",
+        "W7162577065"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7196967274",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107185",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 35.0,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 87.8,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 12.2%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7196967335",
+      "openalex_id": "W7196967335",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113223",
+      "title": "Passivity-exploiting stabilization of semilinear single-track vehicle models with distributed tire friction dynamics",
+      "authors": [
+        "Luigi Romano",
+        "Ole Morten Aamo",
+        "Miroslav Krstić",
+        "Jan Åslund",
+        "Erik Frisk"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10805",
+          "display_name": "Vehicle Dynamics and Control Systems",
+          "score": 0.4645000100135803
+        },
+        {
+          "id": "https://openalex.org/T11615",
+          "display_name": "Control and Dynamics of Mobile Robots",
+          "score": 0.14069999754428864
+        },
+        {
+          "id": "https://openalex.org/T13261",
+          "display_name": "Elasticity and Wave Propagation",
+          "score": 0.07180000096559525
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.83814052,
+      "referenced_works": [
+        "W120656957",
+        "W1547968970",
+        "W1686971938",
+        "W1783963276",
+        "W1841922822",
+        "W1971361435",
+        "W1974790392",
+        "W1986324896",
+        "W1990834757",
+        "W1997777200",
+        "W2006211321",
+        "W2025434683",
+        "W2054517929",
+        "W2065735252",
+        "W2068710662",
+        "W2071369834",
+        "W2078854980",
+        "W2082985540",
+        "W2119967247",
+        "W2121829365",
+        "W2138989884",
+        "W2140122171",
+        "W2150876197",
+        "W2156155902",
+        "W2159924794",
+        "W2165368325",
+        "W2178205091",
+        "W2205224345",
+        "W2262937782",
+        "W2276825135",
+        "W2791190216",
+        "W2971555788",
+        "W4214901911",
+        "W4375860277",
+        "W4385486277",
+        "W4393995552",
+        "W4400723508",
+        "W4410583147",
+        "W7163537403"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7196967335",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113223",
+      "open_access_url": "https://doi.org/10.1016/j.automatica.2026.113223",
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 34.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 83.8,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 16.2%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7196969348",
+      "openalex_id": "W7196969348",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113214",
+      "title": "Optimal schedule for wireless energy theft and DoS jamming on remote state estimation: Policy structure and approximation",
+      "authors": [
+        "Weijun Lv",
+        "Lixin Yang",
+        "Yong Xu",
+        "Renquan Lu",
+        "Yu Liu",
+        "Ling Shi"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11392",
+          "display_name": "Energy Harvesting in Wireless Networks",
+          "score": 0.7408999800682068
+        },
+        {
+          "id": "https://openalex.org/T10917",
+          "display_name": "Smart Grid Security and Resilience",
+          "score": 0.07970000058412552
+        },
+        {
+          "id": "https://openalex.org/T11498",
+          "display_name": "Security in Wireless Sensor Networks",
+          "score": 0.032999999821186066
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.82946842,
+      "referenced_works": [
+        "W1651728063",
+        "W1966000877",
+        "W1980732596",
+        "W2003530067",
+        "W2008668719",
+        "W2042901619",
+        "W2063688797",
+        "W2157829425",
+        "W2169239645",
+        "W2324627801",
+        "W2343568200",
+        "W2525975698",
+        "W2746553466",
+        "W2758737610",
+        "W2770337865",
+        "W2922515190",
+        "W2962909029",
+        "W2994803162",
+        "W3016268025",
+        "W4200376042",
+        "W4210319381",
+        "W4226110370",
+        "W4321189349",
+        "W4385453130",
+        "W4387951106",
+        "W4388262692",
+        "W4390422027"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7196969348",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113214",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 33.9,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 82.9,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 17.1%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7196969988",
+      "openalex_id": "W7196969988",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.jprocont.2026.103804",
+      "title": "Sparse identification of physically plausible aggregation kernels for wet granulation processes",
+      "authors": [
+        "Stefan R. Tölle",
+        "Lorenz Dörschel",
+        "Stefan Klinken-Uth",
+        "Alana Delvos",
+        "Jörg Breitkreutz",
+        "Heike Vallery",
+        "Sebastian Stemmler"
+      ],
+      "abstract": "Population balance models provide a mathematical framework for describing the dynamics of particulate systems. For aggregation processes, such as twin-screw wet granulation, population balance models critically depend on accurate aggregation kernels, yet first-principles derivation is often impractical, and data-driven methods can lack physical interpretability. This work presents a sparse identification framework for learning physically plausible aggregation kernels directly from data. The approach enforces physical constraints, exploits structural properties, applies a systematic scaling strategy, and extends naturally to actuated systems. Validation on experimental data from a continuous twin-screw wet granulation process confirms the method’s robustness and its ability to recover physically meaningful aggregation kernels from real-world measurement data. The identified population balance model was able to predict the median particle size with a mean absolute error of 134.8 µm (10 %).",
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Journal of Process Control",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10615",
+          "display_name": "Granular flow and fluidized beds",
+          "score": 0.9448999762535095
+        },
+        {
+          "id": "https://openalex.org/T12282",
+          "display_name": "Mineral Processing and Grinding",
+          "score": 0.02319999970495701
+        },
+        {
+          "id": "https://openalex.org/T11188",
+          "display_name": "Coagulation and Flocculation Studies",
+          "score": 0.008700000122189522
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.88133213,
+      "referenced_works": [
+        "W1975097468",
+        "W2017078932",
+        "W2017798864",
+        "W2021512991",
+        "W2063963802",
+        "W2069626687",
+        "W2074696465",
+        "W2087378881",
+        "W2100347683",
+        "W2153178537",
+        "W2239232218",
+        "W2251422136",
+        "W2343115406",
+        "W2525748878",
+        "W2768748954",
+        "W2932774891",
+        "W3096599988",
+        "W3158292676",
+        "W3178585195",
+        "W4249613604"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Journal of Process Control"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7196969988",
+      "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103804",
+      "open_access_url": "https://doi.org/10.1016/j.jprocont.2026.103804",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0959152426001873/pdf",
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 36.6,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 88.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 11.9%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7196988144",
+      "openalex_id": "W7196988144",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107184",
+      "title": "Safety-enhanced hierarchical control for user-tailored adaptive gait planning in lower-limb exoskeleton robots",
+      "authors": [
+        "Yuan Zhou",
+        "Bo Chen",
+        "Ming Chen",
+        "Zheming Wang",
+        "Xiangming Ye"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11023",
+          "display_name": "Prosthetics and Rehabilitation Robotics",
+          "score": 0.8822000026702881
+        },
+        {
+          "id": "https://openalex.org/T10510",
+          "display_name": "Stroke Rehabilitation and Recovery",
+          "score": 0.040699999779462814
+        },
+        {
+          "id": "https://openalex.org/T11687",
+          "display_name": "Teleoperation and Haptic Systems",
+          "score": 0.032999999821186066
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.82293148,
+      "referenced_works": [
+        "W2056397398",
+        "W2129275525",
+        "W2560504659",
+        "W2574540508",
+        "W2598070036",
+        "W2616167242",
+        "W2782861998",
+        "W2795974647",
+        "W2940951108",
+        "W2969578633",
+        "W2980089704",
+        "W3138616321",
+        "W3158391303",
+        "W3184215297",
+        "W3195146316",
+        "W4225645749",
+        "W4226148091",
+        "W4313643860",
+        "W4378746725",
+        "W4387333743",
+        "W4391544062",
+        "W4392523436",
+        "W4398152828",
+        "W4400679843",
+        "W4400842610",
+        "W4402673248",
+        "W4403390328",
+        "W4403635674",
+        "W4404723682",
+        "W4410852502",
+        "W4412741625",
+        "W7105592173"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7196988144",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107184",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 33.7,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 82.3,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 17.7%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7197032284",
+      "openalex_id": "W7197032284",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113221",
+      "title": "Asynchronous resilient cooperative output regulation for nonlinear MASs under DoS attacks",
+      "authors": [
+        "Jun Zhang",
+        "Tieshan Li",
+        "Shaocheng Tong"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10917",
+          "display_name": "Smart Grid Security and Resilience",
+          "score": 0.5042999982833862
+        },
+        {
+          "id": "https://openalex.org/T10046",
+          "display_name": "Stability and Control of Uncertain Systems",
+          "score": 0.23080000281333923
+        },
+        {
+          "id": "https://openalex.org/T10249",
+          "display_name": "Distributed Control Multi-Agent Systems",
+          "score": 0.11150000244379044
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.88095975,
+      "referenced_works": [
+        "W1994829382",
+        "W2060445026",
+        "W2063066107",
+        "W2068740779",
+        "W2124234993",
+        "W2342901696",
+        "W2552003518",
+        "W3096414253",
+        "W4211140512",
+        "W4285215458",
+        "W4386040892",
+        "W4399345501",
+        "W4405645615",
+        "W4406344395"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7197032284",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113221",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 35.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 88.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 11.9%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7197036292",
+      "openalex_id": "W7197036292",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107182",
+      "title": "Robust safe stopping of autonomous vehicles under actuator faults via contraction-based invariant tubes",
+      "authors": [
+        "Junfeng Zhang",
+        "Yanan Zhang",
+        "Yapei Jiang",
+        "Zhongshi Zhang",
+        "Chengkun He",
+        "Junzhi Zhang"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10805",
+          "display_name": "Vehicle Dynamics and Control Systems",
+          "score": 0.741599977016449
+        },
+        {
+          "id": "https://openalex.org/T10524",
+          "display_name": "Traffic control and management",
+          "score": 0.04259999841451645
+        },
+        {
+          "id": "https://openalex.org/T10586",
+          "display_name": "Robotic Path Planning Algorithms",
+          "score": 0.033399999141693115
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.84101858,
+      "referenced_works": [
+        "W1981723834",
+        "W2119974577",
+        "W2123871098",
+        "W2396317032",
+        "W2571645952",
+        "W2766407737",
+        "W2804893772",
+        "W2981761302",
+        "W2990929492",
+        "W3011121473",
+        "W3154981554",
+        "W3157395925",
+        "W3166956873",
+        "W3197315420",
+        "W3199990464",
+        "W4226300854",
+        "W4226489184",
+        "W4280493720",
+        "W4312966185",
+        "W4383262507",
+        "W4385335331",
+        "W4387609198",
+        "W4390187371",
+        "W4391948490",
+        "W4398151417",
+        "W4411725230",
+        "W4411867249",
+        "W4411949391",
+        "W4416286414",
+        "W7126242316"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7197036292",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107182",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 34.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 84.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 15.9%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7197037286",
+      "openalex_id": "W7197037286",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113215",
+      "title": "Distributed optimal double-layer formation control for multi-cluster systems by a game-based approach",
+      "authors": [
+        "Jun Shi",
+        "Maojiao Ye",
+        "Yuyue Yan",
+        "Shunyuan Xiao",
+        "Lei Ding"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10249",
+          "display_name": "Distributed Control Multi-Agent Systems",
+          "score": 0.9768999814987183
+        },
+        {
+          "id": "https://openalex.org/T10545",
+          "display_name": "Optimization and Variational Analysis",
+          "score": 0.0035000001080334187
+        },
+        {
+          "id": "https://openalex.org/T11082",
+          "display_name": "Spacecraft Dynamics and Control",
+          "score": 0.0035000001080334187
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.93371783,
+      "referenced_works": [
+        "W1981209947",
+        "W1981826826",
+        "W2013921128",
+        "W2074823003",
+        "W2105555541",
+        "W2128658178",
+        "W2248946215",
+        "W2508148686",
+        "W2590210788",
+        "W2597364644",
+        "W2611346233",
+        "W2614980958",
+        "W2734359946",
+        "W2754300070",
+        "W2766719770",
+        "W2805316908",
+        "W2806070934",
+        "W2904033891",
+        "W2981621706",
+        "W2988732123",
+        "W3039654581",
+        "W3090084735",
+        "W3118630142",
+        "W3135158448",
+        "W3158246150",
+        "W3174070171",
+        "W3174776121",
+        "W3199648016",
+        "W4224306019",
+        "W4292181096",
+        "W4309410072",
+        "W4316877080",
+        "W4317038588",
+        "W4319303241",
+        "W4327615728",
+        "W4365483262",
+        "W4381327844",
+        "W4386959675",
+        "W4388473639",
+        "W4390576779",
+        "W4390659113",
+        "W4390970494",
+        "W4394903916",
+        "W4400944461",
+        "W4402832391",
+        "W4405862467"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7197037286",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113215",
       "open_access_url": null,
       "pdf_url": null,
       "research_fit": 0,
@@ -47427,6 +49540,1282 @@
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7197037304",
+      "openalex_id": "W7197037304",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113200",
+      "title": "Resilient fully distributed control for multi-agent systems under DoS attacks",
+      "authors": [
+        "Chao Deng",
+        "Wei Wang",
+        "Bohui Wang",
+        "Changyun Wen",
+        "Dong Yue"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-06",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10917",
+          "display_name": "Smart Grid Security and Resilience",
+          "score": 0.6110000014305115
+        },
+        {
+          "id": "https://openalex.org/T10249",
+          "display_name": "Distributed Control Multi-Agent Systems",
+          "score": 0.25929999351501465
+        },
+        {
+          "id": "https://openalex.org/T10046",
+          "display_name": "Stability and Control of Uncertain Systems",
+          "score": 0.03530000150203705
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.88123839,
+      "referenced_works": [
+        "W1976907074",
+        "W2000806524",
+        "W2065632630",
+        "W2068740779",
+        "W2080817687",
+        "W2124234993",
+        "W2160643434",
+        "W2167675457",
+        "W2294340956",
+        "W2342901696",
+        "W2811183536",
+        "W2883071866",
+        "W2911328656",
+        "W2962821801",
+        "W2964065394",
+        "W2999886737",
+        "W3000216272",
+        "W3006414217",
+        "W3021373970",
+        "W3024999224",
+        "W3091302986",
+        "W3129814936",
+        "W3183461338",
+        "W4285215458",
+        "W4366351941",
+        "W4387029856",
+        "W4387886154",
+        "W4388666377",
+        "W4408011905",
+        "W4411996939"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7197037304",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113200",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 35.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 88.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 11.9%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201838212",
+      "openalex_id": "W7201838212",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113224",
+      "title": "Structure-conditioned input-to-state stability for layer-by-layer molecular computations in parallel chemical reaction networks",
+      "authors": [
+        "姜仁雷",
+        "Chuanhou Gao",
+        "Denis Dochain"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-07",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10621",
+          "display_name": "Gene Regulatory Network Analysis",
+          "score": 0.47530001401901245
+        },
+        {
+          "id": "https://openalex.org/T12029",
+          "display_name": "DNA and Biological Computing",
+          "score": 0.10379999876022339
+        },
+        {
+          "id": "https://openalex.org/T10913",
+          "display_name": "Molecular Junctions and Nanostructures",
+          "score": 0.03720000013709068
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.84510335,
+      "referenced_works": [
+        "W1492299013",
+        "W1969612690",
+        "W1977312644",
+        "W1991482214",
+        "W2000804241",
+        "W2017493230",
+        "W2025569385",
+        "W2032619610",
+        "W2045082511",
+        "W2094781369",
+        "W2143741733",
+        "W2164198012",
+        "W2165626406",
+        "W2172089016",
+        "W2737153105",
+        "W2810268565",
+        "W2888613658",
+        "W2936648092",
+        "W2963237893",
+        "W3199106546",
+        "W4210934279",
+        "W4238640588",
+        "W4362639928",
+        "W4404626147",
+        "W4405306574",
+        "W4408481724",
+        "W4408613994",
+        "W4408780424",
+        "W4410772205"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7201838212",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113224",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 30.7,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 84.5,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 15.5%",
+        "OpenAlex FWCI 0.00",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201838926",
+      "openalex_id": "W7201838926",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107178",
+      "title": "State estimation in a magnetic levitation system using higher order implicit numerical methods",
+      "authors": [
+        "Maximilian Mogler",
+        "Le Zhang",
+        "Laurent Lefèvre",
+        "Paul Kotyczka"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-07",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11602",
+          "display_name": "Magnetic Bearings and Levitation Dynamics",
+          "score": 0.7179999947547913
+        },
+        {
+          "id": "https://openalex.org/T12405",
+          "display_name": "Characterization and Applications of Magnetic Nanoparticles",
+          "score": 0.03830000013113022
+        },
+        {
+          "id": "https://openalex.org/T11222",
+          "display_name": "Magnetic Properties and Applications",
+          "score": 0.023399999365210533
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.88560372,
+      "referenced_works": [
+        "W128017088",
+        "W1987356574",
+        "W1989351308",
+        "W2022494266",
+        "W2096897575",
+        "W2098816895",
+        "W2107292117",
+        "W2141099256",
+        "W2170374301",
+        "W2617394356",
+        "W2758740979",
+        "W2902394159",
+        "W2911631246",
+        "W3007306733",
+        "W3019161271",
+        "W3113000041",
+        "W3126163468",
+        "W3161460082",
+        "W3168070935",
+        "W3188802446",
+        "W3212264113",
+        "W3216721104",
+        "W4240712099",
+        "W4283809859",
+        "W4375840674",
+        "W4407024339",
+        "W4415224228",
+        "W7118682482",
+        "W7130701461"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7201838926",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107178",
+      "open_access_url": "https://doi.org/10.1016/j.conengprac.2026.107178",
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 35.2,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 88.6,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 11.4%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201847610",
+      "openalex_id": "W7201847610",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113227",
+      "title": "Safe motion planning of underactuated rope-suspended payload systems: A safety preview-based approach",
+      "authors": [
+        "Zheng Tian",
+        "Jun Yang",
+        "Xinming Wang",
+        "Shihua Li"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-07",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11394",
+          "display_name": "Dynamics and Control of Mechanical Systems",
+          "score": 0.44130000472068787
+        },
+        {
+          "id": "https://openalex.org/T10586",
+          "display_name": "Robotic Path Planning Algorithms",
+          "score": 0.15360000729560852
+        },
+        {
+          "id": "https://openalex.org/T11622",
+          "display_name": "Maritime Navigation and Safety",
+          "score": 0.05389999970793724
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.88622291,
+      "referenced_works": [
+        "W2065297540",
+        "W2560504659",
+        "W2972289370",
+        "W3005993086",
+        "W3118649601",
+        "W3195647294",
+        "W3200455894",
+        "W4283726293",
+        "W4285148990",
+        "W4293255219",
+        "W4312839125",
+        "W4362653041"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7201847610",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113227",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 12,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 37.6,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 88.6,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 11.4%",
+        "OpenAlex FWCI 0.00",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": true
+    },
+    {
+      "canonical_paper_id": "openalex:W7201848039",
+      "openalex_id": "W7201848039",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113240",
+      "title": "Resilient event-triggered observer against switching-location sparse sensor attacks",
+      "authors": [
+        "Qingdong Sun",
+        "Guang-Hong Yang"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-07",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10917",
+          "display_name": "Smart Grid Security and Resilience",
+          "score": 0.41370001435279846
+        },
+        {
+          "id": "https://openalex.org/T10046",
+          "display_name": "Stability and Control of Uncertain Systems",
+          "score": 0.3253999948501587
+        },
+        {
+          "id": "https://openalex.org/T10876",
+          "display_name": "Fault Detection and Control Systems",
+          "score": 0.06679999828338623
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.88625387,
+      "referenced_works": [
+        "W2062132646",
+        "W2765224181",
+        "W2914822180",
+        "W2920505407",
+        "W2954637328",
+        "W2963639842",
+        "W2978354685",
+        "W3018147822",
+        "W3111349927",
+        "W3128988532",
+        "W3170825416",
+        "W3175349112",
+        "W3201487822",
+        "W4200443357",
+        "W4294816500",
+        "W4309039977",
+        "W4309780617",
+        "W4312819340",
+        "W4319068812",
+        "W4383503618",
+        "W4386112519",
+        "W4386395112",
+        "W4387490431",
+        "W4388064828",
+        "W4389665256",
+        "W4401980164",
+        "W4406856963",
+        "W4408710484",
+        "W4411364511"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7201848039",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113240",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 35.2,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 88.6,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 11.4%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201871533",
+      "openalex_id": "W7201871533",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113231",
+      "title": "Density-Driven Optimal Control: Convergence guarantees for stochastic LTI multi-agent systems",
+      "authors": [
+        "Kooktae Lee"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-07",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10249",
+          "display_name": "Distributed Control Multi-Agent Systems",
+          "score": 0.7239000201225281
+        },
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.07029999792575836
+        },
+        {
+          "id": "https://openalex.org/T12794",
+          "display_name": "Adaptive Dynamic Programming Control",
+          "score": 0.0348999984562397
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.93859805,
+      "referenced_works": [
+        "W1972711404",
+        "W2083245347",
+        "W2165906350",
+        "W2964229334",
+        "W3159611499",
+        "W3178340160",
+        "W3202969592",
+        "W3210074665",
+        "W4393861504",
+        "W4411471928",
+        "W4417051848"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:41",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:41",
+      "openalex_url": "https://openalex.org/W7201871533",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113231",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 28,
+      "video_potential": 16,
+      "matched_topics": [
+        "optimal_control",
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "optimal control",
+        "reinforcement learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "WBC / MPC / Optimization",
+          "keywords": [
+            "optimal control"
+          ],
+          "location": "title",
+          "points": 18.0
+        },
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "reinforcement learning"
+          ],
+          "location": "abstract",
+          "points": 10.4
+        }
+      ],
+      "historical_value_score": 48.2,
+      "historical_score_components": {
+        "research_relevance": 28.0,
+        "normalized_citation": 93.9,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 6.1%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201886200",
+      "openalex_id": "W7201886200",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107189",
+      "title": "A physics-informed machine learning enhanced data reconciliation method for gas turbine sensor fault diagnosis",
+      "authors": [
+        "Ran Ao",
+        "Yunpeng Cao",
+        "Yujia Ma",
+        "Shuying Li"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-07",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10220",
+          "display_name": "Machine Fault Diagnosis Techniques",
+          "score": 0.48579999804496765
+        },
+        {
+          "id": "https://openalex.org/T10876",
+          "display_name": "Fault Detection and Control Systems",
+          "score": 0.23649999499320984
+        },
+        {
+          "id": "https://openalex.org/T11512",
+          "display_name": "Anomaly Detection Techniques and Applications",
+          "score": 0.03500000014901161
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.88888545,
+      "referenced_works": [
+        "W1806032850",
+        "W2031095755",
+        "W2040083616",
+        "W2055747980",
+        "W2074687675",
+        "W2083054207",
+        "W2091247827",
+        "W2129964903",
+        "W2236922185",
+        "W2760872166",
+        "W2783534015",
+        "W2794774864",
+        "W2901849646",
+        "W2905035859",
+        "W2936205371",
+        "W3041811889",
+        "W3080417826",
+        "W3102602528",
+        "W4200298184",
+        "W4205745696",
+        "W4243722966",
+        "W4311819793",
+        "W4396542252",
+        "W4404313078",
+        "W4412714188",
+        "W4413261692",
+        "W4416649999",
+        "W7104613083",
+        "W7125225765"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7201886200",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107189",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 35.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 88.9,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 11.1%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201886838",
+      "openalex_id": "W7201886838",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107186",
+      "title": "Optimized composite control of three-level NPC grid-connected inverters based on nearest three-vector model predictive strategy",
+      "authors": [
+        "Xiaowei Li",
+        "Zhiling Ren",
+        "Yidong Mao"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-07",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10228",
+          "display_name": "Multilevel Inverters and Converters",
+          "score": 0.5037000179290771
+        },
+        {
+          "id": "https://openalex.org/T10223",
+          "display_name": "Microgrid Control and Optimization",
+          "score": 0.4690000116825104
+        },
+        {
+          "id": "https://openalex.org/T10740",
+          "display_name": "Wind Turbine Control Systems",
+          "score": 0.004100000020116568
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.83759757,
+      "referenced_works": [
+        "W2591763291",
+        "W2801258948",
+        "W2890948150",
+        "W2944485608",
+        "W2945088269",
+        "W3026078245",
+        "W3042339982",
+        "W3048979405",
+        "W3049284681",
+        "W3135138513",
+        "W3149144365",
+        "W3151300776",
+        "W3158916923",
+        "W3203550633",
+        "W4288062392",
+        "W4291652756",
+        "W4313591238",
+        "W4322730974",
+        "W4378965869",
+        "W4385453444",
+        "W4391341559",
+        "W4391594005",
+        "W4392667243",
+        "W4395471021",
+        "W4399310820",
+        "W4399767976",
+        "W4404410694",
+        "W4405967987",
+        "W4407433492",
+        "W4410456788",
+        "W4414569034"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7201886838",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107186",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 34.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 83.8,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 16.2%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201888973",
+      "openalex_id": "W7201888973",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.jprocont.2026.103805",
+      "title": "A multi-priority NMPC framework with adaptive convergence rate tuning strategy",
+      "authors": [
+        "Ruiyu Qiu",
+        "Yitao Yan",
+        "Zhijiang Shao",
+        "Jie Bao"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-07",
+      "publication_year": 2026,
+      "source_name": "Journal of Process Control",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11413",
+          "display_name": "Risk and Portfolio Optimization",
+          "score": 0.17000000178813934
+        },
+        {
+          "id": "https://openalex.org/T10963",
+          "display_name": "Advanced Optimization Algorithms Research",
+          "score": 0.07919999957084656
+        },
+        {
+          "id": "https://openalex.org/T10791",
+          "display_name": "Advanced Control Systems Optimization",
+          "score": 0.06800000369548798
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.94816883,
+      "referenced_works": [
+        "W1769693814",
+        "W1965288599",
+        "W1978956894",
+        "W1985296887",
+        "W2049336112",
+        "W2088238154",
+        "W2093839143",
+        "W2121934315",
+        "W2123871098",
+        "W2286787507",
+        "W2391117709",
+        "W2740608395",
+        "W4285727559",
+        "W4384945275",
+        "W4388065267"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Journal of Process Control"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7201888973",
+      "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103805",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 36.7,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 94.8,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 5.2%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201970062",
+      "openalex_id": "W7201970062",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107195",
+      "title": "Reinforcement-learning enabled speed control for a small turbojet engine",
+      "authors": [
+        "Changshu Li",
+        "Kaiting Chen",
+        "Wenyan Song",
+        "Huijie Li"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-09",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11096",
+          "display_name": "Aeroelasticity and Vibration Control",
+          "score": 0.16339999437332153
+        },
+        {
+          "id": "https://openalex.org/T12007",
+          "display_name": "Plasma and Flow Control in Aerodynamics",
+          "score": 0.08340000361204147
+        },
+        {
+          "id": "https://openalex.org/T11524",
+          "display_name": "Advanced Aircraft Design and Technologies",
+          "score": 0.08089999854564667
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.95037906,
+      "referenced_works": [
+        "W1975291268",
+        "W1976744369",
+        "W2031900037",
+        "W2032821077",
+        "W2048750073",
+        "W2085024021",
+        "W2089384736",
+        "W2110996650",
+        "W2126877537",
+        "W2143520849",
+        "W2213564735",
+        "W2809879920",
+        "W2935914598",
+        "W2947339937",
+        "W3011563688",
+        "W3044424962",
+        "W3047147285",
+        "W3055227178",
+        "W3085595404",
+        "W3090921198",
+        "W3103557414",
+        "W3116610660",
+        "W3120681718",
+        "W3194612101",
+        "W3206255945",
+        "W3215465991",
+        "W3217565946",
+        "W4206551089",
+        "W4285019568",
+        "W4292477623",
+        "W4307906980",
+        "W4321789749",
+        "W4322766692",
+        "W4376644898",
+        "W4381887315",
+        "W4388766578",
+        "W4388904000",
+        "W4389833747",
+        "W4390112497",
+        "W4390576455",
+        "W4392349654",
+        "W4393166879",
+        "W4394862988",
+        "W4398248691",
+        "W4400650558",
+        "W4404733290",
+        "W4416018819",
+        "W7116729269",
+        "W7125615992",
+        "W7133998704"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7201970062",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107195",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 16,
+      "video_potential": 18,
+      "matched_topics": [
+        "robot_learning"
+      ],
+      "matched_keywords": [
+        "reinforcement learning"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Robot Learning",
+          "keywords": [
+            "reinforcement learning"
+          ],
+          "location": "title",
+          "points": 16.0
+        }
+      ],
+      "historical_value_score": 39.9,
+      "historical_score_components": {
+        "research_relevance": 16.0,
+        "normalized_citation": 95.0,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 5.0%",
+        "OpenAlex FWCI 0.00",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201981040",
+      "openalex_id": "W7201981040",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107187",
+      "title": "CLARI: Constrained reflective LLM inference for few-shot soft sensing under operating-condition drift",
+      "authors": [
+        "Zeyu Yang",
+        "Jiahui Chen",
+        "Zhen Bi",
+        "Xiaoyu Jiang",
+        "Le Yao",
+        "Jungang Lou",
+        "Zhihuan Song"
+      ],
+      "abstract": null,
+      "publication_date": "2026-08-08",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10876",
+          "display_name": "Fault Detection and Control Systems",
+          "score": 0.43560001254081726
+        },
+        {
+          "id": "https://openalex.org/T11948",
+          "display_name": "Machine Learning in Materials Science",
+          "score": 0.06809999793767929
+        },
+        {
+          "id": "https://openalex.org/T12761",
+          "display_name": "Data Stream Mining Techniques",
+          "score": 0.06710000336170197
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.89160991,
+      "referenced_works": [
+        "W3012649342",
+        "W3123899295",
+        "W3163993681",
+        "W3171398265",
+        "W4213189848",
+        "W4285058963",
+        "W4285225889",
+        "W4391022390",
+        "W4392607872",
+        "W4393123820",
+        "W4404467599",
+        "W4409545836",
+        "W4409626943",
+        "W4410500471",
+        "W4410976976",
+        "W4411024389",
+        "W4412567546",
+        "W4414499136",
+        "W4415795566",
+        "W4415797292",
+        "W7076051748",
+        "W7128625086",
+        "W7133215398",
+        "W7133224126",
+        "W7133312107",
+        "W7166578822"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7201981040",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107187",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 14,
+      "video_potential": 4,
+      "matched_topics": [
+        "llm_agent_robotics"
+      ],
+      "matched_keywords": [
+        "LLM"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "LLM / Agent Robotics",
+          "keywords": [
+            "LLM"
+          ],
+          "location": "title",
+          "points": 14.0
+        }
+      ],
+      "historical_value_score": 41.2,
+      "historical_score_components": {
+        "research_relevance": 14.0,
+        "normalized_citation": 89.2,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 10.8%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false
+    },
+    {
+      "canonical_paper_id": "openalex:W7201997484",
+      "openalex_id": "W7201997484",
+      "base_arxiv_id": null,
+      "doi": "10.1016/s0959-1524(26)00206-4",
+      "title": "Editorial Board",
+      "authors": [],
+      "abstract": null,
+      "publication_date": "2026-08-08",
+      "publication_year": 2026,
+      "source_name": "Journal of Process Control",
+      "source_type": "paratext",
+      "topics": [],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": null,
+      "citation_normalized_percentile": null,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Journal of Process Control"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-08-10T04:13:42",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-08-10T04:13:42",
+      "openalex_url": "https://openalex.org/W7201997484",
+      "landing_page_url": "https://doi.org/10.1016/s0959-1524(26)00206-4",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [],
+      "historical_value_score": 8.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "normalized_citation": 0.0,
+        "fwci": null,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 0.0,
+        "metadata_completeness": 62.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "OpenAlex 收录引用 0 次；按发表年限折算年均 0.0（缺少领域百分位时的降级信号）",
+        "OpenAlex 未提供 FWCI，评分按可用指标降级",
+        "元数据完整度 62%"
       ],
       "is_knowledge_map": false
     }
