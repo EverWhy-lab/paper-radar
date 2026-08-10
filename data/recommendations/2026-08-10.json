@@ -1,0 +1,1335 @@
+{
+  "schema_version": 3,
+  "date": "2026-08-10",
+  "generated_at": "2026-08-10T11:27:59+08:00",
+  "mode": "incremental",
+  "candidate_count": 2533,
+  "historical_candidate_count": 232,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 3,
+    "journal_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "selection_order": [
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical",
+      "frontier_recent"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 3,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W3096656822",
+      "title": "Collaborative Multi-Robot Search and Rescue: Planning, Coordination, Perception, and Active Vision",
+      "takeaway": "This survey systematically reviews multi-robot systems for search and rescue (SAR), covering planning, coordination, perception, and active vision from both multi-agent perception and control perspectives. It is notable for addressing heterogeneous robots across different environments and highlighting open challenges such as shared autonomy, sim-to-real transfer, and active perception. For a researcher in legged robots and mobile manipulation, this survey provides a structured overview of coordination and perception methods that can be adapted to multi-robot legged systems, and it identifies gaps where learning-based approaches could be applied, such as sim-to-real transfer for locomotion in disaster scenarios.",
+      "generated_at": "2026-08-10T03:32:05",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4312173571",
+      "title": "Model Predictive Control of Quadruped Robot Based on Reinforcement Learning",
+      "takeaway": "This paper proposes a framework that integrates model predictive control (MPC) and reinforcement learning (RL) for quadruped locomotion, where an RL policy learns to automatically select MPC parameters. The method avoids the massive sampling required by end-to-end RL and demonstrates improved locomotion performance and stability compared to fixed-parameter MPC. For a researcher working on legged robots and optimal control, this offers a practical way to combine the robustness of MPC with the adaptability of RL, potentially reducing tuning effort and improving performance in varied terrains. It can be extended to other control tasks in mobile manipulation, where parameter selection is also critical.",
+      "generated_at": "2026-08-10T03:32:05",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2131622683",
+      "title": "Mobile manipulation using NASA's Robonaut",
+      "takeaway": "This paper describes an early mobile manipulation system combining a Robonaut upper body with a Segway RMP base, focusing on coordinated control of dexterous limbs on a mobile platform. It demonstrates human-robot interaction tasks such as object exchange and tool use, and discusses lessons learned for future designs. Although dated, it provides foundational insights into integrating mobility and manipulation, which is relevant to current mobile manipulation research. For a researcher in mobile manipulation, this historical perspective highlights challenges in balance, coordination, and human-robot interaction that remain relevant, and it can inform the design of new systems with modern control and learning methods.",
+      "generated_at": "2026-08-10T03:32:05",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3124260346",
+      "title": "Interactive Model Predictive Control for Robot Navigation in Dense Crowds",
+      "takeaway": "This paper presents an interactive model predictive control (MPC) framework for robot navigation in dense crowds, incorporating pedestrian intention and interaction prediction into the trajectory optimization. The multiobjective cost function balances real-time computation, collision avoidance, motion quality, and goal progress, and the approach is validated in simulations and real experiments, showing safe, efficient, and legible behaviors. For a researcher in optimal control and mobile manipulation, this work offers a method to handle dynamic environments with human presence, which is crucial for deploying mobile manipulators in populated spaces. The anticipative prediction model could be integrated with learning-based pedestrian models to further improve performance.",
+      "generated_at": "2026-08-10T03:32:05",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "research_fit 24 ≥ 18",
+        "核心方向：robot_learning",
+        "特定关键词：sim-to-real, search and rescue",
+        "historical_value_score 64.6 ≥ 50.0",
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 331.34",
+        "近 2 年年均引用 102.0；此前 2 年年均 98.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T12:46:32"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3096656822",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3096656822",
+        "openalex_id": "W3096656822",
+        "base_arxiv_id": null,
+        "doi": "10.1109/access.2020.3030190",
+        "title": "Collaborative Multi-Robot Search and Rescue: Planning, Coordination, Perception, and Active Vision",
+        "authors": [
+          "Jorge Peña Queralta",
+          "Jussi Taipalmaa",
+          "Bilge Can Pullinen",
+          "Victor Kathan Sarker",
+          "Tuan Nguyen Gia",
+          "Hannu Tenhunen",
+          "Moncef Gabbouj",
+          "Jenni Raitoharju",
+          "Tomi Westerlund"
+        ],
+        "abstract": "Search and rescue (SAR) operations can take significant advantage from supporting autonomous or teleoperated robots and multi-robot systems. These can aid in mapping and situational assessment, monitoring and surveillance, establishing communication networks, or searching for victims. This paper provides a review of multi-robot systems supporting SAR operations, with system-level considerations and focusing on the algorithmic perspectives for multi-robot coordination and perception. This is, to the best of our knowledge, the first survey paper to cover (i) heterogeneous SAR robots in different environments, (ii) active perception in multi-robot systems, while (iii) giving two complementary points of view from the multi-agent perception and control perspectives. We also discuss the most significant open research questions: shared autonomy, sim-to-real transferability of existing methods, awareness of victims' conditions, coordination and interoperability in heterogeneous multi-robot systems, and active perception. The different topics in the survey are put in the context of the different challenges and constraints that various types of robots (ground, aerial, surface, or underwater) encounter in different SAR environments (maritime, urban, wilderness, or other post-disaster scenarios). The objective of this survey is to serve as an entry point to the various aspects of multi-robot SAR systems to researchers in both the machine learning and control fields by giving a global overview of the main approaches being taken in the SAR robotics area.",
+        "publication_date": "2020-01-01",
+        "publication_year": 2020,
+        "source_name": "IEEE Access",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9987000226974487
+          },
+          {
+            "id": "https://openalex.org/T11192",
+            "display_name": "Underwater Vehicles and Communication Systems",
+            "score": 0.9980999827384949
+          },
+          {
+            "id": "https://openalex.org/T10249",
+            "display_name": "Distributed Control Multi-Agent Systems",
+            "score": 0.9973000288009644
+          }
+        ],
+        "cited_by_count": 503,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 54
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 150
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 104
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 92
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 64
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 39
+          }
+        ],
+        "fwci": 331.3403,
+        "citation_normalized_percentile": 0.99993497,
+        "referenced_works": [
+          "W171569338",
+          "W237105564",
+          "W646347605",
+          "W818798718",
+          "W887852442",
+          "W1525190438",
+          "W1536680647",
+          "W1539811621",
+          "W1561867011",
+          "W1562003885",
+          "W1591685808",
+          "W1612997784",
+          "W1758936897",
+          "W1820097665",
+          "W1898154573",
+          "W1900988868",
+          "W1901129140",
+          "W1969839206",
+          "W1975511713",
+          "W1976875201",
+          "W1979426194",
+          "W1981826826",
+          "W1983301216",
+          "W1993693205",
+          "W1996188591",
+          "W1998854774",
+          "W2001127546",
+          "W2002478547",
+          "W2016002891",
+          "W2034591033",
+          "W2038368440",
+          "W2039090871",
+          "W2040213547",
+          "W2045419365",
+          "W2045428936",
+          "W2048648163",
+          "W2048793847",
+          "W2049935658",
+          "W2056833368",
+          "W2056862136",
+          "W2066165078",
+          "W2066291790",
+          "W2066809101",
+          "W2076422387",
+          "W2081989617",
+          "W2085693796",
+          "W2086848990",
+          "W2088912280",
+          "W2090487945",
+          "W2095267955",
+          "W2096552072",
+          "W2097726813",
+          "W2102605133",
+          "W2104026991",
+          "W2107664584",
+          "W2108531836",
+          "W2108556117",
+          "W2112283379",
+          "W2118548017",
+          "W2124766115",
+          "W2126108703",
+          "W2127132649",
+          "W2130759559",
+          "W2133585725",
+          "W2134818500",
+          "W2140047299",
+          "W2144827113",
+          "W2147500192",
+          "W2150282654",
+          "W2155256807",
+          "W2160940277",
+          "W2163285017",
+          "W2164948897",
+          "W2166221222",
+          "W2199842039",
+          "W2269255592",
+          "W2283446848",
+          "W2296039540",
+          "W2296228853",
+          "W2299529128",
+          "W2324378478",
+          "W2331687214",
+          "W2334090071",
+          "W2341720557",
+          "W2342656438",
+          "W2373591242",
+          "W2412782625",
+          "W2422841075",
+          "W2437886923",
+          "W2505007412",
+          "W2510065745",
+          "W2528740446",
+          "W2530771494",
+          "W2538300499",
+          "W2557312722",
+          "W2557827245",
+          "W2560023338",
+          "W2562123759",
+          "W2564780317",
+          "W2566646261",
+          "W2571665086",
+          "W2593769898",
+          "W2598199894",
+          "W2605314490",
+          "W2606067159",
+          "W2612449331",
+          "W2614122538",
+          "W2619383789",
+          "W2738842532",
+          "W2739759330",
+          "W2743994264",
+          "W2745859992",
+          "W2745953694",
+          "W2746343798",
+          "W2747248946",
+          "W2747953256",
+          "W2748569281",
+          "W2749920848",
+          "W2752515633",
+          "W2765608241",
+          "W2766301133",
+          "W2766962317",
+          "W2774281622",
+          "W2778711127",
+          "W2782715402",
+          "W2786538100",
+          "W2787889241",
+          "W2790863705",
+          "W2791580684",
+          "W2791712743",
+          "W2791787951",
+          "W2794292089",
+          "W2796347433",
+          "W2798989280",
+          "W2799134332",
+          "W2800986881",
+          "W2802386777",
+          "W2809931824",
+          "W2810169700",
+          "W2813008262",
+          "W2883952496",
+          "W2886934227",
+          "W2887522866",
+          "W2889532859",
+          "W2891224819",
+          "W2891973815",
+          "W2892220819",
+          "W2900263977",
+          "W2901136733",
+          "W2902181302",
+          "W2902909203",
+          "W2905884475",
+          "W2906764419",
+          "W2908129372",
+          "W2909063396",
+          "W2910054127",
+          "W2910194729",
+          "W2910825450",
+          "W2911016569",
+          "W2911191541",
+          "W2912321781",
+          "W2912327653",
+          "W2912672089",
+          "W2913393332",
+          "W2914060209",
+          "W2914096442",
+          "W2935922304",
+          "W2936516903",
+          "W2944173748",
+          "W2945505203",
+          "W2945722765",
+          "W2946537685",
+          "W2946563458",
+          "W2947442691",
+          "W2952613166",
+          "W2955356834",
+          "W2963032441",
+          "W2963220078",
+          "W2963256208",
+          "W2963276406",
+          "W2963346150",
+          "W2963881378",
+          "W2964239424",
+          "W2964309882",
+          "W2966306124",
+          "W2966477753",
+          "W2968800074",
+          "W2968935611",
+          "W2969167400",
+          "W2971645868",
+          "W2972006294",
+          "W2975096498",
+          "W2975796181",
+          "W2975968565",
+          "W2976047560",
+          "W2979586391",
+          "W2981448642",
+          "W2981460880",
+          "W2981637362",
+          "W2981658108",
+          "W2982242214",
+          "W2982402514",
+          "W2985275943",
+          "W2985708246",
+          "W2989775459",
+          "W2990904176",
+          "W2992514952",
+          "W2995201943",
+          "W2999870540",
+          "W2999912905",
+          "W3003936704",
+          "W3005316764",
+          "W3007832921",
+          "W3008046551",
+          "W3009352062",
+          "W3011231347",
+          "W3012315397",
+          "W3012489130",
+          "W3013410780",
+          "W3016493280",
+          "W3016897488",
+          "W3021924064",
+          "W3024286373",
+          "W3027142578",
+          "W3028016972",
+          "W3035603778",
+          "W3037849673",
+          "W3046507663",
+          "W3047400633",
+          "W3047890446",
+          "W3080178290",
+          "W3089729069",
+          "W3090612618",
+          "W3101281919",
+          "W3102368068",
+          "W3103461182",
+          "W3103648783",
+          "W3103996405",
+          "W3104639723",
+          "W3105257780",
+          "W3106004627",
+          "W3124696941",
+          "W3131299624",
+          "W3146827622",
+          "W3164884870",
+          "W3214067446",
+          "W4213147678",
+          "W4231002530",
+          "W4234363229",
+          "W4242210259",
+          "W4247290769",
+          "W4293584584",
+          "W4297810793",
+          "W6609129298",
+          "W6623127215",
+          "W6638785431",
+          "W6639824700",
+          "W6640849645",
+          "W6661419576",
+          "W6667503560",
+          "W6695845695",
+          "W6750227808",
+          "W6750911691",
+          "W6753125957",
+          "W6756486208",
+          "W6758162286",
+          "W6763250664",
+          "W6765797924",
+          "W6768492998",
+          "W6769531059",
+          "W6770126316",
+          "W6774863126",
+          "W6776141803",
+          "W6779972359",
+          "W6803979389",
+          "W6884977418",
+          "W6927214338",
+          "W6966867093",
+          "W7036388939"
+        ],
+        "related_works": [
+          "W2510116200",
+          "W4281705600",
+          "W2316498489",
+          "W3174027453",
+          "W2065470608",
+          "W2117893626",
+          "W1488897159",
+          "W1979426194",
+          "W4238796827",
+          "W4239917300"
+        ],
+        "discovery_source": [
+          "manual_seed",
+          "seed_resolution"
+        ],
+        "seed_paper_id": [
+          "openalex:W3096656822"
+        ],
+        "discovered_at": "2026-08-04T12:46:32",
+        "last_considered_at": "2026-08-10T11:27:59+08:00",
+        "recommended_at": "2026-08-10T11:27:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T12:46:32",
+        "openalex_url": "https://openalex.org/W3096656822",
+        "landing_page_url": "https://doi.org/10.1109/access.2020.3030190",
+        "open_access_url": "https://doi.org/10.1109/access.2020.3030190",
+        "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09220149.pdf",
+        "research_fit": 24,
+        "video_potential": 6,
+        "matched_topics": [
+          "robot_learning",
+          "pose_rescue"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "search and rescue"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "topic",
+            "label": "Pose & Rescue Robotics",
+            "keywords": [
+              "search and rescue"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ],
+        "historical_value_score": 64.6,
+        "historical_score_components": {
+          "research_relevance": 24.0,
+          "normalized_citation": 100.0,
+          "fwci": 100.0,
+          "citation_momentum": 52.0,
+          "seed_provenance": 60.0,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2020 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "OpenAlex FWCI 331.34",
+          "近 2 年年均引用 102.0；此前 2 年年均 98.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "paper": {
+        "arxiv_id": "openalex:W3096656822",
+        "base_id": "openalex:W3096656822",
+        "version": 1,
+        "title": "Collaborative Multi-Robot Search and Rescue: Planning, Coordination, Perception, and Active Vision",
+        "authors": [
+          "Jorge Peña Queralta",
+          "Jussi Taipalmaa",
+          "Bilge Can Pullinen",
+          "Victor Kathan Sarker",
+          "Tuan Nguyen Gia",
+          "Hannu Tenhunen",
+          "Moncef Gabbouj",
+          "Jenni Raitoharju",
+          "Tomi Westerlund"
+        ],
+        "published": "2020-01-01T00:00:00Z",
+        "updated": "2020-01-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Search and rescue (SAR) operations can take significant advantage from supporting autonomous or teleoperated robots and multi-robot systems. These can aid in mapping and situational assessment, monitoring and surveillance, establishing communication networks, or searching for victims. This paper provides a review of multi-robot systems supporting SAR operations, with system-level considerations and focusing on the algorithmic perspectives for multi-robot coordination and perception. This is, to the best of our knowledge, the first survey paper to cover (i) heterogeneous SAR robots in different environments, (ii) active perception in multi-robot systems, while (iii) giving two complementary points of view from the multi-agent perception and control perspectives. We also discuss the most significant open research questions: shared autonomy, sim-to-real transferability of existing methods, awareness of victims' conditions, coordination and interoperability in heterogeneous multi-robot systems, and active perception. The different topics in the survey are put in the context of the different challenges and constraints that various types of robots (ground, aerial, surface, or underwater) encounter in different SAR environments (maritime, urban, wilderness, or other post-disaster scenarios). The objective of this survey is to serve as an entry point to the various aspects of multi-robot SAR systems to researchers in both the machine learning and control fields by giving a global overview of the main approaches being taken in the SAR robotics area.",
+        "abs_url": "https://doi.org/10.1109/access.2020.3030190",
+        "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09220149.pdf",
+        "research_fit": 24,
+        "video_potential": 6,
+        "matched_topics": [
+          "robot_learning",
+          "pose_rescue"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "search and rescue"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "topic",
+            "label": "Pose & Rescue Robotics",
+            "keywords": [
+              "search and rescue"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 54 ≥ 18",
+        "核心方向：legged_humanoid, optimal_control, robot_learning",
+        "特定关键词：quadruped robot, legged robot, model predictive control, MPC",
+        "historical_value_score 67.2 ≥ 42.0",
+        "发表于 2022 年",
+        "同领域同年份引用标准化位于前 23.8%",
+        "OpenAlex FWCI 1.22",
+        "近 2 年年均引用 8.0；此前 2 年年均 3.5",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-06T04:27:55"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4312173571",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4312173571",
+        "openalex_id": "W4312173571",
+        "base_arxiv_id": null,
+        "doi": "10.3390/app13010154",
+        "title": "Model Predictive Control of Quadruped Robot Based on Reinforcement Learning",
+        "authors": [
+          "Zhitong Zhang",
+          "Xu Chang",
+          "Hongxu Ma",
+          "Honglei An",
+          "Lin Lang"
+        ],
+        "abstract": "For the locomotion control of a legged robot, both model predictive control (MPC) and reinforcement learning (RL) demonstrate powerful capabilities. MPC transfers the high-level task to the lower-level joint control based on the understanding of the robot and environment, model-free RL learns how to work through trial and error, and has the ability to evolve based on historical data. In this work, we proposed a novel framework to integrate the advantages of MPC and RL, we learned a policy for automatically choosing parameters for MPC. Unlike the end-to-end RL applications for control, our method does not need massive sampling data for training. Compared with the fixed parameters MPC, the learned MPC exhibits better locomotion performance and stability. The presented framework provides a new choice for improving the performance of traditional control.",
+        "publication_date": "2022-12-22",
+        "publication_year": 2022,
+        "source_name": "Applied Sciences",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9994000196456909
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.9975000023841858
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9876999855041504
+          }
+        ],
+        "cited_by_count": 23,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          }
+        ],
+        "fwci": 1.2166,
+        "citation_normalized_percentile": 0.76218377,
+        "referenced_works": [
+          "W1492106702",
+          "W1836465849",
+          "W1977655452",
+          "W2113780589",
+          "W2491414412",
+          "W2771123153",
+          "W2907537824",
+          "W2911087563",
+          "W3093922502",
+          "W3104876774",
+          "W3105372678",
+          "W3113616534",
+          "W3197603398",
+          "W3199647478",
+          "W3200962355",
+          "W4221151319",
+          "W4235424703",
+          "W6631190155",
+          "W7009323136"
+        ],
+        "related_works": [
+          "W1990079087",
+          "W2060165215",
+          "W2101188133",
+          "W4362501864",
+          "W4306904969",
+          "W3202234113",
+          "W4380318855",
+          "W4248731570",
+          "W2110944602",
+          "W3213722473"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W3200962355"
+        ],
+        "discovered_at": "2026-08-06T04:27:55",
+        "last_considered_at": "2026-08-10T11:27:59+08:00",
+        "recommended_at": "2026-08-10T11:27:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-06T04:27:55",
+        "openalex_url": "https://openalex.org/W4312173571",
+        "landing_page_url": "https://doi.org/10.3390/app13010154",
+        "open_access_url": "https://doi.org/10.3390/app13010154",
+        "pdf_url": "https://www.mdpi.com/2076-3417/13/1/154/pdf?version=1672884622",
+        "research_fit": 54,
+        "video_potential": 59,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "legged robot",
+          "model predictive control",
+          "MPC",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadruped robot",
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 16.0
+          }
+        ],
+        "historical_value_score": 67.2,
+        "historical_score_components": {
+          "research_relevance": 54.0,
+          "normalized_citation": 76.2,
+          "fwci": 40.6,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2022 年",
+          "同领域同年份引用标准化位于前 23.8%",
+          "OpenAlex FWCI 1.22",
+          "近 2 年年均引用 8.0；此前 2 年年均 3.5",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W4312173571",
+        "base_id": "openalex:W4312173571",
+        "version": 1,
+        "title": "Model Predictive Control of Quadruped Robot Based on Reinforcement Learning",
+        "authors": [
+          "Zhitong Zhang",
+          "Xu Chang",
+          "Hongxu Ma",
+          "Honglei An",
+          "Lin Lang"
+        ],
+        "published": "2022-12-22T00:00:00Z",
+        "updated": "2022-12-22T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "For the locomotion control of a legged robot, both model predictive control (MPC) and reinforcement learning (RL) demonstrate powerful capabilities. MPC transfers the high-level task to the lower-level joint control based on the understanding of the robot and environment, model-free RL learns how to work through trial and error, and has the ability to evolve based on historical data. In this work, we proposed a novel framework to integrate the advantages of MPC and RL, we learned a policy for automatically choosing parameters for MPC. Unlike the end-to-end RL applications for control, our method does not need massive sampling data for training. Compared with the fixed parameters MPC, the learned MPC exhibits better locomotion performance and stability. The presented framework provides a new choice for improving the performance of traditional control.",
+        "abs_url": "https://doi.org/10.3390/app13010154",
+        "pdf_url": "https://www.mdpi.com/2076-3417/13/1/154/pdf?version=1672884622",
+        "research_fit": 54,
+        "video_potential": 59,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "legged robot",
+          "model predictive control",
+          "MPC",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadruped robot",
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 16.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 20 ≥ 18",
+        "核心方向：mobile_manipulation",
+        "特定关键词：mobile manipulation",
+        "historical_value_score 54.8 ≥ 42.0",
+        "发表于 2004 年",
+        "同领域同年份引用标准化位于前 1.7%",
+        "OpenAlex FWCI 8.98",
+        "近 2 年年均引用 1.0；此前 2 年年均 2.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-04T06:56:01"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2131622683",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2131622683",
+        "openalex_id": "W2131622683",
+        "base_arxiv_id": null,
+        "doi": "10.1109/robot.2004.1308134",
+        "title": "Mobile manipulation using NASA's Robonaut",
+        "authors": [
+          "R.O. Ambrose",
+          "Robert T. Savely",
+          "S. Michael Goza",
+          "Phil Strawser",
+          "Myron Diftler",
+          "I. Spain",
+          "N. A. Radford"
+        ],
+        "abstract": "The Johnson Space Center has developed a new mobile manipulation system with the combination of a Robonaut upper body mounted onto a Segway mobile base. The objective is to study a fluid and coordinated control of dexterous limbs on a mobile robot. The system has been demonstrated interacting with people, tools, and urban interfaces built for humans. Human interactions have included manually exchanging objects with humans, following people, and tracking people with hand held objects such as flashlights. Like other configurations of the Robonaut family, the upper body provides dexterity for using tools such as wire cutters, shovels, space flight gear, and handling flexible tethers and fabrics. The Segway base is a custom version called the Robotic Mobility Platform (RMP) built for DARPA, and provided to NASA for this collaborative effort. The RMP's active balance gives Robonaut a relatively small footprint for its height, allowing it to pass through doors and elevators built for humans, and use wheelchair accessible ramps and lifts. Lessons learned from this development are presented to improve the design of future mobile manipulation systems, and the Segway base provides mobility to Robonaut for Earth based testing.",
+        "publication_date": "2004-01-01",
+        "publication_year": 2004,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9976999759674072
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.9878000020980835
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9846000075340271
+          }
+        ],
+        "cited_by_count": 104,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 10
+          }
+        ],
+        "fwci": 8.9755,
+        "citation_normalized_percentile": 0.98277598,
+        "referenced_works": [
+          "W1984644849",
+          "W2060981681",
+          "W2128862884",
+          "W2160197638",
+          "W2161636262",
+          "W3016169771",
+          "W6646632824",
+          "W6776062839"
+        ],
+        "related_works": [
+          "W4241837227",
+          "W1507618586",
+          "W3016239942",
+          "W2487340859",
+          "W2486091485",
+          "W2990197615",
+          "W4296481904",
+          "W2388571181",
+          "W4360997051",
+          "W2673076591"
+        ],
+        "discovery_source": [
+          "topic_search:mobile manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:01",
+        "last_considered_at": "2026-08-10T11:27:59+08:00",
+        "recommended_at": "2026-08-10T11:27:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:01",
+        "openalex_url": "https://openalex.org/W2131622683",
+        "landing_page_url": "https://doi.org/10.1109/robot.2004.1308134",
+        "open_access_url": "https://zenodo.org/record/1279862",
+        "pdf_url": null,
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "historical_value_score": 54.8,
+        "historical_score_components": {
+          "research_relevance": 20.0,
+          "normalized_citation": 98.3,
+          "fwci": 100.0,
+          "citation_momentum": 20.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2004 年",
+          "同领域同年份引用标准化位于前 1.7%",
+          "OpenAlex FWCI 8.98",
+          "近 2 年年均引用 1.0；此前 2 年年均 2.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W2131622683",
+        "base_id": "openalex:W2131622683",
+        "version": 1,
+        "title": "Mobile manipulation using NASA's Robonaut",
+        "authors": [
+          "R.O. Ambrose",
+          "Robert T. Savely",
+          "S. Michael Goza",
+          "Phil Strawser",
+          "Myron Diftler",
+          "I. Spain",
+          "N. A. Radford"
+        ],
+        "published": "2004-01-01T00:00:00Z",
+        "updated": "2004-01-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "The Johnson Space Center has developed a new mobile manipulation system with the combination of a Robonaut upper body mounted onto a Segway mobile base. The objective is to study a fluid and coordinated control of dexterous limbs on a mobile robot. The system has been demonstrated interacting with people, tools, and urban interfaces built for humans. Human interactions have included manually exchanging objects with humans, following people, and tracking people with hand held objects such as flashlights. Like other configurations of the Robonaut family, the upper body provides dexterity for using tools such as wire cutters, shovels, space flight gear, and handling flexible tethers and fabrics. The Segway base is a custom version called the Robotic Mobility Platform (RMP) built for DARPA, and provided to NASA for this collaborative effort. The RMP's active balance gives Robonaut a relatively small footprint for its height, allowing it to pass through doors and elevators built for humans, and use wheelchair accessible ramps and lifts. Lessons learned from this development are presented to improve the design of future mobile manipulation systems, and the Segway base provides mobility to Robonaut for Earth based testing.",
+        "abs_url": "https://doi.org/10.1109/robot.2004.1308134",
+        "pdf_url": "",
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 18 ≥ 18",
+        "核心方向：optimal_control",
+        "特定关键词：model predictive control",
+        "historical_value_score 54.1 ≥ 42.0",
+        "发表于 2021 年",
+        "同领域同年份引用标准化位于前 9.2%",
+        "OpenAlex FWCI 2.86",
+        "近 2 年年均引用 7.0；此前 2 年年均 12.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:02"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3124260346",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3124260346",
+        "openalex_id": "W3124260346",
+        "base_arxiv_id": null,
+        "doi": "10.1109/tsmc.2020.3048964",
+        "title": "Interactive Model Predictive Control for Robot Navigation in Dense Crowds",
+        "authors": [
+          "Yujing Chen",
+          "Fenghua Zhao",
+          "Yunjiang Lou"
+        ],
+        "abstract": "A robot navigating in dense crowds should react to the motion of nearby pedestrians. However, it could lead to unsafe, inefficient, and illegible robot motions. This article presents an anticipative framework that predicts pedestrians intentions and their interactions in crowds, and the robot accordingly seeks an optimal trajectory based on the prediction. We propose: 1) a pedestrian motion model considering both pedestrian intention and interaction and 2) a multiobjective cost function considering real-time calculation, collision avoidance, quality of motion, and progress toward the goal along the trajectory. An interactive model predictive control framework is formulated to optimize the robot trajectory. The effectiveness of the proposed approach is evaluated in multiple simulation scenarios and a real experiment. It is demonstrated that the proposed approach generates safe, efficient, and legible robot behaviors in real time in dense crowds.",
+        "publication_date": "2021-01-20",
+        "publication_year": 2021,
+        "source_name": "IEEE Transactions on Systems Man and Cybernetics Systems",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11099",
+            "display_name": "Autonomous Vehicle Technology and Safety",
+            "score": 0.9995999932289124
+          },
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9983000159263611
+          },
+          {
+            "id": "https://openalex.org/T10805",
+            "display_name": "Vehicle Dynamics and Control Systems",
+            "score": 0.9959999918937683
+          }
+        ],
+        "cited_by_count": 53,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 4
+          }
+        ],
+        "fwci": 2.8601,
+        "citation_normalized_percentile": 0.90757098,
+        "referenced_works": [
+          "W89129633",
+          "W192919555",
+          "W1965311879",
+          "W1967777429",
+          "W1969483458",
+          "W1970206276",
+          "W1988994102",
+          "W2000365432",
+          "W2045134164",
+          "W2046213647",
+          "W2059993653",
+          "W2064171501",
+          "W2066955564",
+          "W2072956256",
+          "W2073131864",
+          "W2099570340",
+          "W2113741278",
+          "W2117211893",
+          "W2120133705",
+          "W2125409550",
+          "W2140542425",
+          "W2161082723",
+          "W2167052694",
+          "W2167878366",
+          "W2177274602",
+          "W2262585296",
+          "W2418081708",
+          "W2424778531",
+          "W2532516272",
+          "W2538619708",
+          "W2564726206",
+          "W2570154080",
+          "W2604216058",
+          "W2766836212",
+          "W2767050701",
+          "W2792725859",
+          "W2890001928",
+          "W2947331981",
+          "W2962703917",
+          "W2962907394",
+          "W2963542651",
+          "W2964136016",
+          "W3026389972",
+          "W3033920763",
+          "W3101442004",
+          "W3106257603",
+          "W4289026655",
+          "W6768549969"
+        ],
+        "related_works": [
+          "W1749168706",
+          "W606709926",
+          "W2980347456",
+          "W1643071209",
+          "W4299159492",
+          "W422913495",
+          "W1869163116",
+          "W2148067325",
+          "W2899977359",
+          "W1819938260"
+        ],
+        "discovery_source": [
+          "topic_search:model predictive control in robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:02",
+        "last_considered_at": "2026-08-10T11:27:59+08:00",
+        "recommended_at": "2026-08-10T11:27:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:02",
+        "openalex_url": "https://openalex.org/W3124260346",
+        "landing_page_url": "https://doi.org/10.1109/tsmc.2020.3048964",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 18,
+        "video_potential": 22,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "historical_value_score": 54.1,
+        "historical_score_components": {
+          "research_relevance": 18.0,
+          "normalized_citation": 90.8,
+          "fwci": 95.3,
+          "citation_momentum": 28.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2021 年",
+          "同领域同年份引用标准化位于前 9.2%",
+          "OpenAlex FWCI 2.86",
+          "近 2 年年均引用 7.0；此前 2 年年均 12.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W3124260346",
+        "base_id": "openalex:W3124260346",
+        "version": 1,
+        "title": "Interactive Model Predictive Control for Robot Navigation in Dense Crowds",
+        "authors": [
+          "Yujing Chen",
+          "Fenghua Zhao",
+          "Yunjiang Lou"
+        ],
+        "published": "2021-01-20T00:00:00Z",
+        "updated": "2021-01-20T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "A robot navigating in dense crowds should react to the motion of nearby pedestrians. However, it could lead to unsafe, inefficient, and illegible robot motions. This article presents an anticipative framework that predicts pedestrians intentions and their interactions in crowds, and the robot accordingly seeks an optimal trajectory based on the prediction. We propose: 1) a pedestrian motion model considering both pedestrian intention and interaction and 2) a multiobjective cost function considering real-time calculation, collision avoidance, quality of motion, and progress toward the goal along the trajectory. An interactive model predictive control framework is formulated to optimize the robot trajectory. The effectiveness of the proposed approach is evaluated in multiple simulation scenarios and a real experiment. It is demonstrated that the proposed approach generates safe, efficient, and legible robot behaviors in real time in dense crowds.",
+        "abs_url": "https://doi.org/10.1109/tsmc.2020.3048964",
+        "pdf_url": "",
+        "research_fit": 18,
+        "video_potential": 22,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
