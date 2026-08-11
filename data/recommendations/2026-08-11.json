@@ -1,0 +1,1216 @@
+{
+  "schema_version": 3,
+  "date": "2026-08-11",
+  "generated_at": "2026-08-11T11:20:35+08:00",
+  "mode": "incremental",
+  "candidate_count": 3126,
+  "historical_candidate_count": 266,
+  "recommendation_count": 5,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 3,
+    "journal_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "selection_order": [
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical",
+      "frontier_recent"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 3,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W4402354138",
+      "title": "HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation",
+      "takeaway": "HumanoidBench introduces a simulated benchmark for whole-body locomotion and manipulation on humanoid robots, addressing the lack of standardized evaluation environments in this domain. The paper reports the benchmark's design and baseline results, providing a common platform for comparing algorithms. For the user, this benchmark is directly relevant to legged humanoid research and mobile manipulation, offering a testbed to evaluate whole-body control policies and learning algorithms. The user can leverage HumanoidBench to benchmark their own controllers or learning methods against existing baselines, facilitating systematic progress in humanoid robotics.",
+      "generated_at": "2026-08-11T03:25:44",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4407874080",
+      "title": "TinyVLA: Toward Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation",
+      "takeaway": "TinyVLA presents a compact vision-language-action model that achieves faster inference and improved data efficiency compared to existing VLA models like OpenVLA, by initializing with high-speed multimodal models and integrating a diffusion policy decoder. The paper demonstrates superior performance in simulation and on real robots, with strong generalization. For the user, this work is relevant to robot learning and VLA foundation models, offering a practical approach to deploy VLA policies in real-time manipulation tasks. The user can build on TinyVLA's architecture to develop more efficient visuomotor policies for mobile manipulation, potentially reducing computational overhead and data requirements.",
+      "generated_at": "2026-08-11T03:25:44",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4293160779",
+      "title": "Offline motion libraries and online MPC for advanced mobility skills",
+      "takeaway": "This paper proposes an optimization-based framework that combines offline motion libraries with online model predictive control (MPC) to achieve complex locomotion skills for legged and wheeled robots. The key contribution is using offline trajectories as cost functions for online MPC, enabling smooth blending of composed motions even with discontinuous transitions, thus overcoming the trade-off between long-horizon planning and reactive control. For the user, this work is highly relevant to legged humanoid locomotion and optimal control, providing a method to integrate offline trajectory optimization with online MPC for robust and agile behaviors. The user can apply this framework to enhance the mobility skills of their legged robots, leveraging offline libraries to guide real-time control in uncertain environments.",
+      "generated_at": "2026-08-11T03:25:44",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2760078242",
+      "title": "Deep Haptic Model Predictive Control for Robot-Assisted Dressing",
+      "takeaway": "This paper presents a deep haptic model predictive control approach for robot-assisted dressing, using a recurrent model trained in simulation to predict forces applied by garments, and integrating it with MPC to improve dressing assistance. The method is evaluated with a PR2 robot on human participants, showing effective force prediction and control. For the user, this work is relevant to optimal control and human-robot interaction, demonstrating how learned models can be combined with MPC for safe physical assistance. The user can adapt this approach to other contact-rich manipulation tasks, using simulation-trained predictive models to inform real-time control policies.",
+      "generated_at": "2026-08-11T03:25:44",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.09410",
+      "title": "Skills in Weights, Memory in Code: Hybrid Learning for Memory-Dependent Robot Manipulation",
+      "takeaway": "HyMeS introduces a hybrid learning framework for memory-dependent robot manipulation, where low-level motor skills are learned via imitation learning and high-level memory-management strategies are acquired by a coding agent through heuristic learning. The framework uses multimodal stage-completion verification to update memory, addressing non-Markovian tasks that require long-horizon reasoning. For the user, this work is relevant to robot learning and VLA foundation models, offering a way to extend VLA policies to handle memory-dependent tasks without requiring demonstrations for every history-dependent action. The user can build on HyMeS to develop more capable manipulation systems that reason over interaction histories, potentially improving performance in complex, long-horizon tasks.",
+      "generated_at": "2026-08-11T03:25:44",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "research_fit 20 ≥ 18",
+        "核心方向：mobile_manipulation",
+        "特定关键词：locomotion and manipulation",
+        "historical_value_score 64.6 ≥ 50.0",
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 0.3%",
+        "OpenAlex FWCI 21.03",
+        "近 2 年年均引用 9.0；此前 1 年年均 2.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 75%",
+        "影响力元数据更新于 2026-08-06T04:27:43"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4402354138",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4402354138",
+        "openalex_id": "W4402354138",
+        "base_arxiv_id": null,
+        "doi": "10.15607/rss.2024.xx.061",
+        "title": "HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation",
+        "authors": [
+          "Carmelo Sferrazza",
+          "Dun-Ming Huang",
+          "Xingyu Lin",
+          "Youngwoon Lee",
+          "Pieter Abbeel"
+        ],
+        "abstract": null,
+        "publication_date": "2024-07-15",
+        "publication_year": 2024,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9663000106811523
+          }
+        ],
+        "cited_by_count": 20,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 21.0307,
+        "citation_normalized_percentile": 0.99700209,
+        "referenced_works": [],
+        "related_works": [
+          "W1569471492",
+          "W2028665553",
+          "W2129850190",
+          "W2130974462",
+          "W2295425790",
+          "W2378211422",
+          "W2745001401",
+          "W2745063183",
+          "W4256317079",
+          "W4321353415"
+        ],
+        "discovery_source": [
+          "topic_search:humanoid locomotion and manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T00:25:08",
+        "last_considered_at": "2026-08-11T11:20:35+08:00",
+        "recommended_at": "2026-08-11T11:20:35+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-06T04:27:43",
+        "openalex_url": "https://openalex.org/W4402354138",
+        "landing_page_url": "https://doi.org/10.15607/rss.2024.xx.061",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 20,
+        "video_potential": 53,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "locomotion and manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "locomotion and manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "historical_value_score": 64.6,
+        "historical_score_components": {
+          "research_relevance": 20.0,
+          "normalized_citation": 99.7,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 75.0
+        },
+        "historical_score_reasons": [
+          "发表于 2024 年",
+          "同领域同年份引用标准化位于前 0.3%",
+          "OpenAlex FWCI 21.03",
+          "近 2 年年均引用 9.0；此前 1 年年均 2.0",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 75%"
+        ],
+        "is_knowledge_map": true
+      },
+      "paper": {
+        "arxiv_id": "openalex:W4402354138",
+        "base_id": "openalex:W4402354138",
+        "version": 1,
+        "title": "HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation",
+        "authors": [
+          "Carmelo Sferrazza",
+          "Dun-Ming Huang",
+          "Xingyu Lin",
+          "Youngwoon Lee",
+          "Pieter Abbeel"
+        ],
+        "published": "2024-07-15T00:00:00Z",
+        "updated": "2024-07-15T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "",
+        "abs_url": "https://doi.org/10.15607/rss.2024.xx.061",
+        "pdf_url": "",
+        "research_fit": 20,
+        "video_potential": 53,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "locomotion and manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "locomotion and manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 28 ≥ 18",
+        "核心方向：diffusion_visuomotor, vla_foundation",
+        "特定关键词：diffusion policy, visuomotor control, vision-language-action, vision language action, VLA",
+        "historical_value_score 68.8 ≥ 42.0",
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 31.29",
+        "近年年均 OpenAlex 引用 32.0（无更早窗口可比较）",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-10T04:13:57"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4407874080",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4407874080",
+        "openalex_id": "W4407874080",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2025.3544909",
+        "title": "TinyVLA: Toward Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation",
+        "authors": [
+          "Junjie Wen",
+          "Yichen Zhu",
+          "Jinming Li",
+          "Minjie Zhu",
+          "Zhibin Tang",
+          "Kun Wu",
+          "Zhiyuan Xu",
+          "Ning Liu",
+          "Ran Cheng",
+          "Chaomin Shen",
+          "Yaxin Peng",
+          "Feifei Feng",
+          "Jian Tang"
+        ],
+        "abstract": "Vision-Language-Action (VLA) models have shown remarkable potential in visuomotor control and instruction comprehension through end-to-end learning processes. However, current VLA models face significant challenges: they are slow during inference and require extensive pre-training on large amounts of robotic data, making real-world deployment difficult. In this letter, we introduce a new family of compact vision-language-action models, called TinyVLA, which offers two key advantages over existing VLA models: (1) faster inference speeds, and (2) improved data efficiency, eliminating the need for pre-training stage. Our framework incorporates two essential components to build TinyVLA: (1) initializing the policy backbone with robust, high-speed multimodal models, and (2) integrating a diffusion policy decoder during fine-tuning to enable precise robot actions. We conducted extensive evaluations of TinyVLA in both simulation and on real robots, demonstrating that our approach significantly outperforms the state-of-the-art VLA model, OpenVLA, in terms of speed and data efficiency, while delivering comparable or superior performance. Additionally, TinyVLA exhibits strong generalization capabilities across various dimensions, including language instructions, novel objects, unseen positions, changes in object appearance, background variations, and environmental shifts, often matching or exceeding the performance of OpenVLA. We believe that TinyVLA offers an interesting perspective on utilizing pre-trained multimodal models for policy learning.",
+        "publication_date": "2025-02-24",
+        "publication_year": 2025,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9969000220298767
+          },
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.9754999876022339
+          },
+          {
+            "id": "https://openalex.org/T10036",
+            "display_name": "Advanced Neural Network Applications",
+            "score": 0.961899995803833
+          }
+        ],
+        "cited_by_count": 64,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 34
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 30
+          }
+        ],
+        "fwci": 31.2894,
+        "citation_normalized_percentile": 0.99922756,
+        "referenced_works": [
+          "W2760103357",
+          "W3204665606",
+          "W3212974940",
+          "W4247348637",
+          "W4253707770",
+          "W4385403811",
+          "W4385430825",
+          "W4390872705",
+          "W4396786887",
+          "W4400612090",
+          "W4401414111",
+          "W4401415287",
+          "W4401416041",
+          "W4402353985",
+          "W4402354045",
+          "W4402354098",
+          "W4402354155",
+          "W4403793633",
+          "W6769596995",
+          "W6779823529",
+          "W6785132894",
+          "W6787713516",
+          "W6796581206",
+          "W6801512601",
+          "W6802366246",
+          "W6810640255",
+          "W6838719481",
+          "W6839091850",
+          "W6839256673",
+          "W6847224448",
+          "W6851579256",
+          "W6851592950",
+          "W6851950068",
+          "W6854738657",
+          "W6854866820",
+          "W6857073604",
+          "W6857236505",
+          "W6857872576",
+          "W6858444883",
+          "W6860003303",
+          "W6861737562",
+          "W6869853401",
+          "W6870687016",
+          "W6873297565"
+        ],
+        "related_works": [
+          "W2772917594",
+          "W2036807459",
+          "W2058170566",
+          "W2755342338",
+          "W2166024367",
+          "W3116076068",
+          "W2229312674",
+          "W2951359407",
+          "W2079911747",
+          "W1969923398"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W4385403811"
+        ],
+        "discovered_at": "2026-08-10T04:13:57",
+        "last_considered_at": "2026-08-11T11:20:35+08:00",
+        "recommended_at": "2026-08-11T11:20:35+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-10T04:13:57",
+        "openalex_url": "https://openalex.org/W4407874080",
+        "landing_page_url": "https://doi.org/10.1109/lra.2025.3544909",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 28,
+        "video_potential": 34,
+        "matched_topics": [
+          "diffusion_visuomotor",
+          "vla_foundation"
+        ],
+        "matched_keywords": [
+          "diffusion policy",
+          "visuomotor control",
+          "vision-language-action",
+          "vision language action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Diffusion & Visuomotor Policy",
+            "keywords": [
+              "diffusion policy",
+              "visuomotor control"
+            ],
+            "location": "abstract",
+            "points": 11.1
+          },
+          {
+            "kind": "topic",
+            "label": "VLA & Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "vision language action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 17.0
+          }
+        ],
+        "historical_value_score": 68.8,
+        "historical_score_components": {
+          "research_relevance": 28.0,
+          "normalized_citation": 99.9,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "OpenAlex FWCI 31.29",
+          "近年年均 OpenAlex 引用 32.0（无更早窗口可比较）",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W4407874080",
+        "base_id": "openalex:W4407874080",
+        "version": 1,
+        "title": "TinyVLA: Toward Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation",
+        "authors": [
+          "Junjie Wen",
+          "Yichen Zhu",
+          "Jinming Li",
+          "Minjie Zhu",
+          "Zhibin Tang",
+          "Kun Wu",
+          "Zhiyuan Xu",
+          "Ning Liu",
+          "Ran Cheng",
+          "Chaomin Shen",
+          "Yaxin Peng",
+          "Feifei Feng",
+          "Jian Tang"
+        ],
+        "published": "2025-02-24T00:00:00Z",
+        "updated": "2025-02-24T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Vision-Language-Action (VLA) models have shown remarkable potential in visuomotor control and instruction comprehension through end-to-end learning processes. However, current VLA models face significant challenges: they are slow during inference and require extensive pre-training on large amounts of robotic data, making real-world deployment difficult. In this letter, we introduce a new family of compact vision-language-action models, called TinyVLA, which offers two key advantages over existing VLA models: (1) faster inference speeds, and (2) improved data efficiency, eliminating the need for pre-training stage. Our framework incorporates two essential components to build TinyVLA: (1) initializing the policy backbone with robust, high-speed multimodal models, and (2) integrating a diffusion policy decoder during fine-tuning to enable precise robot actions. We conducted extensive evaluations of TinyVLA in both simulation and on real robots, demonstrating that our approach significantly outperforms the state-of-the-art VLA model, OpenVLA, in terms of speed and data efficiency, while delivering comparable or superior performance. Additionally, TinyVLA exhibits strong generalization capabilities across various dimensions, including language instructions, novel objects, unseen positions, changes in object appearance, background variations, and environmental shifts, often matching or exceeding the performance of OpenVLA. We believe that TinyVLA offers an interesting perspective on utilizing pre-trained multimodal models for policy learning.",
+        "abs_url": "https://doi.org/10.1109/lra.2025.3544909",
+        "pdf_url": "",
+        "research_fit": 28,
+        "video_potential": 34,
+        "matched_topics": [
+          "diffusion_visuomotor",
+          "vla_foundation"
+        ],
+        "matched_keywords": [
+          "diffusion policy",
+          "visuomotor control",
+          "vision-language-action",
+          "vision language action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Diffusion & Visuomotor Policy",
+            "keywords": [
+              "diffusion policy",
+              "visuomotor control"
+            ],
+            "location": "abstract",
+            "points": 11.1
+          },
+          {
+            "kind": "topic",
+            "label": "VLA & Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "vision language action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 17.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 41 ≥ 18",
+        "核心方向：legged_humanoid, optimal_control, robot_learning",
+        "特定关键词：quadrupedal robot, MPC, model predictive control, trajectory optimization",
+        "historical_value_score 67.1 ≥ 42.0",
+        "发表于 2022 年",
+        "同领域同年份引用标准化位于前 3.1%",
+        "OpenAlex FWCI 5.01",
+        "近 2 年年均引用 17.5；此前 2 年年均 20.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-10T04:13:52"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4293160779",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4293160779",
+        "openalex_id": "W4293160779",
+        "base_arxiv_id": null,
+        "doi": "10.1177/02783649221102473",
+        "title": "Offline motion libraries and online MPC for advanced mobility skills",
+        "authors": [
+          "Marko Bjelonic",
+          "Ruben Grandia",
+          "Moritz Geilinger",
+          "Oliver Harley",
+          "Vivian Suzano Medeiros",
+          "Vuk Pajovic",
+          "Edo Jelavić",
+          "Stelian Coros",
+          "Marco Hutter"
+        ],
+        "abstract": "We describe an optimization-based framework to perform complex locomotion skills for robots with legs and wheels. The generation of complex motions over a long-time horizon often requires offline computation due to current computing constraints and is mostly accomplished through trajectory optimization (TO). In contrast, model predictive control (MPC) focuses on the online computation of trajectories, robust even in the presence of uncertainty, albeit mostly over shorter time horizons and is prone to generating nonoptimal solutions over the horizon of the task’s goals. Our article’s contributions overcome this trade-off by combining offline motion libraries and online MPC, uniting a complex, long-time horizon plan with reactive, short-time horizon solutions. We start from offline trajectories that can be, for example, generated by TO or sampling-based methods. Also, multiple offline trajectories can be composed out of a motion library into a single maneuver. We then use these offline trajectories as the cost for the online MPC, allowing us to smoothly blend between multiple composed motions even in the presence of discontinuous transitions. The MPC optimizes from the measured state, resulting in feedback control, which robustifies the task’s execution by reacting to disturbances and looking ahead at the offline trajectory. With our contribution, motion designers can choose their favorite method to iterate over behavior designs offline without tuning robot experiments, enabling them to author new behaviors rapidly. Our experiments demonstrate complex and dynamic motions on our traditional quadrupedal robot ANYmal and its roller-walking version. Moreover, the article’s findings contribute to evaluating five planning algorithms.",
+        "publication_date": "2022-06-07",
+        "publication_year": 2022,
+        "source_name": "The International Journal of Robotics Research",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9991999864578247
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9919999837875366
+          },
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9904999732971191
+          }
+        ],
+        "cited_by_count": 80,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          }
+        ],
+        "fwci": 5.0098,
+        "citation_normalized_percentile": 0.96881074,
+        "referenced_works": [
+          "W1431688706",
+          "W1592294156",
+          "W1945123189",
+          "W1971086298",
+          "W1973195195",
+          "W1978956894",
+          "W1986621758",
+          "W1994275787",
+          "W2003132288",
+          "W2016211524",
+          "W2027968610",
+          "W2037729465",
+          "W2042408133",
+          "W2044202637",
+          "W2051561438",
+          "W2056223738",
+          "W2061983716",
+          "W2065238107",
+          "W2080132051",
+          "W2091829036",
+          "W2101340954",
+          "W2102883217",
+          "W2107955862",
+          "W2127763473",
+          "W2130399600",
+          "W2138136244",
+          "W2143729862",
+          "W2154139861",
+          "W2158370675",
+          "W2159806973",
+          "W2162218551",
+          "W2198582666",
+          "W2204604557",
+          "W2217407546",
+          "W2272266920",
+          "W2317638036",
+          "W2333533581",
+          "W2418368699",
+          "W2470094176",
+          "W2491934829",
+          "W2522564208",
+          "W2523487622",
+          "W2529220408",
+          "W2564178275",
+          "W2618245409",
+          "W2738799195",
+          "W2764255492",
+          "W2771691050",
+          "W2774366155",
+          "W2776302298",
+          "W2788030459",
+          "W2788200022",
+          "W2793991136",
+          "W2803575051",
+          "W2810228177",
+          "W2811027829",
+          "W2890776524",
+          "W2905541462",
+          "W2908534815",
+          "W2909331752",
+          "W2909553221",
+          "W2913792742",
+          "W2949658140",
+          "W2950302787",
+          "W2950546634",
+          "W2951633861",
+          "W2951805468",
+          "W2963536429",
+          "W2970228732",
+          "W3003188160",
+          "W3003397085",
+          "W3004201008",
+          "W3010519440",
+          "W3010768390",
+          "W3011771794",
+          "W3012062338",
+          "W3023846712",
+          "W3041078985",
+          "W3043939574",
+          "W3090829738",
+          "W3093326211",
+          "W3101175487",
+          "W3101817006",
+          "W3101870171",
+          "W3102212813",
+          "W3102715624",
+          "W3104730803",
+          "W3105372678",
+          "W3105612804",
+          "W3109186372",
+          "W3156261936",
+          "W3207637958",
+          "W4200139383",
+          "W4241459016",
+          "W4242073862",
+          "W4246876444",
+          "W4255243782",
+          "W6600291067",
+          "W6600481524"
+        ],
+        "related_works": [
+          "W2108431359",
+          "W2109659895",
+          "W2564742953",
+          "W3042122676",
+          "W3115340459",
+          "W3211256740",
+          "W4213299358",
+          "W4385272362",
+          "W4386150577",
+          "W4390110149"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W3093326211"
+        ],
+        "discovered_at": "2026-08-06T04:28:06",
+        "last_considered_at": "2026-08-11T11:20:35+08:00",
+        "recommended_at": "2026-08-11T11:20:35+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-10T04:13:52",
+        "openalex_url": "https://openalex.org/W4293160779",
+        "landing_page_url": "https://doi.org/10.1177/02783649221102473",
+        "open_access_url": "https://doi.org/10.1177/02783649221102473",
+        "pdf_url": null,
+        "research_fit": 41,
+        "video_potential": 31,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "quadrupedal robot",
+          "MPC",
+          "model predictive control",
+          "trajectory optimization",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadrupedal robot"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "MPC",
+              "model predictive control",
+              "trajectory optimization"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          }
+        ],
+        "historical_value_score": 67.1,
+        "historical_score_components": {
+          "research_relevance": 41.0,
+          "normalized_citation": 96.9,
+          "fwci": 100.0,
+          "citation_momentum": 43.8,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2022 年",
+          "同领域同年份引用标准化位于前 3.1%",
+          "OpenAlex FWCI 5.01",
+          "近 2 年年均引用 17.5；此前 2 年年均 20.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W4293160779",
+        "base_id": "openalex:W4293160779",
+        "version": 1,
+        "title": "Offline motion libraries and online MPC for advanced mobility skills",
+        "authors": [
+          "Marko Bjelonic",
+          "Ruben Grandia",
+          "Moritz Geilinger",
+          "Oliver Harley",
+          "Vivian Suzano Medeiros",
+          "Vuk Pajovic",
+          "Edo Jelavić",
+          "Stelian Coros",
+          "Marco Hutter"
+        ],
+        "published": "2022-06-07T00:00:00Z",
+        "updated": "2022-06-07T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "We describe an optimization-based framework to perform complex locomotion skills for robots with legs and wheels. The generation of complex motions over a long-time horizon often requires offline computation due to current computing constraints and is mostly accomplished through trajectory optimization (TO). In contrast, model predictive control (MPC) focuses on the online computation of trajectories, robust even in the presence of uncertainty, albeit mostly over shorter time horizons and is prone to generating nonoptimal solutions over the horizon of the task’s goals. Our article’s contributions overcome this trade-off by combining offline motion libraries and online MPC, uniting a complex, long-time horizon plan with reactive, short-time horizon solutions. We start from offline trajectories that can be, for example, generated by TO or sampling-based methods. Also, multiple offline trajectories can be composed out of a motion library into a single maneuver. We then use these offline trajectories as the cost for the online MPC, allowing us to smoothly blend between multiple composed motions even in the presence of discontinuous transitions. The MPC optimizes from the measured state, resulting in feedback control, which robustifies the task’s execution by reacting to disturbances and looking ahead at the offline trajectory. With our contribution, motion designers can choose their favorite method to iterate over behavior designs offline without tuning robot experiments, enabling them to author new behaviors rapidly. Our experiments demonstrate complex and dynamic motions on our traditional quadrupedal robot ANYmal and its roller-walking version. Moreover, the article’s findings contribute to evaluating five planning algorithms.",
+        "abs_url": "https://doi.org/10.1177/02783649221102473",
+        "pdf_url": "",
+        "research_fit": 41,
+        "video_potential": 31,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "quadrupedal robot",
+          "MPC",
+          "model predictive control",
+          "trajectory optimization",
+          "reinforcement learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadrupedal robot"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "MPC",
+              "model predictive control",
+              "trajectory optimization"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 18 ≥ 18",
+        "核心方向：optimal_control",
+        "特定关键词：model predictive control",
+        "historical_value_score 53.3 ≥ 42.0",
+        "发表于 2018 年",
+        "同领域同年份引用标准化位于前 0.8%",
+        "OpenAlex FWCI 9.23",
+        "近 2 年年均引用 3.5；此前 2 年年均 14.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-04T06:56:02"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2760078242",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2760078242",
+        "openalex_id": "W2760078242",
+        "base_arxiv_id": "1709.09735",
+        "doi": "10.1109/icra.2018.8460656",
+        "title": "Deep Haptic Model Predictive Control for Robot-Assisted Dressing",
+        "authors": [
+          "Zackory Erickson",
+          "Henry M. Clever",
+          "Greg Turk",
+          "C. Karen Liu",
+          "Charles C. Kemp"
+        ],
+        "abstract": "Robot-assisted dressing offers an opportunity to benefit the lives of many people with disabilities, such as some older adults. However, robots currently lack common sense about the physical implications of their actions on people. The physical implications of dressing are complicated by non-rigid garments, which can result in a robot indirectly applying high forces to a person's body. We present a deep recurrent model that, when given a proposed action by the robot, predicts the forces a garment will apply to a person's body. We also show that a robot can provide better dressing assistance by using this model with model predictive control. The predictions made by our model only use haptic and kinematic observations from the robot's end effector, which are readily attainable. Collecting training data from real world physical human-robot interaction can be time consuming, costly, and put people at risk. Instead, we train our predictive model using data collected in an entirely self-supervised fashion from a physics-based simulation. We evaluated our approach with a PR2 robot that attempted to pull a hospital gown onto the arms of 10 human participants. With a 0.2s prediction horizon, our controller succeeded at high rates and lowered applied force while navigating the garment around a persons fist and elbow without getting caught. Shorter prediction horizons resulted in significantly reduced performance with the sleeve catching on the participants' fists and elbows, demonstrating the value of our model's predictions. These behaviors of mitigating catches emerged from our deep predictive model and the controller objective function, which primarily penalizes high forces.",
+        "publication_date": "2018-05-01",
+        "publication_year": 2018,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9988999962806702
+          },
+          {
+            "id": "https://openalex.org/T11687",
+            "display_name": "Teleoperation and Haptic Systems",
+            "score": 0.9966999888420105
+          },
+          {
+            "id": "https://openalex.org/T11159",
+            "display_name": "Manufacturing Process and Optimization",
+            "score": 0.9869999885559082
+          }
+        ],
+        "cited_by_count": 75,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 7
+          }
+        ],
+        "fwci": 9.2268,
+        "citation_normalized_percentile": 0.99152276,
+        "referenced_works": [
+          "W1974305624",
+          "W1994275787",
+          "W1997543377",
+          "W2115529287",
+          "W2134491302",
+          "W2294623867",
+          "W2528489519",
+          "W2560940104",
+          "W2599467804",
+          "W2605907393",
+          "W2615384492",
+          "W6623316541",
+          "W6647379836",
+          "W6649399632",
+          "W6667520013",
+          "W6675051279",
+          "W6687583651",
+          "W6695206914",
+          "W6697143457",
+          "W6702989015",
+          "W6720461547",
+          "W6729408031",
+          "W6730435322",
+          "W6741264409"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "topic_search:model predictive control in robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:02",
+        "last_considered_at": "2026-08-11T11:20:35+08:00",
+        "recommended_at": "2026-08-11T11:20:35+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:02",
+        "openalex_url": "https://openalex.org/W2760078242",
+        "landing_page_url": "https://doi.org/10.1109/icra.2018.8460656",
+        "open_access_url": "http://arxiv.org/abs/1709.09735",
+        "pdf_url": "https://arxiv.org/pdf/1709.09735",
+        "research_fit": 18,
+        "video_potential": 16,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "historical_value_score": 53.3,
+        "historical_score_components": {
+          "research_relevance": 18.0,
+          "normalized_citation": 99.2,
+          "fwci": 100.0,
+          "citation_momentum": 12.1,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2018 年",
+          "同领域同年份引用标准化位于前 0.8%",
+          "OpenAlex FWCI 9.23",
+          "近 2 年年均引用 3.5；此前 2 年年均 14.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "1709.09735",
+        "base_id": "1709.09735",
+        "version": 1,
+        "title": "Deep Haptic Model Predictive Control for Robot-Assisted Dressing",
+        "authors": [
+          "Zackory Erickson",
+          "Henry M. Clever",
+          "Greg Turk",
+          "C. Karen Liu",
+          "Charles C. Kemp"
+        ],
+        "published": "2018-05-01T00:00:00Z",
+        "updated": "2018-05-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Robot-assisted dressing offers an opportunity to benefit the lives of many people with disabilities, such as some older adults. However, robots currently lack common sense about the physical implications of their actions on people. The physical implications of dressing are complicated by non-rigid garments, which can result in a robot indirectly applying high forces to a person's body. We present a deep recurrent model that, when given a proposed action by the robot, predicts the forces a garment will apply to a person's body. We also show that a robot can provide better dressing assistance by using this model with model predictive control. The predictions made by our model only use haptic and kinematic observations from the robot's end effector, which are readily attainable. Collecting training data from real world physical human-robot interaction can be time consuming, costly, and put people at risk. Instead, we train our predictive model using data collected in an entirely self-supervised fashion from a physics-based simulation. We evaluated our approach with a PR2 robot that attempted to pull a hospital gown onto the arms of 10 human participants. With a 0.2s prediction horizon, our controller succeeded at high rates and lowered applied force while navigating the garment around a persons fist and elbow without getting caught. Shorter prediction horizons resulted in significantly reduced performance with the sleeve catching on the participants' fists and elbows, demonstrating the value of our model's predictions. These behaviors of mitigating catches emerged from our deep predictive model and the controller objective function, which primarily penalizes high forces.",
+        "abs_url": "https://arxiv.org/abs/1709.09735",
+        "pdf_url": "https://arxiv.org/pdf/1709.09735",
+        "research_fit": 18,
+        "video_potential": 16,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 41 ≥ 40",
+        "Core topics matched: robot_learning, vla_foundation",
+        "Specific keywords matched: vision-language-action, vision language action, VLA",
+        "Diversity topic: vla_foundation"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.09410",
+      "historical_paper": null,
+      "paper": {
+        "arxiv_id": "2608.09410v1",
+        "base_id": "2608.09410",
+        "version": 1,
+        "title": "Skills in Weights, Memory in Code: Hybrid Learning for Memory-Dependent Robot Manipulation",
+        "authors": [
+          "Yunhao Zhao",
+          "Zhenyang Ni",
+          "Haoyang Chen",
+          "Ruohan Zhang",
+          "Qi Zhu"
+        ],
+        "published": "2026-08-10T10:35:47Z",
+        "updated": "2026-08-10T10:35:47Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Modern vision-language-action (VLA) policies have acquired broad manipulation skills, but typically generate each action chunk from the current observation or a short fixed-length history. However, real-world manipulation is often non-Markovian, requiring robots to retain and reason over task-relevant information from long-horizon interaction histories to determine the next action. To address this challenge, we propose HyMeS, a hybrid learning framework that leverages the reasoning and memory-management capabilities of coding agents to steer a Markovian VLA for memory-dependent manipulation. Specifically, HyMeS learns low-level motor skills through gradient-based imitation learning, while a coding agent acquires high-level memory-management strategies through heuristic learning by iteratively updating an executable heuristic system from rollout feedback. Furthermore, we close the loop between steering and execution through multimodal stage-completion verification, which updates memory using proprioceptive signals and multi-frame VLM judgments. Compared with end-to-end memory-augmented VLAs, HyMeS requires demonstrations only for reusable motor skills rather than for every history-dependent task configuration, enabling data-efficient compositional generalization. On RoboMemArena, HyMeS improves mean cumulative success from 52.5% to 66.2% and mean task success from 41.3% to 60.1% over pi0.5, while outperforming PrediMem by 4.5 points in cumulative success and 14.5 points in task success.",
+        "abs_url": "https://arxiv.org/abs/2608.09410v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.09410v1",
+        "research_fit": 41,
+        "video_potential": 37,
+        "matched_topics": [
+          "robot_learning",
+          "vla_foundation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "vision-language-action",
+          "vision language action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "topic",
+            "label": "VLA & Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "vision language action",
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 11.1
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 10.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    }
+  ]
+}
