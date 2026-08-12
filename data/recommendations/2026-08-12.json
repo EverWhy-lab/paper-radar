@@ -1,0 +1,1201 @@
+{
+  "schema_version": 3,
+  "date": "2026-08-12",
+  "generated_at": "2026-08-12T11:39:01+08:00",
+  "mode": "incremental",
+  "candidate_count": 3085,
+  "historical_candidate_count": 266,
+  "recommendation_count": 5,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 3,
+    "journal_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "selection_order": [
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical",
+      "frontier_recent"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 3,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W1951089663",
+      "title": "Mobile Manipulation and Mobility as Manipulation—Design and Algorithms of RoboSimian",
+      "takeaway": "This paper presents the hardware design and software algorithms of RoboSimian, a statically stable quadrupedal robot with generalized limbs used for both mobility and manipulation, unified under a single mobile manipulation planner that generates autonomous behaviors such as walking, sitting, climbing, grasping, and manipulating. The system is semiautonomous, enabling low-bandwidth, high-latency control from a standard laptop, and placed fifth in the DARPA Robotics Challenge Trials. For your research in legged robots and mobile manipulation, this work offers a valuable reference for designing hardware and control architectures that treat mobility and manipulation as a unified problem, which can inform your own system design and planning approaches for disaster-response or unstructured environments.",
+      "generated_at": "2026-08-12T03:44:10",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4383109371",
+      "title": "Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning",
+      "takeaway": "This paper extends adversarial motion priors in reinforcement learning to support multiple, discretely switchable motion styles, allowing a wheeled-legged robot to learn skills from existing RL controllers and trajectory optimization, as well as novel skills like transitioning between quadrupedal and humanoid configurations. The approach reduces the need for tedious reward tuning by leveraging imitation learning, and real-world experiments validate that multiple styles can be learned simultaneously without significant performance loss. For your work in legged robots and robot learning, this method provides a practical framework for combining diverse locomotion and manipulation skills in a single RL policy, which you could build upon to enable more versatile behaviors in your own platforms.",
+      "generated_at": "2026-08-12T03:44:10",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W1517943492",
+      "title": "RoboFlow: A flow-based visual programming language for mobile manipulation tasks",
+      "takeaway": "This paper introduces RoboFlow, a flow-based visual programming language designed to let end-users program generalizable mobile manipulation tasks on a PR2 robot, with a focus on ensuring robust low-level implementation while restricting high-level programming to avoid user errors yet still support branching, looping, and nesting. The approach addresses the challenge of programming robots for specific environments by enabling users to program in their context of use, and the authors demonstrate generalizability and error handling on everyday tasks. For your research in mobile manipulation, this work offers a user-centric programming paradigm that could complement autonomous planning methods, potentially useful for rapid task specification or human-in-the-loop control in your systems.",
+      "generated_at": "2026-08-12T03:44:10",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7171044302",
+      "title": "Generalized polynomial chaos expansion-based stochastic nonlinear model predictive control with iterative risk allocation for batch processes",
+      "takeaway": "This paper proposes a generalized polynomial chaos expansion-based stochastic nonlinear model predictive control with iterative risk allocation for batch processes, addressing uncertainty in optimal control by propagating stochastic disturbances through the system and allocating risk iteratively to satisfy chance constraints. Although the abstract is empty, the method targets batch processes, which are common in industrial settings, and the approach could be relevant to your optimal control research if you deal with uncertain dynamics or disturbances in legged locomotion or manipulation. You could explore adapting this stochastic MPC framework to handle model uncertainty or environmental variability in your control pipelines, potentially improving robustness in real-world deployments.",
+      "generated_at": "2026-08-12T03:44:10",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.10756",
+      "title": "Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting",
+      "takeaway": "This paper presents an embodied multimodal grounding framework for open-vocabulary mobile manipulation that integrates active multi-view Semantic 3D Gaussian Splatting (Semantic-3DGS), reachability-aware base positioning, and a diffusion-based vision-language-action policy, using a task-driven local Semantic-3DGS as a shared interface across sensing, localization, reasoning, and action conditioning. In real-robot evaluations, the full system achieves 60% long-horizon success versus 40% for PointVLA and 28% for DexVLA, and 74% success in heavily cluttered manipulation, while preserving pretrained action priors by injecting 3D semantic cues only into late action-expert blocks. For your research in mobile manipulation and robot learning, this work demonstrates a promising way to combine semantic scene representation with VLA policies, and you could build on it to improve open-vocabulary grounding and robustness in cluttered environments for your own platforms.",
+      "generated_at": "2026-08-12T03:44:10",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "research_fit 33 ≥ 18",
+        "核心方向：legged_humanoid, mobile_manipulation",
+        "特定关键词：quadrupedal robot, mobile manipulation",
+        "historical_value_score 63.7 ≥ 50.0",
+        "发表于 2015 年",
+        "同领域同年份引用标准化位于前 0.8%",
+        "OpenAlex FWCI 13.47",
+        "近 2 年年均引用 4.0；此前 2 年年均 9.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:01"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W1951089663",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W1951089663",
+        "openalex_id": "W1951089663",
+        "base_arxiv_id": null,
+        "doi": "10.1002/rob.21566",
+        "title": "Mobile Manipulation and Mobility as Manipulation—Design and Algorithms of RoboSimian",
+        "authors": [
+          "Paul D. N. Hebert",
+          "Max Bajracharya",
+          "Jeremy Ma",
+          "Nicolas Hudson",
+          "Alper Aydemir",
+          "Jason Reid",
+          "Charles Bergh",
+          "James Borders",
+          "Matthew Frost",
+          "Michael Hagman",
+          "John Leichty",
+          "Paul Backes",
+          "Brett Kennedy",
+          "Paul Karplus",
+          "Brian Satzinger",
+          "Katie Byl",
+          "Krishna Shankar",
+          "Joel W. Burdick"
+        ],
+        "abstract": "This article presents the hardware design and software algorithms of RoboSimian, a statically stable quadrupedal robot capable of both dexterous manipulation and versatile mobility in difficult terrain. The robot has generalized limbs and hands capable of mobility and manipulation, along with almost fully hemispherical three‐dimensional sensing with passive stereo cameras. The system is semiautonomous, enabling low‐bandwidth, high latency control operated from a standard laptop. Because limbs are used for mobility and manipulation, a single unified mobile manipulation planner is used to generate autonomous behaviors, including walking, sitting, climbing, grasping, and manipulating. The remote operator interface is optimized to designate, parametrize, sequence, and preview behaviors, which are then executed by the robot. RoboSimian placed fifth in the DARPA Robotics Challenge Trials, demonstrating its ability to perform disaster recovery tasks in degraded human environments.",
+        "publication_date": "2015-02-13",
+        "publication_year": 2015,
+        "source_name": "Journal of Field Robotics",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9997000098228455
+          },
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9995999932289124
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9993000030517578
+          }
+        ],
+        "cited_by_count": 132,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 11
+          }
+        ],
+        "fwci": 13.4714,
+        "citation_normalized_percentile": 0.99176412,
+        "referenced_works": [
+          "W102190310",
+          "W1504992226",
+          "W1983959451",
+          "W1984641630",
+          "W1994648061",
+          "W2015034312",
+          "W2029256820",
+          "W2048806631",
+          "W2090302437",
+          "W2141664020",
+          "W2172158418",
+          "W2229412420",
+          "W2249773824",
+          "W2505763307",
+          "W2998649743",
+          "W4233857083",
+          "W6721399632",
+          "W7919856"
+        ],
+        "related_works": [
+          "W1516398359",
+          "W1901656956",
+          "W2045444909",
+          "W2122871747",
+          "W2376300433",
+          "W2941659365",
+          "W2990805456",
+          "W3114279067",
+          "W3153292769",
+          "W4239210160"
+        ],
+        "discovery_source": [
+          "topic_search:mobile manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T00:25:06",
+        "last_considered_at": "2026-08-12T11:39:01+08:00",
+        "recommended_at": "2026-08-12T11:39:01+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:01",
+        "openalex_url": "https://openalex.org/W1951089663",
+        "landing_page_url": "https://doi.org/10.1002/rob.21566",
+        "open_access_url": "https://doi.org/10.1002/rob.21566",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/rob.21566",
+        "research_fit": 33,
+        "video_potential": 26,
+        "matched_topics": [
+          "legged_humanoid",
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "quadrupedal robot",
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadrupedal robot"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "historical_value_score": 63.7,
+        "historical_score_components": {
+          "research_relevance": 33.0,
+          "normalized_citation": 99.2,
+          "fwci": 100.0,
+          "citation_momentum": 22.2,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2015 年",
+          "同领域同年份引用标准化位于前 0.8%",
+          "OpenAlex FWCI 13.47",
+          "近 2 年年均引用 4.0；此前 2 年年均 9.0",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "paper": {
+        "arxiv_id": "openalex:W1951089663",
+        "base_id": "openalex:W1951089663",
+        "version": 1,
+        "title": "Mobile Manipulation and Mobility as Manipulation—Design and Algorithms of RoboSimian",
+        "authors": [
+          "Paul D. N. Hebert",
+          "Max Bajracharya",
+          "Jeremy Ma",
+          "Nicolas Hudson",
+          "Alper Aydemir",
+          "Jason Reid",
+          "Charles Bergh",
+          "James Borders",
+          "Matthew Frost",
+          "Michael Hagman",
+          "John Leichty",
+          "Paul Backes",
+          "Brett Kennedy",
+          "Paul Karplus",
+          "Brian Satzinger",
+          "Katie Byl",
+          "Krishna Shankar",
+          "Joel W. Burdick"
+        ],
+        "published": "2015-02-13T00:00:00Z",
+        "updated": "2015-02-13T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "This article presents the hardware design and software algorithms of RoboSimian, a statically stable quadrupedal robot capable of both dexterous manipulation and versatile mobility in difficult terrain. The robot has generalized limbs and hands capable of mobility and manipulation, along with almost fully hemispherical three‐dimensional sensing with passive stereo cameras. The system is semiautonomous, enabling low‐bandwidth, high latency control operated from a standard laptop. Because limbs are used for mobility and manipulation, a single unified mobile manipulation planner is used to generate autonomous behaviors, including walking, sitting, climbing, grasping, and manipulating. The remote operator interface is optimized to designate, parametrize, sequence, and preview behaviors, which are then executed by the robot. RoboSimian placed fifth in the DARPA Robotics Challenge Trials, demonstrating its ability to perform disaster recovery tasks in degraded human environments.",
+        "abs_url": "https://doi.org/10.1002/rob.21566",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/rob.21566",
+        "research_fit": 33,
+        "video_potential": 26,
+        "matched_topics": [
+          "legged_humanoid",
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "quadrupedal robot",
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadrupedal robot"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 41 ≥ 18",
+        "核心方向：legged_humanoid, optimal_control, robot_learning",
+        "特定关键词：legged robot, trajectory optimization",
+        "historical_value_score 65.5 ≥ 42.0",
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "OpenAlex FWCI 48.39",
+        "近 2 年年均引用 15.0；此前 2 年年均 22.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-10T04:13:52"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4383109371",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4383109371",
+        "openalex_id": "W4383109371",
+        "base_arxiv_id": null,
+        "doi": "10.1109/icra48891.2023.10160751",
+        "title": "Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning",
+        "authors": [
+          "Eric Vollenweider",
+          "Marko Bjelonic",
+          "Victor Klemm",
+          "Nikita Rudin",
+          "Joonho Lee",
+          "Marco Hutter"
+        ],
+        "abstract": "Reinforcement learning (RL) has emerged as a powerful approach for locomotion control of highly articulated robotic systems. However, one major challenge is the tedious process of tuning the reward function to achieve the desired motion style. To address this issue, imitation learning approaches such as adversarial motion priors have been proposed, which encourage a pre-defined motion style. In this work, we present an approach to enhance the concept of adversarial motion prior-based RL, allowing for multiple, discretely switchable motion styles. Our approach demonstrates that multiple styles and skills can be learned simultaneously without significant performance differences, even in combination with motion data-free skills. We conducted several real-world experiments using a wheeled-legged robot to validate our approach. The experiments involved learning skills from existing RL controllers and trajectory optimization, such as ducking and walking, as well as novel skills, such as switching between a quadrupedal and humanoid configuration. For the latter skill, the robot was required to stand up, navigate on two wheels, and sit down. Instead of manually tuning the sit-down motion, we found that a reverse playback of the stand-up movement helped the robot discover feasible sit-down behaviors and avoided the need for tedious reward function tuning.",
+        "publication_date": "2023-05-29",
+        "publication_year": 2023,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9979000091552734
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9851999878883362
+          },
+          {
+            "id": "https://openalex.org/T10812",
+            "display_name": "Human Pose and Action Recognition",
+            "score": 0.980400025844574
+          }
+        ],
+        "cited_by_count": 79,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          }
+        ],
+        "fwci": 48.3914,
+        "citation_normalized_percentile": 0.9995561,
+        "referenced_works": [
+          "W1999874108",
+          "W2004167999",
+          "W2017026595",
+          "W2043878167",
+          "W2075005272",
+          "W2560647685",
+          "W2736601468",
+          "W2781726626",
+          "W2796290181",
+          "W2899718839",
+          "W2902332709",
+          "W2911087563",
+          "W2963277051",
+          "W2963373786",
+          "W3093326211",
+          "W3093922502",
+          "W3104515094",
+          "W3104876774",
+          "W3147968035",
+          "W3181074849",
+          "W3213974477",
+          "W4205430897",
+          "W4246543077",
+          "W4286963241",
+          "W4287324708",
+          "W4293160779",
+          "W6800004206"
+        ],
+        "related_works": [
+          "W1532965292",
+          "W2141098361",
+          "W2166112783",
+          "W2541058374",
+          "W2580650124",
+          "W2745063183",
+          "W2968424575",
+          "W3142333283",
+          "W4378364998",
+          "W4386190339"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W3093326211"
+        ],
+        "discovered_at": "2026-08-06T04:28:06",
+        "last_considered_at": "2026-08-12T11:39:01+08:00",
+        "recommended_at": "2026-08-12T11:39:01+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-10T04:13:52",
+        "openalex_url": "https://openalex.org/W4383109371",
+        "landing_page_url": "https://doi.org/10.1109/icra48891.2023.10160751",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 41,
+        "video_potential": 49,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "trajectory optimization",
+          "reinforcement learning",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "trajectory optimization"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning",
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 16.0
+          }
+        ],
+        "historical_value_score": 65.5,
+        "historical_score_components": {
+          "research_relevance": 41.0,
+          "normalized_citation": 100.0,
+          "fwci": 100.0,
+          "citation_momentum": 34.1,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2023 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "OpenAlex FWCI 48.39",
+          "近 2 年年均引用 15.0；此前 2 年年均 22.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W4383109371",
+        "base_id": "openalex:W4383109371",
+        "version": 1,
+        "title": "Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning",
+        "authors": [
+          "Eric Vollenweider",
+          "Marko Bjelonic",
+          "Victor Klemm",
+          "Nikita Rudin",
+          "Joonho Lee",
+          "Marco Hutter"
+        ],
+        "published": "2023-05-29T00:00:00Z",
+        "updated": "2023-05-29T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Reinforcement learning (RL) has emerged as a powerful approach for locomotion control of highly articulated robotic systems. However, one major challenge is the tedious process of tuning the reward function to achieve the desired motion style. To address this issue, imitation learning approaches such as adversarial motion priors have been proposed, which encourage a pre-defined motion style. In this work, we present an approach to enhance the concept of adversarial motion prior-based RL, allowing for multiple, discretely switchable motion styles. Our approach demonstrates that multiple styles and skills can be learned simultaneously without significant performance differences, even in combination with motion data-free skills. We conducted several real-world experiments using a wheeled-legged robot to validate our approach. The experiments involved learning skills from existing RL controllers and trajectory optimization, such as ducking and walking, as well as novel skills, such as switching between a quadrupedal and humanoid configuration. For the latter skill, the robot was required to stand up, navigate on two wheels, and sit down. Instead of manually tuning the sit-down motion, we found that a reverse playback of the stand-up movement helped the robot discover feasible sit-down behaviors and avoided the need for tedious reward function tuning.",
+        "abs_url": "https://doi.org/10.1109/icra48891.2023.10160751",
+        "pdf_url": "",
+        "research_fit": 41,
+        "video_potential": 49,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "trajectory optimization",
+          "reinforcement learning",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "trajectory optimization"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning",
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 16.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 20 ≥ 18",
+        "核心方向：mobile_manipulation",
+        "特定关键词：mobile manipulation",
+        "historical_value_score 53.3 ≥ 42.0",
+        "发表于 2015 年",
+        "同领域同年份引用标准化位于前 3.6%",
+        "OpenAlex FWCI 5.74",
+        "近 2 年年均引用 14.5；此前 2 年年均 18.0",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-04T06:56:01"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W1517943492",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W1517943492",
+        "openalex_id": "W1517943492",
+        "base_arxiv_id": null,
+        "doi": "10.1109/icra.2015.7139973",
+        "title": "RoboFlow: A flow-based visual programming language for mobile manipulation tasks",
+        "authors": [
+          "Sonya Alexandrova",
+          "Zachary Tatlock",
+          "Maya Çakmak"
+        ],
+        "abstract": "General-purpose robots can perform a range of useful tasks in human environments; however, programming them to robustly function in all possible environments that they might encounter is unfeasible. Instead, our research aims to develop robots that can be programmed by its end-users in their context of use, so that the robot needs to robustly function in only one particular environment. This requires intuitive ways in which end-users can program their robot. To that end, this paper contributes a flow-based visual programming language, called RoboFlow, that allows programming of generalizable mobile manipulation tasks. RoboFlow is designed to (i) ensure a robust low-level implementation of program procedures on a mobile manipulator, and (ii) restrict the high-level programming as much as possible to avoid user errors while enabling expressive programs that involve branching, looping, and nesting. We present an implementation of RoboFlow on a PR2 mobile manipulator and demonstrate the generalizability and error handling properties of RoboFlow programs on everyday mobile manipulation tasks in human environments.",
+        "publication_date": "2015-05-01",
+        "publication_year": 2015,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10533",
+            "display_name": "Teaching and Learning Programming",
+            "score": 0.9994999766349792
+          },
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9954000115394592
+          },
+          {
+            "id": "https://openalex.org/T12784",
+            "display_name": "Modular Robots and Swarm Intelligence",
+            "score": 0.9936000108718872
+          }
+        ],
+        "cited_by_count": 141,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 5.7358,
+        "citation_normalized_percentile": 0.96357706,
+        "referenced_works": [
+          "W1502767928",
+          "W1511796393",
+          "W1513101410",
+          "W1540685400",
+          "W1540823594",
+          "W1684361744",
+          "W1967177263",
+          "W1971890413",
+          "W1979253984",
+          "W1986014385",
+          "W1999874108",
+          "W2001006503",
+          "W2001959118",
+          "W2004473378",
+          "W2006698373",
+          "W2014073163",
+          "W2014596857",
+          "W2018859600",
+          "W2020149918",
+          "W2025427190",
+          "W2028319081",
+          "W2034912654",
+          "W2064189581",
+          "W2084944215",
+          "W2092187831",
+          "W2112469617",
+          "W2119299928",
+          "W2130756137",
+          "W2143322480",
+          "W2194057693",
+          "W2296594443",
+          "W2339354324",
+          "W2412306367",
+          "W2580674146",
+          "W4211008118",
+          "W4240634968",
+          "W4255149377",
+          "W4256346398",
+          "W6632235069",
+          "W6679568851",
+          "W6687375543",
+          "W6732771844"
+        ],
+        "related_works": [
+          "W2022585506",
+          "W2168919542",
+          "W1943224404",
+          "W810183824",
+          "W2038853506",
+          "W351396276",
+          "W2027493544",
+          "W2127077950",
+          "W4385680606",
+          "W4205109303"
+        ],
+        "discovery_source": [
+          "topic_search:mobile manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:01",
+        "last_considered_at": "2026-08-12T11:39:01+08:00",
+        "recommended_at": "2026-08-12T11:39:01+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:01",
+        "openalex_url": "https://openalex.org/W1517943492",
+        "landing_page_url": "https://doi.org/10.1109/icra.2015.7139973",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 20,
+        "video_potential": 36,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "historical_value_score": 53.3,
+        "historical_score_components": {
+          "research_relevance": 20.0,
+          "normalized_citation": 96.4,
+          "fwci": 100.0,
+          "citation_momentum": 40.3,
+          "seed_provenance": null,
+          "work_signal": 0.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2015 年",
+          "同领域同年份引用标准化位于前 3.6%",
+          "OpenAlex FWCI 5.74",
+          "近 2 年年均引用 14.5；此前 2 年年均 18.0",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W1517943492",
+        "base_id": "openalex:W1517943492",
+        "version": 1,
+        "title": "RoboFlow: A flow-based visual programming language for mobile manipulation tasks",
+        "authors": [
+          "Sonya Alexandrova",
+          "Zachary Tatlock",
+          "Maya Çakmak"
+        ],
+        "published": "2015-05-01T00:00:00Z",
+        "updated": "2015-05-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "General-purpose robots can perform a range of useful tasks in human environments; however, programming them to robustly function in all possible environments that they might encounter is unfeasible. Instead, our research aims to develop robots that can be programmed by its end-users in their context of use, so that the robot needs to robustly function in only one particular environment. This requires intuitive ways in which end-users can program their robot. To that end, this paper contributes a flow-based visual programming language, called RoboFlow, that allows programming of generalizable mobile manipulation tasks. RoboFlow is designed to (i) ensure a robust low-level implementation of program procedures on a mobile manipulator, and (ii) restrict the high-level programming as much as possible to avoid user errors while enabling expressive programs that involve branching, looping, and nesting. We present an implementation of RoboFlow on a PR2 mobile manipulator and demonstrate the generalizability and error handling properties of RoboFlow programs on everyday mobile manipulation tasks in human environments.",
+        "abs_url": "https://doi.org/10.1109/icra.2015.7139973",
+        "pdf_url": "",
+        "research_fit": 20,
+        "video_potential": 36,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 18 ≥ 18",
+        "核心方向：optimal_control",
+        "特定关键词：model predictive control",
+        "historical_value_score 42.8 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 11.2%",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-06T04:27:52"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7171044302",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7171044302",
+        "openalex_id": "W7171044302",
+        "base_arxiv_id": null,
+        "doi": "10.1016/j.jprocont.2026.103795",
+        "title": "Generalized polynomial chaos expansion-based stochastic nonlinear model predictive control with iterative risk allocation for batch processes",
+        "authors": [
+          "Mengxu Xie",
+          "Tong Ma"
+        ],
+        "abstract": null,
+        "publication_date": "2026-07-25",
+        "publication_year": 2026,
+        "source_name": "Journal of Process Control",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10791",
+            "display_name": "Advanced Control Systems Optimization",
+            "score": 0.9660999774932861
+          },
+          {
+            "id": "https://openalex.org/T10876",
+            "display_name": "Fault Detection and Control Systems",
+            "score": 0.008999999612569809
+          },
+          {
+            "id": "https://openalex.org/T11236",
+            "display_name": "Control Systems and Identification",
+            "score": 0.005499999970197678
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.88840024,
+        "referenced_works": [
+          "W1972284617",
+          "W1996788711",
+          "W1998523300",
+          "W1999131722",
+          "W2002626335",
+          "W2011674416",
+          "W2018159038",
+          "W2019076198",
+          "W2031434350",
+          "W2033552200",
+          "W2055761669",
+          "W2066778083",
+          "W2072667966",
+          "W2082667869",
+          "W2099506495",
+          "W2113105229",
+          "W2115193912",
+          "W2120731138",
+          "W2126998183",
+          "W2127285919",
+          "W2136602340",
+          "W2138826235",
+          "W2140002539",
+          "W2150062983",
+          "W2157098139",
+          "W2162117184",
+          "W2168648059",
+          "W2321957512",
+          "W2557055507",
+          "W2613825967",
+          "W2675964770",
+          "W2769410804",
+          "W2905083628",
+          "W2941935441",
+          "W2944465768",
+          "W2951097493",
+          "W2954868958",
+          "W4226177441",
+          "W4381849709",
+          "W7124266031"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:Journal of Process Control"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-06T04:27:52",
+        "last_considered_at": "2026-08-12T11:39:01+08:00",
+        "recommended_at": "2026-08-12T11:39:01+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-06T04:27:52",
+        "openalex_url": "https://openalex.org/W7171044302",
+        "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103795",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 18,
+        "video_potential": 4,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "historical_value_score": 42.8,
+        "historical_score_components": {
+          "research_relevance": 18.0,
+          "normalized_citation": 88.8,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 11.2%",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W7171044302",
+        "base_id": "openalex:W7171044302",
+        "version": 1,
+        "title": "Generalized polynomial chaos expansion-based stochastic nonlinear model predictive control with iterative risk allocation for batch processes",
+        "authors": [
+          "Mengxu Xie",
+          "Tong Ma"
+        ],
+        "published": "2026-07-25T00:00:00Z",
+        "updated": "2026-07-25T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "",
+        "abs_url": "https://doi.org/10.1016/j.jprocont.2026.103795",
+        "pdf_url": "",
+        "research_fit": 18,
+        "video_potential": 4,
+        "matched_topics": [
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 51 ≥ 40",
+        "Core topics matched: mobile_manipulation, vla_foundation",
+        "Specific keywords matched: mobile manipulation, vision-language-action, vision language action, VLA",
+        "Diversity topic: mobile_manipulation"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.10756",
+      "historical_paper": null,
+      "paper": {
+        "arxiv_id": "2608.10756v1",
+        "base_id": "2608.10756",
+        "version": 1,
+        "title": "Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting",
+        "authors": [
+          "Huosen Ou",
+          "Dongni Song",
+          "Yuncong Wang",
+          "Tao Zhou",
+          "Yiding Ji"
+        ],
+        "published": "2026-08-11T10:16:30Z",
+        "updated": "2026-08-11T10:16:30Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.CV"
+        ],
+        "summary": "Embodied mobile manipulation requires language, visual observations, three-dimensional scene structure, and action feasibility to be aligned before execution. We study open-vocabulary target grounding with few-shot manipulation in local household workspaces and present an embodied multimodal grounding framework that integrates active multi-view Semantic 3D Gaussian Splatting (Semantic-3DGS), reachability-aware base positioning, and a diffusion-based vision-language-action policy. A task-driven local Semantic-3DGS serves as a shared interface across active sensing, language-conditioned 3D localization, obstacle-aware scene reasoning, base preparation, and semantic conditioning of the action model. To preserve pretrained action priors, the 3D semantic cues are injected only into the late action-expert blocks. In expanded 50-trial real-robot evaluations against representative vision-language-action (VLA) approaches, the full system achieves 60% long-horizon success compared with 40% for PointVLA and 28% for DexVLA, and reaches 74% success in heavily cluttered manipulation compared with 52% for the single-view variant and 46% for PointVLA. It also maintains 75% success under a 75 cm height shift and eliminates photo-induced false grasps. These results indicate that explicit, refreshable 3D semantic grounding can improve robustness under clutter, occlusion, viewpoint variation, and embodiment constraints.",
+        "abs_url": "https://arxiv.org/abs/2608.10756v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.10756v1",
+        "research_fit": 51,
+        "video_potential": 46,
+        "matched_topics": [
+          "mobile_manipulation",
+          "vla_foundation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation",
+          "vision-language-action",
+          "vision language action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "VLA & Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "vision language action",
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 11.1
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    }
+  ]
+}
