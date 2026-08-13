@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
+from dataclasses import dataclass
 from typing import Any
 
 from paper_radar.config import ResearchProfile
@@ -15,9 +16,10 @@ def _normalise(value: str) -> str:
 
 
 def _contains(text: str, term: str) -> bool:
+    normalised_text = _normalise(text)
     normalised_term = _normalise(term)
     pattern = r"(?<!\w)" + re.escape(normalised_term).replace(r"\ ", r"\s+") + r"(?!\w)"
-    return re.search(pattern, text) is not None
+    return re.search(pattern, normalised_text) is not None
 
 
 def _find_keywords(title: str, summary: str, keywords: list[str]) -> tuple[list[str], str | None]:
@@ -35,7 +37,58 @@ def _clamp_score(value: float) -> int:
     return max(0, min(100, round(value)))
 
 
-def score_paper(paper: Paper, profile: ResearchProfile) -> Paper:
+@dataclass(frozen=True)
+class RoboticsContextResult:
+    eligible: bool
+    positive_matches: list[str]
+    negative_matches: list[str]
+    reason: str
+
+
+def robotics_context_gate(
+    title: str,
+    abstract: str,
+    topic_text: str,
+    profile: ResearchProfile,
+) -> RoboticsContextResult:
+    config = profile.scoring["robotics_context"]
+    text = " ".join(value for value in (title, abstract, topic_text) if value)
+    positive = [
+        str(term)
+        for term in config["positive_terms"]
+        if _contains(text, str(term))
+    ]
+    negative = [
+        str(term)
+        for term in config.get("negative_terms", [])
+        if _contains(text, str(term))
+    ]
+    if positive:
+        reason = f"Explicit robotics context: {', '.join(positive)}"
+    elif negative:
+        reason = (
+            "No explicit robotics context; non-robotics domain signals: "
+            + ", ".join(negative)
+        )
+    else:
+        reason = (
+            "No explicit robotics context; general control or learning terms alone "
+            "do not establish robotics relevance"
+        )
+    return RoboticsContextResult(
+        eligible=bool(positive),
+        positive_matches=positive,
+        negative_matches=negative,
+        reason=reason,
+    )
+
+
+def score_paper(
+    paper: Paper,
+    profile: ResearchProfile,
+    *,
+    context_topic_text: str = "",
+) -> Paper:
     title = _normalise(paper.title)
     summary = _normalise(paper.summary)
     abstract_multiplier = float(profile.scoring.get("abstract_multiplier", 0.65))
@@ -91,6 +144,26 @@ def score_paper(paper: Paper, profile: ResearchProfile) -> Paper:
                     "points": -round(penalty, 1),
                 }
             )
+
+    context = robotics_context_gate(
+        paper.title,
+        paper.summary,
+        context_topic_text,
+        profile,
+    )
+    research_reasons.append(
+        {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": context.positive_matches or context.negative_matches,
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": context.eligible,
+            "positive_matches": context.positive_matches,
+            "negative_matches": context.negative_matches,
+            "reason": context.reason,
+        }
+    )
 
     paper.research_fit = _clamp_score(research_raw)
     paper.matched_topics = topic_ids

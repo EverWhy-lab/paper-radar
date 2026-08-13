@@ -141,6 +141,70 @@ def test_same_paper_cannot_enter_recent_and_historical_categories(profile) -> No
     assert matching[0].category == "high_impact_historical"
 
 
+def test_review_alias_enters_review_category_not_frontier(profile) -> None:
+    shared = "2401.00005"
+    review = historical(
+        5,
+        title="A Survey of MPC for Humanoid Robots",
+        abstract="survey of model predictive control and whole-body control for humanoid robot locomotion",
+        arxiv_id=shared,
+        knowledge_map=True,
+    )
+    recent_review = recent(
+        5,
+        arxiv_id=shared,
+        topic="optimal_control",
+        keyword="whole-body control",
+    )
+    recent_review.title = review.title
+    recent_review.summary = review.abstract or ""
+
+    result = select(profile, histories=[review], recents=[recent_review])
+
+    matching = [entry for entry in result.recommendations if f"arxiv:{shared}" in entry.aliases]
+    assert len(matching) == 1
+    assert matching[0].category == "review_knowledge_map"
+
+
+def test_robotics_review_enters_knowledge_map_not_frontier(profile) -> None:
+    review = recent(
+        6,
+        topic="optimal_control",
+        keyword="whole-body control",
+    )
+    review.title = "A Systematic Review of MPC for Humanoid Robots"
+    review.summary = "A survey and taxonomy of whole-body control for humanoid robot locomotion."
+
+    result = select(profile, histories=[], recents=[review])
+
+    assert len(result.recommendations) == 1
+    assert result.recommendations[0].category == "review_knowledge_map"
+
+
+def test_generic_rl_mpc_review_cannot_enter_any_robotics_category(profile) -> None:
+    false_positive = recent(
+        7,
+        topic="optimal_control",
+        keyword="model predictive control",
+    )
+    false_positive.title = "RL-MPC Integration for Linear Systems"
+    false_positive.summary = (
+        "A systematic review and taxonomy of reinforcement learning and model "
+        "predictive control for general linear systems."
+    )
+    false_positive.research_fit = 100
+    false_positive.matched_topics = ["optimal_control", "robot_learning"]
+    false_positive.matched_keywords = [
+        "model predictive control",
+        "MPC",
+        "reinforcement learning",
+    ]
+
+    result = select(profile, histories=[], recents=[false_positive])
+
+    assert result.recommendations == []
+
+
 def test_historical_dismissed_read_and_cooldown_rules(profile) -> None:
     dismissed = historical(
         1, title="Whole-Body Control Method", abstract="whole-body control humanoid robot", dismissed=True

@@ -5,7 +5,7 @@ from typing import Any
 
 from paper_radar.config import ResearchProfile
 from paper_radar.history_models import HistoricalPaper
-from paper_radar.scoring import score_paper
+from paper_radar.scoring import robotics_context_gate, score_paper
 
 
 def _normalise(value: str) -> str:
@@ -14,6 +14,20 @@ def _normalise(value: str) -> str:
 
 def _contains(text: str, term: str) -> bool:
     return _normalise(term) in _normalise(text)
+
+
+def knowledge_map_signals(
+    title: str,
+    abstract: str,
+    topic_text: str,
+    profile: ResearchProfile,
+) -> list[str]:
+    text = f"{title} {abstract} {topic_text}"
+    return [
+        str(term)
+        for term in profile.historical_scoring["review_terms"]
+        if _contains(text, str(term))
+    ]
 
 
 def _metadata_completeness(paper: HistoricalPaper) -> float:
@@ -100,7 +114,7 @@ def score_historical_paper(
     scoring_paper.summary = " ".join(
         value for value in (paper.abstract or "", topic_text) if value
     )
-    score_paper(scoring_paper, profile)
+    score_paper(scoring_paper, profile, context_topic_text=topic_text)
     paper.research_fit = scoring_paper.research_fit
     paper.video_potential = scoring_paper.video_potential
     paper.matched_topics = scoring_paper.matched_topics
@@ -108,9 +122,10 @@ def score_historical_paper(
     paper.research_reasons = scoring_paper.research_reasons
 
     text = f"{paper.title} {paper.abstract or ''} {topic_text} {paper.source_type or ''}"
-    review_terms = [str(term) for term in config["review_terms"]]
     method_terms = [str(term) for term in config["method_terms"]]
-    paper.is_knowledge_map = any(_contains(text, term) for term in review_terms)
+    paper.is_knowledge_map = bool(
+        knowledge_map_signals(paper.title, paper.abstract or "", topic_text, profile)
+    )
 
     current_year = as_of_year or date.today().year
     normalized, normalized_reason = _normalized_citation(paper, config, current_year)
@@ -207,8 +222,19 @@ def historical_relevance_eligible(
     ]
     core_matches = [topic for topic in paper.matched_topics if topic in core_topics]
     text = _normalise(f"{paper.title} {paper.abstract or ''}")
+    topic_text = " ".join(
+        str(topic.get("display_name") or "") for topic in paper.topics
+    )
+    context = robotics_context_gate(
+        paper.title,
+        paper.abstract or "",
+        topic_text,
+        profile,
+    )
     if any(term in text for term in excluded):
         return False, ["命中配置的非机器人主线排除词"]
+    if not context.eligible:
+        return False, [f"未通过机器人语境门槛：{context.reason}"]
     if paper.research_fit < int(config["min_research_fit"]):
         return False, [
             f"research_fit {paper.research_fit} < {int(config['min_research_fit'])}"
@@ -218,6 +244,7 @@ def historical_relevance_eligible(
     if len(strong_keywords) < int(config["min_non_generic_keyword_matches"]):
         return False, ["仅有泛化关键词，未命中特定机器人方向词"]
     return True, [
+        f"机器人语境：{', '.join(context.positive_matches)}",
         f"research_fit {paper.research_fit} ≥ {int(config['min_research_fit'])}",
         f"核心方向：{', '.join(core_matches)}",
         f"特定关键词：{', '.join(strong_keywords)}",

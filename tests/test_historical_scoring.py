@@ -93,3 +93,59 @@ def test_missing_citation_data_remains_unknown_not_zero(profile, openalex_payloa
     assert paper.historical_score_components["normalized_citation"] is None
     assert paper.historical_score_components["citation_momentum"] is None
     assert any("未知处理" in reason for reason in paper.historical_score_reasons)
+
+
+def test_high_impact_building_mpc_cannot_bypass_robotics_context_gate(
+    profile, openalex_payload
+) -> None:
+    paper = make_historical(openalex_payload, 1)
+    paper.title = "RL-MPC for building energy management"
+    paper.abstract = (
+        "Reinforcement learning and model predictive control reduce HVAC "
+        "energy use in a smart grid."
+    )
+    paper.topics = [{"display_name": "Building energy systems"}]
+    paper.cited_by_count = 50_000
+    paper.fwci = 100.0
+    paper.citation_normalized_percentile = 0.9999
+
+    score_historical_paper(paper, profile, as_of_year=2026)
+    eligible, reasons = historical_relevance_eligible(paper, profile)
+
+    assert eligible is False
+    assert any("机器人语境门槛" in reason for reason in reasons)
+    assert any(
+        reason["kind"] == "robotics_context" and reason["eligible"] is False
+        for reason in paper.research_reasons
+    )
+
+
+def test_robot_mpc_remains_eligible(profile, openalex_payload) -> None:
+    paper = make_historical(openalex_payload, 1)
+    paper.title = "Model Predictive Control for a Humanoid Robot"
+    paper.abstract = (
+        "A whole-body control method coordinates humanoid robot locomotion "
+        "and mobile manipulation."
+    )
+    paper.topics = [{"display_name": "Humanoid robotics"}]
+
+    score_historical_paper(paper, profile, as_of_year=2026)
+    eligible, reasons = historical_relevance_eligible(paper, profile)
+
+    assert eligible is True
+    assert any("机器人语境" in reason for reason in reasons)
+
+
+def test_historical_topic_metadata_can_establish_robotics_context(
+    profile, openalex_payload
+) -> None:
+    paper = make_historical(openalex_payload, 1)
+    paper.title = "Model Predictive Control for Constrained Systems"
+    paper.abstract = "A model predictive control method with stability guarantees."
+    paper.topics = [{"display_name": "Humanoid robotics"}]
+
+    score_historical_paper(paper, profile, as_of_year=2026)
+    eligible, reasons = historical_relevance_eligible(paper, profile)
+
+    assert eligible is True
+    assert any("robotics" in reason.casefold() for reason in reasons)

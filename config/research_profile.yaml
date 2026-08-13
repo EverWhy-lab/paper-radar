@@ -5,7 +5,7 @@ site:
 
 fetch:
   endpoint: "https://export.arxiv.org/api/query"
-  user_agent: "PaperRadar/0.2.0 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.1 (personal non-commercial research tool)"
   page_size: 100
   max_pages: 40
   page_delay_seconds: 5.0
@@ -21,6 +21,35 @@ categories:
 
 scoring:
   abstract_multiplier: 0.65
+  robotics_context:
+    positive_terms:
+      - robot
+      - robots
+      - robotic
+      - robotics
+      - manipulation
+      - mobile manipulator
+      - mobile manipulation
+      - locomotion
+      - legged
+      - quadruped
+      - quadrupedal
+      - humanoid
+      - biped
+      - whole-body control
+      - whole body control
+      - visuomotor
+      - sim-to-real
+      - embodied agent
+      - human pose estimation
+      - search and rescue
+    negative_terms:
+      - building energy
+      - HVAC
+      - microgrid
+      - power system
+      - power systems
+      - smart grid
   topics:
     - id: legged_humanoid
       label: "Legged & Humanoid"
@@ -236,7 +265,7 @@ recommendations:
 
 openalex:
   endpoint: "https://api.openalex.org"
-  user_agent: "PaperRadar/0.2.0 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.1 (personal non-commercial research tool)"
   timeout_seconds: 30
   retries: 3
   retry_delay_seconds: 1.0

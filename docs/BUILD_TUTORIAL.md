@@ -163,7 +163,7 @@ You are a personal reading assistant for robotics research. You only receive 0-5
 
 ## 附录 B：常见问题
 
-- **arXiv 返回 429**：GitHub 共享 IP 偶发限流，系统会自动重试（最多约 1 小时）；还失败就等下次运行。
+- **arXiv 返回 429**：GitHub 共享 IP 偶发限流，系统最多尝试 4 次，退避等待为 5、10、10 分钟（累计最多 25 分钟）；还失败就等下次运行。
 - **定时任务偶尔延迟**：GitHub Actions 的 `schedule` 在负载高时会排队，实际运行可能晚几十分钟到几小时，属正常。
 - **费用**：GitHub 公共仓库 Actions 免费；DeepSeek/OpenAlex 只有可选功能会用一点配额（导读每天一次、历史发现每周几次）。
 - **改用户名**：GitHub 会自动把旧地址 301 到新地址；记得同步更新 `site.github_repo` 和本地 `git remote`。

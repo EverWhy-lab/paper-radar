@@ -89,7 +89,7 @@ Clicks fill the icon on that device and queue the item locally. The navigation b
 Effects on future selection:
 
 - The dismissed paper itself is permanently excluded.
-- If two or more dismissals share the same primary topic within 30 days, that topic enters a 14-day cooldown and its papers are reduced. Thresholds live in the `dismissals` block of `config/research_profile.yaml`.
+- If two or more dismissals share the same primary topic within the configured 30-day feedback window, that topic enters cooldown from the most recent triggering dismissal. With the default 14-day duration, elapsed days 0–13 are blocked and day 14 is eligible again. Thresholds live in the `dismissals` block of `config/research_profile.yaml`.
 
 The same state can be managed from the CLI:
 
@@ -166,7 +166,7 @@ Seed definitions are stored in `data/history/seeds.json`. arXiv version state re
 
 ## Scoring and recommendation policy
 
-Historical eligibility first requires `research_fit ≥ 18`, at least one configured core topic, and at least one non-generic keyword. Configured off-topic exclusions are applied before impact signals. A highly cited but irrelevant paper cannot qualify.
+Historical eligibility first requires explicit robotics context from the title, abstract, or OpenAlex topic metadata, then `research_fit ≥ 18`, at least one configured core topic, and at least one non-generic keyword. General control terms such as MPC, LQR, RL, or control do not establish robotics context by themselves. Configured off-topic exclusions are applied before impact signals. A highly cited but irrelevant paper cannot qualify.
 
 `historical_value_score` is a transparent weighted score:
 

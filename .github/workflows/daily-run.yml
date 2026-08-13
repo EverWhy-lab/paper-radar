@@ -50,34 +50,20 @@ jobs:
       - name: Daily reader run (with arXiv retries)
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          RUN_DATE: ${{ inputs.date }}
         run: |
           # arXiv rate-limits shared runner IPs with transient 429 responses.
-          # Retry for up to about an hour with five-minute spacing so a
-          # short-lived block clears before we give up.
-          max_attempts=12
-          wait_seconds=300
-          attempt=1
-          while [ "$attempt" -le "$max_attempts" ]; do
-            echo "--- Attempt $attempt/$max_attempts at $(date -u +%H:%M:%SZ) ---"
-            if [ -n "${{ inputs.date }}" ]; then
-              python -m paper_radar run --date "${{ inputs.date }}"
-            else
-              python -m paper_radar run
-            fi
-            status=$?
-            if [ "$status" -eq 0 ]; then
-              echo "Daily reader run succeeded on attempt $attempt."
-              exit 0
-            fi
-            if [ "$attempt" -lt "$max_attempts" ]; then
-              echo "Attempt $attempt failed with exit code $status; waiting ${wait_seconds}s before retry."
-              sleep "$wait_seconds"
-              wait_seconds=$((wait_seconds * 2))
-            fi
-            attempt=$((attempt + 1))
-          done
-          echo "Daily reader run failed after $max_attempts attempts."
-          exit 1
+          # Four attempts wait at most 25 minutes total (5m, 10m, 10m),
+          # comfortably below the 120-minute job timeout.
+          command=(python -m paper_radar run)
+          if [[ -n "$RUN_DATE" ]]; then
+            command+=(--date "$RUN_DATE")
+          fi
+          bash scripts/retry-command.sh \
+            --max-attempts 4 \
+            --initial-delay-seconds 300 \
+            --max-delay-seconds 600 \
+            -- "${command[@]}"
 
       - name: Historical discovery (optional)
         if: ${{ inputs.discover_history }}

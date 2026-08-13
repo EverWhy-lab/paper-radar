@@ -1,7 +1,7 @@
 from dataclasses import replace
 
 from paper_radar.fetchers.arxiv import parse_atom
-from paper_radar.scoring import score_paper
+from paper_radar.scoring import robotics_context_gate, score_paper
 
 
 def test_research_and_video_scores_are_explainable(atom_xml: str, profile) -> None:
@@ -45,3 +45,48 @@ def test_short_acronym_uses_word_boundaries(atom_xml: str, profile) -> None:
 
     assert "optimal_control" not in no_match.matched_topics
     assert "optimal_control" in yes_match.matched_topics
+
+
+def test_generic_control_terms_do_not_establish_robotics_context(
+    atom_xml: str, profile
+) -> None:
+    source = parse_atom(atom_xml)[0]
+    paper = replace(
+        source,
+        title="RL-MPC Integration for Linear Systems",
+        summary=(
+            "A review of reinforcement learning and model predictive control "
+            "for general linear systems."
+        ),
+    )
+
+    score_paper(paper, profile)
+    context = robotics_context_gate(paper.title, paper.summary, "", profile)
+
+    assert context.eligible is False
+    assert context.positive_matches == []
+    assert any(
+        reason["kind"] == "robotics_context" and reason["eligible"] is False
+        for reason in paper.research_reasons
+    )
+
+
+def test_explicit_robotics_context_survives_negative_domain_terms(
+    atom_xml: str, profile
+) -> None:
+    source = parse_atom(atom_xml)[0]
+    paper = replace(
+        source,
+        title="Model Predictive Control for a Humanoid Robot",
+        summary=(
+            "A whole-body control system lets the humanoid robot inspect HVAC "
+            "equipment in a smart building."
+        ),
+    )
+
+    score_paper(paper, profile)
+    context = robotics_context_gate(paper.title, paper.summary, "", profile)
+
+    assert context.eligible is True
+    assert "humanoid" in [term.casefold() for term in context.positive_matches]
+    assert "HVAC" in context.negative_matches

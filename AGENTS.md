@@ -71,4 +71,4 @@
 
 ## Completion standard
 
-The full offline pytest suite passes; dry-run makes no writes; provider/cache tests prove the keys cannot persist; failures preserve pools and pages; the generated homepage/archive contain only selected papers and optional guides; local assets resolve; README and CLI agree; and V0.2.0 remains uncommitted until user acceptance. Do not claim screenshot QA without an available browser.
+The full offline pytest suite passes; dry-run makes no writes; provider/cache tests prove the keys cannot persist; failures preserve pools and pages; the generated homepage/archive contain only selected papers and optional guides; local assets resolve; README and CLI agree; V0.2.0 has been accepted and pushed, and V0.2.1 remains uncommitted until user acceptance. Do not claim screenshot QA without an available browser.

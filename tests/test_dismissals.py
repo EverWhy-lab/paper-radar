@@ -1,7 +1,10 @@
 from __future__ import annotations
 
-from datetime import date, datetime, timedelta
+from dataclasses import replace
+from datetime import date, timedelta
 from pathlib import Path
+
+import pytest
 
 from paper_radar.curation import CuratedRecommendationEngine
 from paper_radar.history_models import HistoricalPaper
@@ -167,14 +170,100 @@ def test_topic_cooldown_reduces_related_recommendations(profile) -> None:
     assert "arxiv:2608.00002" in ids  # unrelated topic still selected
 
 
-def test_old_dismissal_does_not_trigger_topic_cooldown(profile) -> None:
+def test_one_dismissal_is_not_enough_to_trigger_topic_cooldown(profile) -> None:
+    dismissals = [dismissal("openalex:W901", ["vla_foundation"])]
+    papers = [recent(1, topic="vla_foundation", keyword="vision-language-action")]
+
+    result = select(profile, recents=papers, dismissals=dismissals)
+
+    assert [entry.canonical_paper_id for entry in result.recommendations] == [
+        "arxiv:2608.00001"
+    ]
+
+
+@pytest.mark.parametrize(
+    ("days_ago", "is_cooling"),
+    [
+        (13, True),
+        (14, False),
+        (15, False),
+        (30, False),
+        (31, False),
+        (60, False),
+    ],
+)
+def test_topic_cooldown_boundary(profile, days_ago: int, is_cooling: bool) -> None:
     dismissals = [
-        dismissal("openalex:W901", ["vla_foundation"], days_ago=60),
-        dismissal("openalex:W902", ["vla_foundation"], days_ago=60),
+        dismissal("openalex:W901", ["vla_foundation"], days_ago=days_ago),
+        dismissal("openalex:W902", ["vla_foundation"], days_ago=days_ago),
     ]
     papers = [recent(1, topic="vla_foundation", keyword="vision-language-action")]
 
     result = select(profile, recents=papers, dismissals=dismissals)
 
     ids = {entry.canonical_paper_id for entry in result.recommendations}
-    assert "arxiv:2608.00001" in ids
+    assert ("arxiv:2608.00001" not in ids) is is_cooling
+
+
+def test_latest_triggering_feedback_starts_topic_cooldown(profile) -> None:
+    dismissals = [
+        dismissal("openalex:W901", ["vla_foundation"], days_ago=20),
+        dismissal("openalex:W902", ["vla_foundation"], days_ago=13),
+    ]
+    papers = [recent(1, topic="vla_foundation", keyword="vision-language-action")]
+
+    result = select(profile, recents=papers, dismissals=dismissals)
+
+    assert result.recommendations == []
+
+
+@pytest.mark.parametrize(
+    ("cooldown_days", "days_ago", "is_cooling"),
+    [(3, 2, True), (3, 3, False), (21, 14, True)],
+)
+def test_topic_cooldown_uses_configured_duration(
+    profile, cooldown_days: int, days_ago: int, is_cooling: bool
+) -> None:
+    custom_profile = replace(
+        profile,
+        dismissals={
+            **profile.dismissals,
+            "topic_cooldown_days": cooldown_days,
+        },
+    )
+    dismissals = [
+        dismissal("openalex:W901", ["vla_foundation"], days_ago=days_ago),
+        dismissal("openalex:W902", ["vla_foundation"], days_ago=days_ago),
+    ]
+    papers = [recent(1, topic="vla_foundation", keyword="vision-language-action")]
+
+    result = select(custom_profile, recents=papers, dismissals=dismissals)
+
+    ids = {entry.canonical_paper_id for entry in result.recommendations}
+    assert ("arxiv:2608.00001" not in ids) is is_cooling
+
+
+@pytest.mark.parametrize(
+    ("days_ago", "is_cooling"),
+    [(29, True), (30, False), (31, False)],
+)
+def test_topic_feedback_window_excludes_day_30(
+    profile, days_ago: int, is_cooling: bool
+) -> None:
+    custom_profile = replace(
+        profile,
+        dismissals={
+            **profile.dismissals,
+            "topic_cooldown_days": 60,
+        },
+    )
+    dismissals = [
+        dismissal("openalex:W901", ["vla_foundation"], days_ago=days_ago),
+        dismissal("openalex:W902", ["vla_foundation"], days_ago=days_ago),
+    ]
+    papers = [recent(1, topic="vla_foundation", keyword="vision-language-action")]
+
+    result = select(custom_profile, recents=papers, dismissals=dismissals)
+
+    ids = {entry.canonical_paper_id for entry in result.recommendations}
+    assert ("arxiv:2608.00001" not in ids) is is_cooling

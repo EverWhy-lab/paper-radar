@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from collections import Counter
 from dataclasses import dataclass
 from datetime import date, timedelta
 from typing import Any
@@ -8,11 +7,13 @@ from typing import Any
 from paper_radar.config import ResearchProfile
 from paper_radar.historical_scoring import (
     historical_relevance_eligible,
+    knowledge_map_signals,
     score_historical_papers,
 )
 from paper_radar.history_models import HistoricalPaper, canonical_paper_id
 from paper_radar.models import Paper
 from paper_radar.reader_models import DismissalEntry, ReadingPoolEntry, RecommendationEntry
+from paper_radar.scoring import robotics_context_gate
 
 
 def _normalise(value: str) -> str:
@@ -88,6 +89,10 @@ class CuratedRecommendationEngine:
         ]
         text = _normalise(f"{paper.title} {paper.summary}")
         if any(term in text for term in self.excluded_terms):
+            return None
+        if not robotics_context_gate(
+            paper.title, paper.summary, "", self.profile
+        ).eligible:
             return None
         if paper.research_fit < int(config["min_research_fit"]):
             return None
@@ -256,6 +261,10 @@ class CuratedRecommendationEngine:
             key=lambda item: (item.research_fit, item.video_potential, item.updated),
             reverse=True,
         ):
+            if knowledge_map_signals(
+                paper.title, paper.summary, "", self.profile
+            ):
+                continue
             signals = self._recent_signals(paper, config)
             aliases = {f"arxiv:{paper.base_id}".casefold()}
             if signals is None or _cooling(
@@ -295,6 +304,76 @@ class CuratedRecommendationEngine:
                 break
         return selected
 
+    def _select_recent_knowledge_maps(
+        self,
+        papers: list[Paper],
+        history: dict[str, list[dict[str, Any]]],
+        target_date: str,
+        already_selected: list[RecommendationEntry],
+    ) -> list[RecommendationEntry]:
+        category_config = self.config["review_knowledge_map"]
+        recent_config = self.config["frontier_recent"]
+        remaining = max(
+            0,
+            int(category_config["max_count"])
+            - sum(
+                entry.category == "review_knowledge_map"
+                for entry in already_selected
+            ),
+        )
+        if remaining == 0:
+            return []
+
+        selected: list[RecommendationEntry] = []
+        for paper in sorted(
+            papers,
+            key=lambda item: (item.research_fit, item.video_potential, item.updated),
+            reverse=True,
+        ):
+            document_signals = knowledge_map_signals(
+                paper.title, paper.summary, "", self.profile
+            )
+            if not document_signals:
+                continue
+            signals = self._recent_signals(paper, recent_config)
+            if signals is None:
+                continue
+            aliases = {f"arxiv:{paper.base_id}".casefold()}
+            if aliases & self._dismissed_aliases:
+                continue
+            if _cooling(
+                aliases,
+                history,
+                target_date,
+                int(category_config["cooldown_days"]),
+            ):
+                continue
+            if any(aliases & entry.aliases for entry in already_selected + selected):
+                continue
+            core, strong = signals
+            primary = self._primary_topic(paper.matched_topics)
+            if primary in self._cooldown_topics:
+                continue
+            context = robotics_context_gate(
+                paper.title, paper.summary, "", self.profile
+            )
+            selected.append(
+                RecommendationEntry(
+                    category="review_knowledge_map",
+                    paper=paper,
+                    reasons=[
+                        f"Knowledge-map signals: {', '.join(document_signals)}",
+                        f"Robotics context: {', '.join(context.positive_matches)}",
+                        f"research_fit {paper.research_fit} ≥ {int(recent_config['min_research_fit'])}",
+                        f"Core topics matched: {', '.join(core)}",
+                        f"Specific keywords matched: {', '.join(strong)}",
+                    ],
+                )
+            )
+            if len(selected) >= remaining:
+                break
+        return selected
+
     def _select_journal(
         self,
         papers: list[HistoricalPaper],
@@ -318,6 +397,8 @@ class CuratedRecommendationEngine:
                 source.startswith("journal_search:")
                 for source in paper.discovery_source
             ):
+                continue
+            if paper.is_knowledge_map:
                 continue
             if not paper.publication_date:
                 continue
@@ -405,22 +486,25 @@ class CuratedRecommendationEngine:
         min_dismissals = int(
             self.dismissal_config.get("min_dismissals_for_topic_cooldown", 2)
         )
+        cooldown_days = int(
+            self.dismissal_config.get("topic_cooldown_days", 14)
+        )
         target = date.fromisoformat(target_date)
-        cutoff = target - timedelta(days=window_days)
-        recent_dismissals = [
-            entry
-            for entry in dismissals
-            if entry.dismissed_at
-            and date.fromisoformat(entry.dismissed_at[:10]) >= cutoff
-        ]
-        topic_counts: Counter[str] = Counter()
-        for entry in recent_dismissals:
+        topic_feedback_dates: dict[str, list[date]] = {}
+        for entry in dismissals:
+            if not entry.dismissed_at:
+                continue
+            dismissed_on = date.fromisoformat(entry.dismissed_at[:10])
+            elapsed_days = (target - dismissed_on).days
+            if not 0 <= elapsed_days < window_days:
+                continue
             for topic in entry.topics:
-                topic_counts[topic] += 1
+                topic_feedback_dates.setdefault(topic, []).append(dismissed_on)
         self._cooldown_topics = {
             topic
-            for topic, count in topic_counts.items()
-            if count >= min_dismissals
+            for topic, feedback_dates in topic_feedback_dates.items()
+            if len(feedback_dates) >= min_dismissals
+            and (target - max(feedback_dates)).days < cooldown_days
         }
         combined, pool_by_alias = self._combine_historical_sources(
             historical_papers, reading_pool
@@ -443,23 +527,29 @@ class CuratedRecommendationEngine:
             considered_at=considered_at,
             already_selected=journal,
         )
+        recent_review = self._select_recent_knowledge_maps(
+            recent_new,
+            history,
+            target_date,
+            journal + review,
+        )
         impact = self._select_historical(
             ordered_historical,
             category="high_impact_historical",
             history=history,
             target_date=target_date,
             considered_at=considered_at,
-            already_selected=journal + review,
+            already_selected=journal + review + recent_review,
         )
         recent = self._select_recent(
             recent_new,
             history,
             target_date,
-            journal + review + impact,
+            journal + review + recent_review + impact,
         )
         groups = {
             "journal_recent": journal,
-            "review_knowledge_map": review,
+            "review_knowledge_map": review + recent_review,
             "high_impact_historical": impact,
             "frontier_recent": recent,
         }

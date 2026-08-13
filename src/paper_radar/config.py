@@ -147,6 +147,9 @@ def load_profile(path: Path) -> ResearchProfile:
         raise ConfigError("At least one arXiv category is required")
     if not profile.scoring.get("topics"):
         raise ConfigError("At least one scoring topic is required")
+    robotics_context = profile.scoring.get("robotics_context", {})
+    if not robotics_context.get("positive_terms"):
+        raise ConfigError("scoring.robotics_context.positive_terms must not be empty")
     if fetch.page_size < 1 or fetch.max_pages < 1 or fetch.retries < 1 or fetch.lookback_days < 1:
         raise ConfigError("page_size, max_pages, retries, and lookback_days must be positive")
     if fetch.page_delay_seconds < 3:
