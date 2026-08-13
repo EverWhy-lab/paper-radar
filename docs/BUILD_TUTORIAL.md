@@ -47,17 +47,22 @@ topics:
 
 | 主题 | 关键词示例 |
 |---|---|
-| 腿部/人形机器人 | legged robot, humanoid robot, legged locomotion… |
-| 最优控制（WBC/MPC） | whole-body control, model predictive control, MPC… |
-| 机器人学习 | reinforcement learning, imitation learning, sim-to-real… |
-| 扩散/视觉运动策略 | diffusion policy, visuomotor policy… |
-| VLA/基础模型 | vision-language-action, robot foundation model… |
-| LLM/智能体 | large language model, agentic planning… |
+| VLA / 机器人基础模型 | vision-language-action, robot foundation model… |
+| 世界模型 / 具身推理 | robot world model, embodied planning, long-horizon manipulation… |
+| 人形全身智能 | humanoid loco-manipulation, whole-body imitation… |
+| 策略学习与后训练 | diffusion policy, VLA post-training, continual robot learning… |
+| 灵巧多模态操作 | dexterous manipulation, tactile policy, bimanual manipulation… |
+| 机器人数据与 Sim-to-Real | robot data scaling, cross-embodiment data, sim-to-real… |
+| 控制与优化（支撑方向） | whole-body control, model predictive control, trajectory optimization… |
 
 ### 2.2 核心主题与泛化词（`recommendations.core_topic_ids` / `generic_keywords`）
 
 - `core_topic_ids`：把上一步定义的主题 id 填进来。**只有命中核心主题的论文才会入选**；
 - `generic_keywords`：这些词太常见，**不能单独作为入选理由**（比如“reinforcement learning”），建议照抄示例。
+
+`robotics_context.positive_terms` 应只放能明确建立机器人语境的词。不要把
+`world model`、`foundation model`、`LLM`、`reinforcement learning` 等泛 AI
+词单独当作机器人论文的充分条件。
 
 ### 2.3 排除词（`scoring.exclusions` / `recommendations.excluded_terms`）
 
@@ -71,7 +76,7 @@ exclusions:
 
 ### 2.4 每日上限与门槛（`recommendations.daily_mix`）
 
-默认：总推荐 ≤5；前沿新论文 ≤2；历史高影响力 ≤3；期刊新论文 ≤2；综述/知识地图 ≤1。门槛不建议低于默认值，否则页面会“凑数”。
+默认：总推荐 ≤5；前沿新论文 ≤2；前沿与新期刊合计 ≤3；历史基础论文 ≤1；综述/知识地图 ≤1。历史发现使用滚动 10 年 active-reading window，并偏好近 5 年；超过 10 年的论文只保留为背景谱系，不进入每日推荐。门槛不建议低于默认值，否则页面会“凑数”。
 
 ### 2.5 时区与运行时间（`site.timezone`）
 

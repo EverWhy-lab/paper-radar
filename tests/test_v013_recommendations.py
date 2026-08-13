@@ -126,19 +126,62 @@ def test_v013_category_caps_total_limit_and_exclusivity(profile) -> None:
     assert len({entry.canonical_paper_id for entry in result.recommendations}) == len(result.recommendations)
 
 
+def test_frontier_selection_preserves_topic_diversity(profile) -> None:
+    recents = [
+        recent(
+            1,
+            topic="vla_robot_foundation",
+            keyword="vision-language-action",
+        ),
+        recent(
+            2,
+            topic="vla_robot_foundation",
+            keyword="robot foundation model",
+        ),
+        recent(
+            3,
+            topic="dexterous_multimodal_manipulation",
+            keyword="dexterous manipulation",
+        ),
+    ]
+
+    result = select(profile, histories=[], recents=recents)
+
+    frontier = [
+        entry for entry in result.recommendations
+        if entry.category == "frontier_recent"
+    ]
+    assert len(frontier) == 2
+    assert {entry.paper.matched_topics[0] for entry in frontier} == {
+        "vla_robot_foundation",
+        "dexterous_multimodal_manipulation",
+    }
+
+
 def test_same_paper_cannot_enter_recent_and_historical_categories(profile) -> None:
     shared = "2401.00004"
     old = historical(
         1,
-        title="Quadruped Robot Locomotion System",
-        abstract="quadruped robot legged locomotion",
+        title="Humanoid Whole-Body Loco-Manipulation System",
+        abstract="humanoid robot whole-body manipulation and loco-manipulation",
         arxiv_id=shared,
     )
-    result = select(profile, histories=[old], recents=[recent(1, arxiv_id=shared)])
+    result = select(
+        profile,
+        histories=[old],
+        recents=[
+            recent(
+                1,
+                arxiv_id=shared,
+                topic="humanoid_loco_manipulation",
+                keyword="loco-manipulation",
+            )
+        ],
+    )
 
     matching = [entry for entry in result.recommendations if shared in entry.aliases or f"arxiv:{shared}" in entry.aliases]
     assert len(matching) == 1
-    assert matching[0].category == "high_impact_historical"
+    assert matching[0].category == "frontier_recent"
 
 
 def test_review_alias_enters_review_category_not_frontier(profile) -> None:
@@ -169,8 +212,8 @@ def test_review_alias_enters_review_category_not_frontier(profile) -> None:
 def test_robotics_review_enters_knowledge_map_not_frontier(profile) -> None:
     review = recent(
         6,
-        topic="optimal_control",
-        keyword="whole-body control",
+        topic="humanoid_loco_manipulation",
+        keyword="humanoid robot",
     )
     review.title = "A Systematic Review of MPC for Humanoid Robots"
     review.summary = "A survey and taxonomy of whole-body control for humanoid robot locomotion."

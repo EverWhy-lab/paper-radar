@@ -92,16 +92,47 @@ def score_paper(
     title = _normalise(paper.title)
     summary = _normalise(paper.summary)
     abstract_multiplier = float(profile.scoring.get("abstract_multiplier", 0.65))
+    core_topics = set(profile.recommendations["core_topic_ids"])
+    core_title_bonus = float(profile.scoring.get("core_topic_title_bonus", 0))
+    weak_keyword_multiplier = float(
+        profile.scoring.get("weak_keyword_multiplier", 0.45)
+    )
     research_raw = 0.0
     topic_ids: list[str] = []
     matched_keywords: list[str] = []
     research_reasons: list[dict[str, Any]] = []
+    context = robotics_context_gate(
+        paper.title,
+        paper.summary,
+        context_topic_text,
+        profile,
+    )
+    allow_topic_scores = (
+        context.eligible
+        or not bool(profile.scoring.get("topics_require_robotics_context", False))
+    )
 
-    for topic in profile.scoring["topics"]:
-        matches, location = _find_keywords(title, summary, list(topic["keywords"]))
-        if not matches or location is None:
+    for topic in profile.scoring["topics"] if allow_topic_scores else []:
+        strong_matches, strong_location = _find_keywords(
+            title, summary, list(topic["keywords"])
+        )
+        weak_matches, weak_location = _find_keywords(
+            title, summary, list(topic.get("weak_keywords", []))
+        )
+        if not strong_matches and not weak_matches:
             continue
-        points = float(topic["weight"]) * (1 if location == "title" else abstract_multiplier)
+        location = strong_location or weak_location
+        matches = list(dict.fromkeys(strong_matches + weak_matches))
+        if strong_location is not None:
+            points = float(topic["weight"]) * (
+                1 if strong_location == "title" else abstract_multiplier
+            )
+        else:
+            points = float(topic["weight"]) * weak_keyword_multiplier * (
+                1 if weak_location == "title" else abstract_multiplier
+            )
+        if strong_location == "title" and str(topic["id"]) in core_topics:
+            points += core_title_bonus
         research_raw += points
         topic_ids.append(str(topic["id"]))
         matched_keywords.extend(matches)
@@ -145,12 +176,6 @@ def score_paper(
                 }
             )
 
-    context = robotics_context_gate(
-        paper.title,
-        paper.summary,
-        context_topic_text,
-        profile,
-    )
     research_reasons.append(
         {
             "kind": "robotics_context",

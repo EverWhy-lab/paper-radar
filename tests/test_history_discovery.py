@@ -55,7 +55,10 @@ class FixtureProvider:
         self.saved_stats = True
 
     def search_works(self, query, *, limit, publication_year_min, publication_year_max):
-        self._check("search", query)
+        self._check(
+            "search",
+            f"{query}|{publication_year_min}|{publication_year_max}",
+        )
         work_id = "W103" if any(term in query for term in ("survey", "review")) else "W104"
         return [self._paper(work_id, f"topic_search:{query}")][:limit]
 
@@ -196,6 +199,25 @@ def test_dry_run_estimates_requests_without_any_write(tmp_path: Path, profile) -
         + len(profile.journals["sources"])
     )
     assert before == after
+
+
+def test_historical_discovery_uses_dynamic_ten_year_reading_window(
+    tmp_path: Path, profile, openalex_payload
+) -> None:
+    provider = FixtureProvider(openalex_payload)
+    service = HistoricalDiscoveryService(
+        tmp_path / "data",
+        profile,
+        provider,
+        now=datetime(2031, 8, 3, 10, 15),
+    )
+
+    assert service.active_reading_year_window() == (2021, 2031)
+    service.discover(limit=1)
+
+    search_calls = [value for kind, value in provider.calls if kind == "search"]
+    assert search_calls
+    assert all(value.endswith("|2021|2031") for value in search_calls)
 
 
 def test_discover_includes_journal_sources(

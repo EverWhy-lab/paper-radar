@@ -69,10 +69,16 @@ def _merge_recommendations(
 
     final: list[RecommendationEntry] = []
     used_aliases: set[str] = set()
+    recent_categories = {"frontier_recent", "journal_recent"}
+    max_recent_total = int(config.get("max_recent_total", 3))
     for category in config["selection_order"]:
         for entry in groups[category]:
             if len(final) >= min(5, int(config["max_total"])):
                 break
+            if category in recent_categories and sum(
+                existing.category in recent_categories for existing in final
+            ) >= max_recent_total:
+                continue
             if not (entry.aliases & used_aliases):
                 final.append(entry)
                 used_aliases.update(entry.aliases)

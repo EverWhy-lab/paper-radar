@@ -7,6 +7,7 @@ from typing import Any
 from paper_radar.config import ResearchProfile
 from paper_radar.models import Paper, SeenState
 from paper_radar.reader_models import ReadingPoolEntry, RecommendationEntry
+from paper_radar.scoring import robotics_context_gate
 
 
 @dataclass
@@ -47,7 +48,14 @@ class RecommendationEngine:
         }
 
     def _signals(self, paper: Paper, category_config: dict[str, Any]) -> tuple[list[str], list[str]] | None:
-        core = [topic for topic in paper.matched_topics if topic in self.core_topics]
+        core = list(
+            dict.fromkeys(
+                canonical
+                for topic in paper.matched_topics
+                if (canonical := self.profile.canonical_topic_id(topic))
+                in self.core_topics
+            )
+        )
         strong_keywords = [
             keyword
             for keyword in paper.matched_keywords
@@ -55,6 +63,10 @@ class RecommendationEngine:
         ]
         text = _normalise(f"{paper.title} {paper.summary}")
         if any(term in text for term in self.excluded_terms):
+            return None
+        if not robotics_context_gate(
+            paper.title, paper.summary, "", self.profile
+        ).eligible:
             return None
         if paper.research_fit < int(category_config["min_research_fit"]):
             return None
@@ -66,15 +78,21 @@ class RecommendationEngine:
 
     def _primary_topic(self, paper: Paper) -> str:
         return max(
-            paper.matched_topics,
+            [
+                self.profile.canonical_topic_id(topic)
+                for topic in paper.matched_topics
+            ],
             key=lambda topic: self.topic_weights.get(topic, 0),
             default="unclassified",
         )
 
-    @staticmethod
-    def _topic_overlap(left: Paper, right: Paper) -> float:
-        left_topics = set(left.matched_topics)
-        right_topics = set(right.matched_topics)
+    def _topic_overlap(self, left: Paper, right: Paper) -> float:
+        left_topics = {
+            self.profile.canonical_topic_id(topic) for topic in left.matched_topics
+        }
+        right_topics = {
+            self.profile.canonical_topic_id(topic) for topic in right.matched_topics
+        }
         union = left_topics | right_topics
         return len(left_topics & right_topics) / len(union) if union else 0.0
 

@@ -15,12 +15,15 @@ fetch:
 
 categories:
   cs.RO: 20
-  eess.SY: 12
-  cs.AI: 8
-  cs.LG: 8
+  cs.AI: 12
+  cs.LG: 10
+  eess.SY: 8
 
 scoring:
   abstract_multiplier: 0.65
+  core_topic_title_bonus: 8
+  weak_keyword_multiplier: 0.45
+  topics_require_robotics_context: true
   robotics_context:
     positive_terms:
       - robot
@@ -28,21 +31,20 @@ scoring:
       - robotic
       - robotics
       - manipulation
-      - mobile manipulator
       - mobile manipulation
-      - locomotion
-      - legged
-      - quadruped
-      - quadrupedal
       - humanoid
-      - biped
-      - whole-body control
-      - whole body control
+      - whole-body manipulation
+      - loco-manipulation
+      - dexterous manipulation
+      - robot policy
+      - robot learning
       - visuomotor
+      - vision-language-action
+      - robot foundation model
+      - embodied robot
+      - tactile manipulation
       - sim-to-real
-      - embodied agent
-      - human pose estimation
-      - search and rescue
+      - teleoperation
     negative_terms:
       - building energy
       - HVAC
@@ -51,89 +53,187 @@ scoring:
       - power systems
       - smart grid
   topics:
-    - id: legged_humanoid
-      label: "Legged & Humanoid"
-      weight: 20
+    - id: vla_robot_foundation
+      label: "VLA & Robot Foundation Models"
+      weight: 24
       keywords:
-        - quadruped robot
-        - quadruped robots
-        - quadrupedal robot
-        - legged robot
-        - legged robots
-        - legged locomotion
+        - vision-language-action
+        - VLA
+        - robot foundation model
+        - robotics foundation model
+        - embodied foundation model
+        - generalist robot policy
+        - general-purpose robot
+        - language-conditioned manipulation
+        - language-conditioned control
+        - multimodal robot policy
+        - action tokenizer
+        - action expert
+        - cross-embodiment policy
+        - multi-embodiment
+        - general-purpose manipulation
+    - id: world_model_embodied_reasoning
+      label: "World Models & Embodied Reasoning"
+      weight: 22
+      keywords:
+        - robot world model
+        - robotic world model
+        - embodied world model
+        - world model for robotics
+        - world model for robot learning
+        - world action model
+        - video world model
+        - action-conditioned prediction
+        - future prediction for robots
+        - model-based robot planning
+        - embodied planning
+        - embodied reasoning
+        - physical reasoning
+        - long-horizon manipulation
+        - long-horizon planning
+        - hierarchical robot planning
+        - semantic robot planning
+        - subgoal planning for robots
+        - robot memory
+        - embodied memory
+        - task planning for robots
+        - multimodal agent for robotics
+    - id: humanoid_loco_manipulation
+      label: "Humanoid & Whole-Body Loco-Manipulation"
+      weight: 22
+      keywords:
         - humanoid robot
-        - humanoid robots
+        - humanoid robotics
         - humanoid locomotion
+        - humanoid manipulation
+        - humanoid whole-body control
+        - loco-manipulation
+        - locomotion and manipulation
+        - whole-body manipulation
+        - whole-body policy
+        - whole-body imitation
+        - whole-body reinforcement learning
+        - biped robot
         - bipedal robot
-    - id: mobile_manipulation
-      label: "Mobile Manipulation"
+        - mobile manipulation
+        - mobile manipulator
+        - bimanual humanoid
+        - whole-body teleoperation
+        - human motion prior
+        - motion imitation
+      weak_keywords:
+        - quadruped robot
+        - legged robot
+    - id: robot_learning_posttraining
+      label: "Robot Learning & Policy Post-Training"
       weight: 20
       keywords:
-        - mobile manipulation
-        - locomotion and manipulation
-        - loco-manipulation
-        - loco manipulation
-        - whole-body manipulation
-    - id: optimal_control
-      label: "WBC / MPC / Optimization"
-      weight: 18
+        - robot learning
+        - imitation learning
+        - behavior cloning
+        - visuomotor policy
+        - visuomotor control
+        - action chunking
+        - diffusion policy
+        - action diffusion
+        - flow matching policy
+        - flow-based policy
+        - generative robot policy
+        - reinforcement fine-tuning
+        - reinforcement learning post-training
+        - VLA post-training
+        - policy post-training
+        - online reinforcement learning
+        - offline-to-online RL
+        - GRPO robotics
+        - robot policy improvement
+        - self-improving robot
+        - robot self-improvement
+        - learning from robot failures
+        - test-time robot adaptation
+        - lifelong robot learning
+        - continual robot learning
+        - continual VLA
+        - lifelong VLA
+        - robot skill acquisition
+        - catastrophic forgetting robotics
+    - id: dexterous_multimodal_manipulation
+      label: "Dexterous & Multimodal Manipulation"
+      weight: 20
+      keywords:
+        - dexterous manipulation
+        - bimanual manipulation
+        - contact-rich manipulation
+        - forceful manipulation
+        - manipulation force control
+        - tactile manipulation
+        - tactile-reactive manipulation
+        - tactile policy
+        - tactile foundation model
+        - visuo-tactile
+        - vision tactile
+        - touch sensing for manipulation
+        - contact sensing for manipulation
+        - slip detection
+        - deformable object manipulation
+        - fine manipulation
+        - in-hand manipulation
+      weak_keywords:
+        - dexterous hand
+        - robot hand
+        - robotic hand
+        - robot tactile sensing
+    - id: robot_data_scaling_sim2real
+      label: "Robot Data Scaling & Sim-to-Real"
+      weight: 20
+      keywords:
+        - robot data
+        - robotics dataset
+        - robot learning dataset
+        - large-scale robot data
+        - large-scale demonstrations
+        - robot data scaling
+        - scaling law for robotics
+        - robot data mixture
+        - cross-embodiment data
+        - multi-embodiment data
+        - robot teleoperation
+        - human demonstration for robots
+        - human video for robotics
+        - egocentric video robotics
+        - UMI
+        - synthetic robot data
+        - simulation data for robots
+        - sim-to-real
+        - sim2real
+        - domain randomization
+        - digital twin robotics
+        - robot data engine
+        - data flywheel for robotics
+    - id: robot_control_optimization
+      label: "Robot Control & Optimization"
+      weight: 12
       keywords:
         - whole-body control
-        - whole body control
         - WBC
         - model predictive control
         - MPC
         - trajectory optimization
         - optimal control
-    - id: robot_learning
-      label: "Robot Learning"
-      weight: 16
-      keywords:
-        - robot learning
-        - reinforcement learning
-        - imitation learning
-        - behavior cloning
-        - sim-to-real
-    - id: diffusion_visuomotor
-      label: "Diffusion & Visuomotor Policy"
-      weight: 17
-      keywords:
-        - diffusion policy
-        - diffusion model
-        - visuomotor policy
-        - visuomotor control
-        - action diffusion
-    - id: vla_foundation
-      label: "VLA & Foundation Models"
-      weight: 17
-      keywords:
-        - vision-language-action
-        - vision language action
-        - VLA
-        - robot foundation model
-        - robotics foundation model
-        - embodied foundation model
-        - embodied agent
-    - id: llm_agent_robotics
-      label: "LLM / Agent Robotics"
-      weight: 14
-      keywords:
-        - large language model
-        - LLM
-        - agentic planning
-        - robot planning
-        - task planning
-        - language-conditioned control
-    - id: pose_rescue
-      label: "Pose & Rescue Robotics"
-      weight: 14
-      keywords:
-        - human pose estimation
-        - keypoint detection
-        - pose estimation
-        - rescue robot
-        - rescue robotics
-        - search and rescue
+        - nonlinear control
+        - robot dynamics
+        - robot state estimation
+  # Old persisted topic ids remain readable and retain feedback cooldown meaning.
+  topic_aliases:
+    legged_humanoid: humanoid_loco_manipulation
+    mobile_manipulation: humanoid_loco_manipulation
+    optimal_control: robot_control_optimization
+    robot_learning: robot_learning_posttraining
+    diffusion_visuomotor: robot_learning_posttraining
+    vla_foundation: vla_robot_foundation
+  legacy_topic_labels:
+    llm_agent_robotics: "LLM / Agent Robotics (legacy)"
+    pose_rescue: "Pose & Rescue Robotics (legacy)"
   exclusions:
     - term: autonomous driving
       penalty: 18
@@ -142,6 +242,10 @@ scoring:
     - term: wireless communication
       penalty: 18
     - term: medical image segmentation
+      penalty: 18
+    - term: human pose estimation
+      penalty: 22
+    - term: keypoint detection
       penalty: 18
     - term: molecule generation
       penalty: 22
@@ -198,42 +302,59 @@ recommendations:
     min_non_generic_keyword_matches: 1
     cooldown_days: 7
   core_topic_ids:
-    - legged_humanoid
-    - mobile_manipulation
-    - optimal_control
-    - robot_learning
-    - diffusion_visuomotor
-    - vla_foundation
-    - llm_agent_robotics
+    - vla_robot_foundation
+    - world_model_embodied_reasoning
+    - humanoid_loco_manipulation
+    - robot_learning_posttraining
+    - dexterous_multimodal_manipulation
+    - robot_data_scaling_sim2real
   generic_keywords:
+    - quadruped robot
+    - legged robot
     - robot learning
+    - embodied foundation model
     - reinforcement learning
     - imitation learning
     - behavior cloning
+    - online reinforcement learning
     - large language model
     - LLM
+    - agent
     - agentic planning
     - robot planning
     - task planning
     - optimal control
+    - sim-to-real
+    - sim2real
+    - dexterous hand
+    - robot hand
+    - robotic hand
+    - robot tactile sensing
   excluded_terms:
     - autonomous cyber
     - cyber operations
     - evolutionary game
     - autonomous driving
+    - autonomous vehicle
+    - self-driving
     - traffic prediction
     - wireless communication
     - recommendation system
+    - recommender system
+    - power system
     - medical image
+    - human pose estimation
+    - keypoint detection
     - molecule generation
   # Kept for loading V0.1.2 recommendation archives and regression tests.
   # New daily pages use daily_mix below.
   daily_mix:
     max_total: 5
-    selection_order: [journal_recent, review_knowledge_map, high_impact_historical, frontier_recent]
+    max_recent_total: 3
+    selection_order: [frontier_recent, journal_recent, review_knowledge_map, high_impact_historical]
     journal_recent:
       max_count: 2
-      min_research_fit: 40
+      min_research_fit: 35
       min_core_topic_matches: 1
       min_non_generic_keyword_matches: 1
       recency_days: 60
@@ -250,7 +371,7 @@ recommendations:
       max_same_primary_topic: 1
       max_topic_overlap: 0.66
     high_impact_historical:
-      max_count: 3
+      max_count: 1
       min_historical_value_score: 42
       cooldown_days: 45
       eligible_statuses: [unread, queued]
@@ -274,31 +395,37 @@ openalex:
   default_per_page: 20
 
 historical_discovery:
-  publication_year_min: 2000
-  publication_year_max: 2026
+  preferred_recent_years: 5
+  max_reading_age_years: 10
   expansion_depth: 1
   per_query_limit: 10
   per_seed_limit: 20
   global_candidate_limit: 200
   default_cli_limit: 100
   topic_queries:
-    - mobile manipulation
-    - quadrupedal and legged robots
-    - robot manipulation
-    - humanoid locomotion and manipulation
-    - model predictive control in robotics
-    - whole-body control robotics
-    - robot state estimation
-    - robot learning
-    - embodied intelligence robotics
+    - vision language action robotics
     - robot foundation models
-    - sim-to-real robotics
+    - world models for robot learning
+    - embodied world models robotics
+    - humanoid loco manipulation
+    - humanoid whole body manipulation
+    - robot learning policy post training
+    - diffusion flow policies robotics
+    - dexterous tactile manipulation
+    - multimodal robot manipulation
+    - large scale robot data
+    - cross embodiment robot learning
+    - sim to real robot learning
+    - lifelong continual robot learning
   knowledge_map_queries:
-    - mobile manipulation survey review tutorial
-    - legged robot locomotion survey review benchmark
-    - whole-body control robotics survey tutorial
-    - robot learning survey taxonomy benchmark
-    - embodied robotics foundation models survey review
+    - robot foundation model survey
+    - VLA robotics survey
+    - world model robot learning survey
+    - humanoid locomotion manipulation survey
+    - dexterous manipulation survey
+    - tactile robot learning survey
+    - robot data scaling survey
+    - embodied AI manipulation survey
   seed_expansion_sources: [referenced_works, citing_works, related_works]
 
 journals:
@@ -333,13 +460,14 @@ historical_scoring:
   review_terms: [review, survey, tutorial, taxonomy, benchmark]
   method_terms: [method, framework, system, policy, controller, architecture]
   weights:
-    research_relevance: 35
-    normalized_citation: 20
+    research_relevance: 30
+    recency: 20
+    normalized_citation: 15
     fwci: 10
     citation_momentum: 10
-    seed_provenance: 10
+    seed_provenance: 5
     work_signal: 5
-    metadata_completeness: 10
+    metadata_completeness: 5
 
 llm_analysis:
   enabled: true

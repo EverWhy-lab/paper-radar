@@ -73,7 +73,7 @@ class CuratedRecommendationEngine:
 
     def _primary_topic(self, topics: list[str]) -> str:
         return max(
-            topics,
+            [self.profile.canonical_topic_id(topic) for topic in topics],
             key=lambda topic: self.topic_weights.get(topic, 0),
             default="unclassified",
         )
@@ -81,7 +81,14 @@ class CuratedRecommendationEngine:
     def _recent_signals(
         self, paper: Paper, config: dict[str, Any]
     ) -> tuple[list[str], list[str]] | None:
-        core = [topic for topic in paper.matched_topics if topic in self.core_topics]
+        core = list(
+            dict.fromkeys(
+                canonical
+                for topic in paper.matched_topics
+                if (canonical := self.profile.canonical_topic_id(topic))
+                in self.core_topics
+            )
+        )
         strong = [
             keyword
             for keyword in paper.matched_keywords
@@ -194,7 +201,9 @@ class CuratedRecommendationEngine:
             if paper.aliases & self._dismissed_aliases:
                 continue
             relevant, relevance_reasons = historical_relevance_eligible(
-                paper, self.profile
+                paper,
+                self.profile,
+                as_of_year=date.fromisoformat(target_date).year,
             )
             if not relevant:
                 continue
@@ -499,7 +508,10 @@ class CuratedRecommendationEngine:
             if not 0 <= elapsed_days < window_days:
                 continue
             for topic in entry.topics:
-                topic_feedback_dates.setdefault(topic, []).append(dismissed_on)
+                canonical_topic = self.profile.canonical_topic_id(topic)
+                topic_feedback_dates.setdefault(canonical_topic, []).append(
+                    dismissed_on
+                )
         self._cooldown_topics = {
             topic
             for topic, feedback_dates in topic_feedback_dates.items()
@@ -512,12 +524,18 @@ class CuratedRecommendationEngine:
         ordered_historical = score_historical_papers(
             combined, self.profile, as_of_year=date.fromisoformat(target_date).year
         )
+        recent = self._select_recent(
+            recent_new,
+            history,
+            target_date,
+            [],
+        )
         journal = self._select_journal(
             ordered_historical,
             history,
             target_date,
             considered_at,
-            [],
+            recent,
         )
         review = self._select_historical(
             ordered_historical,
@@ -525,13 +543,13 @@ class CuratedRecommendationEngine:
             history=history,
             target_date=target_date,
             considered_at=considered_at,
-            already_selected=journal,
+            already_selected=recent + journal,
         )
         recent_review = self._select_recent_knowledge_maps(
             recent_new,
             history,
             target_date,
-            journal + review,
+            recent + journal + review,
         )
         impact = self._select_historical(
             ordered_historical,
@@ -539,13 +557,7 @@ class CuratedRecommendationEngine:
             history=history,
             target_date=target_date,
             considered_at=considered_at,
-            already_selected=journal + review + recent_review,
-        )
-        recent = self._select_recent(
-            recent_new,
-            history,
-            target_date,
-            journal + review + recent_review + impact,
+            already_selected=recent + journal + review + recent_review,
         )
         groups = {
             "journal_recent": journal,
@@ -555,10 +567,16 @@ class CuratedRecommendationEngine:
         }
         chosen: list[RecommendationEntry] = []
         max_total = min(5, int(self.config["max_total"]))
+        recent_categories = {"frontier_recent", "journal_recent"}
+        max_recent_total = int(self.config.get("max_recent_total", 3))
         for category in self.config["selection_order"]:
             for entry in groups[category]:
                 if len(chosen) >= max_total:
                     break
+                if category in recent_categories and sum(
+                    existing.category in recent_categories for existing in chosen
+                ) >= max_recent_total:
+                    continue
                 if any(entry.aliases & existing.aliases for existing in chosen):
                     continue
                 chosen.append(entry)

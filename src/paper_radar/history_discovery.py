@@ -95,6 +95,13 @@ class HistoricalDiscoveryService:
             self.profile, self.seed_storage.load(), limit=limit
         )
 
+    def active_reading_year_window(self) -> tuple[int, int]:
+        """Return the rolling OpenAlex query window for daily-reading candidates."""
+        max_age = int(
+            self.profile.historical_discovery["max_reading_age_years"]
+        )
+        return self.now.year - max_age, self.now.year
+
     @staticmethod
     def _retag(
         papers: list[HistoricalPaper], source: str, seed_id: str | None = None
@@ -154,8 +161,7 @@ class HistoricalDiscoveryService:
         plan = self.plan(limit=limit)
         config = self.profile.historical_discovery
         per_query = int(config["per_query_limit"])
-        year_min = int(config["publication_year_min"])
-        year_max = int(config["publication_year_max"])
+        year_min, year_max = self.active_reading_year_window()
         candidates: list[HistoricalPaper] = []
 
         try:

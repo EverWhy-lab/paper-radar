@@ -67,11 +67,36 @@ class ResearchProfile:
     historical_scoring: dict[str, Any]
 
     @property
-    def topic_labels(self) -> dict[str, str]:
+    def topic_aliases(self) -> dict[str, str]:
         return {
+            str(old_id): str(new_id)
+            for old_id, new_id in self.scoring.get("topic_aliases", {}).items()
+        }
+
+    def canonical_topic_id(self, topic_id: str) -> str:
+        return self.topic_aliases.get(topic_id, topic_id)
+
+    @property
+    def topic_labels(self) -> dict[str, str]:
+        labels = {
             str(topic["id"]): str(topic["label"])
             for topic in self.scoring["topics"]
         }
+        labels.update(
+            {
+                old_id: labels.get(new_id, old_id)
+                for old_id, new_id in self.topic_aliases.items()
+            }
+        )
+        labels.update(
+            {
+                str(topic_id): str(label)
+                for topic_id, label in self.scoring.get(
+                    "legacy_topic_labels", {}
+                ).items()
+            }
+        )
+        return labels
 
 
 def load_profile(path: Path) -> ResearchProfile:
@@ -147,6 +172,12 @@ def load_profile(path: Path) -> ResearchProfile:
         raise ConfigError("At least one arXiv category is required")
     if not profile.scoring.get("topics"):
         raise ConfigError("At least one scoring topic is required")
+    topic_ids = [str(topic["id"]) for topic in profile.scoring["topics"]]
+    if len(topic_ids) != len(set(topic_ids)):
+        raise ConfigError("scoring.topics ids must be unique")
+    aliases = profile.topic_aliases
+    if any(target not in topic_ids for target in aliases.values()):
+        raise ConfigError("scoring.topic_aliases must target current topic ids")
     robotics_context = profile.scoring.get("robotics_context", {})
     if not robotics_context.get("positive_terms"):
         raise ConfigError("scoring.robotics_context.positive_terms must not be empty")
@@ -181,6 +212,11 @@ def load_profile(path: Path) -> ResearchProfile:
         if int(dismissals.get(field, 0)) < 0:
             raise ConfigError(f"dismissals.{field} must be non-negative")
     recommendation_limits = profile.recommendations
+    unknown_core_topics = set(recommendation_limits["core_topic_ids"]) - set(topic_ids)
+    if unknown_core_topics:
+        raise ConfigError(
+            "recommendations.core_topic_ids must reference current scoring topics"
+        )
     if not 0 <= int(recommendation_limits.get("max_total", 5)) <= 5:
         raise ConfigError("recommendations.max_total must be between 0 and 5")
     for category, ceiling in (("recent_new", 3), ("reading_pool", 2), ("important_update", 1)):
@@ -203,6 +239,10 @@ def load_profile(path: Path) -> ResearchProfile:
             raise ConfigError(
                 f"recommendations.daily_mix.{category}.max_count must be between 0 and {ceiling}"
             )
+    if not 0 <= int(daily_mix.get("max_recent_total", 3)) <= 4:
+        raise ConfigError(
+            "recommendations.daily_mix.max_recent_total must be between 0 and 4"
+        )
     journals = profile.journals
     if journals.get("sources"):
         if int(journals.get("recency_days", 60)) < 1 or int(journals.get("per_journal_limit", 15)) < 1:
@@ -216,7 +256,28 @@ def load_profile(path: Path) -> ResearchProfile:
     for field in ("per_query_limit", "per_seed_limit", "global_candidate_limit"):
         if int(discovery[field]) < 1:
             raise ConfigError(f"historical_discovery.{field} must be positive")
+    preferred_years = int(discovery["preferred_recent_years"])
+    max_age_years = int(discovery["max_reading_age_years"])
+    if preferred_years < 1 or max_age_years < preferred_years:
+        raise ConfigError(
+            "historical discovery years must be positive and max_reading_age_years "
+            "must be at least preferred_recent_years"
+        )
     weights = profile.historical_scoring.get("weights", {})
     if not weights or any(float(value) < 0 for value in weights.values()):
         raise ConfigError("historical_scoring.weights must contain non-negative values")
+    expected_historical_components = {
+        "research_relevance",
+        "recency",
+        "normalized_citation",
+        "fwci",
+        "citation_momentum",
+        "seed_provenance",
+        "work_signal",
+        "metadata_completeness",
+    }
+    if set(weights) != expected_historical_components:
+        raise ConfigError(
+            "historical_scoring.weights must define every supported score component"
+        )
     return profile

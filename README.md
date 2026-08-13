@@ -138,9 +138,14 @@ Run discovery or refresh metadata:
 
 Discovery uses three source types:
 
-- Eleven configured robotics topic queries from `config/research_profile.yaml`.
+- Fourteen focused Robot AI topic queries from `config/research_profile.yaml`.
 - Separate review, survey, tutorial, taxonomy, and benchmark queries.
 - One-hop seed expansion through referenced works, citing works, and OpenAlex related works.
+
+The topic and knowledge-map searches use a rolling active-reading window: by
+default the current year through ten years back. The preferred recent window is
+five years. Older seed or cached papers may remain available as background
+lineage, but they are not eligible for a daily reading slot.
 
 The `journals` block in `config/research_profile.yaml` adds a journal feed: every weekly
 discovery run also fetches the last 60 days from seven automation-and-control journals
@@ -166,17 +171,24 @@ Seed definitions are stored in `data/history/seeds.json`. arXiv version state re
 
 ## Scoring and recommendation policy
 
-Historical eligibility first requires explicit robotics context from the title, abstract, or OpenAlex topic metadata, then `research_fit ≥ 18`, at least one configured core topic, and at least one non-generic keyword. General control terms such as MPC, LQR, RL, or control do not establish robotics context by themselves. Configured off-topic exclusions are applied before impact signals. A highly cited but irrelevant paper cannot qualify.
+The six core directions are VLA/robot foundation models, robot world models and
+embodied reasoning, humanoid whole-body loco-manipulation, robot policy
+post-training, dexterous multimodal manipulation, and robot-data scaling with
+sim-to-real. Robot control and optimization remains a lower-weight supporting
+topic, but control-only work cannot qualify through it alone.
+
+Historical eligibility first requires explicit robotics context from the title, abstract, or OpenAlex topic metadata, then `research_fit ≥ 18`, at least one configured core topic, at least one non-generic keyword, and publication within the rolling ten-year active-reading window. General terms such as foundation model, world model, LLM, diffusion model, RL, MPC, or control do not establish robotics context by themselves. Configured off-topic exclusions are applied before impact signals. A highly cited but irrelevant or over-ten-year-old paper cannot qualify for daily reading.
 
 `historical_value_score` is a transparent weighted score:
 
-- Research relevance: 35%
-- OpenAlex field/year-normalized citation percentile, with an age-adjusted annual-citation fallback: 20%
+- Research relevance: 30%
+- Recency: 20% (`≤2 years: 100`, `3–5: 90`, `6–7: 70`, `8–10: 50`, older: `0`)
+- OpenAlex field/year-normalized citation percentile, with an age-adjusted annual-citation fallback: 15%
 - FWCI: 10%
 - Recent citation momentum: 10%
-- Independent seed-graph provenance: 10%
+- Independent seed-graph provenance: 5%
 - Review/tutorial or method-rule signal: 5%
-- Metadata completeness: 10%
+- Metadata completeness: 5%
 
 Unavailable citation, FWCI, or yearly-count fields remain `null` and are omitted from the weighted mean; they are not treated as zero. The available-component mean is multiplied by `0.78 + 0.22 × available_weight/total_weight`, so missing evidence produces a bounded, visible downgrade. Raw citation count is never the direct sort key. The fallback annualizes citations by paper age and caps them against the configured reference of 20 citations/year; OpenAlex normalized percentile is preferred whenever present.
 
@@ -184,10 +196,11 @@ Current daily gates and caps are configurable:
 
 - Total recommendations: at most 5
 - Frontier recent papers: at most 2; `research_fit ≥ 40`
-- Historical-impact candidates: at most 3; `historical_value_score ≥ 42`
+- Fresh journal and frontier papers combined: at most 3
+- Historical-impact candidates: at most 1; `historical_value_score ≥ 42`
 - Review/knowledge-map candidates: at most 1; `historical_value_score ≥ 50`
 
-Historical categories are considered first, but no category has a guaranteed quota. Thresholds are never lowered to fill the page. A paper can occupy only one category. Canonical aliases, topic diversity, dismissal, `read` status, and a 45-day historical cooldown are enforced. Empty days display “今日没有发现足够值得推荐的论文。”
+Frontier recent papers are considered first, followed by fresh journals, a review/knowledge map, and at most one 5–10-year historical foundation. No category has a guaranteed quota, and thresholds are never lowered to fill the page. A paper can occupy only one category. Canonical aliases, topic diversity, dismissal, `read` status, and a 45-day historical cooldown are enforced. Empty days display “今日没有发现足够值得推荐的论文。”
 
 Citation and impact metadata is a screening signal only. The site uses neutral wording such as “领域内高影响力” and does not label papers “classic,” “best,” or objectively high quality.
 

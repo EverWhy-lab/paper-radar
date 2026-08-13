@@ -100,6 +100,33 @@ def _normalized_citation(
     )
 
 
+def _publication_age(publication_year: int | None, as_of_year: int) -> int | None:
+    if publication_year is None or publication_year > as_of_year:
+        return None
+    return as_of_year - publication_year
+
+
+def _recency_score(
+    publication_year: int | None,
+    as_of_year: int,
+    *,
+    preferred_recent_years: int,
+    max_reading_age_years: int,
+) -> float | None:
+    age = _publication_age(publication_year, as_of_year)
+    if age is None:
+        return None
+    if age <= 2:
+        return 100.0
+    if age <= preferred_recent_years:
+        return 90.0
+    if age <= min(max_reading_age_years, preferred_recent_years + 2):
+        return 70.0
+    if age <= max_reading_age_years:
+        return 50.0
+    return 0.0
+
+
 def score_historical_paper(
     paper: HistoricalPaper,
     profile: ResearchProfile,
@@ -128,6 +155,16 @@ def score_historical_paper(
     )
 
     current_year = as_of_year or date.today().year
+    recency = _recency_score(
+        paper.publication_year,
+        current_year,
+        preferred_recent_years=int(
+            profile.historical_discovery["preferred_recent_years"]
+        ),
+        max_reading_age_years=int(
+            profile.historical_discovery["max_reading_age_years"]
+        ),
+    )
     normalized, normalized_reason = _normalized_citation(paper, config, current_year)
     fwci_score = (
         min(100.0, 100 * paper.fwci / max(0.01, float(config["fwci_reference"])))
@@ -157,6 +194,7 @@ def score_historical_paper(
 
     components: dict[str, float | None] = {
         "research_relevance": float(paper.research_fit),
+        "recency": recency,
         "normalized_citation": normalized,
         "fwci": fwci_score,
         "citation_momentum": momentum,
@@ -190,6 +228,11 @@ def score_historical_paper(
         f"发表于 {paper.publication_year} 年" if paper.publication_year else "OpenAlex 未提供发表年份",
         normalized_reason,
     ]
+    if recency is not None:
+        age = _publication_age(paper.publication_year, current_year)
+        reasons.append(f"阅读时效分 {recency:.0f}/100（论文年龄 {age} 年）")
+    else:
+        reasons.append("缺少有效发表年份，阅读时效分按未知处理")
     if paper.fwci is not None:
         reasons.append(f"OpenAlex FWCI {paper.fwci:.2f}")
     else:
@@ -208,7 +251,10 @@ def score_historical_paper(
 
 
 def historical_relevance_eligible(
-    paper: HistoricalPaper, profile: ResearchProfile
+    paper: HistoricalPaper,
+    profile: ResearchProfile,
+    *,
+    as_of_year: int | None = None,
 ) -> tuple[bool, list[str]]:
     config = profile.historical_scoring
     recommendation = profile.recommendations
@@ -220,7 +266,13 @@ def historical_relevance_eligible(
         for keyword in paper.matched_keywords
         if _normalise(keyword) not in generic
     ]
-    core_matches = [topic for topic in paper.matched_topics if topic in core_topics]
+    core_matches = list(
+        dict.fromkeys(
+            canonical
+            for topic in paper.matched_topics
+            if (canonical := profile.canonical_topic_id(topic)) in core_topics
+        )
+    )
     text = _normalise(f"{paper.title} {paper.abstract or ''}")
     topic_text = " ".join(
         str(topic.get("display_name") or "") for topic in paper.topics
@@ -233,6 +285,15 @@ def historical_relevance_eligible(
     )
     if any(term in text for term in excluded):
         return False, ["命中配置的非机器人主线排除词"]
+    current_year = as_of_year or date.today().year
+    max_age = int(profile.historical_discovery["max_reading_age_years"])
+    age = _publication_age(paper.publication_year, current_year)
+    if age is None:
+        return False, ["缺少有效发表年份，不具备每日阅读推荐资格"]
+    if age > max_age:
+        return False, [
+            f"论文年龄 {age} 年 > active reading window {max_age} 年；仅保留作背景谱系"
+        ]
     if not context.eligible:
         return False, [f"未通过机器人语境门槛：{context.reason}"]
     if paper.research_fit < int(config["min_research_fit"]):
