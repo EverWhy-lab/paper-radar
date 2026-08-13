@@ -1,0 +1,909 @@
+{
+  "schema_version": 3,
+  "date": "2026-08-13",
+  "generated_at": "2026-08-13T11:42:25+08:00",
+  "mode": "incremental",
+  "candidate_count": 3052,
+  "historical_candidate_count": 266,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "selection_order": [
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical",
+      "frontier_recent"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 3,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W2046481736",
+      "title": "Autonomous industrial mobile manipulation (AIMM): past, present and future",
+      "takeaway": "This 2012 review surveys the interdisciplinary field of autonomous industrial mobile manipulation (AIMM), examining gaps between research efforts and real-world manufacturing requirements across 12 general application requirements such as autonomy, positioning, manipulation and grasping, and dependability. It identifies key open issues and promising research directions for bringing AIMM technology from laboratories to manufacturing environments. For the user, this paper provides a historical foundation and structured framework for understanding the core challenges in mobile manipulation, which can inform the design of modern systems that integrate locomotion and manipulation. The user can use this review to contextualize their own work in mobile manipulation and to identify persistent gaps that newer learning-based or optimal-control approaches might address.",
+      "generated_at": "2026-08-13T03:47:23",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W2920812058",
+      "title": "Passive Whole-Body Control for Quadruped Robots: Experimental Validation Over Challenging Terrain",
+      "takeaway": "This paper presents a passive whole-body control approach for quadruped robots that achieves dynamic locomotion while compliantly balancing the trunk, formulated as a quadratic program that incorporates full rigid body dynamics, actuation limits, joint limits, and contact interaction. The controller is validated on a 90 kg hydraulically actuated quadruped across various terrains and gaits, showing robustness against inaccurate friction estimates and unstable footholds, as well as load redistribution under actuation limits. For the user, this work offers a practical, experimentally validated optimal-control baseline for quadruped locomotion that can be compared against or integrated with learning-based policies. The implementation details and robustness analyses are directly useful for developing whole-body controllers on legged robots, especially when dealing with challenging terrain and dynamic motions.",
+      "generated_at": "2026-08-13T03:47:23",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.12063",
+      "title": "Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL",
+      "takeaway": "This paper addresses the bottleneck of dense reward shaping in reinforcement learning for loco-manipulation by using Sample-based Model Predictive Control (SMPC) entirely in simulation as an automated expert to generate massive offline datasets. This enables training an off-policy RL agent with purely sparse task rewards, and integrating this high-level agent with a low-level dynamic stability controller yields behaviors that surpass the original optimal control teacher. The framework is validated across different morphologies, including an arm-equipped Spot quadruped and a G1 humanoid, demonstrating robust sim-to-real transfer. For the user, this work provides a concrete method to combine optimal control and RL for complex mobile manipulation tasks, potentially reducing manual tuning effort and enabling faster skill acquisition on legged platforms.",
+      "generated_at": "2026-08-13T03:47:23",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2510.06710",
+      "title": "RLinf-VLA: A Unified and Efficient Framework for Reinforcement Learning of Vision-Language-Action Models",
+      "takeaway": "This paper introduces RLinf-VLA, a unified and efficient framework for scalable reinforcement learning of vision-language-action (VLA) models, standardizing integration of diverse VLA architectures, RL algorithms, and simulators through a unified interface. The framework adopts a flexible resource allocation architecture and a hybrid fine-grained pipeline allocation strategy, achieving 1.61x-1.88x training speedup on ManiSkill, with strong performance on LIBERO, ManiSkill, and RoboTwin benchmarks. For the user, this framework offers a reproducible and extensible platform for RL training of VLA models, which is relevant to robot learning research, particularly for tasks that combine perception and action. The user can leverage this framework to fairly compare different VLA architectures and RL algorithms, and to efficiently scale training for embodied manipulation tasks.",
+      "generated_at": "2026-08-13T03:47:23",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "research_fit 20 ≥ 18",
+        "核心方向：mobile_manipulation",
+        "特定关键词：mobile manipulation",
+        "historical_value_score 61.4 ≥ 50.0",
+        "发表于 2012 年",
+        "同领域同年份引用标准化位于前 4.1%",
+        "OpenAlex FWCI 6.42",
+        "近 2 年年均引用 9.5；此前 2 年年均 9.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:01"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2046481736",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2046481736",
+        "openalex_id": "W2046481736",
+        "base_arxiv_id": null,
+        "doi": "10.1108/01439911211201582",
+        "title": "Autonomous industrial mobile manipulation (AIMM): past, present and future",
+        "authors": [
+          "Mads Hvilshøj",
+          "Simon Bøgh",
+          "Oluf Skov Nielsen",
+          "Ole Madsen"
+        ],
+        "abstract": "Purpose The purpose of this paper is to provide a review of the interdisciplinary research field, autonomous industrial mobile manipulation (AIMM), with an emphasis on physical implementations and applications. Design/methodology/approach Following an introduction to AIMM, this paper investigates the missing links and gaps between the research and developments efforts and the real‐world application requirements, in order to bring the AIMM technology from laboratories to manufacturing environments. The investigation is based on 12 general application requirements for robotics: sustainability, configuration, adaptation, autonomy, positioning, manipulation and grasping, robot‐robot interaction, human‐robot interaction, process quality, dependability, and physical properties. Findings The concise yet comprehensive review provides both researchers (academia) and practitioners (industry) with a quick and gentle overview of AIMM. Furthermore, the paper identifies key open issues and promising research directions to realize real‐world integration and maturation of the AIMM technology. Originality/value This paper reviews the interdisciplinary research field, autonomous industrial mobile manipulation (AIMM).",
+        "publication_date": "2012-03-02",
+        "publication_year": 2012,
+        "source_name": "Industrial Robot the international journal of robotics research and application",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9995999932289124
+          },
+          {
+            "id": "https://openalex.org/T12784",
+            "display_name": "Modular Robots and Swarm Intelligence",
+            "score": 0.9939000010490417
+          },
+          {
+            "id": "https://openalex.org/T10868",
+            "display_name": "Soft Robotics and Applications",
+            "score": 0.9904999732971191
+          }
+        ],
+        "cited_by_count": 126,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 6.4178,
+        "citation_normalized_percentile": 0.95915802,
+        "referenced_works": [
+          "W1544631301",
+          "W1558319233",
+          "W1602614133",
+          "W1612615998",
+          "W166492055",
+          "W1772822779",
+          "W179163131",
+          "W1881357295",
+          "W1908284809",
+          "W1965464852",
+          "W1970390593",
+          "W1980049827",
+          "W198094285",
+          "W1990915636",
+          "W1993999483",
+          "W2003613217",
+          "W2006738510",
+          "W2006817210",
+          "W2009701213",
+          "W2016505519",
+          "W2016609054",
+          "W2019601800",
+          "W2022813413",
+          "W2034449702",
+          "W2036288719",
+          "W2042428748",
+          "W2046365304",
+          "W2070092132",
+          "W2073924944",
+          "W2075061097",
+          "W2087756606",
+          "W2091797369",
+          "W2096828184",
+          "W2102306632",
+          "W2107678031",
+          "W2108149603",
+          "W2111688325",
+          "W2112547815",
+          "W2114504956",
+          "W2116139612",
+          "W2116151288",
+          "W2117746175",
+          "W2118577171",
+          "W2122270496",
+          "W2123616386",
+          "W2125618836",
+          "W2126514592",
+          "W2127514693",
+          "W2131444840",
+          "W2136379480",
+          "W2143412251",
+          "W2143684600",
+          "W2143819333",
+          "W2143907646",
+          "W2148970883",
+          "W2157427290",
+          "W2159754437",
+          "W2164474021",
+          "W2164714694",
+          "W2167398712",
+          "W2167783228",
+          "W2259831107",
+          "W2294729144",
+          "W2337392266",
+          "W2499457802",
+          "W2530980785",
+          "W2544884917",
+          "W255922872",
+          "W2737267365",
+          "W3145767302",
+          "W4233366286",
+          "W4285719527",
+          "W6676254659",
+          "W6677359915",
+          "W7055104640"
+        ],
+        "related_works": [
+          "W1506225852",
+          "W1523265213",
+          "W1976489385",
+          "W2141414364",
+          "W2233357156",
+          "W2363668972",
+          "W2376514150",
+          "W2409287660",
+          "W4252527915",
+          "W4256317220"
+        ],
+        "discovery_source": [
+          "topic_search:mobile manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T00:25:06",
+        "last_considered_at": "2026-08-13T11:42:25+08:00",
+        "recommended_at": "2026-08-13T11:42:25+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:01",
+        "openalex_url": "https://openalex.org/W2046481736",
+        "landing_page_url": "https://doi.org/10.1108/01439911211201582",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "historical_value_score": 61.4,
+        "historical_score_components": {
+          "research_relevance": 20.0,
+          "normalized_citation": 95.9,
+          "fwci": 100.0,
+          "citation_momentum": 52.8,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2012 年",
+          "同领域同年份引用标准化位于前 4.1%",
+          "OpenAlex FWCI 6.42",
+          "近 2 年年均引用 9.5；此前 2 年年均 9.0",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "paper": {
+        "arxiv_id": "openalex:W2046481736",
+        "base_id": "openalex:W2046481736",
+        "version": 1,
+        "title": "Autonomous industrial mobile manipulation (AIMM): past, present and future",
+        "authors": [
+          "Mads Hvilshøj",
+          "Simon Bøgh",
+          "Oluf Skov Nielsen",
+          "Ole Madsen"
+        ],
+        "published": "2012-03-02T00:00:00Z",
+        "updated": "2012-03-02T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Purpose The purpose of this paper is to provide a review of the interdisciplinary research field, autonomous industrial mobile manipulation (AIMM), with an emphasis on physical implementations and applications. Design/methodology/approach Following an introduction to AIMM, this paper investigates the missing links and gaps between the research and developments efforts and the real‐world application requirements, in order to bring the AIMM technology from laboratories to manufacturing environments. The investigation is based on 12 general application requirements for robotics: sustainability, configuration, adaptation, autonomy, positioning, manipulation and grasping, robot‐robot interaction, human‐robot interaction, process quality, dependability, and physical properties. Findings The concise yet comprehensive review provides both researchers (academia) and practitioners (industry) with a quick and gentle overview of AIMM. Furthermore, the paper identifies key open issues and promising research directions to realize real‐world integration and maturation of the AIMM technology. Originality/value This paper reviews the interdisciplinary research field, autonomous industrial mobile manipulation (AIMM).",
+        "abs_url": "https://doi.org/10.1108/01439911211201582",
+        "pdf_url": "",
+        "research_fit": 20,
+        "video_potential": 23,
+        "matched_topics": [
+          "mobile_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "research_fit 38 ≥ 18",
+        "核心方向：legged_humanoid, optimal_control",
+        "特定关键词：quadruped robots, quadruped robot, whole-body control, whole body control",
+        "historical_value_score 63.8 ≥ 42.0",
+        "发表于 2019 年",
+        "同领域同年份引用标准化位于前 2.7%",
+        "OpenAlex FWCI 5.94",
+        "近 2 年年均引用 11.5；此前 2 年年均 19.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-06T04:27:44"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W2920812058",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W2920812058",
+        "openalex_id": "W2920812058",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2019.2908502",
+        "title": "Passive Whole-Body Control for Quadruped Robots: Experimental Validation Over Challenging Terrain",
+        "authors": [
+          "Shamel Fahmi",
+          "Carlos Mastalli",
+          "Michele Focchi",
+          "Claudio Semini"
+        ],
+        "abstract": "We present experimental results using a passive whole-body control approach for quadruped robots that achieves dynamic locomotion while compliantly balancing the robot's trunk. We formulate the motion tracking as a quadratic program that takes into account the full robot rigid body dynamics, the actuation limits, the joint limits, and the contact interaction. We analyze the controller's robustness against inaccurate friction coefficient estimates and unstable footholds, as well as its capability to redistribute the load as a consequence of enforcing actuation limits. Additionally, we present practical implementation details gained from the experience with the real platform. Extensive experimental trials on the 90 kg hydraulically actuated quadruped robot validate the capabilities of this controller under various terrain conditions and gaits. The proposed approach is superior for accurate execution of highly dynamic motions with respect to the current state of the art.",
+        "publication_date": "2019-04-01",
+        "publication_year": 2019,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9998999834060669
+          },
+          {
+            "id": "https://openalex.org/T11372",
+            "display_name": "Hydraulic and Pneumatic Systems",
+            "score": 0.9742000102996826
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.9700000286102295
+          }
+        ],
+        "cited_by_count": 134,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 30
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 6
+          }
+        ],
+        "fwci": 5.9353,
+        "citation_normalized_percentile": 0.97258863,
+        "referenced_works": [
+          "W1499277207",
+          "W1522935148",
+          "W1661823234",
+          "W2003132288",
+          "W2046636826",
+          "W2062940189",
+          "W2080421646",
+          "W2104181254",
+          "W2144355672",
+          "W2300435054",
+          "W2335044248",
+          "W2461181622",
+          "W2470094176",
+          "W2738799195",
+          "W2762555062",
+          "W2773174577",
+          "W2774366155",
+          "W2793991136",
+          "W2900391154",
+          "W2909331752",
+          "W2952026684",
+          "W2963153688",
+          "W3102051120",
+          "W3102715624",
+          "W3103075896",
+          "W3105612804",
+          "W6786332548"
+        ],
+        "related_works": [
+          "W1743191351",
+          "W1992962589",
+          "W2100910774",
+          "W2139139490",
+          "W2168918646",
+          "W2283275227",
+          "W2292078036",
+          "W2517926463",
+          "W2655458901",
+          "W3032871857"
+        ],
+        "discovery_source": [
+          "topic_search:whole-body control robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T00:25:11",
+        "last_considered_at": "2026-08-13T11:42:25+08:00",
+        "recommended_at": "2026-08-13T11:42:25+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-06T04:27:44",
+        "openalex_url": "https://openalex.org/W2920812058",
+        "landing_page_url": "https://doi.org/10.1109/lra.2019.2908502",
+        "open_access_url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8678400",
+        "pdf_url": "https://iris.unitn.it/bitstream/11572/348170/2/fahmi19ral.pdf",
+        "research_fit": 38,
+        "video_potential": 48,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "quadruped robots",
+          "quadruped robot",
+          "whole-body control",
+          "whole body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadruped robots",
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "whole-body control",
+              "whole body control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "historical_value_score": 63.8,
+        "historical_score_components": {
+          "research_relevance": 38.0,
+          "normalized_citation": 97.3,
+          "fwci": 100.0,
+          "citation_momentum": 29.5,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2019 年",
+          "同领域同年份引用标准化位于前 2.7%",
+          "OpenAlex FWCI 5.94",
+          "近 2 年年均引用 11.5；此前 2 年年均 19.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W2920812058",
+        "base_id": "openalex:W2920812058",
+        "version": 1,
+        "title": "Passive Whole-Body Control for Quadruped Robots: Experimental Validation Over Challenging Terrain",
+        "authors": [
+          "Shamel Fahmi",
+          "Carlos Mastalli",
+          "Michele Focchi",
+          "Claudio Semini"
+        ],
+        "published": "2019-04-01T00:00:00Z",
+        "updated": "2019-04-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "We present experimental results using a passive whole-body control approach for quadruped robots that achieves dynamic locomotion while compliantly balancing the robot's trunk. We formulate the motion tracking as a quadratic program that takes into account the full robot rigid body dynamics, the actuation limits, the joint limits, and the contact interaction. We analyze the controller's robustness against inaccurate friction coefficient estimates and unstable footholds, as well as its capability to redistribute the load as a consequence of enforcing actuation limits. Additionally, we present practical implementation details gained from the experience with the real platform. Extensive experimental trials on the 90 kg hydraulically actuated quadruped robot validate the capabilities of this controller under various terrain conditions and gaits. The proposed approach is superior for accurate execution of highly dynamic motions with respect to the current state of the art.",
+        "abs_url": "https://doi.org/10.1109/lra.2019.2908502",
+        "pdf_url": "https://iris.unitn.it/bitstream/11572/348170/2/fahmi19ral.pdf",
+        "research_fit": 38,
+        "video_potential": 48,
+        "matched_topics": [
+          "legged_humanoid",
+          "optimal_control"
+        ],
+        "matched_keywords": [
+          "quadruped robots",
+          "quadruped robot",
+          "whole-body control",
+          "whole body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Legged & Humanoid",
+            "keywords": [
+              "quadruped robots",
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "whole-body control",
+              "whole body control"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 62 ≥ 40",
+        "Core topics matched: mobile_manipulation, optimal_control, robot_learning",
+        "Specific keywords matched: loco-manipulation, loco manipulation, locomotion and manipulation, model predictive control, sim-to-real",
+        "Diversity topic: mobile_manipulation"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.12063",
+      "historical_paper": null,
+      "paper": {
+        "arxiv_id": "2608.12063v1",
+        "base_id": "2608.12063",
+        "version": 1,
+        "title": "Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL",
+        "authors": [
+          "Martin Schuck",
+          "Maks Sorokin",
+          "Simone Manni",
+          "Duy Ta",
+          "Angela P. Schoellig",
+          "Marco Hutter",
+          "Simon Le Cleac'H",
+          "Jan Brüdigam"
+        ],
+        "published": "2026-08-12T13:48:56Z",
+        "updated": "2026-08-12T13:48:56Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Integrating locomotion and manipulation is essential for robot autonomy, but scaling standard Reinforcement Learning (RL) to complex tasks is severely bottlenecked by the slow, manual process of dense reward shaping. To bypass this limitation, we leverage Sample-based Model Predictive Control (SMPC) entirely in simulation as an automated, rapidly tunable expert to generate massive offline datasets. Because this data solves the fundamental exploration problem, we can train an off-policy RL agent using purely sparse task rewards, drastically reducing the time required to learn new skills and eliminating the need for manual tuning. Integrating this high-level agent with a low-level dynamic stability controller yields more optimal behaviors that strictly align with true task objectives, ultimately allowing the learned policies to surpass the original optimal control teacher. We validate the robustness of this sim-to-real framework by successfully deploying complex loco-manipulation skills across different morphologies, including an arm-equipped Spot quadruped and a G1 humanoid.",
+        "abs_url": "https://arxiv.org/abs/2608.12063v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.12063v1",
+        "research_fit": 62,
+        "video_potential": 56,
+        "matched_topics": [
+          "mobile_manipulation",
+          "optimal_control",
+          "robot_learning"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "loco manipulation",
+          "locomotion and manipulation",
+          "model predictive control",
+          "optimal control",
+          "reinforcement learning",
+          "sim-to-real"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Mobile Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "loco manipulation",
+              "locomotion and manipulation"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "topic",
+            "label": "WBC / MPC / Optimization",
+            "keywords": [
+              "model predictive control",
+              "optimal control"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning",
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 10.4
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "quadruped",
+              "humanoid"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "locomotion"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 53 ≥ 40",
+        "Core topics matched: robot_learning, vla_foundation",
+        "Specific keywords matched: vision-language-action, vision language action, VLA",
+        "Diversity topic: vla_foundation"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2510.06710",
+      "historical_paper": null,
+      "paper": {
+        "arxiv_id": "2510.06710v3",
+        "base_id": "2510.06710",
+        "version": 3,
+        "title": "RLinf-VLA: A Unified and Efficient Framework for Reinforcement Learning of Vision-Language-Action Models",
+        "authors": [
+          "Hongzhi Zang",
+          "Mingjie Wei",
+          "Si Xu",
+          "Yongji Wu",
+          "Zhen Guo",
+          "Yuanqing Wang",
+          "Hao Lin",
+          "Peihong Wang",
+          "Liangzhi Shi",
+          "Yuqing Xie",
+          "Zhexuan Xu",
+          "Zhihao Liu",
+          "Kang Chen",
+          "Wenhao Tang",
+          "Quanlu Zhang",
+          "Weinan Zhang",
+          "Chao Yu",
+          "Yu Wang"
+        ],
+        "published": "2025-10-08T07:05:13Z",
+        "updated": "2026-08-12T08:36:04Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Recent studies have demonstrated the potential of reinforcement learning (RL) to improve the task performance of vision-language-action (VLA) models through interaction. However, current efforts remain fragmented, lacking a unified platform for fair comparison across architectures and algorithms, as well as an efficient system design for scalable training. Therefore, we present RLinf-VLA, a unified and efficient framework for scalable RL training of VLA models. RLinf-VLA standardizes the integration of diverse VLA architectures, RL algorithms, and heterogeneous simulators through a unified interface, enabling extensibility and reproducibility. To improve efficiency, the framework adopts a flexible resource allocation architecture for rendering, inference, and training in RL pipelines. In particular, RLinf-VLA introduces a hybrid fine-grained pipeline allocation strategy that achieves a 1.61$\\times$-1.88$\\times$ training speedup on ManiSkill. Using this framework, RL-trained models achieve strong performance across embodied benchmarks, including 98.11% success on 130 LIBERO tasks, 97.66% success on 25 ManiSkill tasks, and 84.63% average success across 6 RoboTwin tasks. In addition, RLinf-VLA distills a set of effective practices for RL-based VLA training. We envision RLinf-VLA as a foundational framework for efficient, unified, and reproducible research in embodied intelligence.",
+        "abs_url": "https://arxiv.org/abs/2510.06710v3",
+        "pdf_url": "https://arxiv.org/pdf/2510.06710v3",
+        "research_fit": 53,
+        "video_potential": 34,
+        "matched_topics": [
+          "robot_learning",
+          "vla_foundation"
+        ],
+        "matched_keywords": [
+          "reinforcement learning",
+          "vision-language-action",
+          "vision language action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 16.0
+          },
+          {
+            "kind": "topic",
+            "label": "VLA & Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "vision language action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 17.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 14.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "comparison"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    }
+  ]
+}
