@@ -1,0 +1,823 @@
+{
+  "schema_version": 3,
+  "date": "2026-08-14",
+  "generated_at": "2026-08-14T11:39:28+08:00",
+  "mode": "incremental",
+  "candidate_count": 3057,
+  "historical_candidate_count": 266,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2511.07820",
+      "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+      "takeaway": "This paper introduces SONIC, a generalist humanoid whole-body controller that treats motion tracking as a scalable task, scaling network size from 1.2M to 42M parameters, dataset volume to over 100M frames from 700 hours of motion capture, and compute to 21k GPU hours. The key result is that this scaling yields natural, robust whole-body movements without manual reward engineering, and the authors further demonstrate downstream utility through a real-time kinematic planner for navigation and a unified token space supporting VR teleoperation and vision-language-action (VLA) models. For your research in humanoid locomotion and manipulation, this work provides a strong foundation model for motion priors that you could directly leverage or fine-tune for downstream tasks, potentially reducing the need for task-specific reward design and enabling more natural, interactive control in your own humanoid systems.",
+      "generated_at": "2026-08-14T03:44:36",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.13362",
+      "title": "NestDex: Nested Policy Learning with Copilot Assisted Teleoperation for Dexterous Manipulation",
+      "takeaway": "NestDex addresses the demonstration collection bottleneck in dexterous manipulation by introducing a nested policy-learning framework where the operator controls the arm and regulates a learned hand skill through a single-DoF clutch, rather than specifying full finger trajectories. The inner hand policy adapts from proprioceptive history while a vision-language selector activates appropriate skills per task stage, and the resulting demonstrations train a separate outer visuomotor policy that controls both arm and hand at deployment. This approach improves demonstration quality and reduces operator burden, which is directly relevant to your work in dexterous manipulation and robot learning—you could adopt this nested policy structure to make data collection more efficient for contact-rich tasks, or build on the hand-action VAE idea to compactly represent hand motions while keeping arm commands in joint space.",
+      "generated_at": "2026-08-14T03:44:36",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3212580602",
+      "title": "Crossing the Reality Gap: A Survey on Sim-to-Real Transferability of Robot Controllers in Reinforcement Learning",
+      "takeaway": "This survey systematically reviews approaches to the sim-to-real transferability problem in reinforcement learning for robot control, categorizing methods that address the reality gap and pointing out their shortcomings. It identifies three main goals: classifying existing approaches, highlighting their limitations, and outlining new research directions. For your work in optimal control and robot learning, this survey serves as a useful reference to understand the landscape of sim-to-real techniques, helping you choose appropriate strategies when deploying learned controllers on real legged robots or manipulators, and it can guide your decisions on domain randomization, system identification, or other transfer methods to improve robustness in real-world deployment.",
+      "generated_at": "2026-08-14T03:44:36",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 78 ≥ 40",
+        "Core topics matched: vla_robot_foundation, humanoid_loco_manipulation",
+        "Specific keywords matched: vision-language-action, VLA, humanoid whole-body control, loco-manipulation, whole-body control",
+        "Diversity topic: vla_robot_foundation"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2511.07820",
+      "historical_paper": null,
+      "paper": {
+        "arxiv_id": "2511.07820v4",
+        "base_id": "2511.07820",
+        "version": 4,
+        "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+        "authors": [
+          "Zhengyi Luo",
+          "Ye Yuan",
+          "Tingwu Wang",
+          "Chenran Li",
+          "Fernando Castañeda",
+          "Sirui Chen",
+          "Zi-Ang Cao",
+          "Jiefeng Li",
+          "David Minor",
+          "Qingwei Ben",
+          "Jinhyung Park",
+          "David Sami",
+          "Zi Wang",
+          "Xingye Da",
+          "Runyu Ding",
+          "Cyrus Hogg",
+          "Lina Song",
+          "Edy Lim",
+          "Eugene Jeong",
+          "Tairan He",
+          "Haoru Xue",
+          "Wenli Xiao",
+          "Simon Yuen",
+          "Jan Kautz",
+          "Yan Chang",
+          "Umar Iqbal",
+          "Linxi \"Jim\" Fan",
+          "Yuke Zhu"
+        ],
+        "published": "2025-11-11T04:37:40Z",
+        "updated": "2026-08-13T07:13:21Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.CV",
+          "cs.GR",
+          "eess.SY"
+        ],
+        "summary": "Despite the rise of billion-parameter foundation models trained across thousands of graphical processing units (GPUs), similar scaling gains have not been shown for humanoid control. Current neural controllers for humanoids remain modest in size, target a limited set of behaviors, and are trained on a handful of GPUs. We show that scaling model capacity, data, and compute yields a generalist humanoid controller capable of natural, robust whole-body movements. We position motion tracking as a scalable task for humanoid control, leveraging dense supervision from diverse motion-capture data to acquire human motion priors without manual reward engineering. We build a foundation model for motion tracking by scaling along three axes: network size (1.2M to 42M parameters), dataset volume (100M+ frames from 700 hours of motion capture), and compute (21k GPU hours). Beyond demonstrating the benefits of scale, we further show downstream utility through a real-time kinematic planner that bridges motion tracking to tasks such as navigation, enabling natural and interactive control, as well as a unified token space that supports virtual reality (VR) teleoperation and vision-language-action (VLA) models with a single policy. Through this interface, we demonstrate autonomous VLA-driven whole-body loco-manipulation requiring coordinated hand and foot placement. Scaling motion tracking exhibits favorable properties: performance improves steadily with compute and data diversity, and learned policies generalize to unseen motions, establishing motion tracking at scale as a practical foundation for humanoid control.",
+        "abs_url": "https://arxiv.org/abs/2511.07820v4",
+        "pdf_url": "https://arxiv.org/pdf/2511.07820v4",
+        "research_fit": 78,
+        "video_potential": 58,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "humanoid whole-body control",
+          "loco-manipulation",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid whole-body control",
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Control & Optimization",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation, humanoid, loco-manipulation, vision-language-action, teleoperation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "whole-body",
+              "manipulation",
+              "navigation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 61 ≥ 40",
+        "Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: visuomotor policy, dexterous manipulation",
+        "Diversity topic: robot_learning_posttraining"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.13362",
+      "historical_paper": null,
+      "paper": {
+        "arxiv_id": "2608.13362v1",
+        "base_id": "2608.13362",
+        "version": 1,
+        "title": "NestDex: Nested Policy Learning with Copilot Assisted Teleoperation for Dexterous Manipulation",
+        "authors": [
+          "James Zhao",
+          "Jinhe Tang",
+          "Mingyuan Ba",
+          "Weiming Zhi"
+        ],
+        "published": "2026-08-13T15:25:39Z",
+        "updated": "2026-08-13T15:25:39Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Dexterous manipulation promises substantially richer robot interaction with the physical world, but learning these behaviours remains constrained by the difficulty of collecting consistent, complete-task demonstrations. Unlike parallel-jaw manipulation, dexterous tasks require the operator to coordinate arm motion with precise, contact-rich finger behaviour throughout the task. We introduce NestDex, a nested policy-learning framework that reduces this burden by using learned hand skills to assist demonstration collection. The operator controls the arm and regulates the active hand skill through a single-DoF clutch, rather than directly specifying the full finger trajectory. The inner hand policy adapts its motion from the latest proprioceptive history, while a vision-language selector activates the appropriate skill for each task stage. The resulting demonstrations train a separate outer visuomotor policy that controls both the arm and hand without the inner policies at deployment. A hand-action variational autoencoder provides compact hand-action targets while retaining arm commands in joint space. Across real-world dexterous manipulation experiments, NestDex improves demonstration reliability and efficiency, and the resulting empirical evaluations support effective autonomous policy learning. Video Demo are available at project website https://aus.bot/research/nestdex.",
+        "abs_url": "https://arxiv.org/abs/2608.13362v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.13362v1",
+        "research_fit": 61,
+        "video_potential": 47,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "visuomotor policy",
+          "dexterous manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "visuomotor policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "dexterous manipulation",
+              "visuomotor",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "dexterous manipulation",
+              "visuomotor",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, dexterous manipulation, visuomotor, teleoperation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "dexterous"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "policy learning",
+              "visuomotor"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robots, robotics, manipulation, sim-to-real",
+        "research_fit 36 ≥ 18",
+        "核心方向：robot_data_scaling_sim2real",
+        "特定关键词：robot dynamics",
+        "historical_value_score 70.9 ≥ 50.0",
+        "发表于 2021 年",
+        "同领域同年份引用标准化位于前 0.9%",
+        "阅读时效分 90/100（论文年龄 5 年）",
+        "OpenAlex FWCI 13.39",
+        "近 2 年年均引用 39.5；此前 2 年年均 44.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:04"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3212580602",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3212580602",
+        "openalex_id": "W3212580602",
+        "base_arxiv_id": null,
+        "doi": "10.1109/access.2021.3126658",
+        "title": "Crossing the Reality Gap: A Survey on Sim-to-Real Transferability of Robot Controllers in Reinforcement Learning",
+        "authors": [
+          "Erica Salvato",
+          "Gianfranco Fenu",
+          "Eric Medvet",
+          "Felice Andrea Pellegrino"
+        ],
+        "abstract": "The growing demand for robots able to act autonomously in complex scenarios has widely accelerated the introduction of Reinforcement Learning (RL) in robots control applications. However, the trial and error intrinsic nature of RL may result in long training time on real robots and, moreover, it may lead to dangerous outcomes. While simulators are useful tools to accelerate RL training and to ensure safety, they often are provided only with an approximated model of robot dynamics and of its interaction with the surrounding environment, thus resulting in what is called the reality gap (RG): a mismatch of simulated and real control-law performances caused by the inaccurate representation of the real environment in simulation. The most undesirable result occurs when the controller learnt in simulation fails the task on the real robot, thus resulting in an unsuccessful sim-to-real transfer. The goal of the present survey is threefold: (1) to identify the main approaches to face the RG problem in the context of robot control with RL, (2) to point out their shortcomings, and (3) to outline new potential research areas.",
+        "publication_date": "2021-01-01",
+        "publication_year": 2021,
+        "source_name": "IEEE Access",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9998000264167786
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9840999841690063
+          },
+          {
+            "id": "https://openalex.org/T10142",
+            "display_name": "Formal Methods in Verification",
+            "score": 0.98089998960495
+          }
+        ],
+        "cited_by_count": 182,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 51
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 50
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          }
+        ],
+        "fwci": 13.392,
+        "citation_normalized_percentile": 0.99066192,
+        "referenced_works": [
+          "W102487131",
+          "W1481659984",
+          "W1493656486",
+          "W1501416815",
+          "W1520597402",
+          "W1534712813",
+          "W1540685400",
+          "W1542941925",
+          "W1626155273",
+          "W1673923490",
+          "W1755458803",
+          "W1771410628",
+          "W1945616565",
+          "W1949804828",
+          "W1965336746",
+          "W1966784014",
+          "W1972197206",
+          "W1975318316",
+          "W1977655452",
+          "W1978161072",
+          "W1988071341",
+          "W1990277704",
+          "W1996579288",
+          "W2012587148",
+          "W2018705428",
+          "W2033110403",
+          "W2034600737",
+          "W2042106612",
+          "W2048226872",
+          "W2056653303",
+          "W2097381042",
+          "W2099471712",
+          "W2105143952",
+          "W2111956227",
+          "W2112483970",
+          "W2119070716",
+          "W2120478326",
+          "W2121863487",
+          "W2139053308",
+          "W2140135625",
+          "W2144658257",
+          "W2145339207",
+          "W2146398222",
+          "W2155968351",
+          "W2158782408",
+          "W2159096063",
+          "W2168921921",
+          "W2169209873",
+          "W2172968643",
+          "W2205975260",
+          "W2280163991",
+          "W2291973609",
+          "W2296073425",
+          "W2342662072",
+          "W2426267443",
+          "W2530944449",
+          "W2534269850",
+          "W2554830522",
+          "W2595845486",
+          "W2602963933",
+          "W2605102758",
+          "W2612129918",
+          "W2725320964",
+          "W2727037355",
+          "W2727840223",
+          "W2736601468",
+          "W2741122588",
+          "W2746553466",
+          "W2767050701",
+          "W2773691349",
+          "W2773867744",
+          "W2788904251",
+          "W2792514232",
+          "W2793955514",
+          "W2822752092",
+          "W2874746074",
+          "W2890728188",
+          "W2898758998",
+          "W2899460553",
+          "W2927642453",
+          "W2952629144",
+          "W2953127211",
+          "W2953431737",
+          "W2962957005",
+          "W2963073614",
+          "W2963184939",
+          "W2963207607",
+          "W2963390419",
+          "W2963484919",
+          "W2963504951",
+          "W2963544079",
+          "W2963641140",
+          "W2963938771",
+          "W2964001908",
+          "W2964043796",
+          "W2964084913",
+          "W2964153729",
+          "W2964310273",
+          "W2967292964",
+          "W2967452881",
+          "W2969201578",
+          "W2979869797",
+          "W2981030070",
+          "W2997896361",
+          "W2999228461",
+          "W3015606043",
+          "W3088310808",
+          "W3100789280",
+          "W3101442004",
+          "W3103559770",
+          "W3113139432",
+          "W3120778962",
+          "W3122928565",
+          "W3126300335",
+          "W3127556163",
+          "W3128433320",
+          "W3152331843",
+          "W3154227779",
+          "W3162157701",
+          "W3163842339",
+          "W3176539729",
+          "W3176880374",
+          "W3206620955",
+          "W3214643126",
+          "W3216747129",
+          "W4214717370",
+          "W4245108548",
+          "W4297686387",
+          "W4297818513",
+          "W4297918469",
+          "W4300799055",
+          "W4319988532",
+          "W4320013936",
+          "W592312525",
+          "W6632235069",
+          "W6637162671",
+          "W6638018090",
+          "W6640425456",
+          "W6674600207",
+          "W6675708744",
+          "W6680657880",
+          "W6681404798",
+          "W6681781451",
+          "W6685331716",
+          "W6692846177",
+          "W6695011786",
+          "W6696783566",
+          "W6704571135",
+          "W6728367041",
+          "W6728925229",
+          "W6731094094",
+          "W6734827232",
+          "W6735677848",
+          "W6740023956",
+          "W6740801417",
+          "W6741002519",
+          "W6742103744",
+          "W6742461812",
+          "W6746722099",
+          "W6748600884",
+          "W6749146968",
+          "W6752818329",
+          "W6753069059",
+          "W6755890616",
+          "W6756581457",
+          "W6768791272",
+          "W6776331362",
+          "W6780559895",
+          "W6785784373",
+          "W6789905126",
+          "W6849896277",
+          "W755046805"
+        ],
+        "related_works": [
+          "W2122871747",
+          "W2126211886",
+          "W2165180011",
+          "W2351343564",
+          "W2930863966",
+          "W3114279067",
+          "W3127551068",
+          "W3153786280",
+          "W3165944253",
+          "W4220829754"
+        ],
+        "discovery_source": [
+          "topic_search:sim-to-real robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T00:25:15",
+        "last_considered_at": "2026-08-14T11:39:28+08:00",
+        "recommended_at": "2026-08-14T11:39:28+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:04",
+        "openalex_url": "https://openalex.org/W3212580602",
+        "landing_page_url": "https://doi.org/10.1109/access.2021.3126658",
+        "open_access_url": "https://doi.org/10.1109/access.2021.3126658",
+        "pdf_url": null,
+        "research_fit": 36,
+        "video_potential": 50,
+        "matched_topics": [
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "robot dynamics"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Control & Optimization",
+            "keywords": [
+              "robot dynamics"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, manipulation, sim-to-real"
+          }
+        ],
+        "historical_value_score": 70.9,
+        "historical_score_components": {
+          "research_relevance": 36.0,
+          "recency": 90.0,
+          "normalized_citation": 99.1,
+          "fwci": 100.0,
+          "citation_momentum": 44.9,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2021 年",
+          "同领域同年份引用标准化位于前 0.9%",
+          "阅读时效分 90/100（论文年龄 5 年）",
+          "OpenAlex FWCI 13.39",
+          "近 2 年年均引用 39.5；此前 2 年年均 44.0",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "paper": {
+        "arxiv_id": "openalex:W3212580602",
+        "base_id": "openalex:W3212580602",
+        "version": 1,
+        "title": "Crossing the Reality Gap: A Survey on Sim-to-Real Transferability of Robot Controllers in Reinforcement Learning",
+        "authors": [
+          "Erica Salvato",
+          "Gianfranco Fenu",
+          "Eric Medvet",
+          "Felice Andrea Pellegrino"
+        ],
+        "published": "2021-01-01T00:00:00Z",
+        "updated": "2021-01-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "The growing demand for robots able to act autonomously in complex scenarios has widely accelerated the introduction of Reinforcement Learning (RL) in robots control applications. However, the trial and error intrinsic nature of RL may result in long training time on real robots and, moreover, it may lead to dangerous outcomes. While simulators are useful tools to accelerate RL training and to ensure safety, they often are provided only with an approximated model of robot dynamics and of its interaction with the surrounding environment, thus resulting in what is called the reality gap (RG): a mismatch of simulated and real control-law performances caused by the inaccurate representation of the real environment in simulation. The most undesirable result occurs when the controller learnt in simulation fails the task on the real robot, thus resulting in an unsuccessful sim-to-real transfer. The goal of the present survey is threefold: (1) to identify the main approaches to face the RG problem in the context of robot control with RL, (2) to point out their shortcomings, and (3) to outline new potential research areas.",
+        "abs_url": "https://doi.org/10.1109/access.2021.3126658",
+        "pdf_url": "",
+        "research_fit": 36,
+        "video_potential": 50,
+        "matched_topics": [
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "robot dynamics"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Control & Optimization",
+            "keywords": [
+              "robot dynamics"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, manipulation, sim-to-real"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
