@@ -128,7 +128,7 @@ git add -A && git commit -m "my paper radar" && git push origin main
 
 | Workflow | 干什么 |
 |---|---|
-| `daily-run` | 每天 09:30（北京时间）自动抓取、选稿、导读、发布 |
+| `daily-run` | 每天 12:30（北京时间）自动抓取、选稿、导读、发布 |
 | `openalex-discover` | 每周一扩充历史池 + 期刊 |
 | `openalex-refresh` | 每月刷新引用指标 + 清理旧候选 |
 | `feedback` | 处理“不相关/收藏”同步（仅仓库主人有效） |

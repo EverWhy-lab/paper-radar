@@ -52,6 +52,10 @@
           <span><b>Published</b> {{ paper.published | display_datetime }}</span>
           <span><b>Categories</b> {{ paper.categories | join(', ') }}</span>
           {% endif %}
+          {% if recommendation.subtopics %}<span><b>Reading focus</b> {{ recommendation.subtopics | join(', ') }}</span>{% endif %}
+          {% if recommendation.recommendation_base_score %}<span><b>Utility</b> {{ '%.1f' | format(recommendation.recommendation_utility) }}</span>{% endif %}
+          {% if recommendation.domain_affinity != 'neutral' %}<span><b>Domain fit</b> {{ recommendation.domain_affinity }} ({{ '%+g' | format(recommendation.domain_affinity_adjustment) }})</span>{% endif %}
+          {% if recommendation.redundancy_penalty %}<span><b>Recent overlap</b> {{ '%+g' | format(recommendation.redundancy_penalty) }}</span>{% endif %}
         </div>
         {% set analysis = analysis_by_id.get(recommendation.canonical_paper_id) %}
         {% if analysis %}

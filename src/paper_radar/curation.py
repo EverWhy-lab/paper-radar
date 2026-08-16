@@ -13,6 +13,7 @@ from paper_radar.historical_scoring import (
 from paper_radar.history_models import HistoricalPaper, canonical_paper_id
 from paper_radar.models import Paper
 from paper_radar.reader_models import DismissalEntry, ReadingPoolEntry, RecommendationEntry
+from paper_radar.recommendation_utility import assess_recommendation_utility
 from paper_radar.scoring import robotics_context_gate
 
 
@@ -71,6 +72,43 @@ class CuratedRecommendationEngine:
             for topic in profile.scoring["topics"]
         }
 
+    def _recommendation_entry(
+        self,
+        *,
+        category: str,
+        paper: Paper,
+        base_score: float,
+        history: dict[str, list[dict[str, Any]]],
+        target_date: str,
+        reasons: list[str],
+        historical_paper: HistoricalPaper | None = None,
+        document_type: str | None = None,
+    ) -> RecommendationEntry:
+        utility = assess_recommendation_utility(
+            paper,
+            base_score=base_score,
+            history=history,
+            target_date=target_date,
+            profile=self.profile,
+            document_type=document_type,
+        )
+        return RecommendationEntry(
+            category=category,
+            paper=paper,
+            historical_paper=historical_paper,
+            reasons=[*reasons, *utility.reasons],
+            core_topics=utility.core_topics,
+            subtopics=utility.subtopics,
+            document_type=utility.document_type,
+            domain_affinity=utility.domain_affinity,
+            domain_affinity_adjustment=utility.domain_affinity_adjustment,
+            redundancy_penalty=utility.redundancy_penalty,
+            recommendation_base_score=utility.recommendation_base_score,
+            recommendation_utility=utility.recommendation_utility,
+            days_since_same_subtopic=utility.days_since_same_subtopic,
+            semantic_suppressed=utility.semantic_suppressed,
+        )
+
     def _primary_topic(self, topics: list[str]) -> str:
         return max(
             [self.profile.canonical_topic_id(topic) for topic in topics],
@@ -108,6 +146,12 @@ class CuratedRecommendationEngine:
         if len(strong) < int(config["min_non_generic_keyword_matches"]):
             return None
         return core, strong
+
+    def _within_active_reading_window(self, paper: Paper, target_date: str) -> bool:
+        if not paper.published or not paper.published[:4].isdigit():
+            return True
+        age = date.fromisoformat(target_date).year - int(paper.published[:4])
+        return age <= int(self.profile.historical_discovery["max_reading_age_years"])
 
     def _manual_history(self, entry: ReadingPoolEntry) -> HistoricalPaper:
         paper = entry.paper
@@ -192,8 +236,7 @@ class CuratedRecommendationEngine:
     ) -> list[RecommendationEntry]:
         config = self.config[category]
         eligible_statuses = set(config["eligible_statuses"])
-        selected: list[RecommendationEntry] = []
-        topic_counts: dict[str, int] = {}
+        candidates: list[tuple[RecommendationEntry, str]] = []
         for paper in papers:
             paper.last_considered_at = considered_at
             if paper.dismissed or paper.reading_status not in eligible_statuses:
@@ -224,32 +267,57 @@ class CuratedRecommendationEngine:
                 int(config["cooldown_days"]),
             ):
                 continue
-            if any(paper.aliases & entry.aliases for entry in already_selected + selected):
-                continue
-            if category == "high_impact_historical":
-                if topic_counts.get(primary, 0) >= int(config["max_same_primary_topic"]):
-                    continue
-                max_overlap = float(config["max_topic_overlap"])
-                if any(
-                    _topic_overlap(set(paper.matched_topics), set(entry.paper.matched_topics))
-                    > max_overlap
-                    for entry in already_selected + selected
-                ):
-                    continue
             reasons = [
                 *relevance_reasons,
                 f"historical_value_score {paper.historical_value_score:.1f} ≥ {threshold:.1f}",
                 *paper.historical_score_reasons,
                 f"影响力元数据更新于 {paper.metadata_updated_at}",
             ]
-            selected.append(
-                RecommendationEntry(
-                    category=category,
-                    paper=paper.to_reader_paper(),
-                    historical_paper=paper,
-                    reasons=reasons,
-                )
+            entry = self._recommendation_entry(
+                category=category,
+                paper=paper.to_reader_paper(),
+                historical_paper=paper,
+                base_score=float(paper.historical_value_score),
+                history=history,
+                target_date=target_date,
+                reasons=reasons,
             )
+            if entry.recommendation_utility < float(
+                config.get("min_recommendation_utility", float("-inf"))
+            ):
+                continue
+            if entry.redundancy_penalty < 0 and entry.recommendation_utility < float(
+                config.get("min_redundant_utility", float("-inf"))
+            ):
+                continue
+            if entry.semantic_suppressed:
+                continue
+            candidates.append((entry, primary))
+
+        selected: list[RecommendationEntry] = []
+        topic_counts: dict[str, int] = {}
+        for entry, primary in sorted(
+            candidates,
+            key=lambda item: (
+                item[0].recommendation_utility,
+                item[0].recommendation_base_score,
+                item[0].canonical_paper_id,
+            ),
+            reverse=True,
+        ):
+            if category == "high_impact_historical":
+                if topic_counts.get(primary, 0) >= int(config["max_same_primary_topic"]):
+                    continue
+                max_overlap = float(config["max_topic_overlap"])
+                if any(
+                    _topic_overlap(set(entry.paper.matched_topics), set(other.paper.matched_topics))
+                    > max_overlap
+                    for other in already_selected + selected
+                ):
+                    continue
+            if any(entry.aliases & other.aliases for other in already_selected + selected):
+                continue
+            selected.append(entry)
             topic_counts[primary] = topic_counts.get(primary, 0) + 1
             if len(selected) >= int(config["max_count"]):
                 break
@@ -263,13 +331,10 @@ class CuratedRecommendationEngine:
         already_selected: list[RecommendationEntry],
     ) -> list[RecommendationEntry]:
         config = self.config["frontier_recent"]
-        selected: list[RecommendationEntry] = []
-        topic_counts: dict[str, int] = {}
-        for paper in sorted(
-            papers,
-            key=lambda item: (item.research_fit, item.video_potential, item.updated),
-            reverse=True,
-        ):
+        candidates: list[tuple[RecommendationEntry, str]] = []
+        for paper in papers:
+            if not self._within_active_reading_window(paper, target_date):
+                continue
             if knowledge_map_signals(
                 paper.title, paper.summary, "", self.profile
             ):
@@ -282,32 +347,60 @@ class CuratedRecommendationEngine:
                 continue
             if aliases & self._dismissed_aliases:
                 continue
-            if any(aliases & entry.aliases for entry in already_selected + selected):
+            if any(aliases & entry.aliases for entry in already_selected):
                 continue
             core, strong = signals
             primary = self._primary_topic(paper.matched_topics)
             if primary in self._cooldown_topics:
                 continue
+            entry = self._recommendation_entry(
+                category="frontier_recent",
+                paper=paper,
+                base_score=float(paper.research_fit),
+                history=history,
+                target_date=target_date,
+                reasons=[
+                    f"research_fit {paper.research_fit} ≥ {int(config['min_research_fit'])}",
+                    f"Core topics matched: {', '.join(core)}",
+                    f"Specific keywords matched: {', '.join(strong)}",
+                    f"Diversity topic: {primary}",
+                ],
+            )
+            if entry.recommendation_utility < float(
+                config.get("min_recommendation_utility", float("-inf"))
+            ):
+                continue
+            if entry.redundancy_penalty < 0 and entry.recommendation_utility < float(
+                config.get("min_redundant_utility", float("-inf"))
+            ):
+                continue
+            if entry.semantic_suppressed:
+                continue
+            candidates.append((entry, primary))
+
+        selected: list[RecommendationEntry] = []
+        topic_counts: dict[str, int] = {}
+        for entry, primary in sorted(
+            candidates,
+            key=lambda item: (
+                item[0].recommendation_utility,
+                item[0].paper.video_potential,
+                item[0].paper.updated,
+                item[0].canonical_paper_id,
+            ),
+            reverse=True,
+        ):
             if topic_counts.get(primary, 0) >= int(config["max_same_primary_topic"]):
                 continue
             if any(
-                _topic_overlap(set(paper.matched_topics), set(entry.paper.matched_topics))
+                _topic_overlap(set(entry.paper.matched_topics), set(other.paper.matched_topics))
                 > float(config["max_topic_overlap"])
-                for entry in already_selected + selected
+                for other in already_selected + selected
             ):
                 continue
-            selected.append(
-                RecommendationEntry(
-                    category="frontier_recent",
-                    paper=paper,
-                    reasons=[
-                        f"research_fit {paper.research_fit} ≥ {int(config['min_research_fit'])}",
-                        f"Core topics matched: {', '.join(core)}",
-                        f"Specific keywords matched: {', '.join(strong)}",
-                        f"Diversity topic: {primary}",
-                    ],
-                )
-            )
+            if any(entry.aliases & other.aliases for other in already_selected + selected):
+                continue
+            selected.append(entry)
             topic_counts[primary] = topic_counts.get(primary, 0) + 1
             if len(selected) >= int(config["max_count"]):
                 break
@@ -333,12 +426,10 @@ class CuratedRecommendationEngine:
         if remaining == 0:
             return []
 
-        selected: list[RecommendationEntry] = []
-        for paper in sorted(
-            papers,
-            key=lambda item: (item.research_fit, item.video_potential, item.updated),
-            reverse=True,
-        ):
+        candidates: list[RecommendationEntry] = []
+        for paper in papers:
+            if not self._within_active_reading_window(paper, target_date):
+                continue
             document_signals = knowledge_map_signals(
                 paper.title, paper.summary, "", self.profile
             )
@@ -357,7 +448,7 @@ class CuratedRecommendationEngine:
                 int(category_config["cooldown_days"]),
             ):
                 continue
-            if any(aliases & entry.aliases for entry in already_selected + selected):
+            if any(aliases & entry.aliases for entry in already_selected):
                 continue
             core, strong = signals
             primary = self._primary_topic(paper.matched_topics)
@@ -366,19 +457,46 @@ class CuratedRecommendationEngine:
             context = robotics_context_gate(
                 paper.title, paper.summary, "", self.profile
             )
-            selected.append(
-                RecommendationEntry(
-                    category="review_knowledge_map",
-                    paper=paper,
-                    reasons=[
-                        f"Knowledge-map signals: {', '.join(document_signals)}",
-                        f"Robotics context: {', '.join(context.positive_matches)}",
-                        f"research_fit {paper.research_fit} ≥ {int(recent_config['min_research_fit'])}",
-                        f"Core topics matched: {', '.join(core)}",
-                        f"Specific keywords matched: {', '.join(strong)}",
-                    ],
-                )
+            entry = self._recommendation_entry(
+                category="review_knowledge_map",
+                paper=paper,
+                base_score=float(paper.research_fit),
+                history=history,
+                target_date=target_date,
+                reasons=[
+                    f"Knowledge-map signals: {', '.join(document_signals)}",
+                    f"Robotics context: {', '.join(context.positive_matches)}",
+                    f"research_fit {paper.research_fit} ≥ {int(recent_config['min_research_fit'])}",
+                    f"Core topics matched: {', '.join(core)}",
+                    f"Specific keywords matched: {', '.join(strong)}",
+                ],
             )
+            if entry.recommendation_utility < float(
+                category_config.get("min_recommendation_utility", float("-inf"))
+            ):
+                continue
+            if entry.redundancy_penalty < 0 and entry.recommendation_utility < float(
+                category_config.get("min_redundant_utility", float("-inf"))
+            ):
+                continue
+            if entry.semantic_suppressed:
+                continue
+            candidates.append(entry)
+
+        selected: list[RecommendationEntry] = []
+        for entry in sorted(
+            candidates,
+            key=lambda item: (
+                item.recommendation_utility,
+                item.paper.video_potential,
+                item.paper.updated,
+                item.canonical_paper_id,
+            ),
+            reverse=True,
+        ):
+            if any(entry.aliases & other.aliases for other in already_selected + selected):
+                continue
+            selected.append(entry)
             if len(selected) >= remaining:
                 break
         return selected
@@ -429,8 +547,7 @@ class CuratedRecommendationEngine:
             reverse=True,
         )
 
-        selected: list[RecommendationEntry] = []
-        topic_counts: dict[str, int] = {}
+        ranked: list[tuple[RecommendationEntry, str]] = []
         for paper in candidates:
             reader_paper = paper.to_reader_paper()
             core, strong = self._recent_signals(reader_paper, config)
@@ -444,11 +561,7 @@ class CuratedRecommendationEngine:
                 int(config.get("cooldown_days", 14)),
             ):
                 continue
-            if any(paper.aliases & entry.aliases for entry in already_selected + selected):
-                continue
-            if topic_counts.get(primary, 0) >= int(
-                config.get("max_same_primary_topic", 1)
-            ):
+            if any(paper.aliases & entry.aliases for entry in already_selected):
                 continue
             journals = sorted(
                 {
@@ -463,14 +576,45 @@ class CuratedRecommendationEngine:
                 f"Core topics matched: {', '.join(core)}",
                 f"Specific keywords matched: {', '.join(strong)}",
             ]
-            selected.append(
-                RecommendationEntry(
-                    category="journal_recent",
-                    paper=reader_paper,
-                    historical_paper=paper,
-                    reasons=reasons,
-                )
+            entry = self._recommendation_entry(
+                category="journal_recent",
+                paper=reader_paper,
+                historical_paper=paper,
+                base_score=float(reader_paper.research_fit),
+                history=history,
+                target_date=target_date,
+                reasons=reasons,
             )
+            if entry.recommendation_utility < float(
+                config.get("min_recommendation_utility", float("-inf"))
+            ):
+                continue
+            if entry.redundancy_penalty < 0 and entry.recommendation_utility < float(
+                config.get("min_redundant_utility", float("-inf"))
+            ):
+                continue
+            if entry.semantic_suppressed:
+                continue
+            ranked.append((entry, primary))
+
+        selected: list[RecommendationEntry] = []
+        topic_counts: dict[str, int] = {}
+        for entry, primary in sorted(
+            ranked,
+            key=lambda item: (
+                item[0].recommendation_utility,
+                item[0].paper.updated,
+                item[0].canonical_paper_id,
+            ),
+            reverse=True,
+        ):
+            if topic_counts.get(primary, 0) >= int(
+                config.get("max_same_primary_topic", 1)
+            ):
+                continue
+            if any(entry.aliases & other.aliases for other in already_selected + selected):
+                continue
+            selected.append(entry)
             topic_counts[primary] = topic_counts.get(primary, 0) + 1
             if len(selected) >= int(config["max_count"]):
                 break
@@ -578,6 +722,11 @@ class CuratedRecommendationEngine:
                 ) >= max_recent_total:
                     continue
                 if any(entry.aliases & existing.aliases for existing in chosen):
+                    continue
+                selected_subtopics = {
+                    subtopic for existing in chosen for subtopic in existing.subtopics
+                }
+                if entry.subtopics and set(entry.subtopics) <= selected_subtopics:
                     continue
                 chosen.append(entry)
 

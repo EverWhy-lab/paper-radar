@@ -8,6 +8,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from paper_radar.backtest import BacktestError, OfflineBacktester
 from paper_radar.config import ConfigError, load_profile
 from paper_radar.fetchers.arxiv import ArxivClient, ArxivFetchError, split_arxiv_id
 from paper_radar.feedback import _resolve_metadata, apply_feedback_lines
@@ -161,6 +162,17 @@ def build_parser() -> argparse.ArgumentParser:
         "apply", help="apply not-interested/favorite lines from a file"
     )
     feedback_apply.add_argument("file")
+
+    backtest_parser = subparsers.add_parser(
+        "backtest", help="replay recommendation policy from local data only"
+    )
+    backtest_parser.add_argument("--from", dest="from_date", type=_date_argument, required=True)
+    backtest_parser.add_argument("--to", dest="to_date", type=_date_argument, required=True)
+    backtest_parser.add_argument(
+        "--compare-actual",
+        action="store_true",
+        help="compare replay selections with immutable daily recommendation archives",
+    )
     return parser
 
 
@@ -322,6 +334,29 @@ def _feedback(project_root: Path, args: argparse.Namespace) -> int:
         print(f"Failed lines ({len(result.failed)}):")
         for line in result.failed:
             print(f" - {line}")
+    return 0
+
+
+def _backtest(project_root: Path, args: argparse.Namespace) -> int:
+    try:
+        profile = load_profile(project_root / "config" / "research_profile.yaml")
+        result = OfflineBacktester(project_root, profile).run(
+            from_date=args.from_date,
+            to_date=args.to_date,
+            compare_actual=args.compare_actual,
+        )
+    except (BacktestError, ConfigError, StorageError) as exc:
+        print(f"Offline backtest failed: {exc}", file=sys.stderr)
+        print("Production data, recommendation archives, and pages were not modified.", file=sys.stderr)
+        return 1
+    quantity = result.metrics["quantity"]
+    print(
+        f"Replayed {quantity['simulated_days']} days with "
+        f"{quantity['total_recommendations']} recommendations "
+        f"({quantity['average_recommendations_per_day']}/day)"
+    )
+    print(f"Markdown report: {result.markdown_path}")
+    print(f"JSON report: {result.json_path}")
     return 0
 
 
@@ -560,4 +595,6 @@ def main(argv: list[str] | None = None) -> int:
         return _candidates(project_root, args)
     if args.command == "feedback":
         return _feedback(project_root, args)
+    if args.command == "backtest":
+        return _backtest(project_root, args)
     return 2

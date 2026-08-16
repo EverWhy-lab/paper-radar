@@ -113,6 +113,16 @@ class RecommendationEntry:
     reasons: list[str] = field(default_factory=list)
     pool_reason: str | None = None
     historical_paper: HistoricalPaper | None = None
+    core_topics: list[str] = field(default_factory=list)
+    subtopics: list[str] = field(default_factory=list)
+    document_type: str = "method"
+    domain_affinity: str = "neutral"
+    domain_affinity_adjustment: float = 0.0
+    redundancy_penalty: float = 0.0
+    recommendation_base_score: float = 0.0
+    recommendation_utility: float = 0.0
+    days_since_same_subtopic: int | None = None
+    semantic_suppressed: bool = False
 
     @property
     def canonical_paper_id(self) -> str:
@@ -135,6 +145,16 @@ class RecommendationEntry:
             "historical_paper": (
                 self.historical_paper.to_dict() if self.historical_paper else None
             ),
+            "core_topics": self.core_topics,
+            "subtopics": self.subtopics,
+            "document_type": self.document_type,
+            "domain_affinity": self.domain_affinity,
+            "domain_affinity_adjustment": self.domain_affinity_adjustment,
+            "redundancy_penalty": self.redundancy_penalty,
+            "recommendation_base_score": self.recommendation_base_score,
+            "recommendation_utility": self.recommendation_utility,
+            "days_since_same_subtopic": self.days_since_same_subtopic,
+            "semantic_suppressed": self.semantic_suppressed,
             "paper": self.paper.to_dict(),
         }
 
@@ -149,6 +169,24 @@ class RecommendationEntry:
                 if value.get("historical_paper")
                 else None
             ),
+            core_topics=list(value.get("core_topics", [])),
+            subtopics=list(value.get("subtopics", [])),
+            document_type=str(value.get("document_type", "method")),
+            domain_affinity=str(value.get("domain_affinity", "neutral")),
+            domain_affinity_adjustment=float(
+                value.get("domain_affinity_adjustment", 0)
+            ),
+            redundancy_penalty=float(value.get("redundancy_penalty", 0)),
+            recommendation_base_score=float(
+                value.get("recommendation_base_score", 0)
+            ),
+            recommendation_utility=float(value.get("recommendation_utility", 0)),
+            days_since_same_subtopic=(
+                int(value["days_since_same_subtopic"])
+                if value.get("days_since_same_subtopic") is not None
+                else None
+            ),
+            semantic_suppressed=bool(value.get("semantic_suppressed", False)),
             paper=Paper.from_dict(value["paper"]),
         )
 
@@ -200,7 +238,7 @@ class DailyRecommendations:
     selection_config: dict[str, Any]
     historical_candidate_count: int = 0
     llm_analysis: list[LLMAnalysis] | None = None
-    schema_version: int = 3
+    schema_version: int = 4
 
     def to_dict(self) -> dict[str, Any]:
         configured_categories = set(self.selection_config.get("selection_order", []))

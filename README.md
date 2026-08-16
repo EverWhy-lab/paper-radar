@@ -38,13 +38,13 @@ Exact-day arXiv backfill:
 .venv/bin/python -m paper_radar run --date 2026-08-03
 ```
 
-The `--date` form retains Asia/Shanghai natural-day semantics for deterministic backfill. arXiv posts new papers Sunday through Thursday evening in US Eastern time—usually the following morning around 08:00 or 09:00 in Shanghai, and makes no announcements Friday or Saturday. Weekends, holidays, and early runs can have no new papers. The bundled GitHub Actions workflow (`.github/workflows/daily-run.yml`) runs the incremental command around **09:30 Asia/Shanghai** every day and publishes the rendered site to GitHub Pages.
+The `--date` form retains Asia/Shanghai natural-day semantics for deterministic backfill. arXiv posts new papers Sunday through Thursday evening in US Eastern time—usually the following morning around 08:00 or 09:00 in Shanghai, and makes no announcements Friday or Saturday. Weekends and holidays can have no new papers. The bundled GitHub Actions workflow (`.github/workflows/daily-run.yml`) runs the incremental command around **12:30 Asia/Shanghai** every day and publishes the rendered site to GitHub Pages. The noon schedule leaves more margin for the daily arXiv batch, network delay, and GitHub runner scheduling, while making the shortlist available for a midday read.
 
 ## Daily automation and mobile access (GitHub)
 
 `.github/workflows/daily-run.yml` automates the daily run and publishes the site:
 
-- A scheduled run executes `python -m paper_radar run` every day at **09:30 Asia/Shanghai** (01:30 UTC). The daily reader never calls OpenAlex, so no API key is needed for the scheduled run.
+- A scheduled run executes `python -m paper_radar run` every day at **12:30 Asia/Shanghai** (04:30 UTC). The daily reader never calls OpenAlex, so no API key is needed for the scheduled run.
 - The workflow commits the updated `data/` state and `site/` pages back to the repository, then deploys `site/` to GitHub Pages.
 - Manual runs are available under **Actions → daily-run → Run workflow**, with two optional inputs:
   - `date`: exact-day backfill in `YYYY-MM-DD` form;
@@ -171,6 +171,14 @@ Seed definitions are stored in `data/history/seeds.json`. arXiv version state re
 
 ## Scoring and recommendation policy
 
+Paper Radar is not trying to answer “which robotics papers are the most famous
+in history?” Its daily question is narrower and more practical: **which Robot AI
+papers are most worth opening and reading today?** The policy is recent-first,
+uses the frozen six-direction Robot AI taxonomy, prefers active-reading history
+from the last ten years, and combines scientific eligibility with cross-day
+redundancy, personal domain affinity, and daily diversity. Five is a ceiling,
+not a quota; one to four recommendations—or an empty day—is normal.
+
 The six core directions are VLA/robot foundation models, robot world models and
 embodied reasoning, humanoid whole-body loco-manipulation, robot policy
 post-training, dexterous multimodal manipulation, and robot-data scaling with
@@ -201,6 +209,37 @@ Current daily gates and caps are configurable:
 - Review/knowledge-map candidates: at most 1; `historical_value_score ≥ 50`
 
 Frontier recent papers are considered first, followed by fresh journals, a review/knowledge map, and at most one 5–10-year historical foundation. No category has a guaranteed quota, and thresholds are never lowered to fill the page. A paper can occupy only one category. Canonical aliases, topic diversity, dismissal, `read` status, and a 45-day historical cooldown are enforced. Empty days display “今日没有发现足够值得推荐的论文。”
+
+The recommendation layer deliberately does not rewrite `research_fit`:
+
+- Configured subtopics identify recurring reading themes such as VLA post-training, robot world models, humanoid whole-body learning, diffusion/flow policies, tactile manipulation, robot-data scaling, and sim-to-real.
+- An exact repeated frontier subtopic with no new secondary theme has a four-day short cooldown, then a decaying 5–7 day utility penalty; a penalized repeat must still clear a higher utility bar. A survey on the same subtopic receives a stronger 14–30 day penalty. A genuinely new secondary subtopic bypasses the short suppression and reduces the penalty, so the cooldown never blocks an entire broad core direction.
+- Personal domain affinity is a bounded soft adjustment: preferred platforms and general-purpose manipulation receive `+6`, neutral domains receive `0`, and peripheral application domains receive `-3`. Scientific gates still run first, and a strong peripheral-domain method can outrank a weaker preferred-domain paper.
+- Daily archives record core topics, subtopics, affinity, redundancy penalty, and final `recommendation_utility`, leaving an explainable interface for future feedback learning without performing online learning now.
+
+## Offline recommendation backtest
+
+Replay the policy against local candidate, historical, and archive data without
+calling arXiv, OpenAlex, or DeepSeek:
+
+```bash
+.venv/bin/python -m paper_radar backtest \
+  --from 2026-08-04 \
+  --to 2026-08-16 \
+  --compare-actual
+```
+
+The replay advances an isolated simulated recommendation history day by day, so
+paper and subtopic cooldowns from day 1 affect day 2. It filters papers and
+reliably dated candidate/discovery records that were not yet available, never
+uses future actual recommendations as state, and never writes `data/`, `site/`,
+favorites, dismissals, or the reading pool. Reports are written to
+`reports/backtests/` as Markdown and JSON. They include quantity, recency, core
+topic and control distributions, same-paper and same-subtopic repetition,
+affinity, quality/diversity, daily selections, and optional actual-vs-replay
+comparison. OpenAlex influence fields come from the currently cached snapshot,
+so the result is a recommendation-policy replay rather than a perfect
+point-in-time reconstruction.
 
 Citation and impact metadata is a screening signal only. The site uses neutral wording such as “领域内高影响力” and does not label papers “classic,” “best,” or objectively high quality.
 

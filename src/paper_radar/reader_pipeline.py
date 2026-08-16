@@ -79,6 +79,11 @@ def _merge_recommendations(
                 existing.category in recent_categories for existing in final
             ) >= max_recent_total:
                 continue
+            selected_subtopics = {
+                subtopic for existing in final for subtopic in existing.subtopics
+            }
+            if entry.subtopics and set(entry.subtopics) <= selected_subtopics:
+                continue
             if not (entry.aliases & used_aliases):
                 final.append(entry)
                 used_aliases.update(entry.aliases)

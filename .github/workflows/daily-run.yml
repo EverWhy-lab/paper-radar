@@ -2,11 +2,11 @@ name: daily-run
 
 on:
   schedule:
-    # 09:30 Asia/Shanghai = 01:30 UTC. arXiv posts the previous evening's
-    # batch at 20:00 US Eastern (08:00 in summer / 09:00 in winter in
-    # Asia/Shanghai), so 09:30 catches it with margin. arXiv makes no
+    # 12:30 Asia/Shanghai = 04:30 UTC. The later run leaves more margin for
+    # the arXiv daily batch, network delay, and GitHub runner scheduling.
+    # arXiv makes no
     # announcements Friday or Saturday evenings, so weekend runs may be empty.
-    - cron: "30 1 * * *"
+    - cron: "30 4 * * *"
   workflow_dispatch:
     inputs:
       date:

@@ -178,7 +178,7 @@ def test_daily_recommendations_round_trip_preserves_guide(profile) -> None:
     assert restored.llm_analysis is not None
     assert restored.llm_analysis[0].takeaway == "Guide text for the paper."
     assert restored.llm_analysis[0].canonical_paper_id == "arxiv:2608.00001"
-    assert restored.schema_version == 3
+    assert restored.schema_version == 4
 
 
 def test_old_three_part_guide_is_merged_into_takeaway() -> None:

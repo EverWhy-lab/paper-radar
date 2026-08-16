@@ -5,7 +5,7 @@ site:
 
 fetch:
   endpoint: "https://export.arxiv.org/api/query"
-  user_agent: "PaperRadar/0.2.1 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.2 (personal non-commercial research tool)"
   page_size: 100
   max_pages: 40
   page_delay_seconds: 5.0
@@ -346,6 +346,98 @@ recommendations:
     - human pose estimation
     - keypoint detection
     - molecule generation
+  # Recommendation-layer taxonomy. These phrases do not change research_fit;
+  # they only make cross-day reading redundancy explainable.
+  recommendation_subtopics:
+    vla_posttraining:
+      core_topics: [vla_robot_foundation, robot_learning_posttraining]
+      terms: [VLA post-training, vision-language-action post-training, VLA finetuning, VLA fine-tuning]
+    robot_world_model:
+      core_topics: [world_model_embodied_reasoning]
+      terms: [robot world model, world model for robot, embodied world model]
+    world_action_model:
+      core_topics: [world_model_embodied_reasoning]
+      terms: [world action model, world-action model, action-conditioned world model]
+    robot_data_scaling:
+      core_topics: [robot_data_scaling_sim2real]
+      terms: [robot data scaling, large-scale robot data, robot data mixture, robot data engine]
+    cross_embodiment:
+      core_topics: [robot_data_scaling_sim2real, vla_robot_foundation]
+      terms: [cross-embodiment, cross embodiment, multi-embodiment, multi embodiment]
+    sim_to_real:
+      core_topics: [robot_data_scaling_sim2real]
+      terms: [sim-to-real, sim2real, simulation to reality, domain randomization]
+    humanoid_whole_body:
+      core_topics: [humanoid_loco_manipulation]
+      terms: [humanoid whole-body, humanoid whole body, whole-body humanoid, whole body humanoid]
+    loco_manipulation:
+      core_topics: [humanoid_loco_manipulation]
+      terms: [loco-manipulation, loco manipulation, locomotion and manipulation]
+    diffusion_flow_policy:
+      core_topics: [robot_learning_posttraining, dexterous_multimodal_manipulation]
+      terms: [diffusion policy, flow policy, flow matching policy, diffusion visuomotor]
+    offline_to_online_rl:
+      core_topics: [robot_learning_posttraining]
+      terms: [offline-to-online, offline to online, offline RL to online, offline reinforcement learning to online]
+    continual_robot_learning:
+      core_topics: [robot_learning_posttraining]
+      terms: [continual robot learning, lifelong robot learning, continual policy learning, failure learning]
+    dexterous_manipulation:
+      core_topics: [dexterous_multimodal_manipulation]
+      terms: [dexterous manipulation, dexterous hand, in-hand manipulation, in hand manipulation]
+    tactile_manipulation:
+      core_topics: [dexterous_multimodal_manipulation]
+      terms: [tactile manipulation, tactile sensing, visuotactile, vision-tactile]
+    bimanual_manipulation:
+      core_topics: [dexterous_multimodal_manipulation, humanoid_loco_manipulation]
+      terms: [bimanual manipulation, bi-manual manipulation, dual-arm manipulation, dual arm manipulation]
+    robot_state_estimation:
+      core_topics: [humanoid_loco_manipulation]
+      terms: [robot state estimation, legged state estimation, contact-aided invariant, proprioceptive sensor fusion]
+  document_types:
+    survey_terms: [review, survey, tutorial, taxonomy, systematic overview]
+    benchmark_terms: [benchmark, challenge, dataset evaluation]
+  semantic_cooldown:
+    frontier_hard_cooldown_days: 4
+    frontier_window_days: 3
+    frontier_penalty: 8
+    extended_window_days: 7
+    extended_penalty: 12
+    survey_window_days: 30
+    survey_recent_window_days: 14
+    survey_recent_penalty: 18
+    survey_late_penalty: 12
+    secondary_topic_penalty_factor: 0.35
+    lexical_window_days: 7
+    lexical_similarity_threshold: 0.55
+    lexical_penalty: 4
+  personal_domain_affinity:
+    preferred:
+      adjustment: 6
+      terms:
+        - humanoid
+        - whole-body manipulation
+        - whole body manipulation
+        - loco-manipulation
+        - mobile manipulation
+        - general-purpose manipulation
+        - general purpose manipulation
+        - quadruped
+        - dexterous manipulation
+        - bimanual manipulation
+        - robot foundation model
+    neutral:
+      adjustment: 0
+      terms: [navigation, manipulator, multi-robot, aerial robot, robot perception]
+    peripheral:
+      adjustment: -3
+      terms:
+        - surgical robot
+        - medical robot
+        - agricultural robot
+        - underwater robot
+        - warehouse robot
+        - search and rescue
   # Kept for loading V0.1.2 recommendation archives and regression tests.
   # New daily pages use daily_mix below.
   daily_mix:
@@ -361,6 +453,7 @@ recommendations:
       cooldown_days: 14
       max_same_primary_topic: 1
       max_topic_overlap: 0.66
+      min_recommendation_utility: 32
       eligible_statuses: [unread, queued]
     frontier_recent:
       max_count: 2
@@ -370,6 +463,8 @@ recommendations:
       cooldown_days: 14
       max_same_primary_topic: 1
       max_topic_overlap: 0.66
+      min_recommendation_utility: 36
+      min_redundant_utility: 70
     high_impact_historical:
       max_count: 1
       min_historical_value_score: 42
@@ -377,16 +472,20 @@ recommendations:
       eligible_statuses: [unread, queued]
       max_same_primary_topic: 1
       max_topic_overlap: 0.66
+      min_recommendation_utility: 36
+      min_redundant_utility: 70
     review_knowledge_map:
       max_count: 1
       min_historical_value_score: 50
       cooldown_days: 45
       eligible_statuses: [unread, queued]
       document_signals: [review, survey, tutorial, taxonomy, benchmark]
+      min_recommendation_utility: 70
+      min_redundant_utility: 70
 
 openalex:
   endpoint: "https://api.openalex.org"
-  user_agent: "PaperRadar/0.2.1 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.2 (personal non-commercial research tool)"
   timeout_seconds: 30
   retries: 3
   retry_delay_seconds: 1.0

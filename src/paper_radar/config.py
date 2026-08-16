@@ -243,6 +243,39 @@ def load_profile(path: Path) -> ResearchProfile:
         raise ConfigError(
             "recommendations.daily_mix.max_recent_total must be between 0 and 4"
         )
+    subtopics = recommendation_limits.get("recommendation_subtopics", {})
+    if not subtopics:
+        raise ConfigError("recommendations.recommendation_subtopics must not be empty")
+    for subtopic_id, rule in subtopics.items():
+        if not str(subtopic_id).strip() or not rule.get("terms"):
+            raise ConfigError("each recommendation subtopic needs an id and terms")
+        unknown = {
+            profile.canonical_topic_id(str(topic))
+            for topic in rule.get("core_topics", [])
+        } - set(recommendation_limits["core_topic_ids"])
+        if unknown:
+            raise ConfigError(
+                "recommendation subtopic core_topics must reference core topic ids"
+            )
+    affinity = recommendation_limits.get("personal_domain_affinity", {})
+    for affinity_class in ("preferred", "neutral", "peripheral"):
+        if affinity_class not in affinity:
+            raise ConfigError(
+                "personal_domain_affinity must define preferred, neutral, and peripheral"
+            )
+        adjustment = float(affinity[affinity_class].get("adjustment", 0))
+        if not -8 <= adjustment <= 8:
+            raise ConfigError("personal domain affinity adjustments must be between -8 and 8")
+    semantic = recommendation_limits.get("semantic_cooldown", {})
+    for field in (
+        "frontier_hard_cooldown_days",
+        "frontier_window_days",
+        "extended_window_days",
+        "survey_window_days",
+        "lexical_window_days",
+    ):
+        if int(semantic.get(field, 0)) < 0:
+            raise ConfigError(f"semantic_cooldown.{field} must be non-negative")
     journals = profile.journals
     if journals.get("sources"):
         if int(journals.get("recency_days", 60)) < 1 or int(journals.get("per_journal_limit", 15)) < 1:

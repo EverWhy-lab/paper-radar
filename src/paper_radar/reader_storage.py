@@ -138,6 +138,18 @@ class RecommendationStorage:
                     "generated_at": daily.generated_at,
                     "category": recommendation.category,
                     "version": recommendation.paper.version,
+                    "canonical_paper_id": recommendation.canonical_paper_id,
+                    "title": recommendation.paper.title,
+                    "summary": recommendation.paper.summary,
+                    "matched_topics": recommendation.paper.matched_topics,
+                    "matched_keywords": recommendation.paper.matched_keywords,
+                    "core_topics": recommendation.core_topics,
+                    "subtopics": recommendation.subtopics,
+                    "document_type": recommendation.document_type,
+                    "domain_affinity": recommendation.domain_affinity,
+                    "domain_affinity_adjustment": recommendation.domain_affinity_adjustment,
+                    "redundancy_penalty": recommendation.redundancy_penalty,
+                    "recommendation_utility": recommendation.recommendation_utility,
                 }
                 for identifier in recommendation.aliases:
                     history.setdefault(identifier, []).append(event)
