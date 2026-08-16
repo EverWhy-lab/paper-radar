@@ -1,0 +1,434 @@
+{
+  "schema_version": 3,
+  "date": "2026-08-16",
+  "generated_at": "2026-08-16T10:44:17+08:00",
+  "mode": "incremental",
+  "candidate_count": 2298,
+  "historical_candidate_count": 266,
+  "recommendation_count": 1,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "review_knowledge_map": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ]
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W3000625188",
+      "title": "Contact-aided invariant extended Kalman filtering for robot state estimation",
+      "takeaway": "This paper introduces a contact-aided invariant extended Kalman filter (InEKF) for legged robot state estimation, addressing the challenge of reliable pose and velocity estimation without vision by fusing contact-inertial dynamics with forward kinematic corrections. The key theoretical contribution is showing that the error dynamics follow a log-linear autonomous differential equation, which yields convergence properties independent of the system trajectory and makes the linearized models independent of the current state estimate, improving robustness over standard EKFs. For your research in legged robots and optimal control, this filter provides a principled, vision-free state estimation backbone that can be integrated into model-based controllers or learning pipelines, especially for humanoid locomotion and mobile manipulation where accurate contact and pose knowledge is critical for stability and task execution.",
+      "generated_at": "2026-08-16T02:47:48",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics",
+        "research_fit 26 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：bipedal robot, robot state estimation",
+        "historical_value_score 61.1 ≥ 42.0",
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 0.6%",
+        "阅读时效分 70/100（论文年龄 6 年）",
+        "OpenAlex FWCI 11.12",
+        "近 2 年年均引用 41.0；此前 2 年年均 60.5",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:03"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3000625188",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3000625188",
+        "openalex_id": "W3000625188",
+        "base_arxiv_id": null,
+        "doi": "10.1177/0278364919894385",
+        "title": "Contact-aided invariant extended Kalman filtering for robot state estimation",
+        "authors": [
+          "Ross Hartley",
+          "Maani Ghaffari",
+          "Ryan M. Eustice",
+          "Jessy W. Grizzle"
+        ],
+        "abstract": "Legged robots require knowledge of pose and velocity in order to maintain stability and execute walking paths. Current solutions either rely on vision data, which is susceptible to environmental and lighting conditions, or fusion of kinematic and contact data with measurements from an inertial measurement unit (IMU). In this work, we develop a contact-aided invariant extended Kalman filter (InEKF) using the theory of Lie groups and invariant observer design. This filter combines contact-inertial dynamics with forward kinematic corrections to estimate pose and velocity along with all current contact points. We show that the error dynamics follows a log-linear autonomous differential equation with several important consequences: (a) the observable state variables can be rendered convergent with a domain of attraction that is independent of the system’s trajectory; (b) unlike the standard EKF, neither the linearized error dynamics nor the linearized observation model depend on the current state estimate, which (c) leads to improved convergence properties and (d) a local observability matrix that is consistent with the underlying nonlinear system. Furthermore, we demonstrate how to include IMU biases, add/remove contacts, and formulate both world-centric and robo-centric versions. We compare the convergence of the proposed InEKF with the commonly used quaternion-based extended Kalman filter (EKF) through both simulations and experiments on a Cassie-series bipedal robot. Filter accuracy is analyzed using motion capture, while a LiDAR mapping experiment provides a practical use case. Overall, the developed contact-aided InEKF provides better performance in comparison with the quaternion-based EKF as a result of exploiting symmetries present in system.",
+        "publication_date": "2020-01-16",
+        "publication_year": 2020,
+        "source_name": "The International Journal of Robotics Research",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9994999766349792
+          },
+          {
+            "id": "https://openalex.org/T11192",
+            "display_name": "Underwater Vehicles and Communication Systems",
+            "score": 0.9923999905586243
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9912999868392944
+          }
+        ],
+        "cited_by_count": 300,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 73
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 61
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 60
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 42
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 11.1198,
+        "citation_normalized_percentile": 0.99360269,
+        "referenced_works": [
+          "W1531532259",
+          "W1559536185",
+          "W1564768010",
+          "W1639331959",
+          "W1764149764",
+          "W1804494423",
+          "W194206487",
+          "W1943808550",
+          "W1945123189",
+          "W1971594916",
+          "W1976980249",
+          "W1980215765",
+          "W1981699551",
+          "W1982902701",
+          "W1988450567",
+          "W1999684857",
+          "W2005099894",
+          "W2011772686",
+          "W2012450854",
+          "W2018655096",
+          "W2027055074",
+          "W2046169298",
+          "W2052643026",
+          "W2056679719",
+          "W2073288601",
+          "W2078594025",
+          "W2091982430",
+          "W2105845337",
+          "W2105934661",
+          "W2107929215",
+          "W2109453544",
+          "W2117102490",
+          "W2126254787",
+          "W2129371582",
+          "W2137448549",
+          "W2139710904",
+          "W2148228392",
+          "W2155653863",
+          "W2157357823",
+          "W2168004776",
+          "W2169772828",
+          "W2169881142",
+          "W2211052641",
+          "W2215881691",
+          "W2279625569",
+          "W2332797954",
+          "W2342437324",
+          "W2465284394",
+          "W2482726005",
+          "W2569720095",
+          "W2592781794",
+          "W2623660146",
+          "W2737825825",
+          "W2745007981",
+          "W2745859992",
+          "W2750614936",
+          "W2750656378",
+          "W2761235830",
+          "W2776443693",
+          "W2790753177",
+          "W2794127568",
+          "W2804892083",
+          "W2931843659",
+          "W2957409657",
+          "W2963566952",
+          "W2972798201",
+          "W3102386196",
+          "W3104529569",
+          "W3105214950",
+          "W3125449081",
+          "W4233759611",
+          "W4241015692",
+          "W4243055393",
+          "W4253927292",
+          "W4388475847"
+        ],
+        "related_works": [
+          "W2145874287",
+          "W2483158495",
+          "W2752451087",
+          "W2755286209",
+          "W2951795132",
+          "W2998370018",
+          "W3123982513",
+          "W3125052734",
+          "W4312092966",
+          "W4391249506"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works",
+          "topic_search:robot state estimation"
+        ],
+        "seed_paper_id": [
+          "openalex:W1945123189"
+        ],
+        "discovered_at": "2026-08-04T06:56:03",
+        "last_considered_at": "2026-08-16T10:44:17+08:00",
+        "recommended_at": "2026-08-16T10:44:17+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:03",
+        "openalex_url": "https://openalex.org/W3000625188",
+        "landing_page_url": "https://doi.org/10.1177/0278364919894385",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 26,
+        "video_potential": 25,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "bipedal robot",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "bipedal robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Control & Optimization",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "historical_value_score": 61.1,
+        "historical_score_components": {
+          "research_relevance": 26.0,
+          "recency": 70.0,
+          "normalized_citation": 99.4,
+          "fwci": 100.0,
+          "citation_momentum": 33.9,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2020 年",
+          "同领域同年份引用标准化位于前 0.6%",
+          "阅读时效分 70/100（论文年龄 6 年）",
+          "OpenAlex FWCI 11.12",
+          "近 2 年年均引用 41.0；此前 2 年年均 60.5",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "paper": {
+        "arxiv_id": "openalex:W3000625188",
+        "base_id": "openalex:W3000625188",
+        "version": 1,
+        "title": "Contact-aided invariant extended Kalman filtering for robot state estimation",
+        "authors": [
+          "Ross Hartley",
+          "Maani Ghaffari",
+          "Ryan M. Eustice",
+          "Jessy W. Grizzle"
+        ],
+        "published": "2020-01-16T00:00:00Z",
+        "updated": "2020-01-16T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Legged robots require knowledge of pose and velocity in order to maintain stability and execute walking paths. Current solutions either rely on vision data, which is susceptible to environmental and lighting conditions, or fusion of kinematic and contact data with measurements from an inertial measurement unit (IMU). In this work, we develop a contact-aided invariant extended Kalman filter (InEKF) using the theory of Lie groups and invariant observer design. This filter combines contact-inertial dynamics with forward kinematic corrections to estimate pose and velocity along with all current contact points. We show that the error dynamics follows a log-linear autonomous differential equation with several important consequences: (a) the observable state variables can be rendered convergent with a domain of attraction that is independent of the system’s trajectory; (b) unlike the standard EKF, neither the linearized error dynamics nor the linearized observation model depend on the current state estimate, which (c) leads to improved convergence properties and (d) a local observability matrix that is consistent with the underlying nonlinear system. Furthermore, we demonstrate how to include IMU biases, add/remove contacts, and formulate both world-centric and robo-centric versions. We compare the convergence of the proposed InEKF with the commonly used quaternion-based extended Kalman filter (EKF) through both simulations and experiments on a Cassie-series bipedal robot. Filter accuracy is analyzed using motion capture, while a LiDAR mapping experiment provides a practical use case. Overall, the developed contact-aided InEKF provides better performance in comparison with the quaternion-based EKF as a result of exploiting symmetries present in system.",
+        "abs_url": "https://doi.org/10.1177/0278364919894385",
+        "pdf_url": "",
+        "research_fit": 26,
+        "video_potential": 25,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "bipedal robot",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "bipedal robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Control & Optimization",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
