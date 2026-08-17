@@ -1,0 +1,818 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-17",
+  "generated_at": "2026-08-17T13:10:26+08:00",
+  "mode": "incremental",
+  "candidate_count": 2308,
+  "historical_candidate_count": 314,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W4200187710",
+      "title": "A survey of the development of quadruped robots: Joint configuration, dynamic locomotion control method and mobile manipulation approach",
+      "takeaway": "This survey systematically reviews the development of quadruped robots, covering joint configuration, dynamic locomotion control methods, and mobile manipulation approaches, with a focus on leg-arm collaborative robots and Whole-body Control (WBC) methods. It provides a structured comparison of gait switching, terrain adaptation, and disturbance resistance across different control paradigms, which is valuable for researchers seeking a broad landscape of quadruped design and control. For your work on legged robots and mobile manipulation, this survey serves as a reference to position your own contributions, identify underexplored gaps in leg-arm coordination or WBC, and inform design choices for new platforms or control frameworks.",
+      "generated_at": "2026-08-17T05:14:17",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4401414436",
+      "title": "Sim-to-Real Learning for Humanoid Box Loco-Manipulation",
+      "takeaway": "This paper presents a sim-to-real reinforcement learning approach for training box loco-manipulation skills on the bipedal humanoid robot Digit, addressing the challenge of whole-body coordination to lift and carry boxes of varying weight, position, and orientation while maintaining balance. The reward functions are designed to encourage desired box interactions while valuing balance and gait quality, and the learned skills are combined into a full system that successfully transfers to real hardware, marking the first demonstration of a learned controller for this task on a physical humanoid. For your research in legged robots and robot learning, this work offers a concrete example of designing reward structures for whole-body loco-manipulation and achieving sim-to-real transfer, which you can build upon by extending the approach to other manipulation tasks, different robot morphologies, or more complex environments.",
+      "generated_at": "2026-08-17T05:14:17",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, manipulation, mobile manipulation",
+        "research_fit 38 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：mobile manipulation, whole-body control, WBC",
+        "historical_value_score 71.7 ≥ 50.0",
+        "发表于 2021 年",
+        "同领域同年份引用标准化位于前 6.2%",
+        "阅读时效分 90/100（论文年龄 5 年）",
+        "OpenAlex FWCI 3.49",
+        "近 2 年年均引用 20.5；此前 2 年年均 19.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-17T03:28:20",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched mobile manipulation, quadruped)",
+        "recommendation_utility 77.7 = base 71.7 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4200187710",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4200187710",
+        "openalex_id": "W4200187710",
+        "base_arxiv_id": null,
+        "doi": "10.1016/j.birob.2021.100029",
+        "title": "A survey of the development of quadruped robots: Joint configuration, dynamic locomotion control method and mobile manipulation approach",
+        "authors": [
+          "Hui Chai",
+          "Yibin Li",
+          "Rui Song",
+          "Guoteng Zhang",
+          "Qin Zhang",
+          "Song Liu",
+          "Jinmian Hou",
+          "Yaxian Xin",
+          "Ming Yuan",
+          "Guoxuan Zhang",
+          "Zhiyuan Yang"
+        ],
+        "abstract": "Some quadruped robots developed recently show better dynamic performance and environmental adaptability than ever, and have been preliminarily applied in the field of emergency disposal, military reconnaissance and infrastructure construction. The development route, mechanisms design, control methods and mobile manipulating approaches of the quadruped robots are surveyed in this article. Firstly, the development route of the quadruped robot is combed, as the references of the forecast of the future work on quadruped robots. Then the bionic structure and the motion control method of the quadruped robot is summarized, the advantages and disadvantages are analyzed in aspects of gait switching, terrain adaption and disturbance resistance. Subsequently, aiming at the mobile manipulation of the quadruped robot, the representative leg-arm collaborative robots and the multi-task-oriented Whole-body Control (WBC) methods are introduced. Finally, the summary and future work of the quadruped robots is given.",
+        "publication_date": "2021-12-17",
+        "publication_year": 2021,
+        "source_name": "Biomimetic Intelligence and Robotics",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9998000264167786
+          },
+          {
+            "id": "https://openalex.org/T12719",
+            "display_name": "Aerospace Engineering and Energy Systems",
+            "score": 0.9584000110626221
+          },
+          {
+            "id": "https://openalex.org/T11615",
+            "display_name": "Control and Dynamics of Mobile Robots",
+            "score": 0.9394999742507935
+          }
+        ],
+        "cited_by_count": 89,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 10
+          }
+        ],
+        "fwci": 3.4854,
+        "citation_normalized_percentile": 0.93819383,
+        "referenced_works": [
+          "W215766046",
+          "W582091997",
+          "W1566405224",
+          "W1969366849",
+          "W1975230295",
+          "W1981225035",
+          "W1982547038",
+          "W1995677619",
+          "W1997576152",
+          "W2006207808",
+          "W2013876510",
+          "W2019606703",
+          "W2037729465",
+          "W2041218023",
+          "W2041285659",
+          "W2049129959",
+          "W2051620263",
+          "W2054186704",
+          "W2110333200",
+          "W2110612452",
+          "W2111527309",
+          "W2119403459",
+          "W2133315051",
+          "W2133326333",
+          "W2133347025",
+          "W2133976940",
+          "W2141042553",
+          "W2144503307",
+          "W2156355884",
+          "W2169564405",
+          "W2288348950",
+          "W2315695414",
+          "W2326186327",
+          "W2335044248",
+          "W2461181622",
+          "W2470094176",
+          "W2528234499",
+          "W2528951757",
+          "W2530112955",
+          "W2531596132",
+          "W2593412525",
+          "W2599940788",
+          "W2612146718",
+          "W2741360616",
+          "W2787465681",
+          "W2800997382",
+          "W2806493341",
+          "W2909331752",
+          "W2911087563",
+          "W2912365230",
+          "W2964384054",
+          "W2972810470",
+          "W3010768390",
+          "W3035118532",
+          "W3101570653",
+          "W3142410314",
+          "W3142707146",
+          "W3205803864",
+          "W4233561989",
+          "W4234069769",
+          "W4240196545",
+          "W4240764969",
+          "W4247290769",
+          "W4250465584",
+          "W4251861244",
+          "W4256423869",
+          "W4365799847",
+          "W4365800129",
+          "W4376526089",
+          "W4376551357",
+          "W4388953811",
+          "W4400518895",
+          "W6634428578",
+          "W6635248274",
+          "W6636825243",
+          "W6645076719",
+          "W6663410251",
+          "W6670465760",
+          "W6670506067",
+          "W6674817063",
+          "W6675022821",
+          "W6675756415",
+          "W6675938220",
+          "W6677087158",
+          "W6678180143",
+          "W6678907144",
+          "W6679572922",
+          "W6680214730",
+          "W6680941084",
+          "W6681053582",
+          "W6682082407",
+          "W6682314913",
+          "W6682382121",
+          "W6683153529",
+          "W6683879376",
+          "W6684283582",
+          "W6691217739",
+          "W6700903186",
+          "W6702884368",
+          "W6714319907",
+          "W6716296916",
+          "W6732022303",
+          "W6742595925",
+          "W6749192247",
+          "W6750237697",
+          "W6752914310",
+          "W6754986246",
+          "W6757527370",
+          "W6762920251",
+          "W6766225186",
+          "W6780106422",
+          "W6785271154",
+          "W6785466958",
+          "W6785846514"
+        ],
+        "related_works": [
+          "W2357124094",
+          "W2387399993",
+          "W2389739210",
+          "W2348924972",
+          "W2139139490",
+          "W2517926463",
+          "W2283275227",
+          "W2168918646",
+          "W2292078036",
+          "W2655458901"
+        ],
+        "discovery_source": [
+          "knowledge_map_search:humanoid locomotion manipulation survey",
+          "topic_search:humanoid locomotion manipulation survey"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:20",
+        "last_considered_at": "2026-08-17T13:10:26+08:00",
+        "recommended_at": "2026-08-17T13:10:26+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:20",
+        "openalex_url": "https://openalex.org/W4200187710",
+        "landing_page_url": "https://doi.org/10.1016/j.birob.2021.100029",
+        "open_access_url": "https://doi.org/10.1016/j.birob.2021.100029",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2667379721000292/pdf",
+        "research_fit": 38,
+        "video_potential": 48,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "mobile manipulation",
+          "quadruped robot",
+          "whole-body control",
+          "WBC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulation",
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Control & Optimization",
+            "keywords": [
+              "whole-body control",
+              "WBC"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "mobile manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "mobile manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, manipulation, mobile manipulation"
+          }
+        ],
+        "historical_value_score": 71.7,
+        "historical_score_components": {
+          "research_relevance": 38.0,
+          "recency": 90.0,
+          "normalized_citation": 93.8,
+          "fwci": 100.0,
+          "citation_momentum": 53.9,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2021 年",
+          "同领域同年份引用标准化位于前 6.2%",
+          "阅读时效分 90/100（论文年龄 5 年）",
+          "OpenAlex FWCI 3.49",
+          "近 2 年年均引用 20.5；此前 2 年年均 19.0",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "survey",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 71.7,
+      "recommendation_utility": 77.7,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4200187710",
+        "base_id": "openalex:W4200187710",
+        "version": 1,
+        "title": "A survey of the development of quadruped robots: Joint configuration, dynamic locomotion control method and mobile manipulation approach",
+        "authors": [
+          "Hui Chai",
+          "Yibin Li",
+          "Rui Song",
+          "Guoteng Zhang",
+          "Qin Zhang",
+          "Song Liu",
+          "Jinmian Hou",
+          "Yaxian Xin",
+          "Ming Yuan",
+          "Guoxuan Zhang",
+          "Zhiyuan Yang"
+        ],
+        "published": "2021-12-17T00:00:00Z",
+        "updated": "2021-12-17T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Some quadruped robots developed recently show better dynamic performance and environmental adaptability than ever, and have been preliminarily applied in the field of emergency disposal, military reconnaissance and infrastructure construction. The development route, mechanisms design, control methods and mobile manipulating approaches of the quadruped robots are surveyed in this article. Firstly, the development route of the quadruped robot is combed, as the references of the forecast of the future work on quadruped robots. Then the bionic structure and the motion control method of the quadruped robot is summarized, the advantages and disadvantages are analyzed in aspects of gait switching, terrain adaption and disturbance resistance. Subsequently, aiming at the mobile manipulation of the quadruped robot, the representative leg-arm collaborative robots and the multi-task-oriented Whole-body Control (WBC) methods are introduced. Finally, the summary and future work of the quadruped robots is given.",
+        "abs_url": "https://doi.org/10.1016/j.birob.2021.100029",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2667379721000292/pdf",
+        "research_fit": 38,
+        "video_potential": 48,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "mobile manipulation",
+          "quadruped robot",
+          "whole-body control",
+          "WBC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulation",
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Control & Optimization",
+            "keywords": [
+              "whole-body control",
+              "WBC"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "mobile manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "mobile manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, manipulation, mobile manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, manipulation, humanoid, loco-manipulation, sim-to-real",
+        "research_fit 58 ≥ 18",
+        "核心方向：humanoid_loco_manipulation, robot_data_scaling_sim2real",
+        "特定关键词：loco-manipulation, humanoid robot, bipedal robot",
+        "historical_value_score 82.7 ≥ 42.0",
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 2.0%",
+        "阅读时效分 100/100（论文年龄 2 年）",
+        "OpenAlex FWCI 7.33",
+        "近 2 年年均引用 14.5；此前 1 年年均 1.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-17T03:28:11",
+        "Detected subtopics: sim_to_real, loco_manipulation",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: loco_manipulation",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = sim_to_real",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 84.5 = base 82.7 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4401414436",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4401414436",
+        "openalex_id": "W4401414436",
+        "base_arxiv_id": null,
+        "doi": "10.1109/icra57147.2024.10610977",
+        "title": "Sim-to-Real Learning for Humanoid Box Loco-Manipulation",
+        "authors": [
+          "Jeremy Dao",
+          "Helei Duan",
+          "Alan Fern"
+        ],
+        "abstract": "In this work we propose a learning-based approach to box loco-manipulation for a humanoid robot. This is a particularly challenging problem due to the need for whole-body coordination in order to lift boxes of varying weight, position, and orientation while maintaining balance. To address this challenge, we present a sim-to-real reinforcement learning approach for training general box pickup and carrying skills for the bipedal robot Digit. Our reward functions are designed to produce the desired interactions with the box while also valuing balance and gait quality. We combine the learned skills into a full system for box loco-manipulation to achieve the task of moving boxes from one table to another with a variety of sizes, weights, and initial configurations. In addition to quantitative simulation results, we demonstrate successful sim-to-real transfer on the humanoid robot Digit. To our knowledge this is the first demonstration of a learned controller for such a task on real world hardware.",
+        "publication_date": "2024-05-13",
+        "publication_year": 2024,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9997000098228455
+          },
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9997000098228455
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9991000294685364
+          }
+        ],
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 7.3265,
+        "citation_normalized_percentile": 0.97952502,
+        "referenced_works": [
+          "W2059114576",
+          "W2117425572",
+          "W2158782408",
+          "W2160455972",
+          "W2397222277",
+          "W2533352770",
+          "W2569791289",
+          "W2736601468",
+          "W2738358082",
+          "W2968340082",
+          "W3005451807",
+          "W3150249871",
+          "W3206620955",
+          "W3206762371",
+          "W3216930691",
+          "W4200235017",
+          "W4214634122",
+          "W4223604247",
+          "W4285471655",
+          "W4306893292",
+          "W4362654444",
+          "W4386136919",
+          "W4390480962",
+          "W4391021333",
+          "W6741002519",
+          "W6767548108",
+          "W6786146360",
+          "W6804602582",
+          "W6846358943"
+        ],
+        "related_works": [
+          "W2058170566",
+          "W2755342338",
+          "W2772917594",
+          "W2775347418",
+          "W2166024367",
+          "W3116076068",
+          "W2229312674",
+          "W2951359407",
+          "W2079911747",
+          "W1969923398"
+        ],
+        "discovery_source": [
+          "topic_search:humanoid loco manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:11",
+        "last_considered_at": "2026-08-17T13:10:26+08:00",
+        "recommended_at": "2026-08-17T13:10:26+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:11",
+        "openalex_url": "https://openalex.org/W4401414436",
+        "landing_page_url": "https://doi.org/10.1109/icra57147.2024.10610977",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 58,
+        "video_potential": 62,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "bipedal robot",
+          "sim-to-real"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot",
+              "bipedal robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, humanoid, loco-manipulation, sim-to-real"
+          }
+        ],
+        "historical_value_score": 82.7,
+        "historical_score_components": {
+          "research_relevance": 58.0,
+          "recency": 100.0,
+          "normalized_citation": 98.0,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2024 年",
+          "同领域同年份引用标准化位于前 2.0%",
+          "阅读时效分 100/100（论文年龄 2 年）",
+          "OpenAlex FWCI 7.33",
+          "近 2 年年均引用 14.5；此前 1 年年均 1.0",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "loco_manipulation"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 82.7,
+      "recommendation_utility": 84.5,
+      "days_since_same_subtopic": 2,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4401414436",
+        "base_id": "openalex:W4401414436",
+        "version": 1,
+        "title": "Sim-to-Real Learning for Humanoid Box Loco-Manipulation",
+        "authors": [
+          "Jeremy Dao",
+          "Helei Duan",
+          "Alan Fern"
+        ],
+        "published": "2024-05-13T00:00:00Z",
+        "updated": "2024-05-13T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "In this work we propose a learning-based approach to box loco-manipulation for a humanoid robot. This is a particularly challenging problem due to the need for whole-body coordination in order to lift boxes of varying weight, position, and orientation while maintaining balance. To address this challenge, we present a sim-to-real reinforcement learning approach for training general box pickup and carrying skills for the bipedal robot Digit. Our reward functions are designed to produce the desired interactions with the box while also valuing balance and gait quality. We combine the learned skills into a full system for box loco-manipulation to achieve the task of moving boxes from one table to another with a variety of sizes, weights, and initial configurations. In addition to quantitative simulation results, we demonstrate successful sim-to-real transfer on the humanoid robot Digit. To our knowledge this is the first demonstration of a learned controller for such a task on real world hardware.",
+        "abs_url": "https://doi.org/10.1109/icra57147.2024.10610977",
+        "pdf_url": "",
+        "research_fit": 58,
+        "video_potential": 62,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "bipedal robot",
+          "sim-to-real"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot",
+              "bipedal robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, humanoid, loco-manipulation, sim-to-real"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
