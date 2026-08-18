@@ -1,0 +1,1046 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-18",
+  "generated_at": "2026-08-18T13:03:44+08:00",
+  "mode": "incremental",
+  "candidate_count": 2785,
+  "historical_candidate_count": 314,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2608.16172",
+      "title": "SparkVLA: Stop-Aware Hierarchical VLA with Adaptive Action Chunking for Long-Horizon Manipulation",
+      "takeaway": "SparkVLA addresses a critical limitation in hierarchical Vision-Language-Action (VLA) systems by jointly optimizing two interdependent decisions at each re-observation point: when to terminate the current subtask and how long the action chunk should be. The authors formulate both as a single ranking problem where a stop token competes with action-prefix lengths in a unified candidate set, eliminating threshold tuning and requiring only offline ordinal preferences. An Anchor-Conditioned Context Encoding module caches subtask anchors and goal semantics to guide visual-token pruning, while a Stop-Aware Action-Prefix Selection head scores candidates efficiently at chunk boundaries. For the user working on robot learning and long-horizon manipulation, this work offers a principled way to handle action chunking and subtask termination in hierarchical policies, potentially improving the robustness and efficiency of VLA-based manipulation systems in real-world settings.",
+      "generated_at": "2026-08-18T05:08:15",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.16642",
+      "title": "Throwing a Tight Spiral American Football by a Humanoid Robot",
+      "takeaway": "This paper tackles the challenging problem of throwing a tight spiral American football with a humanoid robot, focusing on the precise regulation of coupled linear and angular momentum at release. The authors develop a coupled whole-body control strategy that separates the upper body into throw and release phases, managing the underactuated transient contact dynamics during the sub-100-millisecond release phase. This work is relevant to the user's interests in humanoid locomotion and manipulation, as it demonstrates how whole-body control can coordinate lower-body stabilization with upper-body dynamic tasks. The insights on spin injection and momentum coupling could inform the design of control policies for other dynamic manipulation tasks, such as throwing or striking, in legged or humanoid robots.",
+      "generated_at": "2026-08-18T05:08:15",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4414198610",
+      "title": "Vision-Language-Action Models for Robotics: A Review Towards Real-World Applications",
+      "takeaway": "This review provides a comprehensive, full-stack overview of Vision-Language-Action (VLA) models, covering architectural transitions, modality-specific processing, learning paradigms, and real-world deployment considerations including robot platforms and data collection. Unlike prior surveys that focus narrowly on action representations or architectures, it integrates software and hardware components, offering a holistic perspective on the field. For the user, this serves as a valuable reference to understand the current landscape of VLA research, identify gaps and opportunities, and guide the design of new VLA-based systems for legged robots or mobile manipulation. The review's emphasis on real-world applications can help the user bridge the gap between simulation and deployment in their own work.",
+      "generated_at": "2026-08-18T05:08:15",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4414050442",
+      "title": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+      "takeaway": "NaVILA presents a Vision-Language-Action (VLA) model specifically designed for legged robot navigation, enabling robots to follow natural language instructions to navigate in real-world environments. The model integrates vision, language, and action to generate navigation commands, and the paper demonstrates its application on legged platforms, which are relevant to the user's focus on legged robots. This work is significant because it extends VLA models beyond manipulation to locomotion and navigation, showing how language-conditioned policies can be applied to whole-body control. The user can build on this approach to develop similar language-guided navigation or manipulation policies for their own legged robots, potentially improving autonomy and generalization in complex environments.",
+      "generated_at": "2026-08-18T05:08:15",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 100 ≥ 40",
+        "Core topics matched: vla_robot_foundation, world_model_embodied_reasoning, robot_learning_posttraining",
+        "Specific keywords matched: VLA, vision-language-action, long-horizon manipulation, action chunking",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 100.0 = base 100.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.16172",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 100.0,
+      "recommendation_utility": 100.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2608.16172v1",
+        "base_id": "2608.16172",
+        "version": 1,
+        "title": "SparkVLA: Stop-Aware Hierarchical VLA with Adaptive Action Chunking for Long-Horizon Manipulation",
+        "authors": [
+          "Xunyao Lei",
+          "Renjun Wu",
+          "Tianlin Huo",
+          "Xuesong Li"
+        ],
+        "published": "2026-08-17T06:43:11Z",
+        "updated": "2026-08-17T06:43:11Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "At every re-observation point in a hierarchical Vision-Language-Action (VLA) system, two interface decisions must be made: when to terminate the current subtask and how far to execute the proposed action chunk. These decisions are mutually dependent---the optimal stopping point depends on what the executor plans to do, while the optimal execution length depends on where the subtask boundary lies---yet existing architectures evaluate them in isolation, an asymmetry neither module can overcome alone. We present SparkVLA, a stop-aware hierarchical VLA that resolves this mutual dependency by formulating both decisions as a single ranking: Stop competes against every action-prefix length in a unified candidate set, and the system selects the highest-scoring option, eliminating threshold tuning and requiring only offline ordinal preferences. An Anchor-Conditioned Context Encoding module caches a history-aware subtask anchor encoding onset-state memory and goal semantics, guiding visual-token pruning toward task-relevant regions; a Stop-Aware Action-Prefix Selection head scores all candidates via full self bnattention at chunk boundaries for efficiency. On RoboCerebra, SparkVLA achieves 47.12% success rate, surpassing the official hierarchical baseline by 30.57% and the strongest reproducible method by 26.83% Real-robot experiments on multi-step tasks further validate these gains on physical hardware.",
+        "abs_url": "https://arxiv.org/abs/2608.16172v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.16172v1",
+        "research_fit": 100,
+        "video_potential": 59,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action",
+          "long-horizon manipulation",
+          "action chunking"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "action chunking"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 25.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 58 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation",
+        "Specific keywords matched: humanoid robot, whole-body control, model predictive control, trajectory optimization",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 64.0 = base 58.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.16642",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 58.0,
+      "recommendation_utility": 64.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2608.16642v1",
+        "base_id": "2608.16642",
+        "version": 1,
+        "title": "Throwing a Tight Spiral American Football by a Humanoid Robot",
+        "authors": [
+          "Zaid Mahboob",
+          "Bowen Weng"
+        ],
+        "published": "2026-08-17T14:40:54Z",
+        "updated": "2026-08-17T14:40:54Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Accurate throwing of the American football requires precise regulation of release conditions, where coupled linear and angular momentum determine flight stability and targeting accuracy. While prior work on robotic object throwing has largely focused on generating dynamically feasible release velocities using open-gripper paradigms, explicit control of spin injection at detachment remains underexplored, particularly for aerodynamically anisotropic objects like the American football. In this paper, we present the spin-stabilized controlled tight spiral throw of an American football by a humanoid robot. Achieving this requires (i) accurately reaching the desired coupled momentum, which often involves high degrees-of-freedom (DoF) movements completed within approximately half a second, and (ii) managing the complex transient contact dynamics that arise during the sub-100-millisecond release phase, when the football is effectively underactuated as it moves partially across the fingers. To this end, we develop a coupled whole-body control strategy where the lower body is performing informed stabilization while the upper body is further divided into two phases with (i) a throw phase accelerating the football to a target state through trajectory optimization and tracking, and (ii) a follow-through phase utilizing model predictive control to actively control the wrist and remaining in-contact fingers. The proposed framework is empirically validated on a 29-DoF Unitree G1 humanoid equipped with a 7-DoF Dex3-1 three-fingered gripper. The thrown American football reaches up to 93.6% spin efficiency and a 0.286 radians linear-velocity-to-nose-alignment (nose-angle) error (where an ``ideal'' tight spiral corresponds to 100 % spin efficiency and 0 radians nose-angle error) at up to a 5.35 m/s linear velocity and an angular velocity of 14.5 rad/s.",
+        "abs_url": "https://arxiv.org/abs/2608.16642v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.16642v1",
+        "research_fit": 58,
+        "video_potential": 46,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "whole-body control",
+          "model predictive control",
+          "trajectory optimization"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Control & Optimization",
+            "keywords": [
+              "whole-body control",
+              "model predictive control",
+              "trajectory optimization"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, humanoid"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 14.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "whole-body"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, vision-language-action",
+        "research_fit 32 ≥ 18",
+        "核心方向：vla_robot_foundation",
+        "特定关键词：vision-language-action, VLA",
+        "historical_value_score 77.6 ≥ 50.0",
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 0.3%",
+        "阅读时效分 100/100（论文年龄 1 年）",
+        "OpenAlex FWCI 21.92",
+        "近年年均 OpenAlex 引用 23.5（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-17T03:28:19",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 77.6 = base 77.6 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4414198610",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4414198610",
+        "openalex_id": "W4414198610",
+        "base_arxiv_id": "2510.07077",
+        "doi": "10.1109/access.2025.3609980",
+        "title": "Vision-Language-Action Models for Robotics: A Review Towards Real-World Applications",
+        "authors": [
+          "Kento Kawaharazuka",
+          "Jihoon Oh",
+          "Jun Yamada",
+          "Ingmar Posner",
+          "Yuke Zhu"
+        ],
+        "abstract": "Amid growing efforts to leverage advances in large language models (LLMs) and visionlanguage models (VLMs) for robotics, Vision-Language-Action (VLA) models have recently gained significant attention. By unifying vision, language, and action data at scale, which have traditionally been studied separately, VLA models aim to learn policies that generalise across diverse tasks, objects, embodiments, and environments. This generalisation capability is expected to enable robots to solve novel downstream tasks with minimal or no additional task-specific data, facilitating more flexible and scalable real-world deployment. Unlike previous surveys that focus narrowly on action representations or high-level model architectures, this work offers a comprehensive, full-stack review, integrating both software and hardware components of VLA systems. In particular, this paper provides a systematic review of VLAs, covering their strategy and architectural transition, architectures and building blocks, modality-specific processing techniques, and learning paradigms. In addition, to support the deployment of VLAs in real-world robotic applications, we also review commonly used robot platforms, data collection strategies, publicly available datasets, data augmentation methods, and evaluation benchmarks. Throughout this comprehensive survey, this paper aims to offer practical guidance for the robotics community in applying VLAs to real-world robotic systems. All references categorized by training approach, evaluation method, modality, and dataset are available in the table on our project website: https://vla-survey.github.io.",
+        "publication_date": "2025-01-01",
+        "publication_year": 2025,
+        "source_name": "IEEE Access",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.9717000126838684
+          },
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9190999865531921
+          }
+        ],
+        "cited_by_count": 47,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 41
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          }
+        ],
+        "fwci": 21.9195,
+        "citation_normalized_percentile": 0.99724143,
+        "referenced_works": [
+          "W1861492603",
+          "W1933349210",
+          "W2064675550",
+          "W2082511574",
+          "W2108598243",
+          "W2117539524",
+          "W2158782408",
+          "W2169203263",
+          "W2194775991",
+          "W2221677593",
+          "W2560609797",
+          "W2625366777",
+          "W2760103357",
+          "W2963150697",
+          "W2978956737",
+          "W2984008963",
+          "W3007769740",
+          "W3008303301",
+          "W3009928773",
+          "W3034201026",
+          "W3034891989",
+          "W3035198432",
+          "W3035564946",
+          "W3035624836",
+          "W3109585842",
+          "W3109908659",
+          "W3111482008",
+          "W3111535274",
+          "W3117476483",
+          "W3159481202",
+          "W3173598197",
+          "W3180355996",
+          "W3196974791",
+          "W3202237431",
+          "W3204665606",
+          "W3205786327",
+          "W3206200647",
+          "W3207758636",
+          "W3215023725",
+          "W4285117889",
+          "W4285218426",
+          "W4285225959",
+          "W4312424618",
+          "W4312933868",
+          "W4313024976",
+          "W4313026212",
+          "W4313031313",
+          "W4313156423",
+          "W4367016688",
+          "W4383097638",
+          "W4383108880",
+          "W4383109478",
+          "W4383172031",
+          "W4385245566",
+          "W4385318467",
+          "W4385403811",
+          "W4385403813",
+          "W4385403849",
+          "W4385430538",
+          "W4385430559",
+          "W4385430618",
+          "W4385430674",
+          "W4385430679",
+          "W4385430685",
+          "W4386065350",
+          "W4386065512",
+          "W4386071604",
+          "W4386076215",
+          "W4386076519",
+          "W4386076611",
+          "W4386858201",
+          "W4388240421",
+          "W4390778533",
+          "W4390872297",
+          "W4390872744",
+          "W4390873312",
+          "W4390874575",
+          "W4391759936",
+          "W4401415042",
+          "W4401415287",
+          "W4401415385",
+          "W4401415888",
+          "W4401416041",
+          "W4401416214",
+          "W4401417422",
+          "W4401751184",
+          "W4402353985",
+          "W4402353989",
+          "W4402353990",
+          "W4402354026",
+          "W4402354028",
+          "W4402354047",
+          "W4402354083",
+          "W4402354093",
+          "W4402354098",
+          "W4402354112",
+          "W4402354126",
+          "W4402354127",
+          "W4402354155",
+          "W4402354166",
+          "W4402672034",
+          "W4402727359",
+          "W4402727516",
+          "W4402727574",
+          "W4402727748",
+          "W4402727885",
+          "W4402753857",
+          "W4402753923",
+          "W4402776554",
+          "W4402890475",
+          "W4403448419",
+          "W4403878347",
+          "W4403888324",
+          "W4403906568",
+          "W4404612908",
+          "W4405784982",
+          "W4405785717",
+          "W4406094089",
+          "W4407874080",
+          "W4409147637",
+          "W4409264011",
+          "W4410297918",
+          "W4410297957",
+          "W4411449683",
+          "W4412945325",
+          "W4413144615",
+          "W4413144616",
+          "W4413145744",
+          "W4413146161",
+          "W4413146238",
+          "W4413147106",
+          "W4413147456",
+          "W4413147462",
+          "W4413147595",
+          "W4413147844",
+          "W4413156213",
+          "W4413361394",
+          "W4413917393",
+          "W4413917725",
+          "W4413925228",
+          "W4413925370",
+          "W4414050442",
+          "W4414050589",
+          "W4414050712",
+          "W4414050913",
+          "W4414050921",
+          "W4414050936",
+          "W4414051084",
+          "W4414051092",
+          "W4414079054",
+          "W4414079221",
+          "W4414079258",
+          "W4414079285"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "knowledge_map_search:VLA robotics survey",
+          "topic_search:VLA robotics survey",
+          "topic_search:vision language action robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:09",
+        "last_considered_at": "2026-08-18T13:03:44+08:00",
+        "recommended_at": "2026-08-18T13:03:44+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:19",
+        "openalex_url": "https://openalex.org/W4414198610",
+        "landing_page_url": "https://doi.org/10.1109/access.2025.3609980",
+        "open_access_url": "https://doi.org/10.1109/access.2025.3609980",
+        "pdf_url": null,
+        "research_fit": 32,
+        "video_potential": 14,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, vision-language-action"
+          }
+        ],
+        "historical_value_score": 77.6,
+        "historical_score_components": {
+          "research_relevance": 32.0,
+          "recency": 100.0,
+          "normalized_citation": 99.7,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 0.3%",
+          "阅读时效分 100/100（论文年龄 1 年）",
+          "OpenAlex FWCI 21.92",
+          "近年年均 OpenAlex 引用 23.5（无更早窗口可比较）",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "survey",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 77.6,
+      "recommendation_utility": 77.6,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2510.07077",
+        "base_id": "2510.07077",
+        "version": 1,
+        "title": "Vision-Language-Action Models for Robotics: A Review Towards Real-World Applications",
+        "authors": [
+          "Kento Kawaharazuka",
+          "Jihoon Oh",
+          "Jun Yamada",
+          "Ingmar Posner",
+          "Yuke Zhu"
+        ],
+        "published": "2025-01-01T00:00:00Z",
+        "updated": "2025-01-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Amid growing efforts to leverage advances in large language models (LLMs) and visionlanguage models (VLMs) for robotics, Vision-Language-Action (VLA) models have recently gained significant attention. By unifying vision, language, and action data at scale, which have traditionally been studied separately, VLA models aim to learn policies that generalise across diverse tasks, objects, embodiments, and environments. This generalisation capability is expected to enable robots to solve novel downstream tasks with minimal or no additional task-specific data, facilitating more flexible and scalable real-world deployment. Unlike previous surveys that focus narrowly on action representations or high-level model architectures, this work offers a comprehensive, full-stack review, integrating both software and hardware components of VLA systems. In particular, this paper provides a systematic review of VLAs, covering their strategy and architectural transition, architectures and building blocks, modality-specific processing techniques, and learning paradigms. In addition, to support the deployment of VLAs in real-world robotic applications, we also review commonly used robot platforms, data collection strategies, publicly available datasets, data augmentation methods, and evaluation benchmarks. Throughout this comprehensive survey, this paper aims to offer practical guidance for the robotics community in applying VLAs to real-world robotic systems. All references categorized by training approach, evaluation method, modality, and dataset are available in the table on our project website: https://vla-survey.github.io.",
+        "abs_url": "https://arxiv.org/abs/2510.07077",
+        "pdf_url": "https://arxiv.org/pdf/2510.07077",
+        "research_fit": 32,
+        "video_potential": 14,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics, vision-language-action",
+        "research_fit 42 ≥ 18",
+        "核心方向：vla_robot_foundation, humanoid_loco_manipulation",
+        "特定关键词：vision-language-action",
+        "historical_value_score 75.7 ≥ 42.0",
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "阅读时效分 100/100（论文年龄 1 年）",
+        "OpenAlex FWCI 37.67",
+        "近年年均 OpenAlex 引用 15.5（无更早窗口可比较）",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-17T03:28:09",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0; matched navigation)",
+        "recommendation_utility 75.7 = base 75.7 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4414050442",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4414050442",
+        "openalex_id": "W4414050442",
+        "base_arxiv_id": null,
+        "doi": "10.15607/rss.2025.xxi.018",
+        "title": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+        "authors": [
+          "An‐Chieh Cheng",
+          "Yandong Ji",
+          "Zhaojing Yang",
+          "Zaitian Gongye",
+          "Xueyan Zou",
+          "Jan Kautz",
+          "Erdem Bıyık",
+          "Hongxu Yin",
+          "Sifei Liu",
+          "Xiaolong Wang"
+        ],
+        "abstract": "NVIDIA https://navila-bot.github.ioMove forward out of the room.Turn right at the end.Proceed to the grass and stop in front of the soccers.Walk forward along the way.Turn a little left and keep going straight.Stop in front of the red door.Turn left immediately.Go straight forward.Step on the mat.",
+        "publication_date": "2025-06-21",
+        "publication_year": 2025,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9955000281333923
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9887999892234802
+          },
+          {
+            "id": "https://openalex.org/T13382",
+            "display_name": "Robotics and Automated Systems",
+            "score": 0.98580002784729
+          }
+        ],
+        "cited_by_count": 31,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 9
+          }
+        ],
+        "fwci": 37.6715,
+        "citation_normalized_percentile": 0.99862713,
+        "referenced_works": [],
+        "related_works": [
+          "W2093507260",
+          "W2122871747",
+          "W2562628082",
+          "W3114279067",
+          "W2378318959",
+          "W2083994890",
+          "W2369541203",
+          "W2360994936",
+          "W3081536868",
+          "W2523265608"
+        ],
+        "discovery_source": [
+          "topic_search:vision language action robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:09",
+        "last_considered_at": "2026-08-18T13:03:44+08:00",
+        "recommended_at": "2026-08-18T13:03:44+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:09",
+        "openalex_url": "https://openalex.org/W4414050442",
+        "landing_page_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "open_access_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "pdf_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "research_fit": 42,
+        "video_potential": 48,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "legged robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, vision-language-action"
+          }
+        ],
+        "historical_value_score": 75.7,
+        "historical_score_components": {
+          "research_relevance": 42.0,
+          "recency": 100.0,
+          "normalized_citation": 99.9,
+          "fwci": 100.0,
+          "citation_momentum": 77.5,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "阅读时效分 100/100（论文年龄 1 年）",
+          "OpenAlex FWCI 37.67",
+          "近年年均 OpenAlex 引用 15.5（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "core_topics": [
+        "vla_robot_foundation",
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 75.7,
+      "recommendation_utility": 75.7,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4414050442",
+        "base_id": "openalex:W4414050442",
+        "version": 1,
+        "title": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+        "authors": [
+          "An‐Chieh Cheng",
+          "Yandong Ji",
+          "Zhaojing Yang",
+          "Zaitian Gongye",
+          "Xueyan Zou",
+          "Jan Kautz",
+          "Erdem Bıyık",
+          "Hongxu Yin",
+          "Sifei Liu",
+          "Xiaolong Wang"
+        ],
+        "published": "2025-06-21T00:00:00Z",
+        "updated": "2025-06-21T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "NVIDIA https://navila-bot.github.ioMove forward out of the room.Turn right at the end.Proceed to the grass and stop in front of the soccers.Walk forward along the way.Turn a little left and keep going straight.Stop in front of the red door.Turn left immediately.Go straight forward.Step on the mat.",
+        "abs_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "pdf_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "research_fit": 42,
+        "video_potential": 48,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "legged robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
