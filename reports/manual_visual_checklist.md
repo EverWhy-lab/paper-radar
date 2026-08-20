@@ -1,4 +1,4 @@
-# Paper Radar V0.2.1 — Manual Visual Checklist
+# Paper Radar V0.2.3 — Manual Visual Checklist
 
 Automated tests validate rendered markup and data boundaries, but do not replace a manual browser check. Do not install a large browser solely for this checklist.
 
@@ -12,15 +12,16 @@ Run `.venv/bin/python -m paper_radar serve`, then inspect:
 
 ## Historical cards
 
-- Category pills distinguish `前沿新论文`, `领域内高影响力`, and `综述 / 知识地图`.
+- Category pills distinguish `前沿新论文`, `方法前沿`, `领域内高影响力`, and `综述 / 知识地图`.
 - Category pills also include `期刊新论文` (journal feed, at most two per day).
-- Publication year/date, OpenAlex citation count (or `unknown`), metric update time, normalized percentile/FWCI when available, and discovery provenance wrap without overlap.
-- `historical_value_score` remains visually distinct from `research_fit` and `video_potential`.
+- Publication year/date and source stay in the main metadata row; OpenAlex citation count (or `unknown`) and recommendation diagnostics wrap without overlap inside **Why selected**.
 - OpenAlex, arXiv, PDF, DOI, and BibTeX links appear only when corresponding metadata exists.
 - The abstract is folded by default. The missing-abstract note appears only when OpenAlex supplied no abstract.
 - The OpenAlex screening-signal disclaimer is visible and does not imply that citations equal paper quality.
 - No historical discovery candidate appears unless it is present in the day's recommendation JSON.
-- The guide labeled **Importance** renders inside each recommendation card when `llm_analysis` exists; there is no separate guide section, no AI/DeepSeek branding on the page, and a missing guide never affects the cards.
+- The guide labeled **Takeaway** (or **导读** when `language: zh`) renders inside each recommendation card when `llm_analysis` exists; there is no separate guide section, no AI/DeepSeek branding on the page, and a missing guide never affects the cards.
+- Recommendation utility, domain affinity, overlap, topics, and selection reasons live under a default-collapsed **Why selected** disclosure; the main metadata row stays focused on publication/source and reading focus.
+- History/Favorites sit in a symmetric navigation band between the header border and the first card on desktop and mobile.
 - Every recommendation card has a thumbs-down **Not Relevant** button; clicking it fills the thumb and opens a pre-filled GitHub issue link, and the card itself stays visible. Clicking again unfills the local mark (with a transient hint), and a hover title explains the permanent-submit flow.
 - Every card has a **Save** star button before Not Relevant; the navigation bar links to the Favorites page and shows a 同步反馈 (N) button while items are pending.
 

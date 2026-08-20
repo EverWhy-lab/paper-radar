@@ -69,9 +69,10 @@ def detect_subtopics_from_metadata(
     for subtopic_id, rule in profile.recommendations.get(
         "recommendation_subtopics", {}
     ).items():
+        topic_constraints = rule.get("matched_topics", rule.get("core_topics", []))
         required_topics = {
             profile.canonical_topic_id(str(topic))
-            for topic in rule.get("core_topics", [])
+            for topic in topic_constraints
         }
         if required_topics and not (required_topics & canonical_topics):
             continue
@@ -98,6 +99,42 @@ def detect_document_type(paper: Paper, profile: ResearchProfile) -> str:
     if any(_contains(text, term) for term in config.get("benchmark_terms", [])):
         return "benchmark"
     return "method"
+
+
+def survey_family_from_topics(
+    matched_topics: Iterable[str], profile: ResearchProfile
+) -> str | None:
+    """Return a broad fallback family only when a survey lacks a specific theme."""
+    topic_weights = {
+        str(topic["id"]): float(topic["weight"])
+        for topic in profile.scoring["topics"]
+    }
+    canonical_topics = list(
+        dict.fromkeys(
+            profile.canonical_topic_id(str(topic)) for topic in matched_topics
+        )
+    )
+    primary = max(
+        (topic for topic in canonical_topics if topic in topic_weights),
+        key=lambda topic: topic_weights[topic],
+        default=None,
+    )
+    return f"survey:{primary}" if primary else None
+
+
+def semantic_redundancy_keys(
+    *,
+    subtopics: Iterable[str],
+    document_type: str,
+    matched_topics: Iterable[str],
+    profile: ResearchProfile,
+) -> set[str]:
+    keys = {str(subtopic) for subtopic in subtopics if subtopic}
+    if document_type == "survey" and not keys:
+        family = survey_family_from_topics(matched_topics, profile)
+        if family:
+            keys.add(family)
+    return keys
 
 
 def classify_domain_affinity(
@@ -158,12 +195,20 @@ def semantic_redundancy(
 ) -> RedundancyAssessment:
     config = profile.recommendations.get("semantic_cooldown", {})
     target = date.fromisoformat(target_date)
-    candidate_subtopics = set(subtopics)
+    candidate_subtopics = semantic_redundancy_keys(
+        subtopics=subtopics,
+        document_type=document_type,
+        matched_topics=paper.matched_topics,
+        profile=profile,
+    )
+    scoring_topics = {
+        str(topic["id"]) for topic in profile.scoring.get("topics", [])
+    }
     candidate_core = {
         profile.canonical_topic_id(topic)
         for topic in paper.matched_topics
         if profile.canonical_topic_id(topic)
-        in set(profile.recommendations.get("core_topic_ids", []))
+        in scoring_topics
     }
     candidate_title_tokens = _title_tokens(paper.title)
     best_penalty = 0.0
@@ -193,8 +238,17 @@ def semantic_redundancy(
                     profile=profile,
                 )
             )
-        shared = candidate_subtopics & event_subtopics
         event_document_type = str(event.get("document_type", "method"))
+        event_matched_topics = event.get("matched_topics") or event.get(
+            "core_topics", []
+        )
+        event_subtopics = semantic_redundancy_keys(
+            subtopics=event_subtopics,
+            document_type=event_document_type,
+            matched_topics=event_matched_topics,
+            profile=profile,
+        )
+        shared = candidate_subtopics & event_subtopics
         penalty = 0.0
         reason: list[str] = []
 
@@ -219,8 +273,13 @@ def semantic_redundancy(
                 elif elapsed <= extended_window:
                     penalty = float(config.get("extended_penalty", 4))
             if penalty:
+                semantic_label = (
+                    "Survey family"
+                    if all(value.startswith("survey:") for value in shared)
+                    else "Subtopic"
+                )
                 reason = [
-                    f"Subtopic: {', '.join(sorted(shared))}",
+                    f"{semantic_label}: {', '.join(sorted(shared))}",
                     f"Recently recommended: {elapsed} day{'s' if elapsed != 1 else ''} ago",
                 ]
                 if new_secondary:
@@ -238,8 +297,8 @@ def semantic_redundancy(
         elif elapsed <= int(config.get("lexical_window_days", 7)):
             event_core = {
                 profile.canonical_topic_id(str(topic))
-                for topic in event.get("core_topics")
-                or event.get("matched_topics", [])
+                for topic in event.get("matched_topics")
+                or event.get("core_topics", [])
             }
             similarity = _jaccard(
                 candidate_title_tokens, _title_tokens(str(event.get("title", "")))

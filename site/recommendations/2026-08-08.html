@@ -40,12 +40,20 @@
         <p class="authors">Cheng Chi, Zhenjia Xu, Siyuan Feng, Eric Cousineau, Yilun Du, Benjamin Burchfiel, Russ Tedrake, Shuran Song</p>
         <div class="metadata">
           <span><b>Published</b> 2024-10-11</span>
-<span><b>Source</b> The International Journal of Robotics Research</span>          <span><b>OpenAlex citations</b> 392</span>
-        </div>
+<span><b>Source</b> The International Journal of Robotics Research</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>Diffusion Policy represents robot visuomotor policies as conditional denoising diffusion processes, achieving an average 46.9% improvement over prior state-of-the-art methods across 15 manipulation benchmarks. The approach naturally handles multimodal action distributions and high-dimensional action spaces, with key contributions including receding horizon control, visual conditioning, and a time-series diffusion transformer. For your research in robot learning and mobile manipulation, this paper provides a strong baseline for visuomotor policy learning that you can directly apply or extend to legged manipulation tasks, where multimodal action distributions are common. You could build on this framework by integrating it with your optimal control pipelines or adapting it for whole-body control on legged robots.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 392</span>          </div>
+          <ul>
+<li>research_fit 27 ≥ 18</li><li>核心方向：robot_learning, diffusion_visuomotor</li><li>特定关键词：diffusion policy, visuomotor policy, action diffusion</li><li>historical_value_score 70.4 ≥ 50.0</li><li>发表于 2024 年</li><li>同领域同年份引用标准化位于前 0.1%</li><li>OpenAlex FWCI 92.76</li><li>近 2 年年均引用 187.0；此前 2 年年均 9.0</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-06T04:28:13</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>This paper introduces Diffusion Policy, a new way of generating robot behavior by representing a robot’s visuomotor policy as a conditional denoising diffusion process. We benchmark Diffusion Policy across 15 different tasks from 4 different robot manipulation benchmarks and find that it consistently outperforms existing state-of-the-art robot learning methods with an average improvement of 46.9%. Diffusion Policy learns the gradient of the action-distribution score function and iteratively optimizes with respect to this gradient field during inference via a series of stochastic Langevin dynamics steps. We find that the diffusion formulation yields powerful advantages when used for robot policies, including gracefully handling multimodal action distributions, being suitable for high-dimensional action spaces, and exhibiting impressive training stability. To fully unlock the potential of diffusion models for visuomotor policy learning on physical robots, this paper presents a set of key technical contributions including the incorporation of receding horizon control, visual conditioning, and the time-series diffusion transformer. We hope this work will help motivate a new generation of policy learning techniques that are able to leverage the powerful generative modeling capabilities of diffusion models. Code, data, and training details are available (diffusion-policy.cs.columbia.edu).</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4403337227" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1177/02783649241273668" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -68,12 +76,20 @@
         <p class="authors">Nikita Rudin, David Hoeller, Philipp Reist, Marco Hutter</p>
         <div class="metadata">
           <span><b>Published</b> 2021-09-24</span>
-<span><b>Source</b> Repository for Publications and Research Data (ETH Zurich)</span>          <span><b>OpenAlex citations</b> 48</span>
-        </div>
+<span><b>Source</b> Repository for Publications and Research Data (ETH Zurich)</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper introduces a massively parallel deep reinforcement learning training setup that enables policy learning for the quadrupedal robot ANYmal in minutes on a single GPU, with a game-inspired curriculum for challenging terrain. The approach achieves speedups of multiple orders of magnitude compared to previous work and successfully transfers policies to the real robot. For your work on legged robots and robot learning, this paper offers a practical recipe for accelerating policy training, which you can directly adopt or adapt to your own simulation environments. The open-sourced code and the analysis of algorithm components in the massively parallel regime provide a solid foundation for scaling up your own learning experiments.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 48</span>          </div>
+          <ul>
+<li>research_fit 29 ≥ 18</li><li>核心方向：legged_humanoid, robot_learning</li><li>特定关键词：quadrupedal robot, legged locomotion</li><li>historical_value_score 68.2 ≥ 42.0</li><li>发表于 2021 年</li><li>同领域同年份引用标准化位于前 0.3%</li><li>OpenAlex FWCI 18.36</li><li>近 2 年年均引用 15.5；此前 2 年年均 8.5</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-06T04:27:54</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>In this work, we present and study a training set-up that achieves fast policy generation for real-world robotic tasks by using massive parallelism on a single workstation GPU. We analyze and discuss the impact of different training algorithm components in the massively parallel regime on the final policy performance and training times. In addition, we present a novel game-inspired curriculum that is well suited for training with thousands of simulated robots in parallel. We evaluate the approach by training the quadrupedal robot ANYmal to walk on challenging terrain. The parallel approach allows training policies for flat terrain in under four minutes, and in twenty minutes for uneven terrain. This represents a speedup of multiple orders of magnitude compared to previous work. Finally, we transfer the policies to the real robot to validate the approach. We open-source our training code to help accelerate further research in the field of learned legged locomotion.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W3200962355" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2109.11978" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.3929/ethz-b-000554960" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2109.11978" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
@@ -96,12 +112,20 @@
         <p class="authors">Ruben Grandia, Andrew J. Taylor, Andrew Singletary, Marco Hutter, Aaron D. Ames</p>
         <div class="metadata">
           <span><b>Published</b> 2020-06-30</span>
-          <span><b>OpenAlex citations</b> 49</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper presents the first real-time realization of a unified Nonlinear Model Predictive Control (NMPC) and Control Lyapunov Function (CLF) controller on a robotic system with limited computational resources. The unified controller improves performance over both isolated NMPC and CLF controllers by combining the prediction horizon advantage with explicit stability constraints, simplifying the design process. For your research in optimal control and legged robots, this work offers a principled way to incorporate stability guarantees into NMPC, which is crucial for safe locomotion and manipulation. You could build on this framework to design controllers for legged manipulators, where stability and optimality are both critical.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 49</span>          </div>
+          <ul>
+<li>research_fit 18 ≥ 18</li><li>核心方向：optimal_control</li><li>特定关键词：model predictive control</li><li>historical_value_score 57.2 ≥ 42.0</li><li>发表于 2020 年</li><li>同领域同年份引用标准化位于前 0.6%</li><li>OpenAlex FWCI 11.12</li><li>近 2 年年均引用 8.0；此前 2 年年均 8.5</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-04T06:56:02</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>The theoretical unification of Nonlinear Model Predictive Control (NMPC) with Control Lyapunov Functions (CLFs) provides a framework for achieving optimal control performance while ensuring stability guarantees. In this paper we present the first real-time realization of a unified NMPC and CLF controller on a robotic system with limited computational resources. These limitations motivate a set of approaches for efficiently incorporating CLF stability constraints into a general NMPC formulation. We evaluate the performance of the proposed methods compared to baseline CLF and NMPC controllers with a robotic Segway platform both in simulation and on hardware. The addition of a prediction horizon provides a performance advantage over CLF based controllers, which operate optimally point-wise in time. Moreover, the explicitly imposed stability constraints remove the need for difficult cost function and parameter tuning required by NMPC. Therefore the unified controller improves the performance of each isolated controller and simplifies the overall design process.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W3033272118" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2006.01229" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.15607/rss.2020.xvi.098" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.15607/rss.2020.xvi.098" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2006.01229" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
@@ -124,12 +148,20 @@
         <p class="authors">Radu Bogdan Rusu, Andreas Holzbach, Michael Beetz, Gary Bradski</p>
         <div class="metadata">
           <span><b>Published</b> 2009-09-01</span>
-          <span><b>OpenAlex citations</b> 104</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper proposes a 3D scene interpretation approach for mobile manipulation using Fast Point Feature Histograms (FPFH) and Conditional Random Fields to segment objects into geometric primitives and recognize object classes in 6DOF. The system uses real-time stereo with textured light to obtain dense depth maps and achieves recognition across 20 objects in 500 table settings. For your work in mobile manipulation, this paper provides an early but relevant method for object detection and segmentation that can inform your perception pipeline. Although the techniques are dated, the two-layer classification scheme and the use of local and global features remain conceptually useful for modern learning-based approaches.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 104</span>          </div>
+          <ul>
+<li>research_fit 20 ≥ 18</li><li>核心方向：mobile_manipulation</li><li>特定关键词：mobile manipulation</li><li>historical_value_score 55.6 ≥ 42.0</li><li>发表于 2009 年</li><li>同领域同年份引用标准化位于前 0.4%</li><li>OpenAlex FWCI 20.68</li><li>近 2 年年均引用 2.5；此前 2 年年均 5.0</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-04T06:56:01</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>This paper proposes a novel 3D scene interpretation approach for robots in mobile manipulation scenarios using a set of 3D point features (Fast Point Feature Histograms) and probabilistic graphical methods (Conditional Random Fields). Our system uses real time stereo with textured light to obtain dense depth maps in the robot&#39;s manipulators working space. For the purposes of manipulation, we want to interpret the planar supporting surfaces of the scene, recognize and segment the object classes into their primitive parts in 6 degrees of freedom (6DOF) so that the robot knows what it is attempting to use and where it may be handled. The scene interpretation algorithm uses a two-layer classification scheme: (i) we estimate Fast Point Feature Histograms (FPFH) as local 3D point features to segment the objects of interest into geometric primitives; and (ii) we learn and categorize object classes using a novel Global Fast Point Feature Histogram (GFPFH) scheme which uses the previously estimated primitives at each point. To show the validity of our approach, we analyze the proposed system for the problem of recognizing the object class of 20 objects in 500 table settings scenarios. Our algorithm identifies the planar surfaces, decomposes the scene and objects into geometric primitives with 98.27% accuracy and uses the geometric primitives to identify the object&#39;s class with an accuracy of 96.69%.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W2001695893" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/iccvw.2009.5457718" target="_blank" rel="noopener noreferrer">DOI</a>        </div>

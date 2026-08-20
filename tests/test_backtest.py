@@ -157,3 +157,34 @@ def test_backtest_actual_comparison_and_output_are_deterministic(
     assert first.days[0].to_dict()["actual_count"] == 1
     assert first.days[1].actual is None
     assert file_snapshot(tmp_path) == before
+
+
+def test_backtest_reports_model_based_method_breakdown(tmp_path: Path, profile) -> None:
+    method = raw_paper(
+        50,
+        title="Ultrafast Kinodynamic Motion Planning for Manipulators",
+        summary=(
+            "A sampling-based motion planning algorithm produces dynamically feasible "
+            "trajectories for robotic manipulators."
+        ),
+        published="2026-08-04T00:00:00Z",
+    )
+    save_batch(tmp_path, "2026-08-04", [method])
+
+    result = OfflineBacktester(tmp_path, profile).run(
+        from_date=date(2026, 8, 4),
+        to_date=date(2026, 8, 4),
+        write_reports=False,
+    )
+
+    metrics = result.metrics["model_based_methods"]
+    assert metrics == {
+        "model_based_recent_recommendations": 1,
+        "method_only_recommendations": 1,
+        "method_with_core_recommendations": 0,
+        "planning_count": 1,
+        "mpc_wbc_count": 0,
+        "safety_control_count": 0,
+        "state_estimation_count": 0,
+        "generic_non_robot_control_false_positives": 0,
+    }

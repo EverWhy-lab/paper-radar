@@ -40,12 +40,20 @@
         <p class="authors">Paul D. N. Hebert, Max Bajracharya, Jeremy Ma, Nicolas Hudson, Alper Aydemir, Jason Reid, Charles Bergh, James Borders, Matthew Frost, Michael Hagman, John Leichty, Paul Backes, Brett Kennedy, Paul Karplus, Brian Satzinger, Katie Byl, Krishna Shankar, Joel W. Burdick</p>
         <div class="metadata">
           <span><b>Published</b> 2015-02-13</span>
-<span><b>Source</b> Journal of Field Robotics</span>          <span><b>OpenAlex citations</b> 132</span>
-        </div>
+<span><b>Source</b> Journal of Field Robotics</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper presents the hardware design and software algorithms of RoboSimian, a statically stable quadrupedal robot with generalized limbs used for both mobility and manipulation, unified under a single mobile manipulation planner that generates autonomous behaviors such as walking, sitting, climbing, grasping, and manipulating. The system is semiautonomous, enabling low-bandwidth, high-latency control from a standard laptop, and placed fifth in the DARPA Robotics Challenge Trials. For your research in legged robots and mobile manipulation, this work offers a valuable reference for designing hardware and control architectures that treat mobility and manipulation as a unified problem, which can inform your own system design and planning approaches for disaster-response or unstructured environments.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 132</span>          </div>
+          <ul>
+<li>research_fit 33 ≥ 18</li><li>核心方向：legged_humanoid, mobile_manipulation</li><li>特定关键词：quadrupedal robot, mobile manipulation</li><li>historical_value_score 63.7 ≥ 50.0</li><li>发表于 2015 年</li><li>同领域同年份引用标准化位于前 0.8%</li><li>OpenAlex FWCI 13.47</li><li>近 2 年年均引用 4.0；此前 2 年年均 9.0</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:01</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>This article presents the hardware design and software algorithms of RoboSimian, a statically stable quadrupedal robot capable of both dexterous manipulation and versatile mobility in difficult terrain. The robot has generalized limbs and hands capable of mobility and manipulation, along with almost fully hemispherical three‐dimensional sensing with passive stereo cameras. The system is semiautonomous, enabling low‐bandwidth, high latency control operated from a standard laptop. Because limbs are used for mobility and manipulation, a single unified mobile manipulation planner is used to generate autonomous behaviors, including walking, sitting, climbing, grasping, and manipulating. The remote operator interface is optimized to designate, parametrize, sequence, and preview behaviors, which are then executed by the robot. RoboSimian placed fifth in the DARPA Robotics Challenge Trials, demonstrating its ability to perform disaster recovery tasks in degraded human environments.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W1951089663" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/rob.21566" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1002/rob.21566" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -68,12 +76,20 @@
         <p class="authors">Eric Vollenweider, Marko Bjelonic, Victor Klemm, Nikita Rudin, Joonho Lee, Marco Hutter</p>
         <div class="metadata">
           <span><b>Published</b> 2023-05-29</span>
-          <span><b>OpenAlex citations</b> 79</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper extends adversarial motion priors in reinforcement learning to support multiple, discretely switchable motion styles, allowing a wheeled-legged robot to learn skills from existing RL controllers and trajectory optimization, as well as novel skills like transitioning between quadrupedal and humanoid configurations. The approach reduces the need for tedious reward tuning by leveraging imitation learning, and real-world experiments validate that multiple styles can be learned simultaneously without significant performance loss. For your work in legged robots and robot learning, this method provides a practical framework for combining diverse locomotion and manipulation skills in a single RL policy, which you could build upon to enable more versatile behaviors in your own platforms.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 79</span>          </div>
+          <ul>
+<li>research_fit 41 ≥ 18</li><li>核心方向：legged_humanoid, optimal_control, robot_learning</li><li>特定关键词：legged robot, trajectory optimization</li><li>historical_value_score 65.5 ≥ 42.0</li><li>发表于 2023 年</li><li>同领域同年份引用标准化位于前 0.1%</li><li>OpenAlex FWCI 48.39</li><li>近 2 年年均引用 15.0；此前 2 年年均 22.0</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-10T04:13:52</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Reinforcement learning (RL) has emerged as a powerful approach for locomotion control of highly articulated robotic systems. However, one major challenge is the tedious process of tuning the reward function to achieve the desired motion style. To address this issue, imitation learning approaches such as adversarial motion priors have been proposed, which encourage a pre-defined motion style. In this work, we present an approach to enhance the concept of adversarial motion prior-based RL, allowing for multiple, discretely switchable motion styles. Our approach demonstrates that multiple styles and skills can be learned simultaneously without significant performance differences, even in combination with motion data-free skills. We conducted several real-world experiments using a wheeled-legged robot to validate our approach. The experiments involved learning skills from existing RL controllers and trajectory optimization, such as ducking and walking, as well as novel skills, such as switching between a quadrupedal and humanoid configuration. For the latter skill, the robot was required to stand up, navigate on two wheels, and sit down. Instead of manually tuning the sit-down motion, we found that a reverse playback of the stand-up movement helped the robot discover feasible sit-down behaviors and avoided the need for tedious reward function tuning.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4383109371" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/icra48891.2023.10160751" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -96,12 +112,20 @@
         <p class="authors">Sonya Alexandrova, Zachary Tatlock, Maya Çakmak</p>
         <div class="metadata">
           <span><b>Published</b> 2015-05-01</span>
-          <span><b>OpenAlex citations</b> 141</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper introduces RoboFlow, a flow-based visual programming language designed to let end-users program generalizable mobile manipulation tasks on a PR2 robot, with a focus on ensuring robust low-level implementation while restricting high-level programming to avoid user errors yet still support branching, looping, and nesting. The approach addresses the challenge of programming robots for specific environments by enabling users to program in their context of use, and the authors demonstrate generalizability and error handling on everyday tasks. For your research in mobile manipulation, this work offers a user-centric programming paradigm that could complement autonomous planning methods, potentially useful for rapid task specification or human-in-the-loop control in your systems.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 141</span>          </div>
+          <ul>
+<li>research_fit 20 ≥ 18</li><li>核心方向：mobile_manipulation</li><li>特定关键词：mobile manipulation</li><li>historical_value_score 53.3 ≥ 42.0</li><li>发表于 2015 年</li><li>同领域同年份引用标准化位于前 3.6%</li><li>OpenAlex FWCI 5.74</li><li>近 2 年年均引用 14.5；此前 2 年年均 18.0</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-04T06:56:01</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>General-purpose robots can perform a range of useful tasks in human environments; however, programming them to robustly function in all possible environments that they might encounter is unfeasible. Instead, our research aims to develop robots that can be programmed by its end-users in their context of use, so that the robot needs to robustly function in only one particular environment. This requires intuitive ways in which end-users can program their robot. To that end, this paper contributes a flow-based visual programming language, called RoboFlow, that allows programming of generalizable mobile manipulation tasks. RoboFlow is designed to (i) ensure a robust low-level implementation of program procedures on a mobile manipulator, and (ii) restrict the high-level programming as much as possible to avoid user errors while enabling expressive programs that involve branching, looping, and nesting. We present an implementation of RoboFlow on a PR2 mobile manipulator and demonstrate the generalizability and error handling properties of RoboFlow programs on everyday mobile manipulation tasks in human environments.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W1517943492" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/icra.2015.7139973" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -124,12 +148,20 @@
         <p class="authors">Mengxu Xie, Tong Ma</p>
         <div class="metadata">
           <span><b>Published</b> 2026-07-25</span>
-<span><b>Source</b> Journal of Process Control</span>          <span><b>OpenAlex citations</b> 0</span>
-        </div>
+<span><b>Source</b> Journal of Process Control</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper proposes a generalized polynomial chaos expansion-based stochastic nonlinear model predictive control with iterative risk allocation for batch processes, addressing uncertainty in optimal control by propagating stochastic disturbances through the system and allocating risk iteratively to satisfy chance constraints. Although the abstract is empty, the method targets batch processes, which are common in industrial settings, and the approach could be relevant to your optimal control research if you deal with uncertain dynamics or disturbances in legged locomotion or manipulation. You could explore adapting this stochastic MPC framework to handle model uncertainty or environmental variability in your control pipelines, potentially improving robustness in real-world deployments.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 0</span>          </div>
+          <ul>
+<li>research_fit 18 ≥ 18</li><li>核心方向：optimal_control</li><li>特定关键词：model predictive control</li><li>historical_value_score 42.8 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 11.2%</li><li>OpenAlex FWCI 0.00</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-06T04:27:52</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W7171044302" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1016/j.jprocont.2026.103795" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -155,9 +187,18 @@
           <span><b>Categories</b> cs.RO, cs.CV</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper presents an embodied multimodal grounding framework for open-vocabulary mobile manipulation that integrates active multi-view Semantic 3D Gaussian Splatting (Semantic-3DGS), reachability-aware base positioning, and a diffusion-based vision-language-action policy, using a task-driven local Semantic-3DGS as a shared interface across sensing, localization, reasoning, and action conditioning. In real-robot evaluations, the full system achieves 60% long-horizon success versus 40% for PointVLA and 28% for DexVLA, and 74% success in heavily cluttered manipulation, while preserving pretrained action priors by injecting 3D semantic cues only into late action-expert blocks. For your research in mobile manipulation and robot learning, this work demonstrates a promising way to combine semantic scene representation with VLA policies, and you could build on it to improve open-vocabulary grounding and robustness in cluttered environments for your own platforms.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 51 ≥ 40</li><li>Core topics matched: mobile_manipulation, vla_foundation</li><li>Specific keywords matched: mobile manipulation, vision-language-action, vision language action, VLA</li><li>Diversity topic: mobile_manipulation</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Embodied mobile manipulation requires language, visual observations, three-dimensional scene structure, and action feasibility to be aligned before execution. We study open-vocabulary target grounding with few-shot manipulation in local household workspaces and present an embodied multimodal grounding framework that integrates active multi-view Semantic 3D Gaussian Splatting (Semantic-3DGS), reachability-aware base positioning, and a diffusion-based vision-language-action policy. A task-driven local Semantic-3DGS serves as a shared interface across active sensing, language-conditioned 3D localization, obstacle-aware scene reasoning, base preparation, and semantic conditioning of the action model. To preserve pretrained action priors, the 3D semantic cues are injected only into the late action-expert blocks. In expanded 50-trial real-robot evaluations against representative vision-language-action (VLA) approaches, the full system achieves 60% long-horizon success compared with 40% for PointVLA and 28% for DexVLA, and reaches 74% success in heavily cluttered manipulation compared with 52% for the single-view variant and 46% for PointVLA. It also maintains 75% success under a 75 cm height shift and eliminates photo-induced false grasps. These results indicate that explicit, refreshable 3D semantic grounding can improve robustness under clutter, occlusion, viewpoint variation, and embodiment constraints.</p></details>
         <div class="actions">
           <a href="https://arxiv.org/abs/2608.10756v1" target="_blank" rel="noopener noreferrer">arXiv</a>

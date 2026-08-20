@@ -53,11 +53,11 @@ topics:
 | 策略学习与后训练 | diffusion policy, VLA post-training, continual robot learning… |
 | 灵巧多模态操作 | dexterous manipulation, tactile policy, bimanual manipulation… |
 | 机器人数据与 Sim-to-Real | robot data scaling, cross-embodiment data, sim-to-real… |
-| 控制与优化（支撑方向） | whole-body control, model predictive control, trajectory optimization… |
+| 规划、控制与状态估计（支撑方向） | motion planning, MPC/WBC, trajectory optimization, CBF, InEKF… |
 
 ### 2.2 核心主题与泛化词（`recommendations.core_topic_ids` / `generic_keywords`）
 
-- `core_topic_ids`：把上一步定义的主题 id 填进来。**只有命中核心主题的论文才会入选**；
+- `core_topic_ids`：把 Robot AI 核心主题 id 填进来。普通前沿与期刊 lane 必须命中核心主题；独立的 `model_based_recent` lane 可以接纳不命中 AI core、但有明确机器人语境和强规划/控制/估计方法信号的近期论文；
 - `generic_keywords`：这些词太常见，**不能单独作为入选理由**（比如“reinforcement learning”），建议照抄示例。
 
 `robotics_context.positive_terms` 应只放能明确建立机器人语境的词。不要把
@@ -76,9 +76,26 @@ exclusions:
 
 ### 2.4 每日上限与门槛（`recommendations.daily_mix`）
 
-默认：总推荐 ≤5；前沿新论文 ≤2；前沿与新期刊合计 ≤3；历史基础论文 ≤1；综述/知识地图 ≤1。历史发现使用滚动 10 年 active-reading window，并偏好近 5 年；超过 10 年的论文只保留为背景谱系，不进入每日推荐。门槛不建议低于默认值，否则页面会“凑数”。
+默认：总推荐 ≤5；前沿新论文 ≤2；前沿与新期刊合计 ≤3；方法前沿 ≤1；历史基础论文 ≤1；综述/知识地图 ≤1。方法前沿不是 quota，没有足够好的论文时为 0，而且不占 Robot AI recent 的三篇 ceiling。历史发现使用滚动 10 年 active-reading window，并偏好近 5 年；超过 10 年的论文只保留为背景谱系，不进入每日推荐。门槛不建议低于默认值，否则页面会“凑数”。
 
-### 2.5 时区与运行时间（`site.timezone`）
+`model_based_recent.method_subtopics` 应使用克制、明确的方法族，例如 motion/kinodynamic planning、MPC、WBC、trajectory optimization、safety-critical control 和 robot state estimation。不要用普通的 `planning` 或 `optimization` 作为强信号；所有候选仍必须通过领域语境 gate，避免 building energy、power system 和 process control 混入。
+
+### 2.5 导读读者画像（`llm_analysis.reader_profile`）
+
+DeepSeek 不参与选稿。把读者的主要与次要关注方向写在 YAML，而不是写死在 Python prompt 中：
+
+```yaml
+llm_analysis:
+  language: "en"
+  abstract_char_limit: 3000
+  reader_profile:
+    primary_focus:
+      - 你的核心研究方向
+    secondary_focus:
+      - 你仍希望持续追踪的方法方向
+```
+
+### 2.6 时区与运行时间（`site.timezone`）
 
 ```yaml
 site:
@@ -87,7 +104,7 @@ site:
   github_repo: "你的GitHub用户名/仓库名"
 ```
 
-### 2.6 种子论文（可选，用于“经典论文”扩展）
+### 2.7 种子论文（可选，用于历史论文扩展）
 
 把你认可的代表作加为种子，系统会沿引用/被引/相关做一跳扩展：
 
@@ -96,7 +113,7 @@ site:
 .venv/bin/python -m paper_radar history discover
 ```
 
-### 2.7 期刊订阅（可选）
+### 2.8 期刊订阅（可选）
 
 想盯特定期刊？在 `config/research_profile.yaml` 的 `journals.sources` 里按示例填期刊名和 OpenAlex 来源 ID（可在 openalex.org 搜期刊获取）。
 
@@ -155,16 +172,16 @@ https://<你的用户名>.github.io/<仓库名>/
 **中文版**
 
 ```text
-你是一位个人阅读助手。你只会收到规则引擎已经选出的 0-5 篇论文。对每篇论文写一段 3-5 句话的 Takeaway，分析这篇论文对用户的价值，必须覆盖两个方面：(1) 论文本身：在什么研究背景下解决什么问题、取得了什么关键成果；(2) 对用户的意义：这篇论文和用户的研究方向有什么关系、用户能拿它来做什么或在它基础上做什么。两方面的内容都要有，但写成一段连贯文字，不要机械罗列条目。只输出一个 JSON 对象：{"analyses":[{"paper_id":"...","takeaway":"..."}]}。要求客观中立，不要使用“经典”“最佳”“最重要”等绝对化评价；引用数和评分只是筛选信号，不是质量标签。
+你是研究者的阅读导读助手。规则引擎已经完成选稿；你不参与筛选、排序或质量判定。只能依据提供的 title、abstract 和 metadata，不得编造实验数字、数据集、模型规模、训练资源或硬件，不得把作者 claim 写成独立验证事实。method、survey/review、benchmark/dataset 分别按其文档类型组织重点。每篇写一个约 120–220 个汉字、通常 3 句话且最多 4 句话的连贯段落，并只输出 {"analyses":[{"paper_id":"...","takeaway":"..."}]}。
 ```
 
 **英文版（当前默认，输出英文并保留论文原词）**
 
 ```text
-You are a personal reading assistant for robotics research. You only receive 0-5 papers already selected by a rule engine. For each paper, write one coherent Takeaway in English (3-5 sentences) analyzing the paper's value to the user, covering two aspects: (1) the paper itself: the research background, the problem it solves, and the key results it reports; (2) its meaning to the user: how it relates to the user's research and what the user can do with it or build on it. Cover both aspects in one flowing paragraph. Use professional terminology exactly as it appears in the paper. Output only one JSON object: {"analyses":[{"paper_id":"...","takeaway":"..."}]}. Be objective and neutral; never use absolute labels such as "classic", "best", or "most important"; citation counts and scores are screening signals, not quality labels.
+You are a reading-guide assistant. The rule engine has already selected the papers; you do not screen, rank, or judge quality. Use only supplied title, abstract, and metadata; do not invent results, datasets, model scale, training resources, or hardware, and do not present author claims as independently validated. Adapt the guide to method, survey/review, or benchmark/dataset document type. Write one coherent 80–130-word paragraph, usually three sentences and no more than four, preserve paper terminology, and output only {"analyses":[{"paper_id":"...","takeaway":"..."}]}.
 ```
 
-想换成自己的研究方向，把提示词里“robotics research / 腿部机器人…”等表述改成你的领域即可。
+想换成自己的研究方向，优先修改 `llm_analysis.reader_profile`；中英文 grounding 和文档类型规则会保持一致。
 
 ## 附录 B：常见问题
 

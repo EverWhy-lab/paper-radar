@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import json
+from dataclasses import replace
+
 import httpx
 import pytest
 
@@ -35,6 +38,12 @@ def entry(index: int = 1) -> RecommendationEntry:
         category="frontier_recent",
         paper=paper(index),
         reasons=["research_fit 71 >= 40"],
+        core_topics=["humanoid_loco_manipulation"],
+        subtopics=["whole_body_control", "model_predictive_control"],
+        document_type="method",
+        domain_affinity="preferred",
+        recommendation_base_score=71,
+        recommendation_utility=77,
     )
 
 
@@ -50,17 +59,7 @@ def test_no_api_key_makes_no_request(profile) -> None:
 
 def test_disabled_config_makes_no_request(profile) -> None:
     config = profile.llm_analysis
-    disabled = type(config)(
-        enabled=False,
-        provider=config.provider,
-        endpoint=config.endpoint,
-        model=config.model,
-        timeout_seconds=config.timeout_seconds,
-        retries=config.retries,
-        retry_delay_seconds=config.retry_delay_seconds,
-        max_tokens=config.max_tokens,
-        language=config.language,
-    )
+    disabled = replace(config, enabled=False)
     client = DeepSeekClient(
         disabled,
         environment={"DEEPSEEK_API_KEY": "secret"},
@@ -124,14 +123,58 @@ def test_english_system_prompt_keeps_paper_terms(profile) -> None:
         client=httpx.Client(transport=httpx.MockTransport(handler)),
     )
     client.analyze_recommendations([entry()])
-    body = captured["body"].decode("utf-8")
-    assert "Use professional terminology exactly as it appears in the paper" in body
-    assert "model names" in body
-    assert "classic" in body
-    assert "write one coherent Takeaway in English" in body
-    assert "the research background" in body
-    assert "what the user can do with it" in body
-    assert "do not write a mechanical list" in body
+    payload = json.loads(captured["body"])
+    prompt = payload["messages"][0]["content"]
+    assert "VLA and robot foundation models" in prompt
+    assert "model-based robot planning" in prompt
+    assert "technical names, model names, method names, and acronyms" in prompt
+    assert "80-130-word" in prompt
+    assert "independently validated fact" in prompt
+    assert "datasets, model scale, training resources, or hardware" in prompt
+    assert "survey or review" in prompt
+    assert "benchmark or dataset" in prompt
+    assert "legged robots, mobile manipulation, optimal control, robot learning" not in prompt
+
+
+def test_chinese_prompt_has_matching_profile_grounding_and_length_rules(profile) -> None:
+    client = DeepSeekClient(
+        replace(profile.llm_analysis, language="zh"),
+        environment={},
+    )
+
+    prompt = client._build_payload([entry()])["messages"][0]["content"]
+
+    assert "VLA and robot foundation models" in prompt
+    assert "model-based robot planning" in prompt
+    assert "120–220" in prompt
+    assert "不得猜测数据集" in prompt
+    assert "不得把作者 claim 写成已经被独立验证的事实" in prompt
+    assert "survey/review" in prompt
+    assert "benchmark/dataset" in prompt
+
+
+def test_payload_uses_reading_context_not_internal_scores_and_keeps_long_abstract(
+    profile,
+) -> None:
+    recommendation = entry()
+    recommendation.paper.summary = "A" * 3500
+    client = DeepSeekClient(profile.llm_analysis, environment={})
+
+    payload = client._build_payload([recommendation])
+    content = payload["messages"][1]["content"]
+    papers = json.loads(content[content.index("[") : content.rindex("]") + 1])
+    sent = papers[0]
+
+    assert sent["selection_category"] == "frontier_recent"
+    assert sent["core_topics"] == ["humanoid_loco_manipulation"]
+    assert sent["subtopics"] == ["whole_body_control", "model_predictive_control"]
+    assert sent["document_type"] == "method"
+    assert sent["domain_affinity"] == "preferred"
+    assert sent["publication_year"] == 2026
+    assert len(sent["abstract"]) == profile.llm_analysis.abstract_char_limit == 3000
+    assert "research_fit" not in sent
+    assert "historical_value_score" not in sent
+    assert "recommendation_utility" not in sent
 
 
 def test_parses_code_fenced_json(profile) -> None:

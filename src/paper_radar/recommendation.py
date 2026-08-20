@@ -107,7 +107,7 @@ class RecommendationEngine:
         topic_counts: dict[str, int] = {}
         ordered = sorted(
             papers,
-            key=lambda paper: (paper.research_fit, paper.video_potential, paper.updated),
+            key=lambda paper: (paper.research_fit, paper.updated, paper.base_id),
             reverse=True,
         )
         for paper in ordered:
@@ -153,7 +153,12 @@ class RecommendationEngine:
         selected: list[RecommendationEntry] = []
         for paper in sorted(
             papers,
-            key=lambda item: (item.research_fit, item.video_potential, item.version),
+            key=lambda item: (
+                item.research_fit,
+                item.version,
+                item.updated,
+                item.base_id,
+            ),
             reverse=True,
         ):
             signals = self._signals(paper, config)

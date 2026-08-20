@@ -125,3 +125,22 @@ def test_journal_recent_respects_category_cap(profile) -> None:
         if entry.category == "journal_recent"
     ]
     assert len(journal_entries) == 2
+
+
+def test_recent_method_only_journal_paper_can_use_model_based_lane(profile) -> None:
+    method = journal_paper(
+        10,
+        title="Ultrafast Kinodynamic Motion Planning for Manipulators",
+        abstract=(
+            "A sampling-based motion planning algorithm produces dynamically feasible "
+            "trajectories for robotic manipulators."
+        ),
+        publication_date="2026-08-04",
+    )
+
+    result = select(profile, historical_papers=[method])
+
+    assert [entry.category for entry in result.recommendations] == [
+        "model_based_recent"
+    ]
+    assert result.recommendations[0].historical_paper is method

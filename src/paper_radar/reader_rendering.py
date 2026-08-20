@@ -20,6 +20,7 @@ CATEGORY_LABELS = {
     "important_update": "重要更新",
     "journal_recent": "期刊新论文",
     "frontier_recent": "前沿新论文",
+    "model_based_recent": "方法前沿",
     "high_impact_historical": "领域内高影响力",
     "review_knowledge_map": "综述 / 知识地图",
 }
@@ -86,6 +87,9 @@ class RecommendationSiteRenderer:
             "asset_prefix": asset_prefix,
             "category_labels": CATEGORY_LABELS,
             "topic_labels": self.profile.topic_labels,
+            "takeaway_label": (
+                "导读" if self.profile.llm_analysis.language == "zh" else "Takeaway"
+            ),
             "history_url": (
                 "history.html" if recommendations_prefix else "../history.html"
             ),
@@ -193,4 +197,3 @@ class RecommendationSiteRenderer:
             ),
         )
         return destination
-

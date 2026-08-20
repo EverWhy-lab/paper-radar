@@ -21,7 +21,11 @@ from paper_radar.reader_storage import (
     ReadingPoolStorage,
     RecommendationStorage,
 )
-from paper_radar.recommendation_utility import detect_document_type, detect_subtopics
+from paper_radar.recommendation_utility import (
+    detect_document_type,
+    detect_subtopics,
+    semantic_redundancy_keys,
+)
 from paper_radar.scoring import robotics_context_gate, score_papers
 from paper_radar.storage import StorageError, atomic_write_text
 
@@ -83,6 +87,7 @@ def _append_history(
 class BacktestDay:
     date: str
     candidate_count: int
+    candidate_batch_available: bool
     historical_candidate_count: int
     recommendations: list[RecommendationEntry]
     actual: DailyRecommendations | None = None
@@ -94,6 +99,7 @@ class BacktestDay:
         return {
             "date": self.date,
             "candidate_count": self.candidate_count,
+            "candidate_batch_available": self.candidate_batch_available,
             "historical_candidate_count": self.historical_candidate_count,
             "replay_count": len(self.recommendations),
             "replay": [entry.to_dict() for entry in self.recommendations],
@@ -149,6 +155,7 @@ def _semantic_metrics(
     repeats_3 = 0
     repeats_7 = 0
     survey_repeats = 0
+    survey_repeats_14 = 0
     same_subtopic_gaps: list[int] = []
 
     for day, entry in records:
@@ -156,11 +163,19 @@ def _semantic_metrics(
             repeated_papers += 1
         seen_papers.add(entry.canonical_paper_id)
         scored_paper = score_papers([copy.deepcopy(entry.paper)], profile)[0]
-        current_subtopics = set(entry.subtopics or detect_subtopics(scored_paper, profile))
+        detected_subtopics = set(
+            entry.subtopics or detect_subtopics(scored_paper, profile)
+        )
         document_type = (
             entry.document_type
             if entry.subtopics or entry.document_type != "method"
             else detect_document_type(scored_paper, profile)
+        )
+        current_subtopics = semantic_redundancy_keys(
+            subtopics=detected_subtopics,
+            document_type=document_type,
+            matched_topics=scored_paper.matched_topics,
+            profile=profile,
         )
         matching_gaps = [
             (day - previous_day).days
@@ -179,6 +194,13 @@ def _semantic_metrics(
                 for previous_day, previous, previous_type in previous_subtopics
             ):
                 survey_repeats += 1
+            if document_type == "survey" and any(
+                0 < (day - previous_day).days <= 14
+                and current_subtopics & previous
+                and previous_type == "survey"
+                for previous_day, previous, previous_type in previous_subtopics
+            ):
+                survey_repeats_14 += 1
         if current_subtopics:
             previous_subtopics.append((day, current_subtopics, document_type))
 
@@ -195,6 +217,7 @@ def _semantic_metrics(
         "same_subtopic_repeat_within_7_days": repeats_7,
         "same_subtopic_repeat_within_7_days_rate": rate(repeats_7),
         "survey_topic_repeats_within_30_days": survey_repeats,
+        "survey_topic_repeats_within_14_days": survey_repeats_14,
         "survey_topic_repeat_rate": rate(survey_repeats),
         "average_days_since_last_same_subtopic": (
             round(mean(same_subtopic_gaps), 2) if same_subtopic_gaps else None
@@ -215,10 +238,23 @@ def _metrics(days: list[BacktestDay], profile: ResearchProfile) -> dict[str, Any
     affinity = Counter({"preferred": 0, "neutral": 0, "peripheral": 0})
     control_only = 0
     control_with_core = 0
+    model_based_recent = 0
+    method_only = 0
+    method_with_core = 0
+    planning = 0
+    mpc_wbc = 0
+    safety_control = 0
+    state_estimation = 0
+    generic_control_false_positives = 0
     multi_core = 0
     generic_false_positives = 0
     research_fits: list[float] = []
     utilities: list[float] = []
+    configured_method_subtopics = set(
+        profile.recommendations["daily_mix"]["model_based_recent"][
+            "method_subtopics"
+        ]
+    )
 
     for day, entry in records:
         publication = entry.paper.published[:4]
@@ -245,20 +281,40 @@ def _metrics(days: list[BacktestDay], profile: ResearchProfile) -> dict[str, Any
         has_core = bool(set(entry.core_topics))
         control_only += int(has_control and not has_core)
         control_with_core += int(has_control and has_core)
+        detected_subtopics = set(entry.subtopics or detect_subtopics(entry.paper, profile))
+        detected_methods = detected_subtopics & configured_method_subtopics
+        has_method = bool(detected_methods)
+        model_based_recent += int(entry.category == "model_based_recent")
+        method_only += int(has_method and not has_core)
+        method_with_core += int(has_method and has_core)
+        planning += int(
+            bool(detected_methods & {"motion_planning", "kinodynamic_planning"})
+        )
+        mpc_wbc += int(
+            bool(
+                detected_methods
+                & {"model_predictive_control", "whole_body_control"}
+            )
+        )
+        safety_control += int("safety_critical_control" in detected_methods)
+        state_estimation += int("robot_state_estimation" in detected_methods)
         multi_core += int(len(set(entry.core_topics)) > 1)
         affinity[entry.domain_affinity] += 1
         research_fits.append(float(entry.paper.research_fit))
         utilities.append(float(entry.recommendation_utility))
-        if not robotics_context_gate(
+        robotics_eligible = robotics_context_gate(
             entry.paper.title, entry.paper.summary, "", profile
-        ).eligible:
+        ).eligible
+        if not robotics_eligible:
             generic_false_positives += 1
+            generic_control_false_positives += int(has_method)
 
     distinct_core_per_day = [
         len({topic for entry in day.recommendations for topic in entry.core_topics})
         for day in days
     ]
     actual_days = [day for day in days if day.actual is not None]
+    candidate_days = [day for day in days if day.candidate_batch_available]
     actual_total = sum(len(day.actual.recommendations) for day in actual_days if day.actual)
     actual_overlap = sum(
         len(
@@ -288,6 +344,9 @@ def _metrics(days: list[BacktestDay], profile: ResearchProfile) -> dict[str, Any
             "total_recommendations": total,
             "average_recommendations_per_day": round(total / len(days), 2) if days else 0,
             "empty_days": sum(not day.recommendations for day in days),
+            "candidate_batch_days_available": len(candidate_days),
+            "candidate_batch_from": candidate_days[0].date if candidate_days else None,
+            "candidate_batch_to": candidate_days[-1].date if candidate_days else None,
         },
         "recency_distribution": dict(recency),
         "core_topic_distribution": {
@@ -298,6 +357,16 @@ def _metrics(days: list[BacktestDay], profile: ResearchProfile) -> dict[str, Any
         "traditional_control": {
             "control_only": control_only,
             "control_with_core_topic": control_with_core,
+        },
+        "model_based_methods": {
+            "model_based_recent_recommendations": model_based_recent,
+            "method_only_recommendations": method_only,
+            "method_with_core_recommendations": method_with_core,
+            "planning_count": planning,
+            "mpc_wbc_count": mpc_wbc,
+            "safety_control_count": safety_control,
+            "state_estimation_count": state_estimation,
+            "generic_non_robot_control_false_positives": generic_control_false_positives,
         },
         "semantic_redundancy": _semantic_metrics(records, profile),
         "affinity_distribution": dict(affinity),
@@ -312,6 +381,8 @@ def _metrics(days: list[BacktestDay], profile: ResearchProfile) -> dict[str, Any
         },
         "actual_comparison": {
             "actual_days_available": len(actual_days),
+            "actual_from": actual_days[0].date if actual_days else None,
+            "actual_to": actual_days[-1].date if actual_days else None,
             "actual_recommendations": actual_total,
             "overlap_recommendations": actual_overlap,
             "overlap_rate": rate(actual_overlap, actual_total),
@@ -340,6 +411,7 @@ def _markdown(result: BacktestResult) -> str:
     metrics = result.metrics
     quantity = metrics["quantity"]
     semantic = metrics["semantic_redundancy"]
+    methods = metrics["model_based_methods"]
     lines = [
         f"# Paper Radar offline backtest: {result.from_date} to {result.to_date}",
         "",
@@ -349,6 +421,7 @@ def _markdown(result: BacktestResult) -> str:
         f"- Total recommendations: {quantity['total_recommendations']}",
         f"- Average recommendations/day: {quantity['average_recommendations_per_day']}",
         f"- Empty days: {quantity['empty_days']}",
+        f"- Local candidate batches: {quantity['candidate_batch_days_available']} days ({quantity['candidate_batch_from']} to {quantity['candidate_batch_to']})",
         "",
         "This is an offline recommendation-policy replay. It uses only locally persisted candidate metadata and advances an isolated simulated recommendation history one day at a time.",
         "",
@@ -367,6 +440,11 @@ def _markdown(result: BacktestResult) -> str:
         f"- Generic-AI false positives: {metrics['quality_diversity']['generic_ai_false_positives']}",
         f"- Control-only: {metrics['traditional_control']['control_only']}",
         f"- Control + core topic: {metrics['traditional_control']['control_with_core_topic']}",
+        f"- Model-based recent lane: {methods['model_based_recent_recommendations']}",
+        f"- Method-only recommendations: {methods['method_only_recommendations']}",
+        f"- Method + core recommendations: {methods['method_with_core_recommendations']}",
+        f"- Planning / MPC-WBC / safety / state estimation: {methods['planning_count']} / {methods['mpc_wbc_count']} / {methods['safety_control_count']} / {methods['state_estimation_count']}",
+        f"- Generic non-robot control false positives: {methods['generic_non_robot_control_false_positives']}",
         "",
         "## Topic distribution",
         "",
@@ -395,6 +473,7 @@ def _markdown(result: BacktestResult) -> str:
         f"- Same-subtopic repeat within 3 days: {semantic['same_subtopic_repeat_within_3_days_rate']:.1%} ({semantic['same_subtopic_repeat_within_3_days']})",
         f"- Same-subtopic repeat within 7 days: {semantic['same_subtopic_repeat_within_7_days_rate']:.1%} ({semantic['same_subtopic_repeat_within_7_days']})",
         f"- Survey/topic repeat rate: {semantic['survey_topic_repeat_rate']:.1%} ({semantic['survey_topic_repeats_within_30_days']})",
+        f"- Survey/topic repeats within 14 days: {semantic['survey_topic_repeats_within_14_days']}",
         f"- Average days since last same-subtopic recommendation: {semantic['average_days_since_last_same_subtopic']}",
         "",
         "## Affinity distribution",
@@ -434,6 +513,7 @@ def _markdown(result: BacktestResult) -> str:
             "comparable_replay_semantic_redundancy"
         ]
         lines.extend([
+            f"- Comparable actual archive range: {metrics['actual_comparison']['actual_from']} to {metrics['actual_comparison']['actual_to']} ({metrics['actual_comparison']['actual_days_available']} days)",
             f"- Comparable actual same-subtopic repeat within 3 days: {actual_semantic['same_subtopic_repeat_within_3_days_rate']:.1%} ({actual_semantic['same_subtopic_repeat_within_3_days']})",
             f"- Comparable replay same-subtopic repeat within 3 days: {replay_semantic['same_subtopic_repeat_within_3_days_rate']:.1%} ({replay_semantic['same_subtopic_repeat_within_3_days']})",
             f"- Comparable actual same-subtopic repeat within 7 days: {actual_semantic['same_subtopic_repeat_within_7_days_rate']:.1%} ({actual_semantic['same_subtopic_repeat_within_7_days']})",
@@ -490,7 +570,8 @@ class OfflineBacktester:
         for target in replay_dates:
             day_string = target.isoformat()
             candidate_path = candidate_storage.path_for(day_string)
-            if candidate_path.exists():
+            candidate_batch_available = candidate_path.exists()
+            if candidate_batch_available:
                 batch = candidate_storage.load(day_string)
                 if batch.date > day_string or batch.fetched_at[:10] > day_string:
                     recent = []
@@ -540,6 +621,7 @@ class OfflineBacktester:
                 BacktestDay(
                     date=day_string,
                     candidate_count=len(recent),
+                    candidate_batch_available=candidate_batch_available,
                     historical_candidate_count=len(historical),
                     recommendations=entries,
                     actual=actual,
@@ -552,6 +634,18 @@ class OfflineBacktester:
                 generated_at=generated_at,
             )
 
+        missing_candidate_dates = [
+            day.date for day in days if not day.candidate_batch_available
+        ]
+        warnings = [
+            "Historical influence metadata uses the currently cached snapshot; this is recommendation-policy replay, not a perfect point-in-time reconstruction.",
+            "Recent papers are replayed only from a locally persisted candidate batch for the same date; dates without a batch have no recent candidates.",
+            "Actual recommendation archives are immutable comparison inputs and never affect simulated cooldown history.",
+        ]
+        if missing_candidate_dates:
+            warnings.append(
+                "Missing local candidate batches: " + ", ".join(missing_candidate_dates)
+            )
         result = BacktestResult(
             from_date=from_date.isoformat(),
             to_date=to_date.isoformat(),
@@ -559,11 +653,7 @@ class OfflineBacktester:
             days=days,
             metrics=_metrics(days, self.profile),
             configuration_snapshot=_configuration_snapshot(self.profile),
-            warnings=[
-                "Historical influence metadata uses the currently cached snapshot; this is recommendation-policy replay, not a perfect point-in-time reconstruction.",
-                "Recent papers are replayed only from a locally persisted candidate batch for the same date; dates without a batch have no recent candidates.",
-                "Actual recommendation archives are immutable comparison inputs and never affect simulated cooldown history.",
-            ],
+            warnings=warnings,
         )
         if write_reports:
             destination = report_dir or self.project_root / "reports" / "backtests"

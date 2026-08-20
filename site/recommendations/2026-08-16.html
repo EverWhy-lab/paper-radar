@@ -40,12 +40,20 @@
         <p class="authors">Ross Hartley, Maani Ghaffari, Ryan M. Eustice, Jessy W. Grizzle</p>
         <div class="metadata">
           <span><b>Published</b> 2020-01-16</span>
-<span><b>Source</b> The International Journal of Robotics Research</span>          <span><b>OpenAlex citations</b> 300</span>
-        </div>
+<span><b>Source</b> The International Journal of Robotics Research</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper introduces a contact-aided invariant extended Kalman filter (InEKF) for legged robot state estimation, addressing the challenge of reliable pose and velocity estimation without vision by fusing contact-inertial dynamics with forward kinematic corrections. The key theoretical contribution is showing that the error dynamics follow a log-linear autonomous differential equation, which yields convergence properties independent of the system trajectory and makes the linearized models independent of the current state estimate, improving robustness over standard EKFs. For your research in legged robots and optimal control, this filter provides a principled, vision-free state estimation backbone that can be integrated into model-based controllers or learning pipelines, especially for humanoid locomotion and mobile manipulation where accurate contact and pose knowledge is critical for stability and task execution.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 300</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotic, robotics</li><li>research_fit 26 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：bipedal robot, robot state estimation</li><li>historical_value_score 61.1 ≥ 42.0</li><li>发表于 2020 年</li><li>同领域同年份引用标准化位于前 0.6%</li><li>阅读时效分 70/100（论文年龄 6 年）</li><li>OpenAlex FWCI 11.12</li><li>近 2 年年均引用 41.0；此前 2 年年均 60.5</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:03</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Legged robots require knowledge of pose and velocity in order to maintain stability and execute walking paths. Current solutions either rely on vision data, which is susceptible to environmental and lighting conditions, or fusion of kinematic and contact data with measurements from an inertial measurement unit (IMU). In this work, we develop a contact-aided invariant extended Kalman filter (InEKF) using the theory of Lie groups and invariant observer design. This filter combines contact-inertial dynamics with forward kinematic corrections to estimate pose and velocity along with all current contact points. We show that the error dynamics follows a log-linear autonomous differential equation with several important consequences: (a) the observable state variables can be rendered convergent with a domain of attraction that is independent of the system’s trajectory; (b) unlike the standard EKF, neither the linearized error dynamics nor the linearized observation model depend on the current state estimate, which (c) leads to improved convergence properties and (d) a local observability matrix that is consistent with the underlying nonlinear system. Furthermore, we demonstrate how to include IMU biases, add/remove contacts, and formulate both world-centric and robo-centric versions. We compare the convergence of the proposed InEKF with the commonly used quaternion-based extended Kalman filter (EKF) through both simulations and experiments on a Cassie-series bipedal robot. Filter accuracy is analyzed using motion capture, while a LiDAR mapping experiment provides a practical use case. Overall, the developed contact-aided InEKF provides better performance in comparison with the quaternion-based EKF as a result of exploiting symmetries present in system.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W3000625188" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1177/0278364919894385" target="_blank" rel="noopener noreferrer">DOI</a>        </div>

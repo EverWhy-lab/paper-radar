@@ -5,7 +5,7 @@ site:
 
 fetch:
   endpoint: "https://export.arxiv.org/api/query"
-  user_agent: "PaperRadar/0.2.2 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.3 (personal non-commercial research tool)"
   page_size: 100
   max_pages: 40
   page_delay_seconds: 5.0
@@ -31,6 +31,8 @@ scoring:
       - robotic
       - robotics
       - manipulation
+      - manipulator
+      - manipulators
       - mobile manipulation
       - humanoid
       - whole-body manipulation
@@ -211,18 +213,46 @@ scoring:
         - robot data engine
         - data flywheel for robotics
     - id: robot_control_optimization
-      label: "Robot Control & Optimization"
+      label: "Planning, Control & Estimation"
       weight: 12
       keywords:
+        - motion planning
+        - kinodynamic planning
+        - sampling-based motion planning
+        - trajectory planning
+        - collision-free planning
+        - contact planning
+        - task and motion planning
+        - TAMP
+        - kinodynamic optimization
         - whole-body control
         - WBC
         - model predictive control
         - MPC
         - trajectory optimization
+        - contact-implicit optimization
         - optimal control
-        - nonlinear control
+        - nonlinear optimal control
+        - differential dynamic programming
+        - DDP
+        - iterative LQR
+        - iLQR
+        - inverse dynamics
+        - hierarchical quadratic programming
+        - HQP
+        - control barrier function
+        - CBF
+        - safety-critical control
+        - robust MPC
+        - tube MPC
+        - chance-constrained control
         - robot dynamics
         - robot state estimation
+        - invariant EKF
+        - InEKF
+        - factor graph
+        - contact-aided state estimation
+        - proprioceptive state estimation
   # Old persisted topic ids remain readable and retain feedback cooldown meaning.
   topic_aliases:
     legged_humanoid: humanoid_loco_manipulation
@@ -391,9 +421,27 @@ recommendations:
     bimanual_manipulation:
       core_topics: [dexterous_multimodal_manipulation, humanoid_loco_manipulation]
       terms: [bimanual manipulation, bi-manual manipulation, dual-arm manipulation, dual arm manipulation]
+    motion_planning:
+      matched_topics: [robot_control_optimization]
+      terms: [motion planning, sampling-based motion planning, trajectory planning, collision-free planning, contact planning, task and motion planning, TAMP]
+    kinodynamic_planning:
+      matched_topics: [robot_control_optimization]
+      terms: [kinodynamic planning, kinodynamic motion planning, kinodynamic optimization]
+    model_predictive_control:
+      matched_topics: [robot_control_optimization]
+      terms: [model predictive control, MPC, robust MPC, tube MPC]
+    whole_body_control:
+      matched_topics: [robot_control_optimization]
+      terms: [whole-body control, whole body control, WBC, inverse dynamics control, inverse-dynamics control, whole-body inverse dynamics, hierarchical quadratic programming, HQP]
+    trajectory_optimization:
+      matched_topics: [robot_control_optimization]
+      terms: [trajectory optimization, contact-implicit optimization, optimal control, nonlinear optimal control, differential dynamic programming, DDP, iterative LQR, iLQR]
+    safety_critical_control:
+      matched_topics: [robot_control_optimization]
+      terms: [control barrier function, CBF, safety-critical control, robust MPC, tube MPC, chance-constrained control]
     robot_state_estimation:
-      core_topics: [humanoid_loco_manipulation]
-      terms: [robot state estimation, legged state estimation, contact-aided invariant, proprioceptive sensor fusion]
+      matched_topics: [robot_control_optimization]
+      terms: [robot state estimation, invariant EKF, InEKF, factor graph, contact-aided state estimation, contact-aided invariant, proprioceptive state estimation, proprioceptive sensor fusion]
   document_types:
     survey_terms: [review, survey, tutorial, taxonomy, systematic overview]
     benchmark_terms: [benchmark, challenge, dataset evaluation]
@@ -443,7 +491,7 @@ recommendations:
   daily_mix:
     max_total: 5
     max_recent_total: 3
-    selection_order: [frontier_recent, journal_recent, review_knowledge_map, high_impact_historical]
+    selection_order: [frontier_recent, journal_recent, model_based_recent, review_knowledge_map, high_impact_historical]
     journal_recent:
       max_count: 2
       min_research_fit: 35
@@ -465,6 +513,24 @@ recommendations:
       max_topic_overlap: 0.66
       min_recommendation_utility: 36
       min_redundant_utility: 70
+    model_based_recent:
+      max_count: 1
+      min_research_fit: 28
+      min_journal_research_fit: 12
+      journal_source_adjustment: 20
+      max_age_days: 14
+      cooldown_days: 14
+      min_recommendation_utility: 32
+      min_redundant_utility: 44
+      eligible_statuses: [unread, queued]
+      method_subtopics:
+        - motion_planning
+        - kinodynamic_planning
+        - model_predictive_control
+        - whole_body_control
+        - trajectory_optimization
+        - safety_critical_control
+        - robot_state_estimation
     high_impact_historical:
       max_count: 1
       min_historical_value_score: 42
@@ -485,7 +551,7 @@ recommendations:
 
 openalex:
   endpoint: "https://api.openalex.org"
-  user_agent: "PaperRadar/0.2.2 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.3 (personal non-commercial research tool)"
   timeout_seconds: 30
   retries: 3
   retry_delay_seconds: 1.0
@@ -578,6 +644,21 @@ llm_analysis:
   retry_delay_seconds: 3.0
   max_tokens: 1500
   language: "en"
+  abstract_char_limit: 3000
+  reader_profile:
+    primary_focus:
+      - VLA and robot foundation models
+      - world models and embodied reasoning
+      - humanoid whole-body loco-manipulation
+      - robot learning and policy post-training
+      - dexterous multimodal manipulation
+      - robot data scaling and sim-to-real
+    secondary_focus:
+      - model-based robot planning
+      - motion planning and trajectory optimization
+      - MPC and whole-body control
+      - safety-critical control
+      - robot state estimation
 
 dismissals:
   topic_cooldown_window_days: 30

@@ -17,39 +17,55 @@ class LLMAnalysisError(RuntimeError):
     """Raised when the LLM provider cannot safely complete a request."""
 
 
-def _system_prompt(language: str) -> str:
+def _reader_profile_text(reader_profile: dict[str, list[str]]) -> str:
+    primary = "; ".join(reader_profile.get("primary_focus", []))
+    secondary = "; ".join(reader_profile.get("secondary_focus", []))
+    return f"Primary focus: {primary}. Secondary focus: {secondary}."
+
+
+def _system_prompt(language: str, reader_profile: dict[str, list[str]]) -> str:
+    profile_text = _reader_profile_text(reader_profile)
     if language == "zh":
         return (
-            "你是一位机器人研究方向（腿部机器人、移动操作、最优控制、机器人学习等）的个人阅读助手。"
-            "你只会收到规则引擎已经选出的 0-5 篇论文。对每篇论文用简体中文写一段 3-5 句话的 Takeaway，"
-            "分析这篇论文对用户的价值，必须覆盖两个方面：(1) 论文本身：在什么研究背景下解决什么问题、"
-            "取得了什么关键成果；(2) 对用户的意义：这篇论文和用户的研究方向（腿部机器人、移动操作、"
-            "最优控制、机器人学习等）有什么关系、用户能拿它来做什么或在它基础上做什么。"
-            "两方面的内容都要有，但写成一段连贯文字，不要机械罗列条目。"
+            "你是机器人研究者的阅读导读助手。规则引擎已经完成选稿；你不参与筛选、排序或论文质量判定。"
+            f"读者画像：{profile_text} "
+            "只能依据每篇论文提供的 title、abstract 和 metadata。不得补充摘要没有给出的实验数字，不得猜测数据集、"
+            "模型规模、训练资源或硬件，不得把作者 claim 写成已经被独立验证的事实，也不得因为论文被选中或内部评分高就断言质量高。"
+            "不得使用“经典”“最佳”“奠基性”“最重要”等评价；只有原文明示时才可写“可直接应用”。摘要没有定量结果时，"
+            "只准确转述作者公开的 claim。技术名称、model names 和 acronyms 保持论文原文形式。"
+            "每篇写一个约 120–220 个汉字的连贯段落，通常 3 句话，最多 4 句话，不要编号或列清单。"
+            "method paper 按 problem→key method→摘要明确报告的 evidence/result→通读时应重点检查的技术点组织；"
+            "survey/review 按 scope→taxonomy/synthesis→coverage→作为知识地图的用途组织，绝不能写成提出新方法；"
+            "benchmark/dataset 按 measured target→evaluation/data novelty→enabled research question 组织。"
+            "避免“具有重要意义”“具有很高参考价值”“未来可广泛扩展”等空泛措辞。"
             "只输出一个 JSON 对象，不要输出任何其他文字："
             '{"analyses":[{"paper_id":"...","takeaway":"..."}]}。'
-            "要求客观中立，不要使用“经典”“最佳”“最重要”等绝对化评价；引用数和评分只是筛选信号，不是质量标签。"
         )
     return (
-        "You are a personal reading assistant for robotics research (legged robots, "
-        "mobile manipulation, optimal control, robot learning, and related fields). "
-        "You only receive 0-5 papers already selected by a rule engine. For each paper, "
-        "write one coherent Takeaway in English (3-5 sentences) analyzing the paper's value to "
-        "the user, covering two aspects: (1) the paper itself: the research background, the "
-        "problem it solves, and the key results it reports; (2) its meaning to the user: how it "
-        "relates to the user's robotics research (legged robots, mobile manipulation, optimal "
-        "control, robot learning) and what the user can do with it or build on it. "
-        "Cover both aspects in one flowing paragraph; do not write a mechanical list. "
-        "Use professional terminology exactly as it appears in the paper: keep model names, "
-        "method names, acronyms, and technical vocabulary unchanged. "
+        "You are a reading-guide assistant for a robotics researcher. A rule engine has already "
+        "selected these papers; you do not screen, rank, or judge paper quality. "
+        f"Reader profile: {profile_text} "
+        "Use only the supplied title, abstract, and metadata. Never add experimental numbers that "
+        "the abstract does not report; never guess datasets, model scale, training resources, or "
+        "hardware; and never present an author claim as independently validated fact. Do not infer "
+        "quality from selection or an internal score. Never use classic, best, seminal, or most "
+        "important. Say directly applicable only when the source explicitly supports it. If the "
+        "abstract has no quantitative result, accurately describe its stated claim instead. Keep "
+        "technical names, model names, method names, and acronyms exactly as written in the paper. "
+        "For each paper, write one coherent 80-130-word English paragraph, usually three sentences "
+        "and no more than four; do not number points or write a list. For a method paper, cover the "
+        "problem, key method, explicitly reported evidence or result, and the technical point to "
+        "inspect while reading. For a survey or review, cover scope, taxonomy or synthesis, "
+        "coverage, and its use as a knowledge map; never describe it as proposing a new method. For "
+        "a benchmark or dataset, cover what is measured, what is new in the evaluation or data, and "
+        "the research question it enables. Avoid generic praise such as important significance, "
+        "high reference value, broad future extensions, or similar unsupported language. "
         "Output only one JSON object with no other text: "
-        '{"analyses":[{"paper_id":"...","takeaway":"..."}]}. '
-        "Be objective and neutral; never use absolute labels such as \"classic\", \"best\", or "
-        "\"most important\"; citation counts and scores are screening signals, not quality labels."
+        '{"analyses":[{"paper_id":"...","takeaway":"..."}]}.'
     )
 
 
-def _abstract_for(entry: RecommendationEntry, limit: int = 1200) -> str:
+def _abstract_for(entry: RecommendationEntry, limit: int = 3000) -> str:
     if entry.historical_paper is not None:
         text = entry.historical_paper.abstract or ""
     else:
@@ -130,16 +146,15 @@ class DeepSeekClient:
                     "paper_id": entry.canonical_paper_id,
                     "title": entry.paper.title,
                     "authors": entry.paper.authors[:8],
-                    "year": year,
-                    "topics": entry.paper.matched_topics,
-                    "research_fit": entry.paper.research_fit,
-                    "historical_value_score": (
-                        round(historical.historical_value_score, 1)
-                        if historical is not None
-                        and historical.historical_value_score is not None
-                        else None
+                    "publication_year": year,
+                    "selection_category": entry.category,
+                    "core_topics": entry.core_topics,
+                    "subtopics": entry.subtopics,
+                    "document_type": entry.document_type,
+                    "domain_affinity": entry.domain_affinity,
+                    "abstract": _abstract_for(
+                        entry, limit=self.config.abstract_char_limit
                     ),
-                    "abstract": _abstract_for(entry),
                 }
             )
         user_content = (
@@ -150,7 +165,12 @@ class DeepSeekClient:
         return {
             "model": self.config.model,
             "messages": [
-                {"role": "system", "content": _system_prompt(self.config.language)},
+                {
+                    "role": "system",
+                    "content": _system_prompt(
+                        self.config.language, self.config.reader_profile
+                    ),
+                },
                 {"role": "user", "content": user_content},
             ],
             "temperature": 0.3,

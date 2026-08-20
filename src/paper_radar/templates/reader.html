@@ -47,23 +47,39 @@
           {% if historical %}
           <span><b>Published</b> {{ historical.publication_date or historical.publication_year or 'unknown' }}</span>
           {% if historical.source_name %}<span><b>Source</b> {{ historical.source_name }}</span>{% endif %}
-          <span><b>OpenAlex citations</b> {{ historical.cited_by_count if historical.cited_by_count is not none else 'unknown' }}</span>
           {% else %}
           <span><b>Published</b> {{ paper.published | display_datetime }}</span>
           <span><b>Categories</b> {{ paper.categories | join(', ') }}</span>
           {% endif %}
           {% if recommendation.subtopics %}<span><b>Reading focus</b> {{ recommendation.subtopics | join(', ') }}</span>{% endif %}
-          {% if recommendation.recommendation_base_score %}<span><b>Utility</b> {{ '%.1f' | format(recommendation.recommendation_utility) }}</span>{% endif %}
-          {% if recommendation.domain_affinity != 'neutral' %}<span><b>Domain fit</b> {{ recommendation.domain_affinity }} ({{ '%+g' | format(recommendation.domain_affinity_adjustment) }})</span>{% endif %}
-          {% if recommendation.redundancy_penalty %}<span><b>Recent overlap</b> {{ '%+g' | format(recommendation.redundancy_penalty) }}</span>{% endif %}
         </div>
         {% set analysis = analysis_by_id.get(recommendation.canonical_paper_id) %}
         {% if analysis %}
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">{{ takeaway_label }}</p>
           <p>{{ analysis.takeaway }}</p>
         </div>
         {% endif %}
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> {{ category_labels[recommendation.category] }}</span>
+            {% if recommendation.core_topics %}
+            <span><b>Core topics</b> {% for topic in recommendation.core_topics %}{{ topic_labels.get(topic, topic) }}{% if not loop.last %}, {% endif %}{% endfor %}</span>
+            {% endif %}
+            {% if recommendation.subtopics %}<span><b>Subtopics</b> {{ recommendation.subtopics | join(', ') }}</span>{% endif %}
+            {% if recommendation.recommendation_base_score %}<span><b>Utility</b> {{ '%.1f' | format(recommendation.recommendation_utility) }} (base {{ '%.1f' | format(recommendation.recommendation_base_score) }})</span>{% endif %}
+            <span><b>Domain affinity</b> {{ recommendation.domain_affinity }} ({{ '%+g' | format(recommendation.domain_affinity_adjustment) }})</span>
+            {% if recommendation.redundancy_penalty %}<span><b>Recent overlap</b> {{ '%+g' | format(recommendation.redundancy_penalty) }}</span>{% endif %}
+            {% if historical %}<span><b>OpenAlex citations</b> {{ historical.cited_by_count if historical.cited_by_count is not none else 'unknown' }}</span>{% endif %}
+          </div>
+          {% if recommendation.reasons or recommendation.pool_reason %}
+          <ul>
+            {% if recommendation.pool_reason %}<li>{{ recommendation.pool_reason }}</li>{% endif %}
+            {% for reason in recommendation.reasons %}<li>{{ reason }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>{{ historical.abstract if historical else paper.summary }}{% if historical and not historical.abstract %}OpenAlex metadata did not include an abstract.{% endif %}</p></details>
         <div class="actions">
           {% if historical %}

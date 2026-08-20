@@ -40,12 +40,20 @@
         <p class="authors">Sotaro Katayama, Masaki Murooka, Yuichi Tazaki</p>
         <div class="metadata">
           <span><b>Published</b> 2023-02-09</span>
-<span><b>Source</b> Advanced Robotics</span>          <span><b>OpenAlex citations</b> 82</span>
-        </div>
+<span><b>Source</b> Advanced Robotics</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This survey provides a structured overview of model predictive control (MPC) for legged and humanoid robots, categorizing dynamical models, algorithms, and applications from reduced-order to whole-body formulations. For the user, it serves as a comprehensive reference to understand the trade-offs between model fidelity and computational tractability, which is essential when designing MPC-based controllers for legged locomotion or mobile manipulation. The paper&#39;s taxonomy of algorithms helps in selecting appropriate solvers and formulations for real-time control, and its coverage of recent whole-body MPC trends can inform the integration of manipulation and locomotion tasks in a unified framework.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 82</span>          </div>
+          <ul>
+<li>research_fit 38 ≥ 18</li><li>核心方向：legged_humanoid, optimal_control</li><li>特定关键词：humanoid robots, model predictive control, MPC</li><li>historical_value_score 73.9 ≥ 50.0</li><li>发表于 2023 年</li><li>同领域同年份引用标准化位于前 1.8%</li><li>OpenAlex FWCI 6.59</li><li>近 2 年年均引用 29.0；此前 2 年年均 12.0</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-06T04:28:06</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Model predictive control (MPC) of legged and humanoid robotic systems has been an active research topic in the past decade. While MPC for robotic systems has a long history, its paradigm such as problem formulations and algorithms has changed along with the recent drastic progress in robot hardware, computational processors, and algorithms. This survey paper reviews recent progress on MPC for legged and humanoid robotics from the following three points of view. First, we review a variety of dynamical models of robotic systems used in the MPC formulation. Second, we give an overview of MPC algorithms, particularly focusing on suitable ones for robotic problems. Finally, we introduce methods and applications of MPC for practical robotic problems from MPC based on reduced-order models to recent progress on MPC based on whole-body models.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4319787917" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://www.tandfonline.com/doi/pdf/10.1080/01691864.2023.2168134?download=true" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1080/01691864.2023.2168134" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -68,12 +76,20 @@
         <p class="authors">Joonho Lee, Marko Bjelonic, Alexander Reske, Lorenz Wellhausen, Takahiro Miki, Marco Hutter</p>
         <div class="metadata">
           <span><b>Published</b> 2024-04-24</span>
-<span><b>Source</b> Science Robotics</span>          <span><b>OpenAlex citations</b> 108</span>
-        </div>
+<span><b>Source</b> Science Robotics</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper presents a fully integrated system for wheeled-legged robots that combines adaptive locomotion control, mobility-aware local navigation, and large-scale path planning, using model-free reinforcement learning and privileged learning. The hierarchical RL framework enables smooth transitions between walking and driving modes, achieving robust and efficient navigation over rough terrains and around dynamic obstacles. For the user, this work demonstrates a practical approach to integrating learning-based locomotion with navigation, which is directly applicable to mobile manipulation tasks where the robot must traverse varied environments while carrying out manipulation objectives. The system&#39;s validation in urban settings provides a template for deploying learned controllers in real-world scenarios, and the hierarchical structure can be adapted to incorporate manipulation actions.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 108</span>          </div>
+          <ul>
+<li>research_fit 30 ≥ 18</li><li>核心方向：legged_humanoid, robot_learning</li><li>特定关键词：legged robots</li><li>historical_value_score 69.4 ≥ 42.0</li><li>发表于 2024 年</li><li>同领域同年份引用标准化位于前 0.4%</li><li>OpenAlex FWCI 13.40</li><li>近 2 年年均引用 49.0；此前 1 年年均 10.0</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-06T04:28:06</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Autonomous wheeled-legged robots have the potential to transform logistics systems, improving operational efficiency and adaptability in urban environments. Navigating urban environments, however, poses unique challenges for robots, necessitating innovative solutions for locomotion and navigation. These challenges include the need for adaptive locomotion across varied terrains and the ability to navigate efficiently around complex dynamic obstacles. This work introduces a fully integrated system comprising adaptive locomotion control, mobility-aware local navigation planning, and large-scale path planning within the city. Using model-free reinforcement learning (RL) techniques and privileged learning, we developed a versatile locomotion controller. This controller achieves efficient and robust locomotion over various rough terrains, facilitated by smooth transitions between walking and driving modes. It is tightly integrated with a learned navigation controller through a hierarchical RL framework, enabling effective navigation through challenging terrain and various obstacles at high speed. Our controllers are integrated into a large-scale urban navigation system and validated by autonomous, kilometer-scale navigation missions conducted in Zurich, Switzerland, and Seville, Spain. These missions demonstrate the system&#39;s robustness and adaptability, underscoring the importance of integrated control systems in achieving seamless navigation in complex environments. Our findings support the feasibility of wheeled-legged robots and hierarchical RL for autonomous navigation, with implications for last-mile delivery and beyond.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4395116617" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2405.01792" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2405.01792" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1126/scirobotics.adi9641" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2405.01792" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
@@ -96,12 +112,20 @@
         <p class="authors">Javier Arroyo, Carlo Manna, Fred Spiessens, Lieve Helsen</p>
         <div class="metadata">
           <span><b>Published</b> 2022-01-07</span>
-<span><b>Source</b> Applied Energy</span>          <span><b>OpenAlex citations</b> 234</span>
-        </div>
+<span><b>Source</b> Applied Energy</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper compares model predictive control (MPC) and reinforcement learning (RL) for building energy management and proposes a novel algorithm, RL-MPC, that merges their complementary strengths, including state estimation, dynamic optimization, and learning. The results in the BOPTEST simulation framework indicate that pure RL struggles with constraint satisfaction, while RL-MPC effectively combines the advantages of both approaches. For the user, this hybrid control methodology is relevant to robotics, particularly in optimal control and robot learning, as it offers a way to leverage RL&#39;s adaptability while maintaining MPC&#39;s constraint handling. The concept of merging learned components with MPC can be transferred to legged robot control, where safety constraints are critical, and the paper&#39;s comparative analysis provides insights into when each approach is preferable.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 234</span>          </div>
+          <ul>
+<li>research_fit 28 ≥ 18</li><li>核心方向：optimal_control, robot_learning</li><li>特定关键词：model predictive control, MPC</li><li>historical_value_score 64.8 ≥ 42.0</li><li>发表于 2022 年</li><li>同领域同年份引用标准化位于前 0.2%</li><li>OpenAlex FWCI 19.18</li><li>近 2 年年均引用 60.0；此前 2 年年均 50.0</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-06T04:28:09</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Buildings need advanced control for the efficient and climate-neutral use of their energy systems. Model predictive control (MPC) and reinforcement learning (RL) arise as two powerful control techniques that have been extensively investigated in the literature for their application to building energy management. These methods show complementary qualities in terms of constraint satisfaction, computational demand, adaptability, and intelligibility, but usually a choice is made between both approaches. This paper compares both control approaches and proposes a novel algorithm called reinforced predictive control (RL-MPC) that merges their relative merits. First, the complementarity between RL and MPC is emphasized on a conceptual level by commenting on the main aspects of each method. Second, the RL-MPC algorithm is described that effectively combines features from each approach, namely state estimation, dynamic optimization, and learning. Finally, MPC, RL, and RL-MPC are implemented and evaluated in BOPTEST, a standardized simulation framework for the assessment of advanced control algorithms in buildings. The results indicate that pure RL cannot provide constraint satisfaction when using a control formulation equivalent to MPC and the same controller model for learning. The new RL-MPC algorithm can meet constraints and provide similar performance to MPC while enabling continuous learning and the possibility to deal with uncertain environments.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4205300464" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://www.sciencedirect.com/science/article/pii/S0306261921015932/pdf" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1016/j.apenergy.2021.118346" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -124,12 +148,20 @@
         <p class="authors">Jason Wolfe, Bhaskara Marthi, Stuart Russell</p>
         <div class="metadata">
           <span><b>Published</b> 2010-05-05</span>
-<span><b>Source</b> Proceedings of the International Conference on Automated Planning and Scheduling</span>          <span><b>OpenAlex citations</b> 207</span>
-        </div>
+<span><b>Source</b> Proceedings of the International Conference on Automated Planning and Scheduling</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper presents a hierarchical planning system for mobile manipulation that integrates task and motion planning, finding high-quality kinematic solutions while reusing optimal solutions to state-abstracted subproblems. The system handles uncertainty during plan execution and demonstrates results on pick-and-place tasks for a mobile robot. For the user, this work is foundational in task and motion planning (TAMP), offering a framework that can be extended to more complex mobile manipulation scenarios, such as legged robots with whole-body constraints. The idea of subtask-specific irrelevance information and solution reuse can improve planning efficiency in long-horizon tasks, which is valuable for integrating with learning-based controllers.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 207</span>          </div>
+          <ul>
+<li>research_fit 20 ≥ 18</li><li>核心方向：mobile_manipulation</li><li>特定关键词：mobile manipulation</li><li>historical_value_score 56.5 ≥ 42.0</li><li>发表于 2010 年</li><li>同领域同年份引用标准化位于前 0.8%</li><li>OpenAlex FWCI 12.29</li><li>近 2 年年均引用 3.5；此前 2 年年均 8.0</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:01</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>We present a hierarchical planning system and its application to robotic manipulation. The novel features of the system are: 1) it finds high-quality kinematic solutions to task-level problems; 2) it takes advantage of subtask-specific irrelevance information, reusing optimal solutions to state-abstracted subproblems across the search space. We briefly describe how the system handles uncertainty during plan execution, and present results on discrete problems as well as pick-and-place tasks for a mobile robot.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W2143936212" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://ojs.aaai.org/index.php/ICAPS/article/download/13436/13285" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1609/icaps.v20i1.13436" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -155,9 +187,18 @@
           <span><b>Categories</b> cs.RO</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper introduces ω-0, a latent predictive whole-body world-action model for concurrent humanoid loco-manipulation, which directly predicts controller-compatible whole-body action latents from language, visual, and proprioceptive inputs. By learning compact future observation embeddings instead of reconstructing videos, it couples latent visual foresight with diffusion-based action generation, and uses controller-based simulation replay to ground human priors into executable actions. For the user, this work addresses the challenge of integrating locomotion and manipulation in humanoid robots, which is highly relevant to mobile manipulation and robot learning. The model&#39;s support for multiple input modalities and its real-world dataset (ω-HOME) provide a foundation for developing and evaluating whole-body policies, potentially advancing the state of the art in concurrent loco-manipulation.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 61 ≥ 40</li><li>Core topics matched: mobile_manipulation, robot_learning, vla_foundation</li><li>Specific keywords matched: loco-manipulation, loco manipulation, locomotion and manipulation, VLA</li><li>Diversity topic: mobile_manipulation</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Humanoid household tasks often require concurrent loco-manipulation, where the robot must move, adjust posture, maintain balance, and manipulate objects as a single coordinated behavior. Yet existing humanoid policies typically decompose locomotion and manipulation, while recent world-action models remain either arm-centric or video-centered. We present $ω$-0, a latent predictive whole-body world-action model for real-world humanoid concurrent loco-manipulation. Given a language instruction, current visual observation, and robot proprioceptive state, $ω$-0 directly predicts controller-compatible whole-body action latents for real-robot execution. Rather than reconstructing future videos, $ω$-0 learns compact future observation embeddings as a lightweight predictive objective, coupling latent visual foresight with diffusion-based whole-body action generation. The model supports egocentric RGB, exocentric RGB, and exocentric depth inputs, and leverages controller-based simulation replay to ground human/public visual-motion priors into robot-executable action latents. We further collect $ω$-HOME, a 40+ hour real-world household humanoid dataset with synchronized multi-view observations, whole-body SMPL motions, robot states, and action latents. Real-world experiments on 11 household tasks demonstrate that a single $ω$-0 model can produce smooth manipulate-while-moving behaviors and consistently outperform representative imitation learning, VLA, humanoid, and WAM baselines.</p></details>
         <div class="actions">
           <a href="https://arxiv.org/abs/2608.06375v1" target="_blank" rel="noopener noreferrer">arXiv</a>

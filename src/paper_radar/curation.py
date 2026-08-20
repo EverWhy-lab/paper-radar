@@ -13,7 +13,10 @@ from paper_radar.historical_scoring import (
 from paper_radar.history_models import HistoricalPaper, canonical_paper_id
 from paper_radar.models import Paper
 from paper_radar.reader_models import DismissalEntry, ReadingPoolEntry, RecommendationEntry
-from paper_radar.recommendation_utility import assess_recommendation_utility
+from paper_radar.recommendation_utility import (
+    assess_recommendation_utility,
+    detect_subtopics,
+)
 from paper_radar.scoring import robotics_context_gate
 
 
@@ -46,6 +49,16 @@ def _cooling(
 def _topic_overlap(left: set[str], right: set[str]) -> float:
     union = left | right
     return len(left & right) / len(union) if union else 0.0
+
+
+def _daily_reading_rank(entry: RecommendationEntry) -> tuple[float, float, str, str]:
+    """Rank reading value deterministically without using video potential."""
+    return (
+        entry.recommendation_utility,
+        entry.recommendation_base_score,
+        entry.paper.updated,
+        entry.canonical_paper_id,
+    )
 
 
 @dataclass
@@ -152,6 +165,45 @@ class CuratedRecommendationEngine:
             return True
         age = date.fromisoformat(target_date).year - int(paper.published[:4])
         return age <= int(self.profile.historical_discovery["max_reading_age_years"])
+
+    @staticmethod
+    def _within_recent_days(
+        paper: Paper, target_date: str, max_age_days: int
+    ) -> bool:
+        if not paper.published:
+            return False
+        try:
+            published = date.fromisoformat(paper.published[:10])
+        except ValueError:
+            return False
+        age = (date.fromisoformat(target_date) - published).days
+        return 0 <= age <= max_age_days
+
+    def _model_based_signals(
+        self, paper: Paper, config: dict[str, Any]
+    ) -> tuple[list[str], list[str]] | None:
+        text = _normalise(f"{paper.title} {paper.summary}")
+        if any(term in text for term in self.excluded_terms):
+            return None
+        context = robotics_context_gate(
+            paper.title, paper.summary, "", self.profile
+        )
+        if not context.eligible or paper.research_fit < int(config["min_research_fit"]):
+            return None
+        canonical_topics = {
+            self.profile.canonical_topic_id(topic) for topic in paper.matched_topics
+        }
+        if "robot_control_optimization" not in canonical_topics:
+            return None
+        allowed = set(config.get("method_subtopics", []))
+        methods = [
+            subtopic
+            for subtopic in detect_subtopics(paper, self.profile)
+            if subtopic in allowed
+        ]
+        if not methods:
+            return None
+        return methods, context.positive_matches
 
     def _manual_history(self, entry: ReadingPoolEntry) -> HistoricalPaper:
         paper = entry.paper
@@ -382,12 +434,7 @@ class CuratedRecommendationEngine:
         topic_counts: dict[str, int] = {}
         for entry, primary in sorted(
             candidates,
-            key=lambda item: (
-                item[0].recommendation_utility,
-                item[0].paper.video_potential,
-                item[0].paper.updated,
-                item[0].canonical_paper_id,
-            ),
+            key=lambda item: _daily_reading_rank(item[0]),
             reverse=True,
         ):
             if topic_counts.get(primary, 0) >= int(config["max_same_primary_topic"]):
@@ -486,12 +533,7 @@ class CuratedRecommendationEngine:
         selected: list[RecommendationEntry] = []
         for entry in sorted(
             candidates,
-            key=lambda item: (
-                item.recommendation_utility,
-                item.paper.video_potential,
-                item.paper.updated,
-                item.canonical_paper_id,
-            ),
+            key=_daily_reading_rank,
             reverse=True,
         ):
             if any(entry.aliases & other.aliases for other in already_selected + selected):
@@ -601,11 +643,7 @@ class CuratedRecommendationEngine:
         topic_counts: dict[str, int] = {}
         for entry, primary in sorted(
             ranked,
-            key=lambda item: (
-                item[0].recommendation_utility,
-                item[0].paper.updated,
-                item[0].canonical_paper_id,
-            ),
+            key=lambda item: _daily_reading_rank(item[0]),
             reverse=True,
         ):
             if topic_counts.get(primary, 0) >= int(
@@ -616,6 +654,127 @@ class CuratedRecommendationEngine:
                 continue
             selected.append(entry)
             topic_counts[primary] = topic_counts.get(primary, 0) + 1
+            if len(selected) >= int(config["max_count"]):
+                break
+        return selected
+
+    def _select_model_based_recent(
+        self,
+        papers: list[Paper],
+        historical_papers: list[HistoricalPaper],
+        history: dict[str, list[dict[str, Any]]],
+        target_date: str,
+        considered_at: str,
+        already_selected: list[RecommendationEntry],
+    ) -> list[RecommendationEntry]:
+        config = self.config["model_based_recent"]
+        eligible_statuses = set(config.get("eligible_statuses", ["unread", "queued"]))
+        sources: list[
+            tuple[Paper, HistoricalPaper | None, set[str], list[str]]
+        ] = [
+            (
+                paper,
+                None,
+                {f"arxiv:{paper.base_id}".casefold()},
+                [],
+            )
+            for paper in papers
+        ]
+        for historical in historical_papers:
+            historical.last_considered_at = considered_at
+            if historical.dismissed or historical.reading_status not in eligible_statuses:
+                continue
+            journals = sorted(
+                source.split(":", 1)[1]
+                for source in historical.discovery_source
+                if source.startswith("journal_search:")
+            )
+            if not journals or historical.is_knowledge_map:
+                continue
+            sources.append(
+                (
+                    historical.to_reader_paper(),
+                    historical,
+                    historical.aliases,
+                    [f"Recent journal source: {', '.join(journals)}"],
+                )
+            )
+
+        candidates: list[RecommendationEntry] = []
+        for paper, historical, aliases, source_reasons in sources:
+            if not self._within_recent_days(
+                paper, target_date, int(config["max_age_days"])
+            ):
+                continue
+            if knowledge_map_signals(
+                paper.title, paper.summary, "", self.profile
+            ):
+                continue
+            signal_config = config
+            if historical is not None:
+                signal_config = {
+                    **config,
+                    "min_research_fit": config["min_journal_research_fit"],
+                }
+            signals = self._model_based_signals(paper, signal_config)
+            if signals is None or _cooling(
+                aliases, history, target_date, int(config["cooldown_days"])
+            ):
+                continue
+            if aliases & self._dismissed_aliases:
+                continue
+            if any(aliases & entry.aliases for entry in already_selected):
+                continue
+            method_subtopics, robotics_matches = signals
+            source_adjustment = (
+                float(config.get("journal_source_adjustment", 0))
+                if historical is not None
+                else 0.0
+            )
+            base_score = float(paper.research_fit) + source_adjustment
+            primary = self._primary_topic(paper.matched_topics)
+            if primary in self._cooldown_topics:
+                continue
+            entry = self._recommendation_entry(
+                category="model_based_recent",
+                paper=paper,
+                base_score=base_score,
+                history=history,
+                target_date=target_date,
+                historical_paper=historical,
+                reasons=[
+                    *source_reasons,
+                    f"Recent model-based robotics paper: published within {int(config['max_age_days'])} days",
+                    f"Robotics context: {', '.join(robotics_matches)}",
+                    f"Strong method signals: {', '.join(method_subtopics)}",
+                    f"research_fit {paper.research_fit} ≥ {int(signal_config['min_research_fit'])}",
+                    *(
+                        [
+                            "Journal metadata normalization: "
+                            f"{source_adjustment:+g} (no arXiv category score)"
+                        ]
+                        if source_adjustment
+                        else []
+                    ),
+                ],
+            )
+            if entry.recommendation_utility < float(
+                config["min_recommendation_utility"]
+            ):
+                continue
+            if entry.redundancy_penalty < 0 and entry.recommendation_utility < float(
+                config["min_redundant_utility"]
+            ):
+                continue
+            if entry.semantic_suppressed:
+                continue
+            candidates.append(entry)
+
+        selected: list[RecommendationEntry] = []
+        for entry in sorted(candidates, key=_daily_reading_rank, reverse=True):
+            if any(entry.aliases & other.aliases for other in already_selected + selected):
+                continue
+            selected.append(entry)
             if len(selected) >= int(config["max_count"]):
                 break
         return selected
@@ -681,19 +840,27 @@ class CuratedRecommendationEngine:
             considered_at,
             recent,
         )
+        model_based = self._select_model_based_recent(
+            recent_new,
+            ordered_historical,
+            history,
+            target_date,
+            considered_at,
+            recent + journal,
+        )
         review = self._select_historical(
             ordered_historical,
             category="review_knowledge_map",
             history=history,
             target_date=target_date,
             considered_at=considered_at,
-            already_selected=recent + journal,
+            already_selected=recent + journal + model_based,
         )
         recent_review = self._select_recent_knowledge_maps(
             recent_new,
             history,
             target_date,
-            recent + journal + review,
+            recent + journal + model_based + review,
         )
         impact = self._select_historical(
             ordered_historical,
@@ -701,13 +868,14 @@ class CuratedRecommendationEngine:
             history=history,
             target_date=target_date,
             considered_at=considered_at,
-            already_selected=recent + journal + review + recent_review,
+            already_selected=recent + journal + model_based + review + recent_review,
         )
         groups = {
             "journal_recent": journal,
             "review_knowledge_map": review + recent_review,
             "high_impact_historical": impact,
             "frontier_recent": recent,
+            "model_based_recent": model_based,
         }
         chosen: list[RecommendationEntry] = []
         max_total = min(5, int(self.config["max_total"]))

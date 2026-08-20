@@ -137,7 +137,7 @@ def test_old_topic_ids_resolve_without_breaking_archives_or_feedback(profile) ->
         "robot_learning_posttraining"
     )
     assert profile.canonical_topic_id("vla_foundation") == "vla_robot_foundation"
-    assert profile.topic_labels["optimal_control"] == "Robot Control & Optimization"
+    assert profile.topic_labels["optimal_control"] == "Planning, Control & Estimation"
     assert profile.topic_labels["pose_rescue"].endswith("(legacy)")
 
 

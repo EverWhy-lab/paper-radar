@@ -135,6 +135,66 @@ def test_survey_repetition_is_penalized_more_than_fast_frontier(profile) -> None
     assert utility(frontier, profile, history).redundancy_penalty == -8
 
 
+def test_generic_same_core_surveys_use_fallback_family(profile) -> None:
+    candidate = paper(
+        30,
+        title="A Review of Vision-Language-Action Systems for Embodied Robots",
+        summary="A broad review of vision-language-action research in robotics.",
+        topics=["vla_robot_foundation"],
+        keywords=["vision-language-action"],
+    )
+    history = {
+        "arxiv:earlier-survey": [
+            event(
+                day="2026-08-09",
+                title="A Survey of General Vision-Language-Action Robotics",
+                subtopics=[],
+                document_type="survey",
+                core_topics=["vla_robot_foundation"],
+            )
+        ]
+    }
+
+    assessed = utility(candidate, profile, history)
+
+    assert assessed.redundancy_penalty == -18
+    assert assessed.semantic_suppressed is True
+    assert any(
+        "Survey family: survey:vla_robot_foundation" in reason
+        for reason in assessed.reasons
+    )
+
+
+def test_surveys_with_distinct_secondary_themes_keep_bypass(profile) -> None:
+    candidate = paper(
+        31,
+        title="Robot Data Scaling for Vision-Language-Action: A Survey",
+        summary=(
+            "A survey synthesizing large-scale robot data mixtures for "
+            "vision-language-action policies."
+        ),
+        topics=["vla_robot_foundation", "robot_data_scaling_sim2real"],
+        keywords=["vision-language-action", "robot data scaling"],
+    )
+    history = {
+        "arxiv:posttraining-survey": [
+            event(
+                day="2026-08-09",
+                title="A Survey of VLA Post-Training",
+                subtopics=["vla_posttraining"],
+                document_type="survey",
+                core_topics=["vla_robot_foundation", "robot_learning_posttraining"],
+            )
+        ]
+    }
+
+    assessed = utility(candidate, profile, history)
+
+    assert assessed.subtopics == ["robot_data_scaling"]
+    assert assessed.redundancy_penalty == 0
+    assert assessed.semantic_suppressed is False
+
+
 def test_fast_frontier_subtopic_uses_short_decaying_cooldown(profile) -> None:
     candidate = paper(
         4,

@@ -88,10 +88,31 @@ def test_reader_run_generates_guide_and_renders_section(tmp_path: Path, profile)
     assert recommendation["llm_analysis"][0]["takeaway"].startswith("Introduces")
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
     assert "Today&#39;s Guide" not in index
-    assert "Importance" in index
+    assert "Takeaway" in index
+    assert "Importance" not in index
+    assert "<summary>Why selected</summary>" in index
+    assert "<details class=\"selection-diagnostics\">" in index
     assert "DeepSeek" not in index
     assert "Why it matters" not in index
     assert index.count("Whole-Body Control for Agile Humanoid Robots") >= 1
+
+    metadata_start = index.index('<div class="metadata">')
+    metadata_end = index.index("</div>", metadata_start)
+    assert "Utility" not in index[metadata_start:metadata_end]
+    diagnostics_start = index.index('<details class="selection-diagnostics">')
+    diagnostics_end = index.index("</details>", diagnostics_start)
+    diagnostics = index[diagnostics_start:diagnostics_end]
+    assert "Utility" in diagnostics
+    assert "Domain affinity" in diagnostics
+    assert "Core topics" in diagnostics
+    assert "Original abstract" in index
+    assert "Save" in index
+    assert "Not Relevant" in index
+
+    css = (tmp_path / "site" / "assets" / "reader.css").read_text(encoding="utf-8")
+    assert ".navigation-row { display: flex; min-height: 72px;" in css
+    assert "margin: 0; padding-block: 18px;" in css
+    assert ".category--model_based_recent" in css
 
 
 def test_reader_run_without_provider_has_no_guide(tmp_path: Path, profile) -> None:
@@ -100,7 +121,7 @@ def test_reader_run_without_provider_has_no_guide(tmp_path: Path, profile) -> No
     assert result.recommendation_count == 1
     assert result.llm_analysis_count == 0
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
-    assert "Importance" not in index
+    assert "Takeaway" not in index
 
 
 def test_failing_llm_provider_never_blocks_the_page(tmp_path: Path, profile) -> None:
@@ -113,7 +134,7 @@ def test_failing_llm_provider_never_blocks_the_page(tmp_path: Path, profile) -> 
     index = (tmp_path / "site" / "index.html").read_text(encoding="utf-8")
     assert 'class="paper-card"' in index
     assert ">Papers</h2>" not in index
-    assert "Importance" not in index
+    assert "Takeaway" not in index
 
 
 def test_real_client_key_never_lands_in_data_files(tmp_path: Path, profile) -> None:

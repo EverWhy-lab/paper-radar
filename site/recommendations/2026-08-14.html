@@ -43,9 +43,18 @@
           <span><b>Categories</b> cs.RO, cs.AI, cs.CV, cs.GR, eess.SY</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper introduces SONIC, a generalist humanoid whole-body controller that treats motion tracking as a scalable task, scaling network size from 1.2M to 42M parameters, dataset volume to over 100M frames from 700 hours of motion capture, and compute to 21k GPU hours. The key result is that this scaling yields natural, robust whole-body movements without manual reward engineering, and the authors further demonstrate downstream utility through a real-time kinematic planner for navigation and a unified token space supporting VR teleoperation and vision-language-action (VLA) models. For your research in humanoid locomotion and manipulation, this work provides a strong foundation model for motion priors that you could directly leverage or fine-tune for downstream tasks, potentially reducing the need for task-specific reward design and enabling more natural, interactive control in your own humanoid systems.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 78 ≥ 40</li><li>Core topics matched: vla_robot_foundation, humanoid_loco_manipulation</li><li>Specific keywords matched: vision-language-action, VLA, humanoid whole-body control, loco-manipulation, whole-body control</li><li>Diversity topic: vla_robot_foundation</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Despite the rise of billion-parameter foundation models trained across thousands of graphical processing units (GPUs), similar scaling gains have not been shown for humanoid control. Current neural controllers for humanoids remain modest in size, target a limited set of behaviors, and are trained on a handful of GPUs. We show that scaling model capacity, data, and compute yields a generalist humanoid controller capable of natural, robust whole-body movements. We position motion tracking as a scalable task for humanoid control, leveraging dense supervision from diverse motion-capture data to acquire human motion priors without manual reward engineering. We build a foundation model for motion tracking by scaling along three axes: network size (1.2M to 42M parameters), dataset volume (100M+ frames from 700 hours of motion capture), and compute (21k GPU hours). Beyond demonstrating the benefits of scale, we further show downstream utility through a real-time kinematic planner that bridges motion tracking to tasks such as navigation, enabling natural and interactive control, as well as a unified token space that supports virtual reality (VR) teleoperation and vision-language-action (VLA) models with a single policy. Through this interface, we demonstrate autonomous VLA-driven whole-body loco-manipulation requiring coordinated hand and foot placement. Scaling motion tracking exhibits favorable properties: performance improves steadily with compute and data diversity, and learned policies generalize to unseen motions, establishing motion tracking at scale as a practical foundation for humanoid control.</p></details>
         <div class="actions">
           <a href="https://arxiv.org/abs/2511.07820v4" target="_blank" rel="noopener noreferrer">arXiv</a>
@@ -74,9 +83,18 @@
           <span><b>Categories</b> cs.RO</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>NestDex addresses the demonstration collection bottleneck in dexterous manipulation by introducing a nested policy-learning framework where the operator controls the arm and regulates a learned hand skill through a single-DoF clutch, rather than specifying full finger trajectories. The inner hand policy adapts from proprioceptive history while a vision-language selector activates appropriate skills per task stage, and the resulting demonstrations train a separate outer visuomotor policy that controls both arm and hand at deployment. This approach improves demonstration quality and reduces operator burden, which is directly relevant to your work in dexterous manipulation and robot learning—you could adopt this nested policy structure to make data collection more efficient for contact-rich tasks, or build on the hand-action VAE idea to compactly represent hand motions while keeping arm commands in joint space.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 61 ≥ 40</li><li>Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: visuomotor policy, dexterous manipulation</li><li>Diversity topic: robot_learning_posttraining</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Dexterous manipulation promises substantially richer robot interaction with the physical world, but learning these behaviours remains constrained by the difficulty of collecting consistent, complete-task demonstrations. Unlike parallel-jaw manipulation, dexterous tasks require the operator to coordinate arm motion with precise, contact-rich finger behaviour throughout the task. We introduce NestDex, a nested policy-learning framework that reduces this burden by using learned hand skills to assist demonstration collection. The operator controls the arm and regulates the active hand skill through a single-DoF clutch, rather than directly specifying the full finger trajectory. The inner hand policy adapts its motion from the latest proprioceptive history, while a vision-language selector activates the appropriate skill for each task stage. The resulting demonstrations train a separate outer visuomotor policy that controls both the arm and hand without the inner policies at deployment. A hand-action variational autoencoder provides compact hand-action targets while retaining arm commands in joint space. Across real-world dexterous manipulation experiments, NestDex improves demonstration reliability and efficiency, and the resulting empirical evaluations support effective autonomous policy learning. Video Demo are available at project website https://aus.bot/research/nestdex.</p></details>
         <div class="actions">
           <a href="https://arxiv.org/abs/2608.13362v1" target="_blank" rel="noopener noreferrer">arXiv</a>
@@ -102,12 +120,20 @@
         <p class="authors">Erica Salvato, Gianfranco Fenu, Eric Medvet, Felice Andrea Pellegrino</p>
         <div class="metadata">
           <span><b>Published</b> 2021-01-01</span>
-<span><b>Source</b> IEEE Access</span>          <span><b>OpenAlex citations</b> 182</span>
-        </div>
+<span><b>Source</b> IEEE Access</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This survey systematically reviews approaches to the sim-to-real transferability problem in reinforcement learning for robot control, categorizing methods that address the reality gap and pointing out their shortcomings. It identifies three main goals: classifying existing approaches, highlighting their limitations, and outlining new research directions. For your work in optimal control and robot learning, this survey serves as a useful reference to understand the landscape of sim-to-real techniques, helping you choose appropriate strategies when deploying learned controllers on real legged robots or manipulators, and it can guide your decisions on domain randomization, system identification, or other transfer methods to improve robustness in real-world deployment.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 182</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotics, manipulation, sim-to-real</li><li>research_fit 36 ≥ 18</li><li>核心方向：robot_data_scaling_sim2real</li><li>特定关键词：robot dynamics</li><li>historical_value_score 70.9 ≥ 50.0</li><li>发表于 2021 年</li><li>同领域同年份引用标准化位于前 0.9%</li><li>阅读时效分 90/100（论文年龄 5 年）</li><li>OpenAlex FWCI 13.39</li><li>近 2 年年均引用 39.5；此前 2 年年均 44.0</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:04</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>The growing demand for robots able to act autonomously in complex scenarios has widely accelerated the introduction of Reinforcement Learning (RL) in robots control applications. However, the trial and error intrinsic nature of RL may result in long training time on real robots and, moreover, it may lead to dangerous outcomes. While simulators are useful tools to accelerate RL training and to ensure safety, they often are provided only with an approximated model of robot dynamics and of its interaction with the surrounding environment, thus resulting in what is called the reality gap (RG): a mismatch of simulated and real control-law performances caused by the inaccurate representation of the real environment in simulation. The most undesirable result occurs when the controller learnt in simulation fails the task on the real robot, thus resulting in an unsuccessful sim-to-real transfer. The goal of the present survey is threefold: (1) to identify the main approaches to face the RG problem in the context of robot control with RL, (2) to point out their shortcomings, and (3) to outline new potential research areas.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W3212580602" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/access.2021.3126658" target="_blank" rel="noopener noreferrer">DOI</a>        </div>

@@ -46,6 +46,8 @@ class LLMAnalysisConfig:
     retry_delay_seconds: float
     max_tokens: int
     language: str
+    abstract_char_limit: int
+    reader_profile: dict[str, list[str]]
 
 
 @dataclass(frozen=True)
@@ -147,6 +149,11 @@ def load_profile(path: Path) -> ResearchProfile:
             retry_delay_seconds=float(llm_raw.get("retry_delay_seconds", 2.0)),
             max_tokens=int(llm_raw.get("max_tokens", 1500)),
             language=str(llm_raw.get("language", "zh")),
+            abstract_char_limit=int(llm_raw.get("abstract_char_limit", 3000)),
+            reader_profile={
+                str(section): [str(item) for item in items]
+                for section, items in (llm_raw.get("reader_profile") or {}).items()
+            },
         )
         profile = ResearchProfile(
             site_name=str(site["name"]),
@@ -198,11 +205,21 @@ def load_profile(path: Path) -> ResearchProfile:
         llm_analysis.timeout_seconds <= 0
         or llm_analysis.retries < 1
         or llm_analysis.max_tokens < 1
+        or llm_analysis.abstract_char_limit < 1
         or not llm_analysis.language
     ):
-        raise ConfigError("llm_analysis timeout, retries, max_tokens, and language are invalid")
+        raise ConfigError(
+            "llm_analysis timeout, retries, max_tokens, abstract limit, and language are invalid"
+        )
     if llm_analysis.enabled and llm_analysis.provider != "deepseek":
         raise ConfigError("Only the deepseek LLM provider is supported in V0.2")
+    if llm_analysis.enabled and any(
+        not llm_analysis.reader_profile.get(section)
+        for section in ("primary_focus", "secondary_focus")
+    ):
+        raise ConfigError(
+            "llm_analysis.reader_profile must define primary_focus and secondary_focus"
+        )
     dismissals = profile.dismissals
     for field in (
         "topic_cooldown_window_days",
@@ -228,8 +245,23 @@ def load_profile(path: Path) -> ResearchProfile:
     daily_mix = recommendation_limits["daily_mix"]
     if not 0 <= int(daily_mix["max_total"]) <= 5:
         raise ConfigError("recommendations.daily_mix.max_total must be between 0 and 5")
+    daily_categories = {
+        "frontier_recent",
+        "journal_recent",
+        "model_based_recent",
+        "review_knowledge_map",
+        "high_impact_historical",
+    }
+    selection_order = list(daily_mix.get("selection_order", []))
+    if set(selection_order) != daily_categories or len(selection_order) != len(
+        daily_categories
+    ):
+        raise ConfigError(
+            "recommendations.daily_mix.selection_order must list every daily category once"
+        )
     for category, ceiling in (
         ("frontier_recent", 2),
+        ("model_based_recent", 1),
         ("high_impact_historical", 3),
         ("review_knowledge_map", 1),
         ("journal_recent", 2),
@@ -249,14 +281,31 @@ def load_profile(path: Path) -> ResearchProfile:
     for subtopic_id, rule in subtopics.items():
         if not str(subtopic_id).strip() or not rule.get("terms"):
             raise ConfigError("each recommendation subtopic needs an id and terms")
+        topic_constraints = rule.get("matched_topics", rule.get("core_topics", []))
         unknown = {
             profile.canonical_topic_id(str(topic))
-            for topic in rule.get("core_topics", [])
-        } - set(recommendation_limits["core_topic_ids"])
+            for topic in topic_constraints
+        } - set(topic_ids)
         if unknown:
             raise ConfigError(
-                "recommendation subtopic core_topics must reference core topic ids"
+                "recommendation subtopic topic constraints must reference scoring topic ids"
             )
+    model_based = daily_mix["model_based_recent"]
+    method_subtopics = set(model_based.get("method_subtopics", []))
+    if not method_subtopics or method_subtopics - set(subtopics):
+        raise ConfigError(
+            "daily_mix.model_based_recent.method_subtopics must reference recommendation subtopics"
+        )
+    if int(model_based.get("max_age_days", 0)) < 1:
+        raise ConfigError("daily_mix.model_based_recent.max_age_days must be positive")
+    if int(model_based.get("min_journal_research_fit", 0)) < 0:
+        raise ConfigError(
+            "daily_mix.model_based_recent.min_journal_research_fit must be non-negative"
+        )
+    if not 0 <= float(model_based.get("journal_source_adjustment", 0)) <= 20:
+        raise ConfigError(
+            "daily_mix.model_based_recent.journal_source_adjustment must be between 0 and 20"
+        )
     affinity = recommendation_limits.get("personal_domain_affinity", {})
     for affinity_class in ("preferred", "neutral", "peripheral"):
         if affinity_class not in affinity:

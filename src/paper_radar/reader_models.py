@@ -14,6 +14,7 @@ RECOMMENDATION_CATEGORIES = {
     "important_update",
     "journal_recent",
     "frontier_recent",
+    "model_based_recent",
     "high_impact_historical",
     "review_knowledge_map",
 }

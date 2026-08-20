@@ -1,6 +1,6 @@
 # Paper Radar
 
-Paper Radar is a local personal reader for robotics and embodied-intelligence research. It tracks relevant arXiv frontiers and builds a separate OpenAlex-backed historical discovery pool, then shows at most five papers per day. Selection is transparent and rule-based: the reader does not infer claims from full text or equate citation counts with paper quality. Optionally, DeepSeek writes a short English daily guide for the already-selected papers only, using each paper's own professional terminology.
+Paper Radar is a local personal reader for robotics and embodied-intelligence research. It balances the current Robot AI frontier with recent method advances in model-based robot planning, control, optimization, safety, and state estimation, while building a separate OpenAlex-backed historical discovery pool. It shows at most five papers per day. Selection is transparent and rule-based: the reader does not infer claims from full text or equate citation counts with paper quality. Optionally, DeepSeek writes a grounded English reading guide for the already-selected papers only, using each paper's own professional terminology.
 
 想自己从零搭一个？见 [docs/BUILD_TUTORIAL.md](docs/BUILD_TUTORIAL.md)（含偏好设置模板和导读提示词）。
 
@@ -73,7 +73,9 @@ If the scheduled run fails (for example arXiv is unreachable), nothing is commit
 
 The rule-based selector remains authoritative: it chooses at most five papers with transparent thresholds. If `DEEPSEEK_API_KEY` is set and `llm_analysis.enabled` is true in `config/research_profile.yaml`, DeepSeek writes an English daily guide for those already-selected papers only, keeping professional terms (model names, method names, acronyms) exactly as they appear in each paper. The guide never screens candidates, never ranks papers, and never labels quality.
 
-- One API call per run (all selected papers in a single request); abstracts are sent, never full text or PDFs.
+- One API call per run (all selected papers in a single request); up to 3,000 abstract characters per paper are sent, never full text or PDFs.
+- The reader profile comes from `llm_analysis.reader_profile`, and each payload includes selection category, core topics, subtopics, document type, domain affinity, publication year, and abstract—not internal numeric ranking scores.
+- Guides are grounded in supplied metadata: they must not invent results, datasets, model scale, training resources, or hardware, and they adapt the reading emphasis for methods, surveys, and benchmarks/datasets.
 - If the call fails or the key is missing, the page is still generated without the guide.
 - The key is read only from `DEEPSEEK_API_KEY` (export it locally, or set it as a repository secret for GitHub runs). It is never written to data, cache, provider stats, or pages.
 
@@ -172,18 +174,36 @@ Seed definitions are stored in `data/history/seeds.json`. arXiv version state re
 ## Scoring and recommendation policy
 
 Paper Radar is not trying to answer “which robotics papers are the most famous
-in history?” Its daily question is narrower and more practical: **which Robot AI
-papers are most worth opening and reading today?** The policy is recent-first,
-uses the frozen six-direction Robot AI taxonomy, prefers active-reading history
-from the last ten years, and combines scientific eligibility with cross-day
-redundancy, personal domain affinity, and daily diversity. Five is a ceiling,
-not a quota; one to four recommendations—or an empty day—is normal.
+in history?” Its daily question is narrower and more practical: **which robotics
+method advances are genuinely worth opening and reading today?** The policy is
+recent-first, prefers active-reading history from the last ten years, and
+combines scientific eligibility with cross-day redundancy, personal domain
+affinity, and daily diversity. Five is a ceiling, not a quota; one to four
+recommendations—or an empty day—is normal.
 
-The six core directions are VLA/robot foundation models, robot world models and
-embodied reasoning, humanoid whole-body loco-manipulation, robot policy
-post-training, dexterous multimodal manipulation, and robot-data scaling with
-sim-to-real. Robot control and optimization remains a lower-weight supporting
-topic, but control-only work cannot qualify through it alone.
+Daily reading tracks two layers:
+
+- **Robot AI frontier:** VLA and robot foundation models, world models and
+  embodied reasoning, robot learning and policy post-training, humanoid
+  loco-manipulation, dexterous multimodal manipulation, and robot-data scaling
+  with sim-to-real.
+- **Model-based robotics methods:** motion and kinodynamic planning, trajectory
+  optimization, MPC/WBC, safety-critical control, and robot state estimation.
+
+The second layer is not a quota. It has an independent maximum of one recent
+paper per day and remains empty unless a paper clears its robotics-context,
+strong-method, fit, utility, cooldown, and redundancy gates. Paper Radar does
+not treat model-based robotics as obsolete, and it does not assume every Robot
+AI paper deserves more reading time than a substantive planning or control
+advance.
+
+The six core directions remain frozen: VLA/robot foundation models, robot world
+models and embodied reasoning, humanoid whole-body loco-manipulation, robot
+policy post-training, dexterous multimodal manipulation, and robot-data scaling
+with sim-to-real. `robot_control_optimization` remains a lower-weight support
+topic rather than a seventh core direction. High-quality control-only work can
+qualify only through the independent `model_based_recent` lane; it still cannot
+pass a Robot AI core gate by pretending to be a seventh core topic.
 
 Historical eligibility first requires explicit robotics context from the title, abstract, or OpenAlex topic metadata, then `research_fit ≥ 18`, at least one configured core topic, at least one non-generic keyword, and publication within the rolling ten-year active-reading window. General terms such as foundation model, world model, LLM, diffusion model, RL, MPC, or control do not establish robotics context by themselves. Configured off-topic exclusions are applied before impact signals. A highly cited but irrelevant or over-ten-year-old paper cannot qualify for daily reading.
 
@@ -205,17 +225,20 @@ Current daily gates and caps are configurable:
 - Total recommendations: at most 5
 - Frontier recent papers: at most 2; `research_fit ≥ 40`
 - Fresh journal and frontier papers combined: at most 3
+- Model-based recent methods: at most 1; independent of the preceding three-paper ceiling and never guaranteed
 - Historical-impact candidates: at most 1; `historical_value_score ≥ 42`
 - Review/knowledge-map candidates: at most 1; `historical_value_score ≥ 50`
 
-Frontier recent papers are considered first, followed by fresh journals, a review/knowledge map, and at most one 5–10-year historical foundation. No category has a guaranteed quota, and thresholds are never lowered to fill the page. A paper can occupy only one category. Canonical aliases, topic diversity, dismissal, `read` status, and a 45-day historical cooldown are enforced. Empty days display “今日没有发现足够值得推荐的论文。”
+Frontier recent papers are considered first, followed by fresh journals, the model-based method lane, a review/knowledge map, and at most one 5–10-year historical foundation. No category has a guaranteed quota, and thresholds are never lowered to fill the page. A paper can occupy only one category. Canonical aliases, topic diversity, dismissal, `read` status, and a 45-day historical cooldown are enforced. Empty days display “今日没有发现足够值得推荐的论文。”
 
 The recommendation layer deliberately does not rewrite `research_fit`:
 
-- Configured subtopics identify recurring reading themes such as VLA post-training, robot world models, humanoid whole-body learning, diffusion/flow policies, tactile manipulation, robot-data scaling, and sim-to-real.
-- An exact repeated frontier subtopic with no new secondary theme has a four-day short cooldown, then a decaying 5–7 day utility penalty; a penalized repeat must still clear a higher utility bar. A survey on the same subtopic receives a stronger 14–30 day penalty. A genuinely new secondary subtopic bypasses the short suppression and reduces the penalty, so the cooldown never blocks an entire broad core direction.
+- Configured subtopics identify recurring reading themes such as VLA post-training, robot world models, humanoid whole-body learning, diffusion/flow policies, tactile manipulation, robot-data scaling, motion/kinodynamic planning, MPC, WBC, trajectory optimization, safety-critical control, and state estimation.
+- An exact repeated frontier or model-based subtopic with no new secondary theme has a four-day short cooldown, then a decaying 5–7 day utility penalty; a penalized repeat must still clear a higher utility bar. The cooldown applies to specific methods rather than the whole `robot_control_optimization` support topic.
+- A survey on the same specific subtopic receives a stronger 14–30 day penalty. A generic survey with no specific subtopic falls back to `survey:<primary-topic>`, preventing consecutive broad VLA (or other same-family) surveys. A genuinely different secondary theme retains the reduced-penalty/bypass behavior.
 - Personal domain affinity is a bounded soft adjustment: preferred platforms and general-purpose manipulation receive `+6`, neutral domains receive `0`, and peripheral application domains receive `-3`. Scientific gates still run first, and a strong peripheral-domain method can outrank a weaker preferred-domain paper.
 - Daily archives record core topics, subtopics, affinity, redundancy penalty, and final `recommendation_utility`, leaving an explainable interface for future feedback learning without performing online learning now.
+- Daily reading order uses recommendation utility, the rule-engine base/fit score, recency, and a stable canonical identifier. `video_potential` remains stored for future content-radar use but does not break reading-recommendation ties.
 
 ## Offline recommendation backtest
 
@@ -235,7 +258,8 @@ reliably dated candidate/discovery records that were not yet available, never
 uses future actual recommendations as state, and never writes `data/`, `site/`,
 favorites, dismissals, or the reading pool. Reports are written to
 `reports/backtests/` as Markdown and JSON. They include quantity, recency, core
-topic and control distributions, same-paper and same-subtopic repetition,
+topic and model-based method distributions, method-only/method-plus-core counts,
+planning/MPC-WBC/safety/state-estimation counts, same-paper and same-subtopic repetition,
 affinity, quality/diversity, daily selections, and optional actual-vs-replay
 comparison. OpenAlex influence fields come from the currently cached snapshot,
 so the result is a recommendation-policy replay rather than a perfect

@@ -41,11 +41,21 @@
         <div class="metadata">
           <span><b>Published</b> 2026-08-17 14:43 Asia/Shanghai</span>
           <span><b>Categories</b> cs.RO</span>
-<span><b>Utility</b> 100.0</span>        </div>
+        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>SparkVLA addresses a critical limitation in hierarchical Vision-Language-Action (VLA) systems by jointly optimizing two interdependent decisions at each re-observation point: when to terminate the current subtask and how long the action chunk should be. The authors formulate both as a single ranking problem where a stop token competes with action-prefix lengths in a unified candidate set, eliminating threshold tuning and requiring only offline ordinal preferences. An Anchor-Conditioned Context Encoding module caches subtask anchors and goal semantics to guide visual-token pruning, while a Stop-Aware Action-Prefix Selection head scores candidates efficiently at chunk boundaries. For the user working on robot learning and long-horizon manipulation, this work offers a principled way to handle action chunking and subtask termination in hierarchical policies, potentially improving the robustness and efficiency of VLA-based manipulation systems in real-world settings.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training</span>
+<span><b>Utility</b> 100.0 (base 100.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 100 ≥ 40</li><li>Core topics matched: vla_robot_foundation, world_model_embodied_reasoning, robot_learning_posttraining</li><li>Specific keywords matched: VLA, vision-language-action, long-horizon manipulation, action chunking</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 100.0 = base 100.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>At every re-observation point in a hierarchical Vision-Language-Action (VLA) system, two interface decisions must be made: when to terminate the current subtask and how far to execute the proposed action chunk. These decisions are mutually dependent---the optimal stopping point depends on what the executor plans to do, while the optimal execution length depends on where the subtask boundary lies---yet existing architectures evaluate them in isolation, an asymmetry neither module can overcome alone. We present SparkVLA, a stop-aware hierarchical VLA that resolves this mutual dependency by formulating both decisions as a single ranking: Stop competes against every action-prefix length in a unified candidate set, and the system selects the highest-scoring option, eliminating threshold tuning and requiring only offline ordinal preferences. An Anchor-Conditioned Context Encoding module caches a history-aware subtask anchor encoding onset-state memory and goal semantics, guiding visual-token pruning toward task-relevant regions; a Stop-Aware Action-Prefix Selection head scores all candidates via full self bnattention at chunk boundaries for efficiency. On RoboCerebra, SparkVLA achieves 47.12% success rate, surpassing the official hierarchical baseline by 30.57% and the strongest reproducible method by 26.83% Real-robot experiments on multi-step tasks further validate these gains on physical hardware.</p></details>
         <div class="actions">
           <a href="https://arxiv.org/abs/2608.16172v1" target="_blank" rel="noopener noreferrer">arXiv</a>
@@ -72,11 +82,21 @@
         <div class="metadata">
           <span><b>Published</b> 2026-08-17 22:40 Asia/Shanghai</span>
           <span><b>Categories</b> cs.RO</span>
-<span><b>Utility</b> 64.0</span><span><b>Domain fit</b> preferred (+6)</span>        </div>
+        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper tackles the challenging problem of throwing a tight spiral American football with a humanoid robot, focusing on the precise regulation of coupled linear and angular momentum at release. The authors develop a coupled whole-body control strategy that separates the upper body into throw and release phases, managing the underactuated transient contact dynamics during the sub-100-millisecond release phase. This work is relevant to the user&#39;s interests in humanoid locomotion and manipulation, as it demonstrates how whole-body control can coordinate lower-body stabilization with upper-body dynamic tasks. The insights on spin injection and momentum coupling could inform the design of control policies for other dynamic manipulation tasks, such as throwing or striking, in legged or humanoid robots.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 64.0 (base 58.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+          </div>
+          <ul>
+<li>research_fit 58 ≥ 40</li><li>Core topics matched: humanoid_loco_manipulation</li><li>Specific keywords matched: humanoid robot, whole-body control, model predictive control, trajectory optimization</li><li>Diversity topic: humanoid_loco_manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 64.0 = base 58.0 + affinity +6 + redundancy -0</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Accurate throwing of the American football requires precise regulation of release conditions, where coupled linear and angular momentum determine flight stability and targeting accuracy. While prior work on robotic object throwing has largely focused on generating dynamically feasible release velocities using open-gripper paradigms, explicit control of spin injection at detachment remains underexplored, particularly for aerodynamically anisotropic objects like the American football. In this paper, we present the spin-stabilized controlled tight spiral throw of an American football by a humanoid robot. Achieving this requires (i) accurately reaching the desired coupled momentum, which often involves high degrees-of-freedom (DoF) movements completed within approximately half a second, and (ii) managing the complex transient contact dynamics that arise during the sub-100-millisecond release phase, when the football is effectively underactuated as it moves partially across the fingers. To this end, we develop a coupled whole-body control strategy where the lower body is performing informed stabilization while the upper body is further divided into two phases with (i) a throw phase accelerating the football to a target state through trajectory optimization and tracking, and (ii) a follow-through phase utilizing model predictive control to actively control the wrist and remaining in-contact fingers. The proposed framework is empirically validated on a 29-DoF Unitree G1 humanoid equipped with a 7-DoF Dex3-1 three-fingered gripper. The thrown American football reaches up to 93.6% spin efficiency and a 0.286 radians linear-velocity-to-nose-alignment (nose-angle) error (where an ``ideal&#39;&#39; tight spiral corresponds to 100 % spin efficiency and 0 radians nose-angle error) at up to a 5.35 m/s linear velocity and an angular velocity of 14.5 rad/s.</p></details>
         <div class="actions">
           <a href="https://arxiv.org/abs/2608.16642v1" target="_blank" rel="noopener noreferrer">arXiv</a>
@@ -102,12 +122,21 @@
         <p class="authors">Kento Kawaharazuka, Jihoon Oh, Jun Yamada, Ingmar Posner, Yuke Zhu</p>
         <div class="metadata">
           <span><b>Published</b> 2025-01-01</span>
-<span><b>Source</b> IEEE Access</span>          <span><b>OpenAlex citations</b> 47</span>
-<span><b>Utility</b> 77.6</span>        </div>
+<span><b>Source</b> IEEE Access</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This review provides a comprehensive, full-stack overview of Vision-Language-Action (VLA) models, covering architectural transitions, modality-specific processing, learning paradigms, and real-world deployment considerations including robot platforms and data collection. Unlike prior surveys that focus narrowly on action representations or architectures, it integrates software and hardware components, offering a holistic perspective on the field. For the user, this serves as a valuable reference to understand the current landscape of VLA research, identify gaps and opportunities, and guide the design of new VLA-based systems for legged robots or mobile manipulation. The review&#39;s emphasis on real-world applications can help the user bridge the gap between simulation and deployment in their own work.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
+<span><b>Utility</b> 77.6 (base 77.6)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 47</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotic, robotics, vision-language-action</li><li>research_fit 32 ≥ 18</li><li>核心方向：vla_robot_foundation</li><li>特定关键词：vision-language-action, VLA</li><li>historical_value_score 77.6 ≥ 50.0</li><li>发表于 2025 年</li><li>同领域同年份引用标准化位于前 0.3%</li><li>阅读时效分 100/100（论文年龄 1 年）</li><li>OpenAlex FWCI 21.92</li><li>近年年均 OpenAlex 引用 23.5（无更早窗口可比较）</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-17T03:28:19</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 77.6 = base 77.6 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Amid growing efforts to leverage advances in large language models (LLMs) and visionlanguage models (VLMs) for robotics, Vision-Language-Action (VLA) models have recently gained significant attention. By unifying vision, language, and action data at scale, which have traditionally been studied separately, VLA models aim to learn policies that generalise across diverse tasks, objects, embodiments, and environments. This generalisation capability is expected to enable robots to solve novel downstream tasks with minimal or no additional task-specific data, facilitating more flexible and scalable real-world deployment. Unlike previous surveys that focus narrowly on action representations or high-level model architectures, this work offers a comprehensive, full-stack review, integrating both software and hardware components of VLA systems. In particular, this paper provides a systematic review of VLAs, covering their strategy and architectural transition, architectures and building blocks, modality-specific processing techniques, and learning paradigms. In addition, to support the deployment of VLAs in real-world robotic applications, we also review commonly used robot platforms, data collection strategies, publicly available datasets, data augmentation methods, and evaluation benchmarks. Throughout this comprehensive survey, this paper aims to offer practical guidance for the robotics community in applying VLAs to real-world robotic systems. All references categorized by training approach, evaluation method, modality, and dataset are available in the table on our project website: https://vla-survey.github.io.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4414198610" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2510.07077" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.1109/access.2025.3609980" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2510.07077" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
@@ -130,12 +159,21 @@
         <p class="authors">An‐Chieh Cheng, Yandong Ji, Zhaojing Yang, Zaitian Gongye, Xueyan Zou, Jan Kautz, Erdem Bıyık, Hongxu Yin, Sifei Liu, Xiaolong Wang</p>
         <div class="metadata">
           <span><b>Published</b> 2025-06-21</span>
-          <span><b>OpenAlex citations</b> 31</span>
-<span><b>Utility</b> 75.7</span>        </div>
+        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>NaVILA presents a Vision-Language-Action (VLA) model specifically designed for legged robot navigation, enabling robots to follow natural language instructions to navigate in real-world environments. The model integrates vision, language, and action to generate navigation commands, and the paper demonstrates its application on legged platforms, which are relevant to the user&#39;s focus on legged robots. This work is significant because it extends VLA models beyond manipulation to locomotion and navigation, showing how language-conditioned policies can be applied to whole-body control. The user can build on this approach to develop similar language-guided navigation or manipulation policies for their own legged robots, potentially improving autonomy and generalization in complex environments.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 75.7 (base 75.7)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 31</span>          </div>
+          <ul>
+<li>机器人语境：robot, robotic, robotics, vision-language-action</li><li>research_fit 42 ≥ 18</li><li>核心方向：vla_robot_foundation, humanoid_loco_manipulation</li><li>特定关键词：vision-language-action</li><li>historical_value_score 75.7 ≥ 42.0</li><li>发表于 2025 年</li><li>同领域同年份引用标准化位于前 0.1%</li><li>阅读时效分 100/100（论文年龄 1 年）</li><li>OpenAlex FWCI 37.67</li><li>近年年均 OpenAlex 引用 15.5（无更早窗口可比较）</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-17T03:28:09</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0; matched navigation)</li><li>recommendation_utility 75.7 = base 75.7 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>NVIDIA https://navila-bot.github.ioMove forward out of the room.Turn right at the end.Proceed to the grass and stop in front of the soccers.Walk forward along the way.Turn a little left and keep going straight.Stop in front of the red door.Turn left immediately.Go straight forward.Step on the mat.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4414050442" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.15607/rss.2025.xxi.018" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.15607/rss.2025.xxi.018" target="_blank" rel="noopener noreferrer">DOI</a>        </div>

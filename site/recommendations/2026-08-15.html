@@ -40,12 +40,20 @@
         <p class="authors">Wenshuai Zhao, Jorge Pena Queralta, Tomi Westerlund</p>
         <div class="metadata">
           <span><b>Published</b> 2020-12-01</span>
-          <span><b>OpenAlex citations</b> 709</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This survey systematically reviews sim-to-real transfer methods in deep reinforcement learning for robotics, covering domain randomization, domain adaptation, imitation learning, meta-learning, and knowledge distillation. It addresses the critical problem that policies trained in simulation degrade when deployed on real robots due to the sim-to-real gap, and organizes the landscape of existing solutions. For your research in legged robots and mobile manipulation, this survey provides a structured reference to select appropriate transfer strategies when training locomotion or manipulation policies in simulation, helping you avoid common pitfalls and choose methods that align with your specific hardware and task constraints.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 709</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotics, manipulation, sim-to-real</li><li>research_fit 41 ≥ 18</li><li>核心方向：robot_learning_posttraining, robot_data_scaling_sim2real</li><li>特定关键词：domain randomization</li><li>historical_value_score 68.0 ≥ 50.0</li><li>发表于 2020 年</li><li>同领域同年份引用标准化位于前 0.2%</li><li>阅读时效分 70/100（论文年龄 6 年）</li><li>OpenAlex FWCI 29.09</li><li>近 2 年年均引用 142.0；此前 2 年年均 150.5</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-04T06:56:04</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Deep reinforcement learning has recently seen huge success across multiple areas in the robotics domain. Owing to the limitations of gathering real-world data, i.e., sample inefficiency and the cost of collecting it, simulation environments are utilized for training the different agents. This not only aids in providing a potentially infinite data source, but also alleviates safety concerns with real robots. Nonetheless, the gap between the simulated and real worlds degrades the performance of the policies once the models are transferred into real robots. Multiple research efforts are therefore now being directed towards closing this sim-toreal gap and accomplish more efficient policy transfer. Recent years have seen the emergence of multiple methods applicable to different domains, but there is a lack, to the best of our knowledge, of a comprehensive review summarizing and putting into context the different methods. In this survey paper, we cover the fundamental background behind sim-to-real transfer in deep reinforcement learning and overview the main methods being utilized at the moment: domain randomization, domain adaptation, imitation learning, meta-learning and knowledge distillation. We categorize some of the most relevant recent works, and outline the main application scenarios. Finally, we discuss the main opportunities and challenges of the different approaches and point to the most promising directions.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W3088310808" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2009.13303" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2009.13303" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/ssci47803.2020.9308468" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2009.13303" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
@@ -68,12 +76,20 @@
         <p class="authors">Tony Z. Zhao, Vikas Kumar, Sergey Levine, Chelsea Finn</p>
         <div class="metadata">
           <span><b>Published</b> 2023-07-10</span>
-          <span><b>OpenAlex citations</b> 476</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper introduces ALOHA, a low-cost (&lt;$20k) open-source bimanual teleoperation system built from off-the-shelf robots and 3D-printed components, and demonstrates that end-to-end imitation learning from real demonstrations can enable precise, contact-rich manipulation tasks such as threading cable ties and slotting batteries. The key contribution is showing that learning can compensate for imprecise and inexpensive hardware, reducing the need for high-end robots or careful calibration. For your work in mobile manipulation and robot learning, this system offers a practical and accessible platform for collecting high-quality bimanual demonstrations and training manipulation policies, potentially extending to tasks that combine mobility with dexterous dual-arm control.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 476</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, manipulation, teleoperation</li><li>research_fit 41 ≥ 18</li><li>核心方向：robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>特定关键词：action chunking, bimanual manipulation, fine manipulation</li><li>historical_value_score 75.7 ≥ 42.0</li><li>发表于 2023 年</li><li>同领域同年份引用标准化位于前 0.1%</li><li>阅读时效分 90/100（论文年龄 3 年）</li><li>OpenAlex FWCI 430.38</li><li>近 2 年年均引用 194.0；此前 2 年年均 44.0</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-04T12:46:06</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>ALOHA : A Low-cost Open-source Hardware System for Bimanual Teleoperation.The whole system costs &lt;$20k with off-the-shelf robots and 3D printed components.Left: The user teleoperates by backdriving the leader robots, with the follower robots mirroring the motion.Right: ALOHA is capable of precise, contact-rich, and dynamic tasks.We show examples of both teleoperated and learned skills.Abstract-Fine manipulation tasks, such as threading cable ties or slotting a battery, are notoriously difficult for robots because they require precision, careful coordination of contact forces, and closed-loop visual feedback.Performing these tasks typically requires high-end robots, accurate sensors, or careful calibration, which can be expensive and difficult to set up.Can learning enable low-cost and imprecise hardware to perform these fine manipulation tasks?We present a low-cost system that performs end-to-end imitation learning directly from real demonstrations, collected with a custom teleoperation interface.Imitation learning, however, presents its own challenges, particularly in high-precision domains: errors in the policy can compound over time, and human demonstrations can be non-stationary.To address these challenges, we develop a simple yet novel algorithm, Action Chunking with Transformers (ACT), which learns a generative model over action sequences.ACT allows the robot to learn 6 difficult tasks in the real world, such as opening a translucent condiment cup and slotting a battery with 80-90% success, with only 10 minutes worth of demonstrations.Project website: tonyzhaozh.github.io/aloha</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4385430674" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.15607/rss.2023.xix.016" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.15607/rss.2023.xix.016" target="_blank" rel="noopener noreferrer">DOI</a>        </div>

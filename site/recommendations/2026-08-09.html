@@ -40,12 +40,20 @@
         <p class="authors">Moritz Reuss, Maximilian Xiling Li, Xiaogang Jia, Rudolf Lioutikov</p>
         <div class="metadata">
           <span><b>Published</b> 2023-07-10</span>
-          <span><b>OpenAlex citations</b> 67</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper introduces BESO, a goal-conditioned policy representation based on score-based diffusion models, applied to Goal-Conditioned Imitation Learning (GCIL) from large uncurated play datasets without rewards. BESO decouples score model learning from the inference sampling process, enabling goal-specified behavior generation in only 3 denoising steps compared to 30+ for other diffusion policies, while effectively capturing multi-modality in the solution space. Unlike prior methods such as Latent Plans or C-Bet, it avoids complex hierarchical policies or clustering, and can also learn goal-independent policies via classifier-free guidance. For your research in robot learning, this offers a practical and efficient way to learn multi-modal visuomotor policies from unstructured demonstrations, which could be integrated into legged or mobile manipulation systems to generate diverse, goal-directed behaviors without reward engineering. You could build on BESO by combining it with whole-body control or MPC frameworks to produce reactive yet expressive policies for dynamic tasks.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 67</span>          </div>
+          <ul>
+<li>research_fit 27 ≥ 18</li><li>核心方向：robot_learning, diffusion_visuomotor</li><li>特定关键词：diffusion model</li><li>historical_value_score 69.2 ≥ 50.0</li><li>发表于 2023 年</li><li>同领域同年份引用标准化位于前 0.1%</li><li>OpenAlex FWCI 39.14</li><li>近 2 年年均引用 26.0；此前 2 年年均 7.5</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-06T04:28:13</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>We propose a new policy representation based on score-based diffusion models (SDMs).We apply our new policy representation in the domain of Goal-Conditioned Imitation Learning (GCIL) to learn general-purpose goal-specified policies from large uncurated datasets without rewards.Our new goal-conditioned policy architecture &#34;BEhavior generation with ScOre-based Diffusion Policies&#34; (BESO) leverages a generative, score-based diffusion model as its policy.BESO decouples the learning of the score model from the inference sampling process, and, hence allows for fast sampling strategies to generate goalspecified behavior in just 3 denoising steps, compared to 30+ steps of other diffusion-based policies.Furthermore, BESO is highly expressive and can effectively capture multi-modality present in the solution space of the play data.Unlike previous methods such as Latent Plans or C-Bet, BESO does not rely on complex hierarchical policies or additional clustering for effective goalconditioned behavior learning.Finally, we show how BESO can even be used to learn a goal-independent policy from play-data using classifier-free guidance.To the best of our knowledge this is the first work that a) represents a behavior policy based on such a decoupled SDM b) learns an SDM-based policy in the domain of GCIL and c) provides a way to simultaneously learn a goal-dependent and a goal-independent policy from play data.We evaluate BESO through detailed simulation and show that it consistently outperforms several state-of-the-art goal-conditioned imitation learning methods on challenging benchmarks.We additionally provide extensive ablation studies and experiments to demonstrate the effectiveness of our method for goal-conditioned behavior generation.Demonstrations and Code are available at https://intuitive-robots.github.io/beso-website.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W4385430497" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.15607/rss.2023.xix.028" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.15607/rss.2023.xix.028" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -68,12 +76,20 @@
         <p class="authors">Marko Bjelonic, Ruben Grandia, Oliver Harley, Cla Mattia Galliard, Samuel Zimmermann, Marco Hutter</p>
         <div class="metadata">
           <span><b>Published</b> 2021-09-27</span>
-<span><b>Source</b> 2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</span>          <span><b>OpenAlex citations</b> 120</span>
-        </div>
+<span><b>Source</b> 2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper presents a whole-body model predictive controller (MPC) for wheeled-legged robots that simultaneously optimizes wheel and torso motions in a single-task formulation, integrating a kinodynamic model with single rigid body dynamics and rolling contact constraints. The approach enables automatic discovery of hybrid maneuvers and online gait sequence adaptation without predefined contact timings, reducing cost of transport by up to 85% and demonstrating dynamic motions in challenging environments. For your work in legged robots and optimal control, this is directly relevant as it shows how a unified MPC formulation can handle complex locomotion and manipulation tasks, potentially extending to mobile manipulation by incorporating arm dynamics. You could adapt this framework to your own platforms to achieve more efficient and adaptive gaits, or use it as a baseline for comparing learning-based controllers against model-based optimal control.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 120</span>          </div>
+          <ul>
+<li>research_fit 38 ≥ 18</li><li>核心方向：legged_humanoid, optimal_control</li><li>特定关键词：legged robots, quadrupedal robot, MPC</li><li>historical_value_score 67.5 ≥ 42.0</li><li>发表于 2021 年</li><li>同领域同年份引用标准化位于前 0.1%</li><li>OpenAlex FWCI 32.38</li><li>近 2 年年均引用 26.0；此前 2 年年均 25.0</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-06T04:28:05</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Our paper proposes a model predictive controller as a single-task formulation that simultaneously optimizes wheel and torso motions. This online joint velocity and ground reaction force optimization integrates a kinodynamic model of a wheeled quadrupedal robot. It defines the single rigid body dynamics along with the robot’s kinematics while treating the wheels as moving ground contacts. With this approach, we can accurately capture the robot’s rolling constraint and dynamics, enabling automatic discovery of hybrid maneuvers without needless motion heuristics. The formulation’s generality through the simultaneous optimization over the robot’s whole-body variables allows for a single set of parameters and makes online gait sequence adaptation possible. Aperiodic gait sequences are automatically found through kinematic leg utilities without the need for predefined contact and lift-off timings, reducing the cost of transport by up to 85 %. Our experiments demonstrate dynamic motions on a quadrupedal robot with non-steerable wheels in challenging indoor and outdoor environments. The paper’s findings contribute to evaluating a decomposed, i.e., sequential optimization of wheel and torso motion, and single-task motion planner with a novel quantity, the prediction error, which describes how well a receding horizon planner can predict the robot’s future state. To this end, we report an improvement of up to 71 % using our proposed single-task approach, making fast locomotion feasible and revealing wheeled-legged robots’ full potential.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W3093326211" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/iros51168.2021.9636371" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -96,12 +112,20 @@
         <p class="authors">Robert Holmberg, Oussama Khatib</p>
         <div class="metadata">
           <span><b>Published</b> 2000-11-01</span>
-<span><b>Source</b> The International Journal of Robotics Research</span>          <span><b>OpenAlex citations</b> 182</span>
-        </div>
+<span><b>Source</b> The International Journal of Robotics Research</span>        </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper addresses the design and control of a holonomic mobile robot, specifically a powered caster vehicle (PCV), for mobile manipulation tasks, emphasizing the need for a vibration-free, dynamically controllable wheel system to ensure smooth coordination with an onboard manipulator. It proposes a new approach for modeling and controlling the dynamics of this parallel redundant system, with experimental results demonstrating the platform&#39;s performance and the importance of dynamic control in mobile manipulation. For your research in mobile manipulation, this foundational work highlights the critical role of the mobile base&#39;s dynamic properties in achieving precise manipulation, which is still relevant today. You could use these insights to inform the design or control of holonomic bases for your own mobile manipulators, or to motivate the integration of whole-body dynamics in MPC frameworks for coordinated base-arm motion.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 182</span>          </div>
+          <ul>
+<li>research_fit 20 ≥ 18</li><li>核心方向：mobile_manipulation</li><li>特定关键词：mobile manipulation</li><li>historical_value_score 55.5 ≥ 42.0</li><li>发表于 2000 年</li><li>同领域同年份引用标准化位于前 5.7%</li><li>OpenAlex FWCI 4.99</li><li>近 2 年年均引用 3.5；此前 2 年年均 8.0</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:01</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>Mobile manipulator systems hold promise in many industrial and service applications including assembly, inspection, and work in hazardous environments. The integration of a manipulator and a mobile robot base places special demands on the vehicle’s drive system. For smooth, accurate motion and coordination with an on-board manipulator, a holonomic vibration-free wheel system that can be dynamically controlled is needed. In this paper, we present the design and development of a powered caster vehicle (PCV), which is shown to possess the desired mechanical properties. To dynamically control the PCV, a new approach for modeling and controlling the dynamics of this parallel redundant system is proposed. The experimental results presented in the paper illustrate the performance of this platform and demonstrate the significance of dynamic control and its effectiveness in mobile manipulation tasks.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W2073924944" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1177/02783640022067977" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
@@ -124,12 +148,20 @@
         <p class="authors">David Hyunchul Shim, H.J. Kim, Shankar Sastry</p>
         <div class="metadata">
           <span><b>Published</b> 2003-01-01</span>
-          <span><b>OpenAlex citations</b> 216</span>
         </div>
         <div class="card-guide">
-          <p class="guide-tag">Importance</p>
+          <p class="guide-tag">Takeaway</p>
           <p>This paper proposes a decentralized nonlinear model predictive control (NMPC) approach for multiple autonomous helicopters, combining stabilization of vehicle dynamics with decentralized trajectory generation by incorporating potential functions that reflect obstacle and other-vehicle states into the cost function. The integrated approach outperforms a hierarchical structure of separate controller and path planner, and is combined with an efficient numerical algorithm for real-time control. For your research in optimal control and multi-robot systems, this work provides an early example of how NMPC can handle state constraints and input saturation while enabling decentralized coordination, which is relevant to multi-legged or multi-mobile-manipulator scenarios. You could build on this by extending the potential-function-based cost to include interaction terms for cooperative manipulation or formation control, or by comparing it with modern learning-based decentralized policies.</p>
         </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 216</span>          </div>
+          <ul>
+<li>research_fit 18 ≥ 18</li><li>核心方向：optimal_control</li><li>特定关键词：model predictive control</li><li>historical_value_score 54.9 ≥ 42.0</li><li>发表于 2003 年</li><li>同领域同年份引用标准化位于前 5.1%</li><li>OpenAlex FWCI 4.23</li><li>近 2 年年均引用 3.5；此前 2 年年均 5.0</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-04T06:56:02</li>          </ul>
+        </details>
         <details class="abstract"><summary>Original abstract</summary><p>In this paper, we present a nonlinear model predictive control (NMPC) for multiple autonomous helicopters in a complex environment. The NMPC provides a framework to solve optimal discrete control problems for a nonlinear system under state constraints and input saturation. Our approach combines stabilization of vehicle dynamics and decentralized trajectory generation, by including a potential function that reflects the state information of possibly moving obstacles or other vehicles to the cost function. We present various realistic scenarios which show that the integrated approach outperforms a hierarchical structure composed of a separate controller and a path planner based on the potential function method. The proposed approach is combined with an efficient numerical algorithm, which enables the real-time nonlinear model predictive control of multiple autonomous helicopters.</p></details>
         <div class="actions">
 <a href="https://openalex.org/W1505754525" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/cdc.2003.1271710" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
