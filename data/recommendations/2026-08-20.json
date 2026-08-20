@@ -1,0 +1,512 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-20",
+  "generated_at": "2026-08-20T13:05:20+08:00",
+  "mode": "incremental",
+  "candidate_count": 2660,
+  "historical_candidate_count": 314,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2607.18197",
+      "title": "Imitation of Arm Gestures by the Semi-Humanoid Robot NICO",
+      "takeaway": "This method paper presents a gesture-imitation system for the semi-humanoid robot NICO that uses analytical geometry and a pretrained MediaPipe pose-estimation model to convert monocular RGB frames into 3D body landmarks, compute joint angles, and map them to NICO's motor configuration for predefined motion sequences. Preliminary experiments with six participants of different heights across several representative arm gestures show the approach can produce meaningful imitative motions from RGB input alone, while exposing limitations in complex poses and wrist-related movements. When reading, inspect the geometric derivations for joint-angle computation and the mapping strategy to NICO's motor limits, as these determine the system's robustness and scalability to more intricate gestures.",
+      "generated_at": "2026-08-20T05:09:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4403878347",
+      "title": "QUAR-VLA: Vision-Language-Action Model for Quadruped Robots",
+      "takeaway": "This paper introduces QUAR-VLA, a vision-language-action model designed for quadruped robots, addressing the integration of visual perception, language understanding, and action generation in legged locomotion and manipulation. As the abstract is not provided, the specific method architecture, training approach, and reported results cannot be summarized here. When reading, focus on how the model aligns vision-language representations with quadruped-specific action spaces, and examine any experimental evaluations that demonstrate its effectiveness in real-world or simulated tasks.",
+      "generated_at": "2026-08-20T05:09:39",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 50 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation",
+        "Specific keywords matched: humanoid robot",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 56.0 = base 50.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2607.18197",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 50.0,
+      "recommendation_utility": 56.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2607.18197v2",
+        "base_id": "2607.18197",
+        "version": 2,
+        "title": "Imitation of Arm Gestures by the Semi-Humanoid Robot NICO",
+        "authors": [
+          "Anastasiya Ihnatovich",
+          "Igor Farkaš"
+        ],
+        "published": "2026-07-20T17:37:57Z",
+        "updated": "2026-08-19T08:37:57Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Seamless human-robot interaction (HRI) requires a number of perceptual and motor abilities from the robot, one of them being the imitation of human gestures. Humanoid robots have an advantage in HRI thanks to their anthropomorphic features. In this work, we develop a system for imitation of human arm gestures by the semi-humanoid robot NICO based on analytical geometry and a pretrained MediaPipe pose-estimation model. For each input RGB frame, 3D coordinates of relevant human body landmarks, including arm joints and hand keypoints, are obtained using the MediaPipe framework. Joint angles are then computed from these coordinates using derived geometric relations. Finally, the computed angles are properly mapped to NICO's motor configuration and executed in a predefined motion sequence. Preliminary experiments on several representative arm gestures with six participants of different height indicate that the proposed method can produce meaningful imitative motions from monocular RGB input only, while also highlighting limitations in more complex poses and wrist-related movements.",
+        "abs_url": "https://arxiv.org/abs/2607.18197v2",
+        "pdf_url": "https://arxiv.org/pdf/2607.18197v2",
+        "research_fit": 50,
+        "video_potential": 32,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, humanoid"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, manipulation, vision-language-action",
+        "research_fit 32 ≥ 18",
+        "核心方向：vla_robot_foundation",
+        "特定关键词：vision-language-action, VLA",
+        "historical_value_score 71.8 ≥ 42.0",
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 0.3%",
+        "阅读时效分 100/100（论文年龄 2 年）",
+        "OpenAlex FWCI 19.42",
+        "近 2 年年均引用 10.0；此前 1 年年均 2.0",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-17T03:28:09",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "recommendation_utility 77.8 = base 71.8 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4403878347",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4403878347",
+        "openalex_id": "W4403878347",
+        "base_arxiv_id": null,
+        "doi": "10.1007/978-3-031-72652-1_21",
+        "title": "QUAR-VLA: Vision-Language-Action Model for Quadruped Robots",
+        "authors": [
+          "Pengxiang Ding",
+          "Han Zhao",
+          "Wenjie Zhang",
+          "Wenxuan Song",
+          "Min Zhang",
+          "Siteng Huang",
+          "Ningxi Yang",
+          "Donglin Wang"
+        ],
+        "abstract": null,
+        "publication_date": "2024-10-29",
+        "publication_year": 2024,
+        "source_name": "Lecture notes in computer science",
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9991999864578247
+          },
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9972000122070312
+          },
+          {
+            "id": "https://openalex.org/T10812",
+            "display_name": "Human Pose and Action Recognition",
+            "score": 0.9970999956130981
+          }
+        ],
+        "cited_by_count": 22,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 19.4243,
+        "citation_normalized_percentile": 0.99656067,
+        "referenced_works": [
+          "W2099789128",
+          "W2908969844",
+          "W2962899390",
+          "W2963030226",
+          "W2968095426",
+          "W3135367836",
+          "W3193576605",
+          "W3214952050",
+          "W4250058668",
+          "W4285117889",
+          "W4311559655",
+          "W4323066621",
+          "W4362514550",
+          "W4383108576",
+          "W4383109189",
+          "W4386065350",
+          "W4388512477",
+          "W4389524274",
+          "W4391212790",
+          "W4401416041",
+          "W6601128452",
+          "W6604381581",
+          "W6640300118",
+          "W6838931476",
+          "W6853468020"
+        ],
+        "related_works": [
+          "W2772917594",
+          "W2036807459",
+          "W2058170566",
+          "W2755342338",
+          "W2166024367",
+          "W3116076068",
+          "W2229312674",
+          "W2951359407",
+          "W2079911747",
+          "W1969923398"
+        ],
+        "discovery_source": [
+          "topic_search:vision language action robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:09",
+        "last_considered_at": "2026-08-20T13:05:20+08:00",
+        "recommended_at": "2026-08-20T13:05:20+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:09",
+        "openalex_url": "https://openalex.org/W4403878347",
+        "landing_page_url": "https://doi.org/10.1007/978-3-031-72652-1_21",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 32,
+        "video_potential": 40,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, manipulation, vision-language-action"
+          }
+        ],
+        "historical_value_score": 71.8,
+        "historical_score_components": {
+          "research_relevance": 32.0,
+          "recency": 100.0,
+          "normalized_citation": 99.7,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 0.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2024 年",
+          "同领域同年份引用标准化位于前 0.3%",
+          "阅读时效分 100/100（论文年龄 2 年）",
+          "OpenAlex FWCI 19.42",
+          "近 2 年年均引用 10.0；此前 1 年年均 2.0",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 71.8,
+      "recommendation_utility": 77.8,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4403878347",
+        "base_id": "openalex:W4403878347",
+        "version": 1,
+        "title": "QUAR-VLA: Vision-Language-Action Model for Quadruped Robots",
+        "authors": [
+          "Pengxiang Ding",
+          "Han Zhao",
+          "Wenjie Zhang",
+          "Wenxuan Song",
+          "Min Zhang",
+          "Siteng Huang",
+          "Ningxi Yang",
+          "Donglin Wang"
+        ],
+        "published": "2024-10-29T00:00:00Z",
+        "updated": "2024-10-29T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "",
+        "abs_url": "https://doi.org/10.1007/978-3-031-72652-1_21",
+        "pdf_url": "",
+        "research_fit": 32,
+        "video_potential": 40,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
