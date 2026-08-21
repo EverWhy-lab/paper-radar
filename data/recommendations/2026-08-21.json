@@ -1,0 +1,902 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-21",
+  "generated_at": "2026-08-21T13:06:34+08:00",
+  "mode": "incremental",
+  "candidate_count": 2590,
+  "historical_candidate_count": 314,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2608.20114",
+      "title": "DECOWAM: Decoupled Whole-Body World-Action Model for Legged Mobile Manipulation",
+      "takeaway": "DECOWAM is a whole-body world-action model for legged mobile manipulation that explicitly separates camera ego-motion from base and arm actions through dedicated conditional interfaces. It freezes an adapted FastWAM backbone and trains residual adapters, an action-equivalent future bottleneck, adversarially separated base and arm latents, and base-velocity conditioning. On a fixed replay protocol, DECOWAM reduced action MSE by 21.7% with 25.95M trainable parameters, and across 79 closed-loop trials per method it achieved the highest observed whole-body coordination and base-displacement robustness among compared systems, with task completion comparable to the strongest baseline. The paper also introduces ARMDOG, a real-robot dataset with synchronized video, whole-body state, action, and language. Inspect how the decoupled latent interfaces and base-velocity conditioning contribute to video prediction and action accuracy under moving viewpoints.",
+      "generated_at": "2026-08-21T05:10:51",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2606.06245",
+      "title": "MPCoT: Reward-Guided Multi-Path Latent Reasoning for Test-Time Scalable Vision-Language-Action",
+      "takeaway": "MPCoT is a reward-guided multi-path latent reasoning framework for vision-language-action policies, designed to improve long-horizon and high-uncertainty control without generating explicit reasoning tokens. It initializes M hypotheses, refines them for K weight-tied steps, and softly aggregates them before action decoding, using a training-only path-preference objective that combines expert-trajectory consistency, frozen Qwen3-VL progress scoring, and endpoint-success feedback. Under matched protocols on LIBERO and CALVIN, MPCoT improves long-horizon performance, with ablations confirming depth-width effects, confidence-weighted aggregation, and reward-guided path supervision. The method preserves the original 8-step action interface and exposes configurable inference controls (K, M). Inspect how the path-preference objective aligns latent reasoning with downstream execution quality and how the aggregation mechanism balances exploration and exploitation.",
+      "generated_at": "2026-08-21T05:10:51",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.20087",
+      "title": "Towards Professional Tennis Styles for Humanoid Robots with Adaptive Motion Planning and Tracking",
+      "takeaway": "AdaPT is an adaptive motion planning and tracking framework that learns professional tennis serving and rally styles for humanoid robots from broadcast videos. The hierarchical design separates a planner that generates stylistic kinematic motions from a tracker that executes them, with an adaptation mechanism that learns to track randomized execution speeds and conditions the planner on a learned motion-speed adapter to mitigate compounding errors. Real-world experiments on the Unitree G1 demonstrate the effectiveness of the adaptation mechanism in bridging the sim-to-real gap, and policies are deployed on the full-size Dobot Atom humanoid (1.7m) for in-the-wild serving without motion capture. The paper also reports algorithmic and engineering insights for future humanoid ball-sports systems. Inspect how the motion-speed adapter and randomized execution speeds improve tracking robustness and reduce compounding errors in real-world deployment.",
+      "generated_at": "2026-08-21T05:10:51",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4390480962",
+      "title": "Deep Imitation Learning for Humanoid Loco-manipulation Through Human Teleoperation",
+      "takeaway": "TRILL is a data-efficient framework for training humanoid loco-manipulation policies from human demonstrations collected through an intuitive VR interface. It employs whole-body control to transform task-space commands into joint-torque actuation while stabilizing dynamics, and uses high-level action abstractions tailored for humanoid loco-manipulation to efficiently learn complex sensorimotor skills. The method is demonstrated in simulation and on a real-world robot for various loco-manipulation tasks. Inspect how the whole-body control formulation and high-level action abstractions enable data-efficient learning from human demonstrations, and how the VR interface reduces the difficulty of collecting task demonstrations for high-degree-of-freedom humanoids.",
+      "generated_at": "2026-08-21T05:10:51",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 88 ≥ 40",
+        "Core topics matched: world_model_embodied_reasoning, humanoid_loco_manipulation",
+        "Specific keywords matched: world action model, mobile manipulation, whole-body control",
+        "Diversity topic: world_model_embodied_reasoning",
+        "Detected subtopics: world_action_model, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched mobile manipulation)",
+        "Subtopic: whole_body_control",
+        "Recently recommended: 7 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = world_action_model",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 89.8 = base 88.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.20114",
+      "historical_paper": null,
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "world_action_model",
+        "whole_body_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 88.0,
+      "recommendation_utility": 89.8,
+      "days_since_same_subtopic": 7,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2608.20114v1",
+        "base_id": "2608.20114",
+        "version": 1,
+        "title": "DECOWAM: Decoupled Whole-Body World-Action Model for Legged Mobile Manipulation",
+        "authors": [
+          "Siyuan Ma",
+          "Boshi Zhang",
+          "Yutian Zhang",
+          "Qinglian Wu",
+          "Jiaqi Zhai",
+          "Dong Wei",
+          "Qiaojun Yu"
+        ],
+        "published": "2026-08-20T14:44:11Z",
+        "updated": "2026-08-20T14:44:11Z",
+        "primary_category": "cs.AI",
+        "categories": [
+          "cs.AI",
+          "cs.RO"
+        ],
+        "summary": "Mobile manipulation requires a robot to predict how locomotion and arm motion jointly alter future observations and control. Existing world-action models, developed largely for fixed-base platforms, do not explicitly distinguish camera ego-motion from base and arm actions. Here we introduce DECOWAM, a whole-body world-action model that separates these factors through dedicated conditional interfaces. DECOWAM freezes an adapted FastWAM backbone and trains residual adapters, an action-equivalent future bottleneck distilled from privileged observations, adversarially separated base and arm latents, and base-velocity conditioning for video prediction. We further introduce ARMDOG, a real-robot dataset that synchronizes video, whole-body state and action, and language. On a fixed replay protocol, DECOWAM improved both future-video and action prediction over FastWAM, reducing action MSE by 21.7% with 25.95M trainable adaptation parameters. Across 79 closed-loop trials per method, it achieved the highest observed whole-body coordination and base-displacement robustness among the compared systems, while task completion remained comparable to the strongest baseline. These results show that embodiment-aware factorization can support parameter-efficient joint visual prediction and whole-body control under moving viewpoints.",
+        "abs_url": "https://arxiv.org/abs/2608.20114v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.20114v1",
+        "research_fit": 88,
+        "video_potential": 56,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "world action model",
+          "mobile manipulation",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "world action model"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "mobile manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "mobile manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, mobile manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 22.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "whole-body",
+              "locomotion"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 52 ≥ 40",
+        "Core topics matched: vla_robot_foundation",
+        "Specific keywords matched: vision-language-action, VLA",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2606.06245",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 52.0,
+      "recommendation_utility": 52.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2606.06245v2",
+        "base_id": "2606.06245",
+        "version": 2,
+        "title": "MPCoT: Reward-Guided Multi-Path Latent Reasoning for Test-Time Scalable Vision-Language-Action",
+        "authors": [
+          "Boyang Zhang",
+          "Lianlei Shan"
+        ],
+        "published": "2026-06-04T14:48:44Z",
+        "updated": "2026-08-20T16:17:14Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Vision-Language-Action (VLA) policies remain brittle in long-horizon and high-uncertainty control, where one-pass action decoding provides limited inference-time deliberation. Explicit chain-of-thought can increase reasoning depth, but introduces token latency and an indirect text-to-action interface. We propose MPCoT, a reward-guided multi-path latent reasoning framework that initializes M hypotheses, refines them for K weight-tied steps, and softly aggregates them before action decoding. A training-only path-preference objective combines expert-trajectory consistency, frozen Qwen3-VL progress scoring, and endpoint-success feedback to align the latent path scorer with downstream execution quality. MPCoT preserves the original 8-step action interface, generates zero reasoning tokens, and exposes configurable inference controls (K, M). Under matched protocols on LIBERO and CALVIN, MPCoT improves long-horizon performance, with ablations confirming depth-width effects, confidence-weighted aggregation, and reward-guided path supervision.",
+        "abs_url": "https://arxiv.org/abs/2606.06245v2",
+        "pdf_url": "https://arxiv.org/pdf/2606.06245v2",
+        "research_fit": 52,
+        "video_potential": 13,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robot, robots, humanoid, sim-to-real",
+        "Strong method signals: motion_planning",
+        "research_fit 59 ≥ 28",
+        "Detected subtopics: sim_to_real, motion_planning",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "Subtopic: sim_to_real",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = motion_planning",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 60.8 = base 59.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.20087",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "motion_planning"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 59.0,
+      "recommendation_utility": 60.8,
+      "days_since_same_subtopic": 4,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2608.20087v1",
+        "base_id": "2608.20087",
+        "version": 1,
+        "title": "Towards Professional Tennis Styles for Humanoid Robots with Adaptive Motion Planning and Tracking",
+        "authors": [
+          "Tao Huang",
+          "Ruofei Liu",
+          "Xuchen Tang",
+          "Xinyin Zhang",
+          "Junli Ren",
+          "Huayi Wang",
+          "Feiyu Jia",
+          "Yukai Qi",
+          "Kangning Yin",
+          "Weishuai Zeng",
+          "Lipeng Chen",
+          "Xi Li",
+          "Ting Wu",
+          "Kailin Li",
+          "Ruoli Dai",
+          "Jingbo Wang",
+          "Lei Han",
+          "Jiangmiao Pang"
+        ],
+        "published": "2026-08-20T14:19:36Z",
+        "updated": "2026-08-20T14:19:36Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Humanoid robots have recently demonstrated promising capabilities in real-world ball sports. However, achieving professional motion styles while maintaining strong task performance remains challenging. In this work, we propose AdaPT, an Adaptive Motion Planning and Tracking framework that learns professional tennis serving and rally styles directly from broadcast videos. This hierarchical design is motivated by the key insight that the planner generates stylistic kinematic motions, while the tracker executes them with minimal interference with planning. Despite its effectiveness in simulation, a substantial sim-to-real gap emerges: tracking performance inevitably degrades on real robots, and this degradation is partially overlooked by autoregressive planning and further compounded by noisy perception. To address these issues, our adaptation mechanism improves tracking robustness by learning to track randomized execution speeds, while conditioning the planner on a learned motion-speed adapter to mitigate compounding errors. Real-world experiments on the Unitree G1 demonstrate the effectiveness of our adaptation mechanism in bridging the sim-to-real gap. We further deploy AdaPT policies on the full-size Dobot Atom humanoid robot (1.7m) and demonstrate in-the-wild serving without motion capture. Beyond these results, our real-world experiments reveal both algorithmic and engineering insights for future humanoid ball-sports systems. Videos and code are available on our \\href{https://humanoidtennis.github.io/AdaPT/}{project website}.",
+        "abs_url": "https://arxiv.org/abs/2608.20087v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.20087v1",
+        "research_fit": 59,
+        "video_potential": 35,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "sim-to-real",
+          "motion planning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "motion planning"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "humanoid",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "humanoid",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, humanoid, sim-to-real"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 14.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, manipulation, humanoid, loco-manipulation, teleoperation",
+        "research_fit 66 ≥ 18",
+        "核心方向：humanoid_loco_manipulation, robot_learning_posttraining",
+        "特定关键词：loco-manipulation, whole-body control",
+        "historical_value_score 83.0 ≥ 42.0",
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 2.8%",
+        "阅读时效分 90/100（论文年龄 3 年）",
+        "OpenAlex FWCI 5.95",
+        "近 2 年年均引用 22.0；此前 1 年年均 7.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-17T03:28:11",
+        "Detected subtopics: loco_manipulation, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: loco_manipulation, whole_body_control",
+        "Recently recommended: 7 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 77.0 = base 83.0 + affinity +6 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4390480962",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4390480962",
+        "openalex_id": "W4390480962",
+        "base_arxiv_id": null,
+        "doi": "10.1109/humanoids57100.2023.10375203",
+        "title": "Deep Imitation Learning for Humanoid Loco-manipulation Through Human Teleoperation",
+        "authors": [
+          "Mingyo Seo",
+          "Steve Han",
+          "Kyutae Sim",
+          "Seung Hyeon Bang",
+          "Carlos González",
+          "Luis Sentis",
+          "Yuke Zhu"
+        ],
+        "abstract": "We tackle the problem of developing humanoid loco-manipulation skills with deep imitation learning. The difficulty of collecting task demonstrations and training policies for humanoids with a high degree of freedom presents substantial challenges. We introduce TRILL, a data-efficient framework for training humanoid loco-manipulation policies from human demonstrations. In this framework, we collect human demonstration data through an intuitive Virtual Reality (VR) interface. We employ the whole-body control formulation to transform task-space commands by human operators into the robot's joint-torque actuation while stabilizing its dynamics. By employing high-level action abstractions tailored for humanoid loco-manipulation, our method can efficiently learn complex sensorimotor skills. We demonstrate the effectiveness of TRILL in simulation and on a real-world robot for performing various loco-manipulation tasks. Videos and additional materials can be found on the project page: https://ut-austin-rpl.github.io/TRILL.",
+        "publication_date": "2023-12-12",
+        "publication_year": 2023,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10812",
+            "display_name": "Human Pose and Action Recognition",
+            "score": 0.9980000257492065
+          },
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9966999888420105
+          },
+          {
+            "id": "https://openalex.org/T12290",
+            "display_name": "Human Motion and Animation",
+            "score": 0.9807999730110168
+          }
+        ],
+        "cited_by_count": 51,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          }
+        ],
+        "fwci": 5.9467,
+        "citation_normalized_percentile": 0.97213639,
+        "referenced_works": [
+          "W1661970104",
+          "W2035248691",
+          "W2061983716",
+          "W2122287758",
+          "W2135929901",
+          "W2157289187",
+          "W2157501229",
+          "W2158782408",
+          "W2320337429",
+          "W2335044248",
+          "W2569791289",
+          "W2771779534",
+          "W2963634205",
+          "W2963669336",
+          "W2986736840",
+          "W2994241268",
+          "W3003310656",
+          "W3012180352",
+          "W3036870219",
+          "W3047351634",
+          "W3089467114",
+          "W3089552519",
+          "W3101339469",
+          "W3106302274",
+          "W3131698977",
+          "W3134256416",
+          "W3193914824",
+          "W3206530605",
+          "W3207612633",
+          "W4249010688",
+          "W4313562995",
+          "W4318953217",
+          "W4385430674",
+          "W4385430679",
+          "W4387670212",
+          "W4388819993",
+          "W6780159193",
+          "W6784396901",
+          "W6799150178",
+          "W6803464670",
+          "W6845737239",
+          "W6846049332"
+        ],
+        "related_works": [
+          "W4387497383",
+          "W3183948672",
+          "W3173606202",
+          "W3110381201",
+          "W2948807893",
+          "W2778153218",
+          "W2758277628",
+          "W1531601525",
+          "W4315881361",
+          "W4318953217"
+        ],
+        "discovery_source": [
+          "topic_search:humanoid loco manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:11",
+        "last_considered_at": "2026-08-21T13:06:34+08:00",
+        "recommended_at": "2026-08-21T13:06:34+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:11",
+        "openalex_url": "https://openalex.org/W4390480962",
+        "landing_page_url": "https://doi.org/10.1109/humanoids57100.2023.10375203",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 66,
+        "video_potential": 84,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "imitation learning",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, humanoid, loco-manipulation, teleoperation"
+          }
+        ],
+        "historical_value_score": 83.0,
+        "historical_score_components": {
+          "research_relevance": 66.0,
+          "recency": 90.0,
+          "normalized_citation": 97.2,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2023 年",
+          "同领域同年份引用标准化位于前 2.8%",
+          "阅读时效分 90/100（论文年龄 3 年）",
+          "OpenAlex FWCI 5.95",
+          "近 2 年年均引用 22.0；此前 1 年年均 7.0",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "loco_manipulation",
+        "whole_body_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 83.0,
+      "recommendation_utility": 77.0,
+      "days_since_same_subtopic": 4,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4390480962",
+        "base_id": "openalex:W4390480962",
+        "version": 1,
+        "title": "Deep Imitation Learning for Humanoid Loco-manipulation Through Human Teleoperation",
+        "authors": [
+          "Mingyo Seo",
+          "Steve Han",
+          "Kyutae Sim",
+          "Seung Hyeon Bang",
+          "Carlos González",
+          "Luis Sentis",
+          "Yuke Zhu"
+        ],
+        "published": "2023-12-12T00:00:00Z",
+        "updated": "2023-12-12T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "We tackle the problem of developing humanoid loco-manipulation skills with deep imitation learning. The difficulty of collecting task demonstrations and training policies for humanoids with a high degree of freedom presents substantial challenges. We introduce TRILL, a data-efficient framework for training humanoid loco-manipulation policies from human demonstrations. In this framework, we collect human demonstration data through an intuitive Virtual Reality (VR) interface. We employ the whole-body control formulation to transform task-space commands by human operators into the robot's joint-torque actuation while stabilizing its dynamics. By employing high-level action abstractions tailored for humanoid loco-manipulation, our method can efficiently learn complex sensorimotor skills. We demonstrate the effectiveness of TRILL in simulation and on a real-world robot for performing various loco-manipulation tasks. Videos and additional materials can be found on the project page: https://ut-austin-rpl.github.io/TRILL.",
+        "abs_url": "https://doi.org/10.1109/humanoids57100.2023.10375203",
+        "pdf_url": "",
+        "research_fit": 66,
+        "video_potential": 84,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "imitation learning",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, humanoid, loco-manipulation, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
