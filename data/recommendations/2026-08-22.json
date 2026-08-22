@@ -1,0 +1,432 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-22",
+  "generated_at": "2026-08-22T13:01:08+08:00",
+  "mode": "incremental",
+  "candidate_count": 2191,
+  "historical_candidate_count": 314,
+  "recommendation_count": 1,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W4390480938",
+      "title": "Kinodynamic Pose Optimization for Humanoid Loco-Manipulation",
+      "takeaway": "This method paper addresses humanoid robots pushing heavy objects by combining kinodynamic pose optimization with loco-manipulation model predictive control (MPC). The pose optimization plans the optimal pushing pose using an object-robot dynamics model, robot kinematic constraints, and object parameters, while the MPC tracks this pose by coordinating pushing and ground reaction forces for stable locomotion. Numerical validation shows the pose optimization solves as a nonlinear programming (NLP) problem in an average of 250 ms, enabling the robot to push objects up to 20 kg (118% of its mass) and recover from a 120 N force disturbance. Inspect how the pose optimization integrates the dynamics model and constraints, and how the MPC coordinates forces to maintain stability during heavy pushing.",
+      "generated_at": "2026-08-22T05:04:42",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation",
+        "research_fit 38 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：loco-manipulation, humanoid robot, model predictive control, MPC, robot dynamics",
+        "historical_value_score 74.4 ≥ 42.0",
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 1.8%",
+        "阅读时效分 90/100（论文年龄 3 年）",
+        "OpenAlex FWCI 6.99",
+        "近 2 年年均引用 4.5；此前 1 年年均 2.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-17T03:28:11",
+        "Detected subtopics: loco_manipulation, model_predictive_control",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: loco_manipulation",
+        "Recently recommended: 5 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = model_predictive_control",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 76.2 = base 74.4 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4390480938",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4390480938",
+        "openalex_id": "W4390480938",
+        "base_arxiv_id": null,
+        "doi": "10.1109/humanoids57100.2023.10375151",
+        "title": "Kinodynamic Pose Optimization for Humanoid Loco-Manipulation",
+        "authors": [
+          "Junheng Li",
+          "Quan Dong Nguyen"
+        ],
+        "abstract": "This paper presents a novel approach for controlling humanoid robots to push heavy objects. The approach combines kinodynamic pose optimization and loco-manipulation model predictive control (MPC). The proposed pose optimization considers the object-robot dynamics model, robot kinematic constraints, and object parameters to plan the optimal pushing pose for the robot. The loco-manipulation MPC is used to track the optimal pose by coordinating pushing and ground reaction forces, ensuring accurate manipulation and stable locomotion. Numerical validation demonstrates the effectiveness of the framework, enabling the humanoid robot to push objects with various parameter setups. The pose optimization can be solved as a nonlinear programming (NLP) problem within an average of 250 ms. The proposed control scheme allows the humanoid robot to push objects weighing up to 20 kg (118% of the robot's mass). Additionally, when applying a 120 N force disturbance to the object, the proposed controller can recover the system effectively.",
+        "publication_date": "2023-12-12",
+        "publication_year": 2023,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9986000061035156
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.986299991607666
+          },
+          {
+            "id": "https://openalex.org/T10441",
+            "display_name": "Muscle Physiology and Disorders",
+            "score": 0.9101999998092651
+          }
+        ],
+        "cited_by_count": 11,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 6.992,
+        "citation_normalized_percentile": 0.98185315,
+        "referenced_works": [
+          "W1560450306",
+          "W1945123189",
+          "W2055187690",
+          "W2161427949",
+          "W2162488100",
+          "W2198582666",
+          "W2415044741",
+          "W2738358082",
+          "W2842089854",
+          "W2909331752",
+          "W2912736264",
+          "W2914653242",
+          "W2944561196",
+          "W2968213087",
+          "W2968764556",
+          "W2972810470",
+          "W3035707643",
+          "W3043159383",
+          "W3131698977",
+          "W3142410314",
+          "W3206363598",
+          "W4225774941",
+          "W4312984793",
+          "W4313195370",
+          "W4313598687",
+          "W4382935639",
+          "W4383109039",
+          "W6767349745"
+        ],
+        "related_works": [
+          "W2946083937",
+          "W2798721181",
+          "W2951583186",
+          "W4299867837",
+          "W2088028039",
+          "W4382141741",
+          "W4386075737",
+          "W1968783203",
+          "W4206633503",
+          "W2574567538"
+        ],
+        "discovery_source": [
+          "topic_search:humanoid loco manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:11",
+        "last_considered_at": "2026-08-22T13:01:08+08:00",
+        "recommended_at": "2026-08-22T13:01:08+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:11",
+        "openalex_url": "https://openalex.org/W4390480938",
+        "landing_page_url": "https://doi.org/10.1109/humanoids57100.2023.10375151",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 38,
+        "video_potential": 48,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "model predictive control",
+          "MPC",
+          "robot dynamics"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC",
+              "robot dynamics"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation"
+          }
+        ],
+        "historical_value_score": 74.4,
+        "historical_score_components": {
+          "research_relevance": 38.0,
+          "recency": 90.0,
+          "normalized_citation": 98.2,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2023 年",
+          "同领域同年份引用标准化位于前 1.8%",
+          "阅读时效分 90/100（论文年龄 3 年）",
+          "OpenAlex FWCI 6.99",
+          "近 2 年年均引用 4.5；此前 1 年年均 2.0",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "loco_manipulation",
+        "model_predictive_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 74.4,
+      "recommendation_utility": 76.2,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4390480938",
+        "base_id": "openalex:W4390480938",
+        "version": 1,
+        "title": "Kinodynamic Pose Optimization for Humanoid Loco-Manipulation",
+        "authors": [
+          "Junheng Li",
+          "Quan Dong Nguyen"
+        ],
+        "published": "2023-12-12T00:00:00Z",
+        "updated": "2023-12-12T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "This paper presents a novel approach for controlling humanoid robots to push heavy objects. The approach combines kinodynamic pose optimization and loco-manipulation model predictive control (MPC). The proposed pose optimization considers the object-robot dynamics model, robot kinematic constraints, and object parameters to plan the optimal pushing pose for the robot. The loco-manipulation MPC is used to track the optimal pose by coordinating pushing and ground reaction forces, ensuring accurate manipulation and stable locomotion. Numerical validation demonstrates the effectiveness of the framework, enabling the humanoid robot to push objects with various parameter setups. The pose optimization can be solved as a nonlinear programming (NLP) problem within an average of 250 ms. The proposed control scheme allows the humanoid robot to push objects weighing up to 20 kg (118% of the robot's mass). Additionally, when applying a 120 N force disturbance to the object, the proposed controller can recover the system effectively.",
+        "abs_url": "https://doi.org/10.1109/humanoids57100.2023.10375151",
+        "pdf_url": "",
+        "research_fit": 38,
+        "video_potential": 48,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "model predictive control",
+          "MPC",
+          "robot dynamics"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC",
+              "robot dynamics"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
