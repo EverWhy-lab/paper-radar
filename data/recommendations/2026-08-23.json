@@ -1,0 +1,468 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-23",
+  "generated_at": "2026-08-23T13:03:52+08:00",
+  "mode": "incremental",
+  "candidate_count": 1942,
+  "historical_candidate_count": 314,
+  "recommendation_count": 1,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W4415121671",
+      "title": "Opt2Skill: Imitating Dynamically-Feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation",
+      "takeaway": "Opt2Skill is an end-to-end pipeline that combines model-based trajectory optimization with reinforcement learning to achieve robust whole-body loco-manipulation for the Digit humanoid robot. It uses differential dynamic programming (DDP) to generate dynamically feasible and contact-consistent reference motions, then trains RL policies to track these optimal trajectories. The paper reports that Opt2Skill outperforms baselines using human demonstrations and inverse kinematics-based references in motion tracking and task success rates, and that incorporating torque information improves contact force tracking in tasks like wiping a table. The approach was transferred to real-world applications. While reading, inspect how the DDP-generated trajectories are encoded as RL rewards and how torque information is integrated to improve contact force tracking.",
+      "generated_at": "2026-08-23T05:07:08",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation, sim-to-real",
+        "research_fit 51 ≥ 18",
+        "核心方向：humanoid_loco_manipulation, robot_data_scaling_sim2real",
+        "特定关键词：loco-manipulation, humanoid robot, trajectory optimization, differential dynamic programming, DDP",
+        "historical_value_score 73.3 ≥ 42.0",
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 5.9%",
+        "阅读时效分 100/100（论文年龄 1 年）",
+        "OpenAlex FWCI 3.74",
+        "近年年均 OpenAlex 引用 6.0（无更早窗口可比较）",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-17T03:28:12",
+        "Detected subtopics: sim_to_real, loco_manipulation, trajectory_optimization",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: loco_manipulation, sim_to_real",
+        "Recently recommended: 6 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = trajectory_optimization",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 75.1 = base 73.3 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4415121671",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4415121671",
+        "openalex_id": "W4415121671",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2025.3620620",
+        "title": "Opt2Skill: Imitating Dynamically-Feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation",
+        "authors": [
+          "Fukang Liu",
+          "Zhaoyuan Gu",
+          "Yilin Cai",
+          "Ziyi Zhou",
+          "Hyunyoung Jung",
+          "Jaehwi Jang",
+          "Shijie Zhao",
+          "Sehoon Ha",
+          "Yue Chen",
+          "Danfei Xu",
+          "Ye Zhao"
+        ],
+        "abstract": "Humanoid robots are designed to perform diverse loco-manipulation tasks. However, they face challenges due to their high-dimensional and unstable dynamics, as well as the complex contact-rich nature of the tasks. Model-based optimal control methods offer flexibility to define precise motion but are limited by high computational complexity and accurate contact sensing. On the other hand, reinforcement learning (RL) handles high-dimensional spaces with strong robustness but suffers from inefficient learning, unnatural motion, and sim-to-real gaps. To address these challenges, we introduce Opt2Skill, an end-to-end pipeline that combines model-based trajectory optimization with RL to achieve robust whole-body loco-manipulation. Opt2Skill generates dynamic feasible and contact-consistent reference motions for the Digit humanoid robot using differential dynamic programming (DDP) and trains RL policies to track these optimal trajectories. Our results demonstrate that Opt2Skill outperforms baselines that rely on human demonstrations and inverse kinematics-based references, both in motion tracking and task success rates. Furthermore, we show that incorporating trajectories with torque information improves contact force tracking in contact-involved tasks, such as wiping a table. We have successfully transferred our approach to real-world applications.https://opt2skill.github.io",
+        "publication_date": "2025-10-13",
+        "publication_year": 2025,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9700999855995178
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.96670001745224
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9429000020027161
+          }
+        ],
+        "cited_by_count": 12,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          }
+        ],
+        "fwci": 3.7379,
+        "citation_normalized_percentile": 0.94076018,
+        "referenced_works": [
+          "W1964946446",
+          "W2133859362",
+          "W2158370675",
+          "W2198582666",
+          "W2796290181",
+          "W2964198579",
+          "W2971856312",
+          "W3081791272",
+          "W3093481944",
+          "W3142410314",
+          "W3202243720",
+          "W4313563020",
+          "W4313639240",
+          "W4383108816",
+          "W4386038305",
+          "W4387682164",
+          "W4390938336",
+          "W4391423845",
+          "W4394872716",
+          "W4401414436",
+          "W4402350775",
+          "W4402354017",
+          "W4402354138",
+          "W4404953792",
+          "W4405785534",
+          "W4405786155",
+          "W4411599636",
+          "W4414079055"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "topic_search:humanoid loco manipulation",
+          "topic_search:humanoid whole body manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:11",
+        "last_considered_at": "2026-08-23T13:03:52+08:00",
+        "recommended_at": "2026-08-23T13:03:52+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:12",
+        "openalex_url": "https://openalex.org/W4415121671",
+        "landing_page_url": "https://doi.org/10.1109/lra.2025.3620620",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 51,
+        "video_potential": 60,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "sim-to-real",
+          "trajectory optimization",
+          "optimal control",
+          "differential dynamic programming",
+          "DDP"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "trajectory optimization",
+              "optimal control",
+              "differential dynamic programming",
+              "DDP"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation, sim-to-real"
+          }
+        ],
+        "historical_value_score": 73.3,
+        "historical_score_components": {
+          "research_relevance": 51.0,
+          "recency": 100.0,
+          "normalized_citation": 94.1,
+          "fwci": 100.0,
+          "citation_momentum": 30.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 5.9%",
+          "阅读时效分 100/100（论文年龄 1 年）",
+          "OpenAlex FWCI 3.74",
+          "近年年均 OpenAlex 引用 6.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "loco_manipulation",
+        "trajectory_optimization"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 73.3,
+      "recommendation_utility": 75.1,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4415121671",
+        "base_id": "openalex:W4415121671",
+        "version": 1,
+        "title": "Opt2Skill: Imitating Dynamically-Feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation",
+        "authors": [
+          "Fukang Liu",
+          "Zhaoyuan Gu",
+          "Yilin Cai",
+          "Ziyi Zhou",
+          "Hyunyoung Jung",
+          "Jaehwi Jang",
+          "Shijie Zhao",
+          "Sehoon Ha",
+          "Yue Chen",
+          "Danfei Xu",
+          "Ye Zhao"
+        ],
+        "published": "2025-10-13T00:00:00Z",
+        "updated": "2025-10-13T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Humanoid robots are designed to perform diverse loco-manipulation tasks. However, they face challenges due to their high-dimensional and unstable dynamics, as well as the complex contact-rich nature of the tasks. Model-based optimal control methods offer flexibility to define precise motion but are limited by high computational complexity and accurate contact sensing. On the other hand, reinforcement learning (RL) handles high-dimensional spaces with strong robustness but suffers from inefficient learning, unnatural motion, and sim-to-real gaps. To address these challenges, we introduce Opt2Skill, an end-to-end pipeline that combines model-based trajectory optimization with RL to achieve robust whole-body loco-manipulation. Opt2Skill generates dynamic feasible and contact-consistent reference motions for the Digit humanoid robot using differential dynamic programming (DDP) and trains RL policies to track these optimal trajectories. Our results demonstrate that Opt2Skill outperforms baselines that rely on human demonstrations and inverse kinematics-based references, both in motion tracking and task success rates. Furthermore, we show that incorporating trajectories with torque information improves contact force tracking in contact-involved tasks, such as wiping a table. We have successfully transferred our approach to real-world applications.https://opt2skill.github.io",
+        "abs_url": "https://doi.org/10.1109/lra.2025.3620620",
+        "pdf_url": "",
+        "research_fit": 51,
+        "video_potential": 60,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "sim-to-real",
+          "trajectory optimization",
+          "optimal control",
+          "differential dynamic programming",
+          "DDP"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "trajectory optimization",
+              "optimal control",
+              "differential dynamic programming",
+              "DDP"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation, sim-to-real"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
