@@ -1,0 +1,885 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-24",
+  "generated_at": "2026-08-24T13:20:15+08:00",
+  "mode": "incremental",
+  "candidate_count": 2070,
+  "historical_candidate_count": 362,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7116283786",
+      "title": "Dexterous Manipulation Through Imitation Learning: A Survey",
+      "takeaway": "This survey reviews imitation learning methods for dexterous manipulation, covering problem formulation, recent advances, and key challenges. It positions IL as an alternative to model-based and RL approaches that struggle with high-dimensional contact dynamics, and it organizes the field around how expert demonstrations capture fine-grained coordination. The paper is useful as a knowledge map for researchers entering this area, and the technical point to inspect is how different IL variants handle the contact-rich, high-dimensional action spaces typical of multi-fingered hands.",
+      "generated_at": "2026-08-24T05:23:32",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7126053009",
+      "title": "Information-theoretic graph fusion with vision-language-action model for policy reasoning and dual robotic control",
+      "takeaway": "This paper proposes an information-theoretic graph fusion approach integrated with a vision-language-action model for policy reasoning and dual robotic control. The abstract is empty in the provided metadata, so no specific method details or experimental results are available. The technical point to inspect while reading is how the graph fusion mechanism combines visual, linguistic, and action information to enable coordinated control of two robots.",
+      "generated_at": "2026-08-24T05:23:32",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, manipulation, dexterous manipulation",
+        "research_fit 56 ≥ 18",
+        "核心方向：robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "特定关键词：dexterous manipulation",
+        "historical_value_score 77.2 ≥ 50.0",
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 7.4%",
+        "阅读时效分 100/100（论文年龄 1 年）",
+        "OpenAlex FWCI 3.13",
+        "近年年均 OpenAlex 引用 7.0（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-24T03:32:02",
+        "Detected subtopics: dexterous_manipulation",
+        "Personal domain affinity: preferred (+6; matched dexterous manipulation)",
+        "Subtopic: dexterous_manipulation",
+        "Recently recommended: 5 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 71.2 = base 77.2 + affinity +6 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7116283786",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7116283786",
+        "openalex_id": "W7116283786",
+        "base_arxiv_id": null,
+        "doi": "10.1109/tase.2025.3646183",
+        "title": "Dexterous Manipulation Through Imitation Learning: A Survey",
+        "authors": [
+          "Shan An",
+          "Ziyu Meng",
+          "Chao Tang",
+          "Yuning Zhou",
+          "Tengyu Liu",
+          "Fangqiang Ding",
+          "Shufang Zhang",
+          "Yao Mu",
+          "R. Song",
+          "Wei Zhang",
+          "Zeng Hou",
+          "H Zhang"
+        ],
+        "abstract": "Dexterous manipulation, which refers to the ability of a robotic hand or multi-fingered end-effector to skillfully control, reorient, and manipulate objects through precise, coordinated finger movements and adaptive force modulation, enables complex interactions similar to human hand dexterity. With recent advances in robotics and machine learning, there is a growing demand for these systems to operate in complex and unstructured environments. Traditional model-based approaches struggle to generalize across tasks and object variations due to the high dimensionality and complex contact dynamics of dexterous manipulation. Although model-free methods such as reinforcement learning (RL) show promise, they require extensive training, large-scale interaction data, and carefully designed rewards for stability and effectiveness. Imitation learning (IL) offers an alternative by allowing robots to acquire dexterous manipulation skills directly from expert demonstrations, capturing fine-grained coordination and contact dynamics while bypassing the need for explicit modeling and large-scale trial-and-error. This survey provides an overview of dexterous manipulation methods based on imitation learning, details recent advances, and addresses key challenges in the field. Additionally, it explores potential research directions to enhance IL-driven dexterous manipulation. Our goal is to offer researchers and practitioners a comprehensive introduction to this rapidly evolving domain.",
+        "publication_date": "2025-12-19",
+        "publication_year": 2025,
+        "source_name": "IEEE Transactions on Automation Science and Engineering",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.8669000267982483
+          },
+          {
+            "id": "https://openalex.org/T10982",
+            "display_name": "Motor Control and Adaptation",
+            "score": 0.06790000200271606
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.02199999988079071
+          }
+        ],
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 7
+          }
+        ],
+        "fwci": 3.1263,
+        "citation_normalized_percentile": 0.92631778,
+        "referenced_works": [
+          "W1024319585",
+          "W107124684",
+          "W1521959343",
+          "W1553941146",
+          "W1853143499",
+          "W1969506947",
+          "W1975033238",
+          "W1978646801",
+          "W1979081893",
+          "W1980440818",
+          "W1984237968",
+          "W1990084644",
+          "W1999375810",
+          "W2001905480",
+          "W2003329174",
+          "W2018073591",
+          "W2019165997",
+          "W2020157793",
+          "W2028964380",
+          "W2032139276",
+          "W2035767425",
+          "W2037855341",
+          "W2044000204",
+          "W2048058874",
+          "W2062998706",
+          "W2063822181",
+          "W2069978089",
+          "W2085029715",
+          "W2085545845",
+          "W2093847731",
+          "W2105300774",
+          "W2109910161",
+          "W2110741537",
+          "W2112036576",
+          "W2117028371",
+          "W2119717200",
+          "W2120529242",
+          "W2121894537",
+          "W2126701792",
+          "W2127461607",
+          "W2129202194",
+          "W2135482175",
+          "W2139086916",
+          "W2139811605",
+          "W2146079019",
+          "W2152693668",
+          "W2158432105",
+          "W2158886284",
+          "W2164068699",
+          "W2164320048",
+          "W2166633389",
+          "W2182347502",
+          "W2197459753",
+          "W2213758982",
+          "W2268552585",
+          "W2346378413",
+          "W2370378640",
+          "W2416254177",
+          "W2483804965",
+          "W2558807622",
+          "W2560647685",
+          "W2589847876",
+          "W2593768305",
+          "W2593994643",
+          "W2603294612",
+          "W2605102758",
+          "W2625586522",
+          "W2752330356",
+          "W2765551719",
+          "W2775635818",
+          "W2781493652",
+          "W2782882532",
+          "W2787995695",
+          "W2796290181",
+          "W2800614044",
+          "W2800747193",
+          "W2810773383",
+          "W2888138457",
+          "W2889575163",
+          "W2894714230",
+          "W2908172654",
+          "W2910779592",
+          "W2913995205",
+          "W2948978827",
+          "W2956037066",
+          "W2963285996",
+          "W2963411833",
+          "W2963669336",
+          "W2963802910",
+          "W2964227312",
+          "W2967695057",
+          "W2968340082",
+          "W2979352248",
+          "W2986783566",
+          "W2990424588",
+          "W2994446013",
+          "W2996355317",
+          "W2997581345",
+          "W3002284381",
+          "W3007769740",
+          "W3012370795",
+          "W3022532439",
+          "W3032185005",
+          "W3033809666",
+          "W3033882920",
+          "W3037088959",
+          "W3037767967",
+          "W3038113514",
+          "W3039055967",
+          "W3040099822",
+          "W3041466979",
+          "W3042432620",
+          "W3080772040",
+          "W3081268564",
+          "W3090369311",
+          "W3091133300",
+          "W3096831136",
+          "W3101780148",
+          "W3115361257",
+          "W3119073724",
+          "W3129416290",
+          "W3129756265",
+          "W3130589561",
+          "W3138205857",
+          "W3138984732",
+          "W3142410314",
+          "W3154829718",
+          "W3170104202",
+          "W3174137405",
+          "W3189615635",
+          "W3196158767",
+          "W3198310069",
+          "W3204665606",
+          "W3205861031",
+          "W3206464427",
+          "W3206739224",
+          "W3209965475",
+          "W4200213509",
+          "W4205912149",
+          "W4206244007",
+          "W4224862098",
+          "W4225003209",
+          "W4225688536",
+          "W4226113905",
+          "W4231496855",
+          "W4243626412",
+          "W4280532262",
+          "W4283267185",
+          "W4283786747",
+          "W4296010390",
+          "W4298326869",
+          "W4313563108",
+          "W4321330995",
+          "W4323767275",
+          "W4361029864",
+          "W4362672763",
+          "W4367663367",
+          "W4376851169",
+          "W4383066442",
+          "W4383108265",
+          "W4383108454",
+          "W4383108491",
+          "W4383108746",
+          "W4383108950",
+          "W4383109245",
+          "W4385430564",
+          "W4385430582",
+          "W4385430618",
+          "W4385430674",
+          "W4385430685",
+          "W4386076611",
+          "W4387653004",
+          "W4387935000",
+          "W4389352485",
+          "W4389987375",
+          "W4390480946",
+          "W4390480962",
+          "W4392405809",
+          "W4393241287",
+          "W4393372913",
+          "W4393864962",
+          "W4393972839",
+          "W4396680642",
+          "W4399426013",
+          "W4400770903",
+          "W4401414025",
+          "W4401414765",
+          "W4401414844",
+          "W4401415002",
+          "W4401415042",
+          "W4401415761",
+          "W4401416041",
+          "W4401416531",
+          "W4401943152",
+          "W4402354045",
+          "W4402354047",
+          "W4402354112",
+          "W4402354127",
+          "W4402697409",
+          "W4402704543",
+          "W4402753857",
+          "W4403331517",
+          "W4403337227",
+          "W4403534333",
+          "W4403888324",
+          "W4404057474",
+          "W4404238344",
+          "W4404307277",
+          "W4404862942",
+          "W4404953708",
+          "W4405753615",
+          "W4405778692",
+          "W4405784982",
+          "W4405785673",
+          "W4405786168",
+          "W4405787817",
+          "W4405905261",
+          "W4406416207",
+          "W4407168289",
+          "W4407223688",
+          "W4407448686",
+          "W4407831623",
+          "W4408423496",
+          "W4408727266",
+          "W4409202135",
+          "W4411336685",
+          "W4411886624",
+          "W4412124433",
+          "W4412830400",
+          "W4413917575",
+          "W4413925099",
+          "W4413925209",
+          "W4413925671",
+          "W4414050455",
+          "W4414050916",
+          "W4415524461",
+          "W4415798853",
+          "W4416749901",
+          "W4417483688",
+          "W7117474416"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "knowledge_map_search:dexterous manipulation survey",
+          "topic_search:dexterous manipulation survey"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:20",
+        "last_considered_at": "2026-08-24T13:20:15+08:00",
+        "recommended_at": "2026-08-24T13:20:15+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:32:02",
+        "openalex_url": "https://openalex.org/W7116283786",
+        "landing_page_url": "https://doi.org/10.1109/tase.2025.3646183",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 56,
+        "video_potential": 46,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "dexterous manipulation",
+          "robotic hand"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation",
+              "robotic hand"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, dexterous manipulation"
+          }
+        ],
+        "historical_value_score": 77.2,
+        "historical_score_components": {
+          "research_relevance": 56.0,
+          "recency": 100.0,
+          "normalized_citation": 92.6,
+          "fwci": 100.0,
+          "citation_momentum": 35.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 7.4%",
+          "阅读时效分 100/100（论文年龄 1 年）",
+          "OpenAlex FWCI 3.13",
+          "近年年均 OpenAlex 引用 7.0（无更早窗口可比较）",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true
+      },
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "dexterous_manipulation"
+      ],
+      "document_type": "survey",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 77.2,
+      "recommendation_utility": 71.2,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7116283786",
+        "base_id": "openalex:W7116283786",
+        "version": 1,
+        "title": "Dexterous Manipulation Through Imitation Learning: A Survey",
+        "authors": [
+          "Shan An",
+          "Ziyu Meng",
+          "Chao Tang",
+          "Yuning Zhou",
+          "Tengyu Liu",
+          "Fangqiang Ding",
+          "Shufang Zhang",
+          "Yao Mu",
+          "R. Song",
+          "Wei Zhang",
+          "Zeng Hou",
+          "H Zhang"
+        ],
+        "published": "2025-12-19T00:00:00Z",
+        "updated": "2025-12-19T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Dexterous manipulation, which refers to the ability of a robotic hand or multi-fingered end-effector to skillfully control, reorient, and manipulate objects through precise, coordinated finger movements and adaptive force modulation, enables complex interactions similar to human hand dexterity. With recent advances in robotics and machine learning, there is a growing demand for these systems to operate in complex and unstructured environments. Traditional model-based approaches struggle to generalize across tasks and object variations due to the high dimensionality and complex contact dynamics of dexterous manipulation. Although model-free methods such as reinforcement learning (RL) show promise, they require extensive training, large-scale interaction data, and carefully designed rewards for stability and effectiveness. Imitation learning (IL) offers an alternative by allowing robots to acquire dexterous manipulation skills directly from expert demonstrations, capturing fine-grained coordination and contact dynamics while bypassing the need for explicit modeling and large-scale trial-and-error. This survey provides an overview of dexterous manipulation methods based on imitation learning, details recent advances, and addresses key challenges in the field. Additionally, it explores potential research directions to enhance IL-driven dexterous manipulation. Our goal is to offer researchers and practitioners a comprehensive introduction to this rapidly evolving domain.",
+        "abs_url": "https://doi.org/10.1109/tase.2025.3646183",
+        "pdf_url": "",
+        "research_fit": 56,
+        "video_potential": 46,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "dexterous manipulation",
+          "robotic hand"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation",
+              "robotic hand"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, dexterous manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, manipulation, vision-language-action",
+        "research_fit 32 ≥ 18",
+        "核心方向：vla_robot_foundation",
+        "特定关键词：vision-language-action",
+        "historical_value_score 74.1 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 119.48",
+        "近年年均 OpenAlex 引用 18.5（无更早窗口可比较）",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-24T03:31:56",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 74.1 = base 74.1 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7126053009",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7126053009",
+        "openalex_id": "W7126053009",
+        "base_arxiv_id": "2508.05342",
+        "doi": "10.1016/j.inffus.2026.104193",
+        "title": "Information-theoretic graph fusion with vision-language-action model for policy reasoning and dual robotic control",
+        "authors": [
+          "Shunlei Li",
+          "Longsen Gao",
+          "Jin Wang",
+          "Chang Che",
+          "Xi Xiao",
+          "Jiuwen Cao",
+          "Yingbai Hu",
+          "Hamid Reza Karimi"
+        ],
+        "abstract": null,
+        "publication_date": "2026-01-29",
+        "publication_year": 2026,
+        "source_name": "Information Fusion",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.7044000029563904
+          },
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.10700000077486038
+          },
+          {
+            "id": "https://openalex.org/T10812",
+            "display_name": "Human Pose and Action Recognition",
+            "score": 0.07940000295639038
+          }
+        ],
+        "cited_by_count": 37,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          }
+        ],
+        "fwci": 119.4782,
+        "citation_normalized_percentile": 0.99982287,
+        "referenced_works": [
+          "W1995875735",
+          "W2962899390",
+          "W3209058326",
+          "W4236881204",
+          "W4393238320",
+          "W4395097571",
+          "W4400228819",
+          "W4400726757",
+          "W4402545715",
+          "W4406325768",
+          "W4406387958",
+          "W4408282658",
+          "W4414079054",
+          "W4416243406",
+          "W4417157970"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "topic_search:vision language action robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:09",
+        "last_considered_at": "2026-08-24T13:20:15+08:00",
+        "recommended_at": "2026-08-24T13:20:15+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:31:56",
+        "openalex_url": "https://openalex.org/W7126053009",
+        "landing_page_url": "https://doi.org/10.1016/j.inffus.2026.104193",
+        "open_access_url": "http://arxiv.org/abs/2508.05342",
+        "pdf_url": "https://arxiv.org/pdf/2508.05342",
+        "research_fit": 32,
+        "video_potential": 20,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, vision-language-action"
+          }
+        ],
+        "historical_value_score": 74.1,
+        "historical_score_components": {
+          "research_relevance": 32.0,
+          "recency": 100.0,
+          "normalized_citation": 100.0,
+          "fwci": 100.0,
+          "citation_momentum": 92.5,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 119.48",
+          "近年年均 OpenAlex 引用 18.5（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false
+      },
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 74.1,
+      "recommendation_utility": 74.1,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2508.05342",
+        "base_id": "2508.05342",
+        "version": 1,
+        "title": "Information-theoretic graph fusion with vision-language-action model for policy reasoning and dual robotic control",
+        "authors": [
+          "Shunlei Li",
+          "Longsen Gao",
+          "Jin Wang",
+          "Chang Che",
+          "Xi Xiao",
+          "Jiuwen Cao",
+          "Yingbai Hu",
+          "Hamid Reza Karimi"
+        ],
+        "published": "2026-01-29T00:00:00Z",
+        "updated": "2026-01-29T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "",
+        "abs_url": "https://arxiv.org/abs/2508.05342",
+        "pdf_url": "https://arxiv.org/pdf/2508.05342",
+        "research_fit": 32,
+        "video_potential": 20,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
