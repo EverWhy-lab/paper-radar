@@ -1,0 +1,635 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-25",
+  "generated_at": "2026-08-25T13:07:04+08:00",
+  "mode": "incremental",
+  "candidate_count": 2526,
+  "historical_candidate_count": 362,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2606.08015",
+      "title": "Q-VGM: Q-Value-Gradient Matching for Offline-to-Online Reinforcement Learning of Flow-Matching VLA",
+      "takeaway": "Q-VGM is an offline-to-online RL method for fine-tuning flow-matching VLA policies that avoids backpropagation through the denoising process by formulating policy improvement as optimal control over denoising dynamics. It trains an action-sensitive chunk critic on latent states from a frozen VLA backbone, using IQL offline and TD learning online, then converts clean-action estimates from iterative Q-gradient ascent into residual velocity targets to supervise the velocity field. On LIBERO, offline Q-VGM improves average success rate from 86.9% to 93.0% with 150 rollout episodes per task, and the offline-to-online phase reaches 99.7% with roughly 6x fewer rollout episodes than PPO fine-tuning; on three real-world bimanual tasks it improves from 66.7% to 98.3%. Inspect how the denoising-time value function is defined and how residual velocity targets are derived from Q-gradient ascent.",
+      "generated_at": "2026-08-25T05:11:05",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3105048402",
+      "title": "Robust legged robot state estimation using factor graph optimization",
+      "takeaway": "This paper presents a factor graph optimization method for legged robot state estimation that tightly fuses inertial navigation, leg odometry, and visual odometry, aiming to reduce dependence on foot contact classifications that fail during slipping and to reduce position drift in dynamic motions. The approach is demonstrated on the ANYmal quadruped in a realistic outdoor industrial environment with trotting, walking, obstacle crossing, and stair ascent, reporting up to 55% reduction in relative position error and 76% reduction in absolute position error compared to kinematic-inertial odometry. Inspect how the factor graph integrates leg and visual measurements and how robustness to contact misclassification is achieved.",
+      "generated_at": "2026-08-25T05:11:05",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 100 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: VLA, vision-language-action, bimanual manipulation",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: offline_to_online_rl, bimanual_manipulation, trajectory_optimization",
+        "Personal domain affinity: preferred (+6; matched bimanual manipulation)",
+        "Subtopic: bimanual_manipulation",
+        "Recently recommended: 6 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = offline_to_online_rl, trajectory_optimization",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 101.8 = base 100.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2606.08015",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "offline_to_online_rl",
+        "bimanual_manipulation",
+        "trajectory_optimization"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 100.0,
+      "recommendation_utility": 101.8,
+      "days_since_same_subtopic": 2,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2606.08015v3",
+        "base_id": "2606.08015",
+        "version": 3,
+        "title": "Q-VGM: Q-Value-Gradient Matching for Offline-to-Online Reinforcement Learning of Flow-Matching VLA",
+        "authors": [
+          "Ziqian Wang",
+          "Yitian Liu",
+          "Xingjian Mao",
+          "Minqian Wang",
+          "Yao Mu"
+        ],
+        "published": "2026-06-06T07:10:25Z",
+        "updated": "2026-08-24T15:29:27Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "We propose Q-Guided Value-Gradient Matching (Q-VGM), an offline-to-online reinforcement learning (RL) method for fine-tuning flow-matching vision-language-action (VLA) policies with a learned Q-function. Classical off-policy actor-critic methods improve a policy by following the critic gradient $\\nabla_A Q$, but applying this update to flow policies requires backpropagation through the multi-step denoising process (BPTT), which is costly and unstable at VLA scale. Existing BPTT-free approaches mostly reduce policy improvement to critic-supervised imitation learning through filtering or reweighting sampled behaviors, or rely on test-time selection and guidance, leaving the underlying policy unchanged. Q-VGM instead formulates policy improvement as optimal control over the denoising dynamics, where the optimal residual velocity is the gradient of a denoising-time value function. Specifically, we train an action-sensitive chunk critic on compact latent states from the frozen VLA backbone, with IQL in the offline phase and TD learning in the online phase. Clean-action estimates improved by iterative Q-gradient ascent are then converted into residual velocity targets that directly supervise the velocity field. Training thus avoids both action-likelihood estimation and the BPTT problem, while requiring no critic at inference time. Starting from a few-shot-SFT $π_{0.5}$ policy on LIBERO, offline Q-VGM improves the average success rate across Spatial, Object and Goal suites from 86.9% to 93.0% with 150 rollout episodes per task. The offline-to-online phase reaches 99.7%, matching the final performance of PPO fine-tuning with approximately $6\\times$ fewer rollout episodes. On three real-world bimanual manipulation tasks, offline Q-VGM improves the average success rate from 66.7% to 98.3%.",
+        "abs_url": "https://arxiv.org/abs/2606.08015v3",
+        "pdf_url": "https://arxiv.org/pdf/2606.08015v3",
+        "research_fit": 100,
+        "video_potential": 51,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action",
+          "online reinforcement learning",
+          "imitation learning",
+          "bimanual manipulation",
+          "optimal control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "online reinforcement learning",
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "optimal control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 25.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning",
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics",
+        "research_fit 22 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：robot state estimation, factor graph",
+        "historical_value_score 60.0 ≥ 42.0",
+        "发表于 2019 年",
+        "同领域同年份引用标准化位于前 6.0%",
+        "阅读时效分 70/100（论文年龄 7 年）",
+        "OpenAlex FWCI 3.77",
+        "近 2 年年均引用 11.5；此前 2 年年均 13.5",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:03",
+        "Detected subtopics: robot_state_estimation",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "recommendation_utility 66.0 = base 60.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3105048402",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3105048402",
+        "openalex_id": "W3105048402",
+        "base_arxiv_id": null,
+        "doi": null,
+        "title": "Robust legged robot state estimation using factor graph optimization",
+        "authors": [
+          "Wisth, D",
+          "Camurri, M",
+          "Fallon, M"
+        ],
+        "abstract": "Legged robots, specifically quadrupeds, are becoming increasingly attractive for industrial applications such as inspection. However, to leave the laboratory and to become useful to an end user requires reliability in harsh conditions. From the perspective of state estimation, it is essential to be able to accurately estimate the robot's state despite challenges such as uneven or slippery terrain, textureless and reflective scenes, as well as dynamic camera occlusions. We are motivated to reduce the dependency on foot contact classifications, which fail when slipping, and to reduce position drift during dynamic motions such as trotting. To this end, we present a factor graph optimization method for state estimation which tightly fuses and smooths inertial navigation, leg odometry and visual odometry. The effectiveness of the approach is demonstrated using the ANYmal quadruped robot navigating in a realistic outdoor industrial environment. This experiment included trotting, walking, crossing obstacles and ascending a staircase. The proposed approach decreased the relative position error by up to 55% and absolute position error by 76% compared to kinematic-inertial odometry.",
+        "publication_date": "2019-01-01",
+        "publication_year": 2019,
+        "source_name": "Oxford University Research Archive (ORA) (University of Oxford)",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9994000196456909
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9980999827384949
+          },
+          {
+            "id": "https://openalex.org/T10326",
+            "display_name": "Indoor and Outdoor Localization Technologies",
+            "score": 0.9714999794960022
+          }
+        ],
+        "cited_by_count": 78,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 4
+          }
+        ],
+        "fwci": 3.7745,
+        "citation_normalized_percentile": 0.93985776,
+        "referenced_works": [
+          "W1968315983",
+          "W2080486046",
+          "W2091790851",
+          "W2216550548",
+          "W2296360731",
+          "W2341165584",
+          "W2396274919",
+          "W2471969791",
+          "W2482726005",
+          "W2549216668",
+          "W2564632156",
+          "W2577008596",
+          "W2738207958",
+          "W2745007981",
+          "W2745859992",
+          "W2750656378",
+          "W2754177129",
+          "W2768737714",
+          "W2788200022",
+          "W2794127568",
+          "W2883702102",
+          "W2950302787",
+          "W3084365688",
+          "W3125449081",
+          "W4237726214",
+          "W4241459016",
+          "W4246614213",
+          "W4250058668"
+        ],
+        "related_works": [
+          "W2303855011",
+          "W2312326526",
+          "W2412578866",
+          "W2414561716",
+          "W2979950214",
+          "W3024737167",
+          "W3105866016",
+          "W3161199934",
+          "W4312703710",
+          "W87609089"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works",
+          "topic_search:robot state estimation"
+        ],
+        "seed_paper_id": [
+          "openalex:W4237726214"
+        ],
+        "discovered_at": "2026-08-04T06:56:03",
+        "last_considered_at": "2026-08-25T13:07:04+08:00",
+        "recommended_at": "2026-08-25T13:07:04+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:03",
+        "openalex_url": "https://openalex.org/W3105048402",
+        "landing_page_url": "https://ora.ox.ac.uk/objects/uuid:3da1ea04-60c1-4df9-9062-050e97b9a398",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 22,
+        "video_potential": 37,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "quadruped robot",
+          "robot state estimation",
+          "factor graph"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot",
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation",
+              "factor graph"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "historical_value_score": 60.0,
+        "historical_score_components": {
+          "research_relevance": 22.0,
+          "recency": 70.0,
+          "normalized_citation": 94.0,
+          "fwci": 100.0,
+          "citation_momentum": 42.6,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2019 年",
+          "同领域同年份引用标准化位于前 6.0%",
+          "阅读时效分 70/100（论文年龄 7 年）",
+          "OpenAlex FWCI 3.77",
+          "近 2 年年均引用 11.5；此前 2 年年均 13.5",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "robot_state_estimation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 60.0,
+      "recommendation_utility": 66.0,
+      "days_since_same_subtopic": 9,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W3105048402",
+        "base_id": "openalex:W3105048402",
+        "version": 1,
+        "title": "Robust legged robot state estimation using factor graph optimization",
+        "authors": [
+          "Wisth, D",
+          "Camurri, M",
+          "Fallon, M"
+        ],
+        "published": "2019-01-01T00:00:00Z",
+        "updated": "2019-01-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Legged robots, specifically quadrupeds, are becoming increasingly attractive for industrial applications such as inspection. However, to leave the laboratory and to become useful to an end user requires reliability in harsh conditions. From the perspective of state estimation, it is essential to be able to accurately estimate the robot's state despite challenges such as uneven or slippery terrain, textureless and reflective scenes, as well as dynamic camera occlusions. We are motivated to reduce the dependency on foot contact classifications, which fail when slipping, and to reduce position drift during dynamic motions such as trotting. To this end, we present a factor graph optimization method for state estimation which tightly fuses and smooths inertial navigation, leg odometry and visual odometry. The effectiveness of the approach is demonstrated using the ANYmal quadruped robot navigating in a realistic outdoor industrial environment. This experiment included trotting, walking, crossing obstacles and ascending a staircase. The proposed approach decreased the relative position error by up to 55% and absolute position error by 76% compared to kinematic-inertial odometry.",
+        "abs_url": "https://ora.ox.ac.uk/objects/uuid:3da1ea04-60c1-4df9-9062-050e97b9a398",
+        "pdf_url": "",
+        "research_fit": 22,
+        "video_potential": 37,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "quadruped robot",
+          "robot state estimation",
+          "factor graph"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot",
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation",
+              "factor graph"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
