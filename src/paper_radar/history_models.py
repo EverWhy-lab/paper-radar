@@ -106,6 +106,15 @@ class HistoricalPaper:
     historical_score_components: dict[str, float | None] = field(default_factory=dict)
     historical_score_reasons: list[str] = field(default_factory=list)
     is_knowledge_map: bool = False
+    source_id: str | None = None
+    is_retracted: bool = False
+    rising_score: float | None = None
+    rising_score_components: dict[str, float | None] = field(default_factory=dict)
+    rising_score_reasons: list[str] = field(default_factory=list)
+    rising_updated_at: str | None = None
+    rising_age_days: int | None = None
+    rising_citation_velocity: float | None = None
+    rising_observed_growth: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -132,6 +141,15 @@ class HistoricalPaper:
         normalized["historical_score_reasons"] = list(
             value.get("historical_score_reasons", [])
         )
+        normalized["rising_score_components"] = dict(
+            value.get("rising_score_components", {})
+        )
+        normalized["rising_score_reasons"] = list(
+            value.get("rising_score_reasons", [])
+        )
+        normalized["rising_observed_growth"] = dict(
+            value.get("rising_observed_growth", {})
+        )
         defaults: dict[str, Any] = {
             "openalex_url": None,
             "landing_page_url": None,
@@ -146,6 +164,15 @@ class HistoricalPaper:
             "historical_score_components": {},
             "historical_score_reasons": [],
             "is_knowledge_map": False,
+            "source_id": None,
+            "is_retracted": False,
+            "rising_score": None,
+            "rising_score_components": {},
+            "rising_score_reasons": [],
+            "rising_updated_at": None,
+            "rising_age_days": None,
+            "rising_citation_velocity": None,
+            "rising_observed_growth": {},
         }
         for key, default in defaults.items():
             normalized.setdefault(key, default)

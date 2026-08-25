@@ -148,6 +148,7 @@ class DeepSeekClient:
                     "authors": entry.paper.authors[:8],
                     "publication_year": year,
                     "selection_category": entry.category,
+                    "source_name": historical.source_name if historical is not None else None,
                     "core_topics": entry.core_topics,
                     "subtopics": entry.subtopics,
                     "document_type": entry.document_type,

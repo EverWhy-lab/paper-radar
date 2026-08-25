@@ -18,6 +18,7 @@ from paper_radar.recommendation_utility import (
     detect_subtopics,
 )
 from paper_radar.scoring import robotics_context_gate
+from paper_radar.rising import rising_eligibility
 
 
 def _normalise(value: str) -> str:
@@ -51,6 +52,38 @@ def _topic_overlap(left: set[str], right: set[str]) -> float:
     return len(left & right) / len(union) if union else 0.0
 
 
+def _recent_category_count(
+    history: dict[str, list[dict[str, Any]]],
+    *,
+    category: str,
+    target_date: str,
+    window_days: int,
+) -> int:
+    """Count unique prior selections in the rolling window that includes today."""
+    target = date.fromisoformat(target_date)
+    seen: set[tuple[str, str, str]] = set()
+    for events in history.values():
+        for event in events:
+            if str(event.get("category", "")) != category:
+                continue
+            try:
+                previous = date.fromisoformat(str(event.get("date", ""))[:10])
+            except ValueError:
+                continue
+            elapsed = (target - previous).days
+            # A seven-day rolling window containing the target date has six
+            # prior calendar days. elapsed == window_days is just outside it.
+            if not 0 < elapsed < window_days:
+                continue
+            key = (
+                previous.isoformat(),
+                str(event.get("canonical_paper_id", "")),
+                str(event.get("title", "")),
+            )
+            seen.add(key)
+    return len(seen)
+
+
 def _daily_reading_rank(entry: RecommendationEntry) -> tuple[float, float, str, str]:
     """Rank reading value deterministically without using video potential."""
     return (
@@ -65,6 +98,7 @@ def _daily_reading_rank(entry: RecommendationEntry) -> tuple[float, float, str, 
 class CuratedSelectionResult:
     recommendations: list[RecommendationEntry]
     historical_papers: list[HistoricalPaper]
+    rising_papers: list[HistoricalPaper]
     reading_pool: list[ReadingPoolEntry]
 
 
@@ -779,11 +813,91 @@ class CuratedRecommendationEngine:
                 break
         return selected
 
+    def _select_rising(
+        self,
+        papers: list[HistoricalPaper],
+        history: dict[str, list[dict[str, Any]]],
+        target_date: str,
+        considered_at: str,
+        already_selected: list[RecommendationEntry],
+    ) -> list[RecommendationEntry]:
+        config = self.config["rising_recent"]
+        target = date.fromisoformat(target_date)
+        eligible_statuses = set(config.get("eligible_statuses", ["unread", "queued"]))
+        threshold = float(config["min_rising_score"])
+        rolling_limit = int(config.get("max_count_per_7_days", 2))
+        if _recent_category_count(
+            history,
+            category="rising_recent",
+            target_date=target_date,
+            window_days=7,
+        ) >= rolling_limit:
+            return []
+        candidates: list[RecommendationEntry] = []
+        for paper in papers:
+            paper.last_considered_at = considered_at
+            if paper.dismissed or paper.reading_status not in eligible_statuses:
+                continue
+            if paper.aliases & self._dismissed_aliases:
+                continue
+            eligible, _eligibility_reasons = rising_eligibility(
+                paper, self.profile, as_of=target
+            )
+            if not eligible:
+                continue
+            if paper.rising_score is None or paper.rising_score < threshold:
+                continue
+            if _cooling(
+                paper.aliases,
+                history,
+                target_date,
+                int(config["cooldown_days"]),
+            ):
+                continue
+            if any(paper.aliases & entry.aliases for entry in already_selected):
+                continue
+            primary = self._primary_topic(paper.matched_topics)
+            if primary in self._cooldown_topics:
+                continue
+            entry = self._recommendation_entry(
+                category="rising_recent",
+                paper=paper.to_reader_paper(),
+                historical_paper=paper,
+                base_score=float(paper.rising_score),
+                history=history,
+                target_date=target_date,
+                reasons=[
+                    f"rising_score {paper.rising_score:.1f} ≥ {threshold:.1f}",
+                    *paper.rising_score_reasons,
+                ],
+            )
+            if entry.recommendation_utility < float(
+                config["min_recommendation_utility"]
+            ):
+                continue
+            if entry.redundancy_penalty < 0 and entry.recommendation_utility < float(
+                config["min_redundant_utility"]
+            ):
+                continue
+            if entry.semantic_suppressed:
+                continue
+            candidates.append(entry)
+
+        selected: list[RecommendationEntry] = []
+        for entry in sorted(candidates, key=_daily_reading_rank, reverse=True):
+            if any(entry.aliases & other.aliases for other in already_selected + selected):
+                continue
+            selected.append(entry)
+            if len(selected) >= int(config["max_count"]):
+                break
+        return selected
+
     def select(
         self,
         *,
         recent_new: list[Paper],
         historical_papers: list[HistoricalPaper],
+        rising_papers: list[HistoricalPaper] | None = None,
         reading_pool: list[ReadingPoolEntry],
         history: dict[str, list[dict[str, Any]]],
         target_date: str,
@@ -791,6 +905,7 @@ class CuratedRecommendationEngine:
         dismissals: list[DismissalEntry] | None = None,
     ) -> CuratedSelectionResult:
         dismissals = dismissals or []
+        rising_papers = rising_papers or []
         self._dismissed_aliases = {
             entry.canonical_paper_id.casefold() for entry in dismissals
         }
@@ -848,19 +963,26 @@ class CuratedRecommendationEngine:
             considered_at,
             recent + journal,
         )
+        rising = self._select_rising(
+            rising_papers,
+            history,
+            target_date,
+            considered_at,
+            recent + journal + model_based,
+        )
         review = self._select_historical(
             ordered_historical,
             category="review_knowledge_map",
             history=history,
             target_date=target_date,
             considered_at=considered_at,
-            already_selected=recent + journal + model_based,
+            already_selected=recent + journal + model_based + rising,
         )
         recent_review = self._select_recent_knowledge_maps(
             recent_new,
             history,
             target_date,
-            recent + journal + model_based + review,
+            recent + journal + model_based + rising + review,
         )
         impact = self._select_historical(
             ordered_historical,
@@ -868,7 +990,7 @@ class CuratedRecommendationEngine:
             history=history,
             target_date=target_date,
             considered_at=considered_at,
-            already_selected=recent + journal + model_based + review + recent_review,
+            already_selected=recent + journal + model_based + rising + review + recent_review,
         )
         groups = {
             "journal_recent": journal,
@@ -876,6 +998,7 @@ class CuratedRecommendationEngine:
             "high_impact_historical": impact,
             "frontier_recent": recent,
             "model_based_recent": model_based,
+            "rising_recent": rising,
         }
         chosen: list[RecommendationEntry] = []
         max_total = min(5, int(self.config["max_total"]))
@@ -908,5 +1031,6 @@ class CuratedRecommendationEngine:
         return CuratedSelectionResult(
             recommendations=chosen,
             historical_papers=historical_papers,
+            rising_papers=rising_papers,
             reading_pool=reading_pool,
         )

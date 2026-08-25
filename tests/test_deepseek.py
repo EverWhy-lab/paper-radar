@@ -166,6 +166,7 @@ def test_payload_uses_reading_context_not_internal_scores_and_keeps_long_abstrac
     sent = papers[0]
 
     assert sent["selection_category"] == "frontier_recent"
+    assert sent["source_name"] is None
     assert sent["core_topics"] == ["humanoid_loco_manipulation"]
     assert sent["subtopics"] == ["whole_body_control", "model_predictive_control"]
     assert sent["document_type"] == "method"
@@ -175,6 +176,9 @@ def test_payload_uses_reading_context_not_internal_scores_and_keeps_long_abstrac
     assert "research_fit" not in sent
     assert "historical_value_score" not in sent
     assert "recommendation_utility" not in sent
+    assert "rising_score" not in sent
+    assert "cited_by_count" not in sent
+    assert "fwci" not in sent
 
 
 def test_parses_code_fenced_json(profile) -> None:

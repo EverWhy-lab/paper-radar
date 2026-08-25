@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from datetime import date, datetime, timedelta
 from functools import partial
@@ -10,6 +11,7 @@ from zoneinfo import ZoneInfo
 
 from paper_radar.backtest import BacktestError, OfflineBacktester
 from paper_radar.config import ConfigError, load_profile
+from paper_radar.environment import load_project_dotenv
 from paper_radar.fetchers.arxiv import ArxivClient, ArxivFetchError, split_arxiv_id
 from paper_radar.feedback import _resolve_metadata, apply_feedback_lines
 from paper_radar.history_discovery import HistoricalDiscoveryService
@@ -21,6 +23,8 @@ from paper_radar.history_storage import (
 )
 from paper_radar.providers.base import HistoricalProviderError
 from paper_radar.providers.openalex import OpenAlexProvider
+from paper_radar.rising_discovery import RisingDiscoveryService, RisingScanResult
+from paper_radar.rising_storage import RisingCandidateStorage
 from paper_radar.reader_models import (
     DismissalEntry,
     FavoriteEntry,
@@ -92,6 +96,10 @@ def build_parser() -> argparse.ArgumentParser:
     )
     discover.add_argument("--dry-run", action="store_true")
     discover.add_argument("--limit", type=int)
+    rising = history_subparsers.add_parser(
+        "rising", help="scan recent robotics-core journals for rising papers"
+    )
+    rising.add_argument("--dry-run", action="store_true")
     history_list = history_subparsers.add_parser(
         "list", help="list top scored historical candidates"
     )
@@ -226,7 +234,8 @@ def _dismiss(project_root: Path, args: argparse.Namespace) -> int:
 
 
 def _dismissal_metadata(data_dir: Path, canonical: str) -> tuple[str, list[str]]:
-    for paper in HistoricalPaperStorage(data_dir).load():
+    papers = HistoricalPaperStorage(data_dir).load() + RisingCandidateStorage(data_dir).load()
+    for paper in papers:
         if canonical in paper.aliases:
             return paper.title, paper.matched_topics
     recommendation_storage = RecommendationStorage(data_dir)
@@ -377,6 +386,7 @@ def _run(project_root: Path, requested_date: date | None) -> int:
     print(f"Generated personal shortlist for {result.date}: {result.recommendation_count} recommendations")
     print(f"Background candidates scanned: {result.candidate_count}")
     print(f"Historical candidates considered: {result.historical_candidate_count}")
+    print(f"Rising candidates considered: {result.rising_candidate_count}")
     if result.llm_analysis_count:
         print(f"LLM daily guide: {result.llm_analysis_count} papers analyzed")
     else:
@@ -510,6 +520,18 @@ def _history(project_root: Path, args: argparse.Namespace) -> int:
             print(f"Estimated OpenAlex requests: {plan.estimated_request_count}")
             return 0
 
+        if args.history_command == "rising":
+            provider = OpenAlexProvider(
+                profile.openalex,
+                data_dir,
+                read_only=bool(args.dry_run),
+            )
+            result = RisingDiscoveryService(
+                data_dir, profile, provider, now=now
+            ).scan(dry_run=bool(args.dry_run))
+            _print_rising_scan(result, profile.rising_discovery["min_rising_score"])
+            return 0
+
         provider = OpenAlexProvider(profile.openalex, data_dir)
         service = HistoricalDiscoveryService(data_dir, profile, provider, now=now)
         if args.history_command == "refresh" and args.all:
@@ -555,6 +577,109 @@ def _history(project_root: Path, args: argparse.Namespace) -> int:
     return 2
 
 
+def _print_rising_scan(result: RisingScanResult, threshold: float) -> None:
+    mode = "DRY RUN (read-only)" if result.dry_run else "WEEKLY UPDATE"
+    print(f"Rising Papers scan — {mode}")
+    print(f"Scan date: {result.scan_date}")
+    print(f"Date window: {result.from_date} to {result.to_date}")
+    print(f"Works scanned: {result.scanned_count}")
+    print(f"After basic filters: {result.candidate_count}")
+    print(f"Eligible at rising_score ≥ {float(threshold):.1f}: {result.eligible_count}")
+    quantiles = result.quantiles
+    print(
+        "Rising score distribution: "
+        + " / ".join(
+            f"{key.upper()}={value if value is not None else 'unavailable'}"
+            for key, value in quantiles.items()
+        )
+    )
+    print("\nPer-source audit:")
+    for source in result.per_source:
+        reported = (
+            str(source["reported_total"])
+            if source["reported_total"] is not None
+            else "unknown"
+        )
+        print(
+            f"- {source['name']} ({source['source_id']}): "
+            f"scanned={source['works_scanned']}, reported={reported}, "
+            f"pages={source['pages']}, limit={source['scan_limit']}, "
+            f"truncated={source['truncated']}, basic={source['after_basic_filters']}, "
+            f"rising_eligible={source['eligible_rising']}"
+        )
+        print(
+            f"  recent 60 days: scanned={source['recent_60_scanned']}, "
+            f"journal_recent eligible={source['recent_60_journal_eligible']}"
+        )
+        for paper in source["recent_60_top_research_fit"]:
+            print(
+                f"  · fit={paper['research_fit']} {paper['publication_date']} — "
+                f"{paper['title']}"
+            )
+        print("  newest source records:")
+        for paper in source["newest_examples"]:
+            print(
+                f"  · {paper['openalex_id'] or 'unknown'} | "
+                f"{paper['publication_date'] or 'unknown'} "
+                f"({paper['publication_year'] if paper['publication_year'] is not None else 'unknown'}) | "
+                f"{paper['source'] or 'unknown'} | DOI={paper['doi'] or 'unknown'} | "
+                f"{paper['title']}"
+            )
+    print("\nTop 10 Rising signals (attention audit, not a quality ranking):")
+    for index, paper in enumerate(result.top_candidates, 1):
+        observed = paper["observed_growth"] or {}
+        observed_rate = observed.get("blended_citations_per_day")
+        print(
+            f"{index}. {paper['title']}\n"
+            f"   source={paper['source']}; published={paper['publication_date']}; "
+            f"age={paper['age_days']}d; citations={paper['cited_by_count'] if paper['cited_by_count'] is not None else 'unknown'}; "
+            f"FWCI={paper['fwci'] if paper['fwci'] is not None else 'unknown'}; "
+            f"percentile={paper['citation_normalized_percentile'] if paper['citation_normalized_percentile'] is not None else 'unknown'}; "
+            f"velocity={paper['smoothed_citation_velocity_per_month'] if paper['smoothed_citation_velocity_per_month'] is not None else 'unknown'}/month; "
+            f"observed={observed_rate if observed_rate is not None else 'cold-start'}; "
+            f"research_fit={paper['research_fit']}; rising_score={paper['rising_score']}; "
+            f"threshold_eligible={paper['threshold_eligible']}"
+        )
+    print("\nTop 30 Rising signal audit (JSON Lines; attention, not quality):")
+    diagnostic_fields = (
+        "title",
+        "source",
+        "rising_score",
+        "research_fit",
+        "raw_core_topics",
+        "matched_core_topics",
+        "generic_only_core_topics",
+        "matched_support_topics",
+        "matched_strong_keywords",
+        "matched_generic_keywords",
+        "classification",
+        "domain_affinity",
+        "domain_affinity_adjustment",
+        "threshold_eligible",
+    )
+    for index, paper in enumerate(result.top_diagnostics, 1):
+        print(
+            json.dumps(
+                {"rank": index, **{key: paper[key] for key in diagnostic_fields}},
+                ensure_ascii=False,
+                sort_keys=True,
+            )
+        )
+    bubble = result.information_bubble
+    print("\nInformation-bubble check (top basic-filtered Rising signals):")
+    print(
+        f"sample={bubble['sample_size']}; core={bubble['core']}; "
+        f"model-based-support-only={bubble['model_based_support_only']}; "
+        f"outside-current-core={bubble['outside_current_core']}"
+    )
+    print(f"OpenAlex requests: {result.request_count}; cache hits: {result.cache_hits}")
+    if result.dry_run:
+        print("No snapshots, candidate state, provider stats, or cache files were written.")
+    else:
+        print(f"Citation snapshots: {result.snapshot_path}")
+        print(f"Rising candidate pool: {result.candidate_path}")
+
+
 def _serve(project_root: Path, host: str, port: int) -> int:
     site_dir = project_root / "site"
     if not (site_dir / "index.html").exists():
@@ -577,8 +702,9 @@ def _serve(project_root: Path, host: str, port: int) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
     project_root = Path.cwd()
+    load_project_dotenv(project_root)
+    args = build_parser().parse_args(argv)
     if args.command == "run":
         return _run(project_root, args.date)
     if args.command == "serve":

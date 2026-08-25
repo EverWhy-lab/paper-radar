@@ -5,7 +5,7 @@ site:
 
 fetch:
   endpoint: "https://export.arxiv.org/api/query"
-  user_agent: "PaperRadar/0.2.3 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.4 (personal non-commercial research tool)"
   page_size: 100
   max_pages: 40
   page_delay_seconds: 5.0
@@ -491,7 +491,7 @@ recommendations:
   daily_mix:
     max_total: 5
     max_recent_total: 3
-    selection_order: [frontier_recent, journal_recent, model_based_recent, review_knowledge_map, high_impact_historical]
+    selection_order: [frontier_recent, journal_recent, model_based_recent, rising_recent, review_knowledge_map, high_impact_historical]
     journal_recent:
       max_count: 2
       min_research_fit: 35
@@ -531,6 +531,16 @@ recommendations:
         - trajectory_optimization
         - safety_critical_control
         - robot_state_estimation
+    rising_recent:
+      max_count: 1
+      max_count_per_7_days: 2
+      min_rising_score: 55
+      min_research_fit: 12
+      max_age_days: 540
+      cooldown_days: 45
+      min_recommendation_utility: 55
+      min_redundant_utility: 65
+      eligible_statuses: [unread, queued]
     high_impact_historical:
       max_count: 1
       min_historical_value_score: 42
@@ -551,7 +561,7 @@ recommendations:
 
 openalex:
   endpoint: "https://api.openalex.org"
-  user_agent: "PaperRadar/0.2.3 (personal non-commercial research tool)"
+  user_agent: "PaperRadar/0.2.4 (personal non-commercial research tool)"
   timeout_seconds: 30
   retries: 3
   retry_delay_seconds: 1.0
@@ -597,20 +607,64 @@ journals:
   recency_days: 60
   per_journal_limit: 15
   sources:
+    - name: "IEEE Transactions on Robotics"
+      source_id: "S144620930"
+      group: robotics_core
+      fetch_limit: 100
+      rising_scan_limit: 600
+    - name: "The International Journal of Robotics Research"
+      source_id: "S73484101"
+      group: robotics_core
+      fetch_limit: 60
+      rising_scan_limit: 300
+    - name: "IEEE Robotics and Automation Letters"
+      source_id: "S4210169774"
+      group: robotics_core
+      fetch_limit: 600
+      rising_scan_limit: 3000
     - name: "IEEE Transactions on Automatic Control"
       source_id: "S184954342"
+      group: control_supplement
     - name: "Automatica"
       source_id: "S51360982"
+      group: control_supplement
     - name: "IEEE Transactions on Industrial Electronics"
       source_id: "S58031724"
+      group: control_supplement
     - name: "IEEE Transactions on Control Systems Technology"
       source_id: "S133363738"
+      group: control_supplement
     - name: "IEEE Transactions on Industrial Informatics"
       source_id: "S184777250"
+      group: control_supplement
     - name: "Control Engineering Practice"
       source_id: "S105928092"
+      group: control_supplement
     - name: "Journal of Process Control"
       source_id: "S96000363"
+      group: control_supplement
+
+rising_discovery:
+  enabled: true
+  lookback_days: 540
+  recent_audit_days: 60
+  min_research_fit: 12
+  min_rising_score: 55
+  age_smoothing_days: 90
+  citation_velocity_reference_per_month: 5
+  fwci_reference: 5
+  observed_growth_reference_per_day: 0.5
+  min_observed_elapsed_days: 6
+  long_growth_min_elapsed_days: 21
+  minimum_metadata_coverage_factor: 0.80
+  max_snapshots_per_paper: 60
+  top_audit_count: 30
+  weights:
+    research_relevance: 20
+    citation_velocity: 25
+    normalized_citation: 25
+    fwci: 10
+    observed_growth: 20
 
 historical_scoring:
   min_research_fit: 18

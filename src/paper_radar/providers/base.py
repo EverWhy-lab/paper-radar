@@ -41,6 +41,16 @@ class HistoricalProvider(Protocol):
         publication_year_max: int,
     ) -> list[HistoricalPaper]: ...
 
+    def search_source_papers(
+        self,
+        source_id: str,
+        *,
+        limit: int,
+        from_date: str,
+        discovery_source: str,
+        to_date: str | None = None,
+    ) -> list[HistoricalPaper]: ...
+
     def get_work(self, identifier: str) -> HistoricalPaper: ...
 
     def get_works_by_ids(

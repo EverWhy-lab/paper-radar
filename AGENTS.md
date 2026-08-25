@@ -8,6 +8,7 @@
 - `providers/deepseek.py`: optional DeepSeek English daily guide for already-selected papers only, using each paper's own professional terms
 - `history_models.py`, `history_storage.py`, `history_discovery.py`, `historical_scoring.py`: canonical historical metadata, seeds, one-hop discovery, deduplication, and explainable scoring
 - `config/research_profile.yaml` `journals` block + `daily_mix.journal_recent`: weekly OpenAlex journal feed (last 60 days) and the 期刊新论文 daily category
+- `rising.py`, `rising_storage.py`, `rising_discovery.py`, `data/rising/`: age-aware Rising score, compact weekly citation snapshots, source-restricted candidate pool, and read-only audit
 - `curation.py`, `reader_pipeline.py`: V0.2 four-layer selection flow plus optional guide wiring
 - `reader_models.py`, `reader_storage.py`: candidate, reading-pool, final recommendation, and guide schemas
 - `reader_rendering.py`, `templates/reader.html`, `assets/reader.css`: shortlist-only static site
@@ -44,6 +45,8 @@
 .venv/bin/python -m paper_radar history seed remove IDENTIFIER
 .venv/bin/python -m paper_radar history discover --dry-run
 .venv/bin/python -m paper_radar history discover --limit 20
+.venv/bin/python -m paper_radar history rising --dry-run
+.venv/bin/python -m paper_radar history rising
 .venv/bin/python -m paper_radar history list --top 20
 .venv/bin/python -m paper_radar history refresh IDENTIFIER
 .venv/bin/python -m paper_radar history refresh --all
@@ -64,6 +67,7 @@
 - Render only selected recommendations. Never add bulk candidate search or cards to the user site.
 - Daily caps: total ≤5, frontier recent ≤2, historical impact ≤3, review/knowledge map ≤1. Do not lower thresholds or guarantee quotas.
 - Journal feed caps: 期刊新论文 ≤2 per day, within the total ≤5; journal candidates enter via OpenAlex discovery only and are never fetched by the daily arXiv run.
+- Rising caps: 近期升温 ≤1 per day and ≤2 in any rolling seven-day window, within the total ≤5; only T-RO/IJRR/RA-L papers from the local weekly pool qualify, and citation attention never changes `research_fit` or becomes a quality label.
 - Enforce canonical alias deduplication, topic diversity, dismissal, read status, and cooldowns.
 - Dismissals from the web button or CLI permanently exclude the paper and temporarily reduce papers sharing its primary topic; never render dismissed papers.
 - Favorites are stored with full metadata in `data/favorites.json`; candidate cleanup never removes favorites or recommendations.

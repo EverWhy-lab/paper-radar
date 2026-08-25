@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import time
+from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Callable, Mapping
@@ -21,6 +22,14 @@ from paper_radar.history_models import (
 )
 from paper_radar.providers.base import HistoricalProviderError, ProviderStats
 from paper_radar.storage import atomic_write_text
+
+
+@dataclass(frozen=True)
+class SourcePaperScan:
+    papers: list[HistoricalPaper]
+    reported_total: int | None
+    truncated: bool
+    page_count: int
 
 
 def _abstract_from_inverted_index(value: Any) -> str | None:
@@ -109,6 +118,8 @@ def parse_openalex_work(
     primary_location = work.get("primary_location") or {}
     best_oa = work.get("best_oa_location") or {}
     source = primary_location.get("source") or {}
+    source_id_value = str(source.get("id") or "").rstrip("/").rsplit("/", 1)[-1]
+    source_id = source_id_value.upper() if source_id_value.upper().startswith("S") else None
     authors = [
         str((authorship.get("author") or {}).get("display_name"))
         for authorship in work.get("authorships") or []
@@ -167,6 +178,8 @@ def parse_openalex_work(
         landing_page_url=primary_location.get("landing_page_url"),
         open_access_url=best_oa.get("landing_page_url"),
         pdf_url=best_oa.get("pdf_url") or primary_location.get("pdf_url"),
+        source_id=source_id,
+        is_retracted=bool(work.get("is_retracted", False)),
     )
 
 
@@ -180,6 +193,7 @@ class OpenAlexProvider:
         environment: Mapping[str, str] | None = None,
         now: Callable[[], datetime] = datetime.now,
         sleep: Callable[[float], None] = time.sleep,
+        read_only: bool = False,
     ) -> None:
         self.config = config
         self.cache_dir = data_dir / "history" / "cache" / "openalex"
@@ -188,6 +202,7 @@ class OpenAlexProvider:
         self._api_key = self._environment.get("OPENALEX_API_KEY")
         self._now = now
         self._sleep = sleep
+        self.read_only = read_only
         self.client = client or httpx.Client(
             timeout=httpx.Timeout(config.timeout_seconds),
             follow_redirects=True,
@@ -244,6 +259,8 @@ class OpenAlexProvider:
             return ProviderStats(today, 0, 0, self.config.daily_request_budget)
 
     def save_stats(self) -> None:
+        if self.read_only:
+            return
         self._stats.last_updated_at = self._now().isoformat(timespec="seconds")
         snapshot = self.stats
         atomic_write_text(
@@ -307,10 +324,11 @@ class OpenAlexProvider:
                 if not isinstance(payload, dict):
                     raise HistoricalProviderError("OpenAlex returned an unexpected JSON shape.")
                 payload = _redact_secret(payload, self._api_key)
-                atomic_write_text(
-                    cache_path,
-                    json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
-                )
+                if not self.read_only:
+                    atomic_write_text(
+                        cache_path,
+                        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
+                    )
                 return payload
             except HistoricalProviderError:
                 raise
@@ -371,19 +389,73 @@ class OpenAlexProvider:
         limit: int,
         from_date: str,
         discovery_source: str,
+        to_date: str | None = None,
     ) -> list[HistoricalPaper]:
-        payload = self._request(
-            "/works",
-            {
-                "filter": (
-                    f"primary_location.source.id:{source_id},"
-                    f"from_publication_date:{from_date}"
-                ),
-                "per-page": min(200, max(1, limit)),
-                "sort": "publication_date:desc",
-            },
+        return self.scan_source_papers(
+            source_id,
+            limit=limit,
+            from_date=from_date,
+            to_date=to_date,
+            discovery_source=discovery_source,
+        ).papers
+
+    def scan_source_papers(
+        self,
+        source_id: str,
+        *,
+        limit: int,
+        from_date: str,
+        to_date: str | None,
+        discovery_source: str,
+    ) -> SourcePaperScan:
+        if limit <= 0:
+            return SourcePaperScan([], 0, False, 0)
+        date_filter = f"from_publication_date:{from_date}"
+        if to_date:
+            date_filter += f",to_publication_date:{to_date}"
+        filters = f"primary_location.source.id:{source_id},{date_filter}"
+        cursor = "*"
+        seen_cursors: set[str] = set()
+        papers: list[HistoricalPaper] = []
+        aliases: set[str] = set()
+        reported_total: int | None = None
+        page_count = 0
+        exhausted = False
+        while len(papers) < limit and cursor and cursor not in seen_cursors:
+            seen_cursors.add(cursor)
+            payload = self._request(
+                "/works",
+                {
+                    "filter": filters,
+                    "per-page": min(200, max(1, limit - len(papers))),
+                    "sort": "publication_date:desc",
+                    "cursor": cursor,
+                },
+            )
+            page_count += 1
+            meta = payload.get("meta") or {}
+            if reported_total is None:
+                try:
+                    reported_total = int(meta["count"])
+                except (KeyError, TypeError, ValueError):
+                    reported_total = None
+            batch = self._results(payload, discovery_source=discovery_source)
+            for paper in batch:
+                if paper.aliases & aliases:
+                    continue
+                papers.append(paper)
+                aliases.update(paper.aliases)
+                if len(papers) >= limit:
+                    break
+            next_cursor = meta.get("next_cursor")
+            if not batch or not next_cursor:
+                exhausted = True
+                break
+            cursor = str(next_cursor)
+        truncated = not exhausted and (
+            reported_total is None or len(papers) < reported_total
         )
-        return self._results(payload, discovery_source=discovery_source)[:limit]
+        return SourcePaperScan(papers, reported_total, truncated, page_count)
 
     def get_work(self, identifier: str) -> HistoricalPaper:
         openalex_id = normalize_openalex_id(identifier)

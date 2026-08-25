@@ -30,6 +30,7 @@ from paper_radar.reader_storage import (
     RecommendationStorage,
 )
 from paper_radar.history_storage import HistoricalPaperStorage
+from paper_radar.rising_storage import RisingCandidateStorage
 from paper_radar.providers.base import LLMAnalysisProvider
 from paper_radar.providers.deepseek import DeepSeekClient
 from paper_radar.scoring import score_papers
@@ -46,6 +47,7 @@ class ReaderRunResult:
     index_path: Path
     archive_path: Path
     historical_candidate_count: int = 0
+    rising_candidate_count: int = 0
     llm_analysis_count: int = 0
 
 
@@ -106,6 +108,7 @@ def _run_reader(
     pool_storage = ReadingPoolStorage(data_dir)
     recommendation_storage = RecommendationStorage(data_dir)
     historical_storage = HistoricalPaperStorage(data_dir)
+    rising_storage = RisingCandidateStorage(data_dir)
     seen_before = state_storage.load_seen(migrated_at=run_at.isoformat(timespec="seconds"))
 
     if mode == "historical":
@@ -143,11 +146,15 @@ def _run_reader(
     )
     pool_entries = pool_storage.load()
     historical_papers = historical_storage.load()
+    # Historical/backfill runs intentionally disable Rising: current citation
+    # snapshots are not point-in-time evidence for an earlier target date.
+    rising_papers = rising_storage.load() if mode == "incremental" else []
     dismissals = DismissalStorage(data_dir).load()
     history = recommendation_storage.history(exclude_date=target_date.isoformat())
     selection = CuratedRecommendationEngine(profile).select(
         recent_new=scored_new,
         historical_papers=historical_papers,
+        rising_papers=rising_papers,
         reading_pool=pool_entries,
         history=history,
         target_date=target_date.isoformat(),
@@ -177,6 +184,10 @@ def _run_reader(
         alias for entry in newly_selected for alias in entry.aliases
     }
     for paper in selection.historical_papers:
+        if paper.aliases & newly_selected_aliases:
+            paper.recommended_at = generated_at
+            paper.recommendation_count += 1
+    for paper in selection.rising_papers:
         if paper.aliases & newly_selected_aliases:
             paper.recommended_at = generated_at
             paper.recommendation_count += 1
@@ -215,6 +226,8 @@ def _run_reader(
     recommendation_path = recommendation_storage.save(daily)
     pool_storage.save(selection.reading_pool)
     historical_storage.save(selection.historical_papers)
+    if rising_storage.path.exists() or selection.rising_papers:
+        rising_storage.save(selection.rising_papers)
     state_storage.save_seen(updated_seen)
     renderer = RecommendationSiteRenderer(
         project_root / "site", recommendation_storage, profile
@@ -232,6 +245,7 @@ def _run_reader(
         index_path=index_path,
         archive_path=archive_path,
         historical_candidate_count=len(historical_papers),
+        rising_candidate_count=len(rising_papers),
         llm_analysis_count=len(llm_analyses or []),
     )
 

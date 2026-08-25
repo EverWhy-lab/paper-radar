@@ -41,7 +41,17 @@ jobs:
           fi
           python -m paper_radar history discover
 
-      - name: Commit updated discovery pool
+      - name: Rising Papers discovery
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: |
+          if [ -z "$OPENALEX_API_KEY" ]; then
+            echo "OPENALEX_API_KEY secret is not set; skipping Rising Papers discovery."
+            exit 0
+          fi
+          python -m paper_radar history rising
+
+      - name: Commit updated discovery state
         run: |
           git config user.name "paper-radar-bot"
           git config user.email "paper-radar-bot@users.noreply.github.com"

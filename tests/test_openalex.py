@@ -94,6 +94,78 @@ def test_search_source_papers_filters_by_journal_and_date(
     assert papers[0].discovery_source == ["journal_search:Automatica"]
 
 
+def test_source_scan_paginates_and_deduplicates_high_volume_journal(
+    tmp_path: Path, profile, openalex_payload
+) -> None:
+    first = deepcopy(openalex_payload["results"][0])
+    duplicate = deepcopy(openalex_payload["results"][1])
+    third = deepcopy(openalex_payload["results"][2])
+    calls: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        cursor = dict(request.url.params)["cursor"]
+        calls.append(cursor)
+        payload = (
+            {
+                "meta": {"count": 3, "next_cursor": "page-2"},
+                "results": [first, duplicate],
+            }
+            if cursor == "*"
+            else {
+                "meta": {"count": 3, "next_cursor": None},
+                "results": [duplicate, third],
+            }
+        )
+        return httpx.Response(200, request=request, json=payload)
+
+    provider = OpenAlexProvider(
+        profile.openalex,
+        tmp_path / "data",
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+        environment={"OPENALEX_API_KEY": "secret"},
+        now=lambda: datetime(2026, 8, 3, 10, 15),
+        sleep=lambda _: None,
+    )
+
+    scan = provider.scan_source_papers(
+        "S4210169774",
+        limit=3,
+        from_date="2025-02-10",
+        to_date="2026-08-03",
+        discovery_source="rising_search:RA-L",
+    )
+
+    assert calls == ["*", "page-2"]
+    assert [paper.openalex_id for paper in scan.papers] == ["W100", "W101", "W102"]
+    assert scan.reported_total == 3
+    assert scan.page_count == 2
+    assert scan.truncated is False
+
+
+def test_read_only_openalex_provider_never_writes_cache_or_stats(
+    tmp_path: Path, profile, openalex_payload
+) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, request=request, json=deepcopy(openalex_payload))
+
+    data_dir = tmp_path / "data"
+    provider = OpenAlexProvider(
+        profile.openalex,
+        data_dir,
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+        environment={"OPENALEX_API_KEY": "secret"},
+        now=lambda: datetime(2026, 8, 3, 10, 15),
+        sleep=lambda _: None,
+        read_only=True,
+    )
+    provider.search_works(
+        "robotics", limit=2, publication_year_min=2025, publication_year_max=2026
+    )
+    provider.save_stats()
+
+    assert not data_dir.exists()
+
+
 def test_openalex_cache_prevents_duplicate_requests_and_never_stores_key(
     tmp_path: Path, profile, openalex_payload
 ) -> None:

@@ -62,6 +62,48 @@ def select(profile, *, historical_papers):
     )
 
 
+def test_robotics_core_journal_sources_and_limits(profile) -> None:
+    sources = {
+        source["name"]: source for source in profile.journals["sources"]
+    }
+
+    assert sources["IEEE Transactions on Robotics"] == {
+        "name": "IEEE Transactions on Robotics",
+        "source_id": "S144620930",
+        "group": "robotics_core",
+        "fetch_limit": 100,
+        "rising_scan_limit": 600,
+    }
+    assert sources["The International Journal of Robotics Research"] == {
+        "name": "The International Journal of Robotics Research",
+        "source_id": "S73484101",
+        "group": "robotics_core",
+        "fetch_limit": 60,
+        "rising_scan_limit": 300,
+    }
+    assert sources["IEEE Robotics and Automation Letters"] == {
+        "name": "IEEE Robotics and Automation Letters",
+        "source_id": "S4210169774",
+        "group": "robotics_core",
+        "fetch_limit": 600,
+        "rising_scan_limit": 3000,
+    }
+    control_names = {
+        "IEEE Transactions on Automatic Control",
+        "Automatica",
+        "IEEE Transactions on Industrial Electronics",
+        "IEEE Transactions on Control Systems Technology",
+        "IEEE Transactions on Industrial Informatics",
+        "Control Engineering Practice",
+        "Journal of Process Control",
+    }
+    assert {
+        source["name"]
+        for source in profile.journals["sources"]
+        if source["group"] == "control_supplement"
+    } == control_names
+
+
 def test_journal_recent_selects_only_fresh_relevant_journal_papers(profile) -> None:
     fresh = journal_paper(
         1,

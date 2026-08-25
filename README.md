@@ -1,6 +1,6 @@
 # Paper Radar
 
-Paper Radar is a local personal reader for robotics and embodied-intelligence research. It balances the current Robot AI frontier with recent method advances in model-based robot planning, control, optimization, safety, and state estimation, while building a separate OpenAlex-backed historical discovery pool. It shows at most five papers per day. Selection is transparent and rule-based: the reader does not infer claims from full text or equate citation counts with paper quality. Optionally, DeepSeek writes a grounded English reading guide for the already-selected papers only, using each paper's own professional terminology.
+Paper Radar is a local personal reader for robotics and embodied-intelligence research. Version **0.2.4** balances the current Robot AI frontier with recent model-based methods, formal publications in T-RO/IJRR/RA-L, a separate Rising Papers signal, and an OpenAlex-backed historical discovery pool. It shows at most five papers per day. Selection is transparent and rule-based: the reader does not infer claims from full text or equate citations, citation growth, or venue with paper quality. Optionally, DeepSeek writes a grounded English reading guide for the already-selected papers only, using each paper's own professional terminology.
 
 想自己从零搭一个？见 [docs/BUILD_TUTORIAL.md](docs/BUILD_TUTORIAL.md)（含偏好设置模板和导读提示词）。
 
@@ -14,13 +14,20 @@ python3.11 -m venv .venv
 .venv/bin/python -m pip install -e '.[dev]'
 ```
 
-Copying `.env.example` is optional, but the application does not load `.env` files. Export the key in the process environment when using live historical commands:
+Copying `.env.example` to `.env` is optional. At CLI startup Paper Radar loads
+simple `KEY=value` entries from the project-root `.env`; an existing process
+environment value always wins, so GitHub Actions and shell-injected secrets are
+never overwritten. You can also export the key directly when using live
+historical commands:
 
 ```bash
 export OPENALEX_API_KEY='your-key-from-openalex'
 ```
 
-The key is read only from `OPENALEX_API_KEY`. `.env` files and OpenAlex response caches are ignored by Git. The program never prints or writes the key into data, cache, pages, or provider statistics.
+Providers still read keys only from environment variables such as
+`OPENALEX_API_KEY` and `DEEPSEEK_API_KEY`. `.env` files and OpenAlex response
+caches are ignored by Git. The program never prints or writes a key into data,
+cache, pages, or provider statistics.
 
 ## Daily reader
 
@@ -30,7 +37,7 @@ Normal incremental run:
 .venv/bin/python -m paper_radar run
 ```
 
-This scans the configured seven-day arXiv window, compares metadata with version state, reads the local historical discovery pool, and writes a zero-to-five-paper recommendation. It does not call OpenAlex automatically.
+This scans the configured seven-day arXiv window, compares metadata with version state, reads the local historical and Rising candidate pools, and writes a zero-to-five-paper recommendation. It does not call OpenAlex automatically; the 540-day Rising scan is weekly only.
 
 Exact-day arXiv backfill:
 
@@ -50,7 +57,7 @@ The `--date` form retains Asia/Shanghai natural-day semantics for deterministic 
   - `date`: exact-day backfill in `YYYY-MM-DD` form;
   - `discover_history`: also run OpenAlex historical discovery (requires the `OPENALEX_API_KEY` repository secret).
 - Separate maintenance workflows keep the OpenAlex pool fresh:
-  - `openalex-discover` runs every **Monday 10:30 Asia/Shanghai** (`history discover`) to expand the historical discovery pool;
+  - `openalex-discover` runs every **Monday 10:30 Asia/Shanghai** (`history discover`, then `history rising`) to expand the historical pool, update Rising citation snapshots, and replace the local Rising candidate pool;
   - `openalex-refresh` runs on the **1st of every month** (`history refresh --all`) to update citation metadata for every pool paper.
   Both skip silently when `OPENALEX_API_KEY` is not set, and both auto-commit pool changes back to the repository.
 
@@ -74,7 +81,7 @@ If the scheduled run fails (for example arXiv is unreachable), nothing is commit
 The rule-based selector remains authoritative: it chooses at most five papers with transparent thresholds. If `DEEPSEEK_API_KEY` is set and `llm_analysis.enabled` is true in `config/research_profile.yaml`, DeepSeek writes an English daily guide for those already-selected papers only, keeping professional terms (model names, method names, acronyms) exactly as they appear in each paper. The guide never screens candidates, never ranks papers, and never labels quality.
 
 - One API call per run (all selected papers in a single request); up to 3,000 abstract characters per paper are sent, never full text or PDFs.
-- The reader profile comes from `llm_analysis.reader_profile`, and each payload includes selection category, core topics, subtopics, document type, domain affinity, publication year, and abstract—not internal numeric ranking scores.
+- The reader profile comes from `llm_analysis.reader_profile`, and each payload includes selection category, source name, core topics, subtopics, document type, domain affinity, publication year, and abstract—not Rising scores, citation counts, FWCI, or other internal ranking signals.
 - Guides are grounded in supplied metadata: they must not invent results, datasets, model scale, training resources, or hardware, and they adapt the reading emphasis for methods, surveys, and benchmarks/datasets.
 - If the call fails or the key is missing, the page is still generated without the guide.
 - The key is read only from `DEEPSEEK_API_KEY` (export it locally, or set it as a repository secret for GitHub runs). It is never written to data, cache, provider stats, or pages.
@@ -138,6 +145,15 @@ Run discovery or refresh metadata:
 .venv/bin/python -m paper_radar history refresh --all
 ```
 
+Run the live, read-only Rising audit (OpenAlex only; no cache, snapshots, pools,
+provider statistics, arXiv, or DeepSeek writes/calls):
+
+```bash
+.venv/bin/python -m paper_radar history rising --dry-run
+```
+
+The weekly state-updating form is `python -m paper_radar history rising`.
+
 Discovery uses three source types:
 
 - Fourteen focused Robot AI topic queries from `config/research_profile.yaml`.
@@ -149,24 +165,67 @@ default the current year through ten years back. The preferred recent window is
 five years. Older seed or cached papers may remain available as background
 lineage, but they are not eligible for a daily reading slot.
 
-The `journals` block in `config/research_profile.yaml` adds a journal feed: every weekly
-discovery run also fetches the last 60 days from seven automation-and-control journals
-(IEEE TAC, Automatica, IEEE TIE, IEEE TCST, IEEE TII, Control Engineering Practice,
-Journal of Process Control). Fresh journal papers are tagged `journal_search:<journal>`
-and can surface in the daily selection under the **期刊新论文** category (at most two
-papers per day, total cap remains five).
+### Daily Frontier
+
+The seven-day arXiv feed answers “what appeared today in the user's research
+directions?” It retains the six frozen Robot AI core topics and the independent
+model-based robotics method lane.
+
+### Core Robotics Journals
+
+The `journals` block explicitly separates `robotics_core` (T-RO
+`S144620930`, IJRR `S73484101`, and RA-L `S4210169774`) from the seven unchanged
+`control_supplement` sources (IEEE TAC, Automatica, IEEE TIE, IEEE TCST, IEEE
+TII, Control Engineering Practice, and Journal of Process Control). The last 60
+days are fetched with source-specific caps: T-RO 100, IJRR 60, and RA-L 600;
+RA-L therefore paginates instead of silently keeping only the newest 15 works.
+The venue group controls discovery and auditing only—it adds no quality bonus.
+All journal candidates still pass research relevance, utility, cooldown,
+semantic redundancy, and diversity rules before the **期刊新论文** lane can use
+at most two slots.
+
+### Rising Papers
+
+The weekly Rising scan asks a different question: “which papers from the three
+robotics-core journals, published in the last 540 days, are receiving unusually
+fast community attention for their age?” It scans recent works by source and
+date (T-RO cap 600, IJRR 300, RA-L 3000), calculates locally, and stores only a
+small local candidate pool plus citation snapshots. The daily run makes no
+540-day OpenAlex request.
+
+`rising_score` combines research relevance (20%), smoothed age-normalized
+citation velocity (25%), OpenAlex field/year citation percentile (25%), FWCI
+(10%), and observed snapshot growth (20%). Citation age has a 90-day floor, so
+a five-day-old paper cannot explode merely because its denominator is tiny.
+Observed growth uses the closest valid prior snapshot at least six days old and
+an approximately-28-day signal only after 21 days. Missing FWCI, percentile,
+count, or observed history remains unknown and is handled by available-component
+normalization, never as zero. Cold start therefore uses the available age,
+velocity, percentile, FWCI, and relevance signals; later scans add real deltas.
+
+Rising eligibility requires a robotics-core source, a valid date within 540
+days, explicit robotics context, `research_fit ≥ 12`, no configured off-topic
+match, no retraction, and a non-survey document. It does not require one of the
+six core topics, so sufficiently strong planning/control work can broaden the
+reader's view. The configured threshold is `rising_score ≥ 55`; it is a gate,
+not a quota. Rising is an attention/impact proxy—not a paper-quality ranking or
+citation leaderboard. Daily selection remains capped at one Rising paper and at
+two Rising papers in any rolling seven-day window, counted from existing
+recommendation archives; neither cap is filled by lowering the threshold.
 
 Per-query, per-seed, per-run, depth, year, cache lifetime, and request-budget limits are all configurable. Successful JSON responses are cached under ignored `data/history/cache/openalex/`. Aggregate request counts, cache hits, and remaining configured daily budget are written to `data/history/provider_stats.json`. A failed provider run never replaces the discovery pool or reader pages.
 
-## Four separate data layers
+## Five separate data layers
 
 1. **Recent candidates** — `data/candidates/YYYY-MM-DD.json`
    - Background arXiv metadata used for scoring, deduplication, and version tracking.
 2. **Historical discovery pool** — `data/history/discovery_pool.json`
    - OpenAlex/topic/seed candidates with canonical identifiers, provenance, citation signals, and explainable historical scores.
-3. **Reading pool** — `data/reading_pool.json`
+3. **Rising candidate pool and snapshots** — `data/rising/candidates.json`, `data/rising/citation_snapshots.json`
+   - Weekly robotics-core journal candidates, Rising components, and compact time-series citation observations; separate from historical value.
+4. **Reading pool** — `data/reading_pool.json`
    - Papers explicitly added by the user, with reading state, priority, and dismissal state.
-4. **Daily recommendations** — `data/recommendations/YYYY-MM-DD.json`
+5. **Daily recommendations** — `data/recommendations/YYYY-MM-DD.json`
    - Only the zero to five selected papers rendered on the homepage and recommendation archives.
 
 Seed definitions are stored in `data/history/seeds.json`. arXiv version state remains in `data/seen_ids.json`.
@@ -226,10 +285,11 @@ Current daily gates and caps are configurable:
 - Frontier recent papers: at most 2; `research_fit ≥ 40`
 - Fresh journal and frontier papers combined: at most 3
 - Model-based recent methods: at most 1; independent of the preceding three-paper ceiling and never guaranteed
+- Rising recent papers: at most 1 per day and 2 in any rolling seven-day window; `rising_score ≥ 55`, independent of the frontier/journal three-paper ceiling and never guaranteed
 - Historical-impact candidates: at most 1; `historical_value_score ≥ 42`
 - Review/knowledge-map candidates: at most 1; `historical_value_score ≥ 50`
 
-Frontier recent papers are considered first, followed by fresh journals, the model-based method lane, a review/knowledge map, and at most one 5–10-year historical foundation. No category has a guaranteed quota, and thresholds are never lowered to fill the page. A paper can occupy only one category. Canonical aliases, topic diversity, dismissal, `read` status, and a 45-day historical cooldown are enforced. Empty days display “今日没有发现足够值得推荐的论文。”
+Frontier recent papers are considered first, followed by fresh journals, the model-based method lane, Rising, a review/knowledge map, and at most one 5–10-year historical foundation. `max_recent_total = 3` still applies only to frontier plus fresh journals; Rising remains subject to the final five-paper ceiling. No category has a guaranteed quota, and thresholds are never lowered to fill the page. A paper can occupy only one category, so a journal-selected alias cannot reappear as Rising. Canonical aliases, topic diversity, dismissal, `read` status, 45-day Rising/historical exact-paper cooldowns, and the existing semantic cooldown are enforced. Empty days display “今日没有发现足够值得推荐的论文。”
 
 The recommendation layer deliberately does not rewrite `research_fit`:
 
@@ -263,7 +323,9 @@ planning/MPC-WBC/safety/state-estimation counts, same-paper and same-subtopic re
 affinity, quality/diversity, daily selections, and optional actual-vs-replay
 comparison. OpenAlex influence fields come from the currently cached snapshot,
 so the result is a recommendation-policy replay rather than a perfect
-point-in-time reconstruction.
+point-in-time reconstruction. The `rising_recent` lane is disabled in historical
+backtests unless a real point-in-time Rising snapshot is explicitly available;
+current or future citation observations are never leaked into an earlier date.
 
 Citation and impact metadata is a screening signal only. The site uses neutral wording such as “领域内高影响力” and does not label papers “classic,” “best,” or objectively high quality.
 

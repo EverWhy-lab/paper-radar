@@ -65,6 +65,7 @@ class ResearchProfile:
     llm_analysis: LLMAnalysisConfig
     dismissals: dict[str, Any]
     journals: dict[str, Any]
+    rising_discovery: dict[str, Any]
     historical_discovery: dict[str, Any]
     historical_scoring: dict[str, Any]
 
@@ -169,6 +170,7 @@ def load_profile(path: Path) -> ResearchProfile:
             llm_analysis=llm_analysis,
             dismissals=dict(raw.get("dismissals", {})),
             journals=dict(raw.get("journals", {})),
+            rising_discovery=dict(raw.get("rising_discovery", {})),
             historical_discovery=dict(raw["historical_discovery"]),
             historical_scoring=dict(raw["historical_scoring"]),
         )
@@ -249,6 +251,7 @@ def load_profile(path: Path) -> ResearchProfile:
         "frontier_recent",
         "journal_recent",
         "model_based_recent",
+        "rising_recent",
         "review_knowledge_map",
         "high_impact_historical",
     }
@@ -262,6 +265,7 @@ def load_profile(path: Path) -> ResearchProfile:
     for category, ceiling in (
         ("frontier_recent", 2),
         ("model_based_recent", 1),
+        ("rising_recent", 1),
         ("high_impact_historical", 3),
         ("review_knowledge_map", 1),
         ("journal_recent", 2),
@@ -274,6 +278,10 @@ def load_profile(path: Path) -> ResearchProfile:
     if not 0 <= int(daily_mix.get("max_recent_total", 3)) <= 4:
         raise ConfigError(
             "recommendations.daily_mix.max_recent_total must be between 0 and 4"
+        )
+    if not 0 <= int(daily_mix["rising_recent"].get("max_count_per_7_days", 0)) <= 7:
+        raise ConfigError(
+            "recommendations.daily_mix.rising_recent.max_count_per_7_days must be between 0 and 7"
         )
     subtopics = recommendation_limits.get("recommendation_subtopics", {})
     if not subtopics:
@@ -332,6 +340,64 @@ def load_profile(path: Path) -> ResearchProfile:
         for source in journals["sources"]:
             if not str(source.get("source_id", "")).strip():
                 raise ConfigError("journals.sources entries need a source_id")
+            if str(source.get("group", "")) not in {
+                "robotics_core",
+                "control_supplement",
+            }:
+                raise ConfigError(
+                    "journals.sources group must be robotics_core or control_supplement"
+                )
+            if int(source.get("fetch_limit", journals.get("per_journal_limit", 15))) < 1:
+                raise ConfigError("journals source fetch_limit must be positive")
+    rising = profile.rising_discovery
+    if rising.get("enabled", False):
+        for field in (
+            "lookback_days",
+            "age_smoothing_days",
+            "min_observed_elapsed_days",
+            "long_growth_min_elapsed_days",
+            "max_snapshots_per_paper",
+        ):
+            if int(rising.get(field, 0)) < 1:
+                raise ConfigError(f"rising_discovery.{field} must be positive")
+        if int(rising["long_growth_min_elapsed_days"]) < int(
+            rising["min_observed_elapsed_days"]
+        ):
+            raise ConfigError(
+                "rising_discovery long growth interval must not be shorter than the recent interval"
+            )
+        if not 0 <= float(rising.get("min_rising_score", -1)) <= 100:
+            raise ConfigError("rising_discovery.min_rising_score must be between 0 and 100")
+        rising_weights = dict(rising.get("weights", {}))
+        expected_rising_components = {
+            "research_relevance",
+            "citation_velocity",
+            "normalized_citation",
+            "fwci",
+            "observed_growth",
+        }
+        if set(rising_weights) != expected_rising_components or any(
+            float(value) < 0 for value in rising_weights.values()
+        ):
+            raise ConfigError(
+                "rising_discovery.weights must define every supported non-negative component"
+            )
+        robotics_sources = [
+            source
+            for source in journals.get("sources", [])
+            if source.get("group") == "robotics_core"
+        ]
+        required_robotics_sources = {"S144620930", "S73484101", "S4210169774"}
+        configured_robotics_sources = {
+            str(source.get("source_id", "")).upper() for source in robotics_sources
+        }
+        if not required_robotics_sources <= configured_robotics_sources or any(
+            int(source.get("rising_scan_limit", 0)) < 1
+            for source in robotics_sources
+        ):
+            raise ConfigError(
+                "rising discovery needs T-RO, IJRR, and RA-L robotics_core sources with rising_scan_limit"
+            )
     discovery = profile.historical_discovery
     if int(discovery["expansion_depth"]) != 1:
         raise ConfigError("historical_discovery.expansion_depth must be exactly 1 in V0.2")

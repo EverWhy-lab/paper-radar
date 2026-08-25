@@ -21,6 +21,7 @@ CATEGORY_LABELS = {
     "journal_recent": "期刊新论文",
     "frontier_recent": "前沿新论文",
     "model_based_recent": "方法前沿",
+    "rising_recent": "近期升温",
     "high_impact_historical": "领域内高影响力",
     "review_knowledge_map": "综述 / 知识地图",
 }

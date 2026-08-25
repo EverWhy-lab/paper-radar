@@ -72,6 +72,14 @@
             <span><b>Domain affinity</b> {{ recommendation.domain_affinity }} ({{ '%+g' | format(recommendation.domain_affinity_adjustment) }})</span>
             {% if recommendation.redundancy_penalty %}<span><b>Recent overlap</b> {{ '%+g' | format(recommendation.redundancy_penalty) }}</span>{% endif %}
             {% if historical %}<span><b>OpenAlex citations</b> {{ historical.cited_by_count if historical.cited_by_count is not none else 'unknown' }}</span>{% endif %}
+            {% if recommendation.category == 'rising_recent' and historical %}
+            <span><b>Rising score</b> {{ '%.1f' | format(historical.rising_score) if historical.rising_score is not none else 'unavailable' }}</span>
+            <span><b>Paper age</b> {{ (historical.rising_age_days|string + ' days') if historical.rising_age_days is not none else 'unavailable' }}</span>
+            <span><b>Citation percentile</b> {{ '%.3f' | format(historical.citation_normalized_percentile) if historical.citation_normalized_percentile is not none else 'unavailable' }}</span>
+            <span><b>FWCI</b> {{ '%.2f' | format(historical.fwci) if historical.fwci is not none else 'unavailable' }}</span>
+            <span><b>Citation velocity</b> {{ ('%.2f citations/month' | format(historical.rising_citation_velocity)) if historical.rising_citation_velocity is not none else 'unavailable' }}</span>
+            <span><b>Observed growth</b> {{ ('%.3f citations/day' | format(historical.rising_observed_growth.get('blended_citations_per_day'))) if historical.rising_observed_growth.get('blended_citations_per_day') is not none else 'unavailable (cold start)' }}</span>
+            {% endif %}
           </div>
           {% if recommendation.reasons or recommendation.pool_reason %}
           <ul>

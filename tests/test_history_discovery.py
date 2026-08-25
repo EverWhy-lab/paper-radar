@@ -3,6 +3,7 @@ from __future__ import annotations
 from copy import deepcopy
 from dataclasses import replace
 from datetime import datetime
+import math
 from pathlib import Path
 
 import pytest
@@ -25,6 +26,7 @@ class FixtureProvider:
         self.calls: list[tuple[str, str]] = []
         self.fail_after = fail_after
         self.saved_stats = False
+        self.journal_limits: dict[str, int] = {}
 
     def _check(self, kind: str, value: str) -> None:
         self.calls.append((kind, value))
@@ -82,6 +84,7 @@ class FixtureProvider:
 
     def search_source_papers(self, source_id, *, limit, from_date, discovery_source):
         self._check("journal", source_id)
+        self.journal_limits[source_id] = limit
         return [self._paper("W104", discovery_source)][:limit]
 
 
@@ -196,7 +199,13 @@ def test_dry_run_estimates_requests_without_any_write(tmp_path: Path, profile) -
         len(profile.historical_discovery["topic_queries"])
         + len(profile.historical_discovery["knowledge_map_queries"])
         + 4
-        + len(profile.journals["sources"])
+        + sum(
+            math.ceil(
+                int(source.get("fetch_limit", profile.journals["per_journal_limit"]))
+                / 200
+            )
+            for source in profile.journals["sources"]
+        )
     )
     assert before == after
 
@@ -245,6 +254,13 @@ def test_discover_includes_journal_sources(
     assert journal_papers
     assert any(kind == "journal" for kind, _ in provider.calls)
     assert provider.saved_stats
+    expected_limits = {
+        source["source_id"]: int(
+            source.get("fetch_limit", profile.journals["per_journal_limit"])
+        )
+        for source in profile.journals["sources"]
+    }
+    assert provider.journal_limits == expected_limits
 
 
 def test_openalex_failure_preserves_pool_stats_and_page(

@@ -12,6 +12,7 @@ from paper_radar.reader_storage import (
     FavoriteStorage,
     RecommendationStorage,
 )
+from paper_radar.rising_storage import RisingCandidateStorage
 
 
 _LINE = re.compile(r"^(not-interested|favorite)\s+(\S+?)\s*—\s*(.*)$")
@@ -26,7 +27,8 @@ class FeedbackApplyResult:
 
 
 def _resolve_metadata(data_dir: Path, canonical: str) -> dict[str, Any] | None:
-    for paper in HistoricalPaperStorage(data_dir).load():
+    papers = HistoricalPaperStorage(data_dir).load() + RisingCandidateStorage(data_dir).load()
+    for paper in papers:
         if canonical in paper.aliases:
             return {
                 "title": paper.title,

@@ -58,7 +58,14 @@ def build_discovery_plan(
     expansion_sources = list(config["seed_expansion_sources"])
     topic_queries = list(config["topic_queries"])
     map_queries = list(config["knowledge_map_queries"])
-    journal_count = len(profile.journals.get("sources", []))
+    journal_page_size = 200
+    journal_count = sum(
+        math.ceil(
+            int(source.get("fetch_limit", profile.journals.get("per_journal_limit", 15)))
+            / journal_page_size
+        )
+        for source in profile.journals.get("sources", [])
+    )
     estimated = len(topic_queries) + len(map_queries) + len(seeds) * (
         1 + len(expansion_sources)
     ) + journal_count
@@ -185,12 +192,16 @@ class HistoricalDiscoveryService:
 
             journal_config = self.profile.journals
             recency_days = int(journal_config.get("recency_days", 60))
-            per_journal = int(journal_config.get("per_journal_limit", 15))
             from_date = (self.now - timedelta(days=recency_days)).date().isoformat()
             for source in journal_config.get("sources", []):
+                fetch_limit = int(
+                    source.get(
+                        "fetch_limit", journal_config.get("per_journal_limit", 15)
+                    )
+                )
                 batch = self.provider.search_source_papers(
                     str(source["source_id"]),
-                    limit=per_journal,
+                    limit=fetch_limit,
                     from_date=from_date,
                     discovery_source=f"journal_search:{source['name']}",
                 )

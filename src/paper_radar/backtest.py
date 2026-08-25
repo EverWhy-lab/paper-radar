@@ -639,6 +639,7 @@ class OfflineBacktester:
         ]
         warnings = [
             "Historical influence metadata uses the currently cached snapshot; this is recommendation-policy replay, not a perfect point-in-time reconstruction.",
+            "The rising_recent lane is disabled because no point-in-time Rising snapshot is loaded for historical replay; current citation metadata is never leaked backward.",
             "Recent papers are replayed only from a locally persisted candidate batch for the same date; dates without a batch have no recent candidates.",
             "Actual recommendation archives are immutable comparison inputs and never affect simulated cooldown history.",
         ]

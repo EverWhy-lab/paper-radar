@@ -113,6 +113,7 @@ def test_reader_run_generates_guide_and_renders_section(tmp_path: Path, profile)
     assert ".navigation-row { display: flex; min-height: 72px;" in css
     assert "margin: 0; padding-block: 18px;" in css
     assert ".category--model_based_recent" in css
+    assert ".category--rising_recent" in css
 
 
 def test_reader_run_without_provider_has_no_guide(tmp_path: Path, profile) -> None:
