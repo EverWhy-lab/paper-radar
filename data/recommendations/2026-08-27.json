@@ -1,0 +1,595 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-27",
+  "generated_at": "2026-08-27T23:25:12+08:00",
+  "mode": "incremental",
+  "candidate_count": 2610,
+  "historical_candidate_count": 362,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 0,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2608.25666",
+      "title": "PRISM: Projection-Integrated Sampling-Based MPC with Bayesian Cost Tuning for Bimanual Manipulation",
+      "takeaway": "PRISM is a sampling-based MPC framework for bimanual manipulation that uses a GPU-accelerated physics simulator as an online world model. Its key algorithmic contribution is a QP-guided control sampling strategy that projects sampled joint-velocity trajectories onto kinematically feasible sets, decoupled from trajectory exploration, with a custom ADMM/Bregman-splitting QP solver for real-time execution and Bayesian optimization for offline task-cost tuning. Evaluations on PerAct2 task variants report improved robustness and task success over sampling-based baselines with real-time or near-real-time execution, plus successful sim-to-real transfer on dual UR5e manipulators. Inspect the projection formulation and the QP solver's separability assumptions to assess scalability to higher-DOF humanoids.",
+      "generated_at": "2026-08-27T15:29:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.25872",
+      "title": "VISTA: Visually Inferred Spatial ConTact Attention for Contact-Rich Manipulation",
+      "takeaway": "VISTA-Policy is an imitation learning paradigm that replaces dedicated tactile or force sensors with the Visual Deformation Field (VDF), a 3D displacement representation of a compliant gripper, as visuo-physical feedback. The framework comprises a Physics-Aware Encoding Engine for real-time VDF decoding, an Energy Aggregation Denoising Mechanism to isolate interaction signals, and a Deformation-Augmented Policy Network with incremental gripper actions for closed-loop correction. Evaluations on Cross-Scale Object Grasping, Cap Unscrewing, and Calligraphy Writing show it outperforms a pure-vision 3D Diffusion Policy baseline and a tactile baseline, with out-of-distribution generalization to unseen object scales and robustness to dynamic disturbances. Inspect the VDF decoding architecture and the energy aggregation mechanism to understand how contact information is extracted from vision alone.",
+      "generated_at": "2026-08-27T15:29:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2608.25405",
+      "title": "LAC: Linear and Angular Compliance for Humanoid Whole-body Control",
+      "takeaway": "LAC is a whole-body controller that simultaneously realizes commanded linear and angular compliance for wrenches applied to the upper body, addressing the limitation of prior controllers that reject external forces or ignore angular effects. The method synthesizes whole-body compliant responses into a large-scale augmented dataset by imposing sampled force and couple events on contact frames from human interaction data, then trains a single teacher-student reinforcement learning policy to track compliant motions. Simulation and real-world experiments demonstrate whole-body compliant responses across the upper body, monotonic modulation over the full stiffness command range, and applicability to teleoperated loco-manipulation tasks. Inspect the virtual admittance formulation and the teacher-student training scheme to evaluate generalization across stiffness commands.",
+      "generated_at": "2026-08-27T15:29:31",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 73 ≥ 40",
+        "Core topics matched: dexterous_multimodal_manipulation, robot_data_scaling_sim2real",
+        "Specific keywords matched: bimanual manipulation, MPC, model predictive control",
+        "Diversity topic: dexterous_multimodal_manipulation",
+        "Detected subtopics: sim_to_real, bimanual_manipulation, model_predictive_control",
+        "Personal domain affinity: preferred (+6; matched bimanual manipulation)",
+        "Subtopic: sim_to_real",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = bimanual_manipulation, model_predictive_control",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 74.8 = base 73.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.25666",
+      "historical_paper": null,
+      "core_topics": [
+        "dexterous_multimodal_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "bimanual_manipulation",
+        "model_predictive_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 73.0,
+      "recommendation_utility": 74.8,
+      "days_since_same_subtopic": 2,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2608.25666v1",
+        "base_id": "2608.25666",
+        "version": 1,
+        "title": "PRISM: Projection-Integrated Sampling-Based MPC with Bayesian Cost Tuning for Bimanual Manipulation",
+        "authors": [
+          "Alinjar Dan",
+          "Iryna Hurova",
+          "Karl Kruusamäe",
+          "Arun Kumar Singh"
+        ],
+        "published": "2026-08-26T11:47:12Z",
+        "updated": "2026-08-26T11:47:12Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Bimanual manipulation in cluttered, contact-rich environments remains challenging because it requires coordinated motion generation, interaction-aware planning, and reliable execution under tight kinematic constraints. We present PRISM, a projection-integrated sampling-based Model Predictive Control (MPC) framework that uses a GPU-accelerated physics simulator as an online world model for complex dual-arm manipulation. The main algorithmic contribution is a QP-guided control sampling strategy that decouples trajectory exploration from kinematic feasibility. At each MPC step, sampled joint-velocity trajectories are projected onto the set of motions satisfying joint position, velocity, acceleration, and jerk bounds, together with an initial-velocity boundary condition, before rollout evaluation. This enables broad yet feasible exploration of coordinated bimanual behaviors. To support efficient online execution, we derive a custom ADMM/Bregman-splitting QP solver that exploits joint-wise separability and reusable matrix factorizations. We further use Bayesian optimization to tune task-cost weights offline, reducing manual parameter selection. We evaluate PRISM on challenging variants of PerAct$^{2}$ tasks, including obstacle-constrained ball transport, tray transport, cube handover, and box lifting. Experiments show improved robustness and task success relative to representative sampling-based baselines, while maintaining real-time or near-real-time execution. We also demonstrate successful sim-to-real transfer on dual UR5e manipulators, highlighting the practical potential of physics-based online planning for contact-rich bimanual manipulation. Project details, including code and supplementary videos, are available at \\href{https://sites.google.com/view/prismbimanual}{\\texttt{https://sites.google.com/view/prismbimanual}}.",
+        "abs_url": "https://arxiv.org/abs/2608.25666v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.25666v1",
+        "research_fit": 73,
+        "video_potential": 43,
+        "matched_topics": [
+          "dexterous_multimodal_manipulation",
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "bimanual manipulation",
+          "sim-to-real",
+          "MPC",
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "MPC",
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation",
+              "manipulators",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation",
+              "manipulators",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation, manipulators, sim-to-real"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 18.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "evaluation"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 61 ≥ 40",
+        "Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: diffusion policy, contact-rich manipulation",
+        "Diversity topic: robot_learning_posttraining",
+        "Detected subtopics: diffusion_flow_policy",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 61.0 = base 61.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.25872",
+      "historical_paper": null,
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 61.0,
+      "recommendation_utility": 61.0,
+      "days_since_same_subtopic": 16,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2608.25872v1",
+        "base_id": "2608.25872",
+        "version": 1,
+        "title": "VISTA: Visually Inferred Spatial ConTact Attention for Contact-Rich Manipulation",
+        "authors": [
+          "Jiayi Chen",
+          "Wenlong Dong",
+          "Yan Huang",
+          "Xianglin Chen",
+          "Zijian Lin",
+          "Jiaqi Yin",
+          "Yushan Liu",
+          "Wenbo Ding"
+        ],
+        "published": "2026-08-26T14:44:29Z",
+        "updated": "2026-08-26T14:44:29Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Contact-rich manipulation requires precise interaction feedback. While vision-centric imitation learning is prevalent, external visual observations provide indirect and ambiguous cues about contact states, particularly under occlusion or subtle object--gripper interactions; dedicated tactile or force sensors can provide rich contact information but introduce additional hardware complexity, calibration requirements, and deployment costs. To bridge this gap, we propose VISTA-Policy, an imitation learning paradigm that utilizes the Visual Deformation Field (VDF), a 3D displacement representation of a compliant gripper, as high-dimensional visuo-physical feedback. The framework integrates: 1) a Physics-Aware Encoding Engine for real-time VDF decoding; 2) an Energy Aggregation Denoising Mechanism to isolate true interaction signals; and 3) a Deformation-Augmented Policy Network with incremental gripper actions for precise closed-loop correction. Extensive evaluations on Cross-Scale Object Grasping, Cap Unscrewing, and Calligraphy Writing demonstrate that VISTA-Policy outperforms the strong pure-vision baseline 3D Diffusion Policy and the tactile baseline. VISTA-Policy further demonstrates substantial out-of-distribution generalization to unseen object scales and robustness against dynamic disturbances, offering a durable and cost-effective route toward general-purpose fine-grained manipulation in unstructured environments. Project videos and supplementary materials are available at: https://sites.google.com/view/vista-policy.",
+        "abs_url": "https://arxiv.org/abs/2608.25872v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.25872v1",
+        "research_fit": 61,
+        "video_potential": 42,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "diffusion policy",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "imitation learning",
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: manipulation, humanoid, loco-manipulation",
+        "Strong method signals: whole_body_control",
+        "research_fit 62 ≥ 28",
+        "Detected subtopics: humanoid_whole_body, loco_manipulation, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: loco_manipulation",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = humanoid_whole_body, whole_body_control",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 63.8 = base 62.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2608.25405",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "humanoid_whole_body",
+        "loco_manipulation",
+        "whole_body_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 62.0,
+      "recommendation_utility": 63.8,
+      "days_since_same_subtopic": 4,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2608.25405v1",
+        "base_id": "2608.25405",
+        "version": 1,
+        "title": "LAC: Linear and Angular Compliance for Humanoid Whole-body Control",
+        "authors": [
+          "Yang Liu",
+          "Zhongkai Gu",
+          "Wei Zhu",
+          "Mitsuhiro Hayashibe"
+        ],
+        "published": "2026-08-26T06:07:28Z",
+        "updated": "2026-08-26T06:07:28Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Real-world humanoid tasks involve physical interaction with objects and humans, yet current controllers either reject external forces as disturbances or restrict compliance to limited body links while ignoring angular effects. We present LAC, a general whole-body controller that simultaneously realizes commanded Linear and Angular Compliance for wrenches applied to the upper body. First, we synthesize whole-body compliant responses into a large-scale augmented dataset. Sampled force and couple events are imposed on contact frames extracted from human interaction data. At each contact link, the external force and a virtual torque from the passively yielding kinematic chain drive a virtual admittance under the commanded stiffness. Subsequently, teacher-student reinforcement learning trains a single policy to track the compliant motions under external wrenches. Finally, extensive simulation and real-world experiments demonstrate whole-body compliant responses to wrenches across the upper body, monotonic modulation over the full range of both stiffness commands, and applicability to teleoperated loco-manipulation tasks. Project website: https://lac-humanoid.github.io/",
+        "abs_url": "https://arxiv.org/abs/2608.25405v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.25405v1",
+        "research_fit": 62,
+        "video_potential": 63,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid whole-body control",
+          "loco-manipulation",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid whole-body control",
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation, humanoid, loco-manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "whole-body",
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    }
+  ]
+}
