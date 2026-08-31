@@ -1,0 +1,957 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-31",
+  "generated_at": "2026-08-31T19:04:41+08:00",
+  "mode": "incremental",
+  "candidate_count": 2279,
+  "historical_candidate_count": 436,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 1,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7169778200",
+      "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-Based Reinforcement Learning With Zero-Shot Sim-to-Real Transfer",
+      "takeaway": "This method paper addresses safe and scalable multi-drone payload transport in dynamic environments by proposing a learning-based framework with a minimal 2D abstraction that preserves drone-payload coupling. The key contribution is Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO), a fully distributed policy trained with domain randomization over team size and physical parameters, enabling zero-shot sim-to-real transfer without fine-tuning. Real-world evaluations show a single learned policy generalizes across varying team sizes and safely operates in dynamic environments with other drone teams as moving obstacles. Inspect how the 2D abstraction and graph CBF constraints balance safety guarantees with scalability during training.",
+      "generated_at": "2026-08-31T11:08:20",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7124172512",
+      "title": "EMMA: Scaling Mobile Manipulation via Egocentric Human Data",
+      "takeaway": "This method paper tackles the bottleneck of expensive mobile robot teleoperation for imitation learning by introducing Egocentric Mobile MAnipulation (EMMA), an end-to-end framework that trains mobile manipulation policies from human mobile manipulation data combined with static robot data. The approach co-trains human full-body motion data with static robot data, sidestepping the need for mobile teleoperation. Experiments across four real-world tasks show EMMA achieves comparable or higher task success than baselines trained on teleoperated Mobile ALOHA data, and it generalizes to new spatial configurations and scenes with positive scaling as human data hours increase. Inspect the co-training architecture and data alignment strategy between human egocentric and static robot observations.",
+      "generated_at": "2026-08-31T11:08:20",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7168350598",
+      "title": "Compositional Motion Generation From Demonstration With Object-Centric Neural Fields",
+      "takeaway": "This method paper proposes a generative learning-from-demonstration framework for compositional robotic motion generation, connecting perception and motion through shared object-level representations. The approach renders scenes from object-centric neural fields with latent-conditioned deformations and uses a temporal mixture-of-experts gating mechanism to combine object-conditioned movement primitives, enabling spatial-temporal compositionality. In simulation, long-horizon manipulation tasks are completed with significantly less training data than image-based baselines, and real-world experiments show robustness to noise, category-level generalization via language-based segmentation, and direct operation on 3D scene representations. Inspect how the object-centric neural fields and MoE gating achieve systematic generalization across scene configurations while maintaining data efficiency.",
+      "generated_at": "2026-08-31T11:08:20",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 40 ≥ 35",
+        "Core topics matched: robot_data_scaling_sim2real",
+        "Specific keywords matched: domain randomization, CBF, control barrier function",
+        "Detected subtopics: sim_to_real, safety_critical_control",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: sim_to_real",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = safety_critical_control",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 35.8 = base 40.0 + affinity +0 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7169778200",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7169778200",
+        "openalex_id": "W7169778200",
+        "base_arxiv_id": "2607.20665",
+        "doi": "10.1109/lra.2026.3715346",
+        "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-Based Reinforcement Learning With Zero-Shot Sim-to-Real Transfer",
+        "authors": [
+          "Jaeyoun Choi",
+          "Oswin So",
+          "Songyuan Zhang",
+          "Cooper Taylor",
+          "Chuchu Fan"
+        ],
+        "abstract": "Multi-drone payload transportation has emerged as a promising research paradigm with potential applications in construction, logistics, and disaster response. However, the complex coupled dynamics among drones, cables, and payloads pose significant challenges, and existing approaches remain limited in safety and scalability, particularly in dynamic and unstructured environments. In this work, we propose a learning-based framework for safe and scalable multi-drone cooperative payload transport. We introduce a minimal 2D abstraction that preserves the task-relevant drone-payload coupling required for coordination and safety, while remaining computationally efficient for large-scale learning. Using domain randomization over team size and physical parameters, we train a fully distributed policy via Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO), enabling robust zero-shot sim-to-real transfer without fine-tuning. Extensive real-world evaluations demonstrate that a single learned policy generalizes across varying team sizes and task scenarios. Furthermore, multi-group hardware experiments show that the same policy can safely operate in dynamic environments, where other drone teams act as moving obstacles. These results indicate that the proposed framework enables efficient, safe, and scalable multi-drone payload transportation with strong generalization to complex real-world conditions.",
+        "publication_date": "2026-07-20",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11133",
+            "display_name": "UAV Applications and Optimization",
+            "score": 0.9045000076293945
+          },
+          {
+            "id": "https://openalex.org/T10249",
+            "display_name": "Distributed Control Multi-Agent Systems",
+            "score": 0.008799999952316284
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.007699999958276749
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.85443845,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-08-31T19:04:41+08:00",
+        "recommended_at": "2026-08-31T19:04:41+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-31T08:50:41",
+        "openalex_url": "https://openalex.org/W7169778200",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3715346",
+        "open_access_url": "https://arxiv.org/abs/2607.20665",
+        "pdf_url": "https://arxiv.org/pdf/2607.20665",
+        "research_fit": 40,
+        "video_potential": 24,
+        "matched_topics": [
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "domain randomization",
+          "CBF",
+          "control barrier function"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real",
+              "domain randomization"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "CBF",
+              "control barrier function"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotics, sim-to-real"
+          }
+        ],
+        "historical_value_score": 60.1,
+        "historical_score_components": {
+          "research_relevance": 40.0,
+          "recency": 100.0,
+          "normalized_citation": 85.4,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 14.6%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "safety_critical_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 40.0,
+      "recommendation_utility": 35.8,
+      "days_since_same_subtopic": 4,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2607.20665",
+        "base_id": "2607.20665",
+        "version": 1,
+        "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-Based Reinforcement Learning With Zero-Shot Sim-to-Real Transfer",
+        "authors": [
+          "Jaeyoun Choi",
+          "Oswin So",
+          "Songyuan Zhang",
+          "Cooper Taylor",
+          "Chuchu Fan"
+        ],
+        "published": "2026-07-20T00:00:00Z",
+        "updated": "2026-07-20T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Multi-drone payload transportation has emerged as a promising research paradigm with potential applications in construction, logistics, and disaster response. However, the complex coupled dynamics among drones, cables, and payloads pose significant challenges, and existing approaches remain limited in safety and scalability, particularly in dynamic and unstructured environments. In this work, we propose a learning-based framework for safe and scalable multi-drone cooperative payload transport. We introduce a minimal 2D abstraction that preserves the task-relevant drone-payload coupling required for coordination and safety, while remaining computationally efficient for large-scale learning. Using domain randomization over team size and physical parameters, we train a fully distributed policy via Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO), enabling robust zero-shot sim-to-real transfer without fine-tuning. Extensive real-world evaluations demonstrate that a single learned policy generalizes across varying team sizes and task scenarios. Furthermore, multi-group hardware experiments show that the same policy can safely operate in dynamic environments, where other drone teams act as moving obstacles. These results indicate that the proposed framework enables efficient, safe, and scalable multi-drone payload transportation with strong generalization to complex real-world conditions.",
+        "abs_url": "https://arxiv.org/abs/2607.20665",
+        "pdf_url": "https://arxiv.org/pdf/2607.20665",
+        "research_fit": 40,
+        "video_potential": 24,
+        "matched_topics": [
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "domain randomization",
+          "CBF",
+          "control barrier function"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real",
+              "domain randomization"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "CBF",
+              "control barrier function"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotics, sim-to-real"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "rising_recent",
+      "reasons": [
+        "rising_score 57.2 ≥ 55.0",
+        "Robotics context: robot, robotic, manipulation, mobile manipulation, teleoperation",
+        "research_fit 56 ≥ 12",
+        "Source restricted to robotics_core (S4210169774)",
+        "Publication age 229 days",
+        "Paper age 229 days; citation velocity uses a 90-day floor",
+        "Smoothed citation velocity 0.40 citations/month",
+        "Field/year normalized citation percentile 0.979",
+        "OpenAlex FWCI 11.03",
+        "No valid prior snapshot at least 6 days old; cold-start score used",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched mobile manipulation)",
+        "recommendation_utility 63.2 = base 57.2 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7124172512",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7124172512",
+        "openalex_id": "W7124172512",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3653320",
+        "title": "EMMA: Scaling Mobile Manipulation via Egocentric Human Data",
+        "authors": [
+          "L. Zhu",
+          "Pranav Kuppili",
+          "Ryan Punamiya",
+          "Patcharapong Aphiwetsa",
+          "Dhruv Patel",
+          "Simar Kareer",
+          "Sehoon Ha",
+          "Danfei Xu"
+        ],
+        "abstract": "Scaling mobile manipulation imitation learning is bottlenecked by expensive mobile robot teleoperation. We present Egocentric Mobile MAnipulation (EMMA), an end-to-end framework training mobile manipulation policies from human mobile manipulation data with static robot data, sidestepping mobile teleoperation. To accomplish this, we co-train human full-body motion data with static robot data. In our experiments across four real-world tasks, EMMA demonstrates comparable performance to baselines trained on teleoperated mobile robot data (Mobile ALOHA), achieving higher or equivalent task performance in full task success. We find that EMMA is able to generalize to new spatial configurations and scenes, and we observe positive performance scaling as we increase the hours of human data, opening new avenues for scalable robotic learning in real-world environments. Details of this project can be found at:https://ego-moma.github.io",
+        "publication_date": "2026-01-14",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.6906999945640564
+          },
+          {
+            "id": "https://openalex.org/T10709",
+            "display_name": "Social Robot Interaction and HRI",
+            "score": 0.08720000088214874
+          },
+          {
+            "id": "https://openalex.org/T12290",
+            "display_name": "Human Motion and Animation",
+            "score": 0.04309999942779541
+          }
+        ],
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          }
+        ],
+        "fwci": 11.0349,
+        "citation_normalized_percentile": 0.97930836,
+        "referenced_works": [
+          "W3010904850",
+          "W3163015603",
+          "W3206530605",
+          "W4253496043",
+          "W4383108340",
+          "W4385430472",
+          "W4385430674",
+          "W4385430679",
+          "W4386075839",
+          "W4388720459",
+          "W4388936652",
+          "W4389665520",
+          "W4390480930",
+          "W4391163944",
+          "W4402353985",
+          "W4402354026",
+          "W4402354047",
+          "W4403337227",
+          "W4403888324",
+          "W4405785009",
+          "W4413925102",
+          "W4413926047",
+          "W4413945195",
+          "W4413947089",
+          "W4414079054",
+          "W4414079229",
+          "W4415121671"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "rising_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:51:48",
+        "last_considered_at": "2026-08-31T19:04:41+08:00",
+        "recommended_at": "2026-08-31T19:04:41+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-31T08:51:48",
+        "openalex_url": "https://openalex.org/W7124172512",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3653320",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 56,
+        "video_potential": 41,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "mobile manipulation",
+          "imitation learning",
+          "robot data",
+          "robot teleoperation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robot data",
+              "robot teleoperation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "mobile manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "mobile manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, mobile manipulation, teleoperation"
+          }
+        ],
+        "historical_value_score": 73.9,
+        "historical_score_components": {
+          "research_relevance": 56.0,
+          "recency": 100.0,
+          "normalized_citation": 97.9,
+          "fwci": 100.0,
+          "citation_momentum": 15.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 2.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 11.03",
+          "近年年均 OpenAlex 引用 3.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": 57.2,
+        "rising_score_components": {
+          "research_relevance": 56.0,
+          "citation_velocity": 8.0,
+          "normalized_citation": 97.9,
+          "fwci": 100.0,
+          "observed_growth": null
+        },
+        "rising_score_reasons": [
+          "Robotics context: robot, robotic, manipulation, mobile manipulation, teleoperation",
+          "research_fit 56 ≥ 12",
+          "Source restricted to robotics_core (S4210169774)",
+          "Publication age 229 days",
+          "Paper age 229 days; citation velocity uses a 90-day floor",
+          "Smoothed citation velocity 0.40 citations/month",
+          "Field/year normalized citation percentile 0.979",
+          "OpenAlex FWCI 11.03",
+          "No valid prior snapshot at least 6 days old; cold-start score used"
+        ],
+        "rising_updated_at": "2026-08-31T16:51:22+08:00",
+        "rising_age_days": 229,
+        "rising_citation_velocity": 0.399,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 57.2,
+      "recommendation_utility": 63.2,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7124172512",
+        "base_id": "openalex:W7124172512",
+        "version": 1,
+        "title": "EMMA: Scaling Mobile Manipulation via Egocentric Human Data",
+        "authors": [
+          "L. Zhu",
+          "Pranav Kuppili",
+          "Ryan Punamiya",
+          "Patcharapong Aphiwetsa",
+          "Dhruv Patel",
+          "Simar Kareer",
+          "Sehoon Ha",
+          "Danfei Xu"
+        ],
+        "published": "2026-01-14T00:00:00Z",
+        "updated": "2026-01-14T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Scaling mobile manipulation imitation learning is bottlenecked by expensive mobile robot teleoperation. We present Egocentric Mobile MAnipulation (EMMA), an end-to-end framework training mobile manipulation policies from human mobile manipulation data with static robot data, sidestepping mobile teleoperation. To accomplish this, we co-train human full-body motion data with static robot data. In our experiments across four real-world tasks, EMMA demonstrates comparable performance to baselines trained on teleoperated mobile robot data (Mobile ALOHA), achieving higher or equivalent task performance in full task success. We find that EMMA is able to generalize to new spatial configurations and scenes, and we observe positive performance scaling as we increase the hours of human data, opening new avenues for scalable robotic learning in real-world environments. Details of this project can be found at:https://ego-moma.github.io",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3653320",
+        "pdf_url": "",
+        "research_fit": 56,
+        "video_potential": 41,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "mobile manipulation",
+          "imitation learning",
+          "robot data",
+          "robot teleoperation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robot data",
+              "robot teleoperation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "mobile manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "mobile manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, mobile manipulation, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, manipulation, robot learning",
+        "research_fit 27 ≥ 18",
+        "核心方向：world_model_embodied_reasoning, robot_learning_posttraining",
+        "特定关键词：long-horizon manipulation",
+        "historical_value_score 53.6 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 26.8%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-31T08:50:41",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 53.6 = base 53.6 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7168350598",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7168350598",
+        "openalex_id": "W7168350598",
+        "base_arxiv_id": "2607.07129",
+        "doi": "10.1109/lra.2026.3713713",
+        "title": "Compositional Motion Generation From Demonstration With Object-Centric Neural Fields",
+        "authors": [
+          "Ahmet Tekden",
+          "Yasemin Bekiroglu"
+        ],
+        "abstract": "Compositionality, by organizing complex behavior as combinations of simpler elements, enables robot learning that is scalable and data efficient. Leveraging this principle, we propose a generative learning-from-demonstration framework that enables compositional modeling of robotic behavior by connecting perception and motion through shared object-level representations. We render scenes from object-centric neural representations that integrate canonical neural fields with latent-conditioned deformations, capturing positional and geometric variations in a smooth, consistent, and interpretable way. For motion generation, a temporal mixture-of-experts (MoE) employs a gating mechanism to combine object-conditioned movement primitives over time, producing complete trajectories. This spatial-temporal compositionality maintains the data efficiency of movement primitives while grounding motion in visual structure, enabling systematic generalization across diverse scene configurations. In simulation, long-horizon manipulation tasks are successfully completed using the proposed model, which requires significantly less training data than other image-based baselines. Real-world experiments further demonstrate the method's robustness to noise, its ability to generalize at the category level through language-based segmentation models, and its capacity to operate directly on 3D scene representations.",
+        "publication_date": "2026-07-15",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11206",
+            "display_name": "Model Reduction and Neural Networks",
+            "score": 0.1453000009059906
+          },
+          {
+            "id": "https://openalex.org/T12611",
+            "display_name": "Neural Networks and Reservoir Computing",
+            "score": 0.10459999740123749
+          },
+          {
+            "id": "https://openalex.org/T11948",
+            "display_name": "Machine Learning in Materials Science",
+            "score": 0.03970000147819519
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.73226507,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-08-31T19:04:41+08:00",
+        "recommended_at": "2026-08-31T19:04:41+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-31T08:50:41",
+        "openalex_url": "https://openalex.org/W7168350598",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3713713",
+        "open_access_url": "https://doi.org/10.1109/lra.2026.3713713",
+        "pdf_url": null,
+        "research_fit": 27,
+        "video_potential": 18,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "robot learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, robot learning"
+          }
+        ],
+        "historical_value_score": 53.6,
+        "historical_score_components": {
+          "research_relevance": 27.0,
+          "recency": 100.0,
+          "normalized_citation": 73.2,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 26.8%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 53.6,
+      "recommendation_utility": 53.6,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2607.07129",
+        "base_id": "2607.07129",
+        "version": 1,
+        "title": "Compositional Motion Generation From Demonstration With Object-Centric Neural Fields",
+        "authors": [
+          "Ahmet Tekden",
+          "Yasemin Bekiroglu"
+        ],
+        "published": "2026-07-15T00:00:00Z",
+        "updated": "2026-07-15T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Compositionality, by organizing complex behavior as combinations of simpler elements, enables robot learning that is scalable and data efficient. Leveraging this principle, we propose a generative learning-from-demonstration framework that enables compositional modeling of robotic behavior by connecting perception and motion through shared object-level representations. We render scenes from object-centric neural representations that integrate canonical neural fields with latent-conditioned deformations, capturing positional and geometric variations in a smooth, consistent, and interpretable way. For motion generation, a temporal mixture-of-experts (MoE) employs a gating mechanism to combine object-conditioned movement primitives over time, producing complete trajectories. This spatial-temporal compositionality maintains the data efficiency of movement primitives while grounding motion in visual structure, enabling systematic generalization across diverse scene configurations. In simulation, long-horizon manipulation tasks are successfully completed using the proposed model, which requires significantly less training data than other image-based baselines. Real-world experiments further demonstrate the method's robustness to noise, its ability to generalize at the category level through language-based segmentation models, and its capacity to operate directly on 3D scene representations.",
+        "abs_url": "https://arxiv.org/abs/2607.07129",
+        "pdf_url": "https://arxiv.org/pdf/2607.07129",
+        "research_fit": 27,
+        "video_potential": 18,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "robot learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, robot learning"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
