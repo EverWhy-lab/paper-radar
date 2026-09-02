@@ -1,0 +1,577 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-02",
+  "generated_at": "2026-09-02T16:57:58+08:00",
+  "mode": "incremental",
+  "candidate_count": 3165,
+  "historical_candidate_count": 436,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.01281",
+      "title": "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+      "takeaway": "EmbodiedSkills proposes a unified framework that treats each VLA skill decision as an execution proposal, with runtime prerequisite checks and post-action verification, connected through a fixed executable-skill interface that allows swapping low-level policies without changing the agent loop. The interface records structured trajectories covering planning, execution, verification, and recovery, providing supervision for components and enabling optional online adaptation. The authors instantiate the framework with Qwen3-VL and OpenPI/pi0.5 on RoboTwin 2.0 and LIBERO, reporting 86.20% average success across 50 RoboTwin 2.0 tasks and 97.40% across four LIBERO suites, while noting only 12.5% on four memory-dependent RMBench tasks. Inspect how the fixed interface decouples high-level selection from low-level execution and how verification events are used for component-level supervision.",
+      "generated_at": "2026-09-02T09:05:05",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3132160159",
+      "title": "Proprioceptive Sensor Fusion for Quadruped Robot State Estimation",
+      "takeaway": "This paper develops a low-level state estimator for quadrupedal robots that estimates attitude, odometry, ground reaction forces, and contact detection, split into a nonlinear attitude observer, leg odometry from joint encoders and force/torque sensors, and fusion of leg odometry with inertial measurements for linear position and velocity. The attitude estimator is globally exponentially stable and can initialize with large errors where an EKF would diverge, which is practical for recovery from a fallen state. Experimental validation on the HyQ robot reports attitude RMSE of [2 1 5] deg, velocity RMSE of [0.11 0.15 0.04] m/s, and position drift averaging [2 1 8] mm/s. Inspect the nonlinear observer design and how the fusion handles unobservable position states.",
+      "generated_at": "2026-09-02T09:05:05",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 52 ≥ 40",
+        "Core topics matched: vla_robot_foundation",
+        "Specific keywords matched: VLA, vision-language-action",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.01281",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 52.0,
+      "recommendation_utility": 52.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.01281v1",
+        "base_id": "2609.01281",
+        "version": 1,
+        "title": "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+        "authors": [
+          "Wei Wang",
+          "Wenqiao Zhang",
+          "Yutong Lin",
+          "Yuqian Yuan",
+          "Tianwei Lin",
+          "Jinhao Mao",
+          "Zhenxuan Fan",
+          "Mingjian Gao",
+          "Yang Dai",
+          "Wentong Li",
+          "Zheqi Lv",
+          "Zheng Dong",
+          "Yingjie Niu",
+          "Jiaqi Zhu",
+          "Jun Xiao",
+          "Chao Li",
+          "Yueting Zhuang"
+        ],
+        "published": "2026-09-01T14:14:47Z",
+        "updated": "2026-09-01T14:14:47Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Vision-language-action (VLA) models map visual observations and language instructions directly to robot actions, but long-horizon tasks require more than action prediction. An agent must coordinate perception, planning, execution, progress verification, and recovery as the physical state evolves. An action prediction or a model-generated skill decision does not, by itself, guarantee that the proposed operation is valid in the current state or that its outcome will be verified. We propose EmbodiedSkills, a unified framework that treats each skill decision as an execution proposal: the runtime checks its prerequisites before execution and verifies the outcome afterward. A shared executable-skill interface connects high-level skill selection, bounded low-level VLA execution, and post-action verification within a single agent loop. Because this interface remains fixed, low-level VLA policies can be replaced or adapted without changing the agent loop. The interface also records planning, execution, verification, and recovery events as structured trajectories, which provide supervision for individual components and can support optional online adaptation when interactive feedback is available. We instantiate EmbodiedSkills with Qwen3-VL and OpenPI/pi0.5 on RoboTwin 2.0 and LIBERO. Task-adapted low-level VLA policies achieve an average success rate of 86.20% across 50 RoboTwin 2.0 tasks and 97.40% across the four LIBERO suites. These results establish the execution performance of the task-adapted low-level VLA policies used in EmbodiedSkills. On four memory-dependent RMBench tasks, the same task-adapted execution approach achieves 12.5% average success. The framework provides a trainable and inspectable agent layer for turning these policies into closed-loop embodied systems.",
+        "abs_url": "https://arxiv.org/abs/2609.01281v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.01281v1",
+        "research_fit": 52,
+        "video_potential": 13,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, manipulation",
+        "research_fit 22 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：robot state estimation",
+        "historical_value_score 58.7 ≥ 42.0",
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 2.5%",
+        "阅读时效分 70/100（论文年龄 6 年）",
+        "OpenAlex FWCI 5.86",
+        "近 2 年年均引用 9.5；此前 2 年年均 7.0",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-04T06:56:03",
+        "Detected subtopics: robot_state_estimation",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "recommendation_utility 64.7 = base 58.7 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3132160159",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3132160159",
+        "openalex_id": "W3132160159",
+        "base_arxiv_id": null,
+        "doi": "10.1109/iros45743.2020.9341521",
+        "title": "Proprioceptive Sensor Fusion for Quadruped Robot State Estimation",
+        "authors": [
+          "Geoff Fink",
+          "Claudio Semini"
+        ],
+        "abstract": "Estimation of a quadruped's state is fundamentally important to its operation. In this paper we develop a low-level state estimator for quadrupedal robots that includes attitude, odometry, ground reaction forces, and contact detection. The state estimator is divided into three parts. First, a nonlinear observer estimates attitude by fusing inertial measurements. The attitude estimator is globally exponentially stable and is able to initialize with large errors in the initial state estimates whereas a state-of-the-art EKF would diverge. This is practical for situations when the robot has fallen over and needs to start from its side. Second, leg odometry is calculated with encoders, force sensors, and torque sensors in the robot's joints. Lastly, the leg odometry and inertial measurements are fused to obtain linear position and velocity. We experimentally validate the state estimator using a novel dataset from the HyQ robot. For the entirety of the experiment the estimated attitude matched the ground truth data and had a root mean square error (RMSE) of [2 1 5] deg, the velocity estimates has a RMSE of [0.11 0.15 0.04] m/s, and the position estimates, which are unobservable, drifted on average [2 1 8] mm/s.",
+        "publication_date": "2020-10-24",
+        "publication_year": 2020,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9998000264167786
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9966999888420105
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9765999913215637
+          }
+        ],
+        "cited_by_count": 43,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 5.8636,
+        "citation_normalized_percentile": 0.97469334,
+        "referenced_works": [
+          "W1971594916",
+          "W1975230295",
+          "W2012387742",
+          "W2015996585",
+          "W2037050532",
+          "W2051536971",
+          "W2073288601",
+          "W2111904757",
+          "W2125691646",
+          "W2127578024",
+          "W2146881125",
+          "W2152671441",
+          "W2166132830",
+          "W2169568794",
+          "W2296360731",
+          "W2323021136",
+          "W2326849350",
+          "W2341165584",
+          "W2411649036",
+          "W2549216668",
+          "W2577008596",
+          "W2747975657",
+          "W2750656378",
+          "W2784947652",
+          "W2809564319",
+          "W2909553221",
+          "W4237726214",
+          "W4246536800",
+          "W4250058668",
+          "W636927631",
+          "W6701596953",
+          "W6747537972",
+          "W6828787151",
+          "W6926196336"
+        ],
+        "related_works": [
+          "W1895809510",
+          "W2028864324",
+          "W2134032665",
+          "W2170068838",
+          "W2554592351",
+          "W2712366421",
+          "W3011348788",
+          "W4285265093",
+          "W4383748483",
+          "W91816639"
+        ],
+        "discovery_source": [
+          "topic_search:robot state estimation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:03",
+        "last_considered_at": "2026-09-02T16:57:58+08:00",
+        "recommended_at": "2026-09-02T16:57:58+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:03",
+        "openalex_url": "https://openalex.org/W3132160159",
+        "landing_page_url": "https://doi.org/10.1109/iros45743.2020.9341521",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 22,
+        "video_potential": 37,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation"
+          }
+        ],
+        "historical_value_score": 58.7,
+        "historical_score_components": {
+          "research_relevance": 22.0,
+          "recency": 70.0,
+          "normalized_citation": 97.5,
+          "fwci": 100.0,
+          "citation_momentum": 67.9,
+          "seed_provenance": null,
+          "work_signal": 0.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2020 年",
+          "同领域同年份引用标准化位于前 2.5%",
+          "阅读时效分 70/100（论文年龄 6 年）",
+          "OpenAlex FWCI 5.86",
+          "近 2 年年均引用 9.5；此前 2 年年均 7.0",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "robot_state_estimation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 58.7,
+      "recommendation_utility": 64.7,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W3132160159",
+        "base_id": "openalex:W3132160159",
+        "version": 1,
+        "title": "Proprioceptive Sensor Fusion for Quadruped Robot State Estimation",
+        "authors": [
+          "Geoff Fink",
+          "Claudio Semini"
+        ],
+        "published": "2020-10-24T00:00:00Z",
+        "updated": "2020-10-24T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Estimation of a quadruped's state is fundamentally important to its operation. In this paper we develop a low-level state estimator for quadrupedal robots that includes attitude, odometry, ground reaction forces, and contact detection. The state estimator is divided into three parts. First, a nonlinear observer estimates attitude by fusing inertial measurements. The attitude estimator is globally exponentially stable and is able to initialize with large errors in the initial state estimates whereas a state-of-the-art EKF would diverge. This is practical for situations when the robot has fallen over and needs to start from its side. Second, leg odometry is calculated with encoders, force sensors, and torque sensors in the robot's joints. Lastly, the leg odometry and inertial measurements are fused to obtain linear position and velocity. We experimentally validate the state estimator using a novel dataset from the HyQ robot. For the entirety of the experiment the estimated attitude matched the ground truth data and had a root mean square error (RMSE) of [2 1 5] deg, the velocity estimates has a RMSE of [0.11 0.15 0.04] m/s, and the position estimates, which are unobservable, drifted on average [2 1 8] mm/s.",
+        "abs_url": "https://doi.org/10.1109/iros45743.2020.9341521",
+        "pdf_url": "",
+        "research_fit": 22,
+        "video_potential": 37,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
