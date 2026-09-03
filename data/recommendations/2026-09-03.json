@@ -1,0 +1,510 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-03",
+  "generated_at": "2026-09-03T17:06:43+08:00",
+  "mode": "incremental",
+  "candidate_count": 3142,
+  "historical_candidate_count": 436,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.02634",
+      "title": "Latent Cluster Analysis for Vision-Language-Action Models",
+      "takeaway": "This paper introduces LAVLA, a latent cluster analysis framework for interpreting VLA models, and applies it layer-wise to GR00T N1.5 with emphasis on the action decoder. A cross-attention-based embedding-weighting method is proposed to amplify relevant features during action diffusion, and quantitative evaluation shows weighted clustering consistently outperforms the baseline. Human-interpretable concepts are extracted per cluster, linking latent representations to semantic descriptions. The analysis reveals that latent clusters progressively disentangle spatiotemporal and kinematic features, refining in middle layers and stabilizing toward the output. Inspect how the weighting method is formulated and whether the reported clustering gains hold across layers and seeds.",
+      "generated_at": "2026-09-03T09:11:48",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7147489662",
+      "title": "CReF: Cross-Modal and Recurrent Fusion for Depth-Conditioned Humanoid Locomotion",
+      "takeaway": "This paper presents CReF, a single-stage depth-conditioned humanoid locomotion framework that learns directly from raw forward-facing depth without explicit geometric intermediates. CReF couples proprioception and depth tokens via proprioception-queried cross-modal attention, fuses representations with a gated residual block, and uses a GRU with a highway-style output gate for temporal integration. A terrain-aware foothold placement reward extracts supportable candidates from foot-end point-cloud samples. Experiments in simulation and on a physical humanoid demonstrate robust traversal over diverse terrains and zero-shot transfer to real scenes with handrails, hollow pallets, reflective interference, and cluttered outdoor surroundings. Inspect the gated residual fusion and highway gate design to assess how state-dependent blending is achieved.",
+      "generated_at": "2026-09-03T09:11:48",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 65 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining",
+        "Specific keywords matched: vision-language-action, VLA, action diffusion",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 65.0 = base 65.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.02634",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 65.0,
+      "recommendation_utility": 65.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.02634v1",
+        "base_id": "2609.02634",
+        "version": 1,
+        "title": "Latent Cluster Analysis for Vision-Language-Action Models",
+        "authors": [
+          "Theodor Wulff",
+          "Sergio Lanza",
+          "Tamara Bila",
+          "Angelo Cangelosi",
+          "Stefan Wermter",
+          "Igor Farkas"
+        ],
+        "published": "2026-09-02T14:10:47Z",
+        "updated": "2026-09-02T14:10:47Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Vision-Language-Action (VLA) Models are increasingly used in robotics for their ability to ground language and perception into action, yet the internal representations driving their behaviour remain poorly understood. We propose LAVLA, a framework for latent cluster analysis of VLA models, and conduct a layer-wise study of the state-of-the-art GR00T N1.5 model, with particular focus on its action decoder. To better characterise the latent space during action diffusion, we introduce a cross-attention-based embedding-weighting method that amplifies relevant features while suppressing less informative ones. Quantitative evaluation shows that weighted clustering consistently outperforms the baseline. To improve interpretability, we extract human-interpretable concepts for each cluster, linking latent representations to semantic descriptions. Our analysis shows that latent clusters progressively disentangle spatiotemporal and kinematic features, with representations becoming more refined in the middle layers and stabilising toward the output. As such, LAVLA advances the interpretability of language-driven robotic systems.",
+        "abs_url": "https://arxiv.org/abs/2609.02634v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.02634v1",
+        "research_fit": 65,
+        "video_potential": 23,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "action diffusion"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "action diffusion"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotic, robotics, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 16.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "evaluation"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, humanoid",
+        "research_fit 30 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：humanoid locomotion",
+        "historical_value_score 46.2 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 76.1%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-31T08:50:41",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 52.2 = base 46.2 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7147489662",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7147489662",
+        "openalex_id": "W7147489662",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3723339",
+        "title": "CReF: Cross-Modal and Recurrent Fusion for Depth-Conditioned Humanoid Locomotion",
+        "authors": [
+          "Yuan Hao",
+          "Ruiqi Yu",
+          "Shixin Luo",
+          "Guoteng Zhang",
+          "Jun Wu",
+          "Qiuguo Zhu"
+        ],
+        "abstract": "Stable traversal over geometrically complex terrain increasingly requires exteroceptive perception, yet prior perceptive humanoid locomotion methods often remain tied to explicit geometric abstractions, either by mediating control through robot-centric 2.5D terrain representations or by shaping depth learning with auxiliary geometry-related targets. While effective, these approaches introduce additional map-construction procedures or multi-stage skill-transfer processes beyond direct depth-to-control learning. We propose CReF (Cross-modal and Recurrent Fusion), a single-stage depth-conditioned humanoid locomotion framework that learns locomotion-relevant features directly from raw forward-facing depth without explicit geometric intermediates. CReF couples proprioception and depth tokens through proprioception-queried cross-modal attention, fuses the resulting representation with a gated residual fusion block, and performs temporal integration with a Gated Recurrent Unit (GRU) regulated by a highway-style output gate for state-dependent blending of recurrent and feedforward features. To further improve terrain interaction, we introduce a terrain-aware foothold placement reward that extracts supportable foothold candidates from foot-end point-cloud samples and rewards touchdown locations that lie close to the nearest supportable candidate. Experiments in simulation and on a physical humanoid demonstrate robust traversal over diverse terrains and effective zero-shot transfer to real-world scenes containing handrails, hollow pallet assemblies, severe reflective interference, and visually cluttered outdoor surroundings.",
+        "publication_date": "2026-08-12",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.47290000319480896
+          },
+          {
+            "id": "https://openalex.org/T10709",
+            "display_name": "Social Robot Interaction and HRI",
+            "score": 0.09549999982118607
+          },
+          {
+            "id": "https://openalex.org/T12740",
+            "display_name": "Gait Recognition and Analysis",
+            "score": 0.08720000088214874
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.23935773,
+        "referenced_works": [
+          "W2158782408",
+          "W2911087563",
+          "W3041078985",
+          "W4205430897",
+          "W4312749288",
+          "W4317987839",
+          "W4378696928",
+          "W4386075970",
+          "W4390938336",
+          "W4401415792",
+          "W4401416668",
+          "W4402449733",
+          "W4405785864",
+          "W4405787394",
+          "W4413756046",
+          "W4413918531",
+          "W4414079195",
+          "W7115921319",
+          "W7128695283",
+          "W7163869187"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-09-03T17:06:43+08:00",
+        "recommended_at": "2026-09-03T17:06:43+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-31T08:50:41",
+        "openalex_url": "https://openalex.org/W7147489662",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3723339",
+        "open_access_url": "https://doi.org/10.48550/arxiv.2603.29452",
+        "pdf_url": null,
+        "research_fit": 30,
+        "video_potential": 46,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid locomotion"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, humanoid"
+          }
+        ],
+        "historical_value_score": 46.2,
+        "historical_score_components": {
+          "research_relevance": 30.0,
+          "recency": 100.0,
+          "normalized_citation": 23.9,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 76.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 46.2,
+      "recommendation_utility": 52.2,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7147489662",
+        "base_id": "openalex:W7147489662",
+        "version": 1,
+        "title": "CReF: Cross-Modal and Recurrent Fusion for Depth-Conditioned Humanoid Locomotion",
+        "authors": [
+          "Yuan Hao",
+          "Ruiqi Yu",
+          "Shixin Luo",
+          "Guoteng Zhang",
+          "Jun Wu",
+          "Qiuguo Zhu"
+        ],
+        "published": "2026-08-12T00:00:00Z",
+        "updated": "2026-08-12T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Stable traversal over geometrically complex terrain increasingly requires exteroceptive perception, yet prior perceptive humanoid locomotion methods often remain tied to explicit geometric abstractions, either by mediating control through robot-centric 2.5D terrain representations or by shaping depth learning with auxiliary geometry-related targets. While effective, these approaches introduce additional map-construction procedures or multi-stage skill-transfer processes beyond direct depth-to-control learning. We propose CReF (Cross-modal and Recurrent Fusion), a single-stage depth-conditioned humanoid locomotion framework that learns locomotion-relevant features directly from raw forward-facing depth without explicit geometric intermediates. CReF couples proprioception and depth tokens through proprioception-queried cross-modal attention, fuses the resulting representation with a gated residual fusion block, and performs temporal integration with a Gated Recurrent Unit (GRU) regulated by a highway-style output gate for state-dependent blending of recurrent and feedforward features. To further improve terrain interaction, we introduce a terrain-aware foothold placement reward that extracts supportable foothold candidates from foot-end point-cloud samples and rewards touchdown locations that lie close to the nearest supportable candidate. Experiments in simulation and on a physical humanoid demonstrate robust traversal over diverse terrains and effective zero-shot transfer to real-world scenes containing handrails, hollow pallet assemblies, severe reflective interference, and visually cluttered outdoor surroundings.",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3723339",
+        "pdf_url": "",
+        "research_fit": 30,
+        "video_potential": 46,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid locomotion"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, humanoid"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
