@@ -1,0 +1,1134 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-04",
+  "generated_at": "2026-09-04T16:59:37+08:00",
+  "mode": "incremental",
+  "candidate_count": 3180,
+  "historical_candidate_count": 436,
+  "recommendation_count": 5,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 1,
+    "model_based_recent": 0,
+    "review_knowledge_map": 1,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.04193",
+      "title": "GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation",
+      "takeaway": "GIFT addresses the action-sufficiency gap in robot manipulation by guiding intermediate features to preserve geometry, affordance, and goal-region structure through training-time constraints. The framework is instantiated in a VLA policy and two World-Action Models without altering their action formulations. Zero-shot transfer to LIBERO-Plus shows GIFT variants outperform their counterparts by 4.6, 12.6, and 5.2 points, reaching 79.6%, 72.6%, and 87.8%; on RoboCasa, gains are 12.6, 9.0, and 8.4 points. Inspect how geometry alignment, affordance prediction, and goal-region reconstruction are jointly optimized and whether they generalize across model architectures.",
+      "generated_at": "2026-09-04T09:04:45",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2603.08383",
+      "title": "MoMaStage: Skill-State Graph Guided Planning and Closed-Loop Execution for Long-Horizon Indoor Mobile Manipulation",
+      "takeaway": "MoMaStage addresses long-horizon indoor mobile manipulation by coupling a frozen VLM with a Skill-State Graph that constrains planning space and verifies feasibility via scene-region and gripper-occupancy state propagation. An event-driven monitor triggers graph-grounded repair only when execution invalidates the remaining plan. Experiments in physics-rich simulation and on a real mobile manipulator show improved planning validity and execution survival over baselines, with reduced latency and token consumption. Inspect how the topology-only SSG projection balances expressiveness and computational cost, and how the verifier handles uncertainty in state estimation.",
+      "generated_at": "2026-09-04T09:04:45",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7167785295",
+      "title": "Geometry-Informed Contact Optimization and Model Predictive Control for Efficient Contact-Rich Manipulation",
+      "takeaway": "This paper presents a geometry-informed contact optimization and model predictive control approach for efficient contact-rich manipulation. The abstract is empty, so the specific problem formulation, method details, and reported results are not available from the supplied metadata. Inspect the full text for the geometric representation used, how contact constraints are integrated into the MPC, and any quantitative comparisons with baseline controllers on manipulation tasks.",
+      "generated_at": "2026-09-04T09:04:45",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.03927",
+      "title": "Toward Unified Robot Learning: Bridging Representation, Vision-Language-Action, and World Models",
+      "takeaway": "This survey provides a unified perspective on robot learning by organizing methods along three axes: representation learning, VLA models, and world models. It introduces a taxonomy capturing design choices in environment representation, policy learning, and predictive modeling, and analyzes how these components interact. The survey identifies challenges such as uncertainty quantification, out-of-distribution generalization, cross-embodiment transfer, and long-horizon planning, arguing they stem from lack of integration. Use it as a knowledge map to navigate recent progress and to locate discussions on integrated, physically grounded, and probabilistic robot learning.",
+      "generated_at": "2026-09-04T09:04:45",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7202285444",
+      "title": "Real-Time Control-Constrained DDP for Underactuated Balancing of Legged Robots",
+      "takeaway": "This paper presents ABC-DDP, a real-time control-constrained DDP framework for underactuated legged robots, using an Accelerated Projected Gradient method to handle control constraints without repeated KKT inversions. A virtual constraint integrates control constraints within a feasibility-driven multiple-shooting framework, enabling stable optimization from infeasible initializations. Simulation results demonstrate static two-leg standing, slow catwalk, upright walking, and high-speed running within a unified MPC framework. Inspect how the active-set identification and virtual constraint formulation affect convergence and real-time performance under strong underactuation.",
+      "generated_at": "2026-09-04T09:04:45",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 58 ≥ 40",
+        "Core topics matched: vla_robot_foundation, world_model_embodied_reasoning",
+        "Specific keywords matched: vision-language-action, VLA, world action model, inverse dynamics",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: world_action_model",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 58.0 = base 58.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.04193",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "world_model_embodied_reasoning"
+      ],
+      "subtopics": [
+        "world_action_model"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 58.0,
+      "recommendation_utility": 58.0,
+      "days_since_same_subtopic": 14,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.04193v1",
+        "base_id": "2609.04193",
+        "version": 1,
+        "title": "GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation",
+        "authors": [
+          "Yupeng Zheng",
+          "Xiang Li",
+          "Songen Gu",
+          "Yuhang Zheng",
+          "Shuai Tian",
+          "Weize Li",
+          "Linbo Wang",
+          "Chaoyue Li",
+          "Qichao Zhang",
+          "Haoran Li",
+          "Zhongpu Xia",
+          "Ya-Qin Zhang",
+          "Shuicheng Yan",
+          "Dongbin Zhao"
+        ],
+        "published": "2026-09-03T17:59:03Z",
+        "updated": "2026-09-03T17:59:03Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Vision-language pre-training and predictive world modeling provide robot policies with rich semantic and dynamic visual features, but their native action and visual-prediction objectives may omit critical physical and task structure while retaining control-irrelevant visual redundancy. We call this mismatch between visual richness and control utility the action-sufficiency gap. We investigate whether this gap can be bridged by guiding intermediate features to preserve three control-relevant structure in robotic manipulation: geometry governing motion feasibility, affordance encoding instruction-relevant entities, and goals grounding instructions in task-relevant regions. To this end, we present GIFT (Guided Intermediate Feature Training), an architecture-flexible framework for learning intermediate features that translates these structures into training-time constraints through geometry alignment, affordance prediction, and goal-region reconstruction. We instantiate GIFT in a Vision-Language-Action (VLA) policy, a direct-action World-Action Model (WAM), and an inverse-dynamics WAM while retaining each model's action formulation. Under zero-shot transfer to LIBERO-Plus, GIFT-VLA, GIFT-WAM-Fast, and GIFT-WAM-IDM outperform StarVLA-OFT, Fast-WAM, and Fast-WAM-IDM by 4.6, 12.6, and 5.2 points, reaching 79.6%, 72.6%, and 87.8%, respectively. On RoboCasa, the three GIFT variants reach 61.4%, 83.6%, and 82.3%, outperforming their counterparts by 12.6, 9.0, and 8.4 points, respectively. Together, these results establish learning functionally structured intermediate features as a reusable principle across model-specific action formulations, with especially large gains on articulated-object tasks and high-precision real-world manipulation under unseen visual and spatial perturbations. Project page: https://openphoenix-team.github.io/GIFT-pages.",
+        "abs_url": "https://arxiv.org/abs/2609.04193v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.04193v1",
+        "research_fit": 58,
+        "video_potential": 39,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "world_model_embodied_reasoning",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "world action model",
+          "inverse dynamics"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "world action model"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "inverse dynamics"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 14.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "outperform"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 50 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation",
+        "Specific keywords matched: mobile manipulation, mobile manipulator",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched mobile manipulation)",
+        "recommendation_utility 56.0 = base 50.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2603.08383",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 50.0,
+      "recommendation_utility": 56.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2603.08383v2",
+        "base_id": "2603.08383",
+        "version": 2,
+        "title": "MoMaStage: Skill-State Graph Guided Planning and Closed-Loop Execution for Long-Horizon Indoor Mobile Manipulation",
+        "authors": [
+          "Chenxu Li",
+          "Zixuan Chen",
+          "Yetao Li",
+          "Jiapeng Xu",
+          "Hongyu Ding",
+          "Jieqi Shi",
+          "Jing Huo",
+          "Yang Gao"
+        ],
+        "published": "2026-03-09T13:43:38Z",
+        "updated": "2026-09-03T09:27:38Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Long-horizon indoor mobile manipulation (MoMa) requires robots to execute extended navigation-manipulation sequences whose feasibility depends on state changes induced by preceding skills. Vision-language models (VLMs) can decompose instructions into plausible skill sequences, but they do not reliably track such cumulative embodiment constraints or revise a plan when execution deviates from expectation. We present MoMaStage, a map-light framework for state-consistent planning and closed-loop execution in long-horizon indoor MoMa. MoMaStage couples a frozen VLM with robot execution through three mechanisms: (i) a hierarchical library of grounded, executable skills and a topology-only projection of a Skill-State Graph (SSG) that constrains the VLM's planning space; (ii) an SSG verifier that propagates scene-region and gripper-occupancy state to reject infeasible plans before execution; and (iii) an event-driven monitor that triggers graph-grounded repair only when an observed outcome invalidates the remaining plan. The SSG captures the compact embodiment state needed for skill sequencing without requiring a dense scene map, while geometric and contact-level conditions remain within the underlying controllers. Experiments in physics-rich simulation and on a real mobile manipulator show that MoMaStage improves planning validity and long-horizon execution survival over the evaluated baselines, while reducing latency and model token consumption.",
+        "abs_url": "https://arxiv.org/abs/2603.08383v2",
+        "pdf_url": "https://arxiv.org/pdf/2603.08383v2",
+        "research_fit": 50,
+        "video_potential": 44,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "mobile manipulation",
+          "mobile manipulator"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulation",
+              "mobile manipulator"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "manipulation",
+              "manipulator",
+              "mobile manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "manipulation",
+              "manipulator",
+              "mobile manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, manipulation, manipulator, mobile manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "mobile manipulator"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "navigation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 40 ≥ 35",
+        "Core topics matched: dexterous_multimodal_manipulation",
+        "Specific keywords matched: contact-rich manipulation, model predictive control",
+        "Detected subtopics: model_predictive_control",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 40.0 = base 40.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7167785295",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7167785295",
+        "openalex_id": "W7167785295",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3711851",
+        "title": "Geometry-Informed Contact Optimization and Model Predictive Control for Efficient Contact-Rich Manipulation",
+        "authors": [
+          "Sheng Xu",
+          "Lei Yan",
+          "Juyi Sheng",
+          "Ping Xia",
+          "Haitao Zhang",
+          "Mengyuan Liu",
+          "Wenfu Xu"
+        ],
+        "abstract": null,
+        "publication_date": "2026-07-09",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.3190999925136566
+          },
+          {
+            "id": "https://openalex.org/T11394",
+            "display_name": "Dynamics and Control of Mechanical Systems",
+            "score": 0.3109999895095825
+          },
+          {
+            "id": "https://openalex.org/T12809",
+            "display_name": "Contact Mechanics and Variational Inequalities",
+            "score": 0.06289999932050705
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.69108139,
+        "referenced_works": [
+          "W1514487078",
+          "W1992026489",
+          "W2084399420",
+          "W2101340954",
+          "W2158782408",
+          "W2163862895",
+          "W2234650683",
+          "W2609356747",
+          "W2990747716",
+          "W3081176596",
+          "W3109952375",
+          "W3200128452",
+          "W3202328163",
+          "W3203017576",
+          "W4250589301",
+          "W4379382681",
+          "W4379742363",
+          "W4386025948",
+          "W4393139803",
+          "W4402354156",
+          "W4403706651",
+          "W4407974999",
+          "W4408251929",
+          "W4408254224",
+          "W4409882904",
+          "W4410879364",
+          "W4412836804",
+          "W4413362619",
+          "W4414050899",
+          "W4414538276",
+          "W7118552943",
+          "W7137980158",
+          "W7139025945",
+          "W7160648390"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-09-04T16:59:37+08:00",
+        "recommended_at": "2026-09-04T16:59:37+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-31T08:50:41",
+        "openalex_url": "https://openalex.org/W7167785295",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3711851",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 40,
+        "video_potential": 28,
+        "matched_topics": [
+          "dexterous_multimodal_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "contact-rich manipulation",
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "historical_value_score": 56.6,
+        "historical_score_components": {
+          "research_relevance": 40.0,
+          "recency": 100.0,
+          "normalized_citation": 69.1,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 30.9%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "model_predictive_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 40.0,
+      "recommendation_utility": 40.0,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7167785295",
+        "base_id": "openalex:W7167785295",
+        "version": 1,
+        "title": "Geometry-Informed Contact Optimization and Model Predictive Control for Efficient Contact-Rich Manipulation",
+        "authors": [
+          "Sheng Xu",
+          "Lei Yan",
+          "Juyi Sheng",
+          "Ping Xia",
+          "Haitao Zhang",
+          "Mengyuan Liu",
+          "Wenfu Xu"
+        ],
+        "published": "2026-07-09T00:00:00Z",
+        "updated": "2026-07-09T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3711851",
+        "pdf_url": "",
+        "research_fit": 40,
+        "video_potential": 28,
+        "matched_topics": [
+          "dexterous_multimodal_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "contact-rich manipulation",
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "Knowledge-map signals: survey, taxonomy",
+        "Robotics context: robot, robots, robotic, robot learning, vision-language-action",
+        "research_fit 94 ≥ 40",
+        "Core topics matched: vla_robot_foundation, world_model_embodied_reasoning, robot_learning_posttraining",
+        "Specific keywords matched: vision-language-action, VLA, long-horizon planning",
+        "Detected subtopics: cross_embodiment",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 94.0 = base 94.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.03927",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "cross_embodiment"
+      ],
+      "document_type": "survey",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 94.0,
+      "recommendation_utility": 94.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.03927v1",
+        "base_id": "2609.03927",
+        "version": 1,
+        "title": "Toward Unified Robot Learning: Bridging Representation, Vision-Language-Action, and World Models",
+        "authors": [
+          "Shaunak A. Mehta",
+          "Ananya Hazarika",
+          "Haochen Zhang",
+          "Fan Yang",
+          "Ryo Moriyama",
+          "Wenkai Li",
+          "Yash Patel",
+          "Kanata Suzuki"
+        ],
+        "published": "2026-09-03T14:40:16Z",
+        "updated": "2026-09-03T14:40:16Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "For robots to operate reliably in real-world environments, they need to perceive their surroundings, act, and reason about the consequences of those actions. Rapid progress in the domains of representation learning, VLA models, and world models has significantly enhanced the capabilities of robot learning systems, enabling robots to work in increasingly complex environments. However, these paradigms are typically developed in isolation, resulting in fragmented systems that struggle with generalization, long-horizon temporal reasoning and planning, and deployment in unstructured environments. In this survey, we present a unified perspective on robot learning by organizing the existing methods along three complementary axes: understanding through representation learning, acting through VLA models, and reasoning through world models. We introduce a structured taxonomy that captures key design choices in environment representation, policy learning, and predictive modeling, and summarize the recent progress in these domains. Beyond classifying the existing works, we analyze how these components interact, discuss common limitations, and highlight emerging trends towards more integrated systems. Through this lens, we identify the challenges in the domain of robot learning, including uncertainty quantification, out-of-distribution generalization, cross-embodiment transfer, long-context understanding, and long-horizon planning. We argue that these challenges arise not only from limitations within individual components but also from the lack of integration across perception, action, and reasoning. Building on this analysis, we outline future directions towards unified, physically grounded, and probabilistic robot learning to develop robust robotic systems that maintain consistent internal representations and support decision making over extended interactions in real-world environments.",
+        "abs_url": "https://arxiv.org/abs/2609.03927v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.03927v1",
+        "research_fit": 94,
+        "video_potential": 33,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "long-horizon planning",
+          "robot learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon planning"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robot learning",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robot learning",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robot learning, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 23.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "policy learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic",
+        "research_fit 18 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：DDP, model predictive control, MPC, differential dynamic programming",
+        "historical_value_score 50.8 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 24.8%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-31T08:50:41",
+        "Detected subtopics: model_predictive_control, trajectory_optimization",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "recommendation_utility 56.8 = base 50.8 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7202285444",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7202285444",
+        "openalex_id": "W7202285444",
+        "base_arxiv_id": "2608.18552",
+        "doi": "10.1109/lra.2026.3723262",
+        "title": "Real-Time Control-Constrained DDP for Underactuated Balancing of Legged Robots",
+        "authors": [
+          "남성원",
+          "Hyunyong Lee",
+          "Hansol Kang",
+          "Jiman Park",
+          "Yeongwoo Son",
+          "Bumsu Yi",
+          "Jaeyoung Oh",
+          "Hyouk Ryeol Choi"
+        ],
+        "abstract": "This paper presents a real-time control-constrained Differential Dynamic Programming (DDP) framework for underactuated legged robots. To address the limitation of classical DDP in handling control constraints, we propose an Accelerated Projected Gradient (APG)-based control-constrained DDP (ABC-DDP), which efficiently computes constrained solutions and identifies active sets without repeated Karush-Kuhn-Tucker (KKT) inversions. A virtual constraint is introduced to integrate control constraints within a feasibility-driven multiple-shooting framework, enabling stable optimization even from dynamically infeasible initializations. The proposed method supports real-time model predictive control (MPC) with short horizons under strong underactuation. Simulation results demonstrate static two-leg standing under external disturbances, along with diverse dynamic motions including slow catwalk, upright walking, and high-speed running within a unified MPC framework. To the best of our knowledge, this is the first demonstration of static two-leg standing of a quadruped robot achieved using real-time finite-horizon MPC.",
+        "publication_date": "2026-08-12",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.3441999852657318
+          },
+          {
+            "id": "https://openalex.org/T11615",
+            "display_name": "Control and Dynamics of Mobile Robots",
+            "score": 0.1316000074148178
+          },
+          {
+            "id": "https://openalex.org/T10040",
+            "display_name": "Adaptive Control of Nonlinear Systems",
+            "score": 0.13019999861717224
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.75222321,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-09-04T16:59:37+08:00",
+        "recommended_at": "2026-09-04T16:59:37+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-31T08:50:41",
+        "openalex_url": "https://openalex.org/W7202285444",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3723262",
+        "open_access_url": "https://arxiv.org/abs/2608.18552",
+        "pdf_url": "https://arxiv.org/pdf/2608.18552",
+        "research_fit": 18,
+        "video_potential": 29,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "DDP",
+          "model predictive control",
+          "MPC",
+          "differential dynamic programming"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "DDP",
+              "model predictive control",
+              "MPC",
+              "differential dynamic programming"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic"
+          }
+        ],
+        "historical_value_score": 50.8,
+        "historical_score_components": {
+          "research_relevance": 18.0,
+          "recency": 100.0,
+          "normalized_citation": 75.2,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 24.8%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "model_predictive_control",
+        "trajectory_optimization"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 50.8,
+      "recommendation_utility": 56.8,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2608.18552",
+        "base_id": "2608.18552",
+        "version": 1,
+        "title": "Real-Time Control-Constrained DDP for Underactuated Balancing of Legged Robots",
+        "authors": [
+          "남성원",
+          "Hyunyong Lee",
+          "Hansol Kang",
+          "Jiman Park",
+          "Yeongwoo Son",
+          "Bumsu Yi",
+          "Jaeyoung Oh",
+          "Hyouk Ryeol Choi"
+        ],
+        "published": "2026-08-12T00:00:00Z",
+        "updated": "2026-08-12T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "This paper presents a real-time control-constrained Differential Dynamic Programming (DDP) framework for underactuated legged robots. To address the limitation of classical DDP in handling control constraints, we propose an Accelerated Projected Gradient (APG)-based control-constrained DDP (ABC-DDP), which efficiently computes constrained solutions and identifies active sets without repeated Karush-Kuhn-Tucker (KKT) inversions. A virtual constraint is introduced to integrate control constraints within a feasibility-driven multiple-shooting framework, enabling stable optimization even from dynamically infeasible initializations. The proposed method supports real-time model predictive control (MPC) with short horizons under strong underactuation. Simulation results demonstrate static two-leg standing under external disturbances, along with diverse dynamic motions including slow catwalk, upright walking, and high-speed running within a unified MPC framework. To the best of our knowledge, this is the first demonstration of static two-leg standing of a quadruped robot achieved using real-time finite-horizon MPC.",
+        "abs_url": "https://arxiv.org/abs/2608.18552",
+        "pdf_url": "https://arxiv.org/pdf/2608.18552",
+        "research_fit": 18,
+        "video_potential": 29,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "DDP",
+          "model predictive control",
+          "MPC",
+          "differential dynamic programming"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "DDP",
+              "model predictive control",
+              "MPC",
+              "differential dynamic programming"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
