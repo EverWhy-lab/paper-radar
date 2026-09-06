@@ -1,0 +1,367 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-06",
+  "generated_at": "2026-09-06T16:48:36+08:00",
+  "mode": "incremental",
+  "candidate_count": 2490,
+  "historical_candidate_count": 436,
+  "recommendation_count": 1,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7170072204",
+      "title": "Embodied Tree of Thoughts: Deliberate Manipulation Planning With Embodied World Model",
+      "takeaway": "The paper presents Embodied Tree of Thoughts, a deliberate manipulation planning method that combines tree-structured reasoning with an embodied world model. Because the abstract is empty in the provided metadata, the specific problem formulation, algorithmic details, and reported results cannot be summarized from the source. The technical point to inspect while reading is how the embodied world model is integrated into the tree search to enable deliberate, multi-step manipulation planning, and what evidence the authors provide for its effectiveness.",
+      "generated_at": "2026-09-06T08:53:08",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, manipulation",
+        "research_fit 30 ≥ 18",
+        "核心方向：world_model_embodied_reasoning",
+        "特定关键词：embodied world model",
+        "historical_value_score 51.8 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 18.9%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-31T08:50:41",
+        "Detected subtopics: robot_world_model",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 51.8 = base 51.8 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7170072204",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7170072204",
+        "openalex_id": "W7170072204",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3716133",
+        "title": "Embodied Tree of Thoughts: Deliberate Manipulation Planning With Embodied World Model",
+        "authors": [
+          "Wenying Xu",
+          "Mingkang Zhang",
+          "Cindy Wang",
+          "Rui Fang",
+          "Lusong Li",
+          "Jing Xu",
+          "Jiayuan Gu",
+          "Zecui Zeng",
+          "Rui Chen"
+        ],
+        "abstract": null,
+        "publication_date": "2026-07-22",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11883",
+            "display_name": "Embodied and Extended Cognition",
+            "score": 0.13330000638961792
+          },
+          {
+            "id": "https://openalex.org/T10709",
+            "display_name": "Social Robot Interaction and HRI",
+            "score": 0.07919999957084656
+          },
+          {
+            "id": "https://openalex.org/T11574",
+            "display_name": "Artificial Intelligence in Games",
+            "score": 0.06930000334978104
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.81124086,
+        "referenced_works": [
+          "W3164862896",
+          "W4382366145",
+          "W4402354046",
+          "W4402754209",
+          "W4402952516",
+          "W4411799533",
+          "W4412722243",
+          "W4413146350",
+          "W4414051079",
+          "W7133209886",
+          "W7133224126"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-09-06T16:48:36+08:00",
+        "recommended_at": "2026-09-06T16:48:36+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-31T08:50:41",
+        "openalex_url": "https://openalex.org/W7170072204",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3716133",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 30,
+        "video_potential": 26,
+        "matched_topics": [
+          "world_model_embodied_reasoning"
+        ],
+        "matched_keywords": [
+          "embodied world model"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "embodied world model"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "historical_value_score": 51.8,
+        "historical_score_components": {
+          "research_relevance": 30.0,
+          "recency": 100.0,
+          "normalized_citation": 81.1,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 0.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 18.9%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning"
+      ],
+      "subtopics": [
+        "robot_world_model"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 51.8,
+      "recommendation_utility": 51.8,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7170072204",
+        "base_id": "openalex:W7170072204",
+        "version": 1,
+        "title": "Embodied Tree of Thoughts: Deliberate Manipulation Planning With Embodied World Model",
+        "authors": [
+          "Wenying Xu",
+          "Mingkang Zhang",
+          "Cindy Wang",
+          "Rui Fang",
+          "Lusong Li",
+          "Jing Xu",
+          "Jiayuan Gu",
+          "Zecui Zeng",
+          "Rui Chen"
+        ],
+        "published": "2026-07-22T00:00:00Z",
+        "updated": "2026-07-22T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3716133",
+        "pdf_url": "",
+        "research_fit": 30,
+        "video_potential": 26,
+        "matched_topics": [
+          "world_model_embodied_reasoning"
+        ],
+        "matched_keywords": [
+          "embodied world model"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "embodied world model"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
