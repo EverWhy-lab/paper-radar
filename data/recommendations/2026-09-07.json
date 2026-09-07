@@ -1,0 +1,1020 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-07",
+  "generated_at": "2026-09-07T17:36:44+08:00",
+  "mode": "incremental",
+  "candidate_count": 2516,
+  "historical_candidate_count": 472,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 1,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7137848502",
+      "title": "REFINE-DP: Diffusion Policy Fine-Tuning for Humanoid Loco-Manipulation via Reinforcement Learning",
+      "takeaway": "REFINE-DP is a hierarchical framework that jointly fine-tunes a diffusion-policy motion planner and an RL-based loco-manipulation controller for humanoid robots, addressing the distributional mismatch between offline-trained planners and controllers. The DP is fine-tuned via a PPO-based diffusion policy gradient while the controller is simultaneously updated to track the planner's evolving command distribution. The paper reports over 90% success in simulation on door traversal and long-horizon object transport, including out-of-distribution cases, and demonstrates real-world execution without privileged state information. Inspect how the PPO-based diffusion policy gradient is derived and how the joint update loop prevents distribution shift.",
+      "generated_at": "2026-09-07T09:41:57",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4412079960",
+      "title": "TactileAloha: Learning Bimanual Manipulation With Tactile Sensing",
+      "takeaway": "TactileAloha is an integrated tactile-vision bimanual manipulation system built on Aloha, adding a gripper-mounted tactile sensor for fine-grained texture capture during teleoperation. Tactile signals are encoded with a pre-trained ResNet and fused with visual and proprioceptive features, processed by a transformer policy with action chunking, a weighted loss emphasizing near-future actions, and improved temporal aggregation. The paper introduces zip tie insertion and Velcro fastening tasks requiring tactile sensing, reporting an average improvement of about 11.0% over state-of-the-art and showing that camera-only methods fail on these texture-related tasks. Inspect the weighted loss design and the temporal aggregation scheme to understand how tactile feedback systematically alters the generated manipulation sequence.",
+      "generated_at": "2026-09-07T09:41:57",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7208792182",
+      "title": "Inertia parameter identification for a hydraulic wheel legged bipedal robot: An online incremental approach",
+      "takeaway": "This paper addresses inertia parameter identification for a hydraulic wheel-legged bipedal robot using an online incremental approach. The abstract is not provided, so the specific method, experimental setup, and reported results cannot be summarized. Inspect the full paper for the identification algorithm, the robot model, and any quantitative validation of parameter accuracy or online performance.",
+      "generated_at": "2026-09-07T09:41:57",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 66 ≥ 35",
+        "Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining",
+        "Specific keywords matched: loco-manipulation, humanoid robot, diffusion policy, motion planning",
+        "Detected subtopics: loco_manipulation, diffusion_flow_policy, motion_planning",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: loco_manipulation",
+        "Recently recommended: 6 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = diffusion_flow_policy, motion_planning",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 67.8 = base 66.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7137848502",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7137848502",
+        "openalex_id": "W7137848502",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3723742",
+        "title": "REFINE-DP: Diffusion Policy Fine-Tuning for Humanoid Loco-Manipulation via Reinforcement Learning",
+        "authors": [
+          "Zhaoyuan Gu",
+          "Yipu Chen",
+          "Zimeng Chai",
+          "Alfred Cueva",
+          "Thong Nguyen",
+          "Yifan Wu",
+          "Huishu Xue",
+          "Minji Kim",
+          "Isaac Legene",
+          "Fukang Liu",
+          "Matthew Kim",
+          "Ayan Barula",
+          "Yongxin Chen",
+          "Ye Zhao"
+        ],
+        "abstract": "Humanoid loco-manipulation requires coordinated task-space motion planning with stable loco-manipulation command tracking under complex robot-environment dynamics and long-horizon tasks. While diffusion policies (DPs) show promise for learning from demonstrations, deploying them on humanoids poses critical challenges: the motion planner trained offline is decoupled from the loco-manipulation controller, leading to poor command tracking, compounding distribution shift, and task failures. The common approach of scaling demonstration data is prohibitively expensive for high-dimensional humanoid systems. To address this challenge, we present REFINE-DP (REinforcement learning FINE-tuning of Diffusion Policy), a hierarchical framework that jointly optimizes a DP motion planner and an RL-based loco-manipulation controller. The DP is fine-tuned via a PPO-based diffusion policy gradient to improve task success rate, while the controller is simultaneously updated to accurately track the planner's evolving command distribution, reducing the distributional mismatch that degrades motion quality. We validate REFINE-DP on a humanoid robot performing loco-manipulation tasks, including door traversal and long-horizon object transport. REFINE-DP achieves an over 90% success rate in simulation, even in out-of-distribution cases not seen in the pre-training data, and enables real-world execution without privileged state information. Our proposed method substantially outperforms pre-trained DP baselines and demonstrates that RL fine-tuning is key to reliable humanoid loco-manipulation. https://refine-dp.github.io/REFINE-DP/",
+        "publication_date": "2026-08-13",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.37860000133514404
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.226500004529953
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.13609999418258667
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.16911174,
+        "referenced_works": [
+          "W2125188427",
+          "W2796290181",
+          "W4385430674",
+          "W4386136919",
+          "W4394674699",
+          "W4401414436",
+          "W4402350775",
+          "W4402354138",
+          "W4403337227",
+          "W4413947089",
+          "W4414079195",
+          "W4414079229",
+          "W4414110571",
+          "W4415072190",
+          "W4415121671",
+          "W4415222123",
+          "W7140452175",
+          "W7202294264"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-09-07T07:29:16",
+        "last_considered_at": "2026-09-07T17:36:44+08:00",
+        "recommended_at": "2026-09-07T17:36:44+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-09-07T07:29:16",
+        "openalex_url": "https://openalex.org/W7137848502",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3723742",
+        "open_access_url": "https://doi.org/10.48550/arxiv.2603.13707",
+        "pdf_url": null,
+        "research_fit": 66,
+        "video_potential": 68,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "diffusion policy",
+          "motion planning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "motion planning"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, humanoid, loco-manipulation"
+          }
+        ],
+        "historical_value_score": 57.3,
+        "historical_score_components": {
+          "research_relevance": 66.0,
+          "recency": 100.0,
+          "normalized_citation": 16.9,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 83.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "loco_manipulation",
+        "diffusion_flow_policy",
+        "motion_planning"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 66.0,
+      "recommendation_utility": 67.8,
+      "days_since_same_subtopic": 6,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7137848502",
+        "base_id": "openalex:W7137848502",
+        "version": 1,
+        "title": "REFINE-DP: Diffusion Policy Fine-Tuning for Humanoid Loco-Manipulation via Reinforcement Learning",
+        "authors": [
+          "Zhaoyuan Gu",
+          "Yipu Chen",
+          "Zimeng Chai",
+          "Alfred Cueva",
+          "Thong Nguyen",
+          "Yifan Wu",
+          "Huishu Xue",
+          "Minji Kim",
+          "Isaac Legene",
+          "Fukang Liu",
+          "Matthew Kim",
+          "Ayan Barula",
+          "Yongxin Chen",
+          "Ye Zhao"
+        ],
+        "published": "2026-08-13T00:00:00Z",
+        "updated": "2026-08-13T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Humanoid loco-manipulation requires coordinated task-space motion planning with stable loco-manipulation command tracking under complex robot-environment dynamics and long-horizon tasks. While diffusion policies (DPs) show promise for learning from demonstrations, deploying them on humanoids poses critical challenges: the motion planner trained offline is decoupled from the loco-manipulation controller, leading to poor command tracking, compounding distribution shift, and task failures. The common approach of scaling demonstration data is prohibitively expensive for high-dimensional humanoid systems. To address this challenge, we present REFINE-DP (REinforcement learning FINE-tuning of Diffusion Policy), a hierarchical framework that jointly optimizes a DP motion planner and an RL-based loco-manipulation controller. The DP is fine-tuned via a PPO-based diffusion policy gradient to improve task success rate, while the controller is simultaneously updated to accurately track the planner's evolving command distribution, reducing the distributional mismatch that degrades motion quality. We validate REFINE-DP on a humanoid robot performing loco-manipulation tasks, including door traversal and long-horizon object transport. REFINE-DP achieves an over 90% success rate in simulation, even in out-of-distribution cases not seen in the pre-training data, and enables real-world execution without privileged state information. Our proposed method substantially outperforms pre-trained DP baselines and demonstrates that RL fine-tuning is key to reliable humanoid loco-manipulation. https://refine-dp.github.io/REFINE-DP/",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3723742",
+        "pdf_url": "",
+        "research_fit": 66,
+        "video_potential": 68,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "diffusion policy",
+          "motion planning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "motion planning"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, humanoid, loco-manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "rising_recent",
+      "reasons": [
+        "rising_score 58.5 ≥ 55.0",
+        "Robotics context: robotic, manipulation, teleoperation",
+        "research_fit 41 ≥ 12",
+        "Source restricted to robotics_core (S4210169774)",
+        "Publication age 427 days",
+        "Paper age 427 days; citation velocity uses a 90-day floor",
+        "Smoothed citation velocity 0.86 citations/month",
+        "Field/year normalized citation percentile 0.981",
+        "OpenAlex FWCI 7.90",
+        "Observed snapshot growth 0.288 citations/day",
+        "Detected subtopics: tactile_manipulation, bimanual_manipulation",
+        "Personal domain affinity: preferred (+6; matched bimanual manipulation)",
+        "recommendation_utility 64.5 = base 58.5 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4412079960",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4412079960",
+        "openalex_id": "W4412079960",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2025.3585396",
+        "title": "TactileAloha: Learning Bimanual Manipulation With Tactile Sensing",
+        "authors": [
+          "Ningquan Gu",
+          "Kazuhiro Kosuge",
+          "Mitsuhiro Hayashibe"
+        ],
+        "abstract": "Tactile texture is vital for robotic manipulation but challenging for camera vision-based observation. To address this, we propose TactileAloha, an integrated tactile-vision robotic system built upon Aloha, with a tactile sensor mounted on the gripper to capture fine-grained texture information and support real-time visualization during teleoperation, facilitating efficient data collection and manipulation. Using data collected from our integrated system, we encode tactile signals with a pre-trained ResNet and fuse them with visual and proprioceptive features. The combined observations are processed by a transformer-based policy with action chunking to predict future actions. We use a weighted loss function during training to emphasize near-future actions, and employ an improved temporal aggregation scheme at deployment to enhance action precision. Experimentally, we introduce two bimanual tasks: zip tie insertion and Velcro fastening, both requiring tactile sensing to perceive the object texture and align two object orientations by two hands. Our proposed method adaptively changes the generated manipulation sequence itself based on tactile sensing in a systematic manner. Results show that our system, leveraging tactile information, can handle texture-related tasks that camera vision-based methods fail to address. Moreover, our method achieves an average improvement of approximately 11.0% compared to state-of-the-art (SOTA), demonstrating its performance.",
+        "publication_date": "2025-07-07",
+        "publication_year": 2025,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10914",
+            "display_name": "Tactile and Sensory Interactions",
+            "score": 0.9926000237464905
+          },
+          {
+            "id": "https://openalex.org/T10784",
+            "display_name": "Muscle activation and electromyography studies",
+            "score": 0.9217000007629395
+          },
+          {
+            "id": "https://openalex.org/T13224",
+            "display_name": "Sports and Physical Education Research",
+            "score": 0.913100004196167
+          }
+        ],
+        "cited_by_count": 12,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 7.8995,
+        "citation_normalized_percentile": 0.98060864,
+        "referenced_works": [
+          "W2099308299",
+          "W2108598243",
+          "W2194775991",
+          "W2604382266",
+          "W2775635818",
+          "W3008303301",
+          "W3100818121",
+          "W4313035587",
+          "W4379803617",
+          "W4383993617",
+          "W4385403811",
+          "W4385430674",
+          "W4389610020",
+          "W4390585639",
+          "W4401414358",
+          "W4405785692",
+          "W4409581088",
+          "W4411869006",
+          "W6684338915",
+          "W6765713076",
+          "W6785684253",
+          "W6803256779",
+          "W6847215523",
+          "W6854708311",
+          "W6860003303"
+        ],
+        "related_works": [
+          "W2772917594",
+          "W2036807459",
+          "W2058170566",
+          "W2755342338",
+          "W2166024367",
+          "W3116076068",
+          "W2229312674",
+          "W2951359407",
+          "W2079911747",
+          "W1969923398"
+        ],
+        "discovery_source": [
+          "rising_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:51:56",
+        "last_considered_at": "2026-09-07T17:36:44+08:00",
+        "recommended_at": "2026-09-07T17:36:44+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-09-07T07:29:56",
+        "openalex_url": "https://openalex.org/W4412079960",
+        "landing_page_url": "https://doi.org/10.1109/lra.2025.3585396",
+        "open_access_url": "https://doi.org/10.1109/lra.2025.3585396",
+        "pdf_url": null,
+        "research_fit": 41,
+        "video_potential": 28,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "action chunking",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "action chunking"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotic",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotic",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotic, manipulation, teleoperation"
+          }
+        ],
+        "historical_value_score": 70.8,
+        "historical_score_components": {
+          "research_relevance": 41.0,
+          "recency": 100.0,
+          "normalized_citation": 98.1,
+          "fwci": 100.0,
+          "citation_momentum": 30.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 1.9%",
+          "阅读时效分 100/100（论文年龄 1 年）",
+          "OpenAlex FWCI 7.90",
+          "近年年均 OpenAlex 引用 6.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": 58.5,
+        "rising_score_components": {
+          "research_relevance": 41.0,
+          "citation_velocity": 17.1,
+          "normalized_citation": 98.1,
+          "fwci": 100.0,
+          "observed_growth": 57.6
+        },
+        "rising_score_reasons": [
+          "Robotics context: robotic, manipulation, teleoperation",
+          "research_fit 41 ≥ 12",
+          "Source restricted to robotics_core (S4210169774)",
+          "Publication age 427 days",
+          "Paper age 427 days; citation velocity uses a 90-day floor",
+          "Smoothed citation velocity 0.86 citations/month",
+          "Field/year normalized citation percentile 0.981",
+          "OpenAlex FWCI 7.90",
+          "Observed snapshot growth 0.288 citations/day"
+        ],
+        "rising_updated_at": "2026-09-07T15:29:35+08:00",
+        "rising_age_days": 427,
+        "rising_citation_velocity": 0.855,
+        "rising_observed_growth": {
+          "recent": {
+            "prior_captured_at": "2026-08-31T16:51:22+08:00",
+            "elapsed_days": 6.94,
+            "citation_delta": 2,
+            "citations_per_day": 0.2881
+          },
+          "approximately_28_day": null,
+          "blended_citations_per_day": 0.2881
+        }
+      },
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "tactile_manipulation",
+        "bimanual_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 58.5,
+      "recommendation_utility": 64.5,
+      "days_since_same_subtopic": 11,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4412079960",
+        "base_id": "openalex:W4412079960",
+        "version": 1,
+        "title": "TactileAloha: Learning Bimanual Manipulation With Tactile Sensing",
+        "authors": [
+          "Ningquan Gu",
+          "Kazuhiro Kosuge",
+          "Mitsuhiro Hayashibe"
+        ],
+        "published": "2025-07-07T00:00:00Z",
+        "updated": "2025-07-07T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Tactile texture is vital for robotic manipulation but challenging for camera vision-based observation. To address this, we propose TactileAloha, an integrated tactile-vision robotic system built upon Aloha, with a tactile sensor mounted on the gripper to capture fine-grained texture information and support real-time visualization during teleoperation, facilitating efficient data collection and manipulation. Using data collected from our integrated system, we encode tactile signals with a pre-trained ResNet and fuse them with visual and proprioceptive features. The combined observations are processed by a transformer-based policy with action chunking to predict future actions. We use a weighted loss function during training to emphasize near-future actions, and employ an improved temporal aggregation scheme at deployment to enhance action precision. Experimentally, we introduce two bimanual tasks: zip tie insertion and Velcro fastening, both requiring tactile sensing to perceive the object texture and align two object orientations by two hands. Our proposed method adaptively changes the generated manipulation sequence itself based on tactile sensing in a systematic manner. Results show that our system, leveraging tactile information, can handle texture-related tasks that camera vision-based methods fail to address. Moreover, our method achieves an average improvement of approximately 11.0% compared to state-of-the-art (SOTA), demonstrating its performance.",
+        "abs_url": "https://doi.org/10.1109/lra.2025.3585396",
+        "pdf_url": "",
+        "research_fit": 41,
+        "video_potential": 28,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "action chunking",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "action chunking"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotic",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotic",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotic, manipulation, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic",
+        "research_fit 30 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：bipedal robot",
+        "historical_value_score 55.1 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 19.7%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-09-07T07:29:17",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 55.1 = base 55.1 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7208792182",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7208792182",
+        "openalex_id": "W7208792182",
+        "base_arxiv_id": null,
+        "doi": "10.1016/j.conengprac.2026.107231",
+        "title": "Inertia parameter identification for a hydraulic wheel legged bipedal robot: An online incremental approach",
+        "authors": [
+          "Rui Ma",
+          "Li Xu",
+          "Haibo Feng",
+          "Yili Fu"
+        ],
+        "abstract": null,
+        "publication_date": "2026-09-05",
+        "publication_year": 2026,
+        "source_name": "Control Engineering Practice",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9235000014305115
+          },
+          {
+            "id": "https://openalex.org/T11615",
+            "display_name": "Control and Dynamics of Mobile Robots",
+            "score": 0.011500000022351742
+          },
+          {
+            "id": "https://openalex.org/T10805",
+            "display_name": "Vehicle Dynamics and Control Systems",
+            "score": 0.007499999832361937
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.80330106,
+        "referenced_works": [
+          "W149101098",
+          "W421662763",
+          "W1558923004",
+          "W1969366849",
+          "W1983627350",
+          "W1989517777",
+          "W1999092452",
+          "W2001524797",
+          "W2026214335",
+          "W2051669066",
+          "W2053973063",
+          "W2061232002",
+          "W2063358894",
+          "W2078856056",
+          "W2087431993",
+          "W2087454779",
+          "W2102797102",
+          "W2104883012",
+          "W2106865725",
+          "W2130440600",
+          "W2131232094",
+          "W2138484437",
+          "W2166197672",
+          "W2419095482",
+          "W2518735096",
+          "W2736363424",
+          "W2739667609",
+          "W2792628366",
+          "W4285028015",
+          "W4362547348",
+          "W4387350711",
+          "W4402350775"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:Control Engineering Practice"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-09-07T07:29:17",
+        "last_considered_at": "2026-09-07T17:36:44+08:00",
+        "recommended_at": "2026-09-07T17:36:44+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-09-07T07:29:17",
+        "openalex_url": "https://openalex.org/W7208792182",
+        "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107231",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 30,
+        "video_potential": 19,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "bipedal robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "bipedal robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic"
+          }
+        ],
+        "historical_value_score": 55.1,
+        "historical_score_components": {
+          "research_relevance": 30.0,
+          "recency": 100.0,
+          "normalized_citation": 80.3,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 19.7%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S105928092",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 55.1,
+      "recommendation_utility": 55.1,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7208792182",
+        "base_id": "openalex:W7208792182",
+        "version": 1,
+        "title": "Inertia parameter identification for a hydraulic wheel legged bipedal robot: An online incremental approach",
+        "authors": [
+          "Rui Ma",
+          "Li Xu",
+          "Haibo Feng",
+          "Yili Fu"
+        ],
+        "published": "2026-09-05T00:00:00Z",
+        "updated": "2026-09-05T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "",
+        "abs_url": "https://doi.org/10.1016/j.conengprac.2026.107231",
+        "pdf_url": "",
+        "research_fit": 30,
+        "video_potential": 19,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "bipedal robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "bipedal robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
