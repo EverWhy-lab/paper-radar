@@ -1,0 +1,564 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-10",
+  "generated_at": "2026-09-10T17:05:19+08:00",
+  "mode": "incremental",
+  "candidate_count": 2817,
+  "historical_candidate_count": 472,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 0,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.10021",
+      "title": "RoboDrop: Curating VLA Post-Training Data via Local Gradient Compatibility",
+      "takeaway": "VLA post-training on newly collected data is sensitive to heterogeneous errors such as execution mistakes, sensor drift, and timestamp misalignment, while manual inspection is costly and existing cleaning methods target specific corruption types. RoboDrop audits supervision by measuring local gradient compatibility along the training trajectory: during a one-epoch warm-up it scores each sample online against task-semantic and visually matched validation samples, aggregates scores at the episode level, and applies an automatic rule to produce filtering decisions. Evaluated on controlled observation-action corruptions, naturally suboptimal simulation demonstrations, and real-robot datasets with non-expert errors, it distinguishes unreliable demonstrations more accurately than prior methods, with average real-robot rollout success rising from 35.0% to 67.5%. Inspect how the gradient-compatibility proxy and episode-level aggregation threshold are defined and whether the filtering rule transfers across corruption types.",
+      "generated_at": "2026-09-10T09:10:02",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.09918",
+      "title": "ViBe: Visual Behavior Adaptation for Perceptive Humanoid Whole-Body Control",
+      "takeaway": "Motion-tracking humanoid whole-body controllers lack exteroceptive feedback, leaving environment reaction to a higher-level planner, and existing perceptive controllers train geometry-only encoders from scratch and rely on teacher-student distillation. ViBe is a post-training framework that adapts motion trackers to perceptive control by using pre-trained visual encoders with a multi-query extractor to learn task-relevant perceptive feedback, grafted onto the tracker input via low-rank adapters for parameter-efficient fine-tuning, then adapted directly by policy optimization given a task reward and reference dataset. Across four tasks it reports zero-shot sim-to-real transfer for perceptive walking on curbs and parkour, Repose Cube, omni-object loco-manipulation, and dodgeball, with visually robust performance under outdoor, low-light, and RGB distractor conditions, and a goal-oriented Repose Cube task solved with a deliberately simple planner. Inspect how the low-rank adapter grafting preserves the original tracker behavior and how the multi-query extractor selects task-relevant visual features.",
+      "generated_at": "2026-09-10T09:10:02",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.10308",
+      "title": "Deformable Object Manipulation under Partial Observability via Real-Time Full-Shape Estimation",
+      "takeaway": "Deformable object manipulation is difficult due to high-dimensional state, underactuated dynamics, and partial observability. The paper proposes cRVAE, a lightweight conditional recurrent variational autoencoder that estimates the full deformable object state from only partial corner-node observations at inference, used as the forward model in a receding-horizon optimal control framework for obstacle-aware collaborative manipulation. In simulation on rope and fabric, cRVAE matches the accuracy of a parameter-identified XPBD model while using no physical parameters as inputs and performing no online parameter identification, and runs approximately 350 times faster on rope and over 1500 times faster on fabric per forward pass, keeping horizon-based planning within the 100 ms control budget where XPBD exceeds it at short horizons; hardware is demonstrated on a Unitree Go2 robot. Inspect how full-shape estimation from corner sensing is trained and how estimation error propagates into the receding-horizon planner.",
+      "generated_at": "2026-09-10T09:10:02",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 80 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining",
+        "Specific keywords matched: VLA, vision-language-action, VLA post-training",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: vla_posttraining",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 80.0 = base 80.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.10021",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "vla_posttraining"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 80.0,
+      "recommendation_utility": 80.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.10021v1",
+        "base_id": "2609.10021",
+        "version": 1,
+        "title": "RoboDrop: Curating VLA Post-Training Data via Local Gradient Compatibility",
+        "authors": [
+          "Runze Xu",
+          "Yuanfan Xu",
+          "Cuijie Xu",
+          "Shuang Dai",
+          "Yining Li",
+          "Yu Wang",
+          "Jincheng Yu"
+        ],
+        "published": "2026-09-09T10:55:10Z",
+        "updated": "2026-09-09T10:55:10Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Vision--language--action (VLA) models acquire broad generalization through large-scale pretraining, yet adapting them to a new task and robot embodiment still requires post-training on newly collected data. Unlike pretraining, post-training targets task- and embodiment-specific adaptation, making it particularly sensitive to data quality. In practice, collected robot datasets often contain heterogeneous errors, including execution mistakes, sensor drift, and timestamp misalignment, which can impair post-training and policy performance. Manual inspection is costly, while existing data-cleaning methods are typically tailored to particular corruption types. To address these challenges, we introduce \\textsc{RoboDrop}, a data-curation framework that audits supervision using local gradient compatibility measured along the training trajectory as a proxy for its effect on post-training performance. During a one-epoch warm-up run, RoboDrop scores each candidate sample online by comparing its gradient with those of task-semantic and visually matched validation samples. The resulting sample scores are aggregated at the episode level, and a simple automatic post-processing rule converts them into filtering decisions. We evaluate RoboDrop on controlled observation--action corruptions, naturally suboptimal demonstrations in simulation, and real-robot datasets containing non-expert collection errors. Across these settings, RoboDrop more accurately distinguishes unreliable demonstrations than prior methods, while post-training on the curated data consistently yields stronger downstream policies, with average real-robot rollout success rising from $35.0\\%$ to $67.5\\%$. These results establish training-trajectory-aware, context-conditioned supervision auditing as an effective approach to robust VLA post-training.",
+        "abs_url": "https://arxiv.org/abs/2609.10021v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.10021v1",
+        "research_fit": 80,
+        "video_potential": 36,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action",
+          "VLA post-training"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "VLA post-training"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 75 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation, robot_data_scaling_sim2real",
+        "Specific keywords matched: humanoid whole-body control, loco-manipulation, whole-body control",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: sim_to_real, humanoid_whole_body, loco_manipulation, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: humanoid_whole_body",
+        "Recently recommended: 5 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = loco_manipulation, sim_to_real, whole_body_control",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 76.8 = base 75.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.09918",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "humanoid_whole_body",
+        "loco_manipulation",
+        "whole_body_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 75.0,
+      "recommendation_utility": 76.8,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.09918v1",
+        "base_id": "2609.09918",
+        "version": 1,
+        "title": "ViBe: Visual Behavior Adaptation for Perceptive Humanoid Whole-Body Control",
+        "authors": [
+          "Lokesh Krishna",
+          "Sarvesh Venkatesan",
+          "An Zhang",
+          "Quan Nguyen"
+        ],
+        "published": "2026-09-09T09:11:26Z",
+        "updated": "2026-09-09T09:11:26Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Motion tracking provides a scalable recipe for humanoid whole-body control. By design, the resulting trackers lack exteroceptive feedback hence reacting to the environment remains the responsibility of a higher-level planner. Existing perceptive controllers train geometry-only encoders from scratch, trading semantics for sim-to-real ease, and typically rely on teacher-student distillation for a task of interest. We present ViBe, a post-training framework for adapting motion trackers to perceptive control tasks. We leverage pre-trained visual encoders with a multi-query extractor module to learn task-relevant perceptive feedback. This feedback is grafted onto the tracker's input via low-rank adapters, enabling parameter-efficient fine-tuning. Given a task reward and a reference dataset, this modular controller can be adapted directly via policy optimization. Across four tasks, ViBe shows zero-shot sim-to-real transfer spanning perceptive walking on curbs and parkour, Repose Cube, omni-object loco-manipulation, and dodgeball, with visually robust performance across outdoor, low-light, and RGB distractor conditions. Finally, we solve a goal-oriented Repose Cube task with a deliberately simple planner, demonstrating the efficacy of perceptive controllers, adapted by our approach.",
+        "abs_url": "https://arxiv.org/abs/2609.09918v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.09918v1",
+        "research_fit": 75,
+        "video_potential": 57,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid whole-body control",
+          "loco-manipulation",
+          "sim-to-real",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid whole-body control",
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation, humanoid, loco-manipulation, sim-to-real"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 18.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "whole-body",
+              "manipulation",
+              "parkour"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robot, manipulation",
+        "Strong method signals: trajectory_optimization",
+        "research_fit 56 ≥ 28",
+        "Detected subtopics: trajectory_optimization",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: trajectory_optimization",
+        "Recently recommended: 6 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 44.0 = base 56.0 + affinity +0 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.10308",
+      "historical_paper": null,
+      "core_topics": [
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "trajectory_optimization"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 56.0,
+      "recommendation_utility": 44.0,
+      "days_since_same_subtopic": 6,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.10308v1",
+        "base_id": "2609.10308",
+        "version": 1,
+        "title": "Deformable Object Manipulation under Partial Observability via Real-Time Full-Shape Estimation",
+        "authors": [
+          "Kosar Behnia",
+          "Ville Kyrki",
+          "Gokhan Alcan"
+        ],
+        "published": "2026-09-09T15:17:30Z",
+        "updated": "2026-09-09T15:17:30Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Manipulating deformable objects (DOs) is challenging due to their high-dimensional state space, underactuated dynamics, and partial observability. In this paper, we propose cRVAE, a lightweight conditional recurrent variational autoencoder that estimates the full DO state from only partial corner-node observations during inference. The resulting model is used as the forward model in a receding-horizon optimal control framework for obstacle-aware collaborative DO manipulation. In simulation on rope and fabric, cRVAE estimates the full DO state from the available corner-node measurements alone, matching the accuracy of a parameter-identified XPBD model. At inference it uses no physical parameters as model inputs and performs no online parameter identification. It also runs approximately 350 times faster on the rope and over 1500 times faster on the fabric per forward pass, keeping horizon-based planning within the 100 ms control budget where XPBD exceeds it already at short horizons. Full-shape estimation from corner sensing at in-loop speed is what makes the model deployable on hardware, which we demonstrate on a Unitree Go2 robot.",
+        "abs_url": "https://arxiv.org/abs/2609.10308v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.10308v1",
+        "research_fit": 56,
+        "video_potential": 32,
+        "matched_topics": [
+          "dexterous_multimodal_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "deformable object manipulation",
+          "optimal control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "deformable object manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "optimal control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 14.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    }
+  ]
+}
