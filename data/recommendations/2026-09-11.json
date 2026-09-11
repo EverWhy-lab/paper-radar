@@ -1,0 +1,713 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-11",
+  "generated_at": "2026-09-11T17:03:26+08:00",
+  "mode": "incremental",
+  "candidate_count": 2794,
+  "historical_candidate_count": 472,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.11308",
+      "title": "2AM: Grounding Agent-Side Memory as Guidance for Steerable Action Models in Long-Horizon Manipulation",
+      "takeaway": "2AM addresses long-horizon manipulation by asking whether task memory must live inside the action policy, deliberately constraining tool breadth while increasing interface bandwidth: a multimodal Agent holds all task memory and a single RGB-based, episodically stateless Action Model executes motion, with the Agent compiling interaction history into subtask language plus optional 2D grasp, place, and move hints. The VLA is taught this steerability using demonstrations augmented with structured hint labels and trained under condition dropout, spatial noise, and temporal jitter to tolerate imperfect Agent outputs. On LIBERO-Mem, without depth, online geometry, or planner-based object motion, 2AM reports 76.3% average completion, 63.0% relaxed and 11.8% strict success, a 61.5-point gain over a 14.8% baseline. Inspect how hint precision and time-scale binding are ablated.",
+      "generated_at": "2026-09-11T09:08:21",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.11553",
+      "title": "CAP: Continuously Adaptive Perception-Blind Humanoid Locomotion via Learned Denoising",
+      "takeaway": "CAP targets humanoid locomotion when forward-looking exteroception fails partially or intermittently, rather than assuming clean depth or switching between separate perceptive and blind sub-policies. It uses a single-stage policy in which a perceptive world-model encoder is trained as a learned denoiser to reconstruct clean depth from corrupted input, paired with a co-active proprioceptive variational encoder supplying depth-free body-state information; a coupled recipe combines a depth-noise curriculum on the world-model input with world-model feature dropout on the policy-facing latent. In simulation CAP matches or improves on perceptive baselines when depth is informative and degrades more smoothly than a binary-switching baseline as perception worsens, with Unitree G1 trials and indoor-outdoor deployments under occlusion, sensor corruption, and outdoor depth artifacts. Inspect the denoising objective and dropout schedule.",
+      "generated_at": "2026-09-11T09:08:21",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3185776277",
+      "title": "Legged Robot State Estimation With Dynamic Contact Event Information",
+      "takeaway": "This letter formulates legged robot state estimation as a Maximum A Posteriori problem solved with the Gauss-Newton algorithm, using Schur Complement marginalization to keep the problem fixed-size. Cost function components and Jacobians are derived on the SO(3) manifold structure, with the state reparameterized into nominal state and variation so that linear algebra and vector calculus apply properly, and a slip rejection method is proposed to reduce erroneous effects from fault modeling of kinematics models. The algorithm is verified against an Invariant Extended Kalman Filter (IEKF) in real robot experiments across various environments. Inspect the slip rejection criterion and how marginalization preserves consistency under contact events.",
+      "generated_at": "2026-09-11T09:08:21",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 66 ≥ 40",
+        "Core topics matched: vla_robot_foundation, world_model_embodied_reasoning",
+        "Specific keywords matched: VLA, long-horizon manipulation",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 66.0 = base 66.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.11308",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "world_model_embodied_reasoning"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 66.0,
+      "recommendation_utility": 66.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.11308v1",
+        "base_id": "2609.11308",
+        "version": 1,
+        "title": "2AM: Grounding Agent-Side Memory as Guidance for Steerable Action Models in Long-Horizon Manipulation",
+        "authors": [
+          "Yutong Hu",
+          "Fengjiao Chen",
+          "Xuezhi Cao",
+          "Renaud Detry"
+        ],
+        "published": "2026-09-10T09:35:56Z",
+        "updated": "2026-09-10T09:35:56Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Long-horizon robot manipulation requires memory, but not necessarily inside the action policy. To address such tasks, current agentic systems often combine VLAs with planners and geometric tools, sometimes using additional depth or calibrated geometry. These systems confound attribution: gains may come from richer observations or alternative motor tools, while failures may stem from either the policy or an under-specified language interface. We isolate this question through a deliberately constrained design: less tool breadth, but greater interface bandwidth. 2AM makes a multimodal Agent the sole holder of task memory and a single RGB-based, episodically stateless Action Model the sole executor of task-relevant motion. The Agent compiles interaction history into subtask language and optional 2D grasp, place, and move hints that bind its physical intention at different time scales. To teach this steerability to the VLA, we augment demonstrations with structured hint labels and train under condition dropout, spatial noise, and temporal jitter to tolerate imperfect Agent outputs. On LIBERO-Mem, without depth, online geometry, or planner-based object motion, 2AM reaches 76.3% average completion, a 61.5-point improvement over the strongest reported baseline of 14.8%, together with 63.0% relaxed and 11.8% strict success. These results show that task memory can remain Agent-side. They further show that Action Model capability depends not only on what the policy has learned, but on how precisely the Agent can steer it.",
+        "abs_url": "https://arxiv.org/abs/2609.11308v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.11308v1",
+        "research_fit": 66,
+        "video_potential": 34,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "world_model_embodied_reasoning"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "long-horizon manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 16.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 50 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation",
+        "Specific keywords matched: humanoid locomotion",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 56.0 = base 50.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.11553",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 50.0,
+      "recommendation_utility": 56.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.11553v1",
+        "base_id": "2609.11553",
+        "version": 1,
+        "title": "CAP: Continuously Adaptive Perception-Blind Humanoid Locomotion via Learned Denoising",
+        "authors": [
+          "Hongjin Chen",
+          "Zijun Xu",
+          "Shihao Ma",
+          "Yi Zhao",
+          "Xilai Liu",
+          "Ke Ma",
+          "Wei Zhang",
+          "Chunyang Xie",
+          "Pengfei Li",
+          "Jieru Zhao",
+          "Wenchao Ding"
+        ],
+        "published": "2026-09-10T13:45:10Z",
+        "updated": "2026-09-10T13:45:10Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Humanoid locomotion across complex terrain demands forward-looking exteroception to anticipate obstacles, yet this signal is unreliable in real-world deployment, failing partially and intermittently. Existing perceptive policies often assume that depth observations remain clean and in-distribution, while recent attempts to unify perceptive and blind control typically route or switch between separate sub-policies, leaving recoverable information in partially corrupted depth unexploited. We instead propose CAP, a single-stage humanoid locomotion policy that recovers this signal with a perceptive world-model encoder trained as a learned denoiser to reconstruct clean depth from a corrupted input, together with a co-active proprioceptive variational encoder that supplies depth-free body-state information. A coupled training recipe pairs a depth-noise curriculum on the world-model input with world-model feature dropout on the policy-facing latent, exposing the policy to failures across the entire perception-quality spectrum. In simulation, CAP matches or improves upon perceptive baselines when depth remains informative, and degrades more smoothly than a binary-switching baseline as perception worsens. On the Unitree G1, controlled trials and indoor-outdoor deployments demonstrate perception-robust locomotion under intermittent occlusion, real-sensor corruption, and outdoor depth artifacts.",
+        "abs_url": "https://arxiv.org/abs/2609.11553v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.11553v1",
+        "research_fit": 50,
+        "video_potential": 50,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid locomotion"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: humanoid"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "locomotion"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics, manipulation",
+        "research_fit 22 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：robot state estimation",
+        "historical_value_score 60.4 ≥ 42.0",
+        "发表于 2021 年",
+        "同领域同年份引用标准化位于前 15.7%",
+        "阅读时效分 90/100（论文年龄 5 年）",
+        "OpenAlex FWCI 1.82",
+        "近 2 年年均引用 11.5；此前 2 年年均 8.5",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:03",
+        "Detected subtopics: robot_state_estimation",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 60.4 = base 60.4 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3185776277",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3185776277",
+        "openalex_id": "W3185776277",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2021.3093876",
+        "title": "Legged Robot State Estimation With Dynamic Contact Event Information",
+        "authors": [
+          "Joon-Ha Kim",
+          "Seungwoo Hong",
+          "Gwanghyeon Ji",
+          "Seung-Hun Jeon",
+          "Jemin Hwangbo",
+          "Jun-Ho Oh",
+          "Hae-Won Park"
+        ],
+        "abstract": "This letter presents a state estimation algorithm for the legged robot by defining the problem as a Maximum A Posteriori (MAP) estimation problem and solving the problem with the Gauss-Newton algorithm. Moreover, marginalization by the Schur Complement method is adopted to make a fixed size problem. Each component of the cost function and its Jacobian are derived utilizing the SO(3) manifold structure, while we reparameterize the state with nominal state and variation to make linear algebra and vector calculus applied properly. Furthermore, a slip rejection method is proposed to reduce the erroneous effect of fault modeling of kinematics models. The proposed algorithm is verified by comparison with the Invariant Extended Kalman Filter (IEKF) in real robot experiments on various environments.",
+        "publication_date": "2021-06-30",
+        "publication_year": 2021,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9998999834060669
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9951000213623047
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.994700014591217
+          }
+        ],
+        "cited_by_count": 48,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 8
+          }
+        ],
+        "fwci": 1.816,
+        "citation_normalized_percentile": 0.84320364,
+        "referenced_works": [
+          "W1923779967",
+          "W1968315983",
+          "W1999684857",
+          "W2073288601",
+          "W2110662303",
+          "W2135492382",
+          "W2296360731",
+          "W2482726005",
+          "W2522393719",
+          "W2745859992",
+          "W2790753177",
+          "W2794127568",
+          "W2909157769",
+          "W2931843659",
+          "W2940914777",
+          "W2963465704",
+          "W2964168254",
+          "W2968213087",
+          "W2981924303",
+          "W3000625188",
+          "W3033353027",
+          "W3104529569",
+          "W3105048402",
+          "W3105214950",
+          "W3125449081",
+          "W3130162259",
+          "W3146325346",
+          "W4237726214",
+          "W4241015692",
+          "W6640156344",
+          "W6769753646",
+          "W6790582381"
+        ],
+        "related_works": [
+          "W2007405763",
+          "W3136087161",
+          "W2145980196",
+          "W2018238589",
+          "W1486373823",
+          "W1984283682",
+          "W2235865024",
+          "W1965257389",
+          "W3145558417",
+          "W2883743867"
+        ],
+        "discovery_source": [
+          "topic_search:robot state estimation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:03",
+        "last_considered_at": "2026-09-11T17:03:26+08:00",
+        "recommended_at": "2026-09-11T17:03:26+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:03",
+        "openalex_url": "https://openalex.org/W3185776277",
+        "landing_page_url": "https://doi.org/10.1109/lra.2021.3093876",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 22,
+        "video_potential": 59,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation"
+          }
+        ],
+        "historical_value_score": 60.4,
+        "historical_score_components": {
+          "research_relevance": 22.0,
+          "recency": 90.0,
+          "normalized_citation": 84.3,
+          "fwci": 60.5,
+          "citation_momentum": 67.6,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2021 年",
+          "同领域同年份引用标准化位于前 15.7%",
+          "阅读时效分 90/100（论文年龄 5 年）",
+          "OpenAlex FWCI 1.82",
+          "近 2 年年均引用 11.5；此前 2 年年均 8.5",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "robot_state_estimation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 60.4,
+      "recommendation_utility": 60.4,
+      "days_since_same_subtopic": 9,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W3185776277",
+        "base_id": "openalex:W3185776277",
+        "version": 1,
+        "title": "Legged Robot State Estimation With Dynamic Contact Event Information",
+        "authors": [
+          "Joon-Ha Kim",
+          "Seungwoo Hong",
+          "Gwanghyeon Ji",
+          "Seung-Hun Jeon",
+          "Jemin Hwangbo",
+          "Jun-Ho Oh",
+          "Hae-Won Park"
+        ],
+        "published": "2021-06-30T00:00:00Z",
+        "updated": "2021-06-30T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "This letter presents a state estimation algorithm for the legged robot by defining the problem as a Maximum A Posteriori (MAP) estimation problem and solving the problem with the Gauss-Newton algorithm. Moreover, marginalization by the Schur Complement method is adopted to make a fixed size problem. Each component of the cost function and its Jacobian are derived utilizing the SO(3) manifold structure, while we reparameterize the state with nominal state and variation to make linear algebra and vector calculus applied properly. Furthermore, a slip rejection method is proposed to reduce the erroneous effect of fault modeling of kinematics models. The proposed algorithm is verified by comparison with the Invariant Extended Kalman Filter (IEKF) in real robot experiments on various environments.",
+        "abs_url": "https://doi.org/10.1109/lra.2021.3093876",
+        "pdf_url": "",
+        "research_fit": 22,
+        "video_potential": 59,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
