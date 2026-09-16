@@ -1,0 +1,881 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-16",
+  "generated_at": "2026-09-16T17:27:38+08:00",
+  "mode": "incremental",
+  "candidate_count": 2927,
+  "historical_candidate_count": 504,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 1,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.13851",
+      "title": "ReWeight: Leveraging Human Data for VLA Post-Training via Demonstration Retrieval and Sample Weighting",
+      "takeaway": "ReWeight targets VLA post-training when in-domain robot demonstrations are scarce and egocentric human data cannot be mixed directly because of cross-embodiment discrepancies. It learns a cross-embodiment visuomotor representation combining visual observations with future actions to measure behavioral similarity, then uses optimal transport to retrieve relevant human demonstrations and assign larger weights to samples with smaller discrepancies. Evaluated with π_{0.5} on eight simulation and four real-world tasks, it reports average simulation success rising from 39% (robot-only) and 44% (random mixing) to 57%, and 68.8% real-world success, outperforming baselines by 28.8% and 13.8%. Inspect how retrieval and weighting are computed and whether the similarity metric transfers across embodiments.",
+      "generated_at": "2026-09-16T09:33:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2512.15020",
+      "title": "ISS Policy : Scalable Diffusion Policy with Implicit Scene Supervision",
+      "takeaway": "ISS Policy addresses the limited geometric supervision of action-only imitation learning by introducing Implicit Scene Supervision, a 3D visuomotor diffusion policy with a DiT backbone that predicts continuous action sequences from point-cloud observations. A supervised robot motion predictor maps generated actions and robot-state context to end-effector motion, which with gripper intent forecasts future point-cloud representations; asymmetric gradient routing separates motion regression from scene-level supervision, and a change-balanced objective handles scene-change magnitude. The abstract reports state-of-the-art performance on single-arm MetaWorld tasks and dexterous Adroit tasks, plus real-world dual-arm experiments, using only expert demonstrations without extra annotations or inference-time modules. Inspect how the auxiliary geometric objectives affect the standard diffusion control interface.",
+      "generated_at": "2026-09-16T09:33:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7125772046",
+      "title": "PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation",
+      "takeaway": "PEAfowl addresses bimanual manipulation in cluttered scenes, where occlusions, viewpoint changes, and scene variation degrade VLA robustness because multi-view features are fused by view-agnostic token concatenation and language is injected as global conditioning. The method predicts per-token depth distributions, performs differentiable 3D lifting, and aggregates local cross-view neighbors for geometrically grounded, cross-view aligned representations, while a Perceiver-style text-aware readout over frozen CLIP visual features replaces global conditioning; training-only depth distillation lets a pretrained depth teacher supervise the depth head without inference overhead. On RoboTwin 2.0 under domain randomization it reports a 23.0 pp success-rate improvement over the strongest baseline, with physical experiments also showing improved performance. Inspect the depth-distribution lifting and readout design.",
+      "generated_at": "2026-09-16T09:33:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.16644",
+      "title": "WholeBodyWAM: Generalizing Pre-trained World-Action Priors to Humanoid Loco-Manipulation via WBC-Grounded Coordination",
+      "takeaway": "WholeBodyWAM extends World Action Models, which jointly model visual dynamics and actions but have mostly been studied for tabletop or arm-centric manipulation, to humanoid loco-manipulation. It jointly predicts future visual dynamics, manipulation actions, and whole-body control intents, preserving pre-trained world-action priors while grounding heterogeneous whole-body controller semantics and coordinating whole-body behavior. The abstract reports an overall simulation task success rate of 91.9%, a 0.23 improvement in real-world out-of-distribution task progress, and a 70% reduction in success-rate variance across WBCs relative to respective baselines. Inspect how WBC grounding and coordination are structured and whether pre-trained priors are retained rather than relearned.",
+      "generated_at": "2026-09-16T09:33:31",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 93 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining, robot_data_scaling_sim2real",
+        "Specific keywords matched: VLA, vision-language-action, VLA post-training, robot data",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: vla_posttraining, cross_embodiment",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: vla_posttraining",
+        "Recently recommended: 6 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = cross_embodiment",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 88.8 = base 93.0 + affinity +0 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.13851",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "vla_posttraining",
+        "cross_embodiment"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 93.0,
+      "recommendation_utility": 88.8,
+      "days_since_same_subtopic": 6,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.13851v1",
+        "base_id": "2609.13851",
+        "version": 1,
+        "title": "ReWeight: Leveraging Human Data for VLA Post-Training via Demonstration Retrieval and Sample Weighting",
+        "authors": [
+          "Chenwei Wang",
+          "Dianye Huang",
+          "Match W. L. Ko",
+          "Chenjia Bai",
+          "Zhongliang Jiang"
+        ],
+        "published": "2026-09-12T10:09:06Z",
+        "updated": "2026-09-12T10:09:06Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Post-training vision-language-action (VLA) models for specific robots and tasks requires in-domain demonstrations, yet collecting diverse robot data is costly. Egocentric human demonstrations provide a scalable alternative, but directly mixing human and robot data can introduce cross-embodiment discrepancies and degrade policy performance. To address this challenge, we introduce ReWeight, a framework that incorporates human data into VLA post-training through demonstration-level retrieval and sample-level weighting. ReWeight learns a cross-embodiment visuomotor representation that combines visual observations with future actions to measure behavioral similarity between human and robot demonstrations. Based on optimal transport, it retrieves human demonstrations relevant to the target robot data and assigns larger weights to samples with smaller cross-embodiment discrepancies. We evaluate ReWeight using $π_{0.5}$ across eight simulation tasks and four real-world tasks under both clean and randomized settings. In simulation, ReWeight improves the average success rate of post-trained $π_{0.5}$ from 39% with only robot data and 44% with randomly mixed human-robot data to 57%. In the physical experimental setting, it achieves an average success rate of 68.8%, outperforming the baselines by 28.8% and 13.8%, respectively. Overall, ReWeight provides an effective paradigm for transforming abundant egocentric human experience into transferable supervision for robot learning. (Project webpage: https://reweight-vla.github.io/)",
+        "abs_url": "https://arxiv.org/abs/2609.13851v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.13851v1",
+        "research_fit": 93,
+        "video_potential": 32,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action",
+          "VLA post-training",
+          "robot learning",
+          "robot data"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "VLA post-training",
+              "robot learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robot data"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robot learning",
+              "visuomotor",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robot learning",
+              "visuomotor",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robot learning, visuomotor, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 23.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "visuomotor"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 61 ≥ 40",
+        "Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: diffusion policy, action diffusion, dexterous manipulation",
+        "Diversity topic: robot_learning_posttraining",
+        "Detected subtopics: diffusion_flow_policy, dexterous_manipulation",
+        "Personal domain affinity: preferred (+6; matched dexterous manipulation)",
+        "recommendation_utility 67.0 = base 61.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2512.15020",
+      "historical_paper": null,
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy",
+        "dexterous_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 61.0,
+      "recommendation_utility": 67.0,
+      "days_since_same_subtopic": 9,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2512.15020v3",
+        "base_id": "2512.15020",
+        "version": 3,
+        "title": "ISS Policy : Scalable Diffusion Policy with Implicit Scene Supervision",
+        "authors": [
+          "Wenlong Xia",
+          "Jinhao Zhang",
+          "Ce Zhang",
+          "Yaojia Wang",
+          "Huizhe Li",
+          "Yichen Lai",
+          "Yude Li",
+          "Youmin Gong",
+          "Jie Mei"
+        ],
+        "published": "2025-12-17T02:20:21Z",
+        "updated": "2026-09-15T14:12:10Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Vision-based imitation learning has enabled impressive robotic manipulation skills, but action imitation alone provides limited supervision of the geometric consequences of robot behavior. To address this limitation, we introduce **Implicit Scene Supervision (ISS) Policy**, a 3D visuomotor diffusion policy with a DiT backbone that predicts continuous action sequences from point-cloud observations. ISS augments action diffusion with a supervised robot motion predictor that maps generated actions and robot-state context to end-effector motion, and then uses the predicted motion together with gripper intent to forecast future point-cloud representations. By explicitly modeling the intermediate transition from action to robot motion, ISS encourages the policy to capture how its actions affect the surrounding 3D scene. We further introduce asymmetric gradient routing to separate direct motion regression from scene-level policy supervision, together with a change-balanced objective that accounts for variations in scene-change magnitude. These auxiliary objectives provide dynamics-aware geometric supervision using only expert demonstrations, without requiring additional annotations or auxiliary modules at inference time. ISS Policy achieves state-of-the-art performance on single-arm manipulation tasks in MetaWorld and dexterous manipulation tasks in Adroit, while real-world dual-arm experiments further demonstrate its effectiveness on physical robotic manipulation. The resulting framework preserves the scalable DiT backbone and standard diffusion-policy control interface. Code and videos will be released.",
+        "abs_url": "https://arxiv.org/abs/2512.15020v3",
+        "pdf_url": "https://arxiv.org/pdf/2512.15020v3",
+        "research_fit": 61,
+        "video_potential": 41,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "diffusion policy",
+          "imitation learning",
+          "action diffusion",
+          "dexterous manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy",
+              "imitation learning",
+              "action diffusion"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "dexterous manipulation",
+              "visuomotor"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "dexterous manipulation",
+              "visuomotor"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, dexterous manipulation, visuomotor"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "dexterous"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "diffusion policy",
+              "imitation learning",
+              "visuomotor"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 60 ≥ 35",
+        "Core topics matched: vla_robot_foundation, dexterous_multimodal_manipulation",
+        "Specific keywords matched: vision-language-action, VLA, bimanual manipulation",
+        "Detected subtopics: bimanual_manipulation",
+        "Personal domain affinity: preferred (+6; matched bimanual manipulation)",
+        "recommendation_utility 66.0 = base 60.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7125772046",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7125772046",
+        "openalex_id": "W7125772046",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3726379",
+        "title": "PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation",
+        "authors": [
+          "Qingyu Fan",
+          "Zhaoxiang Li",
+          "Yi Lu",
+          "Yi Lu",
+          "Qiu Shen",
+          "Qiu Shen",
+          "Xiao-xiao Long",
+          "Yinghao Cai",
+          "Tao Lu",
+          "Shuo Wang",
+          "Xun Cao"
+        ],
+        "abstract": "Bimanual manipulation in cluttered scenes requires policies that remain stable under occlusions, viewpoint changes and scene variations. Existing vision-language-action models often lack such robustness because (i) multi-view features are fused via view-agnostic token concatenation, yielding limited cross-view spatial representations, and (ii) language is injected as global conditioning, resulting in coarse instruction grounding. In this paper, we introduce PEAfowl, a perception-enhanced multi-view VLA policy for bimanual manipulation. For spatial perception, PEAfowl predicts per-token depth distributions, performs differentiable 3D lifting, and aggregates local cross-view neighbors to form geometrically grounded, cross-view aligned representations. For language utilization, we propose to replace global conditioning with a Perceiver-style text-aware readout over frozen CLIP visual features, enabling iterative evidence accumulation. To better exploit commodity RGB-D sensing despite noisy and incomplete depth, PEAfowl's depth-distribution lifting naturally supports training-only depth distillation, where a pretrained depth teacher supervises the depth-distribution head to inject refined geometric priors without adding inference overhead. On RoboTwin 2.0 under domain-randomized setting, PEAfowl improves the strongest baseline by 23.0 pp in success rate, and physical experiments further demonstrate improved performance on the evaluated real-robot tasks. Project website: https://peafowlvla.github.io/.",
+        "publication_date": "2026-08-21",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.7027000188827515
+          },
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.09799999743700027
+          },
+          {
+            "id": "https://openalex.org/T10812",
+            "display_name": "Human Pose and Action Recognition",
+            "score": 0.03420000150799751
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.06690494,
+        "referenced_works": [
+          "W2194775991",
+          "W4385403811",
+          "W4385430674",
+          "W4404612908",
+          "W4404612913",
+          "W4413146238",
+          "W4413925114",
+          "W4414051092",
+          "W4414079054"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-09-14T08:04:06",
+        "last_considered_at": "2026-09-16T17:27:38+08:00",
+        "recommended_at": "2026-09-16T17:27:38+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-09-14T08:04:06",
+        "openalex_url": "https://openalex.org/W7125772046",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3726379",
+        "open_access_url": "https://doi.org/10.48550/arxiv.2601.17885",
+        "pdf_url": null,
+        "research_fit": 60,
+        "video_potential": 49,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, vision-language-action"
+          }
+        ],
+        "historical_value_score": 53.5,
+        "historical_score_components": {
+          "research_relevance": 60.0,
+          "recency": 100.0,
+          "normalized_citation": 6.7,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 93.3%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "vla_robot_foundation",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "bimanual_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 60.0,
+      "recommendation_utility": 66.0,
+      "days_since_same_subtopic": 9,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7125772046",
+        "base_id": "openalex:W7125772046",
+        "version": 1,
+        "title": "PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation",
+        "authors": [
+          "Qingyu Fan",
+          "Zhaoxiang Li",
+          "Yi Lu",
+          "Yi Lu",
+          "Qiu Shen",
+          "Qiu Shen",
+          "Xiao-xiao Long",
+          "Yinghao Cai",
+          "Tao Lu",
+          "Shuo Wang",
+          "Xun Cao"
+        ],
+        "published": "2026-08-21T00:00:00Z",
+        "updated": "2026-08-21T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Bimanual manipulation in cluttered scenes requires policies that remain stable under occlusions, viewpoint changes and scene variations. Existing vision-language-action models often lack such robustness because (i) multi-view features are fused via view-agnostic token concatenation, yielding limited cross-view spatial representations, and (ii) language is injected as global conditioning, resulting in coarse instruction grounding. In this paper, we introduce PEAfowl, a perception-enhanced multi-view VLA policy for bimanual manipulation. For spatial perception, PEAfowl predicts per-token depth distributions, performs differentiable 3D lifting, and aggregates local cross-view neighbors to form geometrically grounded, cross-view aligned representations. For language utilization, we propose to replace global conditioning with a Perceiver-style text-aware readout over frozen CLIP visual features, enabling iterative evidence accumulation. To better exploit commodity RGB-D sensing despite noisy and incomplete depth, PEAfowl's depth-distribution lifting naturally supports training-only depth distillation, where a pretrained depth teacher supervises the depth-distribution head to inject refined geometric priors without adding inference overhead. On RoboTwin 2.0 under domain-randomized setting, PEAfowl improves the strongest baseline by 23.0 pp in success rate, and physical experiments further demonstrate improved performance on the evaluated real-robot tasks. Project website: https://peafowlvla.github.io/.",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3726379",
+        "pdf_url": "",
+        "research_fit": 60,
+        "video_potential": 49,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robot, manipulation, humanoid, loco-manipulation",
+        "Strong method signals: whole_body_control",
+        "research_fit 78 ≥ 28",
+        "Detected subtopics: humanoid_whole_body, loco_manipulation, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: humanoid_whole_body, loco_manipulation, whole_body_control",
+        "Recently recommended: 6 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 72.0 = base 78.0 + affinity +6 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.16644",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "humanoid_whole_body",
+        "loco_manipulation",
+        "whole_body_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 78.0,
+      "recommendation_utility": 72.0,
+      "days_since_same_subtopic": 6,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.16644v1",
+        "base_id": "2609.16644",
+        "version": 1,
+        "title": "WholeBodyWAM: Generalizing Pre-trained World-Action Priors to Humanoid Loco-Manipulation via WBC-Grounded Coordination",
+        "authors": [
+          "Zhuo Li",
+          "Yiming Yao",
+          "Jim Tan",
+          "Mengjie Jing",
+          "Zhipeng Dong",
+          "Fei Chen"
+        ],
+        "published": "2026-09-15T05:03:49Z",
+        "updated": "2026-09-15T05:03:49Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "World Action Models (WAMs) offer a promising approach to general-purpose robot manipulation by jointly modeling visual dynamics and actions. However, most WAM studies focus on tabletop or arm-centric manipulation, while humanoid loco-manipulation remains less explored. To address this gap, we introduce WholeBodyWAM, which jointly predicts future visual dynamics, manipulation actions, and whole-body control intents for generalizable humanoid loco-manipulation. It preserves pre-trained world-action priors while grounding heterogeneous whole-body controller (WBC) semantics and coordinating whole-body behavior. Extensive experiments show that WholeBodyWAM achieves an overall simulation task success rate of 91.9%, with a 0.23 improvement in real-world out-of-distribution task progress and a 70% reduction in success-rate variance across WBCs relative to the respective baselines. These results suggest a path toward scalable humanoid whole-body intelligence by extending pre-trained world-action priors through structured WBC grounding and coordination, rather than relearning whole-body behavior from scratch. Project page: https://wholebodywam.github.io/.",
+        "abs_url": "https://arxiv.org/abs/2609.16644v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.16644v1",
+        "research_fit": 78,
+        "video_potential": 58,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "general-purpose robot",
+          "loco-manipulation",
+          "WBC",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "general-purpose robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "WBC",
+              "whole-body control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, humanoid, loco-manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "whole-body"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    }
+  ]
+}
