@@ -1,0 +1,815 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-17",
+  "generated_at": "2026-09-17T17:36:46+08:00",
+  "mode": "incremental",
+  "candidate_count": 3043,
+  "historical_candidate_count": 504,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 1,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2607.02840",
+      "title": "TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training",
+      "takeaway": "TACO targets contact-rich manipulation, where vision-only failure detection is fragile and human corrective supervision is costly to scale. Its compositional tactile world model runs a Recognize--Imagine--Label loop: an inverse dynamics and value model flags failure-adjacent states, a visuo-tactile generator jointly imagines video and tactile corrections, and candidates are filtered for kinematic feasibility and tactile plausibility and ranked by predicted progress gain. Post-training aggregates demonstrations, real rollouts, and selected corrections, combining knowledge-insulated tactile adaptation with CFG-RL using binary advantage labels while the pretrained VLM backbone stays fixed. The abstract reports average task score rising from 0.375 to 0.825 after two iterations; inspect how tactile plausibility filtering and progress-gain selection are defined.",
+      "generated_at": "2026-09-17T09:43:11",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.18650",
+      "title": "From Gameplay to Policy: Towards Scalable Robot Data Collection via Gamified Robot-Free Interaction",
+      "takeaway": "This work addresses costly, hardware-bound real-world demonstration collection by turning data gathering into gameplay. Project Kitchen is a VR-based gamified egocentric platform that elicits diverse, goal-directed manipulation independent of specific robot embodiments, and Game2Policy extracts embodiment-invariant affordance cues such as contact points and sub-goal states from gameplay trajectories. An affordance model is pretrained on game-collected data and jointly fine-tuned with downstream policies using only a handful of real-robot demonstrations. The abstract reports average success-rate gains of 10.0 points in simulation and 18.3 points on real robots in the few-shot setting, plus user studies on behavioral diversity and engagement; inspect how affordance cues bridge the game-to-real gap.",
+      "generated_at": "2026-09-17T09:43:11",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7169778200",
+      "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-Based Reinforcement Learning With Zero-Shot Sim-to-Real Transfer",
+      "takeaway": "Multi-drone cable-suspended payload transport involves coupled drone-cable-payload dynamics that challenge safety and scalability in dynamic, unstructured settings. The method introduces a minimal 2D abstraction preserving task-relevant drone-payload coupling for computational efficiency, then trains a fully distributed policy with Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO) under domain randomization over team size and physical parameters. The abstract states zero-shot sim-to-real transfer without fine-tuning, with a single learned policy generalizing across team sizes and scenarios and operating safely when other drone teams act as moving obstacles. Inspect how the 2D abstraction retains coordination and safety constraints and how DGPPO enforces them.",
+      "generated_at": "2026-09-17T09:43:11",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.18669",
+      "title": "M$^3$P-R1: Reinforcement Learning for Large Language Model Guided Multi-Modal Motion Planning via MIP Code Generation",
+      "takeaway": "Multi-Modal Motion Planning (M$^3$P) requires joint reasoning over continuous motions and discrete mode transitions, as when a bipedal robot walks to a location and then grasps with its arms, and tractable Mixed-Integer Programming (MIP) formulations are typically hand-built and domain-specific. M$^3$P-R1 fine-tunes large language models to decompose M$^3$P tasks into MIP variables, constraints, and objectives, generating executable Python code with MIP optimization libraries and constraint interfaces rather than direct answers, so solutions are solver-backed and verifiable. Trained with an outcome-driven reward against the solver, it learns modality-level discretization primitives and cross-modal coupling constraints; inspect how generated code is validated and how the reward shapes constraint synthesis.",
+      "generated_at": "2026-09-17T09:43:11",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 84 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: vision-language-action, policy post-training, visuo-tactile, inverse dynamics",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 84.0 = base 84.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2607.02840",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 84.0,
+      "recommendation_utility": 84.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2607.02840v2",
+        "base_id": "2607.02840",
+        "version": 2,
+        "title": "TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training",
+        "authors": [
+          "Shengbang Liu",
+          "Yueru Jia",
+          "Yuyang Yan",
+          "Jiaming Liu",
+          "Xinran Zhang",
+          "Qiuxuan Feng",
+          "Yandong Guo",
+          "Shiji Zhou",
+          "Boxin Shi",
+          "Shanghang Zhang"
+        ],
+        "published": "2026-07-03T00:23:30Z",
+        "updated": "2026-09-16T16:41:13Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Vision-Language-Action models and World Action Models have shown promising generalization in robotic manipulation but remain fragile in contact-rich tasks, where contact perturbations can cause failures that are difficult to detect from vision alone. Corrective post-training with tactile feedback can improve recovery, but scaling such supervision through human intervention is costly. World models can synthesize additional training data, yet vision-only generation may produce visually plausible but contact-inconsistent trajectories. We therefore introduce TACO, a scalable robot policy post-training framework built on a compositional tactile world model. Given real rollouts, TACO follows a Recognize--Imagine--Label loop: an inverse dynamics and value model identifies failure-adjacent states using progress estimates, a visuo-tactile generation model imagines local corrections by jointly generating video and tactile sequences, and the inverse dynamics and value model labels them with corrective actions and progress scores. Candidates are filtered for kinematic feasibility and tactile plausibility, then selected by predicted progress gain. TACO aggregates demonstrations, real rollouts, and selected corrections for iterative post-training. It combines knowledge-insulated tactile adaptation with CFG-RL using binary advantage labels while keeping the pretrained VLM backbone fixed. Experiments on real-world tasks show that TACO improves the average task score from 0.375 to 0.825 after two post-training iterations.",
+        "abs_url": "https://arxiv.org/abs/2607.02840v2",
+        "pdf_url": "https://arxiv.org/pdf/2607.02840v2",
+        "research_fit": 84,
+        "video_potential": 33,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "policy post-training",
+          "visuo-tactile",
+          "inverse dynamics"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "policy post-training"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "visuo-tactile"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "inverse dynamics"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot policy",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot policy",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, robot policy, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 21.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 48 ≥ 40",
+        "Core topics matched: robot_data_scaling_sim2real",
+        "Specific keywords matched: robot data",
+        "Diversity topic: robot_data_scaling_sim2real",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 48.0 = base 48.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.18650",
+      "historical_paper": null,
+      "core_topics": [
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 48.0,
+      "recommendation_utility": 48.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.18650v1",
+        "base_id": "2609.18650",
+        "version": 1,
+        "title": "From Gameplay to Policy: Towards Scalable Robot Data Collection via Gamified Robot-Free Interaction",
+        "authors": [
+          "Zheng Li",
+          "Liang Zhu",
+          "Junzhe Wang",
+          "Huayuan Chen",
+          "Ziyun Liu",
+          "Jiahang Cao",
+          "Xinyu Sheng",
+          "Pei Qu",
+          "Yufei Jia",
+          "Ximeng Zhang",
+          "Jiarui Xie",
+          "Zizhao Yuan",
+          "Haoang Li",
+          "Yi Cai",
+          "Jinni Zhou",
+          "Jun Ma"
+        ],
+        "published": "2026-09-16T13:33:06Z",
+        "updated": "2026-09-16T13:33:06Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Learning generalizable robot manipulation policies requires large-scale and diverse interaction data, yet collecting real-world demonstrations remains costly and difficult to scale. Existing approaches to data collection are either dependent on specific robot hardware that limits crowdsourcing and transferability, or suffer from incomplete annotation and limited behavioral diversity. Inspired by how games sustain long-term human engagement, we explore an alternative paradigm that turns data collection into an engaging gameplay experience and transfers the resulting human manipulation experience to real robots. We present Project Kitchen, a VR-based gamified egocentric data collection platform that elicits diverse, goal-directed manipulation while remaining independent of specific robot embodiments and hardware, making it applicable to broader and potentially large-scale deployment. To bridge the game-to-real gap, we further introduce Game2Policy, which extracts embodiment-invariant affordance cues, including contact points and sub-goal states, from gameplay trajectories. An affordance model is pre-trained on game-collected data and then jointly fine-tuned with downstream policies using only a handful of real-robot demonstrations. Experiments show that Game2Policy improves average success rates by 10.0 points in simulation and 18.3 points on real robots in the few-shot setting. User studies and quantitative analyses further show that Project Kitchen promotes diverse manipulation behaviors and provides an engaging data collection experience. These results demonstrate the potential of gamified virtual environments as a scalable source of manipulation knowledge. The platform and code will be released upon acceptance.",
+        "abs_url": "https://arxiv.org/abs/2609.18650v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.18650v1",
+        "research_fit": 48,
+        "video_potential": 39,
+        "matched_topics": [
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "robot data"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robot data"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 40 ≥ 35",
+        "Core topics matched: robot_data_scaling_sim2real",
+        "Specific keywords matched: domain randomization, CBF, control barrier function",
+        "Detected subtopics: sim_to_real, safety_critical_control",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: sim_to_real",
+        "Recently recommended: 7 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = safety_critical_control",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 35.8 = base 40.0 + affinity +0 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7169778200",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7169778200",
+        "openalex_id": "W7169778200",
+        "base_arxiv_id": "2607.20665",
+        "doi": "10.1109/lra.2026.3715346",
+        "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-Based Reinforcement Learning With Zero-Shot Sim-to-Real Transfer",
+        "authors": [
+          "Jaeyoun Choi",
+          "Oswin So",
+          "Songyuan Zhang",
+          "Cooper Taylor",
+          "Chuchu Fan"
+        ],
+        "abstract": "Multi-drone payload transportation has emerged as a promising research paradigm with potential applications in construction, logistics, and disaster response. However, the complex coupled dynamics among drones, cables, and payloads pose significant challenges, and existing approaches remain limited in safety and scalability, particularly in dynamic and unstructured environments. In this work, we propose a learning-based framework for safe and scalable multi-drone cooperative payload transport. We introduce a minimal 2D abstraction that preserves the task-relevant drone-payload coupling required for coordination and safety, while remaining computationally efficient for large-scale learning. Using domain randomization over team size and physical parameters, we train a fully distributed policy via Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO), enabling robust zero-shot sim-to-real transfer without fine-tuning. Extensive real-world evaluations demonstrate that a single learned policy generalizes across varying team sizes and task scenarios. Furthermore, multi-group hardware experiments show that the same policy can safely operate in dynamic environments, where other drone teams act as moving obstacles. These results indicate that the proposed framework enables efficient, safe, and scalable multi-drone payload transportation with strong generalization to complex real-world conditions.",
+        "publication_date": "2026-07-20",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11133",
+            "display_name": "UAV Applications and Optimization",
+            "score": 0.9045000076293945
+          },
+          {
+            "id": "https://openalex.org/T10249",
+            "display_name": "Distributed Control Multi-Agent Systems",
+            "score": 0.008799999952316284
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.007699999958276749
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.85443845,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-09-17T17:36:46+08:00",
+        "recommended_at": "2026-09-17T17:36:46+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-09-14T08:04:06",
+        "openalex_url": "https://openalex.org/W7169778200",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3715346",
+        "open_access_url": "https://arxiv.org/abs/2607.20665",
+        "pdf_url": "https://arxiv.org/pdf/2607.20665",
+        "research_fit": 40,
+        "video_potential": 24,
+        "matched_topics": [
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "domain randomization",
+          "CBF",
+          "control barrier function"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real",
+              "domain randomization"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "CBF",
+              "control barrier function"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotics, sim-to-real"
+          }
+        ],
+        "historical_value_score": 60.1,
+        "historical_score_components": {
+          "research_relevance": 40.0,
+          "recency": 100.0,
+          "normalized_citation": 85.4,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 14.6%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "safety_critical_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 40.0,
+      "recommendation_utility": 35.8,
+      "days_since_same_subtopic": 7,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2607.20665",
+        "base_id": "2607.20665",
+        "version": 1,
+        "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-Based Reinforcement Learning With Zero-Shot Sim-to-Real Transfer",
+        "authors": [
+          "Jaeyoun Choi",
+          "Oswin So",
+          "Songyuan Zhang",
+          "Cooper Taylor",
+          "Chuchu Fan"
+        ],
+        "published": "2026-07-20T00:00:00Z",
+        "updated": "2026-07-20T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Multi-drone payload transportation has emerged as a promising research paradigm with potential applications in construction, logistics, and disaster response. However, the complex coupled dynamics among drones, cables, and payloads pose significant challenges, and existing approaches remain limited in safety and scalability, particularly in dynamic and unstructured environments. In this work, we propose a learning-based framework for safe and scalable multi-drone cooperative payload transport. We introduce a minimal 2D abstraction that preserves the task-relevant drone-payload coupling required for coordination and safety, while remaining computationally efficient for large-scale learning. Using domain randomization over team size and physical parameters, we train a fully distributed policy via Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO), enabling robust zero-shot sim-to-real transfer without fine-tuning. Extensive real-world evaluations demonstrate that a single learned policy generalizes across varying team sizes and task scenarios. Furthermore, multi-group hardware experiments show that the same policy can safely operate in dynamic environments, where other drone teams act as moving obstacles. These results indicate that the proposed framework enables efficient, safe, and scalable multi-drone payload transportation with strong generalization to complex real-world conditions.",
+        "abs_url": "https://arxiv.org/abs/2607.20665",
+        "pdf_url": "https://arxiv.org/pdf/2607.20665",
+        "research_fit": 40,
+        "video_potential": 24,
+        "matched_topics": [
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "domain randomization",
+          "CBF",
+          "control barrier function"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real",
+              "domain randomization"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "CBF",
+              "control barrier function"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotics, sim-to-real"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robot, robotic",
+        "Strong method signals: motion_planning",
+        "research_fit 46 ≥ 28",
+        "Detected subtopics: motion_planning",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 46.0 = base 46.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.18669",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "motion_planning"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 46.0,
+      "recommendation_utility": 46.0,
+      "days_since_same_subtopic": 10,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.18669v1",
+        "base_id": "2609.18669",
+        "version": 1,
+        "title": "M$^3$P-R1: Reinforcement Learning for Large Language Model Guided Multi-Modal Motion Planning via MIP Code Generation",
+        "authors": [
+          "Xingpeng Sun",
+          "Zherong Pan",
+          "Kai Cheng",
+          "Xindi Tang",
+          "Syed Talha Bukhari",
+          "Aniket Bera"
+        ],
+        "published": "2026-09-16T13:47:13Z",
+        "updated": "2026-09-16T13:47:13Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Multi-Modal Motion Planning (M$^3$P) requires joint reasoning over continuous motions and discrete mode transitions, making it difficult to solve efficiently. For instance, a bipedal robot may walk to a target location and then use its arms to grasp an object. This scenario captures both mode transitions and continuous dynamics, yielding feasible paths that neither purely discrete nor continuous planners can handle. While Mixed-Integer Programming (MIP) offers a principled framework, constructing tractable formulations for non-convex problems is typically manual and domain-specific, especially in the approximate, discretization-based MIP regime needed for non-convex robotic tasks. We propose M$^3$P-R1, a reinforcement learning method that fine-tunes large language models (LLMs) to decompose M$^3$P tasks into MIP variables, constraints, and objectives. Instead of directly outputting answers, which are often prone to hallucination, the model generates executable Python code using MIP optimization libraries and constraint interfaces. This enables solver-backed execution for robust and verifiable solutions. Trained with an outcome-driven reward against the solver, M$^3$P-R1 learns to compose modality-level discretization primitives and synthesize cross-modal coupling constraints, producing executable MIP programs for complex M$^3$P tasks.",
+        "abs_url": "https://arxiv.org/abs/2609.18669v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.18669v1",
+        "research_fit": 46,
+        "video_potential": 26,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "bipedal robot",
+          "motion planning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "bipedal robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "motion planning"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 11.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ]
+      }
+    }
+  ]
+}
