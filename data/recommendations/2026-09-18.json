@@ -1,0 +1,1166 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-18",
+  "generated_at": "2026-09-18T17:08:44+08:00",
+  "mode": "incremental",
+  "candidate_count": 3141,
+  "historical_candidate_count": 504,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 0,
+    "model_based_recent": 1,
+    "review_knowledge_map": 1,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.20776",
+      "title": "GeoAAC: Geometry-Based Adaptive Action Chunking from Denoising Trajectories in VLA Policies",
+      "takeaway": "GeoAAC targets the fixed action horizon used in flow-based VLA policies, arguing that different task stages need different action continuity, precision, and closed-loop feedback. The method uses the geometry of Flow Matching denoising trajectories, where prefix-wise geometric variation is reported as positively correlated with predictive uncertainty, to build a horizon-wise geometric profile and set the action horizon from a single generation without extra training. Experiments with GR00T N1.5 and π0.5 on LIBERO, LIBERO-Pro, RoboCasa365, and real-world manipulation tasks report consistent gains over fixed-horizon and existing adaptive baselines, including up to 8.7 percentage points in simulation and real-world average success rising from 53.3% to 74.4%. Inspect how the geometric profile is computed and thresholded per prefix.",
+      "generated_at": "2026-09-18T09:14:10",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.20761",
+      "title": "Agile-WAM: An Agile Tactile World Action Model for Contact-Rich Robot Control",
+      "takeaway": "Agile-WAM addresses tactile World Action Models that depend on large-scale pretrained generative backbones, which the authors state limit inference efficiency and flexible deployment. It encodes visual and tactile observations into a shared latent that sources a direct vision-tactile-to-action flow-matching process jointly generating action-chunk latents and future visual/tactile latents, with multi-horizon multimodal prediction supervising visual latents at a larger temporal offset while predicting tactile latents for the next frame. Across nine simulated and five real-world contact-rich manipulation tasks, it reports outperforming the strongest baseline in success rate with low inference latency, including a 29.4% relative gain in overall real-world success and 11.9 ms latency. Inspect the multi-horizon supervision design and latency accounting.",
+      "generated_at": "2026-09-18T09:14:10",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.20575",
+      "title": "Accelerating Visual Policy Learning with Sampling-Based Model Predictive Control",
+      "takeaway": "SGPS targets the computation and GPU memory cost of learning visual policies for locomotion and manipulation, noting that first-order policy gradients via differentiable simulation can converge to unintended contact patterns through local optimization. It couples recurring action-target refinement by sampling-based model predictive control with first-order policy optimization: behavior cloning initializes the policy from sampled actions, then training alternates sampling-based refinement with short-horizon FoPG updates under perturbed initial states and randomized dynamics, using a decoupled FoPG formulation that excludes rendering from the computation graph for direct depth-based learning. On a single GPU it learns locomotion, obstacle traversal, crate pushing, and bimanual carrying on simulated Unitree Go2 and G1, and the distilled policy transfers zero-shot to a real Go2 using onboard depth. Inspect the refinement-update alternation and the decoupled gradient formulation.",
+      "generated_at": "2026-09-18T09:14:10",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7140452175",
+      "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+      "takeaway": "This survey in IEEE/ASME Transactions on Mechatronics maps humanoid locomotion and manipulation across control, planning, and learning, noting that these capabilities have progressed rapidly but often separately. It first reviews model-based methods of the past three decades, covering contact planning, motion planning, and whole-body control with attention to tradeoffs between model fidelity and computational efficiency, then examines reinforcement and imitation learning for loco-manipulation robustness and versatility, and assesses integrating foundation models with humanoid embodiments for generalist agents. It also highlights whole-body tactile feedback for contact-rich interactions and compares model-based and learning-based paradigms on robustness, computational efficiency, versatility, and generalizability. Use it as a knowledge map for the model-based and learning-based branches.",
+      "generated_at": "2026-09-18T09:14:10",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 80 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining",
+        "Specific keywords matched: VLA, vision-language-action, action chunking",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 80.0 = base 80.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.20776",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 80.0,
+      "recommendation_utility": 80.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.20776v1",
+        "base_id": "2609.20776",
+        "version": 1,
+        "title": "GeoAAC: Geometry-Based Adaptive Action Chunking from Denoising Trajectories in VLA Policies",
+        "authors": [
+          "Xin Chen",
+          "Sen Chen",
+          "Yujuan Ding",
+          "Jian Liu",
+          "Guoqing Wang",
+          "Wei Ye",
+          "Heng Tao Shen",
+          "Yi Bin"
+        ],
+        "published": "2026-09-17T17:48:07Z",
+        "updated": "2026-09-17T17:48:07Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "summary": "Action chunking is widely used for action generation and execution in Vision-Language-Action (VLA) policies, yet existing approaches commonly use a fixed action horizon. During a rollout, different task stages may require different levels of action continuity, control precision, and closed-loop feedback, making a fixed horizon unable to accommodate changing control requirements. We propose \\textbf{GeoAAC}, a geometry-based adaptive action chunking method for flow-based VLA policies that adjusts the action horizon according to the reliability of the current action prediction. We show that the geometry of Flow Matching denoising trajectories provides process-level information for characterizing prediction reliability, with geometric variation across action prefixes remaining positively correlated with predictive uncertainty. GeoAAC uses this prefix-wise geometry to construct a horizon-wise geometric profile and adaptively determine the action horizon from a single generation without additional training. Experiments with GR00T N1.5 and π0.5 on LIBERO, LIBERO-Pro, RoboCasa365, and real-world manipulation tasks show consistent improvements over fixed-action-horizon baselines and existing adaptive methods, including up to 8.7 percentage points in simulation and an increase in average real-world success rate from 53.3\\% to 74.4\\%.",
+        "abs_url": "https://arxiv.org/abs/2609.20776v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.20776v1",
+        "research_fit": 80,
+        "video_potential": 32,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action",
+          "action chunking"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "action chunking"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 63 ≥ 40",
+        "Core topics matched: world_model_embodied_reasoning, dexterous_multimodal_manipulation",
+        "Specific keywords matched: world action model, contact-rich manipulation, vision tactile",
+        "Diversity topic: world_model_embodied_reasoning",
+        "Detected subtopics: world_action_model, tactile_manipulation",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 63.0 = base 63.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.20761",
+      "historical_paper": null,
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "world_action_model",
+        "tactile_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 63.0,
+      "recommendation_utility": 63.0,
+      "days_since_same_subtopic": 11,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.20761v1",
+        "base_id": "2609.20761",
+        "version": 1,
+        "title": "Agile-WAM: An Agile Tactile World Action Model for Contact-Rich Robot Control",
+        "authors": [
+          "Hanchu Zhou",
+          "Brendan Lynch",
+          "Raman Goyal",
+          "Dechen Gao",
+          "Begum Kasap",
+          "Boqi Zhao",
+          "Junshan Zhang"
+        ],
+        "published": "2026-09-17T17:43:51Z",
+        "updated": "2026-09-17T17:43:51Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.LG"
+        ],
+        "summary": "World Action Models (WAMs) advance beyond conventional visuomotor policies by jointly predicting future world states and robot actions, enabling the policy to learn physical dynamics that support effective control. However, recent tactile WAMs often rely on large-scale pretrained generative backbones to capture contact-rich physical dynamics, which limit their inference efficiency and flexible deployment. In this paper, we present \\ABBR{}, an agile tactile World Action Model for contact-rich robot control. \\ABBR{} encodes visual and tactile observations into a shared latent that serves as the source of a direct vision-tactile-to-action flow-matching process, which can jointly generate latent representations of action chunks and future visual/tactile latents. A key observation is that vision and tactile signals evolve at inherently different timescales: adjacent visual frames are often highly similar, whereas tactile signals can change abruptly upon contact. We therefore introduce multi-horizon multimodal prediction in \\ABBR{}, which provides supervision for visual latent at a larger temporal offset while predicting the tactile latent in the next frame to capture fine-grained contact dynamics. Across nine simulated and five real-world contact-rich manipulation tasks, \\ABBR{} demonstrates strong and robust performance, outperforming the strongest baseline in success rate while maintaining low inference latency. In particular, in five real-world experiments, \\ABBR{} yields a relative gain of $\\textbf{29.4\\%}$ in overall success rates while achieving inference latency of $\\textbf{11.9 ms}$. These results demonstrate that multimodal WAM can be achieved with an agile architecture suitable for precise and high-frequency robot control. More details are available on our project page: https://hanchuzhou.github.io/TARO_project_page/.",
+        "abs_url": "https://arxiv.org/abs/2609.20761v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.20761v1",
+        "research_fit": 63,
+        "video_potential": 37,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "world action model",
+          "contact-rich manipulation",
+          "vision tactile"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "world action model"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation",
+              "vision tactile"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "visuomotor"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "visuomotor"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, visuomotor"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "visuomotor"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robots, manipulation",
+        "Strong method signals: model_predictive_control",
+        "research_fit 59 ≥ 28",
+        "Detected subtopics: loco_manipulation, model_predictive_control",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: loco_manipulation",
+        "Recently recommended: 2 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = model_predictive_control",
+        "Redundancy penalty: -2.8",
+        "recommendation_utility 56.2 = base 59.0 + affinity +0 + redundancy -2.8"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.20575",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "loco_manipulation",
+        "model_predictive_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -2.8,
+      "recommendation_base_score": 59.0,
+      "recommendation_utility": 56.2,
+      "days_since_same_subtopic": 2,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.20575v1",
+        "base_id": "2609.20575",
+        "version": 1,
+        "title": "Accelerating Visual Policy Learning with Sampling-Based Model Predictive Control",
+        "authors": [
+          "Yilang Liu",
+          "Haoxiang You",
+          "Qian Wang",
+          "Daniel Rakita",
+          "Ian Abraham"
+        ],
+        "published": "2026-09-17T15:33:07Z",
+        "updated": "2026-09-17T15:33:07Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "summary": "Learning visual policies for locomotion and manipulation requires coordinating contact with the environment and can incur substantial computation and GPU memory costs. First-order policy gradients (FoPG) reduce training cost through differentiable simulation, but local optimization can converge to unintended contact patterns. To address this shortfall, we propose Sampling-Guided Policy Search (SGPS), which couples recurring action-target refinement by sampling-based model-predictive control with first-order policy optimization. Behavior cloning initializes the policy from sampled actions; training then alternates sampling-based refinement with short-horizon FoPG updates under perturbed initial states and randomized dynamics. For visual policy training, we use a decoupled FoPG formulation that excludes rendering from the computation graph, enabling direct learning from depth observations without a state-policy teacher. On a single GPU, SGPS learns policies for locomotion, obstacle traversal, crate pushing, and bimanual carrying on simulated Unitree Go2 and G1 robots. Our experiments further show that refinement improves policy learning beyond initialization and tracking alone. For hardware deployment, the distilled policy transfers zero-shot to a real Go2 and uses onboard depth to autonomously trot, crawl, clear hurdles, and switch between these behaviors.",
+        "abs_url": "https://arxiv.org/abs/2609.20575v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.20575v1",
+        "research_fit": 59,
+        "video_potential": 40,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "locomotion and manipulation",
+          "behavior cloning",
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "locomotion and manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "behavior cloning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robots",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robots",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robots, manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 14.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "locomotion",
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "policy learning"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation",
+        "research_fit 51 ≥ 18",
+        "核心方向：humanoid_loco_manipulation, robot_learning_posttraining",
+        "特定关键词：humanoid locomotion, locomotion and manipulation, humanoid robotics, loco-manipulation, motion planning, contact planning, whole-body control",
+        "historical_value_score 79.4 ≥ 50.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 0.2%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 32.15",
+        "近年年均 OpenAlex 引用 12.0（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-24T03:32:01",
+        "Detected subtopics: loco_manipulation, motion_planning, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: motion_planning",
+        "Recently recommended: 1 day ago",
+        "Subtopic cooldown bypassed: new secondary topic = loco_manipulation, whole_body_control",
+        "Redundancy penalty: -2.8",
+        "recommendation_utility 82.6 = base 79.4 + affinity +6 + redundancy -2.8"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7140452175",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7140452175",
+        "openalex_id": "W7140452175",
+        "base_arxiv_id": null,
+        "doi": "10.1109/tmech.2025.3579247",
+        "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+        "authors": [
+          "Zhaoyuan Gu",
+          "Junheng Li",
+          "Wenlan Shen",
+          "Wenhao Yu",
+          "Zhaoming Xie",
+          "Stephen McCrory",
+          "Xianyi Cheng",
+          "Abdulaziz Shamsah",
+          "Robert J. Griffin",
+          "C. Karen Liu",
+          "Abderrahmane Kheddar",
+          "Xue Bin Peng",
+          "Yuke Zhu",
+          "Guanya Shi",
+          "Quan Nguyen",
+          "Gordon Cheng",
+          "Huijun Gao",
+          "Ye Zhao"
+        ],
+        "abstract": "Humanoid robots hold great potential to perform various human-level skills, involving unified locomotion and manipulation in real-world settings. Driven by advances in machine learning and the strength of existing model-based approaches, these capabilities have progressed rapidly, but often separately. This survey offers a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, with a focus on control, planning, and learning methods. We first review the model-based methods that have been the backbone of humanoid robotics for the past three decades. We discuss contact planning, motion planning, and whole-body control, highlighting the tradeoffs between model fidelity and computational efficiency. Then, the focus is shifted to examine emerging learning-based methods, with an emphasis on reinforcement and imitation learning that enhance the robustness and versatility of loco-manipulation skills. Furthermore, we assess the potential of integrating foundation models with humanoid embodiments to enable the development of generalist humanoid agents. This survey also highlights the emerging role of tactile sensing, particularly whole-body tactile feedback, as a crucial modality for handling contact-rich interactions. Finally, we compare the strengths and limitations of model-based and learning-based paradigms from multiple perspectives, such as robustness, computational efficiency, versatility, and generalizability, and suggest potential solutions to existing challenges.",
+        "publication_date": "2026-03-26",
+        "publication_year": 2026,
+        "source_name": "IEEE/ASME Transactions on Mechatronics",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.6565999984741211
+          },
+          {
+            "id": "https://openalex.org/T10709",
+            "display_name": "Social Robot Interaction and HRI",
+            "score": 0.10199999809265137
+          },
+          {
+            "id": "https://openalex.org/T12290",
+            "display_name": "Human Motion and Animation",
+            "score": 0.05209999904036522
+          }
+        ],
+        "cited_by_count": 12,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 12
+          }
+        ],
+        "fwci": 32.1547,
+        "citation_normalized_percentile": 0.99827416,
+        "referenced_works": [
+          "W102778925",
+          "W1502712385",
+          "W1504362584",
+          "W1560450306",
+          "W1617153945",
+          "W1639534865",
+          "W1891170951",
+          "W1945123189",
+          "W1963573260",
+          "W1970495039",
+          "W1973195195",
+          "W1974305624",
+          "W1979709633",
+          "W1995199698",
+          "W2019606703",
+          "W2021314974",
+          "W2029058516",
+          "W2033480951",
+          "W2042408133",
+          "W2055187690",
+          "W2061983716",
+          "W2067213437",
+          "W2084615382",
+          "W2087412549",
+          "W2087617385",
+          "W2096001037",
+          "W2101340954",
+          "W2102162941",
+          "W2104479525",
+          "W2112337604",
+          "W2123365775",
+          "W2123951871",
+          "W2128848325",
+          "W2129984848",
+          "W2133859362",
+          "W2141042553",
+          "W2143729862",
+          "W2147168033",
+          "W2150317946",
+          "W2153577013",
+          "W2155307968",
+          "W2158370675",
+          "W2158623817",
+          "W2158782408",
+          "W2160205694",
+          "W2164032318",
+          "W2171130677",
+          "W2210408922",
+          "W2280090643",
+          "W2335044248",
+          "W2399015533",
+          "W2409421274",
+          "W2413365548",
+          "W2461181622",
+          "W2491934829",
+          "W2562736583",
+          "W2567455162",
+          "W2588016079",
+          "W2739203437",
+          "W2752199592",
+          "W2755682944",
+          "W2763052367",
+          "W2775635818",
+          "W2806547618",
+          "W2812031262",
+          "W28293053",
+          "W2840346287",
+          "W2850053679",
+          "W2892206620",
+          "W2894766094",
+          "W2896690662",
+          "W2900391154",
+          "W2904019300",
+          "W2905541462",
+          "W2908802515",
+          "W2914653242",
+          "W2914981446",
+          "W2946514473",
+          "W2947984804",
+          "W2949582037",
+          "W2963315892",
+          "W2963669336",
+          "W2964114602",
+          "W2966691925",
+          "W2967936796",
+          "W2969111820",
+          "W2969147804",
+          "W2971268498",
+          "W2971856312",
+          "W2973229164",
+          "W2986578974",
+          "W2986736840",
+          "W2991032472",
+          "W2999253226",
+          "W3000152817",
+          "W3003535010",
+          "W3008303301",
+          "W3010768390",
+          "W3011137165",
+          "W3016956161",
+          "W3035967838",
+          "W3039843183",
+          "W3044967063",
+          "W3048474702",
+          "W3089535104",
+          "W3090143443",
+          "W3093175803",
+          "W3093481944",
+          "W3096831136",
+          "W3098142208",
+          "W3109186372",
+          "W3112669067",
+          "W3123619040",
+          "W3126321819",
+          "W3131628257",
+          "W3143373178",
+          "W3147968035",
+          "W3163283046",
+          "W3165940900",
+          "W3169802677",
+          "W3171189531",
+          "W3175270462",
+          "W3176539729",
+          "W3190941931",
+          "W3199300111",
+          "W3202328163",
+          "W3206363598",
+          "W4200493783",
+          "W4206215385",
+          "W4210990956",
+          "W4214863073",
+          "W4223604247",
+          "W4225774941",
+          "W4226129942",
+          "W4231136072",
+          "W4242210259",
+          "W4283206712",
+          "W4285028015",
+          "W4292231110",
+          "W4307572631",
+          "W4311448205",
+          "W4312783246",
+          "W4315490076",
+          "W4318953217",
+          "W4319787917",
+          "W4320920759",
+          "W4367016688",
+          "W4368755539",
+          "W4376109419",
+          "W4378697124",
+          "W4379507295",
+          "W4380606960",
+          "W4382935639",
+          "W4383097434",
+          "W4383097638",
+          "W4383108457",
+          "W4383108655",
+          "W4383108816",
+          "W4385027469",
+          "W4385062991",
+          "W4385245566",
+          "W4385430486",
+          "W4385430679",
+          "W4385486316",
+          "W4386038305",
+          "W4386065350",
+          "W4386136919",
+          "W4386766454",
+          "W4387197141",
+          "W4387623672",
+          "W4387666110",
+          "W4387682164",
+          "W4388505252",
+          "W4389160701",
+          "W4389339329",
+          "W4389400858",
+          "W4389666980",
+          "W4390480938",
+          "W4390480962",
+          "W4390872031",
+          "W4390938336",
+          "W4391305509",
+          "W4391309699",
+          "W4392650763",
+          "W4394674699",
+          "W4394872716",
+          "W4396243545",
+          "W4396910086",
+          "W4400582110",
+          "W4400946831",
+          "W4401109371",
+          "W4401413688",
+          "W4401413934",
+          "W4401414436",
+          "W4401414990",
+          "W4401415075",
+          "W4401415103",
+          "W4401415287",
+          "W4401416158",
+          "W4401416192",
+          "W4402350775",
+          "W4402353985",
+          "W4402354011",
+          "W4402354017",
+          "W4402354036",
+          "W4402354114",
+          "W4402354138",
+          "W4402727748",
+          "W4402890475",
+          "W4403337227",
+          "W4403741606",
+          "W4404711583",
+          "W4404953355",
+          "W4404953726",
+          "W4404953792",
+          "W4405785208",
+          "W4405786041",
+          "W4406779533",
+          "W4407403136",
+          "W4408998144",
+          "W4409395271",
+          "W4410879364",
+          "W4411599636",
+          "W4412605573",
+          "W4412971564",
+          "W4413918266",
+          "W4413925671",
+          "W4413947089",
+          "W4414051111",
+          "W4414079054",
+          "W4415072190",
+          "W4415121671",
+          "W4416553072",
+          "W4416748876",
+          "W4416749553",
+          "W566530810",
+          "W59441132",
+          "W7133196460",
+          "W7133235749",
+          "W770013183",
+          "W971303027"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "knowledge_map_search:humanoid locomotion manipulation survey",
+          "topic_search:humanoid locomotion and manipulation",
+          "topic_search:humanoid locomotion manipulation survey"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T00:25:08",
+        "last_considered_at": "2026-09-18T17:08:44+08:00",
+        "recommended_at": "2026-09-18T17:08:44+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:32:01",
+        "openalex_url": "https://openalex.org/W7140452175",
+        "landing_page_url": "https://doi.org/10.1109/tmech.2025.3579247",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 51,
+        "video_potential": 60,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion",
+          "locomotion and manipulation",
+          "humanoid robotics",
+          "loco-manipulation",
+          "imitation learning",
+          "motion planning",
+          "contact planning",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid locomotion",
+              "locomotion and manipulation",
+              "humanoid robotics",
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "motion planning",
+              "contact planning",
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation"
+          }
+        ],
+        "historical_value_score": 79.4,
+        "historical_score_components": {
+          "research_relevance": 51.0,
+          "recency": 100.0,
+          "normalized_citation": 99.8,
+          "fwci": 100.0,
+          "citation_momentum": 60.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.2%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 32.15",
+          "近年年均 OpenAlex 引用 12.0（无更早窗口可比较）",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "loco_manipulation",
+        "motion_planning",
+        "whole_body_control"
+      ],
+      "document_type": "survey",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -2.8,
+      "recommendation_base_score": 79.4,
+      "recommendation_utility": 82.6,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7140452175",
+        "base_id": "openalex:W7140452175",
+        "version": 1,
+        "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+        "authors": [
+          "Zhaoyuan Gu",
+          "Junheng Li",
+          "Wenlan Shen",
+          "Wenhao Yu",
+          "Zhaoming Xie",
+          "Stephen McCrory",
+          "Xianyi Cheng",
+          "Abdulaziz Shamsah",
+          "Robert J. Griffin",
+          "C. Karen Liu",
+          "Abderrahmane Kheddar",
+          "Xue Bin Peng",
+          "Yuke Zhu",
+          "Guanya Shi",
+          "Quan Nguyen",
+          "Gordon Cheng",
+          "Huijun Gao",
+          "Ye Zhao"
+        ],
+        "published": "2026-03-26T00:00:00Z",
+        "updated": "2026-03-26T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Humanoid robots hold great potential to perform various human-level skills, involving unified locomotion and manipulation in real-world settings. Driven by advances in machine learning and the strength of existing model-based approaches, these capabilities have progressed rapidly, but often separately. This survey offers a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, with a focus on control, planning, and learning methods. We first review the model-based methods that have been the backbone of humanoid robotics for the past three decades. We discuss contact planning, motion planning, and whole-body control, highlighting the tradeoffs between model fidelity and computational efficiency. Then, the focus is shifted to examine emerging learning-based methods, with an emphasis on reinforcement and imitation learning that enhance the robustness and versatility of loco-manipulation skills. Furthermore, we assess the potential of integrating foundation models with humanoid embodiments to enable the development of generalist humanoid agents. This survey also highlights the emerging role of tactile sensing, particularly whole-body tactile feedback, as a crucial modality for handling contact-rich interactions. Finally, we compare the strengths and limitations of model-based and learning-based paradigms from multiple perspectives, such as robustness, computational efficiency, versatility, and generalizability, and suggest potential solutions to existing challenges.",
+        "abs_url": "https://doi.org/10.1109/tmech.2025.3579247",
+        "pdf_url": "",
+        "research_fit": 51,
+        "video_potential": 60,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion",
+          "locomotion and manipulation",
+          "humanoid robotics",
+          "loco-manipulation",
+          "imitation learning",
+          "motion planning",
+          "contact planning",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid locomotion",
+              "locomotion and manipulation",
+              "humanoid robotics",
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "motion planning",
+              "contact planning",
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
