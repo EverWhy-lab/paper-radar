@@ -1,0 +1,717 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-22",
+  "generated_at": "2026-09-22T17:26:17+08:00",
+  "mode": "incremental",
+  "candidate_count": 3177,
+  "historical_candidate_count": 528,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 0,
+    "model_based_recent": 1,
+    "review_knowledge_map": 1,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.24976",
+      "title": "DexTacWAM: A Visuo-Tactile World-Action Model for Dexterous Manipulation",
+      "takeaway": "DexTacWAM targets dexterous manipulation where contact dynamics are only partially observable from vision, and existing World-Action Models remain vision-centric. The method encodes each fingertip independently, aggregates features through a finger- and pose-aware tactile compressor, and injects the tactile latent into a video diffusion world model for joint visuo-tactile world modeling. Across six contact-rich tasks on a 22-DoF bimanual platform it reports the highest score on every task, averaging 70.6 versus 38.0 for the strongest baseline, with ablations attributing gains to modeling contact evolution as predicted world state rather than tactile conditioning alone. Inspect how the compressor preserves contact recall while reducing training and inference cost, and how continual vision-to-touch adaptation uses roughly 100 demonstrations per task.",
+      "generated_at": "2026-09-22T09:32:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.24742",
+      "title": "LLM-based Conversational AI Knowledge Assistant for MyBuddy Humanoid Robot",
+      "takeaway": "This work addresses constrained conversational knowledge assistance on humanoid robots, arguing that rule-based dialogue, pre-defined responses, and limited knowledge repositories restrict natural interaction. It presents an LLM-based Conversational AI Knowledge Assistant implemented on a Raspberry-Pi-powered 13-Axis MyBuddy humanoid, integrating LLM-driven language understanding and reasoning with real-time speech recognition, knowledge retrieval through extensible internet engines such as Wikipedia and arXiv, dialogue management, and speech synthesis. The stated aim is multi-turn continuous conversation and emotional-support human-robot interaction. As the abstract reports no quantitative evaluation, read for the system architecture and integration choices, and note that the claimed capabilities are presented as an implementation rather than benchmarked results.",
+      "generated_at": "2026-09-22T09:32:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.24552",
+      "title": "Smoothness as a Constraint for Stable Humanoid Locomotion",
+      "takeaway": "DeCap addresses whole-body control for humanoid robots, where smoothness requirements differ across the body: the lower body must stay reactive while the upper body needs tighter regulation for stability. Instead of reward-shaping terms that compete with task objectives, it formulates smoothness as explicit constraints on physical motion limits, decoupled into separate upper- and lower-body constraint groups, with a bounded barrier penalty that activates proactively near feasibility boundaries. On a real-world humanoid whole-body control task it reports reducing upper-body action rate by 2.50x and acceleration by 2.18x relative to reward-based smoothness policies, while improving lower-body smoothness and reducing transient motion. Inspect how the fixed constraint set transfers across terrains without extensive reward tuning.",
+      "generated_at": "2026-09-22T09:32:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2605.11151",
+      "title": "RankQ: Offline-to-Online Reinforcement Learning via Self-Supervised Action Ranking",
+      "takeaway": "RankQ studies offline-to-online reinforcement learning, where limited dataset coverage makes critic learning inaccurate and pessimism toward out-of-distribution actions can act as a behavior cloning anchor that hinders online improvement. It augments temporal-difference learning with a self-supervised multi-term ranking loss that enforces structured action ordering, shaping the Q-function so action gradients point toward higher-quality behaviors rather than uniformly penalizing unseen actions. On sparse-reward D4RL benchmarks it reports competitive overall performance against seven baselines; in vision-based robot learning it reports an average simulation success rate 38.2 percentage points above the next best method in a low-data regime, 13.7 points higher in a high-data setting, and real-world cube stacking success rising from 43.1% to 88.9%.",
+      "generated_at": "2026-09-22T09:32:39",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 94 ≥ 40",
+        "Core topics matched: vla_robot_foundation, world_model_embodied_reasoning, dexterous_multimodal_manipulation",
+        "Specific keywords matched: action expert, world action model, dexterous manipulation, visuo-tactile",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: world_action_model, dexterous_manipulation",
+        "Personal domain affinity: preferred (+6; matched dexterous manipulation)",
+        "Subtopic: world_action_model",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = dexterous_manipulation",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 95.8 = base 94.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.24976",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "world_model_embodied_reasoning",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "world_action_model",
+        "dexterous_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 94.0,
+      "recommendation_utility": 95.8,
+      "days_since_same_subtopic": 4,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.24976v1",
+        "base_id": "2609.24976",
+        "version": 1,
+        "title": "DexTacWAM: A Visuo-Tactile World-Action Model for Dexterous Manipulation",
+        "authors": [
+          "Haoran Yuan",
+          "Zekai Wang",
+          "Boning Shao",
+          "Haoran Lu",
+          "Trevor Darrell",
+          "Ismini Lourentzou",
+          "Wei Zhan"
+        ],
+        "published": "2026-09-21T17:55:24Z",
+        "updated": "2026-09-21T17:55:24Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.CV"
+        ],
+        "summary": "Dexterous manipulation depends on contact dynamics that are often only partially observable from vision. Recent World-Action Models (WAMs) couple predictive video world modeling with action generation, but remain largely vision-centric and therefore cannot directly model these contact dynamics. We present DexTacWAM, a visuo-tactile WAM that encodes each fingertip independently, aggregates the resulting features through a finger- and pose-aware tactile compressor, and injects the tactile latent into a video diffusion world model for joint visuo-tactile world modeling. Across six contact-rich dexterous manipulation tasks on a 22-DoF bimanual platform, DexTacWAM achieves the highest score on every task, averaging 70.6 versus 38.0 for the strongest baseline. Ablations attribute the gain to modeling contact evolution as part of the predicted world state rather than tactile conditioning alone: removing tactile world modeling reduces the four-task mean from 74.7 to 26.6 while keeping the same tactile features and action expert. After four hours of tactile-encoder adaptation with a frozen pretrained vision VAE, our continual vision-to-touch learning extends the pretrained video model to touch using roughly 100 demonstrations per task without tactile midtraining, while retaining visual prediction quality within 0.5 dB of vision-only counterparts. The compressor retains 89.4% of pre-fusion contact recall while enabling 2.26x faster training and 1.29x faster inference. Together, these results show that pretrained video priors can be extended to distributed multi-finger contact dynamics in a data- and compute-efficient manner.",
+        "abs_url": "https://arxiv.org/abs/2609.24976v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.24976v1",
+        "research_fit": 94,
+        "video_potential": 42,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "world_model_embodied_reasoning",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "action expert",
+          "world action model",
+          "dexterous manipulation",
+          "visuo-tactile"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "action expert"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "world action model"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation",
+              "visuo-tactile"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation, dexterous manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 23.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "dexterous"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 50 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation",
+        "Specific keywords matched: humanoid robot",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 56.0 = base 50.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.24742",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 50.0,
+      "recommendation_utility": 56.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.24742v1",
+        "base_id": "2609.24742",
+        "version": 1,
+        "title": "LLM-based Conversational AI Knowledge Assistant for MyBuddy Humanoid Robot",
+        "authors": [
+          "Hanxiao Chen"
+        ],
+        "published": "2026-09-21T15:11:06Z",
+        "updated": "2026-09-21T15:11:06Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Humanoid robots are increasingly being popular and developed for human-centered applications, yet their ability to provide intelligent conversations and natural interactive knowledge assistance remains constrained by traditional rule-based dialogue systems, pre-defined responses and limited knowledge repositories. Large language models (LLMs) have emerged as a powerful foundation for enabling natural, adaptive, and context-aware Human-Robot Interaction (HRI), which provides a significant opportunity to address such limitations by enabling robots to understand natural speech language, reason over complicated queries, maintain high-quality conversational context, and generate knowledge-rich responses. In this work, we originally present and implement an LLM-based versatile Conversational AI Knowledge Assistant for the Raspberry-Pi-powered 13-Axis MyBuddy humanoid robot, which integrates LLM-driven language understanding and AI reasoning with real-time speech recognition, knowledge retrieval via extensible access of internet engines (e.g., Wikipedia, arXiv), flexible dialogue management, and natural speech synthesis to enable much more intelligent multi-turn continuous conversations and advanced emotional-support Human-Robot Interaction.",
+        "abs_url": "https://arxiv.org/abs/2609.24742v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.24742v1",
+        "research_fit": 50,
+        "video_potential": 32,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, humanoid"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robots, humanoid",
+        "Strong method signals: whole_body_control",
+        "research_fit 58 ≥ 28",
+        "Detected subtopics: humanoid_whole_body, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "Subtopic: humanoid_whole_body, whole_body_control",
+        "Recently recommended: 6 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 52.0 = base 58.0 + affinity +6 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.24552",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "humanoid_whole_body",
+        "whole_body_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 58.0,
+      "recommendation_utility": 52.0,
+      "days_since_same_subtopic": 4,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.24552v1",
+        "base_id": "2609.24552",
+        "version": 1,
+        "title": "Smoothness as a Constraint for Stable Humanoid Locomotion",
+        "authors": [
+          "Utsav Panchal",
+          "Denis Kleyko",
+          "Unal Artan",
+          "Amy Loutfi"
+        ],
+        "published": "2026-09-21T13:19:00Z",
+        "updated": "2026-09-21T13:19:00Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Embodied AI systems, particularly humanoid robots deployed in real world scenarios require whole-body control policies that are both task-responsive and physically smooth. However, smoothness is not uniform across the body: lower body must remain sufficiently reactive, while the upper body must be tightly regulated to preserve stability. Existing reinforcement learning approaches typically impose smoothness through auxiliary terms in the reward function, which compete with task objectives, treating the body as uniform and provide no direct control over the physical quantities responsible for smooth behavior. We introduce DeCap (Decoupled Constraint-aware policy), a constrained reinforcement learning algorithm that decouples whole-body smoothness into separate upper- and lower-body constraint groups, each formulates smoothness as explicit constraints on physical motion limits. To improve constraint satisfaction near feasibility boundaries, DeCap incorporates a bounded barrier penalty that activates proactively as limits are approached and remains bounded at the constraint limit. On real-world humanoid whole-body control task, DeCap reduces upper-body action rate by 2.50x and acceleration by 2.18x relative to reward-based smoothness policies, while also improving lower-body smoothness and reducing transient motion. We demonstrate that a fixed set of smoothness constraints transfers across diverse terrains, alleviating the need of extensive reward tuning.",
+        "abs_url": "https://arxiv.org/abs/2609.24552v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.24552v1",
+        "research_fit": 58,
+        "video_potential": 62,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion",
+          "humanoid whole-body control",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid locomotion",
+              "humanoid whole-body control"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robots",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robots",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robots, humanoid"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 14.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "locomotion",
+              "whole-body"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "Knowledge-map signals: benchmark",
+        "Robotics context: robot, robot learning, vision-language-action, sim-to-real",
+        "research_fit 77 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining, robot_data_scaling_sim2real",
+        "Specific keywords matched: vision-language-action, VLA",
+        "Detected subtopics: sim_to_real, offline_to_online_rl",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: sim_to_real",
+        "Recently recommended: 5 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = offline_to_online_rl",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 72.8 = base 77.0 + affinity +0 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2605.11151",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "offline_to_online_rl"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 77.0,
+      "recommendation_utility": 72.8,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2605.11151v3",
+        "base_id": "2605.11151",
+        "version": 3,
+        "title": "RankQ: Offline-to-Online Reinforcement Learning via Self-Supervised Action Ranking",
+        "authors": [
+          "Andrew Choi",
+          "Wei Xu"
+        ],
+        "published": "2026-05-11T18:58:49Z",
+        "updated": "2026-09-21T17:22:28Z",
+        "primary_category": "cs.AI",
+        "categories": [
+          "cs.AI",
+          "cs.RO"
+        ],
+        "summary": "Offline-to-online reinforcement learning (RL) improves sample efficiency by leveraging pre-collected datasets prior to online interaction. A key challenge, however, is learning an accurate critic in large state--action spaces with limited dataset coverage. To mitigate harmful updates from value overestimation, prior methods impose pessimism by down-weighting out-of-distribution (OOD) actions relative to dataset actions. While effective, this essentially acts as a behavior cloning anchor and can hinder downstream online policy improvement when dataset actions are suboptimal. We propose RankQ, an offline-to-online Q-learning objective that augments temporal-difference learning with a self-supervised multi-term ranking loss to enforce structured action ordering. By learning relative action preferences rather than uniformly penalizing unseen actions, RankQ shapes the Q-function such that action gradients are directed toward higher-quality behaviors. Across sparse-reward D4RL benchmarks, RankQ achieves competitive overall performance against seven baselines. In vision-based robot learning, RankQ enables effective offline-to-online fine-tuning of a pretrained vision-language-action (VLA) model in a low-data regime, achieving an average simulation success rate 38.2 percentage points higher than the next best method. In a high-data setting, RankQ improves simulation performance by 13.7 percentage points over the next best method and demonstrates strong sim-to-real transfer, increasing real-world cube stacking success from 43.1% to 88.9% relative to the VLA's initial performance.",
+        "abs_url": "https://arxiv.org/abs/2605.11151v3",
+        "pdf_url": "https://arxiv.org/pdf/2605.11151v3",
+        "research_fit": 77,
+        "video_potential": 33,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "online reinforcement learning",
+          "robot learning",
+          "behavior cloning",
+          "sim-to-real"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "online reinforcement learning",
+              "robot learning",
+              "behavior cloning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robot learning",
+              "vision-language-action",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robot learning",
+              "vision-language-action",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robot learning, vision-language-action, sim-to-real"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ]
+      }
+    }
+  ]
+}
