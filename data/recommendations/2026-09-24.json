@@ -1,0 +1,591 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-24",
+  "generated_at": "2026-09-24T17:27:22+08:00",
+  "mode": "incremental",
+  "candidate_count": 3169,
+  "historical_candidate_count": 528,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 0,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.28161",
+      "title": "Dissecting Advantage-Guided Post-Training for Vision-Language-Action Policies",
+      "takeaway": "This work studies how the coupled design choices in advantage-guided post-training of vision-language-action (VLA) policies—how critic-derived advantages are constructed, calibrated, and weighted—affect final policy performance, since existing recipes bundle them into one end-to-end procedure. The authors run a controlled empirical study that separates these choices and introduce stage-specific offline evaluation methods to screen alternatives without exhaustive real-robot evaluation, identifying a modular recipe combining temporal-difference advantage construction, group-wise calibration, and continuous advantage weighting. Across four real-world bimanual tasks, this recipe improves mean task progress and success over the SFT initialization by 0.42 and 0.63, respectively, and the proposed diagnostics show overall alignment with downstream real-world performance. When reading, inspect how the estimands are separated and how the staged offline diagnostics are validated against real-robot outcomes.",
+      "generated_at": "2026-09-24T09:32:54",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 78 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining, robot_data_scaling_sim2real",
+        "Specific keywords matched: vision-language-action, VLA, VLA post-training, robot data",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: vla_posttraining",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 78.0 = base 78.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.28161",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "vla_posttraining"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 78.0,
+      "recommendation_utility": 78.0,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.28161v1",
+        "base_id": "2609.28161",
+        "version": 1,
+        "title": "Dissecting Advantage-Guided Post-Training for Vision-Language-Action Policies",
+        "authors": [
+          "Jiahang Cao",
+          "Hanye Zhao",
+          "Hang Lai",
+          "Shenyu Zhang",
+          "Xiaoshen Han",
+          "Xinghang Li",
+          "Futeng Liu",
+          "Wanli Peng",
+          "Heyun Wang",
+          "Yunhong Wang",
+          "Jason Li",
+          "Yong Yu",
+          "Weinan Zhang"
+        ],
+        "published": "2026-09-23T14:10:14Z",
+        "updated": "2026-09-23T14:10:14Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Advantage-guided reinforcement learning provides a practical way to post-train vision-language-action (VLA) policies using limited robot data. However, its performance depends on several coupled choices, including how critic-derived advantages are constructed, calibrated, and used for policy training. Existing recipes often combine these choices into a single end-to-end procedure, making their individual effects difficult to identify. In this work, we dissect advantage-guided VLA post-training through a controlled empirical study that separates these design choices while accounting for their distinct estimands. We develop stage-specific offline evaluation methods to screen alternative choices efficiently, without requiring extensive real-robot policy evaluations for every possible combination. The staged evaluation identifies a modular recipe that combines temporal-difference advantage construction, group-wise calibration, and continuous advantage weighting. Across four real-world bimanual tasks, the resulting recipe improves mean task progress and success over the SFT initialization by 0.42 and 0.63, respectively. Moreover, the proposed evaluation diagnostics show an overall alignment with downstream real-world performance, supporting their use for interpreting empirical outcomes and selecting advantage-guided post-training designs in practice.",
+        "abs_url": "https://arxiv.org/abs/2609.28161v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.28161v1",
+        "research_fit": 78,
+        "video_potential": 51,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "VLA post-training",
+          "robot data"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "VLA post-training"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robot data"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robot policy",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robot policy",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robot policy, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "evaluation"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 56 ≥ 40",
+        "Core topics matched: dexterous_multimodal_manipulation",
+        "Specific keywords matched: contact-rich manipulation, trajectory optimization",
+        "Diversity topic: dexterous_multimodal_manipulation",
+        "Detected subtopics: trajectory_optimization",
+        "Personal domain affinity: neutral (+0; matched multi-robot)",
+        "recommendation_utility 56.0 = base 56.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.28299",
+      "historical_paper": null,
+      "core_topics": [
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "trajectory_optimization"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 56.0,
+      "recommendation_utility": 56.0,
+      "days_since_same_subtopic": 14,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.28299v1",
+        "base_id": "2609.28299",
+        "version": 1,
+        "title": "Contact-Implicit Stein Projected ADMM for Discovery of Diverse Contact-Rich Manipulation Strategies",
+        "authors": [
+          "Hrishikesh Sathyanarayan",
+          "Christian Hughes",
+          "Ian Abraham"
+        ],
+        "published": "2026-09-23T15:45:54Z",
+        "updated": "2026-09-23T15:45:54Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Contact-implicit trajectory optimization formulates contact-rich manipulation as a single constrained program; however, that single program run collapses onto one local optimum out of many equally valid contact modes, grasps, or push directions. As a consequence, the resulting manipulation strategy is reluctant to change and sensitive to initialization. In order to promote robust manipulation, this paper investigates how contact-implicit solvers can discover diverse contact-rich strategies. Our approach derives a variation of Consensus Alternating Direction Method of Multipliers (ADMM) combined with Stein variational inference methods to output a set of distinct contact-rich solutions. We find that applying the Stein repulsive force to ADMM's split variable (rather than its primal form) allows for effective coverage over the set of feasible contact strategies without prematurely stalling the solver. We demonstrate the effectiveness of our approach on a variety of contact-rich manipulation tasks, including pushing, grasping, and multi-robot handover. Last, we find the proposed solver is simpler in form and capable of discovering unique contact modes when compared with existing solvers. Videos and code with examples are found in https://anon-website-submission.github.io/stein-admm-website/.",
+        "abs_url": "https://arxiv.org/abs/2609.28299v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.28299v1",
+        "research_fit": 56,
+        "video_potential": 32,
+        "matched_topics": [
+          "dexterous_multimodal_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "contact-rich manipulation",
+          "trajectory optimization"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "trajectory optimization"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 14.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robot, robots, robotic, manipulation, teleoperation",
+        "Strong method signals: model_predictive_control",
+        "research_fit 69 ≥ 28",
+        "Detected subtopics: model_predictive_control",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: model_predictive_control",
+        "Recently recommended: 6 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 57.0 = base 69.0 + affinity +0 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.28393",
+      "historical_paper": null,
+      "core_topics": [
+        "dexterous_multimodal_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "model_predictive_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 69.0,
+      "recommendation_utility": 57.0,
+      "days_since_same_subtopic": 6,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.28393v1",
+        "base_id": "2609.28393",
+        "version": 1,
+        "title": "PointCast: One World Model for Rigid, Articulated, and Deformable Object Manipulation",
+        "authors": [
+          "Hantao Ye",
+          "Ross Worobel",
+          "Zhuoli Xie",
+          "Mingen Li",
+          "Houjian Yu",
+          "Youngjin Hong",
+          "Changhyun Choi"
+        ],
+        "published": "2026-09-23T17:02:18Z",
+        "updated": "2026-09-23T17:02:18Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "World models are useful for robotic manipulation because robots can predict how actions change the states of objects before executing them. We present PointCast, a point-set world model that spans rigid, articulated, and deformable object manipulation. Its state is a set of 3D points on the object and the end-effector, mesh-free and topology-agnostic. Each point keeps its identity and is supervised on its own trajectory, which teaches the model where every point goes rather than only the shape the points form. Its backbone is a diffusion transformer that denoises a short window of future point positions, conditioned on the points' recent history and the commanded end-effector motion. The backbone's attention alternates between local and global, and cross-attention to the end-effector carries the coupling. This one architecture at 19.8M parameters and one training recipe cover four regimes, rigid objects, cloth, rope, and multi-joint cabinets, with a separate checkpoint trained for each. Trained on randomized simulation and scored against four baselines on the same metric, it is best on three of four regimes and second on rigid. Trained on a real-world robot teleoperation dataset, it has the lowest mean error in four of its six categories, is second in the other two, and improves on the dataset's own model in all six; zero-shot, its simulation checkpoints are best on two of four captures. Frozen inside sampling-based model-predictive control at one network evaluation per window, it plans four simulated tasks over 64 episodes, competitive with or outperforming every baseline on each. Project website at https://pointcast-wm.github.io.",
+        "abs_url": "https://arxiv.org/abs/2609.28393v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.28393v1",
+        "research_fit": 69,
+        "video_potential": 57,
+        "matched_topics": [
+          "dexterous_multimodal_manipulation",
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "deformable object manipulation",
+          "robot teleoperation",
+          "model predictive control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "deformable object manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robot teleoperation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, manipulation, teleoperation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 17.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real-world robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "evaluation"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    }
+  ]
+}
