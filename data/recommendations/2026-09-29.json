@@ -1,0 +1,1172 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-29",
+  "generated_at": "2026-09-29T18:51:40+08:00",
+  "mode": "incremental",
+  "candidate_count": 4452,
+  "historical_candidate_count": 562,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.35761",
+      "title": "DexRoam: Learning Mobile Bimanual Dexterous Manipulation from Egocentric Whole-Body Human Demonstrations",
+      "takeaway": "DexRoam targets mobile bimanual dexterous manipulation, where locomotion, whole-body motion, and finger-level dexterity must stay coupled within one trajectory, and human demonstrations are the proposed scalable data source. The system captures whole-body human manipulation with only a consumer VR headset and a head-mounted stereo camera, then applies embodiment, action-semantic, and temporal alignment to map motion into robot action space so standard VLA policies can jointly learn human and robot data. Real-world experiments report average success rising from 29% to 56% on GR00T N1.7 and from 32% to 57% on pi0.5, with ablations indicating each alignment stage is necessary. Inspect how the three alignment stages preserve fine-grained coupling during transfer.",
+      "generated_at": "2026-09-29T10:58:33",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.35318",
+      "title": "DexAgent: An Agentic Human2Sim2Robot Framework for Dexterous Manipulation with Self-Evolving Tool Library",
+      "takeaway": "DexAgent addresses Human2Sim2Robot pipelines that rely on predefined procedures and struggle with articulated or deformable objects, converting a single egocentric human video plus a task prompt into physically grounded robot trajectories. Its four stages cover semantic video understanding, property-based simulation reconstruction, robot trajectory optimization, and robot data generation, with property-specific verifiers feeding refinement and newly developed skills retained in a self-evolving tool library. Across eleven real-world tasks, policies trained on DexAgent-generated data are reported to achieve a 3.5x higher success rate than competing baselines. While reading, examine how verifier feedback prevents error propagation and how tool reuse reduces processing time.",
+      "generated_at": "2026-09-29T10:58:33",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7123340428",
+      "title": "PointVLA: Injecting the 3D World Into Vision-Language-Action Models",
+      "takeaway": "PointVLA addresses the limited spatial reasoning of RGB-based VLA models without retraining them on 3D data, instead injecting point cloud inputs into a frozen pre-trained action expert through a lightweight modular block. A skip-block analysis identifies less useful blocks in the vanilla action expert so 3D features enter only there, minimizing disruption to pre-trained representations. Reported advantages include few-shot multi-tasking with 20 demonstrations per task, real-vs-photo discrimination, height adaptability to unseen table heights, and long-horizon picking and packing from a moving conveyor belt, with comparisons to OpenVLA, Diffusion Policy, and DexVLA. Inspect the block-selection criterion and injection placement.",
+      "generated_at": "2026-09-29T10:58:33",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4385430674",
+      "title": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware",
+      "takeaway": "This work asks whether learning can let low-cost, imprecise hardware perform fine bimanual manipulation such as threading cable ties or slotting a battery, which normally demands precision, contact-force coordination, and closed-loop visual feedback. It presents a system costing under $20k with off-the-shelf robots and 3D printed parts, teleoperated by backdriving leader robots, and introduces Action Chunking with Transformers (ACT), a generative model over action sequences intended to counter compounding policy errors and non-stationary demonstrations. ACT is reported to learn six real-world tasks, including opening a translucent condiment cup and slotting a battery, at 80-90% success with only 10 minutes of demonstrations. Inspect how action chunking handles temporal error compounding.",
+      "generated_at": "2026-09-29T10:58:33",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 78 ≥ 40",
+        "Core topics matched: vla_robot_foundation, humanoid_loco_manipulation, dexterous_multimodal_manipulation",
+        "Specific keywords matched: VLA, mobile manipulation, dexterous manipulation",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: dexterous_manipulation",
+        "Personal domain affinity: preferred (+6; matched mobile manipulation, dexterous manipulation)",
+        "Subtopic: dexterous_manipulation",
+        "Recently recommended: 7 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 72.0 = base 78.0 + affinity +6 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.35761",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "humanoid_loco_manipulation",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "dexterous_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 78.0,
+      "recommendation_utility": 72.0,
+      "days_since_same_subtopic": 7,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.35761v1",
+        "base_id": "2609.35761",
+        "version": 1,
+        "title": "DexRoam: Learning Mobile Bimanual Dexterous Manipulation from Egocentric Whole-Body Human Demonstrations",
+        "authors": [
+          "Rui Zhou",
+          "Yibo Yuan",
+          "Junkai Zhao",
+          "Fangyuan Zhao",
+          "Xiaoguang Zhao",
+          "Shanghang Zhang",
+          "Sirui Han"
+        ],
+        "published": "2026-09-28T17:59:10Z",
+        "updated": "2026-09-28T17:59:10Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Mobile bimanual dexterous manipulation requires continuous coordination of locomotion, whole-body motion, and finger-level dexterity within a single trajectory, creating a severe robot demonstration bottleneck. Egocentric human demonstrations offer a scalable alternative, but prior approaches ease the transfer by simplifying human motion, discarding exactly the fine-grained, coupled structure such tasks depend on. We present DexRoam, a complete system for learning mobile bimanual dexterous manipulation from human demonstrations, in which whole-body motion remains continuous and coupled throughout the human-to-robot transfer process. To enable scalable collection of whole-body human manipulation demonstrations, we develop a tracker-free capture system using only a consumer VR headset and a head-mounted stereo camera, without external cameras or motion trackers. We then perform three explicit alignment stages---embodiment, action-semantic, and temporal---to map captured motion into the robot action space, preserving fine-grained whole-body motion and allowing human and robot demonstrations to be jointly learned by standard VLA policies. Real-world experiments with different VLA backbones show that human demonstrations consistently improve policy learning across training paradigms, raising average success from 29% to 56% on GR00T N1.7 and from 32% to 57% on pi0.5, while matching robot-only training with half the robot demonstrations. Ablations confirm that each alignment stage is necessary. These results highlight the potential of human demonstrations for scalable whole-body mobile manipulation with preserved fine-grained motion structure.",
+        "abs_url": "https://arxiv.org/abs/2609.35761v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.35761v1",
+        "research_fit": 78,
+        "video_potential": 62,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "mobile manipulation",
+          "dexterous manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "mobile manipulation",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "mobile manipulation",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, mobile manipulation, dexterous manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "robot demonstration"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "whole-body",
+              "dexterous",
+              "locomotion"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "policy learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 69 ≥ 40",
+        "Core topics matched: dexterous_multimodal_manipulation, robot_data_scaling_sim2real",
+        "Specific keywords matched: dexterous manipulation, robot data, trajectory optimization",
+        "Diversity topic: dexterous_multimodal_manipulation",
+        "Detected subtopics: sim_to_real, dexterous_manipulation, trajectory_optimization",
+        "Personal domain affinity: preferred (+6; matched dexterous manipulation)",
+        "Subtopic: trajectory_optimization",
+        "Recently recommended: 5 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = dexterous_manipulation, sim_to_real",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 70.8 = base 69.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.35318",
+      "historical_paper": null,
+      "core_topics": [
+        "dexterous_multimodal_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "dexterous_manipulation",
+        "trajectory_optimization"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 69.0,
+      "recommendation_utility": 70.8,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.35318v1",
+        "base_id": "2609.35318",
+        "version": 1,
+        "title": "DexAgent: An Agentic Human2Sim2Robot Framework for Dexterous Manipulation with Self-Evolving Tool Library",
+        "authors": [
+          "Youhui Wang",
+          "Yunzhu Li",
+          "Li Fei-Fei",
+          "Jiajun Wu",
+          "Huang Huang"
+        ],
+        "published": "2026-09-28T14:49:06Z",
+        "updated": "2026-09-28T14:49:06Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Human videos offer a scalable source of demonstrations for dexterous robot manipulation. However, existing human-to-simulation-to-robot (Human2Sim2Robot) pipelines rely on predefined procedures that struggle to accommodate diverse object properties and interactions, particularly those involving articulated and deformable objects. We introduce DexAgent, an agentic Human2Sim2Robot framework that converts a single egocentric human video and a task prompt into physically grounded robot trajectories for policy training. It operates through four stages: semantic understanding of human videos, property-based simulation reconstruction, robot trajectory optimization, and robot data generation. At each stage, DexAgent adapts its approach to the task and object properties by selecting suitable skills from its tool library or developing new ones when needed. Property-specific verifiers assess stage outcomes for physical validity and task-specific requirements and provide feedback for refinement, preventing error propagation through the workflow. This adaptive, verification-guided process allows DexAgent to process diverse objects and long-horizon tasks. In the final stage, DexAgent varies object and robot states in simulation to generate diverse robot trajectories from a single human video, then retextures the rendered observations to facilitate sim-to-real transfer. Newly developed skills and verifiers are retained in its tool library, making it self-evolving to accumulate reusable capabilities. This reduces processing time as DexAgent encounters more human videos. Across eleven real-world tasks, policies trained with DexAgent-generated data achieve a 3.5x higher success rate than competing baselines. Project website: https://dexagent123.github.io/.",
+        "abs_url": "https://arxiv.org/abs/2609.35318v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.35318v1",
+        "research_fit": 69,
+        "video_potential": 35,
+        "matched_topics": [
+          "dexterous_multimodal_manipulation",
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "dexterous manipulation",
+          "robot data",
+          "sim-to-real",
+          "trajectory optimization"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robot data",
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "trajectory optimization"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "dexterous manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "dexterous manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, dexterous manipulation, sim-to-real"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 17.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "dexterous"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "rising_recent",
+      "reasons": [
+        "rising_score 70.1 ≥ 55.0",
+        "Robotics context: robot, robots, robotic, manipulation, vision-language-action",
+        "research_fit 45 ≥ 12",
+        "Source restricted to robotics_core (S4210169774)",
+        "Publication age 259 days",
+        "Paper age 259 days; citation velocity uses a 90-day floor",
+        "Smoothed citation velocity 1.76 citations/month",
+        "Field/year normalized citation percentile 0.998",
+        "OpenAlex FWCI 44.00",
+        "Observed snapshot growth 0.432 citations/day",
+        "Detected subtopics: diffusion_flow_policy",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 70.1 = base 70.1 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7123340428",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7123340428",
+        "openalex_id": "W7123340428",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3653303",
+        "title": "PointVLA: Injecting the 3D World Into Vision-Language-Action Models",
+        "authors": [
+          "Chengmeng Li",
+          "Junjie Wen",
+          "Yaxin Peng",
+          "Yan Peng",
+          "Yichen Zhu"
+        ],
+        "abstract": "Vision-Language-Action (VLA) models excel at robotic tasks by leveraging large-scale 2D vision-language pretraining, but their reliance on RGB images limits spatial reasoning critical for real-world interaction. Retraining these models with 3D data is computationally prohibitive, while discarding existing 2D datasets wastes valuable resources. To bridge this gap, we propose PointVLA, a framework that enhances pre-trained VLAs with point cloud inputs without requiring retraining. Our method freezes the vanilla action expert and injects 3D features via alightweight modular block. To identify the most effective way of integrating point cloud representations, we conduct a skip-block analysis to pinpoint less useful blocks in the vanilla action expert, ensuring that 3D features are injected only into these blocks—minimizing disruption to pre-trained representations. Extensive experiments demonstrate that PointVLA outperforms state-of-the-art 2D imitation learning methods, such as OpenVLA, Diffusion Policy and DexVLA, across both simulated and real-world robotic tasks. Specifically, we highlight several key advantages of PointVLA enabled by point cloud integration: (1)Few-shotmulti-tasking, where PointVLA successfully performs four different tasks using only 20 demonstrations each; (2)Real-vs-photo discrimination, where PointVLA distinguishes real objects from their images, leveraging 3D world knowledge to improve safety and reliability; (3)Height adaptability, where unlike conventional 2D imitation learning methods, PointVLA enables robots to adapt to objects at varying table heights that were unseen in training data. Furthermore, PointVLA achieves strong performance in long-horizon tasks, such as picking and packing objects from a moving conveyor belt, showcasing its ability to generalize across complex, dynamic environments.",
+        "publication_date": "2026-01-12",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.659600019454956
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.09749999642372131
+          },
+          {
+            "id": "https://openalex.org/T10036",
+            "display_name": "Advanced Neural Network Applications",
+            "score": 0.05009999871253967
+          }
+        ],
+        "cited_by_count": 15,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 43.999,
+        "citation_normalized_percentile": 0.99826789,
+        "referenced_works": [
+          "W3212960520",
+          "W4226073959",
+          "W4285218426",
+          "W4401415042",
+          "W4402353985",
+          "W4402354045",
+          "W4402354047",
+          "W4402713111",
+          "W4403337227",
+          "W4404783087",
+          "W4407874080",
+          "W4409365821",
+          "W4413144615",
+          "W4413917998",
+          "W4413926128",
+          "W4413944794",
+          "W4414050589",
+          "W4414051092",
+          "W4414079054",
+          "W4416748905",
+          "W4416749759"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "rising_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:51:48",
+        "last_considered_at": "2026-09-29T18:51:40+08:00",
+        "recommended_at": "2026-09-29T18:51:40+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-09-28T08:54:30",
+        "openalex_url": "https://openalex.org/W7123340428",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3653303",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 45,
+        "video_potential": 32,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "action expert",
+          "imitation learning",
+          "diffusion policy"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA",
+              "action expert"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, manipulation, vision-language-action"
+          }
+        ],
+        "historical_value_score": 73.1,
+        "historical_score_components": {
+          "research_relevance": 45.0,
+          "recency": 100.0,
+          "normalized_citation": 99.8,
+          "fwci": 100.0,
+          "citation_momentum": 37.5,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.2%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 44.00",
+          "近年年均 OpenAlex 引用 7.5（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": 70.1,
+        "rising_score_components": {
+          "research_relevance": 45.0,
+          "citation_velocity": 35.3,
+          "normalized_citation": 99.8,
+          "fwci": 100.0,
+          "observed_growth": 86.5
+        },
+        "rising_score_reasons": [
+          "Robotics context: robot, robots, robotic, manipulation, vision-language-action",
+          "research_fit 45 ≥ 12",
+          "Source restricted to robotics_core (S4210169774)",
+          "Publication age 259 days",
+          "Paper age 259 days; citation velocity uses a 90-day floor",
+          "Smoothed citation velocity 1.76 citations/month",
+          "Field/year normalized citation percentile 0.998",
+          "OpenAlex FWCI 44.00",
+          "Observed snapshot growth 0.432 citations/day"
+        ],
+        "rising_updated_at": "2026-09-28T16:54:10+08:00",
+        "rising_age_days": 259,
+        "rising_citation_velocity": 1.763,
+        "rising_observed_growth": {
+          "recent": {
+            "prior_captured_at": "2026-09-21T16:09:31+08:00",
+            "elapsed_days": 7.03,
+            "citation_delta": 4,
+            "citations_per_day": 0.5689
+          },
+          "approximately_28_day": {
+            "prior_captured_at": "2026-08-31T16:51:22+08:00",
+            "elapsed_days": 28.0,
+            "citation_delta": 5,
+            "citations_per_day": 0.1786
+          },
+          "blended_citations_per_day": 0.4323
+        }
+      },
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 70.1,
+      "recommendation_utility": 70.1,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7123340428",
+        "base_id": "openalex:W7123340428",
+        "version": 1,
+        "title": "PointVLA: Injecting the 3D World Into Vision-Language-Action Models",
+        "authors": [
+          "Chengmeng Li",
+          "Junjie Wen",
+          "Yaxin Peng",
+          "Yan Peng",
+          "Yichen Zhu"
+        ],
+        "published": "2026-01-12T00:00:00Z",
+        "updated": "2026-01-12T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Vision-Language-Action (VLA) models excel at robotic tasks by leveraging large-scale 2D vision-language pretraining, but their reliance on RGB images limits spatial reasoning critical for real-world interaction. Retraining these models with 3D data is computationally prohibitive, while discarding existing 2D datasets wastes valuable resources. To bridge this gap, we propose PointVLA, a framework that enhances pre-trained VLAs with point cloud inputs without requiring retraining. Our method freezes the vanilla action expert and injects 3D features via alightweight modular block. To identify the most effective way of integrating point cloud representations, we conduct a skip-block analysis to pinpoint less useful blocks in the vanilla action expert, ensuring that 3D features are injected only into these blocks—minimizing disruption to pre-trained representations. Extensive experiments demonstrate that PointVLA outperforms state-of-the-art 2D imitation learning methods, such as OpenVLA, Diffusion Policy and DexVLA, across both simulated and real-world robotic tasks. Specifically, we highlight several key advantages of PointVLA enabled by point cloud integration: (1)Few-shotmulti-tasking, where PointVLA successfully performs four different tasks using only 20 demonstrations each; (2)Real-vs-photo discrimination, where PointVLA distinguishes real objects from their images, leveraging 3D world knowledge to improve safety and reliability; (3)Height adaptability, where unlike conventional 2D imitation learning methods, PointVLA enables robots to adapt to objects at varying table heights that were unseen in training data. Furthermore, PointVLA achieves strong performance in long-horizon tasks, such as picking and packing objects from a moving conveyor belt, showcasing its ability to generalize across complex, dynamic environments.",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3653303",
+        "pdf_url": "",
+        "research_fit": 45,
+        "video_potential": 32,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "action expert",
+          "imitation learning",
+          "diffusion policy"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA",
+              "action expert"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, manipulation, teleoperation",
+        "research_fit 41 ≥ 18",
+        "核心方向：robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "特定关键词：action chunking, bimanual manipulation, fine manipulation",
+        "historical_value_score 75.7 ≥ 42.0",
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "阅读时效分 90/100（论文年龄 3 年）",
+        "OpenAlex FWCI 473.54",
+        "近 2 年年均引用 223.5；此前 2 年年均 44.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-17T03:28:34",
+        "Detected subtopics: bimanual_manipulation",
+        "Personal domain affinity: preferred (+6; matched bimanual manipulation)",
+        "recommendation_utility 81.7 = base 75.7 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4385430674",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4385430674",
+        "openalex_id": "W4385430674",
+        "base_arxiv_id": null,
+        "doi": "10.15607/rss.2023.xix.016",
+        "title": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware",
+        "authors": [
+          "Tony Z. Zhao",
+          "Vikas Kumar",
+          "Sergey Levine",
+          "Chelsea Finn"
+        ],
+        "abstract": "ALOHA : A Low-cost Open-source Hardware System for Bimanual Teleoperation.The whole system costs <$20k with off-the-shelf robots and 3D printed components.Left: The user teleoperates by backdriving the leader robots, with the follower robots mirroring the motion.Right: ALOHA is capable of precise, contact-rich, and dynamic tasks.We show examples of both teleoperated and learned skills.Abstract-Fine manipulation tasks, such as threading cable ties or slotting a battery, are notoriously difficult for robots because they require precision, careful coordination of contact forces, and closed-loop visual feedback.Performing these tasks typically requires high-end robots, accurate sensors, or careful calibration, which can be expensive and difficult to set up.Can learning enable low-cost and imprecise hardware to perform these fine manipulation tasks?We present a low-cost system that performs end-to-end imitation learning directly from real demonstrations, collected with a custom teleoperation interface.Imitation learning, however, presents its own challenges, particularly in high-precision domains: errors in the policy can compound over time, and human demonstrations can be non-stationary.To address these challenges, we develop a simple yet novel algorithm, Action Chunking with Transformers (ACT), which learns a generative model over action sequences.ACT allows the robot to learn 6 difficult tasks in the real world, such as opening a translucent condiment cup and slotting a battery with 80-90% success, with only 10 minutes worth of demonstrations.Project website: tonyzhaozh.github.io/aloha",
+        "publication_date": "2023-07-10",
+        "publication_year": 2023,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10188",
+            "display_name": "Advanced machining processes and optimization",
+            "score": 0.9945999979972839
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9905999898910522
+          },
+          {
+            "id": "https://openalex.org/T11583",
+            "display_name": "Advanced Measurement and Metrology Techniques",
+            "score": 0.9900000095367432
+          }
+        ],
+        "cited_by_count": 535,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 150
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 297
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 86
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 473.5415,
+        "citation_normalized_percentile": 1.0,
+        "referenced_works": [
+          "W1539716820",
+          "W1564857950",
+          "W1851340573",
+          "W1931877416",
+          "W1959608418",
+          "W208252816",
+          "W2096516049",
+          "W2147168033",
+          "W2158782408",
+          "W2161395589",
+          "W2167224731",
+          "W2188365844",
+          "W2194775991",
+          "W253535135",
+          "W2601322194",
+          "W2735668228",
+          "W2753738274",
+          "W2761060327",
+          "W2774527530",
+          "W2790766491",
+          "W2792984727",
+          "W2883896749",
+          "W2895144567",
+          "W2895558617",
+          "W2896457183",
+          "W2947630374",
+          "W2951262671",
+          "W2952996256",
+          "W2963669336",
+          "W2964157221",
+          "W2964184826",
+          "W2966994213",
+          "W2972997256",
+          "W2976965990",
+          "W2978369754",
+          "W2979924746",
+          "W2991276239",
+          "W3003342008",
+          "W3003807173",
+          "W3030520226",
+          "W3090054427",
+          "W3091133300",
+          "W3092578263",
+          "W3096099141",
+          "W3096609285",
+          "W3098108114",
+          "W3100485226",
+          "W3101273359",
+          "W3102176954",
+          "W3103528582",
+          "W3128000279",
+          "W3160566238",
+          "W3172859695",
+          "W3174282793",
+          "W3187722890",
+          "W3200105264",
+          "W3203511201",
+          "W3204665606",
+          "W3205423339",
+          "W3206267548",
+          "W3206464427",
+          "W3207359859",
+          "W3207427042",
+          "W3207751759",
+          "W3209916982",
+          "W3210071715",
+          "W3210940825",
+          "W3214952050",
+          "W4221161056",
+          "W4221161058",
+          "W4225003209",
+          "W4225894963",
+          "W4226109968",
+          "W4226208177",
+          "W4283215509",
+          "W4283395244",
+          "W4283786747",
+          "W4287643811",
+          "W4289598343",
+          "W4297812239",
+          "W4311559655",
+          "W4313121131",
+          "W4317837885",
+          "W4383066128",
+          "W4383066442",
+          "W4385245566",
+          "W4385430679",
+          "W4386076088"
+        ],
+        "related_works": [
+          "W2001405890",
+          "W2350741829",
+          "W2358668433",
+          "W2376932109",
+          "W2382290278",
+          "W2390279801",
+          "W2478288626",
+          "W2530322880",
+          "W2748952813",
+          "W4391913857"
+        ],
+        "discovery_source": [
+          "knowledge_map_search:dexterous manipulation survey",
+          "seed_graph:citing_works",
+          "topic_search:dexterous manipulation survey"
+        ],
+        "seed_paper_id": [
+          "openalex:W4311559655"
+        ],
+        "discovered_at": "2026-08-04T12:46:06",
+        "last_considered_at": "2026-09-29T18:51:40+08:00",
+        "recommended_at": "2026-09-29T18:51:40+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:34",
+        "openalex_url": "https://openalex.org/W4385430674",
+        "landing_page_url": "https://doi.org/10.15607/rss.2023.xix.016",
+        "open_access_url": "https://doi.org/10.15607/rss.2023.xix.016",
+        "pdf_url": "https://doi.org/10.15607/rss.2023.xix.016",
+        "research_fit": 41,
+        "video_potential": 37,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "action chunking",
+          "bimanual manipulation",
+          "fine manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "action chunking"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation",
+              "fine manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, manipulation, teleoperation"
+          }
+        ],
+        "historical_value_score": 75.7,
+        "historical_score_components": {
+          "research_relevance": 41.0,
+          "recency": 90.0,
+          "normalized_citation": 100.0,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2023 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "阅读时效分 90/100（论文年龄 3 年）",
+          "OpenAlex FWCI 473.54",
+          "近 2 年年均引用 223.5；此前 2 年年均 44.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "bimanual_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 75.7,
+      "recommendation_utility": 81.7,
+      "days_since_same_subtopic": 13,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4385430674",
+        "base_id": "openalex:W4385430674",
+        "version": 1,
+        "title": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware",
+        "authors": [
+          "Tony Z. Zhao",
+          "Vikas Kumar",
+          "Sergey Levine",
+          "Chelsea Finn"
+        ],
+        "published": "2023-07-10T00:00:00Z",
+        "updated": "2023-07-10T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "ALOHA : A Low-cost Open-source Hardware System for Bimanual Teleoperation.The whole system costs <$20k with off-the-shelf robots and 3D printed components.Left: The user teleoperates by backdriving the leader robots, with the follower robots mirroring the motion.Right: ALOHA is capable of precise, contact-rich, and dynamic tasks.We show examples of both teleoperated and learned skills.Abstract-Fine manipulation tasks, such as threading cable ties or slotting a battery, are notoriously difficult for robots because they require precision, careful coordination of contact forces, and closed-loop visual feedback.Performing these tasks typically requires high-end robots, accurate sensors, or careful calibration, which can be expensive and difficult to set up.Can learning enable low-cost and imprecise hardware to perform these fine manipulation tasks?We present a low-cost system that performs end-to-end imitation learning directly from real demonstrations, collected with a custom teleoperation interface.Imitation learning, however, presents its own challenges, particularly in high-precision domains: errors in the policy can compound over time, and human demonstrations can be non-stationary.To address these challenges, we develop a simple yet novel algorithm, Action Chunking with Transformers (ACT), which learns a generative model over action sequences.ACT allows the robot to learn 6 difficult tasks in the real world, such as opening a translucent condiment cup and slotting a battery with 80-90% success, with only 10 minutes worth of demonstrations.Project website: tonyzhaozh.github.io/aloha",
+        "abs_url": "https://doi.org/10.15607/rss.2023.xix.016",
+        "pdf_url": "https://doi.org/10.15607/rss.2023.xix.016",
+        "research_fit": 41,
+        "video_potential": 37,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "action chunking",
+          "bimanual manipulation",
+          "fine manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "action chunking"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation",
+              "fine manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, manipulation, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
