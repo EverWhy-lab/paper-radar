@@ -1,0 +1,802 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-30",
+  "generated_at": "2026-09-30T18:40:45+08:00",
+  "mode": "incremental",
+  "candidate_count": 4899,
+  "historical_candidate_count": 562,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.37348",
+      "title": "DROM: A Language-Guided Diffusion Framework for Multi-Skill Robotic Manipulation",
+      "takeaway": "DROM targets long-horizon manipulation when only a small set of expert demonstrations is available, using Dynamic Movement Primitives (DMPs) to expand those demonstrations into multi-skill datasets and extending Motion Planning Diffusion (MPD) with cross-attention for language-conditioned, multi-skill trajectory generation in one generative policy; a large language model decomposes high-level operator requests into executable skill sequences. The abstract reports validation on a Franka Emika Panda, a FANUC CRX25ia, and in MuJoCo, with results stated as outperforming Motion Planning Diffusion and Behavior Cloning baselines and composing skills for long-horizon tasks from natural language. While reading, inspect how skill consistency and orientation-sensitive behaviors are represented and how the DMP augmentation is kept consistent with the diffusion policy.",
+      "generated_at": "2026-09-30T10:48:15",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.37433",
+      "title": "FP2: Equipping Robotic Foundation Models with Force Control",
+      "takeaway": "FP2 addresses contact-rich manipulation with robotic foundation models (RFMs) by adding explicit force control through a lightweight downstream interface that preserves the RFM's action-generation capability. Its action-regulation decomposition keeps the task-adapted RFM as the foundation policy for task-level action generation while a high-frequency force control policy regulates interaction, conditioning on compressed foundation-policy contextual representations combined with wrench and proprioceptive histories to predict structured force-control parameters. The abstract reports evaluation with four RFM backbones across four real-world contact-rich tasks, with FP2 improving task performance and force regulation quality over the corresponding foundation policies and comparing favorably with force-aware and force-control baselines; ablations indicate foundation-policy context and physical feedback are complementary. Inspect how force parameters are structured and how action generation is preserved.",
+      "generated_at": "2026-09-30T10:48:15",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3000625188",
+      "title": "Contact-aided invariant extended Kalman filtering for robot state estimation",
+      "takeaway": "This work develops a contact-aided invariant extended Kalman filter (InEKF) for legged robot state estimation, combining contact-inertial dynamics with forward kinematic corrections to estimate pose, velocity, and all current contact points, using Lie group theory and invariant observer design. The abstract states that the error dynamics follow a log-linear autonomous differential equation, giving a domain of attraction independent of trajectory, state-estimate-independent linearized error dynamics and observation model, improved convergence properties, and a local observability matrix consistent with the nonlinear system; it also covers IMU biases, contact addition and removal, and world-centric and robo-centric versions. Comparisons with a quaternion-based EKF are reported through simulations and experiments on a Cassie-series bipedal robot, with motion capture accuracy analysis and a LiDAR mapping use case.",
+      "generated_at": "2026-09-30T10:48:15",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 55 ≥ 40",
+        "Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining",
+        "Specific keywords matched: long-horizon manipulation, motion planning",
+        "Diversity topic: world_model_embodied_reasoning",
+        "Detected subtopics: motion_planning",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 55.0 = base 55.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.37348",
+      "historical_paper": null,
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "motion_planning"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 55.0,
+      "recommendation_utility": 55.0,
+      "days_since_same_subtopic": 9,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.37348v1",
+        "base_id": "2609.37348",
+        "version": 1,
+        "title": "DROM: A Language-Guided Diffusion Framework for Multi-Skill Robotic Manipulation",
+        "authors": [
+          "Vincenzo Pomponi",
+          "Rocco Felici",
+          "Paolo Franceschi",
+          "Stefano Baraldo",
+          "Oliver Avram",
+          "Loris Roveda",
+          "Luca Maria Gambardella",
+          "Anna Valente"
+        ],
+        "published": "2026-09-29T12:15:48Z",
+        "updated": "2026-09-29T12:15:48Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Learning robust manipulation policies for diverse, long-horizon tasks from limited demonstrations remains a fundamental challenge in robotics. We present DROM, a language-guided diffusion framework that enables robots to learn, represent, and compose multiple manipulation skills within a single generative policy. DROM leverages Dynamic Movement Primitives (DMPs) to augment a small set of expert demonstrations into expressive multi-skill datasets, substantially reducing data collection while improving spatial generalization beyond the demonstrated workspace. Building upon Motion Planning Diffusion (MPD), we extend the diffusion architecture to support language-conditioned multi-skill trajectory generation through cross-attention, allowing a single model to generate skill-consistent motions for a diverse set of manipulation primitives, including orientation-sensitive behaviors that are difficult to design using conventional motion planning or hard-coded controllers. For long-horizon manipulation, a large language model decomposes high-level operator requests into executable sequences of skills, enabling natural language interaction and autonomous task execution. We validate DROM on a Franka Emika Panda robot, a FANUC CRX25ia robot, and in MuJoCo simulation across a wide range of manipulation tasks. Experimental results demonstrate that DROM outperforms Motion Planning Diffusion and Behavior Cloning baselines, achieves robust multi-skill generalization, and composes learned skills to reliably execute long-horizon manipulation tasks from natural language instructions using only a limited number of human demonstrations. Datasets, simulation environments, and more at https://github.com/automation-robotics-machines/drom.",
+        "abs_url": "https://arxiv.org/abs/2609.37348v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.37348v1",
+        "research_fit": 55,
+        "video_potential": 32,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "behavior cloning",
+          "motion planning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "behavior cloning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "motion planning"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 49 ≥ 40",
+        "Core topics matched: vla_robot_foundation, dexterous_multimodal_manipulation",
+        "Specific keywords matched: general-purpose manipulation, contact-rich manipulation",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched general-purpose manipulation, general purpose manipulation)",
+        "recommendation_utility 55.0 = base 49.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.37433",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 49.0,
+      "recommendation_utility": 55.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.37433v1",
+        "base_id": "2609.37433",
+        "version": 1,
+        "title": "FP2: Equipping Robotic Foundation Models with Force Control",
+        "authors": [
+          "Hongjie Fang",
+          "Shirun Tang",
+          "Junjian Hu",
+          "Shidong Zhang",
+          "Derek Zhang",
+          "Linhao Chen",
+          "Dehai Li",
+          "Mingyu Mei",
+          "Wanxi Liu",
+          "Cewu Lu",
+          "Shiquan Wang"
+        ],
+        "published": "2026-09-29T12:58:23Z",
+        "updated": "2026-09-29T12:58:23Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Robotic foundation models (RFMs) are increasingly capable of general-purpose manipulation, yet reliable physical interaction remains challenging in contact-rich settings. We present FP2, a lightweight downstream interface that equips task-adapted RFMs with explicit force control while preserving their action-generation capability. FP2 adopts an action-regulation decomposition: the task-adapted RFM serves as a foundation policy responsible for task-level action generation, while a high-frequency force control policy focuses solely on interaction regulation. To condition force regulation on the ongoing manipulation, FP2 compresses foundation-policy contextual representations and combines them with wrench and proprioceptive histories to predict structured force-control parameters. We evaluate FP2 with four RFM backbones across four real-world contact-rich manipulation tasks. FP2 consistently improves task performance and force regulation quality over the corresponding foundation policies, while comparing favorably with representative force-aware and force-control baselines. Ablations further show that foundation-policy context and physical feedback are complementary for effective force regulation, while preserving foundation-policy action generation improves both efficiency and novel-object generalization. Project website: http://force-policy.github.io/fp2",
+        "abs_url": "https://arxiv.org/abs/2609.37433v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.37433v1",
+        "research_fit": 49,
+        "video_potential": 24,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "general-purpose manipulation",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "general-purpose manipulation"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotic",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotic",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotic, manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics",
+        "research_fit 26 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：bipedal robot, robot state estimation, InEKF",
+        "historical_value_score 61.1 ≥ 42.0",
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 0.6%",
+        "阅读时效分 70/100（论文年龄 6 年）",
+        "OpenAlex FWCI 11.12",
+        "近 2 年年均引用 41.0；此前 2 年年均 60.5",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:03",
+        "Detected subtopics: robot_state_estimation",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 61.1 = base 61.1 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3000625188",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3000625188",
+        "openalex_id": "W3000625188",
+        "base_arxiv_id": null,
+        "doi": "10.1177/0278364919894385",
+        "title": "Contact-aided invariant extended Kalman filtering for robot state estimation",
+        "authors": [
+          "Ross Hartley",
+          "Maani Ghaffari",
+          "Ryan M. Eustice",
+          "Jessy W. Grizzle"
+        ],
+        "abstract": "Legged robots require knowledge of pose and velocity in order to maintain stability and execute walking paths. Current solutions either rely on vision data, which is susceptible to environmental and lighting conditions, or fusion of kinematic and contact data with measurements from an inertial measurement unit (IMU). In this work, we develop a contact-aided invariant extended Kalman filter (InEKF) using the theory of Lie groups and invariant observer design. This filter combines contact-inertial dynamics with forward kinematic corrections to estimate pose and velocity along with all current contact points. We show that the error dynamics follows a log-linear autonomous differential equation with several important consequences: (a) the observable state variables can be rendered convergent with a domain of attraction that is independent of the system’s trajectory; (b) unlike the standard EKF, neither the linearized error dynamics nor the linearized observation model depend on the current state estimate, which (c) leads to improved convergence properties and (d) a local observability matrix that is consistent with the underlying nonlinear system. Furthermore, we demonstrate how to include IMU biases, add/remove contacts, and formulate both world-centric and robo-centric versions. We compare the convergence of the proposed InEKF with the commonly used quaternion-based extended Kalman filter (EKF) through both simulations and experiments on a Cassie-series bipedal robot. Filter accuracy is analyzed using motion capture, while a LiDAR mapping experiment provides a practical use case. Overall, the developed contact-aided InEKF provides better performance in comparison with the quaternion-based EKF as a result of exploiting symmetries present in system.",
+        "publication_date": "2020-01-16",
+        "publication_year": 2020,
+        "source_name": "The International Journal of Robotics Research",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9994999766349792
+          },
+          {
+            "id": "https://openalex.org/T11192",
+            "display_name": "Underwater Vehicles and Communication Systems",
+            "score": 0.9923999905586243
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9912999868392944
+          }
+        ],
+        "cited_by_count": 300,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 73
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 61
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 60
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 42
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 11.1198,
+        "citation_normalized_percentile": 0.99360269,
+        "referenced_works": [
+          "W1531532259",
+          "W1559536185",
+          "W1564768010",
+          "W1639331959",
+          "W1764149764",
+          "W1804494423",
+          "W194206487",
+          "W1943808550",
+          "W1945123189",
+          "W1971594916",
+          "W1976980249",
+          "W1980215765",
+          "W1981699551",
+          "W1982902701",
+          "W1988450567",
+          "W1999684857",
+          "W2005099894",
+          "W2011772686",
+          "W2012450854",
+          "W2018655096",
+          "W2027055074",
+          "W2046169298",
+          "W2052643026",
+          "W2056679719",
+          "W2073288601",
+          "W2078594025",
+          "W2091982430",
+          "W2105845337",
+          "W2105934661",
+          "W2107929215",
+          "W2109453544",
+          "W2117102490",
+          "W2126254787",
+          "W2129371582",
+          "W2137448549",
+          "W2139710904",
+          "W2148228392",
+          "W2155653863",
+          "W2157357823",
+          "W2168004776",
+          "W2169772828",
+          "W2169881142",
+          "W2211052641",
+          "W2215881691",
+          "W2279625569",
+          "W2332797954",
+          "W2342437324",
+          "W2465284394",
+          "W2482726005",
+          "W2569720095",
+          "W2592781794",
+          "W2623660146",
+          "W2737825825",
+          "W2745007981",
+          "W2745859992",
+          "W2750614936",
+          "W2750656378",
+          "W2761235830",
+          "W2776443693",
+          "W2790753177",
+          "W2794127568",
+          "W2804892083",
+          "W2931843659",
+          "W2957409657",
+          "W2963566952",
+          "W2972798201",
+          "W3102386196",
+          "W3104529569",
+          "W3105214950",
+          "W3125449081",
+          "W4233759611",
+          "W4241015692",
+          "W4243055393",
+          "W4253927292",
+          "W4388475847"
+        ],
+        "related_works": [
+          "W2145874287",
+          "W2483158495",
+          "W2752451087",
+          "W2755286209",
+          "W2951795132",
+          "W2998370018",
+          "W3123982513",
+          "W3125052734",
+          "W4312092966",
+          "W4391249506"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works",
+          "topic_search:robot state estimation"
+        ],
+        "seed_paper_id": [
+          "openalex:W1945123189"
+        ],
+        "discovered_at": "2026-08-04T06:56:03",
+        "last_considered_at": "2026-09-30T18:40:45+08:00",
+        "recommended_at": "2026-09-30T18:40:45+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:03",
+        "openalex_url": "https://openalex.org/W3000625188",
+        "landing_page_url": "https://doi.org/10.1177/0278364919894385",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 26,
+        "video_potential": 25,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "bipedal robot",
+          "robot state estimation",
+          "InEKF"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "bipedal robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation",
+              "InEKF"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "historical_value_score": 61.1,
+        "historical_score_components": {
+          "research_relevance": 26.0,
+          "recency": 70.0,
+          "normalized_citation": 99.4,
+          "fwci": 100.0,
+          "citation_momentum": 33.9,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2020 年",
+          "同领域同年份引用标准化位于前 0.6%",
+          "阅读时效分 70/100（论文年龄 6 年）",
+          "OpenAlex FWCI 11.12",
+          "近 2 年年均引用 41.0；此前 2 年年均 60.5",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "robot_state_estimation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 61.1,
+      "recommendation_utility": 61.1,
+      "days_since_same_subtopic": 11,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W3000625188",
+        "base_id": "openalex:W3000625188",
+        "version": 1,
+        "title": "Contact-aided invariant extended Kalman filtering for robot state estimation",
+        "authors": [
+          "Ross Hartley",
+          "Maani Ghaffari",
+          "Ryan M. Eustice",
+          "Jessy W. Grizzle"
+        ],
+        "published": "2020-01-16T00:00:00Z",
+        "updated": "2020-01-16T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Legged robots require knowledge of pose and velocity in order to maintain stability and execute walking paths. Current solutions either rely on vision data, which is susceptible to environmental and lighting conditions, or fusion of kinematic and contact data with measurements from an inertial measurement unit (IMU). In this work, we develop a contact-aided invariant extended Kalman filter (InEKF) using the theory of Lie groups and invariant observer design. This filter combines contact-inertial dynamics with forward kinematic corrections to estimate pose and velocity along with all current contact points. We show that the error dynamics follows a log-linear autonomous differential equation with several important consequences: (a) the observable state variables can be rendered convergent with a domain of attraction that is independent of the system’s trajectory; (b) unlike the standard EKF, neither the linearized error dynamics nor the linearized observation model depend on the current state estimate, which (c) leads to improved convergence properties and (d) a local observability matrix that is consistent with the underlying nonlinear system. Furthermore, we demonstrate how to include IMU biases, add/remove contacts, and formulate both world-centric and robo-centric versions. We compare the convergence of the proposed InEKF with the commonly used quaternion-based extended Kalman filter (EKF) through both simulations and experiments on a Cassie-series bipedal robot. Filter accuracy is analyzed using motion capture, while a LiDAR mapping experiment provides a practical use case. Overall, the developed contact-aided InEKF provides better performance in comparison with the quaternion-based EKF as a result of exploiting symmetries present in system.",
+        "abs_url": "https://doi.org/10.1177/0278364919894385",
+        "pdf_url": "",
+        "research_fit": 26,
+        "video_potential": 25,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "bipedal robot",
+          "robot state estimation",
+          "InEKF"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "bipedal robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation",
+              "InEKF"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
