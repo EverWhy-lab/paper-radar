@@ -1,0 +1,741 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-01",
+  "generated_at": "2026-10-01T19:07:33+08:00",
+  "mode": "incremental",
+  "candidate_count": 5177,
+  "historical_candidate_count": 562,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2609.40341",
+      "title": "Ego4WAM: What Matters When Scaling Egocentric Human Data for Robot Learning?",
+      "takeaway": "Ego4WAM studies which properties of egocentric human data drive downstream robot learning, using a unified world-action model with a fixed backbone to disentangle human-robot alignment, data duration, task diversity, action supervision, and data usage strategy. The authors report that aligned human demonstrations substantially improve out-of-distribution generalization and reduce target-task robot data requirements, that duration and task diversity affect downstream capabilities differently, and that video-only supervision remains effective without action labels, providing a foundation for later video-action training. Findings are validated through closed-loop policy evaluation on real robots and RoboDojo. While reading, inspect how alignment is defined and measured, and whether the disentanglement controls for confounds between duration, diversity, and supervision.",
+      "generated_at": "2026-10-01T11:15:10",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2609.40153",
+      "title": "Dream4ACT: A Shared Visual Action Interface for Multi-Embodiment Video-Action Modeling",
+      "takeaway": "Dream4ACT addresses cross-embodiment video-action modeling, where joint-space action vectors lack image-space structure and vary in dimensionality and semantics across robots, limiting direct use of video generation model priors. It introduces a shared visual action interface called action views, rendering target joint configurations from four prescribed virtual cameras via URDF-based forward kinematics, so observations and actions share a video autoencoder and diffusion transformer; masked flow-matching supports forward dynamics, inverse dynamics, and joint observation-action generation in one model, with a training-free URDF-constrained multiview recovery mechanism. The abstract reports an average success rate of 88.98% on RoboTwin 2.0 and an overall score of 65.66 on TriWorldBench. Inspect the recovery mechanism's sensitivity to prediction error and embodiment geometry.",
+      "generated_at": "2026-10-01T11:15:10",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4401414436",
+      "title": "Sim-to-Real Learning for Humanoid Box Loco-Manipulation",
+      "takeaway": "This work presents a learning-based approach to box loco-manipulation for the humanoid robot Digit, targeting whole-body coordination to lift and carry boxes of varying weight, position, and orientation while maintaining balance. The method uses sim-to-real reinforcement learning to train general box pickup and carrying skills, with reward functions designed to produce the desired box interactions while valuing balance and gait quality, and combines the learned skills into a full system that moves boxes between tables across varied sizes, weights, and initial configurations. The abstract reports quantitative simulation results and successful sim-to-real transfer on Digit, stated as the first demonstration of a learned controller for such a task on real-world hardware. Inspect reward shaping and skill composition for balance under varying payloads.",
+      "generated_at": "2026-10-01T11:15:10",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 75 ≥ 40",
+        "Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining, robot_data_scaling_sim2real",
+        "Specific keywords matched: world action model, robot data",
+        "Diversity topic: world_model_embodied_reasoning",
+        "Detected subtopics: world_action_model",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 75.0 = base 75.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.40341",
+      "historical_paper": null,
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "world_action_model"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 75.0,
+      "recommendation_utility": 75.0,
+      "days_since_same_subtopic": 9,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.40341v1",
+        "base_id": "2609.40341",
+        "version": 1,
+        "title": "Ego4WAM: What Matters When Scaling Egocentric Human Data for Robot Learning?",
+        "authors": [
+          "Zhihao Sun",
+          "Liu Liu",
+          "Xinjiang Wang",
+          "Haoyi Jiang",
+          "Wei Feng",
+          "Huiqiang Zhang",
+          "Xiaosong Jia",
+          "Zhizhong Su",
+          "Zuxuan Wu"
+        ],
+        "published": "2026-09-30T17:58:35Z",
+        "updated": "2026-09-30T17:58:35Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.CV"
+        ],
+        "summary": "Egocentric human data provides a scalable source of experience for robot learning, but varies substantially in human-robot alignment, behavioral coverage, and available supervision. Existing work shows favorable scaling with increasing human data, but it remains unclear which data properties drive downstream robot gains and how to use such data throughout the training pipeline. We present a systematic study of egocentric human data with different alignment and supervision under a unified world-action model framework. With the model backbone fixed, we disentangle the effects of human-robot alignment, data duration and task diversity, action supervision, and data usage strategies. We find that aligned human demonstrations substantially improve out-of-distribution generalization and reduce target-task robot data requirements; data duration and task diversity affect downstream capabilities differently; and video-only supervision remains effective without action labels, providing a strong foundation for subsequent video-action training. We validate these findings through closed-loop policy evaluation on both real robots and RoboDojo. Rather than treating data duration as the sole scaling axis, Ego4WAM shows how alignment, task diversity, available supervision, and usage strategy jointly shape the value of egocentric human data for robot learning.",
+        "abs_url": "https://arxiv.org/abs/2609.40341v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.40341v1",
+        "research_fit": 75,
+        "video_potential": 25,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "world action model",
+          "robot learning",
+          "robot data"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "world action model"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robot data"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robot learning"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 18.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "evaluation"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 60 ≥ 40",
+        "Core topics matched: vla_robot_foundation",
+        "Specific keywords matched: multi-embodiment, inverse dynamics",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: cross_embodiment",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 60.0 = base 60.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2609.40153",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [
+        "cross_embodiment"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 60.0,
+      "recommendation_utility": 60.0,
+      "days_since_same_subtopic": 15,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.40153v1",
+        "base_id": "2609.40153",
+        "version": 1,
+        "title": "Dream4ACT: A Shared Visual Action Interface for Multi-Embodiment Video-Action Modeling",
+        "authors": [
+          "Xiangyu Zhu",
+          "Jin Xu",
+          "Yue Guo",
+          "Xin Wu",
+          "Yifan Sun",
+          "Xiancong Ren",
+          "Jianxin Sun",
+          "Yong Dai",
+          "Xiaozhu Ju"
+        ],
+        "published": "2026-09-30T16:55:14Z",
+        "updated": "2026-09-30T16:55:14Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Video generation models (VGMs) offer strong spatiotemporal priors for embodied observation--action modeling. However, joint-space action vectors lack explicit image-space structure and vary in dimensionality and semantics across embodiments, making it challenging to directly leverage the rich spatiotemporal priors of VGMs. End-effector visualizations provide an alternative but do not specify the full articulated configuration needed for robot execution. We present Dream4ACT, a world model built for joint video-action modeling across embodiments. To unify action representations across embodiments, we introduce a shared visual action interface, called action views, which render target joint configurations from four prescribed virtual cameras using URDF-based forward kinematics. This shared visual representation preserves embodiment-specific articulated geometry while allowing observation and action sequences to share a video autoencoder and diffusion transformer. Through masked flow-matching, our model supports forward dynamics, inverse dynamics, and joint observation--action generation within a single jointly trained model by varying which future sequences are corrupted. To recover executable action sequences from predicted action views, we propose a training-free, URDF-constrained multiview recovery mechanism, without a learned embodiment-specific decoder. Dream4ACT achieves an average success rate of 88.98\\% on RoboTwin~2.0 and an overall score of 65.66 on TriWorldBench, supporting effective closed-loop manipulation and competitive action-conditioned multiview prediction through the visual action interface.",
+        "abs_url": "https://arxiv.org/abs/2609.40153v1",
+        "pdf_url": "https://arxiv.org/pdf/2609.40153v1",
+        "research_fit": 60,
+        "video_potential": 27,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "multi-embodiment",
+          "inverse dynamics"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "multi-embodiment"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "inverse dynamics"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, manipulation, humanoid, loco-manipulation, sim-to-real",
+        "research_fit 58 ≥ 18",
+        "核心方向：humanoid_loco_manipulation, robot_data_scaling_sim2real",
+        "特定关键词：loco-manipulation, humanoid robot, bipedal robot",
+        "historical_value_score 82.7 ≥ 42.0",
+        "发表于 2024 年",
+        "同领域同年份引用标准化位于前 2.0%",
+        "阅读时效分 100/100（论文年龄 2 年）",
+        "OpenAlex FWCI 7.37",
+        "近 2 年年均引用 15.0；此前 1 年年均 1.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-24T03:31:57",
+        "Detected subtopics: sim_to_real, loco_manipulation",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: sim_to_real",
+        "Recently recommended: 2 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = loco_manipulation",
+        "Redundancy penalty: -2.8",
+        "recommendation_utility 85.9 = base 82.7 + affinity +6 + redundancy -2.8"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4401414436",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4401414436",
+        "openalex_id": "W4401414436",
+        "base_arxiv_id": null,
+        "doi": "10.1109/icra57147.2024.10610977",
+        "title": "Sim-to-Real Learning for Humanoid Box Loco-Manipulation",
+        "authors": [
+          "Jeremy Dao",
+          "Helei Duan",
+          "Alan Fern"
+        ],
+        "abstract": "In this work we propose a learning-based approach to box loco-manipulation for a humanoid robot. This is a particularly challenging problem due to the need for whole-body coordination in order to lift boxes of varying weight, position, and orientation while maintaining balance. To address this challenge, we present a sim-to-real reinforcement learning approach for training general box pickup and carrying skills for the bipedal robot Digit. Our reward functions are designed to produce the desired interactions with the box while also valuing balance and gait quality. We combine the learned skills into a full system for box loco-manipulation to achieve the task of moving boxes from one table to another with a variety of sizes, weights, and initial configurations. In addition to quantitative simulation results, we demonstrate successful sim-to-real transfer on the humanoid robot Digit. To our knowledge this is the first demonstration of a learned controller for such a task on real world hardware.",
+        "publication_date": "2024-05-13",
+        "publication_year": 2024,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9997000098228455
+          },
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9997000098228455
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9991000294685364
+          }
+        ],
+        "cited_by_count": 31,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 7.3671,
+        "citation_normalized_percentile": 0.97980774,
+        "referenced_works": [
+          "W2059114576",
+          "W2117425572",
+          "W2158782408",
+          "W2160455972",
+          "W2397222277",
+          "W2533352770",
+          "W2569791289",
+          "W2736601468",
+          "W2738358082",
+          "W2968340082",
+          "W3005451807",
+          "W3150249871",
+          "W3206620955",
+          "W3206762371",
+          "W3216930691",
+          "W4200235017",
+          "W4214634122",
+          "W4223604247",
+          "W4285471655",
+          "W4306893292",
+          "W4362654444",
+          "W4386136919",
+          "W4390480962",
+          "W4391021333",
+          "W6741002519",
+          "W6767548108",
+          "W6786146360",
+          "W6804602582",
+          "W6846358943"
+        ],
+        "related_works": [
+          "W1969923398",
+          "W2058170566",
+          "W2079911747",
+          "W2166024367",
+          "W2229312674",
+          "W2755342338",
+          "W2772917594",
+          "W2775347418",
+          "W2951359407",
+          "W3116076068"
+        ],
+        "discovery_source": [
+          "topic_search:humanoid loco manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:11",
+        "last_considered_at": "2026-10-01T19:07:33+08:00",
+        "recommended_at": "2026-10-01T19:07:33+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:31:57",
+        "openalex_url": "https://openalex.org/W4401414436",
+        "landing_page_url": "https://doi.org/10.1109/icra57147.2024.10610977",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 58,
+        "video_potential": 62,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "bipedal robot",
+          "sim-to-real"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot",
+              "bipedal robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, humanoid, loco-manipulation, sim-to-real"
+          }
+        ],
+        "historical_value_score": 82.7,
+        "historical_score_components": {
+          "research_relevance": 58.0,
+          "recency": 100.0,
+          "normalized_citation": 98.0,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2024 年",
+          "同领域同年份引用标准化位于前 2.0%",
+          "阅读时效分 100/100（论文年龄 2 年）",
+          "OpenAlex FWCI 7.37",
+          "近 2 年年均引用 15.0；此前 1 年年均 1.0",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "loco_manipulation"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -2.8,
+      "recommendation_base_score": 82.7,
+      "recommendation_utility": 85.9,
+      "days_since_same_subtopic": 2,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4401414436",
+        "base_id": "openalex:W4401414436",
+        "version": 1,
+        "title": "Sim-to-Real Learning for Humanoid Box Loco-Manipulation",
+        "authors": [
+          "Jeremy Dao",
+          "Helei Duan",
+          "Alan Fern"
+        ],
+        "published": "2024-05-13T00:00:00Z",
+        "updated": "2024-05-13T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "In this work we propose a learning-based approach to box loco-manipulation for a humanoid robot. This is a particularly challenging problem due to the need for whole-body coordination in order to lift boxes of varying weight, position, and orientation while maintaining balance. To address this challenge, we present a sim-to-real reinforcement learning approach for training general box pickup and carrying skills for the bipedal robot Digit. Our reward functions are designed to produce the desired interactions with the box while also valuing balance and gait quality. We combine the learned skills into a full system for box loco-manipulation to achieve the task of moving boxes from one table to another with a variety of sizes, weights, and initial configurations. In addition to quantitative simulation results, we demonstrate successful sim-to-real transfer on the humanoid robot Digit. To our knowledge this is the first demonstration of a learned controller for such a task on real world hardware.",
+        "abs_url": "https://doi.org/10.1109/icra57147.2024.10610977",
+        "pdf_url": "",
+        "research_fit": 58,
+        "video_potential": 62,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "humanoid robot",
+          "bipedal robot",
+          "sim-to-real"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "humanoid robot",
+              "bipedal robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, humanoid, loco-manipulation, sim-to-real"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
