@@ -1,0 +1,1075 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-02",
+  "generated_at": "2026-10-02T18:41:12+08:00",
+  "mode": "incremental",
+  "candidate_count": 5127,
+  "historical_candidate_count": 562,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 1,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2605.30226",
+      "title": "BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models",
+      "takeaway": "BORA targets real-robot adaptation of Vision-Language-Action (VLA) policies for dexterous manipulation, where high-DoF contact failures are hard to correct and online interaction is costly. It integrates an action-conditioned critic into a consistency-policy VLA, reuses that critic for frozen-base residual adaptation, and gathers corrective data via wearable arm-hand teleoperation plus a demonstration-guided local policy that converts coarse human intent into coordinated finger motions. Online rollouts and human corrections are mixed with offline data to update only a lightweight residual actor. On six real-world tasks across single-arm and bimanual platforms with two dexterous-hand models, 20 online trajectories per task raise average success from 60.8% to 82.5% on standard objects and 52% to 70% on held-out objects. Inspect how the residual actor is isolated and how intervention reliability is measured in bimanual twisting.",
+      "generated_at": "2026-10-02T10:49:25",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 78 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: VLA, vision-language-action, dexterous manipulation",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: offline_to_online_rl, dexterous_manipulation",
+        "Personal domain affinity: preferred (+6; matched dexterous manipulation)",
+        "Subtopic: dexterous_manipulation",
+        "Recently recommended: 3 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = offline_to_online_rl",
+        "Redundancy penalty: -2.8",
+        "recommendation_utility 81.2 = base 78.0 + affinity +6 + redundancy -2.8"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2605.30226",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "offline_to_online_rl",
+        "dexterous_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -2.8,
+      "recommendation_base_score": 78.0,
+      "recommendation_utility": 81.2,
+      "days_since_same_subtopic": 3,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2605.30226v3",
+        "base_id": "2605.30226",
+        "version": 3,
+        "title": "BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models",
+        "authors": [
+          "Zhongxi Chen",
+          "Yifan Han",
+          "Bin Qiu",
+          "Zhangliang Gao",
+          "Yanming Shao",
+          "Huanming Liu",
+          "Congsheng Xu",
+          "Xiaoyu Chen",
+          "Xingyu Ye",
+          "Yao Mu",
+          "Wenzhao Lian"
+        ],
+        "published": "2026-05-28T16:57:47Z",
+        "updated": "2026-10-01T11:35:49Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Vision-Language-Action (VLA) policies provide strong behavioral priors for dexterous manipulation, yet adapting them on real robots remains challenging because high-DoF contact failures are difficult for humans to correct and online interaction is expensive. We present BORA, an offline-to-online reinforcement learning system that integrates an action-conditioned critic into a consistency-policy VLA and reuses the learned critic for frozen-base residual adaptation. To obtain executable corrective data, BORA combines wearable arm--hand teleoperation with a demonstration-guided local policy that translates coarse human intent into coordinated, embodiment-specific finger motions for contact-rich skills. Online robot rollouts and human corrections are mixed with offline data to update only a lightweight residual actor, avoiding full-model fine-tuning. We evaluate BORA on six real-world tasks using single-arm and bimanual platforms equipped with two dexterous-hand models. With only 20 online trajectories per task, BORA improves average success from 60.8% to 82.5% on standard objects and from 52% to 70% on held-out objects, while policy assistance substantially improves intervention reliability in bimanual twisting. These results demonstrate a practical route from executable human correction to efficient real-robot VLA adaptation.",
+        "abs_url": "https://arxiv.org/abs/2605.30226v3",
+        "pdf_url": "https://arxiv.org/pdf/2605.30226v3",
+        "research_fit": 78,
+        "video_potential": 67,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action",
+          "online reinforcement learning",
+          "dexterous manipulation",
+          "dexterous hand"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "online reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation",
+              "dexterous hand"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "manipulation",
+              "dexterous manipulation",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "manipulation",
+              "dexterous manipulation",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, manipulation, dexterous manipulation, vision-language-action, teleoperation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "dexterous",
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, humanoid",
+        "research_fit 26 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：humanoid robotics, model predictive control, MPC",
+        "historical_value_score 73.6 ≥ 50.0",
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 1.6%",
+        "阅读时效分 90/100（论文年龄 3 年）",
+        "OpenAlex FWCI 6.94",
+        "近 2 年年均引用 31.0；此前 2 年年均 12.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-24T03:32:12",
+        "Detected subtopics: model_predictive_control",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 79.6 = base 73.6 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4319787917",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4319787917",
+        "openalex_id": "W4319787917",
+        "base_arxiv_id": null,
+        "doi": "10.1080/01691864.2023.2168134",
+        "title": "Model predictive control of legged and humanoid robots: models and algorithms",
+        "authors": [
+          "Sotaro Katayama",
+          "Masaki Murooka",
+          "Yuichi Tazaki"
+        ],
+        "abstract": "Model predictive control (MPC) of legged and humanoid robotic systems has been an active research topic in the past decade. While MPC for robotic systems has a long history, its paradigm such as problem formulations and algorithms has changed along with the recent drastic progress in robot hardware, computational processors, and algorithms. This survey paper reviews recent progress on MPC for legged and humanoid robotics from the following three points of view. First, we review a variety of dynamical models of robotic systems used in the MPC formulation. Second, we give an overview of MPC algorithms, particularly focusing on suitable ones for robotic problems. Finally, we introduce methods and applications of MPC for practical robotic problems from MPC based on reduced-order models to recent progress on MPC based on whole-body models.",
+        "publication_date": "2023-02-09",
+        "publication_year": 2023,
+        "source_name": "Advanced Robotics",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9995999932289124
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.9952999949455261
+          },
+          {
+            "id": "https://openalex.org/T10441",
+            "display_name": "Muscle Physiology and Disorders",
+            "score": 0.9811000227928162
+          }
+        ],
+        "cited_by_count": 86,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 49
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 6.9395,
+        "citation_normalized_percentile": 0.98353767,
+        "referenced_works": [
+          "W1431688706",
+          "W1535210759",
+          "W1552665521",
+          "W1562460111",
+          "W1603657390",
+          "W1874049655",
+          "W1945123189",
+          "W1966552874",
+          "W1968859249",
+          "W1969752069",
+          "W1970101292",
+          "W1971930153",
+          "W1973195195",
+          "W1980151151",
+          "W1986621758",
+          "W198732646",
+          "W1994275787",
+          "W1999502602",
+          "W2000535285",
+          "W2000975219",
+          "W2002804012",
+          "W2003132288",
+          "W2013439434",
+          "W2016468033",
+          "W2018860673",
+          "W2021848705",
+          "W2025752438",
+          "W2033480951",
+          "W2037678919",
+          "W2040164128",
+          "W2041434319",
+          "W2041550061",
+          "W2042408133",
+          "W2049670620",
+          "W2056223738",
+          "W2061983716",
+          "W2070507784",
+          "W2072241589",
+          "W2074042377",
+          "W2079995373",
+          "W2082056119",
+          "W2084891258",
+          "W2084959384",
+          "W2085897137",
+          "W2101340954",
+          "W2108447956",
+          "W2110194613",
+          "W2116528556",
+          "W2116773335",
+          "W2117271243",
+          "W2117402460",
+          "W2120693140",
+          "W2123871098",
+          "W2124659975",
+          "W2127895608",
+          "W2130527887",
+          "W2133304166",
+          "W2133859362",
+          "W2139372276",
+          "W2143729862",
+          "W2144351850",
+          "W2145148135",
+          "W2153190828",
+          "W2158058858",
+          "W2158782408",
+          "W2164957979",
+          "W2198582666",
+          "W2199168279",
+          "W2204604557",
+          "W2217484997",
+          "W2333533581",
+          "W2410758815",
+          "W2411798942",
+          "W2461181622",
+          "W2477962321",
+          "W2491414412",
+          "W2519452711",
+          "W2529220408",
+          "W2560504659",
+          "W2563439850",
+          "W2564178275",
+          "W2567729074",
+          "W2569324215",
+          "W2571129017",
+          "W2578079017",
+          "W2590305599",
+          "W2593996575",
+          "W2607001947",
+          "W2614308505",
+          "W2762555062",
+          "W2763052367",
+          "W2766984896",
+          "W2769646558",
+          "W2771123153",
+          "W2771495741",
+          "W2771691050",
+          "W2772157100",
+          "W2774990687",
+          "W2776302298",
+          "W2783824884",
+          "W2789286310",
+          "W2804452275",
+          "W2804623852",
+          "W2842089854",
+          "W2850053679",
+          "W2890933152",
+          "W2891095726",
+          "W2893725532",
+          "W2898868201",
+          "W2906487027",
+          "W2909331752",
+          "W2909553221",
+          "W2911477000",
+          "W2944561196",
+          "W2946514473",
+          "W2948652605",
+          "W2951069078",
+          "W2951805468",
+          "W2954730031",
+          "W2963536429",
+          "W2964111918",
+          "W2968213087",
+          "W2968827721",
+          "W2969111820",
+          "W2970053571",
+          "W2970228732",
+          "W2972798201",
+          "W2980301669",
+          "W3003712039",
+          "W3004162504",
+          "W3004201008",
+          "W3004240161",
+          "W3006866161",
+          "W3012148556",
+          "W3013679533",
+          "W3033272118",
+          "W3036870219",
+          "W3039843183",
+          "W3041042960",
+          "W3041567964",
+          "W3046286341",
+          "W3047960023",
+          "W3081791272",
+          "W3089750699",
+          "W3090207068",
+          "W3093326211",
+          "W3098680447",
+          "W3099530328",
+          "W3101144081",
+          "W3101798601",
+          "W3102212813",
+          "W3102337601",
+          "W3103075896",
+          "W3103727237",
+          "W3104730803",
+          "W3105372678",
+          "W3109186372",
+          "W3138294267",
+          "W3141339240",
+          "W3142410314",
+          "W3148610713",
+          "W3155272911",
+          "W3155859492",
+          "W3162655786",
+          "W3169802677",
+          "W3171189531",
+          "W3176455058",
+          "W3180158572",
+          "W3184213034",
+          "W3187891773",
+          "W3197219002",
+          "W3198442109",
+          "W3199300111",
+          "W3201707474",
+          "W3205843978",
+          "W3206338439",
+          "W3206363598",
+          "W3206363916",
+          "W3207305612",
+          "W3207637958",
+          "W3211963501",
+          "W393689543",
+          "W4200630450",
+          "W4210612168",
+          "W4210990956",
+          "W4232371162",
+          "W4233061490",
+          "W4239766304",
+          "W4246876444",
+          "W4249010688",
+          "W4250058668",
+          "W4255043376",
+          "W4285028015",
+          "W4285102283",
+          "W4287080408",
+          "W4287326512",
+          "W4301014524",
+          "W618254468"
+        ],
+        "related_works": [
+          "W1589423663",
+          "W1974803039",
+          "W1990079087",
+          "W1991876829",
+          "W2088677124",
+          "W2129850190",
+          "W2295425790",
+          "W2745063183",
+          "W4256317079",
+          "W4389009354"
+        ],
+        "discovery_source": [
+          "knowledge_map_search:humanoid locomotion manipulation survey",
+          "seed_graph:citing_works",
+          "topic_search:humanoid locomotion manipulation survey"
+        ],
+        "seed_paper_id": [
+          "openalex:W3093326211"
+        ],
+        "discovered_at": "2026-08-06T04:28:06",
+        "last_considered_at": "2026-10-02T18:41:12+08:00",
+        "recommended_at": "2026-10-02T18:41:12+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:32:12",
+        "openalex_url": "https://openalex.org/W4319787917",
+        "landing_page_url": "https://doi.org/10.1080/01691864.2023.2168134",
+        "open_access_url": "https://doi.org/10.1080/01691864.2023.2168134",
+        "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/01691864.2023.2168134?download=true",
+        "research_fit": 26,
+        "video_potential": 38,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robotics",
+          "model predictive control",
+          "MPC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robotics"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, humanoid"
+          }
+        ],
+        "historical_value_score": 73.6,
+        "historical_score_components": {
+          "research_relevance": 26.0,
+          "recency": 90.0,
+          "normalized_citation": 98.4,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2023 年",
+          "同领域同年份引用标准化位于前 1.6%",
+          "阅读时效分 90/100（论文年龄 3 年）",
+          "OpenAlex FWCI 6.94",
+          "近 2 年年均引用 31.0；此前 2 年年均 12.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "model_predictive_control"
+      ],
+      "document_type": "survey",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 73.6,
+      "recommendation_utility": 79.6,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4319787917",
+        "base_id": "openalex:W4319787917",
+        "version": 1,
+        "title": "Model predictive control of legged and humanoid robots: models and algorithms",
+        "authors": [
+          "Sotaro Katayama",
+          "Masaki Murooka",
+          "Yuichi Tazaki"
+        ],
+        "published": "2023-02-09T00:00:00Z",
+        "updated": "2023-02-09T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Model predictive control (MPC) of legged and humanoid robotic systems has been an active research topic in the past decade. While MPC for robotic systems has a long history, its paradigm such as problem formulations and algorithms has changed along with the recent drastic progress in robot hardware, computational processors, and algorithms. This survey paper reviews recent progress on MPC for legged and humanoid robotics from the following three points of view. First, we review a variety of dynamical models of robotic systems used in the MPC formulation. Second, we give an overview of MPC algorithms, particularly focusing on suitable ones for robotic problems. Finally, we introduce methods and applications of MPC for practical robotic problems from MPC based on reduced-order models to recent progress on MPC based on whole-body models.",
+        "abs_url": "https://doi.org/10.1080/01691864.2023.2168134",
+        "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/01691864.2023.2168134?download=true",
+        "research_fit": 26,
+        "video_potential": 38,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robotics",
+          "model predictive control",
+          "MPC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robotics"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, humanoid"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics, vision-language-action",
+        "research_fit 42 ≥ 18",
+        "核心方向：vla_robot_foundation, humanoid_loco_manipulation",
+        "特定关键词：vision-language-action",
+        "historical_value_score 76.2 ≥ 42.0",
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "阅读时效分 100/100（论文年龄 1 年）",
+        "OpenAlex FWCI 39.09",
+        "近年年均 OpenAlex 引用 16.5（无更早窗口可比较）",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-24T03:31:56",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0; matched navigation)",
+        "recommendation_utility 76.2 = base 76.2 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4414050442",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4414050442",
+        "openalex_id": "W4414050442",
+        "base_arxiv_id": null,
+        "doi": "10.15607/rss.2025.xxi.018",
+        "title": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+        "authors": [
+          "An‐Chieh Cheng",
+          "Yandong Ji",
+          "Zhaojing Yang",
+          "Zaitian Gongye",
+          "Xueyan Zou",
+          "Jan Kautz",
+          "Erdem Bıyık",
+          "Hongxu Yin",
+          "Sifei Liu",
+          "Xiaolong Wang"
+        ],
+        "abstract": "https://navila-bot.github",
+        "publication_date": "2025-06-21",
+        "publication_year": 2025,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9955000281333923
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9887999892234802
+          },
+          {
+            "id": "https://openalex.org/T13382",
+            "display_name": "Robotics and Automated Systems",
+            "score": 0.98580002784729
+          }
+        ],
+        "cited_by_count": 33,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 9
+          }
+        ],
+        "fwci": 39.0865,
+        "citation_normalized_percentile": 0.99866982,
+        "referenced_works": [],
+        "related_works": [
+          "W2083994890",
+          "W2093507260",
+          "W2122871747",
+          "W2360994936",
+          "W2369541203",
+          "W2378318959",
+          "W2523265608",
+          "W2562628082",
+          "W3081536868",
+          "W3114279067"
+        ],
+        "discovery_source": [
+          "topic_search:vision language action robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:09",
+        "last_considered_at": "2026-10-02T18:41:12+08:00",
+        "recommended_at": "2026-10-02T18:41:12+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:31:56",
+        "openalex_url": "https://openalex.org/W4414050442",
+        "landing_page_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "open_access_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "pdf_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "research_fit": 42,
+        "video_potential": 48,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "legged robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, vision-language-action"
+          }
+        ],
+        "historical_value_score": 76.2,
+        "historical_score_components": {
+          "research_relevance": 42.0,
+          "recency": 100.0,
+          "normalized_citation": 99.9,
+          "fwci": 100.0,
+          "citation_momentum": 82.5,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "阅读时效分 100/100（论文年龄 1 年）",
+          "OpenAlex FWCI 39.09",
+          "近年年均 OpenAlex 引用 16.5（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "vla_robot_foundation",
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 76.2,
+      "recommendation_utility": 76.2,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4414050442",
+        "base_id": "openalex:W4414050442",
+        "version": 1,
+        "title": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+        "authors": [
+          "An‐Chieh Cheng",
+          "Yandong Ji",
+          "Zhaojing Yang",
+          "Zaitian Gongye",
+          "Xueyan Zou",
+          "Jan Kautz",
+          "Erdem Bıyık",
+          "Hongxu Yin",
+          "Sifei Liu",
+          "Xiaolong Wang"
+        ],
+        "published": "2025-06-21T00:00:00Z",
+        "updated": "2025-06-21T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "https://navila-bot.github",
+        "abs_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "pdf_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "research_fit": 42,
+        "video_potential": 48,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "legged robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
