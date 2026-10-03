@@ -1,0 +1,880 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-03",
+  "generated_at": "2026-10-03T17:59:56+08:00",
+  "mode": "incremental",
+  "candidate_count": 5017,
+  "historical_candidate_count": 562,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 1,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W4414198610",
+      "title": "Vision-Language-Action Models for Robotics: A Review Towards Real-World Applications",
+      "takeaway": "This survey reviews Vision-Language-Action (VLA) models for robotics as a full-stack integration of software and hardware, rather than focusing narrowly on action representations or high-level architectures. It organizes the literature around strategy and architectural transition, architectures and building blocks, modality-specific processing techniques, and learning paradigms, then extends to robot platforms, data collection strategies, publicly available datasets, data augmentation methods, and evaluation benchmarks for real-world deployment. The authors frame the goal as practical guidance for applying VLAs to real-world robotic systems, and they provide a project website with references categorized by training approach, evaluation method, modality, and dataset. Read it as a knowledge map for locating work across the VLA stack and for tracing how data, evaluation, and platforms connect to deployment.",
+      "generated_at": "2026-10-03T10:07:40",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, vision-language-action",
+        "research_fit 32 ≥ 18",
+        "核心方向：vla_robot_foundation",
+        "特定关键词：vision-language-action, VLA",
+        "historical_value_score 77.6 ≥ 50.0",
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 0.2%",
+        "阅读时效分 100/100（论文年龄 1 年）",
+        "OpenAlex FWCI 23.14",
+        "近年年均 OpenAlex 引用 25.0（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-24T03:32:01",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 77.6 = base 77.6 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4414198610",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4414198610",
+        "openalex_id": "W4414198610",
+        "base_arxiv_id": "2510.07077",
+        "doi": "10.1109/access.2025.3609980",
+        "title": "Vision-Language-Action Models for Robotics: A Review Towards Real-World Applications",
+        "authors": [
+          "Kento Kawaharazuka",
+          "Jihoon Oh",
+          "Jun Yamada",
+          "Ingmar Posner",
+          "Yuke Zhu"
+        ],
+        "abstract": "Amid growing efforts to leverage advances in large language models (LLMs) and visionlanguage models (VLMs) for robotics, Vision-Language-Action (VLA) models have recently gained significant attention. By unifying vision, language, and action data at scale, which have traditionally been studied separately, VLA models aim to learn policies that generalise across diverse tasks, objects, embodiments, and environments. This generalisation capability is expected to enable robots to solve novel downstream tasks with minimal or no additional task-specific data, facilitating more flexible and scalable real-world deployment. Unlike previous surveys that focus narrowly on action representations or high-level model architectures, this work offers a comprehensive, full-stack review, integrating both software and hardware components of VLA systems. In particular, this paper provides a systematic review of VLAs, covering their strategy and architectural transition, architectures and building blocks, modality-specific processing techniques, and learning paradigms. In addition, to support the deployment of VLAs in real-world robotic applications, we also review commonly used robot platforms, data collection strategies, publicly available datasets, data augmentation methods, and evaluation benchmarks. Throughout this comprehensive survey, this paper aims to offer practical guidance for the robotics community in applying VLAs to real-world robotic systems. All references categorized by training approach, evaluation method, modality, and dataset are available in the table on our project website: https://vla-survey.github.io.",
+        "publication_date": "2025-01-01",
+        "publication_year": 2025,
+        "source_name": "IEEE Access",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.9717000126838684
+          },
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9190999865531921
+          }
+        ],
+        "cited_by_count": 50,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 44
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          }
+        ],
+        "fwci": 23.1425,
+        "citation_normalized_percentile": 0.99751423,
+        "referenced_works": [
+          "W1861492603",
+          "W1933349210",
+          "W2064675550",
+          "W2082511574",
+          "W2108598243",
+          "W2117539524",
+          "W2158782408",
+          "W2169203263",
+          "W2194775991",
+          "W2221677593",
+          "W2560609797",
+          "W2625366777",
+          "W2760103357",
+          "W2963150697",
+          "W2978956737",
+          "W2984008963",
+          "W3007769740",
+          "W3008303301",
+          "W3009928773",
+          "W3034201026",
+          "W3034891989",
+          "W3035198432",
+          "W3035564946",
+          "W3035624836",
+          "W3109585842",
+          "W3109908659",
+          "W3111482008",
+          "W3111535274",
+          "W3117476483",
+          "W3159481202",
+          "W3173598197",
+          "W3180355996",
+          "W3196974791",
+          "W3202237431",
+          "W3204665606",
+          "W3205786327",
+          "W3206200647",
+          "W3207758636",
+          "W3215023725",
+          "W4285117889",
+          "W4285218426",
+          "W4285225959",
+          "W4312424618",
+          "W4312933868",
+          "W4313024976",
+          "W4313026212",
+          "W4313031313",
+          "W4313156423",
+          "W4367016688",
+          "W4383097638",
+          "W4383108880",
+          "W4383109478",
+          "W4383172031",
+          "W4385245566",
+          "W4385318467",
+          "W4385403811",
+          "W4385403813",
+          "W4385403849",
+          "W4385430538",
+          "W4385430559",
+          "W4385430618",
+          "W4385430674",
+          "W4385430679",
+          "W4385430685",
+          "W4386065350",
+          "W4386065512",
+          "W4386071604",
+          "W4386076215",
+          "W4386076519",
+          "W4386076611",
+          "W4386858201",
+          "W4388240421",
+          "W4390778533",
+          "W4390872297",
+          "W4390872744",
+          "W4390873312",
+          "W4390874575",
+          "W4391759936",
+          "W4401415042",
+          "W4401415287",
+          "W4401415385",
+          "W4401415888",
+          "W4401416041",
+          "W4401416214",
+          "W4401417422",
+          "W4401751184",
+          "W4402353985",
+          "W4402353989",
+          "W4402353990",
+          "W4402354026",
+          "W4402354028",
+          "W4402354047",
+          "W4402354083",
+          "W4402354093",
+          "W4402354098",
+          "W4402354112",
+          "W4402354126",
+          "W4402354127",
+          "W4402354155",
+          "W4402354166",
+          "W4402672034",
+          "W4402727359",
+          "W4402727516",
+          "W4402727574",
+          "W4402727748",
+          "W4402727885",
+          "W4402753857",
+          "W4402753923",
+          "W4402776554",
+          "W4402890475",
+          "W4403448419",
+          "W4403878347",
+          "W4403888324",
+          "W4403906568",
+          "W4404612908",
+          "W4405784982",
+          "W4405785717",
+          "W4406094089",
+          "W4407874080",
+          "W4409147637",
+          "W4409264011",
+          "W4410297918",
+          "W4410297957",
+          "W4411449683",
+          "W4412945325",
+          "W4413144615",
+          "W4413144616",
+          "W4413145744",
+          "W4413146161",
+          "W4413146238",
+          "W4413147106",
+          "W4413147456",
+          "W4413147462",
+          "W4413147595",
+          "W4413147844",
+          "W4413156213",
+          "W4413361394",
+          "W4413917393",
+          "W4413917725",
+          "W4413925228",
+          "W4413925370",
+          "W4414050442",
+          "W4414050589",
+          "W4414050712",
+          "W4414050913",
+          "W4414050921",
+          "W4414050936",
+          "W4414051084",
+          "W4414051092",
+          "W4414079054",
+          "W4414079221",
+          "W4414079258",
+          "W4414079285"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "knowledge_map_search:VLA robotics survey",
+          "topic_search:VLA robotics survey",
+          "topic_search:vision language action robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:09",
+        "last_considered_at": "2026-10-03T17:59:56+08:00",
+        "recommended_at": "2026-10-03T17:59:56+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:32:01",
+        "openalex_url": "https://openalex.org/W4414198610",
+        "landing_page_url": "https://doi.org/10.1109/access.2025.3609980",
+        "open_access_url": "https://doi.org/10.1109/access.2025.3609980",
+        "pdf_url": null,
+        "research_fit": 32,
+        "video_potential": 14,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, vision-language-action"
+          }
+        ],
+        "historical_value_score": 77.6,
+        "historical_score_components": {
+          "research_relevance": 32.0,
+          "recency": 100.0,
+          "normalized_citation": 99.8,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 0.2%",
+          "阅读时效分 100/100（论文年龄 1 年）",
+          "OpenAlex FWCI 23.14",
+          "近年年均 OpenAlex 引用 25.0（无更早窗口可比较）",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "survey",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 77.6,
+      "recommendation_utility": 77.6,
+      "days_since_same_subtopic": 45,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2510.07077",
+        "base_id": "2510.07077",
+        "version": 1,
+        "title": "Vision-Language-Action Models for Robotics: A Review Towards Real-World Applications",
+        "authors": [
+          "Kento Kawaharazuka",
+          "Jihoon Oh",
+          "Jun Yamada",
+          "Ingmar Posner",
+          "Yuke Zhu"
+        ],
+        "published": "2025-01-01T00:00:00Z",
+        "updated": "2025-01-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Amid growing efforts to leverage advances in large language models (LLMs) and visionlanguage models (VLMs) for robotics, Vision-Language-Action (VLA) models have recently gained significant attention. By unifying vision, language, and action data at scale, which have traditionally been studied separately, VLA models aim to learn policies that generalise across diverse tasks, objects, embodiments, and environments. This generalisation capability is expected to enable robots to solve novel downstream tasks with minimal or no additional task-specific data, facilitating more flexible and scalable real-world deployment. Unlike previous surveys that focus narrowly on action representations or high-level model architectures, this work offers a comprehensive, full-stack review, integrating both software and hardware components of VLA systems. In particular, this paper provides a systematic review of VLAs, covering their strategy and architectural transition, architectures and building blocks, modality-specific processing techniques, and learning paradigms. In addition, to support the deployment of VLAs in real-world robotic applications, we also review commonly used robot platforms, data collection strategies, publicly available datasets, data augmentation methods, and evaluation benchmarks. Throughout this comprehensive survey, this paper aims to offer practical guidance for the robotics community in applying VLAs to real-world robotic systems. All references categorized by training approach, evaluation method, modality, and dataset are available in the table on our project website: https://vla-survey.github.io.",
+        "abs_url": "https://arxiv.org/abs/2510.07077",
+        "pdf_url": "https://arxiv.org/pdf/2510.07077",
+        "research_fit": 32,
+        "video_potential": 14,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotics, manipulation, dexterous manipulation",
+        "research_fit 28 ≥ 18",
+        "核心方向：dexterous_multimodal_manipulation",
+        "特定关键词：dexterous manipulation, bimanual manipulation",
+        "historical_value_score 71.9 ≥ 42.0",
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 3.6%",
+        "阅读时效分 90/100（论文年龄 3 年）",
+        "OpenAlex FWCI 4.91",
+        "近 2 年年均引用 18.5；此前 1 年年均 7.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-17T03:28:27",
+        "Detected subtopics: dexterous_manipulation, bimanual_manipulation",
+        "Personal domain affinity: preferred (+6; matched dexterous manipulation, bimanual manipulation)",
+        "Subtopic: dexterous_manipulation",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = bimanual_manipulation",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 73.7 = base 71.9 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4389352485",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4389352485",
+        "openalex_id": "W4389352485",
+        "base_arxiv_id": null,
+        "doi": "10.1109/tpami.2023.3339515",
+        "title": "Bi-DexHands: Towards Human-Level Bimanual Dexterous Manipulation",
+        "authors": [
+          "Yuanpei Chen",
+          "Yiran Geng",
+          "Fangwei Zhong",
+          "Jiaming Ji",
+          "Jiechuang Jiang",
+          "Zongqing Lu",
+          "Hao Dong",
+          "Yaodong Yang"
+        ],
+        "abstract": "Achieving human-level dexterity in robotics remains a critical open problem. Even simple dexterous manipulation tasks pose significant difficulties due to the high number of degrees of freedom and the need for cooperation among heterogeneous agents (e.g., finger joints). While some researchers have utilized reinforcement learning (RL) to control a single hand in manipulating objects, tasks that require coordinated bimanual cooperation are still under-explored due to the fewer suitable environments, which can result in difficulties and sub-optimal performance. To address these challenges, we introduce Bi-DexHands, a simulator with two dexterous hands featuring 20 bimanual manipulation tasks and thousands of target objects, designed to match various levels of human motor skills based on cognitive science research. We developed Bi-DexHands in Issac Gym, enabling highly efficient RL training at over 30,000 frames per second using a single NVIDIA RTX 3090. Based on Bi-DexHands, we present a comprehensive evaluation of popular RL algorithms in different settings, including single-agent/multi-agent RL, offline RL, multi-task RL, and meta RL. Our findings show that on-policy algorithms, such as PPO, can master simple manipulation tasks that correspond to those of 48-month-old babies, such as catching a flying object or opening a bottle. Furthermore, multi-agent RL can improve the ability to perform manipulations that require skilled bimanual cooperation, such as lifting a pot or stacking blocks. Despite achieving success in individual tasks, current RL algorithms struggle to learn multiple manipulation skills in most multi-task and few-shot learning scenarios. This highlights the need for further research and development within the RL community.",
+        "publication_date": "2023-12-05",
+        "publication_year": 2023,
+        "source_name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9998000264167786
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9995999932289124
+          },
+          {
+            "id": "https://openalex.org/T10982",
+            "display_name": "Motor Control and Adaptation",
+            "score": 0.9391999840736389
+          }
+        ],
+        "cited_by_count": 44,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          }
+        ],
+        "fwci": 4.9075,
+        "citation_normalized_percentile": 0.96351704,
+        "referenced_works": [
+          "W1820657498",
+          "W2036637075",
+          "W2054329580",
+          "W2112036576",
+          "W2123459560",
+          "W2147168033",
+          "W2416041116",
+          "W2490860936",
+          "W2526622367",
+          "W2578206533",
+          "W2592538810",
+          "W2603737562",
+          "W2609356747",
+          "W2612144999",
+          "W2736374714",
+          "W2736601468",
+          "W2752997159",
+          "W2781585732",
+          "W2904246096",
+          "W2950069298",
+          "W2963411833",
+          "W2963921470",
+          "W2968340082",
+          "W2968883249",
+          "W2981030070",
+          "W3007769740",
+          "W3016525976",
+          "W3035624836",
+          "W3088304681",
+          "W3099689767",
+          "W3107615218",
+          "W3189615635",
+          "W3204192621",
+          "W3207033324",
+          "W3207612633",
+          "W3209493138",
+          "W4200213509",
+          "W4210880286",
+          "W4221150278",
+          "W4225003209",
+          "W4226167593",
+          "W4226173320",
+          "W4232977134",
+          "W4286748781",
+          "W4288594419",
+          "W4293469469",
+          "W4300443914",
+          "W4383066208",
+          "W4383108731",
+          "W6638018090",
+          "W6678474417",
+          "W6684921986",
+          "W6720501231",
+          "W6731982132",
+          "W6734065107",
+          "W6738796088",
+          "W6741002519",
+          "W6747387971",
+          "W6748839928",
+          "W6755476724",
+          "W6757469721",
+          "W6757592117",
+          "W6758846586",
+          "W6763422710",
+          "W6769596995",
+          "W6771398375",
+          "W6776601253",
+          "W6780559895",
+          "W6782754186",
+          "W6782766965",
+          "W6784313279",
+          "W6786364697",
+          "W6795908048",
+          "W6796589144",
+          "W6797154179",
+          "W6800004206",
+          "W6800682094",
+          "W6802002411",
+          "W6802659552",
+          "W6802977921",
+          "W6803178138",
+          "W6809908765",
+          "W6810655313",
+          "W6811371106",
+          "W6840380725",
+          "W6844628001"
+        ],
+        "related_works": [
+          "W1585007175",
+          "W2382521049",
+          "W4306904969",
+          "W2144385241",
+          "W2138720691",
+          "W4362501864",
+          "W4380318855",
+          "W2031695474",
+          "W2024136090",
+          "W4300101996"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W2123459560"
+        ],
+        "discovered_at": "2026-08-17T03:28:27",
+        "last_considered_at": "2026-10-03T17:59:56+08:00",
+        "recommended_at": "2026-10-03T17:59:56+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-17T03:28:27",
+        "openalex_url": "https://openalex.org/W4389352485",
+        "landing_page_url": "https://doi.org/10.1109/tpami.2023.3339515",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 28,
+        "video_potential": 41,
+        "matched_topics": [
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "dexterous manipulation",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation",
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, dexterous manipulation"
+          }
+        ],
+        "historical_value_score": 71.9,
+        "historical_score_components": {
+          "research_relevance": 28.0,
+          "recency": 90.0,
+          "normalized_citation": 96.4,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2023 年",
+          "同领域同年份引用标准化位于前 3.6%",
+          "阅读时效分 90/100（论文年龄 3 年）",
+          "OpenAlex FWCI 4.91",
+          "近 2 年年均引用 18.5；此前 1 年年均 7.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "dexterous_manipulation",
+        "bimanual_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 71.9,
+      "recommendation_utility": 73.7,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4389352485",
+        "base_id": "openalex:W4389352485",
+        "version": 1,
+        "title": "Bi-DexHands: Towards Human-Level Bimanual Dexterous Manipulation",
+        "authors": [
+          "Yuanpei Chen",
+          "Yiran Geng",
+          "Fangwei Zhong",
+          "Jiaming Ji",
+          "Jiechuang Jiang",
+          "Zongqing Lu",
+          "Hao Dong",
+          "Yaodong Yang"
+        ],
+        "published": "2023-12-05T00:00:00Z",
+        "updated": "2023-12-05T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Achieving human-level dexterity in robotics remains a critical open problem. Even simple dexterous manipulation tasks pose significant difficulties due to the high number of degrees of freedom and the need for cooperation among heterogeneous agents (e.g., finger joints). While some researchers have utilized reinforcement learning (RL) to control a single hand in manipulating objects, tasks that require coordinated bimanual cooperation are still under-explored due to the fewer suitable environments, which can result in difficulties and sub-optimal performance. To address these challenges, we introduce Bi-DexHands, a simulator with two dexterous hands featuring 20 bimanual manipulation tasks and thousands of target objects, designed to match various levels of human motor skills based on cognitive science research. We developed Bi-DexHands in Issac Gym, enabling highly efficient RL training at over 30,000 frames per second using a single NVIDIA RTX 3090. Based on Bi-DexHands, we present a comprehensive evaluation of popular RL algorithms in different settings, including single-agent/multi-agent RL, offline RL, multi-task RL, and meta RL. Our findings show that on-policy algorithms, such as PPO, can master simple manipulation tasks that correspond to those of 48-month-old babies, such as catching a flying object or opening a bottle. Furthermore, multi-agent RL can improve the ability to perform manipulations that require skilled bimanual cooperation, such as lifting a pot or stacking blocks. Despite achieving success in individual tasks, current RL algorithms struggle to learn multiple manipulation skills in most multi-task and few-shot learning scenarios. This highlights the need for further research and development within the RL community.",
+        "abs_url": "https://doi.org/10.1109/tpami.2023.3339515",
+        "pdf_url": "",
+        "research_fit": 28,
+        "video_potential": 41,
+        "matched_topics": [
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "dexterous manipulation",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation",
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, dexterous manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
