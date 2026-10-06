@@ -1,0 +1,670 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-06",
+  "generated_at": "2026-10-06T19:27:16+08:00",
+  "mode": "incremental",
+  "candidate_count": 4688,
+  "historical_candidate_count": 598,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 1,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2610.06850",
+      "title": "InterMimicGen: Scaling Humanoid Loco-Manipulation through Self-Evolving Motion Imitation",
+      "takeaway": "InterMimicGen targets the scarcity and heterogeneity of captured human-object interaction data for humanoid loco-manipulation by consolidating motion-capture datasets and retargeting them into humanoid references that preserve whole-body coordination and dexterous hand-object relationships. A physics-based generalist tracker executes these references in simulation on a humanoid with dexterous hands, and a data flywheel then makes small task-preserving edits to where and how interactions occur, fine-tunes the tracker, and retains only variants whose simulated execution completes the task. The abstract reports contact-preserving retargeting across robot configurations, broad tracking with a single generalist policy, growing executable motions over augmentation rounds, and transfer to real robots. Inspect how task semantics and motion quality are preserved as edits compound.",
+      "generated_at": "2026-10-06T11:34:24",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2610.06271",
+      "title": "VLA-ZO: Fast Zeroth-Order Adaptation for Vision-Language-Action Models",
+      "takeaway": "VLA-ZO addresses deployment-time distribution shifts in vision-language-action models, where first-order adaptation can exceed the memory budget of inference-oriented platforms and naive zeroth-order optimization needs too many perturbation queries to be fast. The framework confines adaptation to the action side, keeps the vision-language prefix frozen, reuses its conditioning states across perturbation queries and optimizer steps, and uses schedule-aware prefetching to hide state-transfer overhead. On LIBERO camera-viewpoint shifts, the abstract reports 25.59x and 32.54x end-to-end adaptation-time reductions at q=16 and q=64 versus baseline ZO, with average task success rising from 48.27% without adaptation to 58.17% and 63.58%. Inspect how conditioning-state reuse interacts with query budget.",
+      "generated_at": "2026-10-06T11:34:24",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7212056598",
+      "title": "Anti-Gravity Walking by a Flying Humanoid Robot via Thrust-Rate Input Whole-Body Model Predictive Control",
+      "takeaway": "This work enables anti-gravity bipedal walking for a flying humanoid, where whole-body MPC is effective but contact switching during walking causes discontinuous dynamic-structure changes and thrust spikes that destabilize control. The authors formulate whole-body MPC with thrust-rate as the control input, which keeps the thrust trajectory continuous across contact switching while preserving the sparse structure of the optimal control problem for fast computation, and they add lower bounds on the foot-normal contact-force component that are smoothly transferred during double support. Simulation and a hardware experiment demonstrate anti-gravity walking, described as a first demonstration of multi-contact whole-body MPC for a transformable aerial robot and of walking by a flying humanoid beyond the ground. Inspect the thrust-rate formulation and contact-force transfer.",
+      "generated_at": "2026-10-06T11:34:24",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 69 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: loco-manipulation, motion imitation, humanoid robot",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: loco_manipulation, dexterous_manipulation",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: dexterous_manipulation",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = loco_manipulation",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 70.8 = base 69.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.06850",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "loco_manipulation",
+        "dexterous_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 69.0,
+      "recommendation_utility": 70.8,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.06850v1",
+        "base_id": "2610.06850",
+        "version": 1,
+        "title": "InterMimicGen: Scaling Humanoid Loco-Manipulation through Self-Evolving Motion Imitation",
+        "authors": [
+          "Yucheng Zhang",
+          "Sirui Xu",
+          "Jinhong Li",
+          "Liuyu Bian",
+          "Anatulya Nandi",
+          "Derek Zhang",
+          "Xiangchen Liu",
+          "Xueting Li",
+          "Umar Iqbal",
+          "Yu-Xiong Wang",
+          "Liang-Yan Gui"
+        ],
+        "published": "2026-10-05T17:59:50Z",
+        "updated": "2026-10-05T17:59:50Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.CV",
+          "cs.GR"
+        ],
+        "summary": "Captured human-object interactions provide rich supervision for humanoid loco-manipulation, but they are sparse, heterogeneous, and not directly executable by robots. We introduce InterMimicGen, a self-evolving motion-imitation framework in which robot motion data and a tracking policy improve each other. First, we consolidate motion-captured human-object interaction datasets and retarget them into humanoid robot references while preserving whole-body coordination and dexterous hand-object relationships. This produces a large and diverse humanoid robot reference collection for dexterous whole-body loco-manipulation. Second, we train a physics-based generalist tracker that executes these references in simulation on a humanoid with dexterous hands, covering a scale and diversity beyond prior humanoid tracking systems for loco-manipulation. Third, we close a data flywheel: each round makes small, task-preserving changes to where an interaction takes place and how the body performs it, fine-tunes the tracker on them, and keeps only the variants whose simulated execution completes the task, which seed the next round. With more iterations, these small edits compound into broader coverage around the sparse original demonstrations while preserving task semantics and motion quality. Experiments show contact-preserving retargeting across robot configurations, broad tracking with a single generalist policy, executable motions that keep growing over augmentation rounds, and transfer to real robots. InterMimicGen provides a unified path from heterogeneous human demonstrations to a continually expanding motion resource for humanoid robot learning.",
+        "abs_url": "https://arxiv.org/abs/2610.06850v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.06850v1",
+        "research_fit": 69,
+        "video_potential": 55,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "motion imitation",
+          "humanoid robot",
+          "robot learning",
+          "dexterous hand"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation",
+              "motion imitation",
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous hand"
+            ],
+            "location": "abstract",
+            "points": 5.9
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, manipulation, humanoid, loco-manipulation, robot learning"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 17.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "whole-body",
+              "dexterous"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 52 ≥ 40",
+        "Core topics matched: vla_robot_foundation",
+        "Specific keywords matched: vision-language-action, VLA",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.06271",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 52.0,
+      "recommendation_utility": 52.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.06271v1",
+        "base_id": "2610.06271",
+        "version": 1,
+        "title": "VLA-ZO: Fast Zeroth-Order Adaptation for Vision-Language-Action Models",
+        "authors": [
+          "Jaemin Kim",
+          "Jiahn Kim",
+          "Taesik Gong"
+        ],
+        "published": "2026-10-05T13:05:34Z",
+        "updated": "2026-10-05T13:05:34Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Adapting vision-language-action (VLA) models to deployment-time distribution shifts is important for reliable robotic operation, but conventional first-order adaptation can exceed the memory budget of inference-oriented deployment platforms. Zeroth-order (ZO) optimization offers a forward-only alternative with inference-level memory, but accurate gradient estimation requires many perturbation queries, making naive ZO prohibitively slow for large VLA models. We present VLA-ZO, a framework for fast ZO adaptation that exploits the structure of VLA computation. By confining adaptation to the action side, VLA-ZO keeps the expensive vision-language prefix frozen and reuses its conditioning states across perturbation queries and optimizer steps, while schedule-aware prefetching hides state-transfer overhead. On LIBERO camera-viewpoint shifts, VLA-ZO reduces end-to-end adaptation time by 25.59$\\times$ at $q=16$ and 32.54$\\times$ at $q=64$ relative to baseline ZO, while improving average task success from 48.27% without adaptation to 58.17% and 63.58%, respectively. These results show that making ZO faster can make larger query budgets practical, providing a promising path toward resource-efficient VLA adaptation on deployment platforms.",
+        "abs_url": "https://arxiv.org/abs/2610.06271v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.06271v1",
+        "research_fit": 52,
+        "video_potential": 13,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotic",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotic",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotic, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 42 ≥ 35",
+        "Core topics matched: humanoid_loco_manipulation",
+        "Specific keywords matched: humanoid robot, model predictive control, MPC",
+        "Detected subtopics: model_predictive_control, trajectory_optimization",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "Subtopic: model_predictive_control",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = trajectory_optimization",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 43.8 = base 42.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7212056598",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7212056598",
+        "openalex_id": "W7212056598",
+        "base_arxiv_id": "2609.07544",
+        "doi": "10.1109/lra.2026.3734888",
+        "title": "Anti-Gravity Walking by a Flying Humanoid Robot via Thrust-Rate Input Whole-Body Model Predictive Control",
+        "authors": [
+          "Kazuki Sugihara",
+          "Kei Okada"
+        ],
+        "abstract": "Flying humanoids are expected to perform tasks in diverse environments, while their existing locomotion is mainly limited to aerial flight and ground walking. The capability to move in complex three-dimensional space can greatly expand their application range. For such walking motion on ceilings and similar anti-gravity environments, whole-body MPC is effective. However, the discontinuous changes in dynamic structure accompanying contact switching during walking can induce thrust spikes, resulting in control instability. Therefore, in this work, we propose and implement a real-time whole-body MPC framework for anti-gravity bipedal walking. First, we formulate whole-body MPC using the time derivative of thrust, namely thrust-rate, as the control input. This formulation guarantees continuity of the thrust trajectory during contact switching while preserving the sparse structure of the optimal control problem for fast computation. Second, we address the lack of natural support forces in anti-gravity environments. We introduce lower bounds on the foot-normal component of the contact force, and smoothly transfer them during the doublesupport phase. Finally, we implement the proposed framework and demonstrate anti-gravity walking by a flying humanoid through simulation and a hardware experiment. To the best of our knowledge, this is the first demonstration of multi-contact whole-body MPC for a transformable aerial robot and walking by a flying humanoid beyond the ground.",
+        "publication_date": "2026-09-18",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9873999953269958
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.002199999988079071
+          },
+          {
+            "id": "https://openalex.org/T12290",
+            "display_name": "Human Motion and Animation",
+            "score": 0.0013000000035390258
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.68740982,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-05T09:30:50",
+        "last_considered_at": "2026-10-06T19:27:16+08:00",
+        "recommended_at": "2026-10-06T19:27:16+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-10-05T09:30:50",
+        "openalex_url": "https://openalex.org/W7212056598",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3734888",
+        "open_access_url": "https://arxiv.org/abs/2609.07544",
+        "pdf_url": "https://arxiv.org/pdf/2609.07544",
+        "research_fit": 42,
+        "video_potential": 64,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "model predictive control",
+          "MPC",
+          "optimal control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC",
+              "optimal control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, humanoid"
+          }
+        ],
+        "historical_value_score": 57.9,
+        "historical_score_components": {
+          "research_relevance": 42.0,
+          "recency": 100.0,
+          "normalized_citation": 68.7,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 31.3%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "model_predictive_control",
+        "trajectory_optimization"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 42.0,
+      "recommendation_utility": 43.8,
+      "days_since_same_subtopic": 4,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.07544",
+        "base_id": "2609.07544",
+        "version": 1,
+        "title": "Anti-Gravity Walking by a Flying Humanoid Robot via Thrust-Rate Input Whole-Body Model Predictive Control",
+        "authors": [
+          "Kazuki Sugihara",
+          "Kei Okada"
+        ],
+        "published": "2026-09-18T00:00:00Z",
+        "updated": "2026-09-18T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Flying humanoids are expected to perform tasks in diverse environments, while their existing locomotion is mainly limited to aerial flight and ground walking. The capability to move in complex three-dimensional space can greatly expand their application range. For such walking motion on ceilings and similar anti-gravity environments, whole-body MPC is effective. However, the discontinuous changes in dynamic structure accompanying contact switching during walking can induce thrust spikes, resulting in control instability. Therefore, in this work, we propose and implement a real-time whole-body MPC framework for anti-gravity bipedal walking. First, we formulate whole-body MPC using the time derivative of thrust, namely thrust-rate, as the control input. This formulation guarantees continuity of the thrust trajectory during contact switching while preserving the sparse structure of the optimal control problem for fast computation. Second, we address the lack of natural support forces in anti-gravity environments. We introduce lower bounds on the foot-normal component of the contact force, and smoothly transfer them during the doublesupport phase. Finally, we implement the proposed framework and demonstrate anti-gravity walking by a flying humanoid through simulation and a hardware experiment. To the best of our knowledge, this is the first demonstration of multi-contact whole-body MPC for a transformable aerial robot and walking by a flying humanoid beyond the ground.",
+        "abs_url": "https://arxiv.org/abs/2609.07544",
+        "pdf_url": "https://arxiv.org/pdf/2609.07544",
+        "research_fit": 42,
+        "video_potential": 64,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "model predictive control",
+          "MPC",
+          "optimal control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC",
+              "optimal control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, humanoid"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
