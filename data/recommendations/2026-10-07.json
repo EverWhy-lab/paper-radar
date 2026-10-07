@@ -1,0 +1,897 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-07",
+  "generated_at": "2026-10-07T19:17:04+08:00",
+  "mode": "incremental",
+  "candidate_count": 4521,
+  "historical_candidate_count": 598,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2610.08220",
+      "title": "VOMMI: Collecting and Leveraging Portable Demonstrations for Mobile Manipulation",
+      "takeaway": "VOMMI targets the scarcity of mobile-manipulation data by collecting portable RGB demonstrations without teleoperation or extra sensing hardware, then linking them to VLA post-training through offline trajectory reconstruction and online visual-motion conditioning. It synchronizes body and hand views without human-robot kinematic correspondence calibration, while R2-VO refines trajectories with sparse geometric anchors and emits causal local-motion tokens that an action-group residual adapter injects only into the base branch. With 500 portable trajectories per task, 75 held out for RGB-VO evaluation, and 200 robot demonstrations as references, the post-trained policy reports 18.2% lower base-velocity error than one trained on robot-collected demonstrations, comparable end-effector translation accuracy, 24.6% average offline trajectory-error reduction, and an 8.3 percentage-point mean success-rate gain over OpenPI 0.5 across three real-robot tasks. Inspect how the residual adapter isolates base control.",
+      "generated_at": "2026-10-07T11:23:59",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2610.08737",
+      "title": "PhoneBot: A Low-Cost Open Humanoid Robot Platform Reusing Smartphones",
+      "takeaway": "PhoneBot addresses the cost, sensing, and computation barriers that limit humanoid robots in education and research by repurposing a commodity smartphone as the primary sensing and computing unit. The platform pairs a modular lower body driven by 13 low-cost actuators with a torso-mounted smartphone whose integrated IMU, camera, wireless connectivity, and onboard processing support perception, control computation, and user interaction, alongside a described mechanical design, software architecture, and real-time communication framework. Reported evaluations demonstrate reliable walking, perception-driven interaction, and deployment using off-the-shelf consumer smartphones, with capabilities including vision-based human following, conversational interaction, filming, and mobile telepresence. The hardware and software designs are fully open-source; inspect the actuator selection and how smartphone sensing closes the locomotion loop.",
+      "generated_at": "2026-10-07T11:23:59",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2610.08332",
+      "title": "SC3BF: Shifted Collision Cone Control Barrier Function for Dynamic Obstacle Avoidance",
+      "takeaway": "SC3BF addresses the conservatism of velocity-space control barrier functions built on the collision cone, which reject every relative velocity directed into an obstacle regardless of speed. It adds a state-dependent allowance to the cone condition so the robot may approach at a rate growing with distance and its own speed, enforced through an ordinary quadratic program whose safe set is forward invariant under bounded inputs without a minimum forward speed or clearance margin; the authors prove a nonzero safety-preserving allowance always exists and derive one in closed form. Against three velocity-space baselines on a kinematic bicycle among up to 100 moving obstacles, SC3BF reaches the goal more often and modifies the nominal input less than half as much. Inspect the closed-form allowance and invariance proof.",
+      "generated_at": "2026-10-07T11:23:59",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4390480962",
+      "title": "Deep Imitation Learning for Humanoid Loco-manipulation Through Human Teleoperation",
+      "takeaway": "TRILL tackles humanoid loco-manipulation with deep imitation learning, motivated by the difficulty of collecting task demonstrations and training policies for high-degree-of-freedom humanoids. The framework gathers human demonstration data through a Virtual Reality interface, uses a whole-body control formulation to transform task-space commands from human operators into joint-torque actuation while stabilizing the robot's dynamics, and employs high-level action abstractions tailored for humanoid loco-manipulation to learn complex sensorimotor skills efficiently. The authors report demonstrating TRILL's effectiveness in simulation and on a real-world robot across various loco-manipulation tasks. While reading, inspect how the whole-body controller maps operator commands to torques and how the action abstractions shape the learned policy.",
+      "generated_at": "2026-10-07T11:23:59",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 66 ≥ 40",
+        "Core topics matched: vla_robot_foundation, humanoid_loco_manipulation",
+        "Specific keywords matched: vision-language-action, VLA, mobile manipulation",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: vla_posttraining",
+        "Personal domain affinity: preferred (+6; matched mobile manipulation)",
+        "recommendation_utility 72.0 = base 66.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.08220",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "vla_posttraining"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 66.0,
+      "recommendation_utility": 72.0,
+      "days_since_same_subtopic": 13,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.08220v1",
+        "base_id": "2610.08220",
+        "version": 1,
+        "title": "VOMMI: Collecting and Leveraging Portable Demonstrations for Mobile Manipulation",
+        "authors": [
+          "Yutian Zhang",
+          "Xingrui Xiong",
+          "Siyuan Ma",
+          "Yang Li",
+          "Jiawen Wen",
+          "Jiaqi Zhai",
+          "Liwen Yang",
+          "Ce Hao",
+          "Haozhen Chi",
+          "Yangkun Zhu",
+          "Yifan Zhu",
+          "Xiaowen Chu",
+          "Dong Wei",
+          "Qiaojun Yu",
+          "Dibo Hou"
+        ],
+        "published": "2026-10-06T12:10:48Z",
+        "updated": "2026-10-06T12:10:48Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Portable mobile-manipulation demonstrations can help alleviate data scarcity for embodied intelligence, but obtaining reliable, low-cost, and robot-free motion supervision from RGB observations remains challenging. Existing approaches often rely on teleoperation or specialized devices equipped with additional sensing hardware, while directly using estimated visual odometry (VO) trajectories can introduce inconsistencies due to accumulated drift and imperfect motion supervision. We present the Visual-Odometry-Conditioned Mobile Manipulation Interface (VOMMI), a portable demonstration collection and learning framework that connects portable RGB demonstrations to vision-language-action (VLA) post-training through offline trajectory reconstruction and online visual-motion conditioning. VOMMI synchronizes body and hand views to capture navigation context and local object interactions without requiring human-robot kinematic correspondence calibration. R2-VO refines offline demonstration trajectories using sparse geometric anchors and produces causal local-motion tokens over multiple prediction horizons for online policy conditioning. An action-group residual adapter incorporates these tokens only into the base branch. Experiments use a 500-trajectory portable for each task, with 75 trajectories held out for RGB-VO evaluation, and 200 robot demonstrations as references. Our policy, post-trained only on portable demonstrations, achieves 18.2% lower base-velocity error than a policy trained with robot-collected demonstrations, while maintaining comparable end-effector translation accuracy. Offline reconstruction reduces absolute trajectory errors for the body and hand streams by 24.6% on average relative to the best evaluated baseline for each stream. The complete system improves the mean success rate by 8.3 percentage points over OpenPI 0.5 across three real-robot tasks.",
+        "abs_url": "https://arxiv.org/abs/2610.08220v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08220v1",
+        "research_fit": 66,
+        "video_potential": 57,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "mobile manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "mobile manipulation",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "mobile manipulation",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, mobile manipulation, vision-language-action, teleoperation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 16.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "navigation"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "evaluation"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 50 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation",
+        "Specific keywords matched: humanoid robot",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 56.0 = base 50.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.08737",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 50.0,
+      "recommendation_utility": 56.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.08737v1",
+        "base_id": "2610.08737",
+        "version": 1,
+        "title": "PhoneBot: A Low-Cost Open Humanoid Robot Platform Reusing Smartphones",
+        "authors": [
+          "Ruochen Hou",
+          "Quanyou Wang",
+          "Daniel Koh",
+          "Dennis W. Hong"
+        ],
+        "published": "2026-10-06T17:38:19Z",
+        "updated": "2026-10-06T17:38:19Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "The adoption of humanoid robots in education and research remains limited by high hardware costs, complex sensing systems, and substantial computational requirements. This paper presents PhoneBot, a low-cost, open-source humanoid robot platform that repurposes commodity smartphones as its primary sensing and computing unit. By using a smartphone's integrated inertial measurement unit (IMU), camera, wireless connectivity, and onboard processing capabilities, PhoneBot reduces hardware costs and simplifies the system architecture. The robot combines a modular lower-body structure driven by 13 low-cost actuators with a torso-mounted smartphone that supports perception, control computation, and user interaction. We describe the mechanical design, software architecture, and real-time communication framework that support stable locomotion and capabilities including vision-based human following, conversational interaction, filming, and mobile telepresence. Experimental evaluations demonstrate reliable walking, perception-driven interaction, and straightforward deployment using off-the-shelf consumer smartphones. With fully open-source hardware and software designs, PhoneBot provides an affordable, reproducible platform for education, research, and rapid prototyping. More details are available at https://phonebot.dev.",
+        "abs_url": "https://arxiv.org/abs/2610.08737v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08737v1",
+        "research_fit": 50,
+        "video_potential": 44,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, humanoid"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "locomotion"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robot",
+        "Strong method signals: safety_critical_control",
+        "research_fit 32 ≥ 28",
+        "Detected subtopics: safety_critical_control",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 32.0 = base 32.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.08332",
+      "historical_paper": null,
+      "core_topics": [],
+      "subtopics": [
+        "safety_critical_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 32.0,
+      "recommendation_utility": 32.0,
+      "days_since_same_subtopic": 20,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.08332v1",
+        "base_id": "2610.08332",
+        "version": 1,
+        "title": "SC3BF: Shifted Collision Cone Control Barrier Function for Dynamic Obstacle Avoidance",
+        "authors": [
+          "Amin Kashiri",
+          "Yasin Yazıcıoğlu"
+        ],
+        "published": "2026-10-06T13:30:23Z",
+        "updated": "2026-10-06T13:30:23Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.MA",
+          "eess.SY"
+        ],
+        "summary": "The collision cone used by velocity-space control barrier functions is conservative: it rejects every relative velocity aimed into an obstacle, however slow. We propose the \\emph{shifted collision-cone CBF} (SC3BF), which adds a state-dependent \\emph{allowance} to the cone condition, so the robot may approach the obstacle at a rate that grows with distance and with its own speed. SC3BF is enforced by an ordinary quadratic program, and its safe set is forward invariant under bounded inputs without a minimum forward speed or a clearance margin. We prove that a nonzero allowance preserving safety always exists, and derive one in closed form. Against three velocity-space baselines on a kinematic bicycle among up to $100$ moving obstacles, SC3BF reaches the goal more often and modifies the nominal input less than half as much.",
+        "abs_url": "https://arxiv.org/abs/2610.08332v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08332v1",
+        "research_fit": 32,
+        "video_potential": 8,
+        "matched_topics": [
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "control barrier function",
+          "CBF"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "control barrier function",
+              "CBF"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 8.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, manipulation, humanoid, loco-manipulation, teleoperation",
+        "research_fit 66 ≥ 18",
+        "核心方向：humanoid_loco_manipulation, robot_learning_posttraining",
+        "特定关键词：loco-manipulation, whole-body control",
+        "historical_value_score 83.0 ≥ 42.0",
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 2.8%",
+        "阅读时效分 90/100（论文年龄 3 年）",
+        "OpenAlex FWCI 5.95",
+        "近 2 年年均引用 22.0；此前 1 年年均 7.0",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-24T03:31:57",
+        "Detected subtopics: loco_manipulation, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: loco_manipulation",
+        "Recently recommended: 6 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = whole_body_control",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 84.8 = base 83.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4390480962",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4390480962",
+        "openalex_id": "W4390480962",
+        "base_arxiv_id": null,
+        "doi": "10.1109/humanoids57100.2023.10375203",
+        "title": "Deep Imitation Learning for Humanoid Loco-manipulation Through Human Teleoperation",
+        "authors": [
+          "Mingyo Seo",
+          "Steve Han",
+          "Kyutae Sim",
+          "Seung Hyeon Bang",
+          "Carlos González",
+          "Luis Sentis",
+          "Yuke Zhu"
+        ],
+        "abstract": "We tackle the problem of developing humanoid loco-manipulation skills with deep imitation learning. The difficulty of collecting task demonstrations and training policies for humanoids with a high degree of freedom presents substantial challenges. We introduce TRILL, a data-efficient framework for training humanoid loco-manipulation policies from human demonstrations. In this framework, we collect human demonstration data through an intuitive Virtual Reality (VR) interface. We employ the whole-body control formulation to transform task-space commands by human operators into the robot's joint-torque actuation while stabilizing its dynamics. By employing high-level action abstractions tailored for humanoid loco-manipulation, our method can efficiently learn complex sensorimotor skills. We demonstrate the effectiveness of TRILL in simulation and on a real-world robot for performing various loco-manipulation tasks. Videos and additional materials can be found on the project page: https://ut-austin-rpl.github.io/TRILL.",
+        "publication_date": "2023-12-12",
+        "publication_year": 2023,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10812",
+            "display_name": "Human Pose and Action Recognition",
+            "score": 0.9980000257492065
+          },
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9966999888420105
+          },
+          {
+            "id": "https://openalex.org/T12290",
+            "display_name": "Human Motion and Animation",
+            "score": 0.9807999730110168
+          }
+        ],
+        "cited_by_count": 51,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          }
+        ],
+        "fwci": 5.9467,
+        "citation_normalized_percentile": 0.97213639,
+        "referenced_works": [
+          "W1661970104",
+          "W2035248691",
+          "W2061983716",
+          "W2122287758",
+          "W2135929901",
+          "W2157289187",
+          "W2157501229",
+          "W2158782408",
+          "W2320337429",
+          "W2335044248",
+          "W2569791289",
+          "W2771779534",
+          "W2963634205",
+          "W2963669336",
+          "W2986736840",
+          "W2994241268",
+          "W3003310656",
+          "W3012180352",
+          "W3036870219",
+          "W3047351634",
+          "W3089467114",
+          "W3089552519",
+          "W3101339469",
+          "W3106302274",
+          "W3131698977",
+          "W3134256416",
+          "W3193914824",
+          "W3206530605",
+          "W3207612633",
+          "W4249010688",
+          "W4313562995",
+          "W4318953217",
+          "W4385430674",
+          "W4385430679",
+          "W4387670212",
+          "W4388819993",
+          "W6780159193",
+          "W6784396901",
+          "W6799150178",
+          "W6803464670",
+          "W6845737239",
+          "W6846049332"
+        ],
+        "related_works": [
+          "W1531601525",
+          "W2758277628",
+          "W2778153218",
+          "W2948807893",
+          "W3110381201",
+          "W3173606202",
+          "W3183948672",
+          "W4315881361",
+          "W4318953217",
+          "W4387497383"
+        ],
+        "discovery_source": [
+          "topic_search:humanoid loco manipulation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:11",
+        "last_considered_at": "2026-10-07T19:17:04+08:00",
+        "recommended_at": "2026-10-07T19:17:04+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:31:57",
+        "openalex_url": "https://openalex.org/W4390480962",
+        "landing_page_url": "https://doi.org/10.1109/humanoids57100.2023.10375203",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 66,
+        "video_potential": 84,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "imitation learning",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, humanoid, loco-manipulation, teleoperation"
+          }
+        ],
+        "historical_value_score": 83.0,
+        "historical_score_components": {
+          "research_relevance": 66.0,
+          "recency": 90.0,
+          "normalized_citation": 97.2,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2023 年",
+          "同领域同年份引用标准化位于前 2.8%",
+          "阅读时效分 90/100（论文年龄 3 年）",
+          "OpenAlex FWCI 5.95",
+          "近 2 年年均引用 22.0；此前 1 年年均 7.0",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "loco_manipulation",
+        "whole_body_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 83.0,
+      "recommendation_utility": 84.8,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4390480962",
+        "base_id": "openalex:W4390480962",
+        "version": 1,
+        "title": "Deep Imitation Learning for Humanoid Loco-manipulation Through Human Teleoperation",
+        "authors": [
+          "Mingyo Seo",
+          "Steve Han",
+          "Kyutae Sim",
+          "Seung Hyeon Bang",
+          "Carlos González",
+          "Luis Sentis",
+          "Yuke Zhu"
+        ],
+        "published": "2023-12-12T00:00:00Z",
+        "updated": "2023-12-12T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "We tackle the problem of developing humanoid loco-manipulation skills with deep imitation learning. The difficulty of collecting task demonstrations and training policies for humanoids with a high degree of freedom presents substantial challenges. We introduce TRILL, a data-efficient framework for training humanoid loco-manipulation policies from human demonstrations. In this framework, we collect human demonstration data through an intuitive Virtual Reality (VR) interface. We employ the whole-body control formulation to transform task-space commands by human operators into the robot's joint-torque actuation while stabilizing its dynamics. By employing high-level action abstractions tailored for humanoid loco-manipulation, our method can efficiently learn complex sensorimotor skills. We demonstrate the effectiveness of TRILL in simulation and on a real-world robot for performing various loco-manipulation tasks. Videos and additional materials can be found on the project page: https://ut-austin-rpl.github.io/TRILL.",
+        "abs_url": "https://doi.org/10.1109/humanoids57100.2023.10375203",
+        "pdf_url": "",
+        "research_fit": 66,
+        "video_potential": 84,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "imitation learning",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, humanoid, loco-manipulation, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
