@@ -1,0 +1,459 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-11",
+  "generated_at": "2026-10-11T18:58:35+08:00",
+  "mode": "incremental",
+  "candidate_count": 3663,
+  "historical_candidate_count": 598,
+  "recommendation_count": 1,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W3105048402",
+      "title": "Robust legged robot state estimation using factor graph optimization",
+      "takeaway": "This method paper addresses legged robot state estimation when foot contact classification fails, for example on slippery terrain, and when position drift grows during dynamic motions such as trotting. It presents a factor graph optimization method that tightly fuses and smooths inertial navigation, leg odometry, and visual odometry, reducing reliance on contact classification. The approach was demonstrated on the ANYmal quadruped navigating a realistic outdoor industrial environment with trotting, walking, obstacle crossing, and staircase ascent, decreasing relative position error by up to 55% and absolute position error by 76% compared to kinematic-inertial odometry. While reading, inspect how the factor graph handles contact uncertainty and visual degradation, and how the reported errors are defined.",
+      "generated_at": "2026-10-11T11:04:48",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics",
+        "research_fit 22 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：robot state estimation, factor graph",
+        "historical_value_score 60.0 ≥ 42.0",
+        "发表于 2019 年",
+        "同领域同年份引用标准化位于前 6.0%",
+        "阅读时效分 70/100（论文年龄 7 年）",
+        "OpenAlex FWCI 3.77",
+        "近 2 年年均引用 11.5；此前 2 年年均 13.5",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-04T06:56:03",
+        "Detected subtopics: robot_state_estimation",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "recommendation_utility 66.0 = base 60.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3105048402",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3105048402",
+        "openalex_id": "W3105048402",
+        "base_arxiv_id": null,
+        "doi": null,
+        "title": "Robust legged robot state estimation using factor graph optimization",
+        "authors": [
+          "Wisth, D",
+          "Camurri, M",
+          "Fallon, M"
+        ],
+        "abstract": "Legged robots, specifically quadrupeds, are becoming increasingly attractive for industrial applications such as inspection. However, to leave the laboratory and to become useful to an end user requires reliability in harsh conditions. From the perspective of state estimation, it is essential to be able to accurately estimate the robot's state despite challenges such as uneven or slippery terrain, textureless and reflective scenes, as well as dynamic camera occlusions. We are motivated to reduce the dependency on foot contact classifications, which fail when slipping, and to reduce position drift during dynamic motions such as trotting. To this end, we present a factor graph optimization method for state estimation which tightly fuses and smooths inertial navigation, leg odometry and visual odometry. The effectiveness of the approach is demonstrated using the ANYmal quadruped robot navigating in a realistic outdoor industrial environment. This experiment included trotting, walking, crossing obstacles and ascending a staircase. The proposed approach decreased the relative position error by up to 55% and absolute position error by 76% compared to kinematic-inertial odometry.",
+        "publication_date": "2019-01-01",
+        "publication_year": 2019,
+        "source_name": "Oxford University Research Archive (ORA) (University of Oxford)",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9994000196456909
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9980999827384949
+          },
+          {
+            "id": "https://openalex.org/T10326",
+            "display_name": "Indoor and Outdoor Localization Technologies",
+            "score": 0.9714999794960022
+          }
+        ],
+        "cited_by_count": 78,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 4
+          }
+        ],
+        "fwci": 3.7745,
+        "citation_normalized_percentile": 0.93985776,
+        "referenced_works": [
+          "W1968315983",
+          "W2080486046",
+          "W2091790851",
+          "W2216550548",
+          "W2296360731",
+          "W2341165584",
+          "W2396274919",
+          "W2471969791",
+          "W2482726005",
+          "W2549216668",
+          "W2564632156",
+          "W2577008596",
+          "W2738207958",
+          "W2745007981",
+          "W2745859992",
+          "W2750656378",
+          "W2754177129",
+          "W2768737714",
+          "W2788200022",
+          "W2794127568",
+          "W2883702102",
+          "W2950302787",
+          "W3084365688",
+          "W3125449081",
+          "W4237726214",
+          "W4241459016",
+          "W4246614213",
+          "W4250058668"
+        ],
+        "related_works": [
+          "W2303855011",
+          "W2312326526",
+          "W2412578866",
+          "W2414561716",
+          "W2979950214",
+          "W3024737167",
+          "W3105866016",
+          "W3161199934",
+          "W4312703710",
+          "W87609089"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works",
+          "topic_search:robot state estimation"
+        ],
+        "seed_paper_id": [
+          "openalex:W4237726214"
+        ],
+        "discovered_at": "2026-08-04T06:56:03",
+        "last_considered_at": "2026-10-11T18:58:35+08:00",
+        "recommended_at": "2026-10-11T18:58:35+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:03",
+        "openalex_url": "https://openalex.org/W3105048402",
+        "landing_page_url": "https://ora.ox.ac.uk/objects/uuid:3da1ea04-60c1-4df9-9062-050e97b9a398",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 22,
+        "video_potential": 37,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "quadruped robot",
+          "robot state estimation",
+          "factor graph"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot",
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation",
+              "factor graph"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "historical_value_score": 60.0,
+        "historical_score_components": {
+          "research_relevance": 22.0,
+          "recency": 70.0,
+          "normalized_citation": 94.0,
+          "fwci": 100.0,
+          "citation_momentum": 42.6,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2019 年",
+          "同领域同年份引用标准化位于前 6.0%",
+          "阅读时效分 70/100（论文年龄 7 年）",
+          "OpenAlex FWCI 3.77",
+          "近 2 年年均引用 11.5；此前 2 年年均 13.5",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "robot_state_estimation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 60.0,
+      "recommendation_utility": 66.0,
+      "days_since_same_subtopic": 11,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W3105048402",
+        "base_id": "openalex:W3105048402",
+        "version": 1,
+        "title": "Robust legged robot state estimation using factor graph optimization",
+        "authors": [
+          "Wisth, D",
+          "Camurri, M",
+          "Fallon, M"
+        ],
+        "published": "2019-01-01T00:00:00Z",
+        "updated": "2019-01-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Legged robots, specifically quadrupeds, are becoming increasingly attractive for industrial applications such as inspection. However, to leave the laboratory and to become useful to an end user requires reliability in harsh conditions. From the perspective of state estimation, it is essential to be able to accurately estimate the robot's state despite challenges such as uneven or slippery terrain, textureless and reflective scenes, as well as dynamic camera occlusions. We are motivated to reduce the dependency on foot contact classifications, which fail when slipping, and to reduce position drift during dynamic motions such as trotting. To this end, we present a factor graph optimization method for state estimation which tightly fuses and smooths inertial navigation, leg odometry and visual odometry. The effectiveness of the approach is demonstrated using the ANYmal quadruped robot navigating in a realistic outdoor industrial environment. This experiment included trotting, walking, crossing obstacles and ascending a staircase. The proposed approach decreased the relative position error by up to 55% and absolute position error by 76% compared to kinematic-inertial odometry.",
+        "abs_url": "https://ora.ox.ac.uk/objects/uuid:3da1ea04-60c1-4df9-9062-050e97b9a398",
+        "pdf_url": "",
+        "research_fit": 22,
+        "video_potential": 37,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "quadruped robot",
+          "robot state estimation",
+          "factor graph"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot",
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation",
+              "factor graph"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
