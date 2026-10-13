@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-10-12</title>
+  <title>Paper Radar — 2026-10-13</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-10-12 20:29</p>
+        <p class="header-updated">2026-10-13 20:13</p>
       </div>
     </div>
   </header>
@@ -31,112 +31,38 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="openalex:W7155097025" data-paper-id="openalex:W7155097025" data-category="journal_recent">
+      <article class="paper-card" id="openalex:W7163026747" data-paper-id="openalex:W7163026747" data-category="journal_recent">
         <div class="card-topline">
           <span class="category category--journal_recent">期刊新论文</span>
-          <span class="arxiv-id">W7155097025</span>
+          <span class="arxiv-id">W7163026747</span>
         </div>
-        <h3>Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning</h3>
-        <p class="authors">Gehan Zheng, Sanjay Seenivasan, Matthew Johnson‐Roberson, Weiming Zhi</p>
+        <h3>Learning Terrain-Aware Whole-Body Control for Perceptive Legged Loco-Manipulation</h3>
+        <p class="authors">Sikai Guo, Yudong Zhong, Guoyang Zhao, Botao Dang, Zhihai Bi, Jun Ma</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-09-16</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
+          <span><b>Published</b> 2026-09-18</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> loco_manipulation, whole_body_control</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>Rewind-IL targets deployment failures of long-horizon action-chunked imitation policies that drift off the demonstration manifold and keep emitting plausible but unrecovered actions. The training-free safeguard combines a zero-shot failure detector, the Temporal Inter-chunk Discrepancy Estimate (TIDE), calibrated with split conformal prediction, with state respawning: a vision-language model marks recovery checkpoints offline, the frozen policy encoder builds a compact checkpoint feature database, and online monitoring of overlapping action-chunk self-consistency triggers a rewind to the latest verified safe state before inference restarts. Experiments on real-world and simulated long-horizon manipulation tasks, including transfer to flow-matching action-chunked policies, are reported. Inspect how TIDE thresholds are conformally calibrated and how checkpoint safety is verified.</p>
+          <p>TA-WBC targets whole-body loco-manipulation for legged manipulators whose controllers rely mainly on proprioception and lack exteroception for terrain topology. The framework combines an RL-based unified policy with a hierarchical exteroceptive encoder for terrain features, an end-effector sampling method based on the foot contact plane that decouples the manipulation target from base height, roll, and pitch variations, and a dual-policy distillation module intended to merge expansive whole-body motion with terrain adaptability without catastrophic forgetting. Simulation and real-world experiments are reported to validate robustness, yielding a larger reachable space, less tracking error, and reduced unexpected stumbles. Inspect how terrain features are encoded and how distillation preserves prior motion skills.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 期刊新论文</span>
-            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training</span>
-<span><b>Utility</b> 42.0 (base 42.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>OpenAlex citations</b> 0</span>          </div>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> loco_manipulation, whole_body_control</span><span><b>Utility</b> 36.0 (base 42.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -12</span><span><b>OpenAlex citations</b> 0</span>          </div>
           <ul>
-<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 42 ≥ 35</li><li>Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining</li><li>Specific keywords matched: long-horizon manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 42.0 = base 42.0 + affinity +0 + redundancy -0</li>          </ul>
+<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 42 ≥ 35</li><li>Core topics matched: humanoid_loco_manipulation</li><li>Specific keywords matched: loco-manipulation, mobile manipulation, whole-body control, WBC</li><li>Detected subtopics: loco_manipulation, whole_body_control</li><li>Personal domain affinity: preferred (+6; matched loco-manipulation, mobile manipulation)</li><li>Subtopic: loco_manipulation, whole_body_control</li><li>Recently recommended: 6 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 36.0 = base 42.0 + affinity +6 + redundancy -12</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Imitation learning has enabled robots to acquire complex visuomotor manipulation skills from demonstrations, but deployment failures remain a major obstacle, especially for long-horizon action-chunked policies. Once execution drifts off the demonstration manifold, these policies often continue producing locally plausible actions without recovering from the failure. Existing runtime monitors either require failure data, over-trigger under benign feature drift, or stop at failure detection without providing a recovery mechanism. We present Rewind-IL, a training-free online safeguard framework for generative action-chunked imitation policies. Rewind-IL combines a zero-shot failure detector based on Temporal Inter-chunk Discrepancy Estimate (TIDE), calibrated with split conformal prediction, with a state-respawning mechanism that returns the robot to a semantically verified safe intermediate state. Offline, a vision-language model identifies recovery checkpoints in demonstrations, and the frozen policy encoder is used to construct a compact checkpoint feature database. Online, Rewind-IL monitors self-consistency in overlapping action chunks, tracks similarity to the checkpoint library, and, upon failure, rewinds execution to the latest verified safe state before restarting inference from a clean policy state. Experiments on real-world and simulated long-horizon manipulation tasks, including transfer to flow-matching action-chunked policies, demonstrate that policy-internal consistency coupled with semantically grounded respawning offers a practical route to improved reliability in imitation learning. Supplemental materials are available at https://sjay05.github.io/rewind-il</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Legged manipulators integrate exceptional terrain adaptability along with mobile manipulation capabilities, which make them highly promising for deployment in human-centric environments. By coordinating the control of both legs and arms, a whole-body controller can significantly expand the operational workspace of legged manipulators. However, many existing whole-body controllers primarily depend on proprioception and do not incorporate the critical exteroception required for effective terrain topology perception. This limitation can hinder their ability to adapt to varying environmental conditions and navigate complex terrains effectively. In this paper, we introduce TA-WBC, a terrain-aware whole-body control framework for legged manipulators, which features a novel RL-based unified policy tailored to whole-body loco-manipulation tasks in various terrains. Specifically, we employ a \rev{hierarchical exteroceptive encoder} to extract terrain features, providing an essential basis for the robot to proactively adapt posture and footholds. Furthermore, to facilitate stable cross-terrain loco-manipulation, we propose a novel end-effector sampling method based on the foot contact plane, \rev{decoupling the manipulation target from base height, roll, and pitch variations}. Moreover, a dual-policy distillation module is introduced to integrate expansive whole-body motion with terrain adaptability without catastrophic forgetting. The simulation and real-world experiments validate the robustness of our proposed controller, which leads to a larger reachable space, less tracking error, and reduced unexpected stumbles. This unified policy highlights the promising capabilities of legged manipulators in performing loco-manipulation tasks across complex terrains.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7155097025" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2604.16683" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2604.16683" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3734897" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2604.16683" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7155097025" data-title="Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W7163026747" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2605.31343" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2605.31343" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3732842" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2605.31343" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7163026747" data-title="Learning Terrain-Aware Whole-Body Control for Perceptive Legged Loco-Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7155097025" data-title="Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="openalex:W4415109351" data-paper-id="openalex:W4415109351" data-category="journal_recent">
-        <div class="card-topline">
-          <span class="category category--journal_recent">期刊新论文</span>
-          <span class="arxiv-id">W4415109351</span>
-        </div>
-        <h3>Touch Begins Where Vision Ends: Generalizable Policies for Contact-Rich Manipulation</h3>
-        <p class="authors">Zifan Zhao, Siddhant Haldar, Jinda Cui, Lerrel Pinto, Raunaq Bhirangi</p>
-        <div class="metadata">
-          <span><b>Published</b> 2026-09-02</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> tactile_manipulation</span>        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>ViTaL addresses precise contact-rich manipulation, where imitation learning needs many hard-to-obtain demonstrations and reinforcement learning yields brittle, non-generalizable policies. The framework splits tasks into a reaching phase, where a vision-language model performs scene-level reasoning to localize the object, and a local interaction phase, where a reusable scene-agnostic ViTaL policy uses egocentric vision and tactile sensing; local policies are trained once in a canonical setting and generalize through a localize-then-execute strategy. ViTaL reports around 90% success on contact-rich tasks in unseen environments and robustness to distractors, with ablations supporting foundation-model segmentation for visual encoders, residual RL generalizability, and tactile sensing. Inspect the canonical-to-unseen transfer setup and the residual RL formulation.</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 期刊新论文</span>
-            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
-<span><b>Subtopics</b> tactile_manipulation</span><span><b>Utility</b> 41.0 (base 41.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>OpenAlex citations</b> 1</span>          </div>
-          <ul>
-<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 41 ≥ 35</li><li>Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: contact-rich manipulation</li><li>Detected subtopics: tactile_manipulation</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 41.0 = base 41.0 + affinity +0 + redundancy -0</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Data-driven approaches struggle with precise manipulation; imitation learning requires many hard-to-obtain demonstrations, while reinforcement learning yields brittle, non-generalizable policies. We introduce VisuoTactile Local (ViTaL) policy learning, a framework that solves fine-grained manipulation tasks by decomposing them into two phases: a reaching phase, where a vision-language model (VLM) enables scene-level reasoning to localize the object of interest, and a local interaction phase, where a reusable, scene-agnostic ViTaL policy performs contact-rich manipulation using egocentric vision and tactile sensing. This approach is motivated by the observation that while scene context varies, the low-level interaction remains consistent across task instances. By training local policies once in a canonical setting, they can generalize via a localize-then-execute strategy. ViTaL achieves around 90% success on contact-rich tasks in unseen environments and is robust to distractors. ViTaL&#39;s effectiveness stems from three key insights: (1) foundation models for segmentation enable training robust visual encoders via behavior cloning; (2) these encoders improve the generalizability of policies learned using residual RL; and (3) tactile sensing significantly boosts performance in contact-rich tasks. Ablation studies validate each of these insights, and we demonstrate that ViTaL integrates well with high-level VLMs, enabling robust, reusable low-level skills. Results and videos are available at https://vitalprecise.github.io.</p></details>
-        <div class="actions">
-<a href="https://openalex.org/W4415109351" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2506.13762" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2506.13762" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3730288" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2506.13762" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W4415109351" data-title="Touch Begins Where Vision Ends: Generalizable Policies for Contact-Rich Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W4415109351" data-title="Touch Begins Where Vision Ends: Generalizable Policies for Contact-Rich Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="openalex:W7215053177" data-paper-id="openalex:W7215053177" data-category="high_impact_historical">
-        <div class="card-topline">
-          <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W7215053177</span>
-        </div>
-        <h3>CC-VLA: Learning Control-Aware Compliance VLA Model for Robust Contact-Rich Robotic Manipulation</h3>
-        <p class="authors">Zhaohong Mai, Chao Wang, Chao Zeng, Sitong Mao, Heng Zhang, Shunbo Zhou, Chenguang Yang</p>
-        <div class="metadata">
-          <span><b>Published</b> 2026-10-01</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>The supplied metadata for CC-VLA contains no abstract, so only the title and venue can be stated: it presents a control-aware compliance VLA model for robust contact-rich robotic manipulation, published in IEEE Robotics and Automation Letters. No problem formulation, method details, reported evidence, or quantitative results are available in the provided source, and nothing beyond the title should be attributed to the authors. The technical point to inspect while reading is how control-aware compliance is integrated into the VLA policy and how robustness in contact-rich manipulation is evaluated.</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 领域内高影响力</span>
-            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
-<span><b>Utility</b> 52.0 (base 52.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>OpenAlex citations</b> 0</span>          </div>
-          <ul>
-<li>机器人语境：robot, robotic, robotics, manipulation</li><li>research_fit 32 ≥ 18</li><li>核心方向：vla_robot_foundation</li><li>特定关键词：VLA</li><li>historical_value_score 52.0 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 21.8%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-10-12T09:37:12</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
-        <div class="actions">
-<a href="https://openalex.org/W7215053177" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3739025" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7215053177" data-title="CC-VLA: Learning Control-Aware Compliance VLA Model for Robust Contact-Rich Robotic Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7215053177" data-title="CC-VLA: Learning Control-Aware Compliance VLA Model for Robust Contact-Rich Robotic Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7163026747" data-title="Learning Terrain-Aware Whole-Body Control for Perceptive Legged Loco-Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
