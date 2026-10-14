@@ -1,0 +1,1421 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-14",
+  "generated_at": "2026-10-14T17:40:34+08:00",
+  "mode": "incremental",
+  "candidate_count": 4368,
+  "historical_candidate_count": 635,
+  "recommendation_count": 5,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 1,
+    "model_based_recent": 1,
+    "review_knowledge_map": 1,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2610.18790",
+      "title": "EqC: Equilibrium Energy Control for Introspective Lifelong Robot Learning",
+      "takeaway": "EqC targets introspective lifelong robot learning, where a policy must detect when its behavior is no longer supported and use expert assistance to improve. It builds an explicit conditional energy landscape, casts generative action refinement as equilibrium-seeking optimization, and reads the geometry of refinement as a competence signal; persistent energy-consistency violations trigger Energy-Gated DAgger expert takeover, with recovery trajectories aggregated for policy updates. EqC is reported to integrate into Diffusion Transformer policies and flow-matching-based vision-language-action (VLA) policies. Across simulation and real-world bimanual manipulation it matches or improves control performance and robustness while enabling timely intervention near the competence boundary, and a real-world study reports progressive expansion of autonomously handled situations. Inspect how the energy-consistency signal is thresholded and how interventions are aggregated.",
+      "generated_at": "2026-10-14T09:48:06",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2610.18848",
+      "title": "Contact Trajectory Prompting: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration",
+      "takeaway": "CTP addresses one-shot in-context transfer of contact-rich manipulation, where visual and kinematic specifications alone may not distinguish behaviors with similar motion but different interaction intensity or pattern. It encodes motion and contact from a single demonstration into an ordered contact trajectory prompt capturing temporal evolution, and the policy retrieves interaction-relevant information from that prompt using online sensory feedback to condition closed-loop action generation. Across real-world wiping, rotation, and insertion tasks on objects excluded from training, CTP reports 78.7% overall success, 13.0 percentage points above the strongest evaluated baseline; changing only the reference demonstration follows contact specifications for intensity and direction, including an intermediate wiping force level and clockwise or counterclockwise cap rotation. Inspect how the prompt is retrieved and grounded in feedback.",
+      "generated_at": "2026-10-14T09:48:06",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7138116831",
+      "title": "Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation",
+      "takeaway": "M2-ResiPolicy targets contact-rich, fine-grained manipulation, arguing that visual imitation learning handles long-horizon planning but misses cues such as friction variation or incipient slip and struggles to balance global coherence with local reactive feedback. The Master-Micro residual architecture pairs a 10 Hz Master-Guidance Policy (MGP) that generates temporally consistent action chunks via a diffusion-based backbone with a tactile-intensity-driven adaptive fusion mechanism modulating vision and touch, plus a 60 Hz Micro-Residual Corrector (MRC) using a lightweight GRU for real-time action compensation from TCP wrench feedback, integrated with a force-mixed PBIC execution layer. Experiments across fragile object grasping and precision insertion report a 93% damage-free success rate in chip grasping and superior force regulation stability over Diffusion Policy (DP) and Reactive Diffusion Policy (RDP). Inspect the adaptive fusion and residual coupling.",
+      "generated_at": "2026-10-14T09:48:06",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2610.18677",
+      "title": "Model-Based Online Decision Making via Generative Trajectory Planning",
+      "takeaway": "GTP addresses the tension in online decision-making between efficient inference and long-horizon reasoning: value-based methods rely on short-horizon bootstrapping that limits long-term information propagation, while trajectory optimization plans explicitly but solves a high-dimensional problem at every step. GTP learns a generative model as a proposal distribution over action sequences, sampling candidate sequences from a diffusion prior and refining them with learned dynamics, reward, and value models for trajectory-level reasoning. Across continuous control and long-horizon manipulation tasks, GTP is reported to match or exceed state-of-the-art model-free, diffusion-policy, and model-based baselines and to remain stable where strong baselines degrade. Inspect how the learned models score and refine proposals.",
+      "generated_at": "2026-10-14T09:48:06",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7116283786",
+      "title": "Dexterous Manipulation Through Imitation Learning: A Survey",
+      "takeaway": "This survey reviews dexterous manipulation through imitation learning, covering robotic hands or multi-fingered end-effectors that control, reorient, and manipulate objects via coordinated finger movements and adaptive force modulation. It frames model-based approaches as struggling to generalize given high dimensionality and complex contact dynamics, and model-free reinforcement learning as demanding extensive training, large-scale interaction data, and carefully designed rewards, positioning imitation learning (IL) as acquiring skills from expert demonstrations while bypassing explicit modeling and large-scale trial-and-error. The survey details recent advances, addresses key challenges, and explores potential research directions for IL-driven dexterous manipulation, aiming to give researchers and practitioners a comprehensive introduction. Use it as a knowledge map of IL methods and open problems.",
+      "generated_at": "2026-10-14T09:48:06",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 77 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: vision-language-action, VLA, lifelong robot learning, self-improving robot, bimanual manipulation",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: continual_robot_learning, bimanual_manipulation",
+        "Personal domain affinity: preferred (+6; matched bimanual manipulation)",
+        "Subtopic: bimanual_manipulation",
+        "Recently recommended: 6 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = continual_robot_learning",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 78.8 = base 77.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.18790",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "continual_robot_learning",
+        "bimanual_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 77.0,
+      "recommendation_utility": 78.8,
+      "days_since_same_subtopic": 6,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.18790v1",
+        "base_id": "2610.18790",
+        "version": 1,
+        "title": "EqC: Equilibrium Energy Control for Introspective Lifelong Robot Learning",
+        "authors": [
+          "Haodong Yang",
+          "Runhan Huang",
+          "Bowen Zhang",
+          "Iofai Lei",
+          "Zunzhe Zhang",
+          "Xiangcheng Zhang",
+          "Shaoting Zhu",
+          "Linzhan Mou",
+          "Yicheng Liu",
+          "Hang Zhao"
+        ],
+        "published": "2026-10-13T17:39:36Z",
+        "updated": "2026-10-13T17:39:36Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Long-term robot autonomy depends on more than effective action generation: a policy must recognize when its behavior is no longer sufficiently supported and use assistance to improve. We introduce Equilibrium Energy Control (EqC), a framework for introspective lifelong robot learning built around an explicit conditional energy landscape. EqC casts generative action refinement as equilibrium-seeking optimization, while the geometry of the refinement process reveals whether the generated behavior remains consistent with the learned landscape. This competence signal enables Energy-Gated DAgger, where persistent energy-consistency violations trigger expert takeover and the resulting recovery trajectories are aggregated for subsequent policy updates. EqC integrates naturally into both Diffusion Transformer policies and flow-matching-based vision-language-action (VLA) policies. Across simulation and real-world bimanual manipulation, EqC matches or improves control performance and robustness while enabling timely intervention near the policy's competence boundary. A real-world study further shows how these interventions progressively expand the range of situations handled autonomously, providing a practical path from static generative controllers toward self-improving robot systems.",
+        "abs_url": "https://arxiv.org/abs/2610.18790v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.18790v1",
+        "research_fit": 77,
+        "video_potential": 31,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "robot learning",
+          "lifelong robot learning",
+          "self-improving robot",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning",
+              "lifelong robot learning",
+              "self-improving robot"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "robot learning",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "robot learning",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, robot learning, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.2
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 60 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: motion imitation, contact-rich manipulation",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 60.0 = base 60.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.18848",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 60.0,
+      "recommendation_utility": 60.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.18848v1",
+        "base_id": "2610.18848",
+        "version": 1,
+        "title": "Contact Trajectory Prompting: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration",
+        "authors": [
+          "Xian Nie",
+          "Yujie Zang",
+          "Yuhang Zheng",
+          "Yupeng Zheng",
+          "Songen Gu",
+          "Wendi Chen",
+          "Chuan Wen",
+          "Cewu Lu",
+          "Wenchao Ding",
+          "Junchi Yan",
+          "Shuicheng Yan"
+        ],
+        "published": "2026-10-13T17:58:08Z",
+        "updated": "2026-10-13T17:58:08Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "In-context robot learning enables robots to acquire new behaviors from demonstrations without test-time parameter updates. However, visual and kinematic specifications alone may not distinguish contact-rich behaviors that share similar motions but require different interaction intensities or patterns. We propose Contact Trajectory Prompting (CTP), a framework for one-shot transfer of contact-rich manipulation behaviors. CTP encodes motion and contact information from a single demonstration into an ordered contact trajectory prompt that captures their temporal evolution and specifies the desired physical interaction behavior. During execution, the policy uses online sensory feedback to retrieve interaction-relevant information from the prompt, conditioning closed-loop action generation on the demonstrated contact behavior. Across real-world wiping, rotation, and insertion tasks on objects excluded from training, CTP achieves 78.7% overall success, outperforming the strongest evaluated baseline by 13.0 percentage points. Changing only the reference demonstration enables CTP to follow contact specifications for both intensity and direction, including an intermediate wiping force level and clockwise or counterclockwise cap rotation. These results demonstrate that contact trajectories serve as effective behavioral specifications, extending in-context robot learning beyond motion imitation to physical interaction transfer. Project website: https://ctp-robotics.github.io/project_page.",
+        "abs_url": "https://arxiv.org/abs/2610.18848v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.18848v1",
+        "research_fit": 60,
+        "video_potential": 27,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "motion imitation",
+          "robot learning",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "motion imitation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, manipulation, robot learning"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 55 ≥ 35",
+        "Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: long-horizon planning, diffusion policy, contact-rich manipulation",
+        "Detected subtopics: diffusion_flow_policy",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: diffusion_flow_policy",
+        "Recently recommended: 5 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 43.0 = base 55.0 + affinity +0 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7138116831",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7138116831",
+        "openalex_id": "W7138116831",
+        "base_arxiv_id": "2603.15152",
+        "doi": "10.1109/lra.2026.3739024",
+        "title": "Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation",
+        "authors": [
+          "Xingting Li",
+          "Yifan Xie",
+          "Han Liu",
+          "Wei Hou",
+          "Guangyu Chen",
+          "Shoujie Li",
+          "Wenbo Ding"
+        ],
+        "abstract": "Robotic contact-rich and fine-grained manipulation remains a significant challenge due to complex interaction dynamics and the competing requirements of multi-timescale control. While current visual imitation learning methods excel at long-horizon planning, they often fail to perceive critical interaction cues like friction variations or incipient slip, and struggle to balance global task coherence with local reactive feedback. To address these challenges, we propose M2-ResiPolicy, a novel Master-Micro residual control architecture that synergizes high-level action guidance with low-level correction. The framework consists of a Master-Guidance Policy (MGP) operating at 10 Hz, which generates temporally consistent action chunks via a diffusion-based backbone and employs a tactile-intensity-driven adaptive fusion mechanism to dynamically modulate perceptual weights between vision and touch. Simultaneously, a high-frequency (60 Hz) Micro-Residual Corrector (MRC) utilizes a lightweight GRU to provide real-time action compensation based on TCP wrench feedback. This policy is further integrated with a force-mixed PBIC execution layer, effectively regulating contact forces to ensure interaction safety. Experiments across several demanding tasks including fragile object grasping and precision insertion, demonstrate that M2-ResiPolicy significantly outperforms standard Diffusion Policy (DP) and state-of-the-art Reactive Diffusion Policy (RDP), achieving a 93\\% damage-free success rate in chip grasping and superior force regulation stability.",
+        "publication_date": "2026-10-01",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9970999956130981
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.0027000000700354576
+          },
+          {
+            "id": "https://openalex.org/T11687",
+            "display_name": "Teleoperation and Haptic Systems",
+            "score": 9.999999747378752e-05
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.14616882,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-12T09:37:12",
+        "last_considered_at": "2026-10-14T17:40:34+08:00",
+        "recommended_at": "2026-10-14T17:40:34+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-10-12T09:37:12",
+        "openalex_url": "https://openalex.org/W7138116831",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3739024",
+        "open_access_url": "http://arxiv.org/abs/2603.15152",
+        "pdf_url": "https://arxiv.org/pdf/2603.15152",
+        "research_fit": 55,
+        "video_potential": 41,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "long-horizon planning",
+          "imitation learning",
+          "diffusion policy",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon planning"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, teleoperation"
+          }
+        ],
+        "historical_value_score": 53.1,
+        "historical_score_components": {
+          "research_relevance": 55.0,
+          "recency": 100.0,
+          "normalized_citation": 14.6,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 85.4%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 55.0,
+      "recommendation_utility": 43.0,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2603.15152",
+        "base_id": "2603.15152",
+        "version": 1,
+        "title": "Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation",
+        "authors": [
+          "Xingting Li",
+          "Yifan Xie",
+          "Han Liu",
+          "Wei Hou",
+          "Guangyu Chen",
+          "Shoujie Li",
+          "Wenbo Ding"
+        ],
+        "published": "2026-10-01T00:00:00Z",
+        "updated": "2026-10-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Robotic contact-rich and fine-grained manipulation remains a significant challenge due to complex interaction dynamics and the competing requirements of multi-timescale control. While current visual imitation learning methods excel at long-horizon planning, they often fail to perceive critical interaction cues like friction variations or incipient slip, and struggle to balance global task coherence with local reactive feedback. To address these challenges, we propose M2-ResiPolicy, a novel Master-Micro residual control architecture that synergizes high-level action guidance with low-level correction. The framework consists of a Master-Guidance Policy (MGP) operating at 10 Hz, which generates temporally consistent action chunks via a diffusion-based backbone and employs a tactile-intensity-driven adaptive fusion mechanism to dynamically modulate perceptual weights between vision and touch. Simultaneously, a high-frequency (60 Hz) Micro-Residual Corrector (MRC) utilizes a lightweight GRU to provide real-time action compensation based on TCP wrench feedback. This policy is further integrated with a force-mixed PBIC execution layer, effectively regulating contact forces to ensure interaction safety. Experiments across several demanding tasks including fragile object grasping and precision insertion, demonstrate that M2-ResiPolicy significantly outperforms standard Diffusion Policy (DP) and state-of-the-art Reactive Diffusion Policy (RDP), achieving a 93\\% damage-free success rate in chip grasping and superior force regulation stability.",
+        "abs_url": "https://arxiv.org/abs/2603.15152",
+        "pdf_url": "https://arxiv.org/pdf/2603.15152",
+        "research_fit": 55,
+        "video_potential": 41,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "long-horizon planning",
+          "imitation learning",
+          "diffusion policy",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon planning"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: manipulation",
+        "Strong method signals: motion_planning, trajectory_optimization",
+        "research_fit 59 ≥ 28",
+        "Detected subtopics: diffusion_flow_policy, motion_planning, trajectory_optimization",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: trajectory_optimization",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = diffusion_flow_policy, motion_planning",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 54.8 = base 59.0 + affinity +0 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.18677",
+      "historical_paper": null,
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy",
+        "motion_planning",
+        "trajectory_optimization"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 59.0,
+      "recommendation_utility": 54.8,
+      "days_since_same_subtopic": 4,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.18677v1",
+        "base_id": "2610.18677",
+        "version": 1,
+        "title": "Model-Based Online Decision Making via Generative Trajectory Planning",
+        "authors": [
+          "Haldun Balim",
+          "Yilun Du",
+          "Na Li"
+        ],
+        "published": "2026-10-13T16:35:13Z",
+        "updated": "2026-10-13T16:35:13Z",
+        "primary_category": "cs.LG",
+        "categories": [
+          "cs.LG",
+          "cs.AI",
+          "cs.RO",
+          "eess.SY"
+        ],
+        "summary": "Online decision-making faces a tension between efficient inference and long-horizon reasoning. Value-based methods rely on short-horizon bootstrapping that limits the propagation of long-term information, while trajectory optimization methods plan explicitly but must solve a high-dimensional optimization problem at every decision step. We propose Generative Trajectory Planning (GTP), a model-based framework that addresses this tension by learning a generative model as a proposal distribution over action sequences. Instead of optimizing sequences from scratch, GTP samples candidate sequences from a diffusion prior and refines them using learned dynamics, reward, and value models, enabling efficient trajectory-level reasoning. Across continuous control and long-horizon manipulation tasks, GTP matches or exceeds state-of-the-art model-free, diffusion-policy, and model-based baselines, and remains stable in regimes where strong baselines degrade. Our results suggest that generative models are best understood not as policies, but as structured proposal distributions for planning, offering a new perspective on how to integrate generative modeling with model-based decision-making.",
+        "abs_url": "https://arxiv.org/abs/2610.18677v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.18677v1",
+        "research_fit": 59,
+        "video_potential": 36,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "diffusion policy",
+          "trajectory planning",
+          "trajectory optimization"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "trajectory planning",
+              "trajectory optimization"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 14.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, manipulation, dexterous manipulation",
+        "research_fit 56 ≥ 18",
+        "核心方向：robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "特定关键词：dexterous manipulation",
+        "historical_value_score 77.2 ≥ 50.0",
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 7.4%",
+        "阅读时效分 100/100（论文年龄 1 年）",
+        "OpenAlex FWCI 3.13",
+        "近年年均 OpenAlex 引用 7.0（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-24T03:32:02",
+        "Detected subtopics: dexterous_manipulation",
+        "Personal domain affinity: preferred (+6; matched dexterous manipulation)",
+        "Subtopic: dexterous_manipulation",
+        "Recently recommended: 5 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 71.2 = base 77.2 + affinity +6 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7116283786",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7116283786",
+        "openalex_id": "W7116283786",
+        "base_arxiv_id": null,
+        "doi": "10.1109/tase.2025.3646183",
+        "title": "Dexterous Manipulation Through Imitation Learning: A Survey",
+        "authors": [
+          "Shan An",
+          "Ziyu Meng",
+          "Chao Tang",
+          "Yuning Zhou",
+          "Tengyu Liu",
+          "Fangqiang Ding",
+          "Shufang Zhang",
+          "Yao Mu",
+          "R. Song",
+          "Wei Zhang",
+          "Zeng Hou",
+          "H Zhang"
+        ],
+        "abstract": "Dexterous manipulation, which refers to the ability of a robotic hand or multi-fingered end-effector to skillfully control, reorient, and manipulate objects through precise, coordinated finger movements and adaptive force modulation, enables complex interactions similar to human hand dexterity. With recent advances in robotics and machine learning, there is a growing demand for these systems to operate in complex and unstructured environments. Traditional model-based approaches struggle to generalize across tasks and object variations due to the high dimensionality and complex contact dynamics of dexterous manipulation. Although model-free methods such as reinforcement learning (RL) show promise, they require extensive training, large-scale interaction data, and carefully designed rewards for stability and effectiveness. Imitation learning (IL) offers an alternative by allowing robots to acquire dexterous manipulation skills directly from expert demonstrations, capturing fine-grained coordination and contact dynamics while bypassing the need for explicit modeling and large-scale trial-and-error. This survey provides an overview of dexterous manipulation methods based on imitation learning, details recent advances, and addresses key challenges in the field. Additionally, it explores potential research directions to enhance IL-driven dexterous manipulation. Our goal is to offer researchers and practitioners a comprehensive introduction to this rapidly evolving domain.",
+        "publication_date": "2025-12-19",
+        "publication_year": 2025,
+        "source_name": "IEEE Transactions on Automation Science and Engineering",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.8669000267982483
+          },
+          {
+            "id": "https://openalex.org/T10982",
+            "display_name": "Motor Control and Adaptation",
+            "score": 0.06790000200271606
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.02199999988079071
+          }
+        ],
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 7
+          }
+        ],
+        "fwci": 3.1263,
+        "citation_normalized_percentile": 0.92631778,
+        "referenced_works": [
+          "W1024319585",
+          "W107124684",
+          "W1521959343",
+          "W1553941146",
+          "W1853143499",
+          "W1969506947",
+          "W1975033238",
+          "W1978646801",
+          "W1979081893",
+          "W1980440818",
+          "W1984237968",
+          "W1990084644",
+          "W1999375810",
+          "W2001905480",
+          "W2003329174",
+          "W2018073591",
+          "W2019165997",
+          "W2020157793",
+          "W2028964380",
+          "W2032139276",
+          "W2035767425",
+          "W2037855341",
+          "W2044000204",
+          "W2048058874",
+          "W2062998706",
+          "W2063822181",
+          "W2069978089",
+          "W2085029715",
+          "W2085545845",
+          "W2093847731",
+          "W2105300774",
+          "W2109910161",
+          "W2110741537",
+          "W2112036576",
+          "W2117028371",
+          "W2119717200",
+          "W2120529242",
+          "W2121894537",
+          "W2126701792",
+          "W2127461607",
+          "W2129202194",
+          "W2135482175",
+          "W2139086916",
+          "W2139811605",
+          "W2146079019",
+          "W2152693668",
+          "W2158432105",
+          "W2158886284",
+          "W2164068699",
+          "W2164320048",
+          "W2166633389",
+          "W2182347502",
+          "W2197459753",
+          "W2213758982",
+          "W2268552585",
+          "W2346378413",
+          "W2370378640",
+          "W2416254177",
+          "W2483804965",
+          "W2558807622",
+          "W2560647685",
+          "W2589847876",
+          "W2593768305",
+          "W2593994643",
+          "W2603294612",
+          "W2605102758",
+          "W2625586522",
+          "W2752330356",
+          "W2765551719",
+          "W2775635818",
+          "W2781493652",
+          "W2782882532",
+          "W2787995695",
+          "W2796290181",
+          "W2800614044",
+          "W2800747193",
+          "W2810773383",
+          "W2888138457",
+          "W2889575163",
+          "W2894714230",
+          "W2908172654",
+          "W2910779592",
+          "W2913995205",
+          "W2948978827",
+          "W2956037066",
+          "W2963285996",
+          "W2963411833",
+          "W2963669336",
+          "W2963802910",
+          "W2964227312",
+          "W2967695057",
+          "W2968340082",
+          "W2979352248",
+          "W2986783566",
+          "W2990424588",
+          "W2994446013",
+          "W2996355317",
+          "W2997581345",
+          "W3002284381",
+          "W3007769740",
+          "W3012370795",
+          "W3022532439",
+          "W3032185005",
+          "W3033809666",
+          "W3033882920",
+          "W3037088959",
+          "W3037767967",
+          "W3038113514",
+          "W3039055967",
+          "W3040099822",
+          "W3041466979",
+          "W3042432620",
+          "W3080772040",
+          "W3081268564",
+          "W3090369311",
+          "W3091133300",
+          "W3096831136",
+          "W3101780148",
+          "W3115361257",
+          "W3119073724",
+          "W3129416290",
+          "W3129756265",
+          "W3130589561",
+          "W3138205857",
+          "W3138984732",
+          "W3142410314",
+          "W3154829718",
+          "W3170104202",
+          "W3174137405",
+          "W3189615635",
+          "W3196158767",
+          "W3198310069",
+          "W3204665606",
+          "W3205861031",
+          "W3206464427",
+          "W3206739224",
+          "W3209965475",
+          "W4200213509",
+          "W4205912149",
+          "W4206244007",
+          "W4224862098",
+          "W4225003209",
+          "W4225688536",
+          "W4226113905",
+          "W4231496855",
+          "W4243626412",
+          "W4280532262",
+          "W4283267185",
+          "W4283786747",
+          "W4296010390",
+          "W4298326869",
+          "W4313563108",
+          "W4321330995",
+          "W4323767275",
+          "W4361029864",
+          "W4362672763",
+          "W4367663367",
+          "W4376851169",
+          "W4383066442",
+          "W4383108265",
+          "W4383108454",
+          "W4383108491",
+          "W4383108746",
+          "W4383108950",
+          "W4383109245",
+          "W4385430564",
+          "W4385430582",
+          "W4385430618",
+          "W4385430674",
+          "W4385430685",
+          "W4386076611",
+          "W4387653004",
+          "W4387935000",
+          "W4389352485",
+          "W4389987375",
+          "W4390480946",
+          "W4390480962",
+          "W4392405809",
+          "W4393241287",
+          "W4393372913",
+          "W4393864962",
+          "W4393972839",
+          "W4396680642",
+          "W4399426013",
+          "W4400770903",
+          "W4401414025",
+          "W4401414765",
+          "W4401414844",
+          "W4401415002",
+          "W4401415042",
+          "W4401415761",
+          "W4401416041",
+          "W4401416531",
+          "W4401943152",
+          "W4402354045",
+          "W4402354047",
+          "W4402354112",
+          "W4402354127",
+          "W4402697409",
+          "W4402704543",
+          "W4402753857",
+          "W4403331517",
+          "W4403337227",
+          "W4403534333",
+          "W4403888324",
+          "W4404057474",
+          "W4404238344",
+          "W4404307277",
+          "W4404862942",
+          "W4404953708",
+          "W4405753615",
+          "W4405778692",
+          "W4405784982",
+          "W4405785673",
+          "W4405786168",
+          "W4405787817",
+          "W4405905261",
+          "W4406416207",
+          "W4407168289",
+          "W4407223688",
+          "W4407448686",
+          "W4407831623",
+          "W4408423496",
+          "W4408727266",
+          "W4409202135",
+          "W4411336685",
+          "W4411886624",
+          "W4412124433",
+          "W4412830400",
+          "W4413917575",
+          "W4413925099",
+          "W4413925209",
+          "W4413925671",
+          "W4414050455",
+          "W4414050916",
+          "W4415524461",
+          "W4415798853",
+          "W4416749901",
+          "W4417483688",
+          "W7117474416"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "knowledge_map_search:dexterous manipulation survey",
+          "topic_search:dexterous manipulation survey"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:20",
+        "last_considered_at": "2026-10-14T17:40:34+08:00",
+        "recommended_at": "2026-10-14T17:40:34+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:32:02",
+        "openalex_url": "https://openalex.org/W7116283786",
+        "landing_page_url": "https://doi.org/10.1109/tase.2025.3646183",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 56,
+        "video_potential": 46,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "dexterous manipulation",
+          "robotic hand"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation",
+              "robotic hand"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, dexterous manipulation"
+          }
+        ],
+        "historical_value_score": 77.2,
+        "historical_score_components": {
+          "research_relevance": 56.0,
+          "recency": 100.0,
+          "normalized_citation": 92.6,
+          "fwci": 100.0,
+          "citation_momentum": 35.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 7.4%",
+          "阅读时效分 100/100（论文年龄 1 年）",
+          "OpenAlex FWCI 3.13",
+          "近年年均 OpenAlex 引用 7.0（无更早窗口可比较）",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "dexterous_manipulation"
+      ],
+      "document_type": "survey",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 77.2,
+      "recommendation_utility": 71.2,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7116283786",
+        "base_id": "openalex:W7116283786",
+        "version": 1,
+        "title": "Dexterous Manipulation Through Imitation Learning: A Survey",
+        "authors": [
+          "Shan An",
+          "Ziyu Meng",
+          "Chao Tang",
+          "Yuning Zhou",
+          "Tengyu Liu",
+          "Fangqiang Ding",
+          "Shufang Zhang",
+          "Yao Mu",
+          "R. Song",
+          "Wei Zhang",
+          "Zeng Hou",
+          "H Zhang"
+        ],
+        "published": "2025-12-19T00:00:00Z",
+        "updated": "2025-12-19T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Dexterous manipulation, which refers to the ability of a robotic hand or multi-fingered end-effector to skillfully control, reorient, and manipulate objects through precise, coordinated finger movements and adaptive force modulation, enables complex interactions similar to human hand dexterity. With recent advances in robotics and machine learning, there is a growing demand for these systems to operate in complex and unstructured environments. Traditional model-based approaches struggle to generalize across tasks and object variations due to the high dimensionality and complex contact dynamics of dexterous manipulation. Although model-free methods such as reinforcement learning (RL) show promise, they require extensive training, large-scale interaction data, and carefully designed rewards for stability and effectiveness. Imitation learning (IL) offers an alternative by allowing robots to acquire dexterous manipulation skills directly from expert demonstrations, capturing fine-grained coordination and contact dynamics while bypassing the need for explicit modeling and large-scale trial-and-error. This survey provides an overview of dexterous manipulation methods based on imitation learning, details recent advances, and addresses key challenges in the field. Additionally, it explores potential research directions to enhance IL-driven dexterous manipulation. Our goal is to offer researchers and practitioners a comprehensive introduction to this rapidly evolving domain.",
+        "abs_url": "https://doi.org/10.1109/tase.2025.3646183",
+        "pdf_url": "",
+        "research_fit": 56,
+        "video_potential": 46,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "dexterous manipulation",
+          "robotic hand"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation",
+              "robotic hand"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation, dexterous manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}

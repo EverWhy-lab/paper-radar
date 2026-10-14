@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-10-13</title>
+  <title>Paper Radar — 2026-10-14</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-10-13 20:13</p>
+        <p class="header-updated">2026-10-14 17:40</p>
       </div>
     </div>
   </header>
@@ -31,38 +31,198 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="openalex:W7163026747" data-paper-id="openalex:W7163026747" data-category="journal_recent">
+      <article class="paper-card" id="arxiv:2610.18790" data-paper-id="arxiv:2610.18790" data-category="frontier_recent">
         <div class="card-topline">
-          <span class="category category--journal_recent">期刊新论文</span>
-          <span class="arxiv-id">W7163026747</span>
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2610.18790v1</span>
         </div>
-        <h3>Learning Terrain-Aware Whole-Body Control for Perceptive Legged Loco-Manipulation</h3>
-        <p class="authors">Sikai Guo, Yudong Zhong, Guoyang Zhao, Botao Dang, Zhihai Bi, Jun Ma</p>
+        <h3>EqC: Equilibrium Energy Control for Introspective Lifelong Robot Learning</h3>
+        <p class="authors">Haodong Yang, Runhan Huang, Bowen Zhang, Iofai Lei, Zunzhe Zhang, Xiangcheng Zhang, Shaoting Zhu, Linzhan Mou, Yicheng Liu, Hang Zhao</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-09-18</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> loco_manipulation, whole_body_control</span>        </div>
+          <span><b>Published</b> 2026-10-14 01:39 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> continual_robot_learning, bimanual_manipulation</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>TA-WBC targets whole-body loco-manipulation for legged manipulators whose controllers rely mainly on proprioception and lack exteroception for terrain topology. The framework combines an RL-based unified policy with a hierarchical exteroceptive encoder for terrain features, an end-effector sampling method based on the foot contact plane that decouples the manipulation target from base height, roll, and pitch variations, and a dual-policy distillation module intended to merge expansive whole-body motion with terrain adaptability without catastrophic forgetting. Simulation and real-world experiments are reported to validate robustness, yielding a larger reachable space, less tracking error, and reduced unexpected stumbles. Inspect how terrain features are encoded and how distillation preserves prior motion skills.</p>
+          <p>EqC targets introspective lifelong robot learning, where a policy must detect when its behavior is no longer supported and use expert assistance to improve. It builds an explicit conditional energy landscape, casts generative action refinement as equilibrium-seeking optimization, and reads the geometry of refinement as a competence signal; persistent energy-consistency violations trigger Energy-Gated DAgger expert takeover, with recovery trajectories aggregated for policy updates. EqC is reported to integrate into Diffusion Transformer policies and flow-matching-based vision-language-action (VLA) policies. Across simulation and real-world bimanual manipulation it matches or improves control performance and robustness while enabling timely intervention near the competence boundary, and a real-world study reports progressive expansion of autonomously handled situations. Inspect how the energy-consistency signal is thresholded and how interventions are aggregated.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> continual_robot_learning, bimanual_manipulation</span><span><b>Utility</b> 78.8 (base 77.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span>          </div>
+          <ul>
+<li>research_fit 77 ≥ 40</li><li>Core topics matched: vla_robot_foundation, robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: vision-language-action, VLA, lifelong robot learning, self-improving robot, bimanual manipulation</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: continual_robot_learning, bimanual_manipulation</li><li>Personal domain affinity: preferred (+6; matched bimanual manipulation)</li><li>Subtopic: bimanual_manipulation</li><li>Recently recommended: 6 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = continual_robot_learning</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 78.8 = base 77.0 + affinity +6 + redundancy -4.2</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Long-term robot autonomy depends on more than effective action generation: a policy must recognize when its behavior is no longer sufficiently supported and use assistance to improve. We introduce Equilibrium Energy Control (EqC), a framework for introspective lifelong robot learning built around an explicit conditional energy landscape. EqC casts generative action refinement as equilibrium-seeking optimization, while the geometry of the refinement process reveals whether the generated behavior remains consistent with the learned landscape. This competence signal enables Energy-Gated DAgger, where persistent energy-consistency violations trigger expert takeover and the resulting recovery trajectories are aggregated for subsequent policy updates. EqC integrates naturally into both Diffusion Transformer policies and flow-matching-based vision-language-action (VLA) policies. Across simulation and real-world bimanual manipulation, EqC matches or improves control performance and robustness while enabling timely intervention near the policy&#39;s competence boundary. A real-world study further shows how these interventions progressively expand the range of situations handled autonomously, providing a practical path from static generative controllers toward self-improving robot systems.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.18790v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.18790v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.18790" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.18790" data-title="EqC: Equilibrium Energy Control for Introspective Lifelong Robot Learning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.18790" data-title="EqC: Equilibrium Energy Control for Introspective Lifelong Robot Learning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2610.18848" data-paper-id="arxiv:2610.18848" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2610.18848v1</span>
+        </div>
+        <h3>Contact Trajectory Prompting: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration</h3>
+        <p class="authors">Xian Nie, Yujie Zang, Yuhang Zheng, Yupeng Zheng, Songen Gu, Wendi Chen, Chuan Wen, Cewu Lu, Wenchao Ding, Junchi Yan, Shuicheng Yan</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-14 01:58 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>CTP addresses one-shot in-context transfer of contact-rich manipulation, where visual and kinematic specifications alone may not distinguish behaviors with similar motion but different interaction intensity or pattern. It encodes motion and contact from a single demonstration into an ordered contact trajectory prompt capturing temporal evolution, and the policy retrieves interaction-relevant information from that prompt using online sensory feedback to condition closed-loop action generation. Across real-world wiping, rotation, and insertion tasks on objects excluded from training, CTP reports 78.7% overall success, 13.0 percentage points above the strongest evaluated baseline; changing only the reference demonstration follows contact specifications for intensity and direction, including an intermediate wiping force level and clockwise or counterclockwise cap rotation. Inspect how the prompt is retrieved and grounded in feedback.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Utility</b> 60.0 (base 60.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 60 ≥ 40</li><li>Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: motion imitation, contact-rich manipulation</li><li>Diversity topic: humanoid_loco_manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 60.0 = base 60.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>In-context robot learning enables robots to acquire new behaviors from demonstrations without test-time parameter updates. However, visual and kinematic specifications alone may not distinguish contact-rich behaviors that share similar motions but require different interaction intensities or patterns. We propose Contact Trajectory Prompting (CTP), a framework for one-shot transfer of contact-rich manipulation behaviors. CTP encodes motion and contact information from a single demonstration into an ordered contact trajectory prompt that captures their temporal evolution and specifies the desired physical interaction behavior. During execution, the policy uses online sensory feedback to retrieve interaction-relevant information from the prompt, conditioning closed-loop action generation on the demonstrated contact behavior. Across real-world wiping, rotation, and insertion tasks on objects excluded from training, CTP achieves 78.7% overall success, outperforming the strongest evaluated baseline by 13.0 percentage points. Changing only the reference demonstration enables CTP to follow contact specifications for both intensity and direction, including an intermediate wiping force level and clockwise or counterclockwise cap rotation. These results demonstrate that contact trajectories serve as effective behavioral specifications, extending in-context robot learning beyond motion imitation to physical interaction transfer. Project website: https://ctp-robotics.github.io/project_page.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.18848v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.18848v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.18848" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.18848" data-title="Contact Trajectory Prompting: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.18848" data-title="Contact Trajectory Prompting: In-Context Transfer of Contact-Rich Behaviors from a Single Demonstration" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7138116831" data-paper-id="openalex:W7138116831" data-category="journal_recent">
+        <div class="card-topline">
+          <span class="category category--journal_recent">期刊新论文</span>
+          <span class="arxiv-id">W7138116831</span>
+        </div>
+        <h3>Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation</h3>
+        <p class="authors">Xingting Li, Yifan Xie, Han Liu, Wei Hou, Guangyu Chen, Shoujie Li, Wenbo Ding</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-01</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> diffusion_flow_policy</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>M2-ResiPolicy targets contact-rich, fine-grained manipulation, arguing that visual imitation learning handles long-horizon planning but misses cues such as friction variation or incipient slip and struggles to balance global coherence with local reactive feedback. The Master-Micro residual architecture pairs a 10 Hz Master-Guidance Policy (MGP) that generates temporally consistent action chunks via a diffusion-based backbone with a tactile-intensity-driven adaptive fusion mechanism modulating vision and touch, plus a 60 Hz Micro-Residual Corrector (MRC) using a lightweight GRU for real-time action compensation from TCP wrench feedback, integrated with a force-mixed PBIC execution layer. Experiments across fragile object grasping and precision insertion report a 93% damage-free success rate in chip grasping and superior force regulation stability over Diffusion Policy (DP) and Reactive Diffusion Policy (RDP). Inspect the adaptive fusion and residual coupling.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 期刊新论文</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
-<span><b>Subtopics</b> loco_manipulation, whole_body_control</span><span><b>Utility</b> 36.0 (base 42.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> diffusion_flow_policy</span><span><b>Utility</b> 43.0 (base 55.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
 <span><b>Recent overlap</b> -12</span><span><b>OpenAlex citations</b> 0</span>          </div>
           <ul>
-<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 42 ≥ 35</li><li>Core topics matched: humanoid_loco_manipulation</li><li>Specific keywords matched: loco-manipulation, mobile manipulation, whole-body control, WBC</li><li>Detected subtopics: loco_manipulation, whole_body_control</li><li>Personal domain affinity: preferred (+6; matched loco-manipulation, mobile manipulation)</li><li>Subtopic: loco_manipulation, whole_body_control</li><li>Recently recommended: 6 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 36.0 = base 42.0 + affinity +6 + redundancy -12</li>          </ul>
+<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 55 ≥ 35</li><li>Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: long-horizon planning, diffusion policy, contact-rich manipulation</li><li>Detected subtopics: diffusion_flow_policy</li><li>Personal domain affinity: neutral (+0)</li><li>Subtopic: diffusion_flow_policy</li><li>Recently recommended: 5 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 43.0 = base 55.0 + affinity +0 + redundancy -12</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Legged manipulators integrate exceptional terrain adaptability along with mobile manipulation capabilities, which make them highly promising for deployment in human-centric environments. By coordinating the control of both legs and arms, a whole-body controller can significantly expand the operational workspace of legged manipulators. However, many existing whole-body controllers primarily depend on proprioception and do not incorporate the critical exteroception required for effective terrain topology perception. This limitation can hinder their ability to adapt to varying environmental conditions and navigate complex terrains effectively. In this paper, we introduce TA-WBC, a terrain-aware whole-body control framework for legged manipulators, which features a novel RL-based unified policy tailored to whole-body loco-manipulation tasks in various terrains. Specifically, we employ a \rev{hierarchical exteroceptive encoder} to extract terrain features, providing an essential basis for the robot to proactively adapt posture and footholds. Furthermore, to facilitate stable cross-terrain loco-manipulation, we propose a novel end-effector sampling method based on the foot contact plane, \rev{decoupling the manipulation target from base height, roll, and pitch variations}. Moreover, a dual-policy distillation module is introduced to integrate expansive whole-body motion with terrain adaptability without catastrophic forgetting. The simulation and real-world experiments validate the robustness of our proposed controller, which leads to a larger reachable space, less tracking error, and reduced unexpected stumbles. This unified policy highlights the promising capabilities of legged manipulators in performing loco-manipulation tasks across complex terrains.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Robotic contact-rich and fine-grained manipulation remains a significant challenge due to complex interaction dynamics and the competing requirements of multi-timescale control. While current visual imitation learning methods excel at long-horizon planning, they often fail to perceive critical interaction cues like friction variations or incipient slip, and struggle to balance global task coherence with local reactive feedback. To address these challenges, we propose M2-ResiPolicy, a novel Master-Micro residual control architecture that synergizes high-level action guidance with low-level correction. The framework consists of a Master-Guidance Policy (MGP) operating at 10 Hz, which generates temporally consistent action chunks via a diffusion-based backbone and employs a tactile-intensity-driven adaptive fusion mechanism to dynamically modulate perceptual weights between vision and touch. Simultaneously, a high-frequency (60 Hz) Micro-Residual Corrector (MRC) utilizes a lightweight GRU to provide real-time action compensation based on TCP wrench feedback. This policy is further integrated with a force-mixed PBIC execution layer, effectively regulating contact forces to ensure interaction safety. Experiments across several demanding tasks including fragile object grasping and precision insertion, demonstrate that M2-ResiPolicy significantly outperforms standard Diffusion Policy (DP) and state-of-the-art Reactive Diffusion Policy (RDP), achieving a 93\% damage-free success rate in chip grasping and superior force regulation stability.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7163026747" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2605.31343" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2605.31343" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3732842" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2605.31343" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7163026747" data-title="Learning Terrain-Aware Whole-Body Control for Perceptive Legged Loco-Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W7138116831" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2603.15152" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2603.15152" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3739024" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2603.15152" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7138116831" data-title="Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7163026747" data-title="Learning Terrain-Aware Whole-Body Control for Perceptive Legged Loco-Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7138116831" data-title="Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2610.18677" data-paper-id="arxiv:2610.18677" data-category="model_based_recent">
+        <div class="card-topline">
+          <span class="category category--model_based_recent">方法前沿</span>
+          <span class="arxiv-id">2610.18677v1</span>
+        </div>
+        <h3>Model-Based Online Decision Making via Generative Trajectory Planning</h3>
+        <p class="authors">Haldun Balim, Yilun Du, Na Li</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-14 00:35 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.LG, cs.AI, cs.RO, eess.SY</span>
+<span><b>Reading focus</b> diffusion_flow_policy, motion_planning, trajectory_optimization</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>GTP addresses the tension in online decision-making between efficient inference and long-horizon reasoning: value-based methods rely on short-horizon bootstrapping that limits long-term information propagation, while trajectory optimization plans explicitly but solves a high-dimensional problem at every step. GTP learns a generative model as a proposal distribution over action sequences, sampling candidate sequences from a diffusion prior and refining them with learned dynamics, reward, and value models for trajectory-level reasoning. Across continuous control and long-horizon manipulation tasks, GTP is reported to match or exceed state-of-the-art model-free, diffusion-policy, and model-based baselines and to remain stable where strong baselines degrade. Inspect how the learned models score and refine proposals.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 方法前沿</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training</span>
+<span><b>Subtopics</b> diffusion_flow_policy, motion_planning, trajectory_optimization</span><span><b>Utility</b> 54.8 (base 59.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>Recent overlap</b> -4.2</span>          </div>
+          <ul>
+<li>Recent model-based robotics paper: published within 14 days</li><li>Robotics context: manipulation</li><li>Strong method signals: motion_planning, trajectory_optimization</li><li>research_fit 59 ≥ 28</li><li>Detected subtopics: diffusion_flow_policy, motion_planning, trajectory_optimization</li><li>Personal domain affinity: neutral (+0)</li><li>Subtopic: trajectory_optimization</li><li>Recently recommended: 4 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = diffusion_flow_policy, motion_planning</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 54.8 = base 59.0 + affinity +0 + redundancy -4.2</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Online decision-making faces a tension between efficient inference and long-horizon reasoning. Value-based methods rely on short-horizon bootstrapping that limits the propagation of long-term information, while trajectory optimization methods plan explicitly but must solve a high-dimensional optimization problem at every decision step. We propose Generative Trajectory Planning (GTP), a model-based framework that addresses this tension by learning a generative model as a proposal distribution over action sequences. Instead of optimizing sequences from scratch, GTP samples candidate sequences from a diffusion prior and refines them using learned dynamics, reward, and value models, enabling efficient trajectory-level reasoning. Across continuous control and long-horizon manipulation tasks, GTP matches or exceeds state-of-the-art model-free, diffusion-policy, and model-based baselines, and remains stable in regimes where strong baselines degrade. Our results suggest that generative models are best understood not as policies, but as structured proposal distributions for planning, offering a new perspective on how to integrate generative modeling with model-based decision-making.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.18677v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.18677v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.18677" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.18677" data-title="Model-Based Online Decision Making via Generative Trajectory Planning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.18677" data-title="Model-Based Online Decision Making via Generative Trajectory Planning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7116283786" data-paper-id="openalex:W7116283786" data-category="review_knowledge_map">
+        <div class="card-topline">
+          <span class="category category--review_knowledge_map">综述 / 知识地图</span>
+          <span class="arxiv-id">W7116283786</span>
+        </div>
+        <h3>Dexterous Manipulation Through Imitation Learning: A Survey</h3>
+        <p class="authors">Shan An, Ziyu Meng, Chao Tang, Yuning Zhou, Tengyu Liu, Fangqiang Ding, Shufang Zhang, Yao Mu, R. Song, Wei Zhang, Zeng Hou, H Zhang</p>
+        <div class="metadata">
+          <span><b>Published</b> 2025-12-19</span>
+<span><b>Source</b> IEEE Transactions on Automation Science and Engineering</span><span><b>Reading focus</b> dexterous_manipulation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This survey reviews dexterous manipulation through imitation learning, covering robotic hands or multi-fingered end-effectors that control, reorient, and manipulate objects via coordinated finger movements and adaptive force modulation. It frames model-based approaches as struggling to generalize given high dimensionality and complex contact dynamics, and model-free reinforcement learning as demanding extensive training, large-scale interaction data, and carefully designed rewards, positioning imitation learning (IL) as acquiring skills from expert demonstrations while bypassing explicit modeling and large-scale trial-and-error. The survey details recent advances, addresses key challenges, and explores potential research directions for IL-driven dexterous manipulation, aiming to give researchers and practitioners a comprehensive introduction. Use it as a knowledge map of IL methods and open problems.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> dexterous_manipulation</span><span><b>Utility</b> 71.2 (base 77.2)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -12</span><span><b>OpenAlex citations</b> 7</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotic, robotics, manipulation, dexterous manipulation</li><li>research_fit 56 ≥ 18</li><li>核心方向：robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>特定关键词：dexterous manipulation</li><li>historical_value_score 77.2 ≥ 50.0</li><li>发表于 2025 年</li><li>同领域同年份引用标准化位于前 7.4%</li><li>阅读时效分 100/100（论文年龄 1 年）</li><li>OpenAlex FWCI 3.13</li><li>近年年均 OpenAlex 引用 7.0（无更早窗口可比较）</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-24T03:32:02</li><li>Detected subtopics: dexterous_manipulation</li><li>Personal domain affinity: preferred (+6; matched dexterous manipulation)</li><li>Subtopic: dexterous_manipulation</li><li>Recently recommended: 5 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 71.2 = base 77.2 + affinity +6 + redundancy -12</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Dexterous manipulation, which refers to the ability of a robotic hand or multi-fingered end-effector to skillfully control, reorient, and manipulate objects through precise, coordinated finger movements and adaptive force modulation, enables complex interactions similar to human hand dexterity. With recent advances in robotics and machine learning, there is a growing demand for these systems to operate in complex and unstructured environments. Traditional model-based approaches struggle to generalize across tasks and object variations due to the high dimensionality and complex contact dynamics of dexterous manipulation. Although model-free methods such as reinforcement learning (RL) show promise, they require extensive training, large-scale interaction data, and carefully designed rewards for stability and effectiveness. Imitation learning (IL) offers an alternative by allowing robots to acquire dexterous manipulation skills directly from expert demonstrations, capturing fine-grained coordination and contact dynamics while bypassing the need for explicit modeling and large-scale trial-and-error. This survey provides an overview of dexterous manipulation methods based on imitation learning, details recent advances, and addresses key challenges in the field. Additionally, it explores potential research directions to enhance IL-driven dexterous manipulation. Our goal is to offer researchers and practitioners a comprehensive introduction to this rapidly evolving domain.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7116283786" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/tase.2025.3646183" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7116283786" data-title="Dexterous Manipulation Through Imitation Learning: A Survey" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7116283786" data-title="Dexterous Manipulation Through Imitation Learning: A Survey" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
