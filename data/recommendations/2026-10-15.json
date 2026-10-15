@@ -1,0 +1,833 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-15",
+  "generated_at": "2026-10-15T17:19:15+08:00",
+  "mode": "incremental",
+  "candidate_count": 4401,
+  "historical_candidate_count": 635,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2610.20320",
+      "title": "TacClaw-Infinity: A Large-Scale Vision-Tactile-Language-Action Dataset for Dexterous Manipulation",
+      "takeaway": "TacClaw-Infinity addresses the scarcity of scalable tactile manipulation data by introducing a structured Vision-Tactile-Language-Action dataset collected with TacClaw, a tactile-enabled UMI-style handheld interface that records synchronized visual observations, fingertip tactile signals, and end-effector trajectories without a target robot. Distributed worldwide collection across homes, laboratories, industrial workplaces, retail stores, and outdoor environments yields over 10,000 hours, 1 million episodes, and 1 billion frames spanning more than 1,000 task types, with a pipeline for trajectory reconstruction, multimodal quality control, embodiment-aware filtering, and structured annotation. The authors report validation at the data level and demonstrate cross-embodiment transfer across three heterogeneous robots without robot-specific demonstrations. Inspect the annotation schema and embodiment-aware filtering criteria when assessing transfer claims.",
+      "generated_at": "2026-10-15T09:27:08",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2610.20504",
+      "title": "Graph-Reweighted Behavior Cloning with Human Interventions for Precise Robotic Manipulation",
+      "takeaway": "GR-BC targets mixed-quality data in long-horizon precise manipulation post-training, where successful demonstrations and intervention-assisted rollouts still contain detours, hesitations, failed attempts, and imperfect recoveries. The offline iterative framework builds a task-conditioned goal-reachability graph over demonstrations and rollouts, uses reverse graph search to compute minimal remaining steps to success, and weights each action chunk by how much its execution reduces this potential, reusing recoverable segments and interventions without training a reward model, action-conditioned critic, or progress predictor. Across four precise manipulation tasks and three VLA backbones, GR-BC improves single-round supervised fine-tuning and reaches 91% success after a few offline iterations. Inspect how graph support and weighting behave under distribution shift.",
+      "generated_at": "2026-10-15T09:27:08",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2610.20255",
+      "title": "Safe Reinforcement Learning with Receding-Horizon Safety Critic and Differentiable Action Shields",
+      "takeaway": "This work addresses safety failures in robot reinforcement learning that emerge over several steps rather than instantaneously, as policies enter unfamiliar states under disturbances and domain shift. It learns a receding-horizon safety critic predicting whether a state remains non-terminating over the next horizon, trained from rollout-derived horizon labels with horizon classification, control-barrier-function-inspired temporal consistency, and smoothness regularization, and aggregates an ensemble with a conservative Conditional Value at Risk estimate. A closed-form differentiable CBF-style safety filter minimally modifies policy actions and is integrated into PPO with an anticipation loss. In simulated quadruped locomotion, the method improves robustness under action noise, external perturbations, and terrain shifts, reducing catastrophic failures while maintaining competitive returns. Inspect the horizon labeling and filter-policy mismatch handling.",
+      "generated_at": "2026-10-15T09:27:08",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7168350598",
+      "title": "Compositional Motion Generation From Demonstration With Object-Centric Neural Fields",
+      "takeaway": "This paper presents a generative learning-from-demonstration framework for compositional motion generation, connecting perception and motion through shared object-level representations. Scenes are rendered from object-centric neural representations that integrate canonical neural fields with latent-conditioned deformations, while a temporal mixture-of-experts gating mechanism combines object-conditioned movement primitives over time into complete trajectories. The authors report that long-horizon manipulation tasks in simulation are completed with significantly less training data than other image-based baselines, and real-world experiments demonstrate robustness to noise, category-level generalization through language-based segmentation models, and direct operation on 3D scene representations. Inspect how the shared object-level representation supports spatial-temporal compositionality and generalization across scene configurations.",
+      "generated_at": "2026-10-15T09:27:08",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 74 ≥ 40",
+        "Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation, robot_data_scaling_sim2real",
+        "Specific keywords matched: dexterous manipulation, vision tactile, contact-rich manipulation, tactile manipulation, UMI",
+        "Diversity topic: robot_learning_posttraining",
+        "Detected subtopics: cross_embodiment, dexterous_manipulation, tactile_manipulation",
+        "Personal domain affinity: preferred (+6; matched dexterous manipulation)",
+        "Subtopic: dexterous_manipulation",
+        "Recently recommended: 6 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = cross_embodiment, tactile_manipulation",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 75.8 = base 74.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.20320",
+      "historical_paper": null,
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "cross_embodiment",
+        "dexterous_manipulation",
+        "tactile_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 74.0,
+      "recommendation_utility": 75.8,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.20320v1",
+        "base_id": "2610.20320",
+        "version": 1,
+        "title": "TacClaw-Infinity: A Large-Scale Vision-Tactile-Language-Action Dataset for Dexterous Manipulation",
+        "authors": [
+          "Fucai Zhu",
+          "Xidong Zhang",
+          "Yichi Zhang",
+          "Yipan Wang",
+          "Fubo Wang",
+          "Zibin Wu",
+          "Kaiqi Li",
+          "Jianhao Jiao",
+          "Shihan Lu",
+          "Di Hu",
+          "Mengdi Xu",
+          "Siyu Zhu",
+          "Xiaoxiao Long",
+          "Yao Yao",
+          "Xun Cao",
+          "Zhuo Xu",
+          "Koichi Hashimoto",
+          "Qifeng Chen",
+          "Zhe Li",
+          "Jianfei Yang",
+          "Haofei Lu",
+          "Danica Kragic",
+          "Shuicheng Yan",
+          "Jianghua Duan",
+          "Michael Yu Wang",
+          "Weihao Yuan"
+        ],
+        "published": "2026-10-14T15:06:53Z",
+        "updated": "2026-10-14T15:06:53Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Large-scale robot learning increasingly relies on diverse human demonstrations, yet tactile manipulation data remain difficult to scale, and existing multimodal datasets often lack consistent quality control and structured supervision. We present TacClaw-Infinity, a large-scale structured Vision-Tactile-Language-Action (VTLA) dataset for contact-rich manipulation, collected with TacClaw, a tactile-enabled UMI-style handheld interface that records synchronized visual observations, fingertip tactile signals, and end-effector trajectories without requiring a target robot during data collection. TacClaw-Infinity is built through a distributed worldwide collection across homes, laboratories, industrial workplaces, retail stores, and outdoor environments including tasks contributed by academic and industrial collaborators. Together, these efforts yield over 10,000 hours, 1 million episodes, and 1 billion frames spanning more than 1,000 task types. We develop a scalable pipeline for trajectory reconstruction, multimodal quality control, embodiment-aware filtering, and structured annotation, covering contact-centric segmentation, subtask description, and spatial grounding. We validate TacClaw-Infinity at both the data and model levels: At the data level, we assess the collection interface, the action-space compatibility of the curated demonstrations, and the structured annotations, while for the model level, we demonstrate cross-embodiment transfer across three heterogeneous robots without robot-specific demonstrations.",
+        "abs_url": "https://arxiv.org/abs/2610.20320v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.20320v1",
+        "research_fit": 74,
+        "video_potential": 36,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "robot learning",
+          "dexterous manipulation",
+          "vision tactile",
+          "contact-rich manipulation",
+          "tactile manipulation",
+          "UMI"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation",
+              "vision tactile",
+              "contact-rich manipulation",
+              "tactile manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "UMI"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "manipulation",
+              "dexterous manipulation",
+              "robot learning",
+              "tactile manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "manipulation",
+              "dexterous manipulation",
+              "robot learning",
+              "tactile manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, manipulation, dexterous manipulation, robot learning, tactile manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 18.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "dexterous"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 64 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining",
+        "Specific keywords matched: vision-language-action, VLA",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 64.0 = base 64.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.20504",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 64.0,
+      "recommendation_utility": 64.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.20504v1",
+        "base_id": "2610.20504",
+        "version": 1,
+        "title": "Graph-Reweighted Behavior Cloning with Human Interventions for Precise Robotic Manipulation",
+        "authors": [
+          "Xiaoman Li",
+          "Zhiqiang Yang",
+          "Jiayu Hu",
+          "Jipeng Kong",
+          "Yang Zhang",
+          "Jingwei Zhang",
+          "Fangzheng Yan",
+          "Chunhua Shen",
+          "Chenjia Bai"
+        ],
+        "published": "2026-10-14T17:09:36Z",
+        "updated": "2026-10-14T17:09:36Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Long-horizon precise manipulation produces mixed-quality data for post-training vision-language-action (VLA) models: even successful demonstrations and intervention-assisted rollouts may contain detours, hesitations, failed attempts, and imperfect recoveries. The key challenge is to identify which action chunks actually advance the task, rather than uniformly cloning or discarding imperfect trajectories. We propose Graph-Reweighted Behavior Cloning (GR-BC), an offline iterative post-training framework that builds a task-conditioned goal-reachability graph over demonstrations and iteratively collected rollouts, including both successful and failed episodes with human interventions. Reverse graph search computes minimal remaining steps to task success within the dataset support, and each action chunk is weighted by how much its execution reduces this potential. This consequence-based weighting reuses recoverable segments from failed trajectories, leverages interventions as recovery paths, and down-weights locally regressive chunks even inside successful trajectories. New rollouts are incorporated by appending them to the graph and rerunning search, without training a reward model, action-conditioned critic, or progress predictor. Across four precise manipulation tasks and three VLA backbones, GR-BC improves single-round supervised fine-tuning and reaches 91% success after a few offline iterations, without trajectory comparisons or progress labels. More details and videos are available at: https://gr-bc.github.io",
+        "abs_url": "https://arxiv.org/abs/2610.20504v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.20504v1",
+        "research_fit": 64,
+        "video_potential": 34,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "behavior cloning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "behavior cloning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotic, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 16.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robot",
+        "Strong method signals: safety_critical_control",
+        "research_fit 28 ≥ 28",
+        "Detected subtopics: safety_critical_control",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "recommendation_utility 34.0 = base 28.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.20255",
+      "historical_paper": null,
+      "core_topics": [],
+      "subtopics": [
+        "safety_critical_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 28.0,
+      "recommendation_utility": 34.0,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.20255v1",
+        "base_id": "2610.20255",
+        "version": 1,
+        "title": "Safe Reinforcement Learning with Receding-Horizon Safety Critic and Differentiable Action Shields",
+        "authors": [
+          "Siwei Ju",
+          "Jan Peters",
+          "Oleg Arenz"
+        ],
+        "published": "2026-10-14T14:25:46Z",
+        "updated": "2026-10-14T14:25:46Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Despite the Markov assumption, safety failures in robot reinforcement learning rarely occur instantaneously; they typically emerge over several steps as the policy enters unfamiliar states under disturbances and domain shift. We address this limitation by learning a receding-horizon safety critic that predicts whether a state will remain non-terminating over the next receding horizon, enabling anticipatory detection of impending locomotion failures. The critic is trained from rollout-derived horizon labels with a composite objective that combines horizon classification, control-barrier-function-inspired temporal consistency, and smoothness regularization, and we aggregate an ensemble of critics with a conservative Conditional Value at Risk estimate to account for uncertainty. Building on the learned critic, we derive a closed-form, differentiable CBF-style safety filter that minimally modifies the policy action to improve predicted safety, and integrate it into PPO with an anticipation loss to reduce policy-filter mismatch during training. In simulated quadruped locomotion, our method improves robustness under action noise, external perturbations, and terrain shifts, reducing catastrophic failures while maintaining competitive returns.",
+        "abs_url": "https://arxiv.org/abs/2610.20255v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.20255v1",
+        "research_fit": 28,
+        "video_potential": 46,
+        "matched_topics": [
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "control barrier function",
+          "CBF"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "control barrier function",
+              "CBF"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 7.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "quadruped"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "locomotion"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, manipulation, robot learning",
+        "research_fit 27 ≥ 18",
+        "核心方向：world_model_embodied_reasoning, robot_learning_posttraining",
+        "特定关键词：long-horizon manipulation",
+        "historical_value_score 53.6 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 26.8%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-09-07T07:29:16",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 53.6 = base 53.6 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7168350598",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7168350598",
+        "openalex_id": "W7168350598",
+        "base_arxiv_id": "2607.07129",
+        "doi": "10.1109/lra.2026.3713713",
+        "title": "Compositional Motion Generation From Demonstration With Object-Centric Neural Fields",
+        "authors": [
+          "Ahmet Tekden",
+          "Yasemin Bekiroglu"
+        ],
+        "abstract": "Compositionality, by organizing complex behavior as combinations of simpler elements, enables robot learning that is scalable and data efficient. Leveraging this principle, we propose a generative learning-from-demonstration framework that enables compositional modeling of robotic behavior by connecting perception and motion through shared object-level representations. We render scenes from object-centric neural representations that integrate canonical neural fields with latent-conditioned deformations, capturing positional and geometric variations in a smooth, consistent, and interpretable way. For motion generation, a temporal mixture-of-experts (MoE) employs a gating mechanism to combine object-conditioned movement primitives over time, producing complete trajectories. This spatial-temporal compositionality maintains the data efficiency of movement primitives while grounding motion in visual structure, enabling systematic generalization across diverse scene configurations. In simulation, long-horizon manipulation tasks are successfully completed using the proposed model, which requires significantly less training data than other image-based baselines. Real-world experiments further demonstrate the method's robustness to noise, its ability to generalize at the category level through language-based segmentation models, and its capacity to operate directly on 3D scene representations.",
+        "publication_date": "2026-07-15",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11206",
+            "display_name": "Model Reduction and Neural Networks",
+            "score": 0.1453000009059906
+          },
+          {
+            "id": "https://openalex.org/T12611",
+            "display_name": "Neural Networks and Reservoir Computing",
+            "score": 0.10459999740123749
+          },
+          {
+            "id": "https://openalex.org/T11948",
+            "display_name": "Machine Learning in Materials Science",
+            "score": 0.03970000147819519
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.73226507,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-10-15T17:19:15+08:00",
+        "recommended_at": "2026-10-15T17:19:15+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-09-07T07:29:16",
+        "openalex_url": "https://openalex.org/W7168350598",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3713713",
+        "open_access_url": "https://doi.org/10.1109/lra.2026.3713713",
+        "pdf_url": null,
+        "research_fit": 27,
+        "video_potential": 18,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "robot learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, robot learning"
+          }
+        ],
+        "historical_value_score": 53.6,
+        "historical_score_components": {
+          "research_relevance": 27.0,
+          "recency": 100.0,
+          "normalized_citation": 73.2,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 26.8%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 53.6,
+      "recommendation_utility": 53.6,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2607.07129",
+        "base_id": "2607.07129",
+        "version": 1,
+        "title": "Compositional Motion Generation From Demonstration With Object-Centric Neural Fields",
+        "authors": [
+          "Ahmet Tekden",
+          "Yasemin Bekiroglu"
+        ],
+        "published": "2026-07-15T00:00:00Z",
+        "updated": "2026-07-15T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Compositionality, by organizing complex behavior as combinations of simpler elements, enables robot learning that is scalable and data efficient. Leveraging this principle, we propose a generative learning-from-demonstration framework that enables compositional modeling of robotic behavior by connecting perception and motion through shared object-level representations. We render scenes from object-centric neural representations that integrate canonical neural fields with latent-conditioned deformations, capturing positional and geometric variations in a smooth, consistent, and interpretable way. For motion generation, a temporal mixture-of-experts (MoE) employs a gating mechanism to combine object-conditioned movement primitives over time, producing complete trajectories. This spatial-temporal compositionality maintains the data efficiency of movement primitives while grounding motion in visual structure, enabling systematic generalization across diverse scene configurations. In simulation, long-horizon manipulation tasks are successfully completed using the proposed model, which requires significantly less training data than other image-based baselines. Real-world experiments further demonstrate the method's robustness to noise, its ability to generalize at the category level through language-based segmentation models, and its capacity to operate directly on 3D scene representations.",
+        "abs_url": "https://arxiv.org/abs/2607.07129",
+        "pdf_url": "https://arxiv.org/pdf/2607.07129",
+        "research_fit": 27,
+        "video_potential": 18,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "robot learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, robot learning"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
