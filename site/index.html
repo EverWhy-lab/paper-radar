@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-10-15</title>
+  <title>Paper Radar — 2026-10-16</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-10-15 17:19</p>
+        <p class="header-updated">2026-10-16 17:13</p>
       </div>
     </div>
   </header>
@@ -31,160 +31,124 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="arxiv:2610.20320" data-paper-id="arxiv:2610.20320" data-category="frontier_recent">
+      <article class="paper-card" id="arxiv:2610.22363" data-paper-id="arxiv:2610.22363" data-category="frontier_recent">
         <div class="card-topline">
           <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2610.20320v1</span>
+          <span class="arxiv-id">2610.22363v1</span>
         </div>
-        <h3>TacClaw-Infinity: A Large-Scale Vision-Tactile-Language-Action Dataset for Dexterous Manipulation</h3>
-        <p class="authors">Fucai Zhu, Xidong Zhang, Yichi Zhang, Yipan Wang, Fubo Wang, Zibin Wu, Kaiqi Li, Jianhao Jiao, Shihan Lu, Di Hu, Mengdi Xu, Siyu Zhu, Xiaoxiao Long, Yao Yao, Xun Cao, Zhuo Xu, Koichi Hashimoto, Qifeng Chen, Zhe Li, Jianfei Yang, Haofei Lu, Danica Kragic, Shuicheng Yan, Jianghua Duan, Michael Yu Wang, Weihao Yuan</p>
+        <h3>Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation</h3>
+        <p class="authors">Zirui Wu, Chen Guo, Tianjian Jiang, Zeren Jiang, Zeming Li, Lingchen Yang, Longteng Duan, Ying Xue, Handi Yin, Shenyuan Gao, Martin R. Oswald, Jun Zhang, Ping Tan, Jie Song</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-14 23:06 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO</span>
-<span><b>Reading focus</b> cross_embodiment, dexterous_manipulation, tactile_manipulation</span>        </div>
+          <span><b>Published</b> 2026-10-16 01:59 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.CV, cs.RO</span>
+<span><b>Reading focus</b> world_action_model, dexterous_manipulation</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>TacClaw-Infinity addresses the scarcity of scalable tactile manipulation data by introducing a structured Vision-Tactile-Language-Action dataset collected with TacClaw, a tactile-enabled UMI-style handheld interface that records synchronized visual observations, fingertip tactile signals, and end-effector trajectories without a target robot. Distributed worldwide collection across homes, laboratories, industrial workplaces, retail stores, and outdoor environments yields over 10,000 hours, 1 million episodes, and 1 billion frames spanning more than 1,000 task types, with a pipeline for trajectory reconstruction, multimodal quality control, embodiment-aware filtering, and structured annotation. The authors report validation at the data level and demonstrate cross-embodiment transfer across three heterogeneous robots without robot-specific demonstrations. Inspect the annotation schema and embodiment-aware filtering criteria when assessing transfer claims.</p>
+          <p>P$^{3}$-WAM targets egocentric dexterous manipulation by unifying three modes in one world action model: Perceive reconstructs articulated hand motion and camera trajectories from video, Predict generates visual futures under prescribed actions, and Plan jointly produces action trajectories with anticipated visual consequences from an image, language instruction, and optional visual goal. The method inserts a compact structured 3D action representation into a pretrained video diffusion transformer via a mixture-of-transformers architecture with shared base weights, modality-specific adaptation, and bidirectional visual-action attention, with randomized modality visibility. Reported evidence is that unified training improves all three capabilities over single-mode training, including planning quality under a vision-language model evaluation, and outperforms specialized baselines on 3D hand reconstruction and action-conditioned video prediction across four datasets. Inspect how the shared-weight mixture-of-transformers and modality visibility schedule affect cross-mode transfer.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation, Robot Data Scaling &amp; Sim-to-Real</span>
-<span><b>Subtopics</b> cross_embodiment, dexterous_manipulation, tactile_manipulation</span><span><b>Utility</b> 75.8 (base 74.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> world_action_model, dexterous_manipulation</span><span><b>Utility</b> 79.8 (base 78.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
 <span><b>Recent overlap</b> -4.2</span>          </div>
           <ul>
-<li>research_fit 74 ≥ 40</li><li>Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation, robot_data_scaling_sim2real</li><li>Specific keywords matched: dexterous manipulation, vision tactile, contact-rich manipulation, tactile manipulation, UMI</li><li>Diversity topic: robot_learning_posttraining</li><li>Detected subtopics: cross_embodiment, dexterous_manipulation, tactile_manipulation</li><li>Personal domain affinity: preferred (+6; matched dexterous manipulation)</li><li>Subtopic: dexterous_manipulation</li><li>Recently recommended: 6 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = cross_embodiment, tactile_manipulation</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 75.8 = base 74.0 + affinity +6 + redundancy -4.2</li>          </ul>
+<li>research_fit 78 ≥ 40</li><li>Core topics matched: world_model_embodied_reasoning, dexterous_multimodal_manipulation</li><li>Specific keywords matched: world action model, action-conditioned prediction, dexterous manipulation</li><li>Diversity topic: world_model_embodied_reasoning</li><li>Detected subtopics: world_action_model, dexterous_manipulation</li><li>Personal domain affinity: preferred (+6; matched dexterous manipulation)</li><li>Subtopic: dexterous_manipulation</li><li>Recently recommended: 7 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = world_action_model</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 79.8 = base 78.0 + affinity +6 + redundancy -4.2</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Large-scale robot learning increasingly relies on diverse human demonstrations, yet tactile manipulation data remain difficult to scale, and existing multimodal datasets often lack consistent quality control and structured supervision. We present TacClaw-Infinity, a large-scale structured Vision-Tactile-Language-Action (VTLA) dataset for contact-rich manipulation, collected with TacClaw, a tactile-enabled UMI-style handheld interface that records synchronized visual observations, fingertip tactile signals, and end-effector trajectories without requiring a target robot during data collection. TacClaw-Infinity is built through a distributed worldwide collection across homes, laboratories, industrial workplaces, retail stores, and outdoor environments including tasks contributed by academic and industrial collaborators. Together, these efforts yield over 10,000 hours, 1 million episodes, and 1 billion frames spanning more than 1,000 task types. We develop a scalable pipeline for trajectory reconstruction, multimodal quality control, embodiment-aware filtering, and structured annotation, covering contact-centric segmentation, subtask description, and spatial grounding. We validate TacClaw-Infinity at both the data and model levels: At the data level, we assess the collection interface, the action-space compatibility of the curated demonstrations, and the structured annotations, while for the model level, we demonstrate cross-embodiment transfer across three heterogeneous robots without robot-specific demonstrations.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>We introduce P$^{3}$-WAM, a unified world action model for egocentric dexterous manipulation that learns 3D perception, action-conditioned prediction, and goal-directed planning through three complementary modes: Perceive, which reconstructs articulated hand motion and camera trajectories from video; Predict, which generates visual futures under prescribed actions; and Plan, which jointly generates action trajectories and their anticipated visual consequences conditioned on an initial image, a language instruction, and an optional visual goal. Our model integrates a compact, structured 3D action representation into a pretrained video diffusion transformer through a mixture-of-transformers architecture with shared base weights, modality-specific adaptation, and bidirectional visual-action attention. Randomized modality visibility lets video and 3D actions serve as either conditioning context or prediction targets across the three modes. Experiments show that unified training improves all three capabilities over single-mode training, including gains in planning quality under a vision-language model evaluation. Through unified training, our model outperforms specialized baselines on 3D hand reconstruction and action-conditioned video prediction across four datasets, while producing goal-directed manipulation videos with stronger instruction adherence and action progression than video-generation baselines. Project Page: https://p3-wam.pages.dev/</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2610.20320v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2610.20320v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2610.20320" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          <a href="https://arxiv.org/abs/2610.22363v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.22363v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.22363" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2610.20320" data-title="TacClaw-Infinity: A Large-Scale Vision-Tactile-Language-Action Dataset for Dexterous Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.22363" data-title="Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.20320" data-title="TacClaw-Infinity: A Large-Scale Vision-Tactile-Language-Action Dataset for Dexterous Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.22363" data-title="Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="arxiv:2610.20504" data-paper-id="arxiv:2610.20504" data-category="frontier_recent">
+      <article class="paper-card" id="arxiv:2610.22146" data-paper-id="arxiv:2610.22146" data-category="frontier_recent">
         <div class="card-topline">
           <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2610.20504v1</span>
+          <span class="arxiv-id">2610.22146v1</span>
         </div>
-        <h3>Graph-Reweighted Behavior Cloning with Human Interventions for Precise Robotic Manipulation</h3>
-        <p class="authors">Xiaoman Li, Zhiqiang Yang, Jiayu Hu, Jipeng Kong, Yang Zhang, Jingwei Zhang, Fangzheng Yan, Chunhua Shen, Chenjia Bai</p>
+        <h3>FastVLA: Task-Conditioned and Temporally Adaptive Visual Token Compression for Efficient Vision-Language-Action Models</h3>
+        <p class="authors">Jiuyi Xu, Chengyuan Qian, Zhengzhong Tu, Yang Sui, Yangming Shi</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-15 01:09 Asia/Shanghai</span>
+          <span><b>Published</b> 2026-10-16 00:17 Asia/Shanghai</span>
           <span><b>Categories</b> cs.RO</span>
         </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>GR-BC targets mixed-quality data in long-horizon precise manipulation post-training, where successful demonstrations and intervention-assisted rollouts still contain detours, hesitations, failed attempts, and imperfect recoveries. The offline iterative framework builds a task-conditioned goal-reachability graph over demonstrations and rollouts, uses reverse graph search to compute minimal remaining steps to success, and weights each action chunk by how much its execution reduces this potential, reusing recoverable segments and interventions without training a reward model, action-conditioned critic, or progress predictor. Across four precise manipulation tasks and three VLA backbones, GR-BC improves single-round supervised fine-tuning and reaches 91% success after a few offline iterations. Inspect how graph support and weighting behave under distribution shift.</p>
+          <p>FastVLA addresses inference efficiency in Vision-Language-Action models, where high-resolution multi-view images become hundreds of visual tokens that dominate transformer computation and latency at each timestep. The training-free framework scores token importance through task-to-vision attention and adaptively sets the compression rate from importance-distribution uniformity, measured by an inverse-Simpson metric with online sliding-window calibration, motivated by the observation that decision-critical tokens are task-determined and token budgets vary across steps. Evaluated on OpenVLA, OpenVLA-OFT, and CogACT across LIBERO and SIMPLER and on a physical Franka Research 3 robot, it reports 35-59% LLM-backbone FLOPs reduction and 9-32% action latency reduction in simulation, and 20% end-to-end latency reduction on the real robot at comparable success. Inspect how the inverse-Simpson calibration behaves across task phases.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Robot Learning &amp; Policy Post-Training</span>
-<span><b>Utility</b> 64.0 (base 64.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
+<span><b>Utility</b> 52.0 (base 52.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
           </div>
           <ul>
-<li>research_fit 64 ≥ 40</li><li>Core topics matched: vla_robot_foundation, robot_learning_posttraining</li><li>Specific keywords matched: vision-language-action, VLA</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 64.0 = base 64.0 + affinity +0 + redundancy -0</li>          </ul>
+<li>research_fit 52 ≥ 40</li><li>Core topics matched: vla_robot_foundation</li><li>Specific keywords matched: vision-language-action, VLA, general-purpose robot</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Long-horizon precise manipulation produces mixed-quality data for post-training vision-language-action (VLA) models: even successful demonstrations and intervention-assisted rollouts may contain detours, hesitations, failed attempts, and imperfect recoveries. The key challenge is to identify which action chunks actually advance the task, rather than uniformly cloning or discarding imperfect trajectories. We propose Graph-Reweighted Behavior Cloning (GR-BC), an offline iterative post-training framework that builds a task-conditioned goal-reachability graph over demonstrations and iteratively collected rollouts, including both successful and failed episodes with human interventions. Reverse graph search computes minimal remaining steps to task success within the dataset support, and each action chunk is weighted by how much its execution reduces this potential. This consequence-based weighting reuses recoverable segments from failed trajectories, leverages interventions as recovery paths, and down-weights locally regressive chunks even inside successful trajectories. New rollouts are incorporated by appending them to the graph and rerunning search, without training a reward model, action-conditioned critic, or progress predictor. Across four precise manipulation tasks and three VLA backbones, GR-BC improves single-round supervised fine-tuning and reaches 91% success after a few offline iterations, without trajectory comparisons or progress labels. More details and videos are available at: https://gr-bc.github.io</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Vision-Language-Action (VLA) models present a promising paradigm for general-purpose robot manipulation, but closed-loop deployment is often limited by inference efficiency: at each timestep, high-resolution, often multi-view images are encoded into hundreds of visual tokens that dominate transformer computation and latency. Token compression via attention is a natural solution but is challenging for VLA control because (1) decision-critical tokens are determined by the task, not generic visual saliency, and (2) the token budget varies substantially across steps, so static metrics and budgets waste computation or discard control-critical tokens. We introduce FastVLA, a training-free, task-aware, and temporally adaptive visual token compression framework. At each step, FastVLA scores token importance via task-to-vision attention and adaptively sets the compression rate from the importance-distribution uniformity, measured by an inverse-Simpson metric with online sliding-window calibration. We evaluate FastVLA on OpenVLA, OpenVLA-OFT, and CogACT across LIBERO and SIMPLER, and on a physical Franka Research 3 robot. In simulation, it reduces LLM-backbone FLOPs by 35-59\% and action latency by 9-32\% (a 1.09$\times$-1.46$\times$ speedup) while maintaining task success, achieving a comparable or better efficiency-performance trade-off than existing plug-and-play token compression/pruning/reuse baselines. On the real robot, it cuts end-to-end latency by 20\% (1.25$\times$ speedup) at comparable success. Code is available at https://github.com/jiuyixu25/FastVLA.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2610.20504v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2610.20504v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2610.20504" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          <a href="https://arxiv.org/abs/2610.22146v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.22146v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.22146" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2610.20504" data-title="Graph-Reweighted Behavior Cloning with Human Interventions for Precise Robotic Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.22146" data-title="FastVLA: Task-Conditioned and Temporally Adaptive Visual Token Compression for Efficient Vision-Language-Action Models" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.20504" data-title="Graph-Reweighted Behavior Cloning with Human Interventions for Precise Robotic Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.22146" data-title="FastVLA: Task-Conditioned and Temporally Adaptive Visual Token Compression for Efficient Vision-Language-Action Models" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="arxiv:2610.20255" data-paper-id="arxiv:2610.20255" data-category="model_based_recent">
+      <article class="paper-card" id="arxiv:2610.22340" data-paper-id="arxiv:2610.22340" data-category="model_based_recent">
         <div class="card-topline">
           <span class="category category--model_based_recent">方法前沿</span>
-          <span class="arxiv-id">2610.20255v1</span>
+          <span class="arxiv-id">2610.22340v1</span>
         </div>
-        <h3>Safe Reinforcement Learning with Receding-Horizon Safety Critic and Differentiable Action Shields</h3>
-        <p class="authors">Siwei Ju, Jan Peters, Oleg Arenz</p>
+        <h3>Dexterity from Supervised Play</h3>
+        <p class="authors">Botao He, Yiming Dou, Yiannis Aloimonos, Jitendra Malik, Akash Sharma, Ruoshi Liu</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-14 22:25 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO</span>
-<span><b>Reading focus</b> safety_critical_control</span>        </div>
+          <span><b>Published</b> 2026-10-16 01:55 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.AI</span>
+<span><b>Reading focus</b> sim_to_real, dexterous_manipulation, model_predictive_control</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>This work addresses safety failures in robot reinforcement learning that emerge over several steps rather than instantaneously, as policies enter unfamiliar states under disturbances and domain shift. It learns a receding-horizon safety critic predicting whether a state remains non-terminating over the next horizon, trained from rollout-derived horizon labels with horizon classification, control-barrier-function-inspired temporal consistency, and smoothness regularization, and aggregates an ensemble with a conservative Conditional Value at Risk estimate. A closed-form differentiable CBF-style safety filter minimally modifies policy actions and is integrated into PPO with an anticipation loss. In simulated quadruped locomotion, the method improves robustness under action noise, external perturbations, and terrain shifts, reducing catastrophic failures while maintaining competitive returns. Inspect the horizon labeling and filter-policy mismatch handling.</p>
+          <p>DSP asks how robots can autonomously collect the contact-rich experience needed for dexterous manipulation. A robot learns a play policy from minutes of human play through behavior cloning, then deploys it autonomously to collect hours of interaction data for training a world model; at inference the same play policy guides model-predictive control by proposing candidate action sequences evaluated under that world model, and a closed-loop goal-conditioned policy is distilled through self-play within the world model to accelerate inference. Evaluated on underactuated pushing and any-to-any in-hand pose reorientation with a multifingered hand in simulation and real world, it reports outperforming hindsight behavior cloning by 69.6% in success rate and comparable success to reinforcement learning with 490 times less interaction data. Inspect the MPC candidate evaluation and self-play distillation loop.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 方法前沿</span>
-<span><b>Subtopics</b> safety_critical_control</span><span><b>Utility</b> 34.0 (base 28.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-          </div>
+            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation, Robot Data Scaling &amp; Sim-to-Real</span>
+<span><b>Subtopics</b> sim_to_real, dexterous_manipulation, model_predictive_control</span><span><b>Utility</b> 68.8 (base 67.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span>          </div>
           <ul>
-<li>Recent model-based robotics paper: published within 14 days</li><li>Robotics context: robot</li><li>Strong method signals: safety_critical_control</li><li>research_fit 28 ≥ 28</li><li>Detected subtopics: safety_critical_control</li><li>Personal domain affinity: preferred (+6; matched quadruped)</li><li>recommendation_utility 34.0 = base 28.0 + affinity +6 + redundancy -0</li>          </ul>
+<li>Recent model-based robotics paper: published within 14 days</li><li>Robotics context: robot, robots, manipulation, dexterous manipulation, sim-to-real</li><li>Strong method signals: model_predictive_control</li><li>research_fit 67 ≥ 28</li><li>Detected subtopics: sim_to_real, dexterous_manipulation, model_predictive_control</li><li>Personal domain affinity: preferred (+6; matched dexterous manipulation)</li><li>Subtopic: sim_to_real</li><li>Recently recommended: 6 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = dexterous_manipulation, model_predictive_control</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 68.8 = base 67.0 + affinity +6 + redundancy -4.2</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Despite the Markov assumption, safety failures in robot reinforcement learning rarely occur instantaneously; they typically emerge over several steps as the policy enters unfamiliar states under disturbances and domain shift. We address this limitation by learning a receding-horizon safety critic that predicts whether a state will remain non-terminating over the next receding horizon, enabling anticipatory detection of impending locomotion failures. The critic is trained from rollout-derived horizon labels with a composite objective that combines horizon classification, control-barrier-function-inspired temporal consistency, and smoothness regularization, and we aggregate an ensemble of critics with a conservative Conditional Value at Risk estimate to account for uncertainty. Building on the learned critic, we derive a closed-form, differentiable CBF-style safety filter that minimally modifies the policy action to improve predicted safety, and integrate it into PPO with an anticipation loss to reduce policy-filter mismatch during training. In simulated quadruped locomotion, our method improves robustness under action noise, external perturbations, and terrain shifts, reducing catastrophic failures while maintaining competitive returns.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>How can robots autonomously collect the contact-rich experience needed to learn dexterous manipulation? We present DSP: Dexterity from supervised play, a framework in which a robot learns a play policy from minutes of human play through behavior cloning, then deploys it autonomously to collect hours of interaction data to train a world model. During inference, the same play policy then guides model-predictive control (MPC) by proposing candidate action sequences for evaluation under the learned world model. To accelerate inference, we also introduce a method for distilling a closed-loop, goal-conditioned policy through self-play within the learned world model. We evaluate this framework on underactuated pushing and any-to-any in-hand pose reorientation with a multifingered hand, in simulation and real world. In real world experiment, our method outperforms hindsight behavior cloning by 69.6% in success rate and achieves comparable success to reinforcement learning with 490 times less interaction data. These results demonstrate that supervised play can autonomously collect interaction data, guide model-based planning, and enable policy learning without any task-specific demonstrations or sim-to-real transfer.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2610.20255v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2610.20255v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2610.20255" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          <a href="https://arxiv.org/abs/2610.22340v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.22340v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.22340" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2610.20255" data-title="Safe Reinforcement Learning with Receding-Horizon Safety Critic and Differentiable Action Shields" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.22340" data-title="Dexterity from Supervised Play" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.20255" data-title="Safe Reinforcement Learning with Receding-Horizon Safety Critic and Differentiable Action Shields" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="openalex:W7168350598" data-paper-id="openalex:W7168350598" data-category="high_impact_historical">
-        <div class="card-topline">
-          <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W7168350598</span>
-        </div>
-        <h3>Compositional Motion Generation From Demonstration With Object-Centric Neural Fields</h3>
-        <p class="authors">Ahmet Tekden, Yasemin Bekiroglu</p>
-        <div class="metadata">
-          <span><b>Published</b> 2026-07-15</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>This paper presents a generative learning-from-demonstration framework for compositional motion generation, connecting perception and motion through shared object-level representations. Scenes are rendered from object-centric neural representations that integrate canonical neural fields with latent-conditioned deformations, while a temporal mixture-of-experts gating mechanism combines object-conditioned movement primitives over time into complete trajectories. The authors report that long-horizon manipulation tasks in simulation are completed with significantly less training data than other image-based baselines, and real-world experiments demonstrate robustness to noise, category-level generalization through language-based segmentation models, and direct operation on 3D scene representations. Inspect how the shared object-level representation supports spatial-temporal compositionality and generalization across scene configurations.</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 领域内高影响力</span>
-            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training</span>
-<span><b>Utility</b> 53.6 (base 53.6)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>OpenAlex citations</b> 0</span>          </div>
-          <ul>
-<li>机器人语境：robot, robotic, manipulation, robot learning</li><li>research_fit 27 ≥ 18</li><li>核心方向：world_model_embodied_reasoning, robot_learning_posttraining</li><li>特定关键词：long-horizon manipulation</li><li>historical_value_score 53.6 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 26.8%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-09-07T07:29:16</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 53.6 = base 53.6 + affinity +0 + redundancy -0</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Compositionality, by organizing complex behavior as combinations of simpler elements, enables robot learning that is scalable and data efficient. Leveraging this principle, we propose a generative learning-from-demonstration framework that enables compositional modeling of robotic behavior by connecting perception and motion through shared object-level representations. We render scenes from object-centric neural representations that integrate canonical neural fields with latent-conditioned deformations, capturing positional and geometric variations in a smooth, consistent, and interpretable way. For motion generation, a temporal mixture-of-experts (MoE) employs a gating mechanism to combine object-conditioned movement primitives over time, producing complete trajectories. This spatial-temporal compositionality maintains the data efficiency of movement primitives while grounding motion in visual structure, enabling systematic generalization across diverse scene configurations. In simulation, long-horizon manipulation tasks are successfully completed using the proposed model, which requires significantly less training data than other image-based baselines. Real-world experiments further demonstrate the method&#39;s robustness to noise, its ability to generalize at the category level through language-based segmentation models, and its capacity to operate directly on 3D scene representations.</p></details>
-        <div class="actions">
-<a href="https://openalex.org/W7168350598" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2607.07129" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.1109/lra.2026.3713713" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2607.07129" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7168350598" data-title="Compositional Motion Generation From Demonstration With Object-Centric Neural Fields" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7168350598" data-title="Compositional Motion Generation From Demonstration With Object-Centric Neural Fields" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.22340" data-title="Dexterity from Supervised Play" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
