@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-10-17</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-10-17 16:44</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="empty-state">
+      <h2>今日没有发现足够值得推荐的论文。</h2>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>
