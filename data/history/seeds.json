@@ -36,17 +36,17 @@
     {
       "identifier": "2209.11302",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": "W4297161808",
+      "openalex_id": "W4383108457",
       "base_arxiv_id": "2209.11302",
-      "doi": "10.48550/arxiv.2209.11302",
+      "doi": "10.1109/icra48891.2023.10161317",
       "title": "ProgPrompt: Generating Situated Robot Task Plans using Large Language Models"
     },
     {
       "identifier": "2212.06817",
       "added_at": "2026-08-05T19:52:43+08:00",
-      "openalex_id": "W4311559655",
+      "openalex_id": "W4385430679",
       "base_arxiv_id": "2212.06817",
-      "doi": "10.48550/arxiv.2212.06817",
+      "doi": "10.15607/rss.2023.xix.025",
       "title": "RT-1: Robotics Transformer for Real-World Control at Scale"
     },
     {
@@ -85,7 +85,7 @@
       "identifier": "10.1109/icra48891.2023.10160591",
       "added_at": "2026-08-05T19:52:43+08:00",
       "openalex_id": "W4383097638",
-      "base_arxiv_id": null,
+      "base_arxiv_id": "2209.07753",
       "doi": "10.1109/icra48891.2023.10160591",
       "title": "Code as Policies: Language Model Programs for Embodied Control"
     },
