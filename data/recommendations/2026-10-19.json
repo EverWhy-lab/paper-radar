@@ -1,0 +1,999 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-19",
+  "generated_at": "2026-10-19T18:10:46+08:00",
+  "mode": "incremental",
+  "candidate_count": 3727,
+  "historical_candidate_count": 654,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 1,
+    "model_based_recent": 0,
+    "review_knowledge_map": 1,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7161687616",
+      "title": "SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations",
+      "takeaway": "SADP addresses long-horizon manipulation in which imitation policies are trained on task-level demonstrations without explicit subgoal or progress modeling, and subgoal-level supervision is scarce. The framework uses foundation models to generate subgoal-annotated demonstrations, conditions diffusion action generation on both task-level and natural-language subgoal descriptions, and adds a lightweight auxiliary head that predicts a continuation score for online subgoal switching and stage-level progress monitoring. RLBench simulation and real-world UR5e evaluations are reported to maintain competitive task performance while exposing temporally aligned subgoal-level execution signals, with no degradation in task-level performance. Inspect how subgoal annotations are generated and how the continuation score is trained and thresholded.",
+      "generated_at": "2026-10-19T10:16:48",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7160063469",
+      "title": "World model for robot learning: A comprehensive survey",
+      "takeaway": "This survey organizes the fragmented literature on world models, predictive representations of environment evolution under actions, from a robot-learning perspective. It examines coupling between world models and robot policies, their role as learned simulators for reinforcement learning and evaluation, and the progression of robotic video world models from imagination-based generation to controllable, structured, and foundation-scale formulations, alongside representative datasets, benchmarks, and evaluation protocols. It is useful as a knowledge map for locating work across architectures, functional roles, and embodied application domains, and the authors state that an accompanying GitHub repository will be maintained and updated.",
+      "generated_at": "2026-10-19T10:16:48",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W3132160159",
+      "title": "Proprioceptive Sensor Fusion for Quadruped Robot State Estimation",
+      "takeaway": "This work develops a low-level state estimator for quadrupedal robots covering attitude, odometry, ground reaction forces, and contact detection. A nonlinear observer fuses inertial measurements for attitude with global exponential stability and tolerance of large initial errors where an EKF would diverge, leg odometry uses joint encoders, force sensors, and torque sensors, and leg odometry is fused with inertial measurements for linear position and velocity. On a dataset from the HyQ robot, attitude RMSE was [2 1 5] deg, velocity RMSE [0.11 0.15 0.04] m/s, and unobservable position drifted on average [2 1 8] mm/s. Inspect the observer formulation and fusion structure.",
+      "generated_at": "2026-10-19T10:16:48",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 58 ≥ 35",
+        "Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining",
+        "Specific keywords matched: long-horizon manipulation, diffusion policy",
+        "Detected subtopics: diffusion_flow_policy",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: diffusion_flow_policy",
+        "Recently recommended: 5 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 46.0 = base 58.0 + affinity +0 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7161687616",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7161687616",
+        "openalex_id": "W7161687616",
+        "base_arxiv_id": "2605.16871",
+        "doi": "10.1109/lra.2026.3742285",
+        "title": "SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations",
+        "authors": [
+          "Site Hu",
+          "Takato Horii"
+        ],
+        "abstract": "Long-horizon robot manipulation requires policies to coordinate multiple intermediate subgoals and determine when to advance between them. However, most imitation learning methods are trained solely on task-level demonstrations, without explicitly modeling the active subgoal or its execution progress. This limitation is further exacerbated by the scarcity of subgoal-level supervision in standard robot learning datasets, which makes explicit subgoal-conditioned control and online transition modeling difficult to learn. To address this issue, this paper proposes Subgoal-Aware Diffusion Policy (SADP), a framework that leverages foundation models to autonomously generate subgoal-annotated demonstrations and trains diffusion policies on these datasets. SADP structures policy execution around explicit natural-language subgoals by conditioning action generation on both task-level and subgoal-level descriptions. A lightweight auxiliary head further predicts a continuation score that drives online subgoal switching and supports stage-level progress monitoring. Experiments in RLBench simulations and real-world evaluations on a UR5e robot demonstrate that SADP maintains competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring. These results show that explicit subgoal progression can be incorporated into a diffusion policy without degrading task-level performance.",
+        "publication_date": "2026-10-09",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.7422000169754028
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.25459998846054077
+          },
+          {
+            "id": "https://openalex.org/T10906",
+            "display_name": "AI-based Problem Solving and Planning",
+            "score": 0.0007999999797903001
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.29824224,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-19T08:01:26",
+        "last_considered_at": "2026-10-19T18:10:46+08:00",
+        "recommended_at": "2026-10-19T18:10:46+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-10-19T08:01:26",
+        "openalex_url": "https://openalex.org/W7161687616",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3742285",
+        "open_access_url": "https://doi.org/10.1109/lra.2026.3742285",
+        "pdf_url": null,
+        "research_fit": 58,
+        "video_potential": 46,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "diffusion policy",
+          "robot learning",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy",
+              "robot learning",
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, robot learning"
+          }
+        ],
+        "historical_value_score": 56.7,
+        "historical_score_components": {
+          "research_relevance": 58.0,
+          "recency": 100.0,
+          "normalized_citation": 29.8,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 70.2%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 58.0,
+      "recommendation_utility": 46.0,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2605.16871",
+        "base_id": "2605.16871",
+        "version": 1,
+        "title": "SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations",
+        "authors": [
+          "Site Hu",
+          "Takato Horii"
+        ],
+        "published": "2026-10-09T00:00:00Z",
+        "updated": "2026-10-09T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Long-horizon robot manipulation requires policies to coordinate multiple intermediate subgoals and determine when to advance between them. However, most imitation learning methods are trained solely on task-level demonstrations, without explicitly modeling the active subgoal or its execution progress. This limitation is further exacerbated by the scarcity of subgoal-level supervision in standard robot learning datasets, which makes explicit subgoal-conditioned control and online transition modeling difficult to learn. To address this issue, this paper proposes Subgoal-Aware Diffusion Policy (SADP), a framework that leverages foundation models to autonomously generate subgoal-annotated demonstrations and trains diffusion policies on these datasets. SADP structures policy execution around explicit natural-language subgoals by conditioning action generation on both task-level and subgoal-level descriptions. A lightweight auxiliary head further predicts a continuation score that drives online subgoal switching and supports stage-level progress monitoring. Experiments in RLBench simulations and real-world evaluations on a UR5e robot demonstrate that SADP maintains competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring. These results show that explicit subgoal progression can be incorporated into a diffusion policy without degrading task-level performance.",
+        "abs_url": "https://arxiv.org/abs/2605.16871",
+        "pdf_url": "https://arxiv.org/pdf/2605.16871",
+        "research_fit": 58,
+        "video_potential": 46,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "diffusion policy",
+          "robot learning",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy",
+              "robot learning",
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, robot learning"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics, manipulation, robot learning",
+        "research_fit 58 ≥ 18",
+        "核心方向：world_model_embodied_reasoning, robot_learning_posttraining",
+        "特定关键词：world model for robot learning, world model for robotics",
+        "historical_value_score 74.8 ≥ 50.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 7.1%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 3.55",
+        "近年年均 OpenAlex 引用 1.0（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-10-19T08:01:24",
+        "Detected subtopics: robot_world_model",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 74.8 = base 74.8 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7160063469",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7160063469",
+        "openalex_id": "W7160063469",
+        "base_arxiv_id": "2605.00080",
+        "doi": "10.1177/02783649261488980",
+        "title": "World model for robot learning: A comprehensive survey",
+        "authors": [
+          "Bohan Hou",
+          "Gen K. Li",
+          "Jindou Jia",
+          "Tuo An",
+          "Xinying Guo",
+          "Sicong Leng",
+          "Haoran Geng",
+          "Yanjie Ze",
+          "Tatsuya Harada",
+          "Philip H. S. Torr",
+          "Oier Mees",
+          "Marc Pollefeys",
+          "Zhuang Liu",
+          "Jiajun Wu",
+          "Pieter Abbeel",
+          "Jitendra Malik",
+          "Yilun Du",
+          "Jianfei Yang"
+        ],
+        "abstract": "World models, which are predictive representations of how environments evolve under actions, have become a central component of robot learning. They support policy learning, planning, simulation, evaluation, data generation, and have advanced rapidly with the rise of foundation models and large-scale video generation. However, the literature remains fragmented across architectures, functional roles, and embodied application domains. To address this gap, we present a comprehensive review of world models from a robot-learning perspective. We examine how world models are coupled with robot policies, how they serve as learned simulators for reinforcement learning and evaluation, and how robotic video world models have progressed from imagination-based generation to controllable, structured, and foundation-scale formulations. We further summarize representative datasets, benchmarks, and evaluation protocols. Overall, this survey systematically reviews the rapidly growing literature on world models for robot learning, clarifies key paradigms and applications, and highlights major challenges and future directions for predictive modeling in embodied agents. To facilitate continued access to newly emerging works, benchmarks, and resources, we will maintain and regularly update the accompanying GitHub repository on https://github.com/NTUMARS/Awesome-World-Model-for-Robotics-Policy alongside this survey.",
+        "publication_date": "2026-09-28",
+        "publication_year": 2026,
+        "source_name": "The International Journal of Robotics Research",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9984999895095825
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.0008999999845400453
+          },
+          {
+            "id": "https://openalex.org/T10906",
+            "display_name": "AI-based Problem Solving and Planning",
+            "score": 9.999999747378752e-05
+          }
+        ],
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 3.5517,
+        "citation_normalized_percentile": 0.9287629,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:The International Journal of Robotics Research",
+          "knowledge_map_search:world model robot learning survey",
+          "topic_search:world model robot learning survey",
+          "topic_search:world models for robot learning"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-05T09:30:35",
+        "last_considered_at": "2026-10-19T18:10:46+08:00",
+        "recommended_at": "2026-10-19T18:10:46+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-10-19T08:01:24",
+        "openalex_url": "https://openalex.org/W7160063469",
+        "landing_page_url": "https://doi.org/10.1177/02783649261488980",
+        "open_access_url": "https://doi.org/10.1177/02783649261488980",
+        "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/02783649261488980?download=true",
+        "research_fit": 58,
+        "video_potential": 42,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "world model for robot learning",
+          "world model for robotics",
+          "robot learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "world model for robot learning",
+              "world model for robotics"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, robot learning"
+          }
+        ],
+        "historical_value_score": 74.8,
+        "historical_score_components": {
+          "research_relevance": 58.0,
+          "recency": 100.0,
+          "normalized_citation": 92.9,
+          "fwci": 100.0,
+          "citation_momentum": 5.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 7.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 3.55",
+          "近年年均 OpenAlex 引用 1.0（无更早窗口可比较）",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true,
+        "source_id": "S73484101",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "robot_world_model"
+      ],
+      "document_type": "survey",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 74.8,
+      "recommendation_utility": 74.8,
+      "days_since_same_subtopic": 43,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2605.00080",
+        "base_id": "2605.00080",
+        "version": 1,
+        "title": "World model for robot learning: A comprehensive survey",
+        "authors": [
+          "Bohan Hou",
+          "Gen K. Li",
+          "Jindou Jia",
+          "Tuo An",
+          "Xinying Guo",
+          "Sicong Leng",
+          "Haoran Geng",
+          "Yanjie Ze",
+          "Tatsuya Harada",
+          "Philip H. S. Torr",
+          "Oier Mees",
+          "Marc Pollefeys",
+          "Zhuang Liu",
+          "Jiajun Wu",
+          "Pieter Abbeel",
+          "Jitendra Malik",
+          "Yilun Du",
+          "Jianfei Yang"
+        ],
+        "published": "2026-09-28T00:00:00Z",
+        "updated": "2026-09-28T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "World models, which are predictive representations of how environments evolve under actions, have become a central component of robot learning. They support policy learning, planning, simulation, evaluation, data generation, and have advanced rapidly with the rise of foundation models and large-scale video generation. However, the literature remains fragmented across architectures, functional roles, and embodied application domains. To address this gap, we present a comprehensive review of world models from a robot-learning perspective. We examine how world models are coupled with robot policies, how they serve as learned simulators for reinforcement learning and evaluation, and how robotic video world models have progressed from imagination-based generation to controllable, structured, and foundation-scale formulations. We further summarize representative datasets, benchmarks, and evaluation protocols. Overall, this survey systematically reviews the rapidly growing literature on world models for robot learning, clarifies key paradigms and applications, and highlights major challenges and future directions for predictive modeling in embodied agents. To facilitate continued access to newly emerging works, benchmarks, and resources, we will maintain and regularly update the accompanying GitHub repository on https://github.com/NTUMARS/Awesome-World-Model-for-Robotics-Policy alongside this survey.",
+        "abs_url": "https://arxiv.org/abs/2605.00080",
+        "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/02783649261488980?download=true",
+        "research_fit": 58,
+        "video_potential": 42,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "world model for robot learning",
+          "world model for robotics",
+          "robot learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "world model for robot learning",
+              "world model for robotics"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, robot learning"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, manipulation",
+        "research_fit 22 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：robot state estimation",
+        "historical_value_score 58.7 ≥ 42.0",
+        "发表于 2020 年",
+        "同领域同年份引用标准化位于前 2.5%",
+        "阅读时效分 70/100（论文年龄 6 年）",
+        "OpenAlex FWCI 5.86",
+        "近 2 年年均引用 9.5；此前 2 年年均 7.0",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-04T06:56:03",
+        "Detected subtopics: robot_state_estimation",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "recommendation_utility 64.7 = base 58.7 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W3132160159",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W3132160159",
+        "openalex_id": "W3132160159",
+        "base_arxiv_id": null,
+        "doi": "10.1109/iros45743.2020.9341521",
+        "title": "Proprioceptive Sensor Fusion for Quadruped Robot State Estimation",
+        "authors": [
+          "Geoff Fink",
+          "Claudio Semini"
+        ],
+        "abstract": "Estimation of a quadruped's state is fundamentally important to its operation. In this paper we develop a low-level state estimator for quadrupedal robots that includes attitude, odometry, ground reaction forces, and contact detection. The state estimator is divided into three parts. First, a nonlinear observer estimates attitude by fusing inertial measurements. The attitude estimator is globally exponentially stable and is able to initialize with large errors in the initial state estimates whereas a state-of-the-art EKF would diverge. This is practical for situations when the robot has fallen over and needs to start from its side. Second, leg odometry is calculated with encoders, force sensors, and torque sensors in the robot's joints. Lastly, the leg odometry and inertial measurements are fused to obtain linear position and velocity. We experimentally validate the state estimator using a novel dataset from the HyQ robot. For the entirety of the experiment the estimated attitude matched the ground truth data and had a root mean square error (RMSE) of [2 1 5] deg, the velocity estimates has a RMSE of [0.11 0.15 0.04] m/s, and the position estimates, which are unobservable, drifted on average [2 1 8] mm/s.",
+        "publication_date": "2020-10-24",
+        "publication_year": 2020,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9998000264167786
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9966999888420105
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9765999913215637
+          }
+        ],
+        "cited_by_count": 43,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 5.8636,
+        "citation_normalized_percentile": 0.97469334,
+        "referenced_works": [
+          "W1971594916",
+          "W1975230295",
+          "W2012387742",
+          "W2015996585",
+          "W2037050532",
+          "W2051536971",
+          "W2073288601",
+          "W2111904757",
+          "W2125691646",
+          "W2127578024",
+          "W2146881125",
+          "W2152671441",
+          "W2166132830",
+          "W2169568794",
+          "W2296360731",
+          "W2323021136",
+          "W2326849350",
+          "W2341165584",
+          "W2411649036",
+          "W2549216668",
+          "W2577008596",
+          "W2747975657",
+          "W2750656378",
+          "W2784947652",
+          "W2809564319",
+          "W2909553221",
+          "W4237726214",
+          "W4246536800",
+          "W4250058668",
+          "W636927631",
+          "W6701596953",
+          "W6747537972",
+          "W6828787151",
+          "W6926196336"
+        ],
+        "related_works": [
+          "W1895809510",
+          "W2028864324",
+          "W2134032665",
+          "W2170068838",
+          "W2554592351",
+          "W2712366421",
+          "W3011348788",
+          "W4285265093",
+          "W4383748483",
+          "W91816639"
+        ],
+        "discovery_source": [
+          "topic_search:robot state estimation"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-04T06:56:03",
+        "last_considered_at": "2026-10-19T18:10:46+08:00",
+        "recommended_at": "2026-10-19T18:10:46+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-04T06:56:03",
+        "openalex_url": "https://openalex.org/W3132160159",
+        "landing_page_url": "https://doi.org/10.1109/iros45743.2020.9341521",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 22,
+        "video_potential": 37,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation"
+          }
+        ],
+        "historical_value_score": 58.7,
+        "historical_score_components": {
+          "research_relevance": 22.0,
+          "recency": 70.0,
+          "normalized_citation": 97.5,
+          "fwci": 100.0,
+          "citation_momentum": 67.9,
+          "seed_provenance": null,
+          "work_signal": 0.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2020 年",
+          "同领域同年份引用标准化位于前 2.5%",
+          "阅读时效分 70/100（论文年龄 6 年）",
+          "OpenAlex FWCI 5.86",
+          "近 2 年年均引用 9.5；此前 2 年年均 7.0",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "robot_state_estimation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 58.7,
+      "recommendation_utility": 64.7,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W3132160159",
+        "base_id": "openalex:W3132160159",
+        "version": 1,
+        "title": "Proprioceptive Sensor Fusion for Quadruped Robot State Estimation",
+        "authors": [
+          "Geoff Fink",
+          "Claudio Semini"
+        ],
+        "published": "2020-10-24T00:00:00Z",
+        "updated": "2020-10-24T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Estimation of a quadruped's state is fundamentally important to its operation. In this paper we develop a low-level state estimator for quadrupedal robots that includes attitude, odometry, ground reaction forces, and contact detection. The state estimator is divided into three parts. First, a nonlinear observer estimates attitude by fusing inertial measurements. The attitude estimator is globally exponentially stable and is able to initialize with large errors in the initial state estimates whereas a state-of-the-art EKF would diverge. This is practical for situations when the robot has fallen over and needs to start from its side. Second, leg odometry is calculated with encoders, force sensors, and torque sensors in the robot's joints. Lastly, the leg odometry and inertial measurements are fused to obtain linear position and velocity. We experimentally validate the state estimator using a novel dataset from the HyQ robot. For the entirety of the experiment the estimated attitude matched the ground truth data and had a root mean square error (RMSE) of [2 1 5] deg, the velocity estimates has a RMSE of [0.11 0.15 0.04] m/s, and the position estimates, which are unobservable, drifted on average [2 1 8] mm/s.",
+        "abs_url": "https://doi.org/10.1109/iros45743.2020.9341521",
+        "pdf_url": "",
+        "research_fit": 22,
+        "video_potential": 37,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
