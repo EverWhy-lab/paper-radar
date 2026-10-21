@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-10-20</title>
+  <title>Paper Radar — 2026-10-21</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-10-20 17:34</p>
+        <p class="header-updated">2026-10-21 17:30</p>
       </div>
     </div>
   </header>
@@ -31,157 +31,157 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="arxiv:2610.26717" data-paper-id="arxiv:2610.26717" data-category="frontier_recent">
+      <article class="paper-card" id="arxiv:2610.28470" data-paper-id="arxiv:2610.28470" data-category="frontier_recent">
         <div class="card-topline">
           <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2610.26717v1</span>
+          <span class="arxiv-id">2610.28470v1</span>
         </div>
-        <h3>Robot Learning with Vision-Language-Action Models for Agricultural Manipulation</h3>
-        <p class="authors">Hamid Hafezi, Javad Mohammadpour Velni, Mohammadreza Davoodi</p>
+        <h3>Fast Motion Retargeting Pipeline for Scalable Humanoid Robot Learning</h3>
+        <p class="authors">Daniel Marew, Sangjun Park, Nisal Perera, Donghyun Kim</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-20 00:49 Asia/Shanghai</span>
+          <span><b>Published</b> 2026-10-21 00:22 Asia/Shanghai</span>
           <span><b>Categories</b> cs.RO</span>
-        </div>
+<span><b>Reading focus</b> sim_to_real, trajectory_optimization</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>This work targets agricultural reaching and grasping, where plant geometry variation, occlusion, and camera viewpoints complicate manipulation, and where domain-specific demonstrations are costly to collect on physical robots. The authors build a MuJoCo-based tomato environment for joystick-teleoperated expert demonstrations, then adapt two pretrained generalist policies, Octo and π_{0.5}, on simulated demonstrations before fine-tuning on a physical Franka Research 3 with real-robot demonstrations. Evaluation spans in-distribution, viewpoint/spatial-shift, and out-of-distribution simulation conditions plus physical-robot experiments, and also probes the influence of proprioceptive information; the abstract reports that π_{0.5} achieves higher task-performance scores than Octo and degrades less under distribution shifts. Inspect how the simulation-to-real demonstration pipeline and proprioception ablations are configured.</p>
+          <p>FRDV 针对将大规模人体运动捕捉数据重定向到不同人形机器人时，运动学-动力学轨迹优化计算开销大、且需要逐条运动手动调整的问题，提出一个可扩展框架：快速约束运动学重定向，加上动力学验证。其运动学阶段结合自定义的 Sequential Quadratic Programming 求解器、Real-Time Iteration 和并行分块处理，报告最高 9,156 帧/秒，约为 GMR 和 ProtoMotions 的 136 倍，并把机器人特定约束纳入优化，以减少地面穿透和自碰撞等伪影；对需要进一步验证的运动，则用 contact implicit iLQR 控制器在完整刚体动力学下检验，识别动力学不可行运动并修正脚部悬空、脚部打滑等接触伪影。作者通过训练运动跟踪强化学习策略比较跟踪保真度和成功率来评估重定向质量，并在 Unitree G1 上展示 sim-to-real 迁移；阅读时可重点检查动力学验证的触发条件、约束建模，以及跟踪评估如何归因于重定向质量。</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Robot Learning &amp; Policy Post-Training</span>
-<span><b>Utility</b> 80.0 (base 80.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-          </div>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Learning &amp; Policy Post-Training, Robot Data Scaling &amp; Sim-to-Real</span>
+<span><b>Subtopics</b> sim_to_real, trajectory_optimization</span><span><b>Utility</b> 100.8 (base 99.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span>          </div>
           <ul>
-<li>research_fit 80 ≥ 40</li><li>Core topics matched: vla_robot_foundation, robot_learning_posttraining</li><li>Specific keywords matched: vision-language-action, VLA</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0; matched manipulator)</li><li>recommendation_utility 80.0 = base 80.0 + affinity +0 + redundancy -0</li>          </ul>
+<li>research_fit 99 ≥ 40</li><li>Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining, robot_data_scaling_sim2real</li><li>Specific keywords matched: humanoid robot, trajectory optimization, iLQR</li><li>Diversity topic: humanoid_loco_manipulation</li><li>Detected subtopics: sim_to_real, trajectory_optimization</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>Subtopic: sim_to_real</li><li>Recently recommended: 5 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = trajectory_optimization</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 100.8 = base 99.0 + affinity +6 + redundancy -4.2</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Robotic manipulation in agricultural environments remains challenging due to variations in plant geometry, occlusion, and camera viewpoints. Pretrained vision-language-action (VLA) and generalist robot policies offer a promising approach to addressing these challenges by learning manipulation behaviors from multimodal observations and language instructions. However, adapting these policies to agricultural tasks requires domain-specific demonstrations, which are costly and time-consuming to collect on physical robots. In this work, we develop a simulation-to-real robot-learning framework for agricultural reaching and grasping that integrates task-specific demonstration collection and pretrained policy adaptation. A MuJoCo-based agricultural environment is developed with diverse tomato plant structures to support demonstration collection and controlled evaluation. Expert demonstrations are collected through joystick teleoperation, with a low-level controller used to execute robot actions. Two pretrained generalist robot policies, Octo and $π_{0.5}$, are adapted using simulated demonstrations, followed by further fine-tuning on a physical Franka Research 3 manipulator using real-robot demonstrations. The adapted policies are evaluated under in-distribution, viewpoint/spatial-shift, and out-of-distribution conditions in simulation, followed by physical-robot experiments. The influence of proprioceptive information on policy performance is also investigated. Results show that $π_{0.5}$ achieves higher task-performance scores than Octo and exhibits less degradation under distribution shifts. These findings demonstrate the potential of integrating pretrained generalist policies with task-specific demonstration learning for agricultural manipulation.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>While large-scale human motion capture datasets provide a rich source of demonstrations for humanoid robot learning, retargeting the diverse motions to different humanoid robots remains a nontrivial challenge. Existing kinodynamic trajectory optimization pipelines are computationally expensive and often require manual adjustments per motion. We present FRDV (Fast Retargeting with Dynamics Validation), a scalable framework consisting of rapid constrained kinematic retargeting and an additional dynamics validation pipeline. Its kinematic stage integrates a custom Sequential Quadratic Programming solver, Real-Time Iteration, and parallel chunk-based processing, achieving up to 9,156 frames per second, approximately up to 136 times faster than GMR and ProtoMotions, while robot-specific constraints are incorporated into the optimization to reduce common retargeting artifacts, such as ground penetration and self-collision. For motions requiring additional verification, a contact implicit iLQR controller is utilized to test the retargeted reference under full rigid body dynamics. This dynamics-based validation identifies dynamically infeasible motions and refines contact-related artifacts such as foot floating and foot skating. We evaluate retargeting quality by training motion tracking reinforcement learning policies using several state-of-the-art pipelines and comparing their tracking fidelity and success rates. Furthermore, sim-to-real transfer is demonstrated on a Unitree G1 humanoid. Videos and code are available at: https://daroslab.github.io/frdv/.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2610.26717v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2610.26717v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2610.26717" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          <a href="https://arxiv.org/abs/2610.28470v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.28470v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.28470" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2610.26717" data-title="Robot Learning with Vision-Language-Action Models for Agricultural Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.28470" data-title="Fast Motion Retargeting Pipeline for Scalable Humanoid Robot Learning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.26717" data-title="Robot Learning with Vision-Language-Action Models for Agricultural Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.28470" data-title="Fast Motion Retargeting Pipeline for Scalable Humanoid Robot Learning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="openalex:W7212056598" data-paper-id="openalex:W7212056598" data-category="journal_recent">
+      <article class="paper-card" id="arxiv:2610.28166" data-paper-id="arxiv:2610.28166" data-category="frontier_recent">
         <div class="card-topline">
-          <span class="category category--journal_recent">期刊新论文</span>
-          <span class="arxiv-id">W7212056598</span>
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2610.28166v1</span>
         </div>
-        <h3>Anti-Gravity Walking by a Flying Humanoid Robot via Thrust-Rate Input Whole-Body Model Predictive Control</h3>
-        <p class="authors">Kazuki Sugihara, Kei Okada</p>
+        <h3>Reasoning as a Distribution: Generative Plan Latents for Vision-Language-Action Models</h3>
+        <p class="authors">Matteo Cercola, Katie Z Luo, Milan Ganai, John Alora, Simone Formentin, Marco Pavone</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-09-18</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> model_predictive_control, trajectory_optimization</span>        </div>
+          <span><b>Published</b> 2026-10-20 21:08 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>Flying humanoids have been limited mainly to aerial flight and ground walking, and walking on ceilings or similar anti-gravity surfaces is complicated by thrust spikes when contact switching discontinuously changes the dynamic structure. The authors formulate whole-body MPC with thrust-rate as the control input to keep thrust trajectories continuous across contact switching while preserving the sparse optimal-control structure for fast computation, and they add lower bounds on the foot-normal contact force that are smoothly transferred during double support. They report implementing the framework and demonstrating anti-gravity walking by a flying humanoid in simulation and a hardware experiment, described as a first demonstration of multi-contact whole-body MPC for a transformable aerial robot and of walking beyond the ground. Inspect the contact-switching formulation and force-bound transfer.</p>
+          <p>GPL 针对现有 VLA 推理模型把中间决策压缩为单一表示、从而掩盖其他可行方案的问题，将推理状态表示为关于计划（如使用哪个物体、抓取方式或路线）的低维条件分布，使推理状态可寻址：无需重新训练 VLA 即可采样计划以覆盖、按请求选择计划以引导、并按部署结果重新加权以进行结果适应。作者在 SimplerEnv 操作任务上用 π_0 测试这三种能力，并扩展到 RoboCasa、LIBERO 和一个迷宫域；报告引导计划使执行遵循请求的比例从 0.48 提升到 0.94，而对原生动作分布施加同样引导没有可靠增益，并指出显式计划在携带观察尚未决定的决策信息时最有用。阅读时可重点检查计划分布如何构造与条件化、引导与结果适应各自的操作方式，以及“计划携带额外决策信息”这一结论的判定依据。</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
-            <span><b>Category</b> 期刊新论文</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
-<span><b>Subtopics</b> model_predictive_control, trajectory_optimization</span><span><b>Utility</b> 43.8 (base 42.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>Recent overlap</b> -4.2</span><span><b>OpenAlex citations</b> 0</span>          </div>
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
+<span><b>Utility</b> 52.0 (base 52.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
           <ul>
-<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 42 ≥ 35</li><li>Core topics matched: humanoid_loco_manipulation</li><li>Specific keywords matched: humanoid robot, model predictive control, MPC</li><li>Detected subtopics: model_predictive_control, trajectory_optimization</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>Subtopic: model_predictive_control</li><li>Recently recommended: 4 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = trajectory_optimization</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 43.8 = base 42.0 + affinity +6 + redundancy -4.2</li>          </ul>
+<li>research_fit 52 ≥ 40</li><li>Core topics matched: vla_robot_foundation</li><li>Specific keywords matched: vision-language-action, VLA</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Flying humanoids are expected to perform tasks in diverse environments, while their existing locomotion is mainly limited to aerial flight and ground walking. The capability to move in complex three-dimensional space can greatly expand their application range. For such walking motion on ceilings and similar anti-gravity environments, whole-body MPC is effective. However, the discontinuous changes in dynamic structure accompanying contact switching during walking can induce thrust spikes, resulting in control instability. Therefore, in this work, we propose and implement a real-time whole-body MPC framework for anti-gravity bipedal walking. First, we formulate whole-body MPC using the time derivative of thrust, namely thrust-rate, as the control input. This formulation guarantees continuity of the thrust trajectory during contact switching while preserving the sparse structure of the optimal control problem for fast computation. Second, we address the lack of natural support forces in anti-gravity environments. We introduce lower bounds on the foot-normal component of the contact force, and smoothly transfer them during the doublesupport phase. Finally, we implement the proposed framework and demonstrate anti-gravity walking by a flying humanoid through simulation and a hardware experiment. To the best of our knowledge, this is the first demonstration of multi-contact whole-body MPC for a transformable aerial robot and walking by a flying humanoid beyond the ground.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Vision-Language-Action (VLA) policies increasingly reason before acting, but existing reasoning models compress this intermediate decision into a single representation. When several plans are valid, this commitment hides alternatives that could otherwise be selected or revised. We introduce the Generative Plan Latent (GPL), which represents the reasoning state as a low-dimensional conditional distribution over plans, such as which object, grasp, or route to use. This makes the reasoning state addressable: without retraining the VLA, plans can be sampled (coverage), selected on request (steering), and reweighted by deployment outcomes (outcome adaptation). We test all three on SimplerEnv manipulation with $π_0$, and extend the analysis to RoboCasa, LIBERO, and a maze domain. Steering the plan raises the fraction of executions that follow the request from 0.48 to 0.94, while the same guidance on the native action distribution shows no reliable gain. Finally, we show that an explicit plan is most useful when it carries decision information not already determined by the observation.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7212056598" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2609.07544" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2609.07544" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3734888" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2609.07544" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7212056598" data-title="Anti-Gravity Walking by a Flying Humanoid Robot via Thrust-Rate Input Whole-Body Model Predictive Control" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <a href="https://arxiv.org/abs/2610.28166v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.28166v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.28166" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.28166" data-title="Reasoning as a Distribution: Generative Plan Latents for Vision-Language-Action Models" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7212056598" data-title="Anti-Gravity Walking by a Flying Humanoid Robot via Thrust-Rate Input Whole-Body Model Predictive Control" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.28166" data-title="Reasoning as a Distribution: Generative Plan Latents for Vision-Language-Action Models" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="arxiv:2610.26765" data-paper-id="arxiv:2610.26765" data-category="review_knowledge_map">
+      <article class="paper-card" id="openalex:W4402354138" data-paper-id="openalex:W4402354138" data-category="review_knowledge_map">
         <div class="card-topline">
           <span class="category category--review_knowledge_map">综述 / 知识地图</span>
-          <span class="arxiv-id">2610.26765v1</span>
+          <span class="arxiv-id">W4402354138</span>
         </div>
-        <h3>HandsOn: A Large-Scale Simulation Benchmark for Generalizable Dexterous Manipulation</h3>
-        <p class="authors">Tianwei Luo, Yiming He, Hongjin Wu, Ting Pan, Debin Ren, Haorui Guo, Junlin Yang, Yuxin Zuo, Zhehao Kou, Kaisen Yang, Zhuoqun Lai, Yi Ding, Jiale Yu, Yuchen Zhang, Zijie Qiu, Haozhan Li, Ning Ding</p>
+        <h3>HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation</h3>
+        <p class="authors">Carmelo Sferrazza, Dun-Ming Huang, Xingyu Lin, Youngwoon Lee, Pieter Abbeel</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-20 01:22 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO</span>
-<span><b>Reading focus</b> cross_embodiment, sim_to_real, dexterous_manipulation</span>        </div>
+          <span><b>Published</b> 2024-07-15</span>
+<span><b>Reading focus</b> loco_manipulation</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>HandsOn is a composable simulation platform and benchmark measuring cross-embodiment dexterous manipulation generalization across embodiments, objects, and task demands. It supports five robotic arms, six dexterous hands, and roughly 200 rigid, articulated, and deformable assets in randomized scenes, pairing 18,000 curated human demonstrations with 66 human-verified tasks: Core-50 for demonstration-based learning and execution tests, and Transfer-16 for asset and relation transfer, skill composition, and deformable manipulation without target-task training demonstrations. The abstract reports the best trained multi-task policy reaching 29.1% Core-50 success across diffusion, vision-language-action, world-action, and prompted VLM-based methods, while GPT-6 without benchmark finetuning using move_eef achieves 5.2% on Core-50 and 1.9% on Transfer-16 over 660 trials; diagnostics expose failures in contact establishment, action coordination, and goal maintenance. Inspect task splits and failure diagnostics.</p>
+          <p>HumanoidBench 是一个面向全身运动与操作的人形机器人仿真基准，所提供摘要为空，因此无法从来源确认其具体任务集合、观测与动作接口、评测指标或基线结果。就标题与文档类型而言，它测量的是人形机器人在仿真中完成全身 loco-manipulation 任务的表现，其新增之处在于把这类任务组织为统一评测环境，使不同方法可在同一设定下比较。它支持的研究问题是：全身运动与操作的控制和学习方法在该基准上表现如何、失败模式是什么。阅读时应先查阅正文的任务清单、成功判据、仿真平台与基线配置，再判断其与自身研究的可比性。</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 综述 / 知识地图</span>
-            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Dexterous &amp; Multimodal Manipulation, Robot Data Scaling &amp; Sim-to-Real</span>
-<span><b>Subtopics</b> cross_embodiment, sim_to_real, dexterous_manipulation</span><span><b>Utility</b> 78.8 (base 77.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>Recent overlap</b> -4.2</span>          </div>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> loco_manipulation</span><span><b>Utility</b> 81.7 (base 75.7)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>OpenAlex citations</b> 24</span>          </div>
           <ul>
-<li>Knowledge-map signals: benchmark</li><li>Robotics context: robot, robotic, manipulation, dexterous manipulation, vision-language-action, sim-to-real</li><li>research_fit 77 ≥ 40</li><li>Core topics matched: vla_robot_foundation, dexterous_multimodal_manipulation, robot_data_scaling_sim2real</li><li>Specific keywords matched: vision-language-action, general-purpose manipulation, dexterous manipulation</li><li>Detected subtopics: cross_embodiment, sim_to_real, dexterous_manipulation</li><li>Personal domain affinity: preferred (+6; matched general-purpose manipulation, general purpose manipulation, dexterous manipulation)</li><li>Subtopic: dexterous_manipulation</li><li>Recently recommended: 4 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = cross_embodiment, sim_to_real</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 78.8 = base 77.0 + affinity +6 + redundancy -4.2</li>          </ul>
+<li>机器人语境：robotic, manipulation, humanoid</li><li>research_fit 30 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：locomotion and manipulation</li><li>historical_value_score 75.7 ≥ 50.0</li><li>发表于 2024 年</li><li>同领域同年份引用标准化位于前 0.2%</li><li>阅读时效分 100/100（论文年龄 2 年）</li><li>OpenAlex FWCI 23.47</li><li>近 2 年年均引用 11.0；此前 1 年年均 2.0</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 75%</li><li>影响力元数据更新于 2026-08-24T03:31:58</li><li>Detected subtopics: loco_manipulation</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 81.7 = base 75.7 + affinity +6 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>General-purpose manipulation requires reliable behavior across embodiments, objects, and task demands. We introduce HandsOn, a composable simulation platform and benchmark for cross-embodiment dexterous manipulation. It supports five robotic arms, six dexterous hands, and approximately 200 rigid, articulated, and deformable assets in randomized scenes. The benchmark pairs 18,000 curated human demonstrations with 66 human-verified tasks: Core-50 supports demonstration-based learning and execution tests, while Transfer-16 evaluates asset and relation transfer, skill composition, and deformable manipulation without target-task training demonstrations. Qualitative real-robot rollouts illustrate sim-to-real transfer. Across diffusion, vision-language-action, world-action, and prompted VLM-based methods, the best trained multi-task policy achieves 29.1% Core-50 success. Without benchmark finetuning, GPT-6 using move_eef for palm-and-finger control achieves 5.2% on Core-50 and 1.9% on Transfer-16 over 660 trials. Trained-policy stage diagnostics expose failures in contact establishment, action coordination, and maintaining achieved goals, with additional sequencing errors in composed tasks. HandsOn provides a shared basis for investigating manipulation generalization and the limits of reliable physical interaction.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2610.26765v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2610.26765v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2610.26765" target="_blank" rel="noopener noreferrer">BibTeX</a>
-        </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2610.26765" data-title="HandsOn: A Large-Scale Simulation Benchmark for Generalizable Dexterous Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W4402354138" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.15607/rss.2024.xx.061" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W4402354138" data-title="HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.26765" data-title="HandsOn: A Large-Scale Simulation Benchmark for Generalizable Dexterous Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W4402354138" data-title="HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="openalex:W7167513650" data-paper-id="openalex:W7167513650" data-category="high_impact_historical">
+      <article class="paper-card" id="openalex:W3012010640" data-paper-id="openalex:W3012010640" data-category="high_impact_historical">
         <div class="card-topline">
           <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W7167513650</span>
+          <span class="arxiv-id">W3012010640</span>
         </div>
-        <h3>Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking</h3>
-        <p class="authors">Zewei Zhang, Kehan Wen, Michael Xu, Junzhe He, C Li, Takahiro Miki, Clemens Schwarke, Chong Zhang, Xue Bin Peng, Marco Hutter</p>
+        <h3>LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops</h3>
+        <p class="authors">Victor Klemm, Alessandro Morra, Lionel Gulich, Dominik Mannhart, David Rohr, Mina Kamel, Yvain de Viragh, Roland Siegwart</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-07-06</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> humanoid_whole_body</span>        </div>
+          <span><b>Published</b> 2020-03-09</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> whole_body_control</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>The supplied record contains no abstract for this paper, so its problem setting, method, reported evidence, and technical points cannot be summarized from the available source. The title indicates work on learning whole-body humanoid locomotion via motion generation and motion tracking, published in IEEE Robotics and Automation Letters, but no claims or results should be attributed beyond that. Read the full text directly to identify the motion-generation and tracking pipeline, the evaluation conditions, and any reported outcomes before relying on it.</p>
+          <p>该工作针对轮式双足机器人 Ascento 的全身控制问题，提出分层全身控制器，利用其完整刚体动力学，并给出运动学闭环动力学的闭式表达，且该表达可推广到更复杂的系统。滚动约束通过基于旋转矩阵的紧凑解析解纳入，非最小相位平衡动力学则通过把线性二次调节器作为运动任务来计入；此外，以零矩点为函数调节倾角，以提高转弯时的鲁棒性。作者称控制器计算轻量，并通过多项实验展示其显著扩展了系统的崎岖地形能力与鲁棒性，但摘要未给出定量指标。阅读时可重点检查运动学闭环动力学的推导、LQR 任务的权重与接口，以及实验对崎岖地形和转弯鲁棒性的具体设置。</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 领域内高影响力</span>
             <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
-<span><b>Subtopics</b> humanoid_whole_body</span><span><b>Utility</b> 64.4 (base 58.4)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>OpenAlex citations</b> 1</span>          </div>
+<span><b>Subtopics</b> whole_body_control</span><span><b>Utility</b> 67.3 (base 67.3)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 183</span>          </div>
           <ul>
-<li>机器人语境：robotic, humanoid</li><li>research_fit 30 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：humanoid locomotion</li><li>historical_value_score 58.4 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 8.1%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 2.54</li><li>近年年均 OpenAlex 引用 1.0（无更早窗口可比较）</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-31T08:50:41</li><li>Detected subtopics: humanoid_whole_body</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 64.4 = base 58.4 + affinity +6 + redundancy -0</li>          </ul>
+<li>机器人语境：robot, robots, robotic</li><li>research_fit 42 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：bipedal robot, whole-body control</li><li>historical_value_score 67.3 ≥ 42.0</li><li>发表于 2020 年</li><li>同领域同年份引用标准化位于前 3.1%</li><li>阅读时效分 70/100（论文年龄 6 年）</li><li>OpenAlex FWCI 5.30</li><li>近 2 年年均引用 36.5；此前 2 年年均 33.0</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-10T04:13:37</li><li>Detected subtopics: whole_body_control</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 67.3 = base 67.3 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>We present a hierarchical whole-body controller leveraging the full rigid body dynamics of the wheeled bipedal robot Ascento. We derive closed-form expressions for the dynamics of its kinematic loops in a way that readily generalizes to more complex systems. The rolling constraint is incorporated using a compact analytic solution based on rotation matrices. The non-minimum phase balancing dynamics are accounted for by including a linear-quadratic regulator as a motion task. Robustness when driving curves is increased by regulating the lean angle as a function of the zero-moment point. The proposed controller is computationally lightweight and significantly extends the rough-terrain capabilities and robustness of the system, as we demonstrate in several experiments.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7167513650" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3710365" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7167513650" data-title="Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W3012010640" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2005.11431" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.1109/lra.2020.2979625" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2005.11431" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W3012010640" data-title="LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7167513650" data-title="Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W3012010640" data-title="LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
