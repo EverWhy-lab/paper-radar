@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-10-21</title>
+  <title>Paper Radar — 2026-10-22</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-10-21 17:30</p>
+        <p class="header-updated">2026-10-22 17:34</p>
       </div>
     </div>
   </header>
@@ -31,157 +31,83 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="arxiv:2610.28470" data-paper-id="arxiv:2610.28470" data-category="frontier_recent">
+      <article class="paper-card" id="arxiv:2610.30044" data-paper-id="arxiv:2610.30044" data-category="frontier_recent">
         <div class="card-topline">
           <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2610.28470v1</span>
+          <span class="arxiv-id">2610.30044v1</span>
         </div>
-        <h3>Fast Motion Retargeting Pipeline for Scalable Humanoid Robot Learning</h3>
-        <p class="authors">Daniel Marew, Sangjun Park, Nisal Perera, Donghyun Kim</p>
+        <h3>SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation</h3>
+        <p class="authors">Zhaohui Yang, Quanbao Lin, Chengqi Shi, Zhenglang Weng, Jicheng Lin, Boyu Chen, Tengjie Zhu, Guanzhu Ren, Jiahao Xu, Yang Feng, Xiaokang Yang, Yao Mu</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-21 00:22 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO</span>
-<span><b>Reading focus</b> sim_to_real, trajectory_optimization</span>        </div>
+          <span><b>Published</b> 2026-10-22 01:03 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.AI</span>
+<span><b>Reading focus</b> loco_manipulation, whole_body_control</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>FRDV 针对将大规模人体运动捕捉数据重定向到不同人形机器人时，运动学-动力学轨迹优化计算开销大、且需要逐条运动手动调整的问题，提出一个可扩展框架：快速约束运动学重定向，加上动力学验证。其运动学阶段结合自定义的 Sequential Quadratic Programming 求解器、Real-Time Iteration 和并行分块处理，报告最高 9,156 帧/秒，约为 GMR 和 ProtoMotions 的 136 倍，并把机器人特定约束纳入优化，以减少地面穿透和自碰撞等伪影；对需要进一步验证的运动，则用 contact implicit iLQR 控制器在完整刚体动力学下检验，识别动力学不可行运动并修正脚部悬空、脚部打滑等接触伪影。作者通过训练运动跟踪强化学习策略比较跟踪保真度和成功率来评估重定向质量，并在 Unitree G1 上展示 sim-to-real 迁移；阅读时可重点检查动力学验证的触发条件、约束建模，以及跟踪评估如何归因于重定向质量。</p>
+          <p>SP-HLM addresses the interface between high-level task policies and whole-body control for humanoid loco-manipulation, arguing that a single action representation can burden the high-level policy or underspecify coordination. Its sparse-pose-driven interface combines five task-critical body poses with a learned latent motion prior: SP-VLA predicts sparse poses and finger joint positions via asynchronous action-chunk inference, SP-MGM reconstructs full-body motion through two-stage distillation, and SP-GMT fuses explicit targets with the implicit prior. The abstract reports improved motion tracking, whole-body coordination, and loco-manipulation success in simulation and on a real humanoid over existing approaches, without numbers; inspect how the sparse-pose and latent-prior channels are combined in SP-GMT.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Learning &amp; Policy Post-Training, Robot Data Scaling &amp; Sim-to-Real</span>
-<span><b>Subtopics</b> sim_to_real, trajectory_optimization</span><span><b>Utility</b> 100.8 (base 99.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>Recent overlap</b> -4.2</span>          </div>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> loco_manipulation, whole_body_control</span><span><b>Utility</b> 81.2 (base 78.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -2.8</span>          </div>
           <ul>
-<li>research_fit 99 ≥ 40</li><li>Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining, robot_data_scaling_sim2real</li><li>Specific keywords matched: humanoid robot, trajectory optimization, iLQR</li><li>Diversity topic: humanoid_loco_manipulation</li><li>Detected subtopics: sim_to_real, trajectory_optimization</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>Subtopic: sim_to_real</li><li>Recently recommended: 5 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = trajectory_optimization</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 100.8 = base 99.0 + affinity +6 + redundancy -4.2</li>          </ul>
+<li>research_fit 78 ≥ 40</li><li>Core topics matched: vla_robot_foundation, humanoid_loco_manipulation</li><li>Specific keywords matched: vision-language-action, VLA, loco-manipulation, humanoid robot, whole-body control</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: loco_manipulation, whole_body_control</li><li>Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)</li><li>Subtopic: loco_manipulation</li><li>Recently recommended: 1 day ago</li><li>Subtopic cooldown bypassed: new secondary topic = whole_body_control</li><li>Redundancy penalty: -2.8</li><li>recommendation_utility 81.2 = base 78.0 + affinity +6 + redundancy -2.8</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>While large-scale human motion capture datasets provide a rich source of demonstrations for humanoid robot learning, retargeting the diverse motions to different humanoid robots remains a nontrivial challenge. Existing kinodynamic trajectory optimization pipelines are computationally expensive and often require manual adjustments per motion. We present FRDV (Fast Retargeting with Dynamics Validation), a scalable framework consisting of rapid constrained kinematic retargeting and an additional dynamics validation pipeline. Its kinematic stage integrates a custom Sequential Quadratic Programming solver, Real-Time Iteration, and parallel chunk-based processing, achieving up to 9,156 frames per second, approximately up to 136 times faster than GMR and ProtoMotions, while robot-specific constraints are incorporated into the optimization to reduce common retargeting artifacts, such as ground penetration and self-collision. For motions requiring additional verification, a contact implicit iLQR controller is utilized to test the retargeted reference under full rigid body dynamics. This dynamics-based validation identifies dynamically infeasible motions and refines contact-related artifacts such as foot floating and foot skating. We evaluate retargeting quality by training motion tracking reinforcement learning policies using several state-of-the-art pipelines and comparing their tracking fidelity and success rates. Furthermore, sim-to-real transfer is demonstrated on a Unitree G1 humanoid. Videos and code are available at: https://daroslab.github.io/frdv/.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Humanoid loco-manipulation requires an effective interface between high-level task policies and whole-body control. Existing interfaces typically rely on a single action representation for both task intent and whole-body coordination. This may burden the high-level policy or leave one aspect underspecified. We present SP-HLM, a framework built on a sparse-pose-driven interface. The interface combines five task-critical body poses with a learned latent motion prior to represent spatial intent and whole-body coordination in complementary forms. SP-VLA, a vision-language-action model, first predicts task-relevant sparse poses and finger joint positions from multimodal observations and language instructions using asynchronous action-chunk inference. Given these sparse targets, SP-MGM, a motion generation model trained through two-stage distillation, reconstructs coordinated full-body motion in real time. A pretrained motion encoder maps this motion to a compact latent representation. SP-GMT, a general motion tracker, then integrates the explicit sparse targets with this implicit motion prior for whole-body control. Experiments in simulation and on a real humanoid robot demonstrate improved motion tracking, whole-body coordination, and loco-manipulation success over existing approaches. Additional results and videos are available on our \href{https://sp-hlm.github.io/}{\textcolor{blue}{project page}}.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2610.28470v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2610.28470v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2610.28470" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          <a href="https://arxiv.org/abs/2610.30044v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.30044v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.30044" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2610.28470" data-title="Fast Motion Retargeting Pipeline for Scalable Humanoid Robot Learning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.30044" data-title="SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.28470" data-title="Fast Motion Retargeting Pipeline for Scalable Humanoid Robot Learning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.30044" data-title="SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="arxiv:2610.28166" data-paper-id="arxiv:2610.28166" data-category="frontier_recent">
+      <article class="paper-card" id="arxiv:2610.29612" data-paper-id="arxiv:2610.29612" data-category="frontier_recent">
         <div class="card-topline">
           <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2610.28166v1</span>
+          <span class="arxiv-id">2610.29612v1</span>
         </div>
-        <h3>Reasoning as a Distribution: Generative Plan Latents for Vision-Language-Action Models</h3>
-        <p class="authors">Matteo Cercola, Katie Z Luo, Milan Ganai, John Alora, Simone Formentin, Marco Pavone</p>
+        <h3>Watch Your Step: Anticipated Perception for Humanoid Locomotion</h3>
+        <p class="authors">Matthias Heyrman, Chenhao Li, Ioannis Dadiotis, Marco Hutter</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-20 21:08 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO</span>
+          <span><b>Published</b> 2026-10-21 19:52 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.LG</span>
         </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>GPL 针对现有 VLA 推理模型把中间决策压缩为单一表示、从而掩盖其他可行方案的问题，将推理状态表示为关于计划（如使用哪个物体、抓取方式或路线）的低维条件分布，使推理状态可寻址：无需重新训练 VLA 即可采样计划以覆盖、按请求选择计划以引导、并按部署结果重新加权以进行结果适应。作者在 SimplerEnv 操作任务上用 π_0 测试这三种能力，并扩展到 RoboCasa、LIBERO 和一个迷宫域；报告引导计划使执行遵循请求的比例从 0.48 提升到 0.94，而对原生动作分布施加同样引导没有可靠增益，并指出显式计划在携带观察尚未决定的决策信息时最有用。阅读时可重点检查计划分布如何构造与条件化、引导与结果适应各自的操作方式，以及“计划携带额外决策信息”这一结论的判定依据。</p>
+          <p>This method targets perceptive humanoid locomotion, where dense robot-centric elevation maps contain information beyond the next footsteps and learned encoders must discover relevance while also learning locomotion. A lightweight foothold prediction model uses proprioception and the velocity command to predict future footholds, and the elevation map is sampled only in small patches around them, with the predictor periodically retrained on new policy rollouts. The abstract reports reaching a given terrain difficulty in roughly a third of the training iterations versus the complete map, outperforming complete-map policies where footholds are sparse and on unseen terrain, matching an attention-based encoder at several times the cost, and transferring zero-shot to a Unitree G1; inspect the patch sampling and retraining schedule.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
-<span><b>Utility</b> 52.0 (base 52.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 56.0 (base 50.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
           </div>
           <ul>
-<li>research_fit 52 ≥ 40</li><li>Core topics matched: vla_robot_foundation</li><li>Specific keywords matched: vision-language-action, VLA</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0</li>          </ul>
+<li>research_fit 50 ≥ 40</li><li>Core topics matched: humanoid_loco_manipulation</li><li>Specific keywords matched: humanoid locomotion</li><li>Diversity topic: humanoid_loco_manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 56.0 = base 50.0 + affinity +6 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Vision-Language-Action (VLA) policies increasingly reason before acting, but existing reasoning models compress this intermediate decision into a single representation. When several plans are valid, this commitment hides alternatives that could otherwise be selected or revised. We introduce the Generative Plan Latent (GPL), which represents the reasoning state as a low-dimensional conditional distribution over plans, such as which object, grasp, or route to use. This makes the reasoning state addressable: without retraining the VLA, plans can be sampled (coverage), selected on request (steering), and reweighted by deployment outcomes (outcome adaptation). We test all three on SimplerEnv manipulation with $π_0$, and extend the analysis to RoboCasa, LIBERO, and a maze domain. Steering the plan raises the fraction of executions that follow the request from 0.48 to 0.94, while the same guidance on the native action distribution shows no reliable gain. Finally, we show that an explicit plan is most useful when it carries decision information not already determined by the observation.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Perceptive locomotion policies typically observe a dense robot-centric elevation map, although only the terrain beneath and around the next footsteps informs the control decision. Learned encoders compress the whole visual input, leaving the policy to work out which inputs matter while learning the baseline locomotion task. Learning both at once slows training and, without computationally expensive attention mechanisms, makes generalization to new terrain harder. We instead remove redundant inputs from the elevation map before the policy sees it. A lightweight foothold prediction model (FPM) predicts future footholds from proprioception and the velocity command alone, and we sample the elevation map only in small patches around these predicted footholds. We train the prediction model alongside the locomotion policy, periodically retraining it on new policy rollouts as the robot&#39;s gait matures. This allows the perception to anticipate where the policy will step, while the policy learns to leverage terrain information around those steps. With the proposed lightweight preprocessing, the policy reaches a given terrain difficulty in roughly a third of the training iterations required with the complete map. It outperforms policies that observe the complete map where footholds are sparse, including in narrow walled corridors, and on unseen terrain, and it matches an attention-based encoder trained at several times the cost. The policy transfers zero-shot to a Unitree G1 humanoid traversing various obstacles, stairs, gaps, and step-downs beyond the training distribution in both indoor and outdoor environments.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2610.28166v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2610.28166v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2610.28166" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          <a href="https://arxiv.org/abs/2610.29612v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.29612v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.29612" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2610.28166" data-title="Reasoning as a Distribution: Generative Plan Latents for Vision-Language-Action Models" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.29612" data-title="Watch Your Step: Anticipated Perception for Humanoid Locomotion" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.28166" data-title="Reasoning as a Distribution: Generative Plan Latents for Vision-Language-Action Models" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="openalex:W4402354138" data-paper-id="openalex:W4402354138" data-category="review_knowledge_map">
-        <div class="card-topline">
-          <span class="category category--review_knowledge_map">综述 / 知识地图</span>
-          <span class="arxiv-id">W4402354138</span>
-        </div>
-        <h3>HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation</h3>
-        <p class="authors">Carmelo Sferrazza, Dun-Ming Huang, Xingyu Lin, Youngwoon Lee, Pieter Abbeel</p>
-        <div class="metadata">
-          <span><b>Published</b> 2024-07-15</span>
-<span><b>Reading focus</b> loco_manipulation</span>        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>HumanoidBench 是一个面向全身运动与操作的人形机器人仿真基准，所提供摘要为空，因此无法从来源确认其具体任务集合、观测与动作接口、评测指标或基线结果。就标题与文档类型而言，它测量的是人形机器人在仿真中完成全身 loco-manipulation 任务的表现，其新增之处在于把这类任务组织为统一评测环境，使不同方法可在同一设定下比较。它支持的研究问题是：全身运动与操作的控制和学习方法在该基准上表现如何、失败模式是什么。阅读时应先查阅正文的任务清单、成功判据、仿真平台与基线配置，再判断其与自身研究的可比性。</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 综述 / 知识地图</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
-<span><b>Subtopics</b> loco_manipulation</span><span><b>Utility</b> 81.7 (base 75.7)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>OpenAlex citations</b> 24</span>          </div>
-          <ul>
-<li>机器人语境：robotic, manipulation, humanoid</li><li>research_fit 30 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：locomotion and manipulation</li><li>historical_value_score 75.7 ≥ 50.0</li><li>发表于 2024 年</li><li>同领域同年份引用标准化位于前 0.2%</li><li>阅读时效分 100/100（论文年龄 2 年）</li><li>OpenAlex FWCI 23.47</li><li>近 2 年年均引用 11.0；此前 1 年年均 2.0</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 75%</li><li>影响力元数据更新于 2026-08-24T03:31:58</li><li>Detected subtopics: loco_manipulation</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 81.7 = base 75.7 + affinity +6 + redundancy -0</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
-        <div class="actions">
-<a href="https://openalex.org/W4402354138" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.15607/rss.2024.xx.061" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W4402354138" data-title="HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W4402354138" data-title="HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="openalex:W3012010640" data-paper-id="openalex:W3012010640" data-category="high_impact_historical">
-        <div class="card-topline">
-          <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W3012010640</span>
-        </div>
-        <h3>LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops</h3>
-        <p class="authors">Victor Klemm, Alessandro Morra, Lionel Gulich, Dominik Mannhart, David Rohr, Mina Kamel, Yvain de Viragh, Roland Siegwart</p>
-        <div class="metadata">
-          <span><b>Published</b> 2020-03-09</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> whole_body_control</span>        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>该工作针对轮式双足机器人 Ascento 的全身控制问题，提出分层全身控制器，利用其完整刚体动力学，并给出运动学闭环动力学的闭式表达，且该表达可推广到更复杂的系统。滚动约束通过基于旋转矩阵的紧凑解析解纳入，非最小相位平衡动力学则通过把线性二次调节器作为运动任务来计入；此外，以零矩点为函数调节倾角，以提高转弯时的鲁棒性。作者称控制器计算轻量，并通过多项实验展示其显著扩展了系统的崎岖地形能力与鲁棒性，但摘要未给出定量指标。阅读时可重点检查运动学闭环动力学的推导、LQR 任务的权重与接口，以及实验对崎岖地形和转弯鲁棒性的具体设置。</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 领域内高影响力</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
-<span><b>Subtopics</b> whole_body_control</span><span><b>Utility</b> 67.3 (base 67.3)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>OpenAlex citations</b> 183</span>          </div>
-          <ul>
-<li>机器人语境：robot, robots, robotic</li><li>research_fit 42 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：bipedal robot, whole-body control</li><li>historical_value_score 67.3 ≥ 42.0</li><li>发表于 2020 年</li><li>同领域同年份引用标准化位于前 3.1%</li><li>阅读时效分 70/100（论文年龄 6 年）</li><li>OpenAlex FWCI 5.30</li><li>近 2 年年均引用 36.5；此前 2 年年均 33.0</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-10T04:13:37</li><li>Detected subtopics: whole_body_control</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 67.3 = base 67.3 + affinity +0 + redundancy -0</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>We present a hierarchical whole-body controller leveraging the full rigid body dynamics of the wheeled bipedal robot Ascento. We derive closed-form expressions for the dynamics of its kinematic loops in a way that readily generalizes to more complex systems. The rolling constraint is incorporated using a compact analytic solution based on rotation matrices. The non-minimum phase balancing dynamics are accounted for by including a linear-quadratic regulator as a motion task. Robustness when driving curves is increased by regulating the lean angle as a function of the zero-moment point. The proposed controller is computationally lightweight and significantly extends the rough-terrain capabilities and robustness of the system, as we demonstrate in several experiments.</p></details>
-        <div class="actions">
-<a href="https://openalex.org/W3012010640" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2005.11431" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.1109/lra.2020.2979625" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2005.11431" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W3012010640" data-title="LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W3012010640" data-title="LQR-Assisted Whole-Body Control of a Wheeled Bipedal Robot With Kinematic Loops" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.29612" data-title="Watch Your Step: Anticipated Perception for Humanoid Locomotion" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
