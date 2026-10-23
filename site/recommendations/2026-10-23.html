@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-10-23</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-10-23 17:30</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="recommendations" aria-label="Today's selected papers">
+      <article class="paper-card" id="arxiv:2604.07993" data-paper-id="arxiv:2604.07993" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2604.07993v3</span>
+        </div>
+        <h3>HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation</h3>
+        <p class="authors">Shuanghao Bai, Meng Li, Xinyuan Lv, Jiawei Wang, Xinhua Wang, Fei Liao, Chengkai Hou, Langzhe Gu, Bowei Zhang, Wanqi Zhou, Kun Wu, Ziluo Ding, Zhiyuan Xu, Lei Sun, Shanghang Zhang, Zhengping Che, Jian Tang, Badong Chen</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-04-09 17:01 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> cross_embodiment, whole_body_control</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>HEX targets coordinated whole-body manipulation on full-sized bipedal humanoids, arguing that most VLA models treat body parts largely independently and thus struggle with high-DoF control. The framework combines a humanoid-aligned universal state representation for learning across heterogeneous embodiments, a Mixture-of-Experts Unified Proprioceptive Predictor over multi-embodiment trajectory data, lightweight history tokens that avoid re-encoding past images, and residual-gated fusion with a flow-matching action head. The abstract reports real-world humanoid experiments with state-of-the-art task success rate and generalization, especially in fast-reaction and long-horizon scenarios, without giving numbers. Inspect how the state alignment transfers across embodiments and how history tokens affect temporal context.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> cross_embodiment, whole_body_control</span><span><b>Utility</b> 76.2 (base 73.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -2.8</span>          </div>
+          <ul>
+<li>research_fit 73 ≥ 40</li><li>Core topics matched: vla_robot_foundation, humanoid_loco_manipulation</li><li>Specific keywords matched: vision-language-action, VLA, multi-embodiment, whole-body manipulation, humanoid manipulation, whole-body control</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: cross_embodiment, whole_body_control</li><li>Personal domain affinity: preferred (+6; matched humanoid, whole-body manipulation, whole body manipulation)</li><li>Subtopic: whole_body_control</li><li>Recently recommended: 1 day ago</li><li>Subtopic cooldown bypassed: new secondary topic = cross_embodiment</li><li>Redundancy penalty: -2.8</li><li>recommendation_utility 76.2 = base 73.0 + affinity +6 + redundancy -2.8</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Humans achieve complex manipulation through coordinated whole-body control, whereas most Vision-Language-Action (VLA) models treat robot body parts largely independently, making high-DoF humanoid control challenging and often unstable. We present HEX, a state-centric framework for coordinated manipulation on full-sized bipedal humanoid robots. HEX introduces a humanoid-aligned universal state representation for scalable learning across heterogeneous embodiments, and incorporates a Mixture-of-Experts Unified Proprioceptive Predictor to model whole-body coordination and temporal motion dynamics from large-scale multi-embodiment trajectory data. To efficiently capture temporal visual context, HEX uses lightweight history tokens to summarize past observations, avoiding repeated encoding of historical images during inference. It further employs a residual-gated fusion mechanism with a flow-matching action head to adaptively integrate visual-language cues with proprioceptive dynamics for action generation. Experiments on real-world humanoid manipulation tasks show that HEX achieves state-of-the-art performance in task success rate and generalization, particularly in fast-reaction and long-horizon scenarios.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2604.07993v3" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2604.07993v3" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2604.07993" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2604.07993" data-title="HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2604.07993" data-title="HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2610.30991" data-paper-id="arxiv:2610.30991" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2610.30991v1</span>
+        </div>
+        <h3>UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry</h3>
+        <p class="authors">Jialin Tian, Zhuofan Li, Xinkai Wang, Bokai Lin, Chenyi Wang, Xinyu Zhan, Cewu Lu, Lixin Yang</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-22 17:35 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> world_action_model, bimanual_manipulation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>UniFlowWAM addresses that demonstrations record observations and actions but not how the 3D scene changed, and prior work kept 3D scene flow outside the policy as an intermediate, an inference-time prior, or an auxiliary head. It makes flow a third modality alongside vision and action in a diffusion transformer with one expert per modality linked by joint attention, trained under a ten-objective role grid so one model acts as policy, forward and inverse dynamics, and predictor of future visual features or 3D flow. Reported results include RoboCasa-GR1 success rising from 52.1% to 56.4% over its no-flow base, 98.1% LIBERO, 87.7% zero-shot LIBERO-Plus, and 87.0% versus 68.5% real-robot average. Inspect the role grid and flow supervision.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> world_action_model, bimanual_manipulation</span><span><b>Utility</b> 72.8 (base 71.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span>          </div>
+          <ul>
+<li>research_fit 71 ≥ 40</li><li>Core topics matched: world_model_embodied_reasoning, dexterous_multimodal_manipulation</li><li>Specific keywords matched: world action model, bimanual manipulation, inverse dynamics</li><li>Diversity topic: world_model_embodied_reasoning</li><li>Detected subtopics: world_action_model, bimanual_manipulation</li><li>Personal domain affinity: preferred (+6; matched bimanual manipulation)</li><li>Subtopic: world_action_model</li><li>Recently recommended: 7 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = bimanual_manipulation</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 72.8 = base 71.0 + affinity +6 + redundancy -4.2</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Robot demonstrations record what the robot saw and what it did. They do not specify how the 3D world changed in between. Scene-level 3D flow describes it by tracking 3D scene points, providing the world representation with 4D geometry. Prior work has used flow to improve robot policies. Flow served as an intermediate prediction that a separate model converts into actions, as a prior injected at inference time, or as an extra output learned together with the action. In all of these designs, flow stays outside the policy, as a separate module or as an extra prediction head. We introduce UniFlowWAM, a Unified World-Action Model that makes 3D scene flow a third modality on par with vision and action. Its world representation therefore covers both visual semantics, through future visual features, and 4D geometry, through 3D flow, and flow receives its own supervision. UniFlowWAM is a diffusion transformer with one expert per modality, and the three experts exchange information through joint attention. We train UniFlowWAM under a ten-objective role grid, where each objective assigns every modality exactly one of three roles, namely target, condition, or absent. The same model thus serves as a policy, as forward and inverse dynamics, and as a predictor of future visual features or 3D flow. We evaluate UniFlowWAM on RoboCasa-GR1, LIBERO, and LIBERO-Plus in simulation, and on four real-world bimanual manipulation tasks. On RoboCasa-GR1, UniFlowWAM raises the success rate of its base model without flow from 52.1% to 56.4%. It preserves in-distribution success on LIBERO at 98.1% and reaches 87.7% zero-shot on LIBERO-Plus. On the real robot, it achieves 87.0% average success, compared with 68.5% for the strongest baseline.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.30991v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.30991v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.30991" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.30991" data-title="UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.30991" data-title="UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7208792182" data-paper-id="openalex:W7208792182" data-category="high_impact_historical">
+        <div class="card-topline">
+          <span class="category category--high_impact_historical">领域内高影响力</span>
+          <span class="arxiv-id">W7208792182</span>
+        </div>
+        <h3>Inertia parameter identification for a hydraulic wheel legged bipedal robot: An online incremental approach</h3>
+        <p class="authors">Rui Ma, Li Xu, Haibo Feng, Yili Fu</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-09-05</span>
+<span><b>Source</b> Control Engineering Practice</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This paper concerns inertia parameter identification for a hydraulic wheel-legged bipedal robot and proposes an online incremental approach, per its title and venue in Control Engineering Practice. No abstract is supplied, so the specific problem formulation, identification method, experimental setup, and any reported accuracy cannot be summarized from the available metadata. Read the full text to determine which inertial parameters are estimated, how the incremental online update is derived, and what evidence supports identification accuracy on this platform. Given the reader&#39;s secondary interest in robot state estimation and whole-body control, the identification procedure and its online update are the parts to check first.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 55.0 (base 55.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 0</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotic</li><li>research_fit 30 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：bipedal robot</li><li>historical_value_score 55.0 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 20.5%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-09-14T08:04:13</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 55.0 = base 55.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7208792182" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1016/j.conengprac.2026.107231" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7208792182" data-title="Inertia parameter identification for a hydraulic wheel legged bipedal robot: An online incremental approach" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7208792182" data-title="Inertia parameter identification for a hydraulic wheel legged bipedal robot: An online incremental approach" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>
