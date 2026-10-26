@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "paper_count": 654,
+  "paper_count": 684,
   "papers": [
     {
       "canonical_paper_id": "openalex:W1505754525",
@@ -44828,8 +44828,8 @@
           "cited_by_count": 1
         }
       ],
-      "fwci": 1.7198,
-      "citation_normalized_percentile": 0.76272436,
+      "fwci": 1.634,
+      "citation_normalized_percentile": 0.75569796,
       "referenced_works": [],
       "related_works": [
         "W2020610906",
@@ -44853,7 +44853,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:24",
+      "metadata_updated_at": "2026-10-26T08:01:50",
       "openalex_url": "https://openalex.org/W4405349824",
       "landing_page_url": "https://doi.org/10.1177/02783649261485494",
       "open_access_url": "https://doi.org/10.1177/02783649261485494",
@@ -44887,12 +44887,12 @@
           "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, teleoperation"
         }
       ],
-      "historical_value_score": 47.5,
+      "historical_value_score": 47.1,
       "historical_score_components": {
         "research_relevance": 0.0,
         "recency": 100.0,
-        "normalized_citation": 76.3,
-        "fwci": 57.3,
+        "normalized_citation": 75.6,
+        "fwci": 54.5,
         "citation_momentum": 5.0,
         "seed_provenance": null,
         "work_signal": 60.0,
@@ -44900,9 +44900,9 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 23.7%",
+        "同领域同年份引用标准化位于前 24.4%",
         "阅读时效分 100/100（论文年龄 0 年）",
-        "OpenAlex FWCI 1.72",
+        "OpenAlex FWCI 1.63",
         "近年年均 OpenAlex 引用 1.0（无更早窗口可比较）",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 100%"
@@ -48775,7 +48775,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:24",
+      "metadata_updated_at": "2026-10-26T08:01:50",
       "openalex_url": "https://openalex.org/W4415055448",
       "landing_page_url": "https://doi.org/10.1177/02783649261465040",
       "open_access_url": "https://arxiv.org/abs/2509.06285",
@@ -48890,7 +48890,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W4415109351",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3730288",
       "open_access_url": "http://arxiv.org/abs/2506.13762",
@@ -49943,15 +49943,15 @@
           "score": 0.0
         }
       ],
-      "cited_by_count": 2,
+      "cited_by_count": 3,
       "counts_by_year": [
         {
           "year": 2026,
-          "cited_by_count": 2
+          "cited_by_count": 3
         }
       ],
-      "fwci": 7.1877,
-      "citation_normalized_percentile": 0.95319243,
+      "fwci": 10.4519,
+      "citation_normalized_percentile": 0.97453933,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -49964,7 +49964,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W4416254450",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3728345",
       "open_access_url": "http://arxiv.org/abs/2509.19080",
@@ -50022,23 +50022,23 @@
           "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, sim-to-real"
         }
       ],
-      "historical_value_score": 63.6,
+      "historical_value_score": 64.5,
       "historical_score_components": {
         "research_relevance": 26.0,
         "recency": 100.0,
-        "normalized_citation": 95.3,
+        "normalized_citation": 97.5,
         "fwci": 100.0,
-        "citation_momentum": 10.0,
+        "citation_momentum": 15.0,
         "seed_provenance": null,
         "work_signal": 60.0,
         "metadata_completeness": 100.0
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 4.7%",
+        "同领域同年份引用标准化位于前 2.5%",
         "阅读时效分 100/100（论文年龄 0 年）",
-        "OpenAlex FWCI 7.19",
-        "近年年均 OpenAlex 引用 2.0（无更早窗口可比较）",
+        "OpenAlex FWCI 10.45",
+        "近年年均 OpenAlex 引用 3.0（无更早窗口可比较）",
         "标题或摘要命中可配置的方法类信号",
         "元数据完整度 100%"
       ],
@@ -50210,7 +50210,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W4416891983",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3739560",
       "open_access_url": "https://doi.org/10.1109/lra.2026.3739560",
@@ -52017,7 +52017,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:24",
+      "metadata_updated_at": "2026-10-26T08:01:50",
       "openalex_url": "https://openalex.org/W7130756700",
       "landing_page_url": "https://doi.org/10.1177/02783649261479362",
       "open_access_url": "https://doi.org/10.1177/02783649261479362",
@@ -52124,7 +52124,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.09117383,
+      "citation_normalized_percentile": 0.08673862,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -52137,7 +52137,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:24",
+      "metadata_updated_at": "2026-10-26T08:01:50",
       "openalex_url": "https://openalex.org/W7131065284",
       "landing_page_url": "https://doi.org/10.1177/02783649261480737",
       "open_access_url": "https://arxiv.org/abs/2602.18164",
@@ -52204,11 +52204,11 @@
           "reason": "Explicit robotics context: robot, robots, robotic, robotics"
         }
       ],
-      "historical_value_score": 50.0,
+      "historical_value_score": 49.9,
       "historical_score_components": {
         "research_relevance": 42.0,
         "recency": 100.0,
-        "normalized_citation": 9.1,
+        "normalized_citation": 8.7,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -52217,7 +52217,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 90.9%",
+        "同领域同年份引用标准化位于前 91.3%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
@@ -52966,7 +52966,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.13971539,
+      "citation_normalized_percentile": 0.13110908,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -52979,7 +52979,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7138116831",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3739024",
       "open_access_url": "http://arxiv.org/abs/2603.15152",
@@ -53050,11 +53050,11 @@
           "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, teleoperation"
         }
       ],
-      "historical_value_score": 53.0,
+      "historical_value_score": 52.9,
       "historical_score_components": {
         "research_relevance": 55.0,
         "recency": 100.0,
-        "normalized_citation": 14.0,
+        "normalized_citation": 13.1,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -53063,7 +53063,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 86.0%",
+        "同领域同年份引用标准化位于前 86.9%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
@@ -53155,7 +53155,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:24",
+      "metadata_updated_at": "2026-10-26T08:01:50",
       "openalex_url": "https://openalex.org/W7138854267",
       "landing_page_url": "https://doi.org/10.1177/02783649261477778",
       "open_access_url": "https://arxiv.org/abs/2603.16086",
@@ -54002,7 +54002,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7155097025",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734897",
       "open_access_url": "https://arxiv.org/abs/2604.16683",
@@ -54192,6 +54192,165 @@
       "rising_observed_growth": {}
     },
     {
+      "canonical_paper_id": "openalex:W7155538002",
+      "openalex_id": "W7155538002",
+      "base_arxiv_id": "2604.21541",
+      "doi": "10.1109/lra.2026.3739563",
+      "title": "X2-N: A Transformable Wheel-Legged Humanoid Robot With Dual-Mode Locomotion and Manipulation",
+      "authors": [
+        "Yan Ning",
+        "Xingzhou Chen",
+        "Delong Li",
+        "Hao Zhang",
+        "Hanfu Gai",
+        "Jinlei Zhao",
+        "Tongyuan Li",
+        "Cheng Zhang",
+        "Zhihui Peng",
+        "Ling Shi"
+      ],
+      "abstract": "Wheel-legged robots combine the efficiency of wheeled locomotion with the versatility of legged systems, enabling rapid traversal over both continuous and discrete terrains. However, conventional designs typically employ fixed wheels as feet and limited degrees of freedom (DoFs) at the hips, resulting in reduced stability and mobility during legged locomotion compared to humanoids with flat feet. In addition, most existing platforms lack a full upper body with arms, which limits their ability to perform dexterous manipulation tasks. In this letter, we present X2-N, a high-DoF transformable robot with dual-mode locomotion and manipulation. X2-N can operate in both humanoid and wheel-legged forms and transform seamlessly between them through joint reconfiguration. We further propose a reinforcement learning (RL)-based whole-body control framework tailored to this morphology, enabling control across hybrid locomotion, transformation, and manipulation. We validate X2-N in a range of challenging locomotion and manipulation tasks, including dynamic skating-like motion, stair climbing, and package delivery. Results demonstrate high",
+      "publication_date": "2026-10-06",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.98580002784729
+        },
+        {
+          "id": "https://openalex.org/T11615",
+          "display_name": "Control and Dynamics of Mobile Robots",
+          "score": 0.005100000184029341
+        },
+        {
+          "id": "https://openalex.org/T10571",
+          "display_name": "Robotic Mechanisms and Dynamics",
+          "score": 0.0035000001080334187
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.20131049,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:51",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:51",
+      "openalex_url": "https://openalex.org/W7155538002",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3739563",
+      "open_access_url": "https://arxiv.org/abs/2604.21541",
+      "pdf_url": "https://arxiv.org/pdf/2604.21541",
+      "research_fit": 51,
+      "video_potential": 60,
+      "matched_topics": [
+        "humanoid_loco_manipulation",
+        "dexterous_multimodal_manipulation",
+        "robot_control_optimization"
+      ],
+      "matched_keywords": [
+        "humanoid robot",
+        "locomotion and manipulation",
+        "dexterous manipulation",
+        "whole-body control"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Humanoid & Whole-Body Loco-Manipulation",
+          "keywords": [
+            "humanoid robot",
+            "locomotion and manipulation"
+          ],
+          "location": "title",
+          "points": 30.0
+        },
+        {
+          "kind": "topic",
+          "label": "Dexterous & Multimodal Manipulation",
+          "keywords": [
+            "dexterous manipulation"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "topic",
+          "label": "Planning, Control & Estimation",
+          "keywords": [
+            "whole-body control"
+          ],
+          "location": "abstract",
+          "points": 7.8
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robots",
+            "robotic",
+            "manipulation",
+            "humanoid",
+            "dexterous manipulation"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robots",
+            "robotic",
+            "manipulation",
+            "humanoid",
+            "dexterous manipulation"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robots, robotic, manipulation, humanoid, dexterous manipulation"
+        }
+      ],
+      "historical_value_score": 52.7,
+      "historical_score_components": {
+        "research_relevance": 51.0,
+        "recency": 100.0,
+        "normalized_citation": 20.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 79.9%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S4210169774",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
       "canonical_paper_id": "openalex:W7160063469",
       "openalex_id": "W7160063469",
       "base_arxiv_id": "2605.00080",
@@ -54246,8 +54405,8 @@
           "cited_by_count": 1
         }
       ],
-      "fwci": 3.5517,
-      "citation_normalized_percentile": 0.9287629,
+      "fwci": 3.388,
+      "citation_normalized_percentile": 0.92392604,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -54263,7 +54422,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:24",
+      "metadata_updated_at": "2026-10-26T08:01:50",
       "openalex_url": "https://openalex.org/W7160063469",
       "landing_page_url": "https://doi.org/10.1177/02783649261488980",
       "open_access_url": "https://doi.org/10.1177/02783649261488980",
@@ -54323,11 +54482,11 @@
           "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, robot learning"
         }
       ],
-      "historical_value_score": 74.8,
+      "historical_value_score": 74.7,
       "historical_score_components": {
         "research_relevance": 58.0,
         "recency": 100.0,
-        "normalized_citation": 92.9,
+        "normalized_citation": 92.4,
         "fwci": 100.0,
         "citation_momentum": 5.0,
         "seed_provenance": null,
@@ -54336,9 +54495,9 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 7.1%",
+        "同领域同年份引用标准化位于前 7.6%",
         "阅读时效分 100/100（论文年龄 0 年）",
-        "OpenAlex FWCI 3.55",
+        "OpenAlex FWCI 3.39",
         "近年年均 OpenAlex 引用 1.0（无更早窗口可比较）",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
         "元数据完整度 100%"
@@ -54642,7 +54801,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.29824224,
+      "citation_normalized_percentile": 0.28987698,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -54655,7 +54814,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7161687616",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3742285",
       "open_access_url": "https://doi.org/10.1109/lra.2026.3742285",
@@ -54715,11 +54874,11 @@
           "reason": "Explicit robotics context: robot, robotics, manipulation, robot learning"
         }
       ],
-      "historical_value_score": 56.7,
+      "historical_value_score": 56.6,
       "historical_score_components": {
         "research_relevance": 58.0,
         "recency": 100.0,
-        "normalized_citation": 29.8,
+        "normalized_citation": 29.0,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -54728,7 +54887,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 70.2%",
+        "同领域同年份引用标准化位于前 71.0%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
@@ -54868,6 +55027,158 @@
       "rising_observed_growth": {}
     },
     {
+      "canonical_paper_id": "openalex:W7162649222",
+      "openalex_id": "W7162649222",
+      "base_arxiv_id": "2605.27759",
+      "doi": "10.1109/lra.2026.3741771",
+      "title": "Colosseum V2: Benchmarking Generalization for Vision-Language-Action Models",
+      "authors": [
+        "Jeremy Morgan",
+        "Hyeonho Oh",
+        "Prajwal Vijay",
+        "Jincen Song",
+        "Ashvin Arora",
+        "Hojung Lim",
+        "Alina Du",
+        "Jesse Thomason",
+        "Gaurav S. Sukhatme",
+        "Ishika Singh"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models demonstrate promising generalization in robotic manipulation, driven by advances in large-scale vision and language pre-training. This progress can be misleading. Despite the zero-shot perception and language capabilities of VLAs, their overall task performance often degrades under distribution shifts, revealing gaps in how these systems translate high-level understanding into robust behavior. To systematically study this gap, we introduce Colosseum V2, a large-scale simulation benchmark for evaluating VLA generalization in robot learning across diverse conditions. The benchmark comprises 28 tasks spanning 13 task categories and two robot morphologies, covering a wide range of manipulation primitives and long-horizon behaviors. Built on the ManiSkill simulator, Colosseum V2 enables fast, GPU-parallelized evaluation and supports both in-domain and out-of-domain testing at scale. We evaluate state-of-the-art methods, including Action Chunking Transformers (ACT) and Pi0.5, and reveal limitations in both base performance and generalization. We demonstrate strong correlations between simulation and real-world metrics that support the ecological validity of the benchmark. By standardizing tasks, metrics, and evaluation protocols within a unified benchmark, Colosseum V2 enables reproducible and fair comparisons, reduced evaluation overhead, and accelerated progress toward general-purpose robot policies.",
+      "publication_date": "2026-10-08",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9634000062942505
+        },
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.033399999141693115
+        },
+        {
+          "id": "https://openalex.org/T11714",
+          "display_name": "Multimodal Machine Learning Applications",
+          "score": 0.00139999995008111
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.31621191,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:51",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:51",
+      "openalex_url": "https://openalex.org/W7162649222",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3741771",
+      "open_access_url": "https://arxiv.org/abs/2605.27759",
+      "pdf_url": "https://arxiv.org/pdf/2605.27759",
+      "research_fit": 45,
+      "video_potential": 39,
+      "matched_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining"
+      ],
+      "matched_keywords": [
+        "vision-language-action",
+        "VLA",
+        "general-purpose robot",
+        "robot learning",
+        "action chunking"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "VLA & Robot Foundation Models",
+          "keywords": [
+            "vision-language-action",
+            "VLA",
+            "general-purpose robot"
+          ],
+          "location": "title",
+          "points": 32.0
+        },
+        {
+          "kind": "topic",
+          "label": "Robot Learning & Policy Post-Training",
+          "keywords": [
+            "robot learning",
+            "action chunking"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robotic",
+            "robotics",
+            "manipulation",
+            "robot learning",
+            "vision-language-action"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robotic",
+            "robotics",
+            "manipulation",
+            "robot learning",
+            "vision-language-action"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, robot learning, vision-language-action"
+        }
+      ],
+      "historical_value_score": 54.9,
+      "historical_score_components": {
+        "research_relevance": 45.0,
+        "recency": 100.0,
+        "normalized_citation": 31.6,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 68.4%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true,
+      "source_id": "S4210169774",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
       "canonical_paper_id": "openalex:W7163026747",
       "openalex_id": "W7163026747",
       "base_arxiv_id": "2605.31343",
@@ -54942,7 +55253,7 @@
       "recommendation_count": 2,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7163026747",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3732842",
       "open_access_url": "https://arxiv.org/abs/2605.31343",
@@ -55022,6 +55333,149 @@
       "historical_score_reasons": [
         "发表于 2026 年",
         "同领域同年份引用标准化位于前 69.4%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S4210169774",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7163171196",
+      "openalex_id": "W7163171196",
+      "base_arxiv_id": "2606.00637",
+      "doi": "10.1109/lra.2026.3743710",
+      "title": "Global-Local Attention Decomposition for Terrain Encoding in Humanoid Perceptive Locomotion",
+      "authors": [
+        "S. Fu",
+        "Yang Zhang",
+        "Zhanxiang Cao",
+        "Liyun Yan",
+        "Yizhi Chen",
+        "Yunpeng Yin",
+        "Yue Gao"
+      ],
+      "abstract": "Although reinforcement learning has significantly advanced humanoid locomotion, perceptive policies still struggle on sparse-foothold terrain and constrained environments. Success in these scenarios requires both broad terrain awareness and precise foothold selection, two perceptual roles that conventional encoders often entangle. To address this challenge, we propose Global-Local Attention Decomposition (GLAD) for terrain encoding in humanoid locomotion. Realized by a coarse-to-fine encoder over a robot-centric elevation map, GLAD explicitly separates these objectives: a global attention branch uses attention pooling to summarize the surrounding terrain context, while a local attention branch sparsifies the local features by terrain saliency and applies state-conditioned attention to encode precise foothold-relevant geometry. This explicit attention decomposition prevents the dilution of fine-grained spatial cues while reducing training overhead. Experiments demonstrate that GLAD enables reliable locomotion over challenging gaps, stepping stones, and stairs. Furthermore, the learned policy exhibits emergent terrain-responsive behaviors, autonomously following narrow paths and avoiding obstacles under forward-velocity commands alone, without explicit navigation planners. In real-world deployment on a Unitree G1 humanoid robot using onboard LiDAR, the proposed method achieves robust zero-shot sim-to-real transfer across diverse sparse-foothold and obstacle-rich domains.",
+      "publication_date": "2026-10-14",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.698199987411499
+        },
+        {
+          "id": "https://openalex.org/T10879",
+          "display_name": "Robotic Locomotion and Control",
+          "score": 0.29660001397132874
+        },
+        {
+          "id": "https://openalex.org/T10191",
+          "display_name": "Robotics and Sensor-Based Localization",
+          "score": 0.001500000013038516
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.37378307,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:51",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:51",
+      "openalex_url": "https://openalex.org/W7163171196",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3743710",
+      "open_access_url": "https://arxiv.org/abs/2606.00637",
+      "pdf_url": "https://arxiv.org/pdf/2606.00637",
+      "research_fit": 27,
+      "video_potential": 54,
+      "matched_topics": [
+        "humanoid_loco_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "matched_keywords": [
+        "humanoid robot",
+        "humanoid locomotion",
+        "sim-to-real"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Humanoid & Whole-Body Loco-Manipulation",
+          "keywords": [
+            "humanoid robot",
+            "humanoid locomotion"
+          ],
+          "location": "abstract",
+          "points": 14.3
+        },
+        {
+          "kind": "topic",
+          "label": "Robot Data Scaling & Sim-to-Real",
+          "keywords": [
+            "sim-to-real"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robotic",
+            "robotics",
+            "humanoid",
+            "sim-to-real"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robotic",
+            "robotics",
+            "humanoid",
+            "sim-to-real"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robotic, robotics, humanoid, sim-to-real"
+        }
+      ],
+      "historical_value_score": 47.4,
+      "historical_score_components": {
+        "research_relevance": 27.0,
+        "recency": 100.0,
+        "normalized_citation": 37.4,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 62.6%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
@@ -55244,7 +55698,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7163374003",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3733563",
       "open_access_url": "https://arxiv.org/abs/2606.03476",
@@ -56606,7 +57060,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:24",
+      "metadata_updated_at": "2026-10-26T08:01:50",
       "openalex_url": "https://openalex.org/W7165911412",
       "landing_page_url": "https://doi.org/10.1177/02783649261464202",
       "open_access_url": "https://arxiv.org/abs/2606.25386",
@@ -72670,7 +73124,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7172384270",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3728368",
       "open_access_url": "https://arxiv.org/abs/2608.00822",
@@ -78934,7 +79388,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7202269926",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3728347",
       "open_access_url": "https://arxiv.org/abs/2608.10600",
@@ -83137,7 +83591,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7203662094",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3730337",
       "open_access_url": "https://arxiv.org/abs/2608.16853",
@@ -88482,7 +88936,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7204457475",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3728329",
       "open_access_url": "https://arxiv.org/abs/2608.27371",
@@ -89439,7 +89893,7 @@
       "recommendation_count": 2,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7204493690",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3728316",
       "open_access_url": null,
@@ -89563,7 +90017,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7204494556",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3728378",
       "open_access_url": "https://arxiv.org/abs/2608.25642",
@@ -89714,7 +90168,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7204549433",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3728285",
       "open_access_url": null,
@@ -90036,6 +90490,164 @@
       ],
       "is_knowledge_map": false,
       "source_id": "S51360982",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7204587562",
+      "openalex_id": "W7204587562",
+      "base_arxiv_id": null,
+      "doi": "10.1109/lra.2026.3728323",
+      "title": "Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment",
+      "authors": [
+        "Wenkai Guo",
+        "Peizhi Tang",
+        "Yukun Bai",
+        "Ziming Yan",
+        "Haoyuan Deng",
+        "Guanxing Lu",
+        "Shijie Li",
+        "Ziwei Wang"
+      ],
+      "abstract": "Online reinforcement learning (RL) enables robots to continuously improve through real-world interaction, yet achieving high success rates in contact-rich manipulation remains challenging due to sparse binary rewards. Conventional reward-shaping methods rely on hand-designed goal-proximity heuristics and seldom differentiate informative near-success failures from uninformative divergent trials, leading to inefficient exploration and potential reward hacking. By contrast, we propose Reinforcement Learning with Explicit Manifold Alignment (REMA) to refine credit assignment by penalizing uninformative deviations while preserving informative trials. Specifically, given a small set of successful demonstrations, we formulate that trajectory informativeness can be quantified based on the deviation from the manifold of successful behaviors, where exploring off-manifold state space introduces task-irrelevant noise into value estimates. We first construct a reference manifold via spectral compression of successful trajectories, where low-frequency components encode task-relevant motion patterns and serve as a proxy for informativeness. During online learning, the informativeness of failed trajectories is assessed via normalized spectral distance to the manifold, with distant trajectories receiving penalties to suppress their influence on value learning. Experiments show that REMA outperforms the evaluated baselines on the studied simulation and real-world tasks. In human-in-the-loop real-robot RL, it lowers intervention from 60.8% to 29.9% and improves autonomous success from 62.5% to 80.6%.",
+      "publication_date": "2026-08-28",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 1.0
+        },
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 9.999999747378752e-05
+        },
+        {
+          "id": "https://openalex.org/T11307",
+          "display_name": "Domain Adaptation and Few-Shot Learning",
+          "score": 0.0
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.64409797,
+      "referenced_works": [
+        "W2031614119",
+        "W2575705757",
+        "W2614839826",
+        "W2756826236",
+        "W4385430825",
+        "W4394872716",
+        "W4401607239",
+        "W4402354084",
+        "W4410887676",
+        "W4413362511",
+        "W7133189392",
+        "W7133230429",
+        "W7133233015",
+        "W7133245541",
+        "W7161175410"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:52",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:52",
+      "openalex_url": "https://openalex.org/W7204587562",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3728323",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 26,
+      "video_potential": 48,
+      "matched_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "matched_keywords": [
+        "online reinforcement learning",
+        "contact-rich manipulation"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Robot Learning & Policy Post-Training",
+          "keywords": [
+            "online reinforcement learning"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "topic",
+          "label": "Dexterous & Multimodal Manipulation",
+          "keywords": [
+            "contact-rich manipulation"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robots",
+            "robotic",
+            "robotics",
+            "manipulation"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robots",
+            "robotic",
+            "robotics",
+            "manipulation"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation"
+        }
+      ],
+      "historical_value_score": 51.7,
+      "historical_score_components": {
+        "research_relevance": 26.0,
+        "recency": 100.0,
+        "normalized_citation": 64.4,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 35.6%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S4210169774",
       "is_retracted": false,
       "rising_score": null,
       "rising_score_components": {},
@@ -90370,7 +90982,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.68384852,
+      "citation_normalized_percentile": 0.65003264,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -90383,7 +90995,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7204766334",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3733608",
       "open_access_url": "https://doi.org/10.1109/lra.2026.3733608",
@@ -90432,11 +91044,11 @@
           "reason": "Explicit robotics context: robot, robotics, manipulation, manipulator, mobile manipulation"
         }
       ],
-      "historical_value_score": 48.3,
+      "historical_value_score": 47.7,
       "historical_score_components": {
         "research_relevance": 14.0,
         "recency": 100.0,
-        "normalized_citation": 68.4,
+        "normalized_citation": 65.0,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -90445,7 +91057,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 31.6%",
+        "同领域同年份引用标准化位于前 35.0%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
@@ -91344,7 +91956,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7204961513",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3729487",
       "open_access_url": null,
@@ -91826,7 +92438,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.65875377,
+      "citation_normalized_percentile": 0.62116431,
       "referenced_works": [
         "W1495385555",
         "W1980569135",
@@ -91874,7 +92486,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7206159766",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3730342",
       "open_access_url": null,
@@ -91917,11 +92529,11 @@
           "reason": "Explicit robotics context: robot, robotic, manipulation"
         }
       ],
-      "historical_value_score": 46.5,
+      "historical_value_score": 45.8,
       "historical_score_components": {
         "research_relevance": 12.0,
         "recency": 100.0,
-        "normalized_citation": 65.9,
+        "normalized_citation": 62.1,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -91930,7 +92542,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 34.1%",
+        "同领域同年份引用标准化位于前 37.9%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
@@ -92137,7 +92749,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7206180988",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3730389",
       "open_access_url": "https://doi.org/10.1109/lra.2026.3730389",
@@ -92285,7 +92897,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7206184887",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3730323",
       "open_access_url": null,
@@ -92573,7 +93185,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7206206236",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3730223",
       "open_access_url": null,
@@ -95903,7 +96515,7 @@
       "recommendation_count": 2,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7212056598",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734888",
       "open_access_url": "https://arxiv.org/abs/2609.07544",
@@ -96189,7 +96801,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7212126310",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3732909",
       "open_access_url": null,
@@ -96287,7 +96899,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.69035587,
+      "citation_normalized_percentile": 0.65524085,
       "referenced_works": [],
       "related_works": [],
       "discovery_source": [
@@ -96300,7 +96912,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7212131799",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3732898",
       "open_access_url": "https://arxiv.org/abs/2504.15776",
@@ -96335,11 +96947,11 @@
           "reason": "Explicit robotics context: robotics"
         }
       ],
-      "historical_value_score": 45.9,
+      "historical_value_score": 45.3,
       "historical_score_components": {
         "research_relevance": 0.0,
         "recency": 100.0,
-        "normalized_citation": 69.0,
+        "normalized_citation": 65.5,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -96348,7 +96960,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 31.0%",
+        "同领域同年份引用标准化位于前 34.5%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题、类型或主题元数据命中综述/教程/知识地图规则",
@@ -96724,7 +97336,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7212147834",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3732969",
       "open_access_url": null,
@@ -96986,7 +97598,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7212149910",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3732928",
       "open_access_url": "https://arxiv.org/abs/2609.18119",
@@ -97275,7 +97887,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7212156121",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3732837",
       "open_access_url": null,
@@ -97697,7 +98309,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7212172916",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3732900",
       "open_access_url": null,
@@ -98147,7 +98759,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7212186257",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3732834",
       "open_access_url": "https://arxiv.org/abs/2609.31008",
@@ -99239,7 +99851,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213226223",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3733536",
       "open_access_url": null,
@@ -99488,7 +100100,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213265863",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3733514",
       "open_access_url": "https://infoscience.epfl.ch/handle/20.500.14299/267351",
@@ -100053,7 +100665,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213403170",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734889",
       "open_access_url": null,
@@ -100431,7 +101043,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213428412",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734869",
       "open_access_url": null,
@@ -100581,7 +101193,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213433536",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734877",
       "open_access_url": "https://doi.org/10.48577/jpl.t6vfir",
@@ -101387,7 +101999,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:24",
+      "metadata_updated_at": "2026-10-26T08:01:50",
       "openalex_url": "https://openalex.org/W7213497395",
       "landing_page_url": "https://doi.org/10.1177/02783649261477772",
       "open_access_url": "https://doi.org/10.1177/02783649261477772",
@@ -101500,7 +102112,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213507593",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734885",
       "open_access_url": "https://arxiv.org/abs/2609.17714",
@@ -101629,7 +102241,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213529145",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734868",
       "open_access_url": "https://researchprofiles.ku.dk/da/publications/c31bd306-2ed9-4b6a-9c32-74832b773124",
@@ -101702,7 +102314,7 @@
         "Lu Liu",
         "Zhongkai Zhang"
       ],
-      "abstract": null,
+      "abstract": "This letter presents a novel optimization framework for intraoperative suture planning in robot-assisted surgery. We first construct a physically realistic suturing simulation environment based on an efficient Finite Element Method (FEM) to generate high-fidelity training data. We then develop a Graph Neural Network (GNN)-based surrogate model that approximates the FEM simulation at significantly reduced computational cost while providing differentiability. Leveraging this surrogate model, we propose a global-local optimization pipeline for intraoperative suture planning. Starting from an initial suture configuration derived from the aligned mesh, our multi-objective optimization formulation employs an improved cross-entropy method (CEM) to rapidly compute patient-specific optimal suture plans. The optimized plan is then executed on physical tissue, followed by realignment between the real wound state and the simulation for iterative refinement. Experimental validation in both simulated and real-world scenarios across diverse wound shapes and suturing configurations demonstrates that the proposed framework consistently outperforms standard suturing protocols. © 2026 IEEE.",
       "publication_date": "2026-09-17",
       "publication_year": 2026,
       "source_name": "IEEE Robotics and Automation Letters",
@@ -101727,7 +102339,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.79063153,
+      "citation_normalized_percentile": 0.77527681,
       "referenced_works": [
         "W2115401452",
         "W2164596140",
@@ -101763,10 +102375,10 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213531064",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734895",
-      "open_access_url": null,
+      "open_access_url": "https://hdl.handle.net/2031/9d862a15-424f-47a6-bbae-f1f53a5b77ff",
       "pdf_url": null,
       "research_fit": 0,
       "video_potential": 12,
@@ -101793,24 +102405,24 @@
           "reason": "Explicit robotics context: robot, robotics, manipulation"
         }
       ],
-      "historical_value_score": 44.6,
+      "historical_value_score": 45.1,
       "historical_score_components": {
         "research_relevance": 0.0,
         "recency": 100.0,
-        "normalized_citation": 79.1,
+        "normalized_citation": 77.5,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
         "work_signal": 60.0,
-        "metadata_completeness": 87.5
+        "metadata_completeness": 100.0
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 20.9%",
+        "同领域同年份引用标准化位于前 22.5%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
-        "元数据完整度 88%"
+        "元数据完整度 100%"
       ],
       "is_knowledge_map": false,
       "source_id": "S4210169774",
@@ -101887,7 +102499,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213542062",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734926",
       "open_access_url": null,
@@ -102150,7 +102762,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7213548003",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734902",
       "open_access_url": "https://arxiv.org/abs/2610.06089",
@@ -103440,6 +104052,112 @@
       "rising_observed_growth": {}
     },
     {
+      "canonical_paper_id": "openalex:W7214022161",
+      "openalex_id": "W7214022161",
+      "base_arxiv_id": "2609.24140",
+      "doi": "10.1109/lra.2026.3741776",
+      "title": "BayesianGS-SLAM: Uncertainty-Aware Neural Rendering SLAM via Probabilistic Formulation",
+      "authors": [
+        "Kyeongsu Kang",
+        "Seongbo Ha",
+        "Sibaek Lee",
+        "Hyeonwoo Yu"
+      ],
+      "abstract": "Neural-rendering-based SLAM relies on rendered RGB-D residuals for camera tracking and map optimization, but the reliability of these predictions can vary substantially because of sensor noise, limited observation coverage, and incomplete map representations. Without an explicit reliability estimate, unreliable residuals may adversely affect pose optimization, while frames already well explained by the current map may trigger redundant mapping updates. In this paper, we present BayesianGS-SLAM, an uncertainty-aware 3D Gaussian Splatting SLAM framework that estimates predictive color and depth uncertainty during mapping and consistently reuses it across the SLAM pipeline. Our tractable probabilistic formulation combines a sensor-noise uncertainty component with an opacity-induced map-representation component propagated through the rendering process. The resulting predictive uncertainty is used to augment mapping, normalize tracking residuals through a robust pose objective, and evaluate incoming frames using a predictive-surprise-based keyframe criterion. Unlike prior uncertainty-aware neural-rendering SLAM methods that primarily consider color uncertainty or use uncertainty only during mapping, our framework estimates predictive uncertainty for both color and depth and integrates it into mapping, tracking, and keyframe selection. Evaluations on real-world RGB-D datasets demonstrate substantially improved depth uncertainty-error ranking compared with existing uncertainty-aware SLAM methods. Moreover, the proposed keyframe-selection strategy reduces the number of selected keyframes and mapping calls while maintaining competitive tracking and rendering performance.",
+      "publication_date": "2026-10-08",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10191",
+          "display_name": "Robotics and Sensor-Based Localization",
+          "score": 1.0
+        },
+        {
+          "id": "https://openalex.org/T11211",
+          "display_name": "3D Surveying and Cultural Heritage",
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/T10719",
+          "display_name": "3D Shape Modeling and Analysis",
+          "score": 0.0
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.70424417,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:51",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:51",
+      "openalex_url": "https://openalex.org/W7214022161",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3741776",
+      "open_access_url": "https://arxiv.org/abs/2609.24140",
+      "pdf_url": "https://arxiv.org/pdf/2609.24140",
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robotics"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robotics"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robotics"
+        }
+      ],
+      "historical_value_score": 46.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 70.4,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 100.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 29.6%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": true,
+      "source_id": "S4210169774",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
       "canonical_paper_id": "openalex:W7214037445",
       "openalex_id": "W7214037445",
       "base_arxiv_id": null,
@@ -103811,7 +104529,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7214082958",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3737042",
       "open_access_url": null,
@@ -104340,7 +105058,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7214205680",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734883",
       "open_access_url": null,
@@ -104718,7 +105436,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.73725256,
+      "citation_normalized_percentile": 0.71197794,
       "referenced_works": [
         "W2214731807",
         "W2492811885",
@@ -104753,7 +105471,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7214225583",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3734899",
       "open_access_url": null,
@@ -104792,11 +105510,11 @@
           "reason": "Explicit robotics context: robotic"
         }
       ],
-      "historical_value_score": 47.8,
+      "historical_value_score": 47.4,
       "historical_score_components": {
         "research_relevance": 12.0,
         "recency": 100.0,
-        "normalized_citation": 73.7,
+        "normalized_citation": 71.2,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -104805,7 +105523,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 26.3%",
+        "同领域同年份引用标准化位于前 28.8%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
@@ -105100,6 +105818,163 @@
       ],
       "is_knowledge_map": false,
       "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7214318630",
+      "openalex_id": "W7214318630",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tcst.2026.3732678",
+      "title": "Balancing Tracking and Stability in High-Dynamic Path-Following of 4WD Autonomous Vehicles via MPC With Dynamic Weighting and Slip-Ratio-Constrained Torque Allocation",
+      "authors": [
+        "Huang Chih-Feng",
+        "Kang Li"
+      ],
+      "abstract": null,
+      "publication_date": "2026-09-25",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Control Systems Technology",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10805",
+          "display_name": "Vehicle Dynamics and Control Systems",
+          "score": 0.9907000064849854
+        },
+        {
+          "id": "https://openalex.org/T11615",
+          "display_name": "Control and Dynamics of Mobile Robots",
+          "score": 0.008899999782443047
+        },
+        {
+          "id": "https://openalex.org/T11978",
+          "display_name": "Soil Mechanics and Vehicle Dynamics",
+          "score": 9.999999747378752e-05
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.65507545,
+      "referenced_works": [
+        "W1581808154",
+        "W2036021531",
+        "W2109693527",
+        "W2112930335",
+        "W2139248534",
+        "W2171868700",
+        "W2174765655",
+        "W2282033015",
+        "W2436008783",
+        "W2735025962",
+        "W2769646558",
+        "W2810110363",
+        "W2913416895",
+        "W2923817898",
+        "W2941223119",
+        "W2943288393",
+        "W2944441813",
+        "W2945766453",
+        "W2951357333",
+        "W2962011790",
+        "W2987274140",
+        "W3012213494",
+        "W3015947429",
+        "W3034546342",
+        "W3048378891",
+        "W3081870136",
+        "W3093544591",
+        "W3097634115",
+        "W3114622139",
+        "W3122467655",
+        "W4205731800",
+        "W4246038204",
+        "W4311174866",
+        "W4319341663",
+        "W4378620033",
+        "W4381746173",
+        "W4385300806",
+        "W4389262616",
+        "W4401413882"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Control Systems Technology"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7214318630",
+      "landing_page_url": "https://doi.org/10.1109/tcst.2026.3732678",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 12,
+      "video_potential": 3,
+      "matched_topics": [
+        "robot_control_optimization"
+      ],
+      "matched_keywords": [
+        "MPC"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Planning, Control & Estimation",
+          "keywords": [
+            "MPC"
+          ],
+          "location": "title",
+          "points": 12.0
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robots"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robots"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robots"
+        }
+      ],
+      "historical_value_score": 46.4,
+      "historical_score_components": {
+        "research_relevance": 12.0,
+        "recency": 100.0,
+        "normalized_citation": 65.5,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 34.5%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S133363738",
       "is_retracted": false,
       "rising_score": null,
       "rising_score_components": {},
@@ -106215,6 +107090,137 @@
       "rising_observed_growth": {}
     },
     {
+      "canonical_paper_id": "openalex:W7214784929",
+      "openalex_id": "W7214784929",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tcst.2026.3735769",
+      "title": "A Hybrid Adaptive Control System for Arbitrary Ultimate Bounds With Applications to Multirotor UAVs",
+      "authors": [
+        "Mattia Gramuglia",
+        "Andrea L’Afflitto"
+      ],
+      "abstract": null,
+      "publication_date": "2026-09-29",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Control Systems Technology",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10040",
+          "display_name": "Adaptive Control of Nonlinear Systems",
+          "score": 0.9976000189781189
+        },
+        {
+          "id": "https://openalex.org/T10046",
+          "display_name": "Stability and Control of Uncertain Systems",
+          "score": 0.0005000000237487257
+        },
+        {
+          "id": "https://openalex.org/T12772",
+          "display_name": "Control and Stability of Dynamical Systems",
+          "score": 0.00019999999494757503
+        }
+      ],
+      "cited_by_count": 1,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        }
+      ],
+      "fwci": 2.5845,
+      "citation_normalized_percentile": 0.93076029,
+      "referenced_works": [
+        "W234738007",
+        "W1588357617",
+        "W1994748882",
+        "W2021921297",
+        "W2055002165",
+        "W2117592669",
+        "W2133860913",
+        "W2138244186",
+        "W2232667684",
+        "W2344846711",
+        "W2478676557",
+        "W3175324990",
+        "W4210442821",
+        "W4294690678",
+        "W4378388272",
+        "W4383212229",
+        "W4391302206",
+        "W4394910307",
+        "W4401071675",
+        "W4407397235",
+        "W4410253025",
+        "W4411405174",
+        "W4414798907",
+        "W7214784929"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Control Systems Technology"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7214784929",
+      "landing_page_url": "https://doi.org/10.1109/tcst.2026.3735769",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 52.5,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 93.1,
+        "fwci": 86.1,
+        "citation_momentum": 5.0,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 6.9%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 2.58",
+        "近年年均 OpenAlex 引用 1.0（无更早窗口可比较）",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S133363738",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
       "canonical_paper_id": "openalex:W7214804163",
       "openalex_id": "W7214804163",
       "base_arxiv_id": null,
@@ -106815,7 +107821,7 @@
       "recommendation_count": 1,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7215053177",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3739025",
       "open_access_url": null,
@@ -107080,7 +108086,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7215084536",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113327",
       "open_access_url": "https://doi.org/10.1016/j.automatica.2026.113327",
@@ -108043,6 +109049,130 @@
       "rising_observed_growth": {}
     },
     {
+      "canonical_paper_id": "openalex:W7220728151",
+      "openalex_id": "W7220728151",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tcst.2026.3736938",
+      "title": "Differential Flatness of Quasi-Static Slider--Pusher Models for Contact-Rich Manipulation Tasks",
+      "authors": [
+        "Sander De Witte",
+        "Tom Lefebvre",
+        "Thomas Neve",
+        "András Retzler",
+        "Guillaume Crevecoeur"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-06",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Control Systems Technology",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.3441999852657318
+        },
+        {
+          "id": "https://openalex.org/T11615",
+          "display_name": "Control and Dynamics of Mobile Robots",
+          "score": 0.21799999475479126
+        },
+        {
+          "id": "https://openalex.org/T11394",
+          "display_name": "Dynamics and Control of Mechanical Systems",
+          "score": 0.1388999968767166
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.76096596,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Control Systems Technology"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7220728151",
+      "landing_page_url": "https://doi.org/10.1109/tcst.2026.3736938",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 28,
+      "video_potential": 25,
+      "matched_topics": [
+        "dexterous_multimodal_manipulation"
+      ],
+      "matched_keywords": [
+        "contact-rich manipulation"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Dexterous & Multimodal Manipulation",
+          "keywords": [
+            "contact-rich manipulation"
+          ],
+          "location": "title",
+          "points": 28.0
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robots",
+            "manipulation"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robots",
+            "manipulation"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robots, manipulation"
+        }
+      ],
+      "historical_value_score": 53.7,
+      "historical_score_components": {
+        "research_relevance": 28.0,
+        "recency": 100.0,
+        "normalized_citation": 76.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 23.9%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S133363738",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
       "canonical_paper_id": "openalex:W7220837569",
       "openalex_id": "W7220837569",
       "base_arxiv_id": null,
@@ -108272,7 +109402,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:30",
+      "metadata_updated_at": "2026-10-26T08:01:54",
       "openalex_url": "https://openalex.org/W7220846860",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103864",
       "open_access_url": "https://doi.org/10.1016/j.jprocont.2026.103864",
@@ -109094,7 +110224,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7220965366",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113319",
       "open_access_url": null,
@@ -109623,7 +110753,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7221049348",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3741769",
       "open_access_url": null,
@@ -109767,7 +110897,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7221075671",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113313",
       "open_access_url": null,
@@ -109810,6 +110940,247 @@
       ],
       "is_knowledge_map": false,
       "source_id": "S51360982",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7221084885",
+      "openalex_id": "W7221084885",
+      "base_arxiv_id": null,
+      "doi": "10.1109/lra.2026.3742267",
+      "title": "Differential-Flatness-Based Path Planning for Semi-Rigid Formations of Ackermann-Steered Vehicles With Obstacle Avoidance",
+      "authors": [
+        "Aaron Fagninou",
+        "David Vieira",
+        "Jonathan Ledy",
+        "Michel Basset"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-09",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10586",
+          "display_name": "Robotic Path Planning Algorithms",
+          "score": 0.9520999789237976
+        },
+        {
+          "id": "https://openalex.org/T11615",
+          "display_name": "Control and Dynamics of Mobile Robots",
+          "score": 0.03400000184774399
+        },
+        {
+          "id": "https://openalex.org/T10805",
+          "display_name": "Vehicle Dynamics and Control Systems",
+          "score": 0.004900000058114529
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.80283086,
+      "referenced_works": [
+        "W1424654272",
+        "W1519495367",
+        "W1544016679",
+        "W1981826826",
+        "W2041180141",
+        "W2044526330",
+        "W2073330885",
+        "W2123871098",
+        "W2136445059",
+        "W2148970883",
+        "W2162870748",
+        "W2842089854",
+        "W2967511794",
+        "W4224221728",
+        "W4232303308",
+        "W4233280190",
+        "W4241903089",
+        "W4249537394",
+        "W4401327690",
+        "W4401357295",
+        "W7151968905"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:51",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:51",
+      "openalex_url": "https://openalex.org/W7221084885",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3742267",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robots",
+            "robotic"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robots",
+            "robotic"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robots, robotic"
+        }
+      ],
+      "historical_value_score": 44.8,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 80.3,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 19.7%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S4210169774",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7221086506",
+      "openalex_id": "W7221086506",
+      "base_arxiv_id": "2605.21257",
+      "doi": "10.1109/lra.2026.3742268",
+      "title": "DiffCVaR: Reinforcement Learning for Risk Adaptation via Differentiable CVaR Barrier Functions",
+      "authors": [
+        "Xinyi Wang",
+        "Taekyung Kim",
+        "Bardh Hoxha",
+        "Georgios Fainekos",
+        "Dimitra Panagou"
+      ],
+      "abstract": "Planning through crowded environments under uncertain obstacle motions remains difficult, as stochastic interactions often induce overly conservative behavior or reduced efficiency. To address this challenge, we propose an end-to-end risk adaptation framework for crowd navigation under obstacle-motion uncertainty modeled by a Gaussian mixture model. The framework combines reinforcement learning~(RL) with a differentiable quadratic-program safety layer based on Conditional Value-at-Risk~(CVaR) barrier functions, jointly learning nominal control input, risk level, and safety margin and enforcing explicit probabilistic safety constraints. This design enables context-aware adaptation, promoting efficient behavior while invoking caution only when necessary. We conduct extensive evaluations in dynamic, uncertain, and crowded environments across varying obstacle densities and robot models, and further assess generalization under three out-of-distribution cases. Comparisons across optimization-based, RL-based, and integrated RL and optimization methods are provided, and the proposed method is shown to deliver the strongest overall performance in safety, efficiency, and generalization under uncertainty.",
+      "publication_date": "2026-10-09",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.9487000107765198
+        },
+        {
+          "id": "https://openalex.org/T11413",
+          "display_name": "Risk and Portfolio Optimization",
+          "score": 0.03060000017285347
+        },
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.002899999963119626
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.83330013,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:51",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:51",
+      "openalex_url": "https://openalex.org/W7221086506",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3742268",
+      "open_access_url": "https://arxiv.org/abs/2605.21257",
+      "pdf_url": "https://arxiv.org/pdf/2605.21257",
+      "research_fit": 0,
+      "video_potential": 26,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robotics",
+            "manipulation"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robotics",
+            "manipulation"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robotics, manipulation"
+        }
+      ],
+      "historical_value_score": 46.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 83.3,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 16.7%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S4210169774",
       "is_retracted": false,
       "rising_score": null,
       "rising_score_components": {},
@@ -110224,6 +111595,409 @@
       "rising_observed_growth": {}
     },
     {
+      "canonical_paper_id": "openalex:W7221144190",
+      "openalex_id": "W7221144190",
+      "base_arxiv_id": null,
+      "doi": "10.1109/lra.2026.3742204",
+      "title": "On-Manifold Prediction Error Compensation for Model Predictive Control: Application to Quadrotors",
+      "authors": [
+        "박진우",
+        "MinJong Kim",
+        "Jiho Ryoo",
+        "Seunghyeon Sim",
+        "Donghyeong Kim",
+        "Soohee Han"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-09",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10791",
+          "display_name": "Advanced Control Systems Optimization",
+          "score": 0.9735999703407288
+        },
+        {
+          "id": "https://openalex.org/T10040",
+          "display_name": "Adaptive Control of Nonlinear Systems",
+          "score": 0.01889999955892563
+        },
+        {
+          "id": "https://openalex.org/T11615",
+          "display_name": "Control and Dynamics of Mobile Robots",
+          "score": 0.0031999999191612005
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.78095079,
+      "referenced_works": [
+        "W1978956894",
+        "W2109656638",
+        "W2162991084",
+        "W2166957155",
+        "W2343568200",
+        "W2769646558",
+        "W2954115742",
+        "W3148610713",
+        "W3217056046",
+        "W4312944585",
+        "W4388496111",
+        "W4388820294",
+        "W4390506050",
+        "W4390510544",
+        "W4393140012",
+        "W4403094416",
+        "W4405785437",
+        "W4409338376",
+        "W4409493877"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:51",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:51",
+      "openalex_url": "https://openalex.org/W7221144190",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3742204",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 12,
+      "video_potential": 3,
+      "matched_topics": [
+        "robot_control_optimization"
+      ],
+      "matched_keywords": [
+        "model predictive control"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Planning, Control & Estimation",
+          "keywords": [
+            "model predictive control"
+          ],
+          "location": "title",
+          "points": 12.0
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robots"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robots"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robots"
+        }
+      ],
+      "historical_value_score": 48.6,
+      "historical_score_components": {
+        "research_relevance": 12.0,
+        "recency": 100.0,
+        "normalized_citation": 78.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 21.9%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S4210169774",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7221147388",
+      "openalex_id": "W7221147388",
+      "base_arxiv_id": "2606.11952",
+      "doi": "10.1109/lra.2026.3742281",
+      "title": "Deformable In-Hand Slip-Aware Tactile Sensor With Integrated Velocity Sensing, Force/Torque and Pressure Map Estimation",
+      "authors": [
+        "Gabriel Arslan Waltersson",
+        "Yiannis Karayiannidis"
+      ],
+      "abstract": "This paper introduces a novel tactile sensor for in-hand manipulation with slip-aware control that integrates velocity and force/torque sensing with pressure map estimation into a single device with a deformable contact pad. To the best of our knowledge, this is the first sensor to combine these sensing modalities within a single compliant structure. The sensor features a deformable contact surface and can robustly track both flat and curved surfaces across a wide range of diffuse surface materials. Its performance is evaluated through a comprehensive set of experiments that highlight both its capabilities and limitations. The sensor is designed for rapid and low-cost fabrication using a combination of standard PCB manufacturing and rapid prototyping techniques.",
+      "publication_date": "2026-10-09",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.9595000147819519
+        },
+        {
+          "id": "https://openalex.org/T10868",
+          "display_name": "Soft Robotics and Applications",
+          "score": 0.013299999758601189
+        },
+        {
+          "id": "https://openalex.org/T11687",
+          "display_name": "Teleoperation and Haptic Systems",
+          "score": 0.00860000029206276
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.78551035,
+      "referenced_works": [],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:51",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:51",
+      "openalex_url": "https://openalex.org/W7221147388",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3742281",
+      "open_access_url": "https://doi.org/10.1109/lra.2026.3742281",
+      "pdf_url": null,
+      "research_fit": 13,
+      "video_potential": 15,
+      "matched_topics": [
+        "dexterous_multimodal_manipulation"
+      ],
+      "matched_keywords": [
+        "in-hand manipulation"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Dexterous & Multimodal Manipulation",
+          "keywords": [
+            "in-hand manipulation"
+          ],
+          "location": "abstract",
+          "points": 13.0
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robotics",
+            "manipulation",
+            "teleoperation"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robotics",
+            "manipulation",
+            "teleoperation"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robotics, manipulation, teleoperation"
+        }
+      ],
+      "historical_value_score": 49.7,
+      "historical_score_components": {
+        "research_relevance": 13.0,
+        "recency": 100.0,
+        "normalized_citation": 78.6,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 21.4%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S4210169774",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7221171256",
+      "openalex_id": "W7221171256",
+      "base_arxiv_id": null,
+      "doi": "10.1109/lra.2026.3742289",
+      "title": "A Robust Object Transportation Method for Robotic Surfaces Based on Discrete Surface Gradient",
+      "authors": [
+        "Yuxin Chen",
+        "Yuchen Zhao"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-09",
+      "publication_year": 2026,
+      "source_name": "IEEE Robotics and Automation Letters",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.6685000061988831
+        },
+        {
+          "id": "https://openalex.org/T11615",
+          "display_name": "Control and Dynamics of Mobile Robots",
+          "score": 0.055399999022483826
+        },
+        {
+          "id": "https://openalex.org/T11799",
+          "display_name": "Adhesion, Friction, and Surface Interactions",
+          "score": 0.03310000151395798
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.79186704,
+      "referenced_works": [
+        "W1996532370",
+        "W2015637289",
+        "W2015992896",
+        "W2069550312",
+        "W2121557857",
+        "W2135493101",
+        "W2143131345",
+        "W2153054042",
+        "W2419136601",
+        "W2796014682",
+        "W2899502020",
+        "W2921066950",
+        "W2921465830",
+        "W3090547538",
+        "W3213122334",
+        "W4246531888",
+        "W4381425847",
+        "W4383066303",
+        "W4385424581",
+        "W4387835393",
+        "W4389076361",
+        "W4401413684",
+        "W4402831143",
+        "W4408941113",
+        "W4411019199",
+        "W4414432257",
+        "W4415902442",
+        "W4416045124"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Robotics and Automation Letters"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:51",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:51",
+      "openalex_url": "https://openalex.org/W7221171256",
+      "landing_page_url": "https://doi.org/10.1109/lra.2026.3742289",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 12,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robots",
+            "robotic",
+            "manipulation"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robots",
+            "robotic",
+            "manipulation"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robots, robotic, manipulation"
+        }
+      ],
+      "historical_value_score": 44.7,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 79.2,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 20.8%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S4210169774",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
       "canonical_paper_id": "openalex:W7221305937",
       "openalex_id": "W7221305937",
       "base_arxiv_id": null,
@@ -110582,7 +112356,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7221505676",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113317",
       "open_access_url": null,
@@ -110670,7 +112444,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.82550668,
+      "citation_normalized_percentile": 0.78086202,
       "referenced_works": [
         "W1601584225",
         "W2005009823",
@@ -110703,7 +112477,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7221508395",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113320",
       "open_access_url": "https://doi.org/10.1016/j.automatica.2026.113320",
@@ -110725,24 +112499,24 @@
           "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
         }
       ],
-      "historical_value_score": 45.9,
+      "historical_value_score": 44.5,
       "historical_score_components": {
         "research_relevance": 0.0,
         "recency": 100.0,
-        "normalized_citation": 82.6,
+        "normalized_citation": 78.1,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
         "work_signal": 60.0,
-        "metadata_completeness": 100.0
+        "metadata_completeness": 87.5
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 17.4%",
+        "同领域同年份引用标准化位于前 21.9%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
-        "元数据完整度 100%"
+        "元数据完整度 88%"
       ],
       "is_knowledge_map": false,
       "source_id": "S51360982",
@@ -110848,7 +112622,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:26",
+      "metadata_updated_at": "2026-10-26T08:01:51",
       "openalex_url": "https://openalex.org/W7221534709",
       "landing_page_url": "https://doi.org/10.1109/lra.2026.3741770",
       "open_access_url": null,
@@ -110982,7 +112756,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7221553188",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113311",
       "open_access_url": null,
@@ -111121,7 +112895,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7221559063",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113329",
       "open_access_url": null,
@@ -111164,6 +112938,139 @@
       ],
       "is_knowledge_map": false,
       "source_id": "S51360982",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7221591736",
+      "openalex_id": "W7221591736",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tcst.2026.3740243",
+      "title": "A Swing-Aware Local Planning and MPC Tracking Method for Overhead Cranes",
+      "authors": [
+        "Shipeng Yan",
+        "Guoliang Liu",
+        "Guohui Tian",
+        "Tenglong Zhang",
+        "Qingqiang Guo"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-13",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Control Systems Technology",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11394",
+          "display_name": "Dynamics and Control of Mechanical Systems",
+          "score": 0.9970999956130981
+        },
+        {
+          "id": "https://openalex.org/T13644",
+          "display_name": "Control Systems in Engineering",
+          "score": 0.0006000000284984708
+        },
+        {
+          "id": "https://openalex.org/T10791",
+          "display_name": "Advanced Control Systems Optimization",
+          "score": 0.00039999998989515007
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.78576174,
+      "referenced_works": [
+        "W1970059941",
+        "W2129635234",
+        "W2158114633",
+        "W2344800832",
+        "W2549200707",
+        "W2757140242",
+        "W2758859608",
+        "W2970425163",
+        "W2996232170",
+        "W3011353358",
+        "W3081266493",
+        "W3128421681",
+        "W3162995663",
+        "W3171407703",
+        "W3204275295",
+        "W4200025609",
+        "W4226503583",
+        "W4289926635",
+        "W4313229363",
+        "W4360584280",
+        "W4366146355",
+        "W4381785729",
+        "W4386821231",
+        "W4389251309",
+        "W4391942609",
+        "W4395662218",
+        "W4399993934",
+        "W4402010453",
+        "W4404317203"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Control Systems Technology"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7221591736",
+      "landing_page_url": "https://doi.org/10.1109/tcst.2026.3740243",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 44.6,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 78.6,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 21.4%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S133363738",
       "is_retracted": false,
       "rising_score": null,
       "rising_score_components": {},
@@ -111255,7 +113162,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7221609772",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113318",
       "open_access_url": null,
@@ -111312,6 +113219,135 @@
       "rising_observed_growth": {}
     },
     {
+      "canonical_paper_id": "openalex:W7221654490",
+      "openalex_id": "W7221654490",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tcst.2026.3738857",
+      "title": "Cooperative-Platform Relative Navigation and Predictive-Terminal Guidance for Shipboard UAV Landing in GPS-Denied Environments",
+      "authors": [
+        "Mostafa Abdelkhalek",
+        "İsmail Bayezit"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-13",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Control Systems Technology",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T13855",
+          "display_name": "Aerospace Engineering and Control Systems",
+          "score": 0.7851999998092651
+        },
+        {
+          "id": "https://openalex.org/T12158",
+          "display_name": "Guidance and Control Systems",
+          "score": 0.08950000256299973
+        },
+        {
+          "id": "https://openalex.org/T11325",
+          "display_name": "Inertial Sensor and Navigation",
+          "score": 0.022600000724196434
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.78176556,
+      "referenced_works": [
+        "W1564768010",
+        "W2006832107",
+        "W2038818107",
+        "W2124071321",
+        "W2140998418",
+        "W2272130679",
+        "W2492811885",
+        "W2513178932",
+        "W2782371569",
+        "W2902496574",
+        "W2922015049",
+        "W2999671232",
+        "W3191633065",
+        "W4205356357",
+        "W4206148533",
+        "W4221055797",
+        "W4225273181",
+        "W4293497071",
+        "W4297510490",
+        "W4311627440",
+        "W4320494188",
+        "W4361213541",
+        "W4382469237",
+        "W4390932798",
+        "W4399801430",
+        "W4403524890",
+        "W4408226127",
+        "W4413170916"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Control Systems Technology"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7221654490",
+      "landing_page_url": "https://doi.org/10.1109/tcst.2026.3738857",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 18,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 44.5,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 78.2,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 21.8%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S133363738",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
       "canonical_paper_id": "openalex:W7221656448",
       "openalex_id": "W7221656448",
       "base_arxiv_id": null,
@@ -111348,7 +113384,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.82742403,
+      "citation_normalized_percentile": 0.78752647,
       "referenced_works": [
         "W2064675550",
         "W2134673975",
@@ -111372,7 +113408,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:30",
+      "metadata_updated_at": "2026-10-26T08:01:54",
       "openalex_url": "https://openalex.org/W7221656448",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103866",
       "open_access_url": "https://doi.org/10.1016/j.jprocont.2026.103866",
@@ -111398,27 +113434,166 @@
           "reason": "No explicit robotics context; non-robotics domain signals: building energy"
         }
       ],
-      "historical_value_score": 46.0,
+      "historical_value_score": 44.6,
       "historical_score_components": {
         "research_relevance": 0.0,
         "recency": 100.0,
-        "normalized_citation": 82.7,
+        "normalized_citation": 78.8,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
         "work_signal": 60.0,
-        "metadata_completeness": 100.0
+        "metadata_completeness": 87.5
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 17.3%",
+        "同领域同年份引用标准化位于前 21.2%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
-        "元数据完整度 100%"
+        "元数据完整度 88%"
       ],
       "is_knowledge_map": false,
       "source_id": "S96000363",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7221686062",
+      "openalex_id": "W7221686062",
+      "base_arxiv_id": null,
+      "doi": "10.1109/tcst.2026.3739244",
+      "title": "Composite Non-Gaussian Filtering With Intermittent Inputs: Algorithm Design and Applications",
+      "authors": [
+        "Xiaofan Du",
+        "Weiwei Li",
+        "Xinxin Liu",
+        "Guoliang Yang",
+        "Baoxi Kan",
+        "Xiang Yang Yu",
+        "Lei Guo"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-13",
+      "publication_year": 2026,
+      "source_name": "IEEE Transactions on Control Systems Technology",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10711",
+          "display_name": "Target Tracking and Data Fusion in Sensor Networks",
+          "score": 0.9355000257492065
+        },
+        {
+          "id": "https://openalex.org/T11236",
+          "display_name": "Control Systems and Identification",
+          "score": 0.019300000742077827
+        },
+        {
+          "id": "https://openalex.org/T10046",
+          "display_name": "Stability and Control of Uncertain Systems",
+          "score": 0.009700000286102295
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.82864918,
+      "referenced_works": [
+        "W1896855243",
+        "W1973636889",
+        "W1973876344",
+        "W1976974773",
+        "W2013568744",
+        "W2030793712",
+        "W2040196349",
+        "W2065292058",
+        "W2083402998",
+        "W2105934661",
+        "W2107122393",
+        "W2121990344",
+        "W2131671515",
+        "W2135160607",
+        "W2140552995",
+        "W2160337655",
+        "W2164522996",
+        "W2230652337",
+        "W2272248678",
+        "W2471429164",
+        "W2737188128",
+        "W2793307296",
+        "W2963134661",
+        "W2986773206",
+        "W3003720010",
+        "W3084797474",
+        "W3168070935",
+        "W3198601857",
+        "W4212993176",
+        "W4361853182",
+        "W4386869672",
+        "W4389722453",
+        "W4392061686"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:IEEE Transactions on Control Systems Technology"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7221686062",
+      "landing_page_url": "https://doi.org/10.1109/tcst.2026.3739244",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 45.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 82.9,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 17.1%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S133363738",
       "is_retracted": false,
       "rising_score": null,
       "rising_score_components": {},
@@ -111465,7 +113640,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.83131107,
+      "citation_normalized_percentile": 0.79124279,
       "referenced_works": [
         "W4214763540",
         "W4229061904",
@@ -111508,7 +113683,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:30",
+      "metadata_updated_at": "2026-10-26T08:01:54",
       "openalex_url": "https://openalex.org/W7221777617",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103861",
       "open_access_url": "https://doi.org/10.1016/j.jprocont.2026.103861",
@@ -111530,24 +113705,24 @@
           "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
         }
       ],
-      "historical_value_score": 46.0,
+      "historical_value_score": 44.6,
       "historical_score_components": {
         "research_relevance": 0.0,
         "recency": 100.0,
-        "normalized_citation": 83.1,
+        "normalized_citation": 79.1,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
         "work_signal": 60.0,
-        "metadata_completeness": 100.0
+        "metadata_completeness": 87.5
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 16.9%",
+        "同领域同年份引用标准化位于前 20.9%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
-        "元数据完整度 100%"
+        "元数据完整度 88%"
       ],
       "is_knowledge_map": false,
       "source_id": "S96000363",
@@ -111626,7 +113801,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7221820133",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113328",
       "open_access_url": null,
@@ -111745,7 +113920,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:27",
+      "metadata_updated_at": "2026-10-26T08:01:52",
       "openalex_url": "https://openalex.org/W7221834391",
       "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113323",
       "open_access_url": null,
@@ -111834,7 +114009,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.85715369,
+      "citation_normalized_percentile": 0.83366043,
       "referenced_works": [
         "W173093232",
         "W2547395942",
@@ -111884,7 +114059,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:30",
+      "metadata_updated_at": "2026-10-26T08:01:54",
       "openalex_url": "https://openalex.org/W7221866299",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103868",
       "open_access_url": "https://doi.org/10.1016/j.jprocont.2026.103868",
@@ -111906,24 +114081,24 @@
           "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
         }
       ],
-      "historical_value_score": 46.5,
+      "historical_value_score": 45.4,
       "historical_score_components": {
         "research_relevance": 0.0,
         "recency": 100.0,
-        "normalized_citation": 85.7,
+        "normalized_citation": 83.4,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
         "work_signal": 60.0,
-        "metadata_completeness": 100.0
+        "metadata_completeness": 87.5
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 14.3%",
+        "同领域同年份引用标准化位于前 16.6%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
-        "元数据完整度 100%"
+        "元数据完整度 88%"
       ],
       "is_knowledge_map": false,
       "source_id": "S96000363",
@@ -111973,7 +114148,6 @@
       "fwci": 0.0,
       "citation_normalized_percentile": 0.83114414,
       "referenced_works": [
-        "W999207820",
         "W1965367276",
         "W1967836450",
         "W1978035230",
@@ -111994,7 +114168,8 @@
         "W4396841668",
         "W4403975521",
         "W4410546705",
-        "W4412543480"
+        "W4412543480",
+        "W999207820"
       ],
       "related_works": [],
       "discovery_source": [
@@ -112007,7 +114182,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:30",
+      "metadata_updated_at": "2026-10-26T08:01:54",
       "openalex_url": "https://openalex.org/W7222213787",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103870",
       "open_access_url": "https://doi.org/10.1016/j.jprocont.2026.103870",
@@ -112098,7 +114273,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.83554665,
+      "citation_normalized_percentile": 0.80843135,
       "referenced_works": [
         "W1966857452",
         "W1978879785",
@@ -112135,7 +114310,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:30",
+      "metadata_updated_at": "2026-10-26T08:01:54",
       "openalex_url": "https://openalex.org/W7222801340",
       "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103871",
       "open_access_url": null,
@@ -112163,11 +114338,11 @@
           "reason": "No explicit robotics context; non-robotics domain signals: power system, power systems"
         }
       ],
-      "historical_value_score": 45.4,
+      "historical_value_score": 44.9,
       "historical_score_components": {
         "research_relevance": 0.0,
         "recency": 100.0,
-        "normalized_citation": 83.6,
+        "normalized_citation": 80.8,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -112176,7 +114351,7 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 16.4%",
+        "同领域同年份引用标准化位于前 19.2%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
@@ -112231,7 +114406,7 @@
       "cited_by_count": 0,
       "counts_by_year": [],
       "fwci": 0.0,
-      "citation_normalized_percentile": 0.83618613,
+      "citation_normalized_percentile": 0.83467416,
       "referenced_works": [
         "W1978864928",
         "W2061646356",
@@ -112273,7 +114448,7 @@
       "recommendation_count": 0,
       "reading_status": "unread",
       "dismissed": false,
-      "metadata_updated_at": "2026-10-19T08:01:29",
+      "metadata_updated_at": "2026-10-26T08:01:53",
       "openalex_url": "https://openalex.org/W7222820353",
       "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107300",
       "open_access_url": "https://doi.org/10.1016/j.conengprac.2026.107300",
@@ -112307,7 +114482,7 @@
       "historical_score_components": {
         "research_relevance": 0.0,
         "recency": 100.0,
-        "normalized_citation": 83.6,
+        "normalized_citation": 83.5,
         "fwci": 0.0,
         "citation_momentum": null,
         "seed_provenance": null,
@@ -112316,7 +114491,1981 @@
       },
       "historical_score_reasons": [
         "发表于 2026 年",
-        "同领域同年份引用标准化位于前 16.4%",
+        "同领域同年份引用标准化位于前 16.5%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7222880487",
+      "openalex_id": "W7222880487",
+      "base_arxiv_id": null,
+      "doi": "10.1177/02783649261487695",
+      "title": "Energy-efficient precision weed elimination using a quadruped robot",
+      "authors": [
+        "Shuangyu Xie",
+        "Di Wang",
+        "Joe Johnson",
+        "Chengsong Hu",
+        "Kaiyuan Chen",
+        "Muthukumar Bagavathiannan",
+        "Ken Y. Goldberg",
+        "Dezhen Song"
+      ],
+      "abstract": "In precision agriculture, an autonomous weed-removal robot (i.e., mobile manipulator) often faces a combination of challenges including large-scale navigation, repetitive coverage, and fine-grained intervention. These challenges give rise to a distinct energy-efficient long-horizon planning problem: coordinating ordered, repetitive, and heterogeneous tasks under domain-specific temporal and geometric constraints. In precision weeding, this problem is further characterized by (i) an observe-first-and-manipulate-later type temporal constraint and (ii) the potential for substantial energy savings through efficient task collocation. We formalize this challenge and propose a new problem: Repetitive and Clustered-Coupled Active Perception and Manipulation (RC-CAPM) problem for mobile manipulators. We model RC-CAPM as a stochastic renewal process and show, via the Renewal Reward Theorem, that the expected energy consumption per task cycle converges to a well-defined long-run average. We introduce a task-space partitioning method that enumerates all feasible task-multiplexing configurations and their associated probabilities under robot reachability constraints. We then derive a two-stage optimization framework and prove that its solution is optimal and equivalent to that of the original RC-CAPM problem. We evaluate the proposed approach in both simulation and on a physical mobile manipulator performing autonomous weeding. Across all evaluations, RC-CAPM consistently outperforms baseline planning strategies, yielding reductions in path length, number of stops, replanning events, and total energy consumption. In particular, the proposed method achieves an average energy reduction of 36.1% relative to the baseline.",
+      "publication_date": "2026-10-18",
+      "publication_year": 2026,
+      "source_name": "The International Journal of Robotics Research",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10616",
+          "display_name": "Smart Agriculture and AI",
+          "score": 0.4936999976634979
+        },
+        {
+          "id": "https://openalex.org/T10586",
+          "display_name": "Robotic Path Planning Algorithms",
+          "score": 0.1581999957561493
+        },
+        {
+          "id": "https://openalex.org/T10906",
+          "display_name": "AI-based Problem Solving and Planning",
+          "score": 0.05790000036358833
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.83060691,
+      "referenced_works": [
+        "W1987924891",
+        "W1988314515",
+        "W2070683816",
+        "W2101902009",
+        "W2141708863",
+        "W2143936212",
+        "W2273896863",
+        "W2299529128",
+        "W2530592706",
+        "W2565233142",
+        "W2807712944",
+        "W2905683736",
+        "W2962872943",
+        "W2987879486",
+        "W3022958460",
+        "W3027078301",
+        "W3090293438",
+        "W3138392552",
+        "W3159434032",
+        "W3169676024",
+        "W3184602069",
+        "W3195533065",
+        "W3203131427",
+        "W3205304947",
+        "W4210613326",
+        "W4231002530",
+        "W4292972737",
+        "W4295934683",
+        "W4379880547",
+        "W4383109130",
+        "W4383172014",
+        "W4389665379",
+        "W4389666359",
+        "W4390767865",
+        "W4401416497",
+        "W4405785742",
+        "W4411865517",
+        "W4413925260",
+        "W4413926064",
+        "W4416750924",
+        "W7160757960"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:The International Journal of Robotics Research"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:50",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:50",
+      "openalex_url": "https://openalex.org/W7222880487",
+      "landing_page_url": "https://doi.org/10.1177/02783649261487695",
+      "open_access_url": "https://doi.org/10.1177/02783649261487695",
+      "pdf_url": null,
+      "research_fit": 29,
+      "video_potential": 39,
+      "matched_topics": [
+        "world_model_embodied_reasoning",
+        "humanoid_loco_manipulation"
+      ],
+      "matched_keywords": [
+        "long-horizon planning",
+        "mobile manipulator",
+        "quadruped robot"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "World Models & Embodied Reasoning",
+          "keywords": [
+            "long-horizon planning"
+          ],
+          "location": "abstract",
+          "points": 14.3
+        },
+        {
+          "kind": "topic",
+          "label": "Humanoid & Whole-Body Loco-Manipulation",
+          "keywords": [
+            "mobile manipulator",
+            "quadruped robot"
+          ],
+          "location": "abstract",
+          "points": 14.3
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robotic",
+            "manipulation",
+            "manipulator",
+            "manipulators"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robotic",
+            "manipulation",
+            "manipulator",
+            "manipulators"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robotic, manipulation, manipulator, manipulators"
+        }
+      ],
+      "historical_value_score": 55.9,
+      "historical_score_components": {
+        "research_relevance": 29.0,
+        "recency": 100.0,
+        "normalized_citation": 83.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 100.0
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 16.9%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S73484101",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7222929843",
+      "openalex_id": "W7222929843",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107302",
+      "title": "An unknown-condition-aware soft sensor for multi-condition industrial processes",
+      "authors": [
+        "Kaixun He",
+        "Qiulin Yang",
+        "Shujun Wu",
+        "Hanlong Liu",
+        "Zihua Wang",
+        "Xiaopeng Xi"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-19",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10876",
+          "display_name": "Fault Detection and Control Systems",
+          "score": 1.0
+        },
+        {
+          "id": "https://openalex.org/T11236",
+          "display_name": "Control Systems and Identification",
+          "score": 9.999999747378752e-05
+        },
+        {
+          "id": "https://openalex.org/T10791",
+          "display_name": "Advanced Control Systems Optimization",
+          "score": 0.0
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.81294889,
+      "referenced_works": [
+        "W343686539",
+        "W1965733010",
+        "W2004186751",
+        "W2343353457",
+        "W2403746960",
+        "W2477626299",
+        "W2803937758",
+        "W2886613299",
+        "W3036721652",
+        "W4220793893",
+        "W4229065772",
+        "W4282984446",
+        "W4292805591",
+        "W4309694948",
+        "W4385285442",
+        "W4387353607",
+        "W4390891847",
+        "W4399770635",
+        "W4402292400",
+        "W4402305981",
+        "W4402508009",
+        "W4404761230",
+        "W4406275748",
+        "W4407969054",
+        "W4412584696",
+        "W4413817073",
+        "W7127963032"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7222929843",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107302",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 45.0,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 81.3,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 18.7%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7222983972",
+      "openalex_id": "W7222983972",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107303",
+      "title": "EDIP–ETLCL: Error-driven incremental policy with event-triggered lifted concurrent learning for hydraulic manipulator trajectory tracking",
+      "authors": [
+        "Yonghao Huang",
+        "Degang Xu",
+        "Rui Zhu",
+        "Junsong Li"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-19",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11749",
+          "display_name": "Iterative Learning Control Systems",
+          "score": 0.3928000032901764
+        },
+        {
+          "id": "https://openalex.org/T10040",
+          "display_name": "Adaptive Control of Nonlinear Systems",
+          "score": 0.2777999937534332
+        },
+        {
+          "id": "https://openalex.org/T10462",
+          "display_name": "Reinforcement Learning in Robotics",
+          "score": 0.1298999935388565
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.81642552,
+      "referenced_works": [
+        "W3189317715",
+        "W4205940851",
+        "W4213428760",
+        "W4225758324",
+        "W4287876975",
+        "W4295046672",
+        "W4319745972",
+        "W4321787378",
+        "W4382930982",
+        "W4386582962",
+        "W4387682224",
+        "W4389352353",
+        "W4394789733",
+        "W4394865766",
+        "W4398226126",
+        "W4401477896",
+        "W4402569770",
+        "W4403428228",
+        "W4409214946",
+        "W4409762939",
+        "W4410108731",
+        "W4411200825",
+        "W4416074927",
+        "W4417052272",
+        "W7117481642",
+        "W7119059180",
+        "W7134007132"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7222983972",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107303",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 9,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robotics",
+            "manipulator"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robotics",
+            "manipulator"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robotics, manipulator"
+        }
+      ],
+      "historical_value_score": 45.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 81.6,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 18.4%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223021803",
+      "openalex_id": "W7223021803",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.jprocont.2026.103874",
+      "title": "Delay-aware modeling and incremental-input MPC for active control of natural gas pipeline networks",
+      "authors": [
+        "Yangfan Lu",
+        "Xiong Yin",
+        "Hailong Xu",
+        "Feng Jin",
+        "Yunqi Hao",
+        "Liang Shen",
+        "Jing Gong",
+        "Kai Wen"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-20",
+      "publication_year": 2026,
+      "source_name": "Journal of Process Control",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10791",
+          "display_name": "Advanced Control Systems Optimization",
+          "score": 0.9945999979972839
+        },
+        {
+          "id": "https://openalex.org/T10046",
+          "display_name": "Stability and Control of Uncertain Systems",
+          "score": 0.000699999975040555
+        },
+        {
+          "id": "https://openalex.org/T11185",
+          "display_name": "Integrated Energy Systems Optimization",
+          "score": 0.0005000000237487257
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.81859061,
+      "referenced_works": [
+        "W1965331038",
+        "W1973025870",
+        "W2012598033",
+        "W2034289037",
+        "W2051996554",
+        "W2061095440",
+        "W2069028831",
+        "W2069964515",
+        "W2078484219",
+        "W2122675324",
+        "W2208265204",
+        "W2322585193",
+        "W2323574770",
+        "W2807377518",
+        "W2994262637",
+        "W3104402075",
+        "W3115458085",
+        "W3175681180",
+        "W3188894519",
+        "W3206104080",
+        "W4309336559",
+        "W4315784489",
+        "W4381617342",
+        "W4384701473",
+        "W4388581302",
+        "W4393951055",
+        "W4400391937",
+        "W4401394269",
+        "W4401635315",
+        "W4406211855",
+        "W4407109067",
+        "W4407245763",
+        "W4408151899",
+        "W4409662063",
+        "W4411429227",
+        "W4411864381",
+        "W4412383879",
+        "W4412989534",
+        "W4414661695",
+        "W7168348067"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Journal of Process Control"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:54",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:54",
+      "openalex_url": "https://openalex.org/W7223021803",
+      "landing_page_url": "https://doi.org/10.1016/j.jprocont.2026.103874",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 45.1,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 81.9,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 18.1%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S96000363",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223106079",
+      "openalex_id": "W7223106079",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.automatica.2026.113332",
+      "title": "On robust consistent Kalman filter for uncertain systems with application to PMSM systems",
+      "authors": [
+        "Bote Luo",
+        "Wenchao Xue",
+        "Zhixiang Chen",
+        "Yanlong Zhao"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-21",
+      "publication_year": 2026,
+      "source_name": "Automatica",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10711",
+          "display_name": "Target Tracking and Data Fusion in Sensor Networks",
+          "score": 0.638700008392334
+        },
+        {
+          "id": "https://openalex.org/T11236",
+          "display_name": "Control Systems and Identification",
+          "score": 0.19290000200271606
+        },
+        {
+          "id": "https://openalex.org/T10046",
+          "display_name": "Stability and Control of Uncertain Systems",
+          "score": 0.093299999833107
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.86079449,
+      "referenced_works": [
+        "W1983765397",
+        "W2024522552",
+        "W2031745605",
+        "W2036584934",
+        "W2048272659",
+        "W2054091988",
+        "W2068090215",
+        "W2082269988",
+        "W2093735221",
+        "W2101051269",
+        "W2105934661",
+        "W2123487311",
+        "W2128961627",
+        "W2140242774",
+        "W2162719021",
+        "W2162854795",
+        "W2166713810",
+        "W2286561681",
+        "W2296047792",
+        "W2313145595",
+        "W2331375594",
+        "W2572809861",
+        "W2734760845",
+        "W2783843605",
+        "W2794285360",
+        "W2955110171",
+        "W2963922893",
+        "W2999998473",
+        "W3003745142",
+        "W3212682383",
+        "W4206283972",
+        "W4312706843",
+        "W4366763879",
+        "W4381894751",
+        "W4387006049",
+        "W4401692625"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Automatica"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:52",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:52",
+      "openalex_url": "https://openalex.org/W7223106079",
+      "landing_page_url": "https://doi.org/10.1016/j.automatica.2026.113332",
+      "open_access_url": "https://doi.org/10.1016/j.automatica.2026.113332",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0005109826005133/pdf",
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 45.8,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 86.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 13.9%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S51360982",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223106829",
+      "openalex_id": "W7223106829",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107306",
+      "title": "Formal safety verification of lateral vehicle control on highway: Bridging single-track and two-track models via model mismatch bounds",
+      "authors": [
+        "Armin Reisgys",
+        "Rolf Jung"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-21",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10142",
+          "display_name": "Formal Methods in Verification",
+          "score": 0.8192999958992004
+        },
+        {
+          "id": "https://openalex.org/T10805",
+          "display_name": "Vehicle Dynamics and Control Systems",
+          "score": 0.08950000256299973
+        },
+        {
+          "id": "https://openalex.org/T13295",
+          "display_name": "Safety Systems Engineering in Autonomy",
+          "score": 0.0414000004529953
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.85721191,
+      "referenced_works": [
+        "W1572241460",
+        "W2027758424",
+        "W2305433969",
+        "W2774420417",
+        "W3004846477",
+        "W3082465050",
+        "W3099188673",
+        "W3107034996",
+        "W3177366639",
+        "W4225679458",
+        "W4283579066",
+        "W4285184932",
+        "W4292387434",
+        "W4388320479",
+        "W4392207915",
+        "W4392457147",
+        "W4403463960",
+        "W4403748898",
+        "W4414615272",
+        "W4417143432",
+        "W7125139332",
+        "W7172289899"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7223106829",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107306",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 45.8,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 85.7,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 14.3%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223136543",
+      "openalex_id": "W7223136543",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107299",
+      "title": "Dynamic spatio-temporal graph learning with knowledge-informed rules for sintering tumbler strength prediction",
+      "authors": [
+        "Xiaoxia Chen",
+        "Pengqi Wang",
+        "Bo Yu"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-21",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11273",
+          "display_name": "Advanced Graph Neural Networks",
+          "score": 0.3865000009536743
+        },
+        {
+          "id": "https://openalex.org/T11837",
+          "display_name": "Iron and Steelmaking Processes",
+          "score": 0.07930000126361847
+        },
+        {
+          "id": "https://openalex.org/T10876",
+          "display_name": "Fault Detection and Control Systems",
+          "score": 0.04600000008940697
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.86758686,
+      "referenced_works": [
+        "W1983650690",
+        "W2026207033",
+        "W2026379532",
+        "W2773194908",
+        "W2944851425",
+        "W3019433526",
+        "W3044753885",
+        "W3095579411",
+        "W3120813167",
+        "W3136110425",
+        "W4213415961",
+        "W4226410762",
+        "W4321608004",
+        "W4385249097",
+        "W4386952120",
+        "W4387757604",
+        "W4399666341",
+        "W4401091626",
+        "W4402673206",
+        "W4403674859",
+        "W4404581676",
+        "W4406856686",
+        "W4410153049",
+        "W4410203984",
+        "W4415747900",
+        "W6884309642"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7223136543",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107299",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 45.9,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 86.8,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 13.2%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223181307",
+      "openalex_id": "W7223181307",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107301",
+      "title": "From passive threshold triggering to proactive safety regulation: Model-free adaptive robust impedance control with fuzzy-quantized strategy for robotic retinal membrane peeling",
+      "authors": [
+        "Linjun Pang",
+        "Zhuowen Zhang",
+        "Peiyuan Gao",
+        "Hao Ren",
+        "Jie Zhao",
+        "He Zhang"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-22",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10040",
+          "display_name": "Adaptive Control of Nonlinear Systems",
+          "score": 0.7645999789237976
+        },
+        {
+          "id": "https://openalex.org/T10653",
+          "display_name": "Robot Manipulation and Learning",
+          "score": 0.03970000147819519
+        },
+        {
+          "id": "https://openalex.org/T11687",
+          "display_name": "Teleoperation and Haptic Systems",
+          "score": 0.02850000001490116
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.82250965,
+      "referenced_works": [
+        "W1504078942",
+        "W1978704499",
+        "W1984343324",
+        "W1988837728",
+        "W2024359337",
+        "W2031185015",
+        "W2080769569",
+        "W2741711368",
+        "W2789837488",
+        "W2900423355",
+        "W3093152351",
+        "W3143898218",
+        "W3166517573",
+        "W3211603852",
+        "W3214833019",
+        "W4205230475",
+        "W4285505546",
+        "W4327952333",
+        "W4361279040",
+        "W4386523247",
+        "W4386737037",
+        "W4390738574",
+        "W4391992581",
+        "W4392667213",
+        "W4401452337",
+        "W4405440355",
+        "W4410358746",
+        "W4411640005",
+        "W4411902721",
+        "W4412404173",
+        "W4416098079",
+        "W7124151671",
+        "W7130611924"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7223181307",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107301",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 12,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robot",
+            "robotic",
+            "manipulation",
+            "teleoperation"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robot",
+            "robotic",
+            "manipulation",
+            "teleoperation"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robot, robotic, manipulation, teleoperation"
+        }
+      ],
+      "historical_value_score": 45.2,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 82.3,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 17.7%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223182454",
+      "openalex_id": "W7223182454",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107297",
+      "title": "Phase-aligned spatial iterative learning control with constrained Hermite reconstruction for position-periodic disturbance compensation",
+      "authors": [
+        "Aijing Wu",
+        "Xin Huo",
+        "Qingquan Liu",
+        "Jie Ma"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-22",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11749",
+          "display_name": "Iterative Learning Control Systems",
+          "score": 1.0
+        },
+        {
+          "id": "https://openalex.org/T11081",
+          "display_name": "Advanced Control Systems Design",
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/T11525",
+          "display_name": "Piezoelectric Actuators and Control",
+          "score": 0.0
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.8225927,
+      "referenced_works": [
+        "W609899674",
+        "W2006650073",
+        "W2041242313",
+        "W2045013876",
+        "W2045919365",
+        "W2070126066",
+        "W2093386980",
+        "W2099037578",
+        "W2148333391",
+        "W2343040550",
+        "W2547996549",
+        "W2979320407",
+        "W3194087568",
+        "W4205957821",
+        "W4390534555",
+        "W4400644952",
+        "W4400647434",
+        "W4403886250",
+        "W4403969453",
+        "W7135047749",
+        "W7135064565",
+        "W7141479757"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7223182454",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107297",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 45.2,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 82.3,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 17.7%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223268074",
+      "openalex_id": "W7223268074",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107311",
+      "title": "Electric load simulation system based on finite-time command filtering and adaptive backstepping control",
+      "authors": [
+        "Jinxin Li",
+        "Cheng Jun Qiu",
+        "Yingna Zhao",
+        "Fulong Sun",
+        "WANG Qianjin"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-23",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10040",
+          "display_name": "Adaptive Control of Nonlinear Systems",
+          "score": 0.9965999722480774
+        },
+        {
+          "id": "https://openalex.org/T10504",
+          "display_name": "Sensorless Control of Electric Motors",
+          "score": 0.0006000000284984708
+        },
+        {
+          "id": "https://openalex.org/T13644",
+          "display_name": "Control Systems in Engineering",
+          "score": 0.0003000000142492354
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.82576921,
+      "referenced_works": [
+        "W1979517588",
+        "W1990380686",
+        "W2040966841",
+        "W2044726830",
+        "W2049044440",
+        "W2056849404",
+        "W2069920381",
+        "W2091919425",
+        "W2098878508",
+        "W2184473942",
+        "W2476768800",
+        "W2511891360",
+        "W2559610648",
+        "W2756518329",
+        "W2756966596",
+        "W2792882341",
+        "W2810057162",
+        "W2976115931",
+        "W3017722072",
+        "W3138012072",
+        "W4214584511",
+        "W4229447208",
+        "W4282049208",
+        "W4296079309",
+        "W4302424760",
+        "W4382203600",
+        "W4394870859",
+        "W4400844621",
+        "W4402583504",
+        "W4403674675",
+        "W4404797623",
+        "W4406440501",
+        "W4406633109",
+        "W4407056844",
+        "W4407138188",
+        "W4407610541",
+        "W4407625231",
+        "W4407749148",
+        "W4408076712",
+        "W4409855002",
+        "W4412595642"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7223268074",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107311",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 45.2,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 82.6,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 17.4%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223313103",
+      "openalex_id": "W7223313103",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107312",
+      "title": "Motion accuracy enhancement of direct-drive SCARA with dynamics-based trajectory optimization",
+      "authors": [
+        "Zhun Liu",
+        "Dan Shi",
+        "Pierre‐Daniel Pfister",
+        "Jian‐Xin Shen"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-23",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T13644",
+          "display_name": "Control Systems in Engineering",
+          "score": 0.43529999256134033
+        },
+        {
+          "id": "https://openalex.org/T11394",
+          "display_name": "Dynamics and Control of Mechanical Systems",
+          "score": 0.3009999990463257
+        },
+        {
+          "id": "https://openalex.org/T10571",
+          "display_name": "Robotic Mechanisms and Dynamics",
+          "score": 0.24770000576972961
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.76956602,
+      "referenced_works": [
+        "W189803804",
+        "W1973805308",
+        "W1973919856",
+        "W1982617483",
+        "W1995090200",
+        "W2091988828",
+        "W2099454002",
+        "W2136625771",
+        "W2739309608",
+        "W2767155506",
+        "W2767578104",
+        "W2898753109",
+        "W2900622305",
+        "W2954580547",
+        "W3002244648",
+        "W3035046128",
+        "W3124040578",
+        "W3198110887",
+        "W4312629543",
+        "W4312906910",
+        "W4312993918",
+        "W4380627621",
+        "W4383336858",
+        "W4388240408",
+        "W4388505150",
+        "W4390534693",
+        "W4392502297",
+        "W4411689455",
+        "W4413099347"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7223313103",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107312",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 12,
+      "video_potential": 3,
+      "matched_topics": [
+        "robot_control_optimization"
+      ],
+      "matched_keywords": [
+        "trajectory optimization"
+      ],
+      "research_reasons": [
+        {
+          "kind": "topic",
+          "label": "Planning, Control & Estimation",
+          "keywords": [
+            "trajectory optimization"
+          ],
+          "location": "title",
+          "points": 12.0
+        },
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [
+            "robotic"
+          ],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": true,
+          "positive_matches": [
+            "robotic"
+          ],
+          "negative_matches": [],
+          "reason": "Explicit robotics context: robotic"
+        }
+      ],
+      "historical_value_score": 48.4,
+      "historical_score_components": {
+        "research_relevance": 12.0,
+        "recency": 100.0,
+        "normalized_citation": 77.0,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 23.0%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223401546",
+      "openalex_id": "W7223401546",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107308",
+      "title": "Physics-data fusion-driven control for dual-clutch transmission vehicle launch process considering long- and short-term driving behaviors",
+      "authors": [
+        "Jihao Feng",
+        "Junnan Hu",
+        "Yonggang Liu",
+        "Minghui Hu",
+        "Jiayu Zheng",
+        "Xin Wang",
+        "Datong Qin"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-23",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10805",
+          "display_name": "Vehicle Dynamics and Control Systems",
+          "score": 0.9970999956130981
+        },
+        {
+          "id": "https://openalex.org/T10808",
+          "display_name": "Electric and Hybrid Vehicle Technologies",
+          "score": 0.0015999999595806003
+        },
+        {
+          "id": "https://openalex.org/T10524",
+          "display_name": "Traffic control and management",
+          "score": 0.00019999999494757503
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.77650202,
+      "referenced_works": [
+        "W1987108455",
+        "W2017977027",
+        "W2103508500",
+        "W2113442785",
+        "W2168097327",
+        "W2332611059",
+        "W2604107710",
+        "W2774428608",
+        "W2923171903",
+        "W2949449669",
+        "W2954471971",
+        "W3047155081",
+        "W3142462604",
+        "W3171154386",
+        "W4281725692",
+        "W4293032750",
+        "W4293139109",
+        "W4320712846",
+        "W4378070980",
+        "W4385819762",
+        "W4388022797",
+        "W4393337673",
+        "W4398256010",
+        "W4400230231",
+        "W4405236441",
+        "W4410814196",
+        "W4414143455",
+        "W4416103169",
+        "W4416529414",
+        "W7139126095",
+        "W7152461967"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7223401546",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107308",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 44.4,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 77.7,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 22.3%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223457410",
+      "openalex_id": "W7223457410",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107305",
+      "title": "Disturbance rejection via non-inversion iterative learning control with acceleration feedforward for image-based dual-stage tracking platforms",
+      "authors": [
+        "Yun Wu",
+        "Liujun Wu",
+        "Haorui Zuo",
+        "Zhenming Peng",
+        "Tao Tang"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-24",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T11749",
+          "display_name": "Iterative Learning Control Systems",
+          "score": 0.9951000213623047
+        },
+        {
+          "id": "https://openalex.org/T11525",
+          "display_name": "Piezoelectric Actuators and Control",
+          "score": 0.0031999999191612005
+        },
+        {
+          "id": "https://openalex.org/T13644",
+          "display_name": "Control Systems in Engineering",
+          "score": 0.00019999999494757503
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.83085579,
+      "referenced_works": [
+        "W2041242313",
+        "W2097487411",
+        "W2346330105",
+        "W2524212813",
+        "W2537531135",
+        "W2763456105",
+        "W2793653591",
+        "W2806666419",
+        "W2904574225",
+        "W2911975598",
+        "W2941413561",
+        "W2950288303",
+        "W2955632439",
+        "W2982102386",
+        "W2983840272",
+        "W3083580083",
+        "W3094075867",
+        "W3127624677",
+        "W3137557784",
+        "W3168239502",
+        "W3199223207",
+        "W4285270178",
+        "W4387362866",
+        "W4387450841",
+        "W4388347850",
+        "W4390871616",
+        "W4396852943",
+        "W4407781940",
+        "W4408391668",
+        "W4409686982"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7223457410",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107305",
+      "open_access_url": null,
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 45.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 83.1,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 16.9%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%"
+      ],
+      "is_knowledge_map": false,
+      "source_id": "S105928092",
+      "is_retracted": false,
+      "rising_score": null,
+      "rising_score_components": {},
+      "rising_score_reasons": [],
+      "rising_updated_at": null,
+      "rising_age_days": null,
+      "rising_citation_velocity": null,
+      "rising_observed_growth": {}
+    },
+    {
+      "canonical_paper_id": "openalex:W7223459217",
+      "openalex_id": "W7223459217",
+      "base_arxiv_id": null,
+      "doi": "10.1016/j.conengprac.2026.107309",
+      "title": "Control-oriented modeling of glucose insulin dynamics with dynamic insulin sensitivity",
+      "authors": [
+        "Nicola Licini",
+        "Jorge Bondía",
+        "Clara Furió-Novejarque",
+        "Iván Sala-Mira",
+        "Pablo Abuin",
+        "Beatrice Sonzogni",
+        "Fabio Previdi",
+        "José-Luis Díez",
+        "Alejandro H. González",
+        "Antonio Ferramosca"
+      ],
+      "abstract": null,
+      "publication_date": "2026-10-24",
+      "publication_year": 2026,
+      "source_name": "Control Engineering Practice",
+      "source_type": "article",
+      "topics": [
+        {
+          "id": "https://openalex.org/T10560",
+          "display_name": "Diabetes Management and Research",
+          "score": 0.8217999935150146
+        },
+        {
+          "id": "https://openalex.org/T11236",
+          "display_name": "Control Systems and Identification",
+          "score": 0.03579999879002571
+        },
+        {
+          "id": "https://openalex.org/T10839",
+          "display_name": "Pancreatic function and diabetes",
+          "score": 0.02800000086426735
+        }
+      ],
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "fwci": 0.0,
+      "citation_normalized_percentile": 0.88774197,
+      "referenced_works": [
+        "W656357735",
+        "W1452881506",
+        "W1964693647",
+        "W1988535925",
+        "W1999491748",
+        "W2044877664",
+        "W2071131829",
+        "W2089264242",
+        "W2097202487",
+        "W2099719924",
+        "W2123628675",
+        "W2129995532",
+        "W2328332657",
+        "W2489617990",
+        "W2520349907",
+        "W2736029153",
+        "W2782744517",
+        "W2790915589",
+        "W2886865853",
+        "W2955722883",
+        "W3013045429",
+        "W3038508300",
+        "W4224213166",
+        "W4238714725",
+        "W4296367237",
+        "W4385413484",
+        "W4387002681",
+        "W4387840694",
+        "W4388940253",
+        "W4390462129",
+        "W4392432851",
+        "W4405963875",
+        "W4406458668",
+        "W4407949219",
+        "W4412491353",
+        "W7137128242"
+      ],
+      "related_works": [],
+      "discovery_source": [
+        "journal_search:Control Engineering Practice"
+      ],
+      "seed_paper_id": [],
+      "discovered_at": "2026-10-26T08:01:53",
+      "last_considered_at": null,
+      "recommended_at": null,
+      "recommendation_count": 0,
+      "reading_status": "unread",
+      "dismissed": false,
+      "metadata_updated_at": "2026-10-26T08:01:53",
+      "openalex_url": "https://openalex.org/W7223459217",
+      "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107309",
+      "open_access_url": "https://doi.org/10.1016/j.conengprac.2026.107309",
+      "pdf_url": null,
+      "research_fit": 0,
+      "video_potential": 0,
+      "matched_topics": [],
+      "matched_keywords": [],
+      "research_reasons": [
+        {
+          "kind": "robotics_context",
+          "label": "Robotics context gate",
+          "keywords": [],
+          "location": "title/abstract/topics",
+          "points": 0.0,
+          "eligible": false,
+          "positive_matches": [],
+          "negative_matches": [],
+          "reason": "No explicit robotics context; general control or learning terms alone do not establish robotics relevance"
+        }
+      ],
+      "historical_value_score": 46.3,
+      "historical_score_components": {
+        "research_relevance": 0.0,
+        "recency": 100.0,
+        "normalized_citation": 88.8,
+        "fwci": 0.0,
+        "citation_momentum": null,
+        "seed_provenance": null,
+        "work_signal": 60.0,
+        "metadata_completeness": 87.5
+      },
+      "historical_score_reasons": [
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 11.2%",
         "阅读时效分 100/100（论文年龄 0 年）",
         "OpenAlex FWCI 0.00",
         "标题或摘要命中可配置的方法类信号",
