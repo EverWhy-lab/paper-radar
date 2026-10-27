@@ -1,0 +1,823 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-27",
+  "generated_at": "2026-10-27T17:59:22+08:00",
+  "mode": "incremental",
+  "candidate_count": 3615,
+  "historical_candidate_count": 684,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 0,
+    "journal_recent": 1,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2610.35862",
+      "title": "Learning Force-Reactive Humanoid Loco-Manipulation",
+      "takeaway": "FLORE addresses force-reactive humanoid loco-manipulation, where contact force must be coordinated across both hands and the whole body rather than specified by kinematics alone. It collects robot-free demonstrations with two force-sensing UMI-style handheld grippers and wearable body trackers, then trains a force-reactive diffusion policy on vision, proprioception, and measured wrenches to predict actions and per-hand force commands, executed by a hybrid compliance whole-body controller whose integral force-error term uses real F/T sensors for directional force tracking and off-direction compliance. Reported evidence includes simulation tracking of varied per-hand force commands with little loss in whole-body motion accuracy, and 80% success versus 26.7% for a position-only policy on three contact-rich robot tasks. Inspect how force commands are represented and how the controller balances force tracking against balance.",
+      "generated_at": "2026-10-27T10:05:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2610.35626",
+      "title": "Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies",
+      "takeaway": "This benchmark-style work targets data collection for wrist-camera VLA policies in precise pre-contact reaching, motivated by electronic-waste disassembly where densely packed, visually similar parts make full digital-twin simulation difficult. It reconstructs the real workspace with 3D Gaussian Splatting, renders diverse wrist-camera observations from robot-aligned poses, and pairs them with smooth structured reaching trajectories for VLA fine-tuning, adding an instruction-conditioned reach verifier that estimates target proximity and terminates before physical interaction. In motherboard disassembly experiments with π0.5, 1,500 generated trajectories reach 80.0% precise-reaching success across three targets versus 58.7% from 150 teleoperated demonstrations, using under 10 minutes of active human capture. Inspect how robot-aligned rendering and the verifier affect evaluation validity.",
+      "generated_at": "2026-10-27T10:05:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4415109351",
+      "title": "Touch Begins Where Vision Ends: Generalizable Policies for Contact-Rich Manipulation",
+      "takeaway": "ViTaL tackles fine-grained contact-rich manipulation by decomposing tasks into a reaching phase, where a vision-language model performs scene-level reasoning to localize the object, and a local interaction phase, where a reusable scene-agnostic policy uses egocentric vision and tactile sensing. The premise is that scene context varies while low-level interaction stays consistent, so local policies trained once in a canonical setting can generalize through localize-then-execute. The abstract reports around 90% success on contact-rich tasks in unseen environments and robustness to distractors, with ablations supporting segmentation-based visual encoder training via behavior cloning, improved generalizability of residual-RL policies, and tactile sensing gains. Inspect the canonical-setting training setup and the ablation design.",
+      "generated_at": "2026-10-27T10:05:39",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2610.35687",
+      "title": "TrySee: Modular Perception-Enhanced VLM Grounding for Closed-Loop Robot Task Planning in Specialized Domains",
+      "takeaway": "TrySee examines closed-loop robot task planning with general-purpose VLMs in specialized domains where image interpretation and grounding are weak. It is a modular pipeline combining reactive cyclic planning with domain-specific modular vision preprocessing for online grounding, plus a dynamic preprocessing selection mechanism for scalability, and it requires neither VLM fine-tuning nor end-to-end demonstrations, adapting through replaceable perception modules and motion planning. Evaluation spans planning tasks in 5 widely different domains, including a real-world robot disassembly task, and field tests in a brownfield environment are reported to demonstrate practicality when domain-specific training data are limited. Inspect how preprocessing selection is triggered and how grounding failures propagate through the loop.",
+      "generated_at": "2026-10-27T10:05:39",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 76 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining, robot_data_scaling_sim2real",
+        "Specific keywords matched: loco-manipulation, diffusion policy, UMI",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: loco_manipulation, diffusion_flow_policy",
+        "Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)",
+        "Subtopic: loco_manipulation",
+        "Recently recommended: 5 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = diffusion_flow_policy",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 77.8 = base 76.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.35862",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "loco_manipulation",
+        "diffusion_flow_policy"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 76.0,
+      "recommendation_utility": 77.8,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.35862v1",
+        "base_id": "2610.35862",
+        "version": 1,
+        "title": "Learning Force-Reactive Humanoid Loco-Manipulation",
+        "authors": [
+          "Sihang Li",
+          "Xiaofeng Guo",
+          "Jinkun Cao",
+          "Charlie Cheng",
+          "Ruihan Yang",
+          "Chen Feng",
+          "Guanya Shi",
+          "Haozhi Qi"
+        ],
+        "published": "2026-10-26T17:59:11Z",
+        "updated": "2026-10-26T17:59:11Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.LG",
+          "eess.SY"
+        ],
+        "summary": "Many everyday tasks require controlling contact force as well as motion. On a humanoid, this force must often be coordinated across both hands and the whole body, and cannot be specified by kinematic trajectories alone. Therefore, we present FLORE, a framework for learning force-reactive humanoid loco-manipulation. We collect robot-free demonstrations using two force-sensing UMI-style handheld grippers for hand motion and contact wrenches, and wearable trackers for body motion. A force-reactive diffusion policy takes vision, proprioception, and measured wrenches as input, then predicts actions and per-hand force commands. A hybrid compliance whole-body controller with force tracking executes these commands while maintaining balance: an integral of the force error measured by real force/torque (F/T) sensors lets each hand track force accurately along the commanded direction and remain compliant along the others. In simulation, the controller tracks per-hand force commands of varied magnitude and direction, with little loss in whole-body motion accuracy. Across three contact-rich tasks on the robot, the force-reactive policy succeeds in 80% of rollouts, compared with 26.7% for a position-only policy trained on the same demonstrations and executed by the same controller. For more details, please visit our website: https://louis-leee.github.io/FLoRe/.",
+        "abs_url": "https://arxiv.org/abs/2610.35862v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.35862v1",
+        "research_fit": 76,
+        "video_potential": 66,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "loco-manipulation",
+          "diffusion policy",
+          "UMI"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "loco-manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "UMI"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "humanoid",
+              "loco-manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, humanoid, loco-manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "whole-body"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 52 ≥ 40",
+        "Core topics matched: vla_robot_foundation",
+        "Specific keywords matched: VLA, vision-language-action",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: vla_posttraining",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.35626",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [
+        "vla_posttraining"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 52.0,
+      "recommendation_utility": 52.0,
+      "days_since_same_subtopic": 20,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.35626v1",
+        "base_id": "2610.35626",
+        "version": 1,
+        "title": "Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies",
+        "authors": [
+          "Zuoxu Wang",
+          "Xiao Liang"
+        ],
+        "published": "2026-10-26T15:40:03Z",
+        "updated": "2026-10-26T15:40:03Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Efficient robotic data collection remains a major bottleneck for vision-language-action (VLA) policy learning, especially for tasks requiring accurate end-effector positioning and camera-action alignment. This challenge is particularly severe in electronic-waste disassembly, where robots operate in cluttered assemblies of densely packed, visually similar components. Full digital-twin simulation is difficult because many parts are thin, reflective, or mechanically complex, making accurate object-level meshes and contact models difficult to obtain. In this work, we focus on pre-contact reaching and propose a 3D Gaussian Splatting (3DGS)-based data generation pipeline for wrist-camera VLA adaptation. Our method reconstructs the real workspace with 3DGS and renders diverse wrist-camera observations from robot-aligned poses. These observations are paired with smooth, structured reaching trajectories to provide robot-aligned visual-action supervision for VLA fine-tuning. We further augment the VLA policy with an instruction-conditioned reach verifier that estimates target proximity and provides reliable termination before physical interaction. Experiments in motherboard disassembly demonstrate precise VLA-based reaching using wrist-camera observations alone, without an external side-view camera. With $π$0.5, 1,500 generated trajectories achieve 80.0\\% precise-reaching success across three targets, compared with 58.7\\% using 150 teleoperated demonstrations, while requiring less than 10 minutes of active human capture. Project website: https://001-wang.github.io/PrecisionReach-GS/",
+        "abs_url": "https://arxiv.org/abs/2610.35626v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.35626v1",
+        "research_fit": 52,
+        "video_potential": 22,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "policy learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 41 ≥ 35",
+        "Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: contact-rich manipulation",
+        "Detected subtopics: tactile_manipulation",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 41.0 = base 41.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4415109351",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4415109351",
+        "openalex_id": "W4415109351",
+        "base_arxiv_id": "2506.13762",
+        "doi": "10.1109/lra.2026.3730288",
+        "title": "Touch Begins Where Vision Ends: Generalizable Policies for Contact-Rich Manipulation",
+        "authors": [
+          "Zifan Zhao",
+          "Siddhant Haldar",
+          "Jinda Cui",
+          "Lerrel Pinto",
+          "Raunaq Bhirangi"
+        ],
+        "abstract": "Data-driven approaches struggle with precise manipulation; imitation learning requires many hard-to-obtain demonstrations, while reinforcement learning yields brittle, non-generalizable policies. We introduce VisuoTactile Local (ViTaL) policy learning, a framework that solves fine-grained manipulation tasks by decomposing them into two phases: a reaching phase, where a vision-language model (VLM) enables scene-level reasoning to localize the object of interest, and a local interaction phase, where a reusable, scene-agnostic ViTaL policy performs contact-rich manipulation using egocentric vision and tactile sensing. This approach is motivated by the observation that while scene context varies, the low-level interaction remains consistent across task instances. By training local policies once in a canonical setting, they can generalize via a localize-then-execute strategy. ViTaL achieves around 90% success on contact-rich tasks in unseen environments and is robust to distractors. ViTaL's effectiveness stems from three key insights: (1) foundation models for segmentation enable training robust visual encoders via behavior cloning; (2) these encoders improve the generalizability of policies learned using residual RL; and (3) tactile sensing significantly boosts performance in contact-rich tasks. Ablation studies validate each of these insights, and we demonstrate that ViTaL integrates well with high-level VLMs, enabling robust, reusable low-level skills. Results and videos are available at https://vitalprecise.github.io.",
+        "publication_date": "2026-09-02",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9961000084877014
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.003700000001117587
+          },
+          {
+            "id": "https://openalex.org/T11687",
+            "display_name": "Teleoperation and Haptic Systems",
+            "score": 0.0
+          }
+        ],
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 2.7632,
+        "citation_normalized_percentile": 0.84111686,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-12T09:37:12",
+        "last_considered_at": "2026-10-27T17:59:22+08:00",
+        "recommended_at": "2026-10-27T17:59:22+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-10-26T08:01:51",
+        "openalex_url": "https://openalex.org/W4415109351",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3730288",
+        "open_access_url": "http://arxiv.org/abs/2506.13762",
+        "pdf_url": "https://arxiv.org/pdf/2506.13762",
+        "research_fit": 41,
+        "video_potential": 44,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "behavior cloning",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "behavior cloning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, teleoperation"
+          }
+        ],
+        "historical_value_score": 65.2,
+        "historical_score_components": {
+          "research_relevance": 41.0,
+          "recency": 100.0,
+          "normalized_citation": 84.1,
+          "fwci": 92.1,
+          "citation_momentum": 5.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 15.9%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 2.76",
+          "近年年均 OpenAlex 引用 1.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "tactile_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 41.0,
+      "recommendation_utility": 41.0,
+      "days_since_same_subtopic": 12,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2506.13762",
+        "base_id": "2506.13762",
+        "version": 1,
+        "title": "Touch Begins Where Vision Ends: Generalizable Policies for Contact-Rich Manipulation",
+        "authors": [
+          "Zifan Zhao",
+          "Siddhant Haldar",
+          "Jinda Cui",
+          "Lerrel Pinto",
+          "Raunaq Bhirangi"
+        ],
+        "published": "2026-09-02T00:00:00Z",
+        "updated": "2026-09-02T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Data-driven approaches struggle with precise manipulation; imitation learning requires many hard-to-obtain demonstrations, while reinforcement learning yields brittle, non-generalizable policies. We introduce VisuoTactile Local (ViTaL) policy learning, a framework that solves fine-grained manipulation tasks by decomposing them into two phases: a reaching phase, where a vision-language model (VLM) enables scene-level reasoning to localize the object of interest, and a local interaction phase, where a reusable, scene-agnostic ViTaL policy performs contact-rich manipulation using egocentric vision and tactile sensing. This approach is motivated by the observation that while scene context varies, the low-level interaction remains consistent across task instances. By training local policies once in a canonical setting, they can generalize via a localize-then-execute strategy. ViTaL achieves around 90% success on contact-rich tasks in unseen environments and is robust to distractors. ViTaL's effectiveness stems from three key insights: (1) foundation models for segmentation enable training robust visual encoders via behavior cloning; (2) these encoders improve the generalizability of policies learned using residual RL; and (3) tactile sensing significantly boosts performance in contact-rich tasks. Ablation studies validate each of these insights, and we demonstrate that ViTaL integrates well with high-level VLMs, enabling robust, reusable low-level skills. Results and videos are available at https://vitalprecise.github.io.",
+        "abs_url": "https://arxiv.org/abs/2506.13762",
+        "pdf_url": "https://arxiv.org/pdf/2506.13762",
+        "research_fit": 41,
+        "video_potential": 44,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "imitation learning",
+          "behavior cloning",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "behavior cloning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: robot, robots, robotic, robotics",
+        "Strong method signals: motion_planning",
+        "research_fit 42 ≥ 28",
+        "Detected subtopics: motion_planning",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 42.0 = base 42.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.35687",
+      "historical_paper": null,
+      "core_topics": [
+        "world_model_embodied_reasoning"
+      ],
+      "subtopics": [
+        "motion_planning"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 42.0,
+      "recommendation_utility": 42.0,
+      "days_since_same_subtopic": 13,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.35687v1",
+        "base_id": "2610.35687",
+        "version": 1,
+        "title": "TrySee: Modular Perception-Enhanced VLM Grounding for Closed-Loop Robot Task Planning in Specialized Domains",
+        "authors": [
+          "Elias Hofele",
+          "Thomas Trapp",
+          "David Timmermann",
+          "Tristan Schnell",
+          "Georg Heppner",
+          "Arne Roennau"
+        ],
+        "published": "2026-10-26T16:20:28Z",
+        "updated": "2026-10-26T16:20:28Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Vision Language Models (VLMs) have shown impressive capabilities in high-level reasoning and task planning for robots. However, specialized domains remain a challenge for VLMs' image interpretation and grounding abilities. We introduce TrySee, a modular closed-loop robot task planning pipeline integrating general-purpose VLM reasoning with domain-specific perception and established robotics components. The system consists of an inherently reactive cyclic planning pipeline, augmented with domain-specific modular vision preprocessing, to provide online grounding. Finally, a dynamic preprocessing selection mechanism contributes to the scalability of the pipeline. The system requires neither VLM fine-tuning nor end-to-end demonstrations and adapts through replaceable perception modules and motion planning. The approach is evaluated on planning tasks across 5 widely different domains, including a real-world robot disassembly task. The field tests in a brownfield environment demonstrate the approach's practicality in integrating VLM planning into specialized robotic systems with limited domain-specific training data.",
+        "abs_url": "https://arxiv.org/abs/2610.35687v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.35687v1",
+        "research_fit": 42,
+        "video_potential": 26,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "task planning for robots",
+          "motion planning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "task planning for robots"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "motion planning"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 10.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real-world robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-10-27</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-10-27 17:59</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="recommendations" aria-label="Today's selected papers">
+      <article class="paper-card" id="arxiv:2610.35862" data-paper-id="arxiv:2610.35862" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2610.35862v1</span>
+        </div>
+        <h3>Learning Force-Reactive Humanoid Loco-Manipulation</h3>
+        <p class="authors">Sihang Li, Xiaofeng Guo, Jinkun Cao, Charlie Cheng, Ruihan Yang, Chen Feng, Guanya Shi, Haozhi Qi</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-27 01:59 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.AI, cs.LG, eess.SY</span>
+<span><b>Reading focus</b> loco_manipulation, diffusion_flow_policy</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>FLORE addresses force-reactive humanoid loco-manipulation, where contact force must be coordinated across both hands and the whole body rather than specified by kinematics alone. It collects robot-free demonstrations with two force-sensing UMI-style handheld grippers and wearable body trackers, then trains a force-reactive diffusion policy on vision, proprioception, and measured wrenches to predict actions and per-hand force commands, executed by a hybrid compliance whole-body controller whose integral force-error term uses real F/T sensors for directional force tracking and off-direction compliance. Reported evidence includes simulation tracking of varied per-hand force commands with little loss in whole-body motion accuracy, and 80% success versus 26.7% for a position-only policy on three contact-rich robot tasks. Inspect how force commands are represented and how the controller balances force tracking against balance.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Learning &amp; Policy Post-Training, Robot Data Scaling &amp; Sim-to-Real</span>
+<span><b>Subtopics</b> loco_manipulation, diffusion_flow_policy</span><span><b>Utility</b> 77.8 (base 76.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span>          </div>
+          <ul>
+<li>research_fit 76 ≥ 40</li><li>Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining, robot_data_scaling_sim2real</li><li>Specific keywords matched: loco-manipulation, diffusion policy, UMI</li><li>Diversity topic: humanoid_loco_manipulation</li><li>Detected subtopics: loco_manipulation, diffusion_flow_policy</li><li>Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)</li><li>Subtopic: loco_manipulation</li><li>Recently recommended: 5 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = diffusion_flow_policy</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 77.8 = base 76.0 + affinity +6 + redundancy -4.2</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Many everyday tasks require controlling contact force as well as motion. On a humanoid, this force must often be coordinated across both hands and the whole body, and cannot be specified by kinematic trajectories alone. Therefore, we present FLORE, a framework for learning force-reactive humanoid loco-manipulation. We collect robot-free demonstrations using two force-sensing UMI-style handheld grippers for hand motion and contact wrenches, and wearable trackers for body motion. A force-reactive diffusion policy takes vision, proprioception, and measured wrenches as input, then predicts actions and per-hand force commands. A hybrid compliance whole-body controller with force tracking executes these commands while maintaining balance: an integral of the force error measured by real force/torque (F/T) sensors lets each hand track force accurately along the commanded direction and remain compliant along the others. In simulation, the controller tracks per-hand force commands of varied magnitude and direction, with little loss in whole-body motion accuracy. Across three contact-rich tasks on the robot, the force-reactive policy succeeds in 80% of rollouts, compared with 26.7% for a position-only policy trained on the same demonstrations and executed by the same controller. For more details, please visit our website: https://louis-leee.github.io/FLoRe/.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.35862v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.35862v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.35862" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.35862" data-title="Learning Force-Reactive Humanoid Loco-Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.35862" data-title="Learning Force-Reactive Humanoid Loco-Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2610.35626" data-paper-id="arxiv:2610.35626" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2610.35626v1</span>
+        </div>
+        <h3>Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies</h3>
+        <p class="authors">Zuoxu Wang, Xiao Liang</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-26 23:40 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> vla_posttraining</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This benchmark-style work targets data collection for wrist-camera VLA policies in precise pre-contact reaching, motivated by electronic-waste disassembly where densely packed, visually similar parts make full digital-twin simulation difficult. It reconstructs the real workspace with 3D Gaussian Splatting, renders diverse wrist-camera observations from robot-aligned poses, and pairs them with smooth structured reaching trajectories for VLA fine-tuning, adding an instruction-conditioned reach verifier that estimates target proximity and terminates before physical interaction. In motherboard disassembly experiments with π0.5, 1,500 generated trajectories reach 80.0% precise-reaching success across three targets versus 58.7% from 150 teleoperated demonstrations, using under 10 minutes of active human capture. Inspect how robot-aligned rendering and the verifier affect evaluation validity.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
+<span><b>Subtopics</b> vla_posttraining</span><span><b>Utility</b> 52.0 (base 52.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 52 ≥ 40</li><li>Core topics matched: vla_robot_foundation</li><li>Specific keywords matched: VLA, vision-language-action</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: vla_posttraining</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Efficient robotic data collection remains a major bottleneck for vision-language-action (VLA) policy learning, especially for tasks requiring accurate end-effector positioning and camera-action alignment. This challenge is particularly severe in electronic-waste disassembly, where robots operate in cluttered assemblies of densely packed, visually similar components. Full digital-twin simulation is difficult because many parts are thin, reflective, or mechanically complex, making accurate object-level meshes and contact models difficult to obtain. In this work, we focus on pre-contact reaching and propose a 3D Gaussian Splatting (3DGS)-based data generation pipeline for wrist-camera VLA adaptation. Our method reconstructs the real workspace with 3DGS and renders diverse wrist-camera observations from robot-aligned poses. These observations are paired with smooth, structured reaching trajectories to provide robot-aligned visual-action supervision for VLA fine-tuning. We further augment the VLA policy with an instruction-conditioned reach verifier that estimates target proximity and provides reliable termination before physical interaction. Experiments in motherboard disassembly demonstrate precise VLA-based reaching using wrist-camera observations alone, without an external side-view camera. With $π$0.5, 1,500 generated trajectories achieve 80.0\% precise-reaching success across three targets, compared with 58.7\% using 150 teleoperated demonstrations, while requiring less than 10 minutes of active human capture. Project website: https://001-wang.github.io/PrecisionReach-GS/</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.35626v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.35626v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.35626" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.35626" data-title="Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.35626" data-title="Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W4415109351" data-paper-id="openalex:W4415109351" data-category="journal_recent">
+        <div class="card-topline">
+          <span class="category category--journal_recent">期刊新论文</span>
+          <span class="arxiv-id">W4415109351</span>
+        </div>
+        <h3>Touch Begins Where Vision Ends: Generalizable Policies for Contact-Rich Manipulation</h3>
+        <p class="authors">Zifan Zhao, Siddhant Haldar, Jinda Cui, Lerrel Pinto, Raunaq Bhirangi</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-09-02</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> tactile_manipulation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>ViTaL tackles fine-grained contact-rich manipulation by decomposing tasks into a reaching phase, where a vision-language model performs scene-level reasoning to localize the object, and a local interaction phase, where a reusable scene-agnostic policy uses egocentric vision and tactile sensing. The premise is that scene context varies while low-level interaction stays consistent, so local policies trained once in a canonical setting can generalize through localize-then-execute. The abstract reports around 90% success on contact-rich tasks in unseen environments and robustness to distractors, with ablations supporting segmentation-based visual encoder training via behavior cloning, improved generalizability of residual-RL policies, and tactile sensing gains. Inspect the canonical-setting training setup and the ablation design.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 期刊新论文</span>
+            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> tactile_manipulation</span><span><b>Utility</b> 41.0 (base 41.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 1</span>          </div>
+          <ul>
+<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 41 ≥ 35</li><li>Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: contact-rich manipulation</li><li>Detected subtopics: tactile_manipulation</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 41.0 = base 41.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Data-driven approaches struggle with precise manipulation; imitation learning requires many hard-to-obtain demonstrations, while reinforcement learning yields brittle, non-generalizable policies. We introduce VisuoTactile Local (ViTaL) policy learning, a framework that solves fine-grained manipulation tasks by decomposing them into two phases: a reaching phase, where a vision-language model (VLM) enables scene-level reasoning to localize the object of interest, and a local interaction phase, where a reusable, scene-agnostic ViTaL policy performs contact-rich manipulation using egocentric vision and tactile sensing. This approach is motivated by the observation that while scene context varies, the low-level interaction remains consistent across task instances. By training local policies once in a canonical setting, they can generalize via a localize-then-execute strategy. ViTaL achieves around 90% success on contact-rich tasks in unseen environments and is robust to distractors. ViTaL&#39;s effectiveness stems from three key insights: (1) foundation models for segmentation enable training robust visual encoders via behavior cloning; (2) these encoders improve the generalizability of policies learned using residual RL; and (3) tactile sensing significantly boosts performance in contact-rich tasks. Ablation studies validate each of these insights, and we demonstrate that ViTaL integrates well with high-level VLMs, enabling robust, reusable low-level skills. Results and videos are available at https://vitalprecise.github.io.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W4415109351" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2506.13762" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2506.13762" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3730288" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2506.13762" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W4415109351" data-title="Touch Begins Where Vision Ends: Generalizable Policies for Contact-Rich Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W4415109351" data-title="Touch Begins Where Vision Ends: Generalizable Policies for Contact-Rich Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2610.35687" data-paper-id="arxiv:2610.35687" data-category="model_based_recent">
+        <div class="card-topline">
+          <span class="category category--model_based_recent">方法前沿</span>
+          <span class="arxiv-id">2610.35687v1</span>
+        </div>
+        <h3>TrySee: Modular Perception-Enhanced VLM Grounding for Closed-Loop Robot Task Planning in Specialized Domains</h3>
+        <p class="authors">Elias Hofele, Thomas Trapp, David Timmermann, Tristan Schnell, Georg Heppner, Arne Roennau</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-27 00:20 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.AI</span>
+<span><b>Reading focus</b> motion_planning</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>TrySee examines closed-loop robot task planning with general-purpose VLMs in specialized domains where image interpretation and grounding are weak. It is a modular pipeline combining reactive cyclic planning with domain-specific modular vision preprocessing for online grounding, plus a dynamic preprocessing selection mechanism for scalability, and it requires neither VLM fine-tuning nor end-to-end demonstrations, adapting through replaceable perception modules and motion planning. Evaluation spans planning tasks in 5 widely different domains, including a real-world robot disassembly task, and field tests in a brownfield environment are reported to demonstrate practicality when domain-specific training data are limited. Inspect how preprocessing selection is triggered and how grounding failures propagate through the loop.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 方法前沿</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning</span>
+<span><b>Subtopics</b> motion_planning</span><span><b>Utility</b> 42.0 (base 42.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>Recent model-based robotics paper: published within 14 days</li><li>Robotics context: robot, robots, robotic, robotics</li><li>Strong method signals: motion_planning</li><li>research_fit 42 ≥ 28</li><li>Detected subtopics: motion_planning</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 42.0 = base 42.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Vision Language Models (VLMs) have shown impressive capabilities in high-level reasoning and task planning for robots. However, specialized domains remain a challenge for VLMs&#39; image interpretation and grounding abilities. We introduce TrySee, a modular closed-loop robot task planning pipeline integrating general-purpose VLM reasoning with domain-specific perception and established robotics components. The system consists of an inherently reactive cyclic planning pipeline, augmented with domain-specific modular vision preprocessing, to provide online grounding. Finally, a dynamic preprocessing selection mechanism contributes to the scalability of the pipeline. The system requires neither VLM fine-tuning nor end-to-end demonstrations and adapts through replaceable perception modules and motion planning. The approach is evaluated on planning tasks across 5 widely different domains, including a real-world robot disassembly task. The field tests in a brownfield environment demonstrate the approach&#39;s practicality in integrating VLM planning into specialized robotic systems with limited domain-specific training data.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.35687v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.35687v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.35687" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.35687" data-title="TrySee: Modular Perception-Enhanced VLM Grounding for Closed-Loop Robot Task Planning in Specialized Domains" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.35687" data-title="TrySee: Modular Perception-Enhanced VLM Grounding for Closed-Loop Robot Task Planning in Specialized Domains" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>
