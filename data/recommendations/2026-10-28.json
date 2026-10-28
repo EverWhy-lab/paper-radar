@@ -1,0 +1,575 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-28",
+  "generated_at": "2026-10-28T18:45:48+08:00",
+  "mode": "incremental",
+  "candidate_count": 3633,
+  "historical_candidate_count": 684,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2610.37378",
+      "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+      "takeaway": "VLA-Stem addresses VLA policies that are trained for static manipulation and therefore lack handling of spatial constraints and dynamic obstacles, proposing a lightweight reinforcement-learning safety layer that leaves the underlying VLA policy unfrozen from fine-tuning. The method converts the VLA's action chunks into motion references and trains a Stem policy with teacher-student distillation and curriculum learning; conditioned on these references, proprioception, and local obstacle information, it adjusts execution at inference time. The abstract reports 52.8% average collision-free task success across six constrained simulation settings versus 23.7% for the strongest safety baseline, with preserved base-policy performance in obstacle-free settings and consistent collision reductions in real-world experiments. Inspect how action chunks are converted into references and how much timing flexibility the Stem policy retains.",
+      "generated_at": "2026-10-28T10:51:35",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4312173571",
+      "title": "Model Predictive Control of Quadruped Robot Based on Reinforcement Learning",
+      "takeaway": "This work targets quadruped locomotion control by combining model predictive control with reinforcement learning, motivated by MPC's model-based translation of high-level tasks into joint control and model-free RL's ability to learn from historical data. Rather than an end-to-end RL controller, the framework learns a policy that automatically selects MPC parameters, which the authors state avoids the need for massive sampling data. The abstract reports that the learned MPC shows better locomotion performance and stability than fixed-parameter MPC, without giving quantitative figures. While reading, inspect how the parameter-selection policy is trained and how the comparison against fixed-parameter MPC is set up.",
+      "generated_at": "2026-10-28T10:51:35",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 52 ≥ 40",
+        "Core topics matched: vla_robot_foundation",
+        "Specific keywords matched: vision-language-action, VLA",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2610.37378",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 52.0,
+      "recommendation_utility": 52.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2610.37378v1",
+        "base_id": "2610.37378",
+        "version": 1,
+        "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+        "authors": [
+          "Bojun Zou",
+          "Wenhao Yu",
+          "Jiaohao Li",
+          "Jiaxuan Lin",
+          "Guanting Ye",
+          "Haohan Geng",
+          "Weihao Yu",
+          "Yanyong Zhang",
+          "Jianmin Ji"
+        ],
+        "published": "2026-10-27T15:07:29Z",
+        "updated": "2026-10-27T15:07:29Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Vision-Language-Action (VLA) models integrate high-level reasoning with low-level action execution for end-to-end robotic control. However, most VLA models target static manipulation in unconstrained environments, overlooking spatial constraints and dynamic obstacles. Fine-tuning VLAs on obstacle-avoidance data is a straightforward solution, but collecting such data is costly, especially for dynamic scenarios, and may degrade their original task capabilities. To address these limitations, we propose VLA-Stem, a lightweight, reinforcement-learning-based safety mechanism for VLA systems. Without fine-tuning the underlying VLA policy, VLA-Stem converts its action chunks into motion references and uses trajectory-level guidance to preserve their spatial intent while allowing flexible motion and timing adjustments. Conditioned on these references, robot proprioception, and local obstacle information, the Stem policy adaptively modifies execution at inference time, preserving the original task intent while enabling responsive adaptation to spatial constraints and dynamic obstacles. For robust and sample-efficient training, we combine teacher-student distillation with curriculum learning. We evaluate VLA-Stem on reference following, static spatial constraints, and dynamic obstacle avoidance. Across six constrained simulation settings, VLA-Stem achieves 52.8% average collision-free task success versus 23.7% for the strongest safety baseline, while preserving base-policy performance in obstacle-free settings; real-world experiments further show consistent collision reductions under static and dynamic obstacles. These results demonstrate that VLA-Stem couples high-level VLA task intent with rapid, reflex-like responses to immediate physical risks, providing a brainstem-inspired mechanism for robust robot execution.",
+        "abs_url": "https://arxiv.org/abs/2610.37378v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.37378v1",
+        "research_fit": 52,
+        "video_potential": 39,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "reinforcement learning"
+            ],
+            "location": "title",
+            "points": 14.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics",
+        "research_fit 22 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：model predictive control, MPC",
+        "historical_value_score 61.1 ≥ 42.0",
+        "发表于 2022 年",
+        "同领域同年份引用标准化位于前 23.8%",
+        "阅读时效分 90/100（论文年龄 4 年）",
+        "OpenAlex FWCI 1.22",
+        "近 2 年年均引用 8.0；此前 2 年年均 3.5",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-10T04:13:44",
+        "Detected subtopics: model_predictive_control",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "recommendation_utility 67.1 = base 61.1 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4312173571",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4312173571",
+        "openalex_id": "W4312173571",
+        "base_arxiv_id": null,
+        "doi": "10.3390/app13010154",
+        "title": "Model Predictive Control of Quadruped Robot Based on Reinforcement Learning",
+        "authors": [
+          "Zhitong Zhang",
+          "Xu Chang",
+          "Hongxu Ma",
+          "Honglei An",
+          "Lin Lang"
+        ],
+        "abstract": "For the locomotion control of a legged robot, both model predictive control (MPC) and reinforcement learning (RL) demonstrate powerful capabilities. MPC transfers the high-level task to the lower-level joint control based on the understanding of the robot and environment, model-free RL learns how to work through trial and error, and has the ability to evolve based on historical data. In this work, we proposed a novel framework to integrate the advantages of MPC and RL, we learned a policy for automatically choosing parameters for MPC. Unlike the end-to-end RL applications for control, our method does not need massive sampling data for training. Compared with the fixed parameters MPC, the learned MPC exhibits better locomotion performance and stability. The presented framework provides a new choice for improving the performance of traditional control.",
+        "publication_date": "2022-12-22",
+        "publication_year": 2022,
+        "source_name": "Applied Sciences",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9994000196456909
+          },
+          {
+            "id": "https://openalex.org/T11023",
+            "display_name": "Prosthetics and Rehabilitation Robotics",
+            "score": 0.9975000023841858
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9876999855041504
+          }
+        ],
+        "cited_by_count": 23,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          }
+        ],
+        "fwci": 1.2166,
+        "citation_normalized_percentile": 0.76218377,
+        "referenced_works": [
+          "W1492106702",
+          "W1836465849",
+          "W1977655452",
+          "W2113780589",
+          "W2491414412",
+          "W2771123153",
+          "W2907537824",
+          "W2911087563",
+          "W3093922502",
+          "W3104876774",
+          "W3105372678",
+          "W3113616534",
+          "W3197603398",
+          "W3199647478",
+          "W3200962355",
+          "W4221151319",
+          "W4235424703",
+          "W6631190155",
+          "W7009323136"
+        ],
+        "related_works": [
+          "W1990079087",
+          "W2060165215",
+          "W2101188133",
+          "W2110944602",
+          "W3202234113",
+          "W3213722473",
+          "W4248731570",
+          "W4306904969",
+          "W4362501864",
+          "W4380318855"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W3200962355"
+        ],
+        "discovered_at": "2026-08-06T04:27:55",
+        "last_considered_at": "2026-10-28T18:45:48+08:00",
+        "recommended_at": "2026-10-28T18:45:48+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-10T04:13:44",
+        "openalex_url": "https://openalex.org/W4312173571",
+        "landing_page_url": "https://doi.org/10.3390/app13010154",
+        "open_access_url": "https://doi.org/10.3390/app13010154",
+        "pdf_url": "https://www.mdpi.com/2076-3417/13/1/154/pdf?version=1672884622",
+        "research_fit": 22,
+        "video_potential": 51,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "legged robot",
+          "model predictive control",
+          "MPC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot",
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics"
+          }
+        ],
+        "historical_value_score": 61.1,
+        "historical_score_components": {
+          "research_relevance": 22.0,
+          "recency": 90.0,
+          "normalized_citation": 76.2,
+          "fwci": 40.6,
+          "citation_momentum": 100.0,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2022 年",
+          "同领域同年份引用标准化位于前 23.8%",
+          "阅读时效分 90/100（论文年龄 4 年）",
+          "OpenAlex FWCI 1.22",
+          "近 2 年年均引用 8.0；此前 2 年年均 3.5",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "model_predictive_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 61.1,
+      "recommendation_utility": 67.1,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4312173571",
+        "base_id": "openalex:W4312173571",
+        "version": 1,
+        "title": "Model Predictive Control of Quadruped Robot Based on Reinforcement Learning",
+        "authors": [
+          "Zhitong Zhang",
+          "Xu Chang",
+          "Hongxu Ma",
+          "Honglei An",
+          "Lin Lang"
+        ],
+        "published": "2022-12-22T00:00:00Z",
+        "updated": "2022-12-22T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "For the locomotion control of a legged robot, both model predictive control (MPC) and reinforcement learning (RL) demonstrate powerful capabilities. MPC transfers the high-level task to the lower-level joint control based on the understanding of the robot and environment, model-free RL learns how to work through trial and error, and has the ability to evolve based on historical data. In this work, we proposed a novel framework to integrate the advantages of MPC and RL, we learned a policy for automatically choosing parameters for MPC. Unlike the end-to-end RL applications for control, our method does not need massive sampling data for training. Compared with the fixed parameters MPC, the learned MPC exhibits better locomotion performance and stability. The presented framework provides a new choice for improving the performance of traditional control.",
+        "abs_url": "https://doi.org/10.3390/app13010154",
+        "pdf_url": "https://www.mdpi.com/2076-3417/13/1/154/pdf?version=1672884622",
+        "research_fit": 22,
+        "video_potential": 51,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "legged robot",
+          "model predictive control",
+          "MPC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot",
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
