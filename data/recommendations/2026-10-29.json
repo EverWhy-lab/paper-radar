@@ -1,0 +1,470 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-29",
+  "generated_at": "2026-10-29T19:02:06+08:00",
+  "mode": "incremental",
+  "candidate_count": 3013,
+  "historical_candidate_count": 684,
+  "recommendation_count": 1,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W4383109371",
+      "title": "Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning",
+      "takeaway": "This work addresses the difficulty of reward tuning in reinforcement learning for locomotion by extending adversarial motion priors so that a policy can learn multiple, discretely switchable motion styles, including styles combined with motion-data-free skills. The authors report real-world experiments on a wheeled-legged robot covering skills learned from existing RL controllers and trajectory optimization, such as ducking and walking, plus a novel transition between quadrupedal and humanoid configurations that requires standing up, navigating on two wheels, and sitting down. They also report that reverse playback of the stand-up movement helped the robot discover feasible sit-down behavior without manual reward tuning. When reading, inspect how style switching is represented and how the multiple priors are combined during training.",
+      "generated_at": "2026-10-29T11:07:14",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics, humanoid",
+        "research_fit 27 ≥ 18",
+        "核心方向：humanoid_loco_manipulation, robot_learning_posttraining",
+        "特定关键词：trajectory optimization",
+        "historical_value_score 64.9 ≥ 42.0",
+        "发表于 2023 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "阅读时效分 90/100（论文年龄 3 年）",
+        "OpenAlex FWCI 48.39",
+        "近 2 年年均引用 15.0；此前 2 年年均 22.0",
+        "由 1 个独立种子论文的单层引用图发现",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-10T04:13:52",
+        "Detected subtopics: trajectory_optimization",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 70.9 = base 64.9 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4383109371",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4383109371",
+        "openalex_id": "W4383109371",
+        "base_arxiv_id": null,
+        "doi": "10.1109/icra48891.2023.10160751",
+        "title": "Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning",
+        "authors": [
+          "Eric Vollenweider",
+          "Marko Bjelonic",
+          "Victor Klemm",
+          "Nikita Rudin",
+          "Joonho Lee",
+          "Marco Hutter"
+        ],
+        "abstract": "Reinforcement learning (RL) has emerged as a powerful approach for locomotion control of highly articulated robotic systems. However, one major challenge is the tedious process of tuning the reward function to achieve the desired motion style. To address this issue, imitation learning approaches such as adversarial motion priors have been proposed, which encourage a pre-defined motion style. In this work, we present an approach to enhance the concept of adversarial motion prior-based RL, allowing for multiple, discretely switchable motion styles. Our approach demonstrates that multiple styles and skills can be learned simultaneously without significant performance differences, even in combination with motion data-free skills. We conducted several real-world experiments using a wheeled-legged robot to validate our approach. The experiments involved learning skills from existing RL controllers and trajectory optimization, such as ducking and walking, as well as novel skills, such as switching between a quadrupedal and humanoid configuration. For the latter skill, the robot was required to stand up, navigate on two wheels, and sit down. Instead of manually tuning the sit-down motion, we found that a reverse playback of the stand-up movement helped the robot discover feasible sit-down behaviors and avoided the need for tedious reward function tuning.",
+        "publication_date": "2023-05-29",
+        "publication_year": 2023,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9979000091552734
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.9851999878883362
+          },
+          {
+            "id": "https://openalex.org/T10812",
+            "display_name": "Human Pose and Action Recognition",
+            "score": 0.980400025844574
+          }
+        ],
+        "cited_by_count": 79,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          }
+        ],
+        "fwci": 48.3914,
+        "citation_normalized_percentile": 0.9995561,
+        "referenced_works": [
+          "W1999874108",
+          "W2004167999",
+          "W2017026595",
+          "W2043878167",
+          "W2075005272",
+          "W2560647685",
+          "W2736601468",
+          "W2781726626",
+          "W2796290181",
+          "W2899718839",
+          "W2902332709",
+          "W2911087563",
+          "W2963277051",
+          "W2963373786",
+          "W3093326211",
+          "W3093922502",
+          "W3104515094",
+          "W3104876774",
+          "W3147968035",
+          "W3181074849",
+          "W3213974477",
+          "W4205430897",
+          "W4246543077",
+          "W4286963241",
+          "W4287324708",
+          "W4293160779",
+          "W6800004206"
+        ],
+        "related_works": [
+          "W1532965292",
+          "W2141098361",
+          "W2166112783",
+          "W2541058374",
+          "W2580650124",
+          "W2745063183",
+          "W2968424575",
+          "W3142333283",
+          "W4378364998",
+          "W4386190339"
+        ],
+        "discovery_source": [
+          "seed_graph:citing_works"
+        ],
+        "seed_paper_id": [
+          "openalex:W3093326211"
+        ],
+        "discovered_at": "2026-08-06T04:28:06",
+        "last_considered_at": "2026-10-29T19:02:06+08:00",
+        "recommended_at": "2026-10-29T19:02:06+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-10T04:13:52",
+        "openalex_url": "https://openalex.org/W4383109371",
+        "landing_page_url": "https://doi.org/10.1109/icra48891.2023.10160751",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 27,
+        "video_potential": 45,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "imitation learning",
+          "trajectory optimization"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "trajectory optimization"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, humanoid"
+          }
+        ],
+        "historical_value_score": 64.9,
+        "historical_score_components": {
+          "research_relevance": 27.0,
+          "recency": 90.0,
+          "normalized_citation": 100.0,
+          "fwci": 100.0,
+          "citation_momentum": 34.1,
+          "seed_provenance": 60.0,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2023 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "阅读时效分 90/100（论文年龄 3 年）",
+          "OpenAlex FWCI 48.39",
+          "近 2 年年均引用 15.0；此前 2 年年均 22.0",
+          "由 1 个独立种子论文的单层引用图发现",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "trajectory_optimization"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 64.9,
+      "recommendation_utility": 70.9,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4383109371",
+        "base_id": "openalex:W4383109371",
+        "version": 1,
+        "title": "Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning",
+        "authors": [
+          "Eric Vollenweider",
+          "Marko Bjelonic",
+          "Victor Klemm",
+          "Nikita Rudin",
+          "Joonho Lee",
+          "Marco Hutter"
+        ],
+        "published": "2023-05-29T00:00:00Z",
+        "updated": "2023-05-29T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Reinforcement learning (RL) has emerged as a powerful approach for locomotion control of highly articulated robotic systems. However, one major challenge is the tedious process of tuning the reward function to achieve the desired motion style. To address this issue, imitation learning approaches such as adversarial motion priors have been proposed, which encourage a pre-defined motion style. In this work, we present an approach to enhance the concept of adversarial motion prior-based RL, allowing for multiple, discretely switchable motion styles. Our approach demonstrates that multiple styles and skills can be learned simultaneously without significant performance differences, even in combination with motion data-free skills. We conducted several real-world experiments using a wheeled-legged robot to validate our approach. The experiments involved learning skills from existing RL controllers and trajectory optimization, such as ducking and walking, as well as novel skills, such as switching between a quadrupedal and humanoid configuration. For the latter skill, the robot was required to stand up, navigate on two wheels, and sit down. Instead of manually tuning the sit-down motion, we found that a reverse playback of the stand-up movement helped the robot discover feasible sit-down behaviors and avoided the need for tedious reward function tuning.",
+        "abs_url": "https://doi.org/10.1109/icra48891.2023.10160751",
+        "pdf_url": "",
+        "research_fit": 27,
+        "video_potential": 45,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "imitation learning",
+          "trajectory optimization"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "trajectory optimization"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, humanoid"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
