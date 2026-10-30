@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-10-29</title>
+  <title>Paper Radar — 2026-10-30</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-10-29 19:02</p>
+        <p class="header-updated">2026-10-30 18:59</p>
       </div>
     </div>
   </header>
@@ -31,38 +31,79 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="openalex:W4383109371" data-paper-id="openalex:W4383109371" data-category="high_impact_historical">
+      <article class="paper-card" id="arxiv:2610.40349" data-paper-id="arxiv:2610.40349" data-category="frontier_recent">
         <div class="card-topline">
-          <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W4383109371</span>
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2610.40349v1</span>
         </div>
-        <h3>Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning</h3>
-        <p class="authors">Eric Vollenweider, Marko Bjelonic, Victor Klemm, Nikita Rudin, Joonho Lee, Marco Hutter</p>
+        <h3>TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation</h3>
+        <p class="authors">Haozhe Zhang, Gu Zhang, Zirui Zou, Yuzheng Chen, Jinlong Wu, Zixuan Hu, Jianke Zhang, Yucheng Hu, Zhecheng Yuan, Huazhe Xu</p>
         <div class="metadata">
-          <span><b>Published</b> 2023-05-29</span>
-<span><b>Reading focus</b> trajectory_optimization</span>        </div>
+          <span><b>Published</b> 2026-10-30 00:06 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> cross_embodiment, dexterous_manipulation, tactile_manipulation</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>This work addresses the difficulty of reward tuning in reinforcement learning for locomotion by extending adversarial motion priors so that a policy can learn multiple, discretely switchable motion styles, including styles combined with motion-data-free skills. The authors report real-world experiments on a wheeled-legged robot covering skills learned from existing RL controllers and trajectory optimization, such as ducking and walking, plus a novel transition between quadrupedal and humanoid configurations that requires standing up, navigating on two wheels, and sitting down. They also report that reverse playback of the stand-up movement helped the robot discover feasible sit-down behavior without manual reward tuning. When reading, inspect how style switching is represented and how the multiple priors are combined during training.</p>
+          <p>TouchBridge addresses the problem that human demonstrations are a scalable data source for dexterous manipulation but sensing and hand-morphology differences hinder contact-rich transfer, and it tackles this with a hardware-software co-designed human-to-robot data pipeline whose Tac-Retarget component uses measured fingertip contact to align contact patches without object meshes, object-pose estimates, or physics simulation. Combined with visual synthesis and camera-anchored action conversion, it produces robot-domain demonstrations for fine-tuning a pretrained VLA model. Across four real-world contact-rich tasks, policies fine-tuned solely on converted human demonstrations reach 72.5% average success versus 77.5% with an equal number of teleoperated robot demonstrations, while collection is 7.0x faster, and Tac-Retarget outperforms DexPilot and UniDex by 25.0 and 42.5 percentage points under the same setup. Inspect how contact-patch correspondence is defined and how the no-simulation retargeting handles contact ambiguity.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Dexterous &amp; Multimodal Manipulation, Robot Data Scaling &amp; Sim-to-Real</span>
+<span><b>Subtopics</b> cross_embodiment, dexterous_manipulation, tactile_manipulation</span><span><b>Utility</b> 78.8 (base 77.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span>          </div>
+          <ul>
+<li>research_fit 77 ≥ 40</li><li>Core topics matched: vla_robot_foundation, dexterous_multimodal_manipulation, robot_data_scaling_sim2real</li><li>Specific keywords matched: vision-language-action, VLA, dexterous manipulation, robot data</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: cross_embodiment, dexterous_manipulation, tactile_manipulation</li><li>Personal domain affinity: preferred (+6; matched dexterous manipulation)</li><li>Subtopic: dexterous_manipulation</li><li>Recently recommended: 4 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = cross_embodiment, tactile_manipulation</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 78.8 = base 77.0 + affinity +6 + redundancy -4.2</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Human demonstrations offer an efficient and scalable source of data for dexterous robot manipulation, but differences in sensing and hand morphology complicate the transfer of contact-rich interactions. We present TouchBridge, a hardware--software co-designed framework for human-to-robot data transformation. A wearable human demonstration interface and a corresponding robot interface establish cross-embodiment correspondence in visual and fingertip tactile sensing. We introduce Tac-Retarget, a tactile-conditioned retargeting method that uses measured contact to align fingertip contact patches and preserve their spatial relations within and across hands. Unlike object-aware or simulation-based transfer pipelines, Tac-Retarget requires no object mesh, object-pose estimate, or physics simulation for retargeting, enabling direct and scalable conversion of human demonstrations into robot-domain training data. Combined with visual synthesis and camera-anchored action conversion, TouchBridge produces robot-domain demonstrations for fine-tuning a pretrained vision-language-action (VLA) model. Across four real-world contact-rich tasks, policies fine-tuned solely on TouchBridge-converted human demonstrations achieve a 72.5% average success rate, compared with 77.5% using an equal number of teleoperated robot demonstrations, while human demonstration collection is 7.0x faster. Under the same policy and training setup, Tac-Retarget outperforms DexPilot and UniDex by 25.0 and 42.5 percentage points, respectively.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.40349v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.40349v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2610.40349" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2610.40349" data-title="TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2610.40349" data-title="TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W3185776277" data-paper-id="openalex:W3185776277" data-category="high_impact_historical">
+        <div class="card-topline">
+          <span class="category category--high_impact_historical">领域内高影响力</span>
+          <span class="arxiv-id">W3185776277</span>
+        </div>
+        <h3>Legged Robot State Estimation With Dynamic Contact Event Information</h3>
+        <p class="authors">Joon-Ha Kim, Seungwoo Hong, Gwanghyeon Ji, Seung-Hun Jeon, Jemin Hwangbo, Jun-Ho Oh, Hae-Won Park</p>
+        <div class="metadata">
+          <span><b>Published</b> 2021-06-30</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> robot_state_estimation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This letter formulates legged-robot state estimation as a Maximum A Posteriori problem solved with Gauss-Newton, using Schur-complement marginalization to keep the problem fixed-size and deriving cost terms and Jacobians on the SO(3) manifold with a nominal-state plus variation reparameterization. It further proposes a slip rejection method to reduce errors from fault modeling of kinematics models. The algorithm is verified by comparison with the Invariant Extended Kalman Filter (IEKF) in real robot experiments across various environments, with the abstract reporting no numerical outcomes. The point to inspect is how slip rejection is triggered and how the MAP formulation and marginalization affect estimator behavior relative to the IEKF baseline.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 领域内高影响力</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Learning &amp; Policy Post-Training</span>
-<span><b>Subtopics</b> trajectory_optimization</span><span><b>Utility</b> 70.9 (base 64.9)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>OpenAlex citations</b> 79</span>          </div>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> robot_state_estimation</span><span><b>Utility</b> 60.4 (base 60.4)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 48</span>          </div>
           <ul>
-<li>机器人语境：robot, robotic, robotics, humanoid</li><li>research_fit 27 ≥ 18</li><li>核心方向：humanoid_loco_manipulation, robot_learning_posttraining</li><li>特定关键词：trajectory optimization</li><li>historical_value_score 64.9 ≥ 42.0</li><li>发表于 2023 年</li><li>同领域同年份引用标准化位于前 0.1%</li><li>阅读时效分 90/100（论文年龄 3 年）</li><li>OpenAlex FWCI 48.39</li><li>近 2 年年均引用 15.0；此前 2 年年均 22.0</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-10T04:13:52</li><li>Detected subtopics: trajectory_optimization</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 70.9 = base 64.9 + affinity +6 + redundancy -0</li>          </ul>
+<li>机器人语境：robot, robotic, robotics, manipulation</li><li>research_fit 22 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：robot state estimation</li><li>historical_value_score 60.4 ≥ 42.0</li><li>发表于 2021 年</li><li>同领域同年份引用标准化位于前 15.7%</li><li>阅读时效分 90/100（论文年龄 5 年）</li><li>OpenAlex FWCI 1.82</li><li>近 2 年年均引用 11.5；此前 2 年年均 8.5</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:03</li><li>Detected subtopics: robot_state_estimation</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 60.4 = base 60.4 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Reinforcement learning (RL) has emerged as a powerful approach for locomotion control of highly articulated robotic systems. However, one major challenge is the tedious process of tuning the reward function to achieve the desired motion style. To address this issue, imitation learning approaches such as adversarial motion priors have been proposed, which encourage a pre-defined motion style. In this work, we present an approach to enhance the concept of adversarial motion prior-based RL, allowing for multiple, discretely switchable motion styles. Our approach demonstrates that multiple styles and skills can be learned simultaneously without significant performance differences, even in combination with motion data-free skills. We conducted several real-world experiments using a wheeled-legged robot to validate our approach. The experiments involved learning skills from existing RL controllers and trajectory optimization, such as ducking and walking, as well as novel skills, such as switching between a quadrupedal and humanoid configuration. For the latter skill, the robot was required to stand up, navigate on two wheels, and sit down. Instead of manually tuning the sit-down motion, we found that a reverse playback of the stand-up movement helped the robot discover feasible sit-down behaviors and avoided the need for tedious reward function tuning.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>This letter presents a state estimation algorithm for the legged robot by defining the problem as a Maximum A Posteriori (MAP) estimation problem and solving the problem with the Gauss-Newton algorithm. Moreover, marginalization by the Schur Complement method is adopted to make a fixed size problem. Each component of the cost function and its Jacobian are derived utilizing the SO(3) manifold structure, while we reparameterize the state with nominal state and variation to make linear algebra and vector calculus applied properly. Furthermore, a slip rejection method is proposed to reduce the erroneous effect of fault modeling of kinematics models. The proposed algorithm is verified by comparison with the Invariant Extended Kalman Filter (IEKF) in real robot experiments on various environments.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W4383109371" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/icra48891.2023.10160751" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W4383109371" data-title="Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W3185776277" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2021.3093876" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W3185776277" data-title="Legged Robot State Estimation With Dynamic Contact Event Information" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W4383109371" data-title="Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W3185776277" data-title="Legged Robot State Estimation With Dynamic Contact Event Information" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
