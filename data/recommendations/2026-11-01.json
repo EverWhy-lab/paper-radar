@@ -1,0 +1,663 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-01",
+  "generated_at": "2026-11-01T19:27:02+08:00",
+  "mode": "incremental",
+  "candidate_count": 2742,
+  "historical_candidate_count": 684,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 1,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7138116831",
+      "title": "Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation",
+      "takeaway": "M2-ResiPolicy targets contact-rich manipulation where visual imitation learning misses friction and incipient-slip cues and struggles to balance global coherence with local reactive feedback. The architecture pairs a 10 Hz Master-Guidance Policy, which generates action chunks from a diffusion-based backbone and uses tactile-intensity-driven adaptive fusion to reweight vision and touch, with a 60 Hz Micro-Residual Corrector, a lightweight GRU producing real-time compensation from TCP wrench feedback, plus a force-mixed PBIC execution layer for contact-force regulation. Experiments on fragile grasping and precision insertion report a 93% damage-free success rate in chip grasping and better force-regulation stability than Diffusion Policy (DP) and Reactive Diffusion Policy (RDP). Inspect how the adaptive fusion weights are computed and how the two control rates are coupled.",
+      "generated_at": "2026-11-01T11:31:38",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7169778200",
+      "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-Based Reinforcement Learning With Zero-Shot Sim-to-Real Transfer",
+      "takeaway": "This method paper addresses safe, scalable cooperative payload transport by multiple drones, where coupled drone-cable-payload dynamics and dynamic, unstructured environments limit existing approaches. It introduces a minimal 2D abstraction preserving task-relevant drone-payload coupling for efficient large-scale learning, and trains a fully distributed policy with Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO) under domain randomization over team size and physical parameters, enabling zero-shot sim-to-real transfer without fine-tuning. Real-world evaluations report that one learned policy generalizes across team sizes and task scenarios, and multi-group hardware experiments show it operating safely with other drone teams as moving obstacles. Inspect how the 2D abstraction is constructed and what the CBF guarantees cover.",
+      "generated_at": "2026-11-01T11:31:38",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 55 ≥ 35",
+        "Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: long-horizon planning, diffusion policy, contact-rich manipulation",
+        "Detected subtopics: diffusion_flow_policy",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: diffusion_flow_policy",
+        "Recently recommended: 5 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 43.0 = base 55.0 + affinity +0 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7138116831",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7138116831",
+        "openalex_id": "W7138116831",
+        "base_arxiv_id": "2603.15152",
+        "doi": "10.1109/lra.2026.3739024",
+        "title": "Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation",
+        "authors": [
+          "Xingting Li",
+          "Yifan Xie",
+          "Han Liu",
+          "Wei Hou",
+          "Guangyu Chen",
+          "Shoujie Li",
+          "Wenbo Ding"
+        ],
+        "abstract": "Robotic contact-rich and fine-grained manipulation remains a significant challenge due to complex interaction dynamics and the competing requirements of multi-timescale control. While current visual imitation learning methods excel at long-horizon planning, they often fail to perceive critical interaction cues like friction variations or incipient slip, and struggle to balance global task coherence with local reactive feedback. To address these challenges, we propose M2-ResiPolicy, a novel Master-Micro residual control architecture that synergizes high-level action guidance with low-level correction. The framework consists of a Master-Guidance Policy (MGP) operating at 10 Hz, which generates temporally consistent action chunks via a diffusion-based backbone and employs a tactile-intensity-driven adaptive fusion mechanism to dynamically modulate perceptual weights between vision and touch. Simultaneously, a high-frequency (60 Hz) Micro-Residual Corrector (MRC) utilizes a lightweight GRU to provide real-time action compensation based on TCP wrench feedback. This policy is further integrated with a force-mixed PBIC execution layer, effectively regulating contact forces to ensure interaction safety. Experiments across several demanding tasks including fragile object grasping and precision insertion, demonstrate that M2-ResiPolicy significantly outperforms standard Diffusion Policy (DP) and state-of-the-art Reactive Diffusion Policy (RDP), achieving a 93\\% damage-free success rate in chip grasping and superior force regulation stability.",
+        "publication_date": "2026-10-01",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9970999956130981
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.0027000000700354576
+          },
+          {
+            "id": "https://openalex.org/T11687",
+            "display_name": "Teleoperation and Haptic Systems",
+            "score": 9.999999747378752e-05
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.13110908,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-12T09:37:12",
+        "last_considered_at": "2026-11-01T19:27:02+08:00",
+        "recommended_at": "2026-11-01T19:27:02+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-10-26T08:01:51",
+        "openalex_url": "https://openalex.org/W7138116831",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3739024",
+        "open_access_url": "http://arxiv.org/abs/2603.15152",
+        "pdf_url": "https://arxiv.org/pdf/2603.15152",
+        "research_fit": 55,
+        "video_potential": 41,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "long-horizon planning",
+          "imitation learning",
+          "diffusion policy",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon planning"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, teleoperation"
+          }
+        ],
+        "historical_value_score": 52.9,
+        "historical_score_components": {
+          "research_relevance": 55.0,
+          "recency": 100.0,
+          "normalized_citation": 13.1,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 86.9%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 55.0,
+      "recommendation_utility": 43.0,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2603.15152",
+        "base_id": "2603.15152",
+        "version": 1,
+        "title": "Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation",
+        "authors": [
+          "Xingting Li",
+          "Yifan Xie",
+          "Han Liu",
+          "Wei Hou",
+          "Guangyu Chen",
+          "Shoujie Li",
+          "Wenbo Ding"
+        ],
+        "published": "2026-10-01T00:00:00Z",
+        "updated": "2026-10-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Robotic contact-rich and fine-grained manipulation remains a significant challenge due to complex interaction dynamics and the competing requirements of multi-timescale control. While current visual imitation learning methods excel at long-horizon planning, they often fail to perceive critical interaction cues like friction variations or incipient slip, and struggle to balance global task coherence with local reactive feedback. To address these challenges, we propose M2-ResiPolicy, a novel Master-Micro residual control architecture that synergizes high-level action guidance with low-level correction. The framework consists of a Master-Guidance Policy (MGP) operating at 10 Hz, which generates temporally consistent action chunks via a diffusion-based backbone and employs a tactile-intensity-driven adaptive fusion mechanism to dynamically modulate perceptual weights between vision and touch. Simultaneously, a high-frequency (60 Hz) Micro-Residual Corrector (MRC) utilizes a lightweight GRU to provide real-time action compensation based on TCP wrench feedback. This policy is further integrated with a force-mixed PBIC execution layer, effectively regulating contact forces to ensure interaction safety. Experiments across several demanding tasks including fragile object grasping and precision insertion, demonstrate that M2-ResiPolicy significantly outperforms standard Diffusion Policy (DP) and state-of-the-art Reactive Diffusion Policy (RDP), achieving a 93\\% damage-free success rate in chip grasping and superior force regulation stability.",
+        "abs_url": "https://arxiv.org/abs/2603.15152",
+        "pdf_url": "https://arxiv.org/pdf/2603.15152",
+        "research_fit": 55,
+        "video_potential": 41,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "long-horizon planning",
+          "imitation learning",
+          "diffusion policy",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon planning"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning",
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robotics, sim-to-real",
+        "research_fit 40 ≥ 18",
+        "核心方向：robot_data_scaling_sim2real",
+        "特定关键词：domain randomization, CBF, control barrier function",
+        "historical_value_score 60.1 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 14.6%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-09-14T08:04:06",
+        "Detected subtopics: sim_to_real, safety_critical_control",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 60.1 = base 60.1 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7169778200",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7169778200",
+        "openalex_id": "W7169778200",
+        "base_arxiv_id": "2607.20665",
+        "doi": "10.1109/lra.2026.3715346",
+        "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-Based Reinforcement Learning With Zero-Shot Sim-to-Real Transfer",
+        "authors": [
+          "Jaeyoun Choi",
+          "Oswin So",
+          "Songyuan Zhang",
+          "Cooper Taylor",
+          "Chuchu Fan"
+        ],
+        "abstract": "Multi-drone payload transportation has emerged as a promising research paradigm with potential applications in construction, logistics, and disaster response. However, the complex coupled dynamics among drones, cables, and payloads pose significant challenges, and existing approaches remain limited in safety and scalability, particularly in dynamic and unstructured environments. In this work, we propose a learning-based framework for safe and scalable multi-drone cooperative payload transport. We introduce a minimal 2D abstraction that preserves the task-relevant drone-payload coupling required for coordination and safety, while remaining computationally efficient for large-scale learning. Using domain randomization over team size and physical parameters, we train a fully distributed policy via Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO), enabling robust zero-shot sim-to-real transfer without fine-tuning. Extensive real-world evaluations demonstrate that a single learned policy generalizes across varying team sizes and task scenarios. Furthermore, multi-group hardware experiments show that the same policy can safely operate in dynamic environments, where other drone teams act as moving obstacles. These results indicate that the proposed framework enables efficient, safe, and scalable multi-drone payload transportation with strong generalization to complex real-world conditions.",
+        "publication_date": "2026-07-20",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11133",
+            "display_name": "UAV Applications and Optimization",
+            "score": 0.9045000076293945
+          },
+          {
+            "id": "https://openalex.org/T10249",
+            "display_name": "Distributed Control Multi-Agent Systems",
+            "score": 0.008799999952316284
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.007699999958276749
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.85443845,
+        "referenced_works": [],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-11-01T19:27:02+08:00",
+        "recommended_at": "2026-11-01T19:27:02+08:00",
+        "recommendation_count": 3,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-09-14T08:04:06",
+        "openalex_url": "https://openalex.org/W7169778200",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3715346",
+        "open_access_url": "https://arxiv.org/abs/2607.20665",
+        "pdf_url": "https://arxiv.org/pdf/2607.20665",
+        "research_fit": 40,
+        "video_potential": 24,
+        "matched_topics": [
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "domain randomization",
+          "CBF",
+          "control barrier function"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real",
+              "domain randomization"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "CBF",
+              "control barrier function"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotics, sim-to-real"
+          }
+        ],
+        "historical_value_score": 60.1,
+        "historical_score_components": {
+          "research_relevance": 40.0,
+          "recency": 100.0,
+          "normalized_citation": 85.4,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 14.6%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real",
+        "safety_critical_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 60.1,
+      "recommendation_utility": 60.1,
+      "days_since_same_subtopic": 11,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2607.20665",
+        "base_id": "2607.20665",
+        "version": 1,
+        "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-Based Reinforcement Learning With Zero-Shot Sim-to-Real Transfer",
+        "authors": [
+          "Jaeyoun Choi",
+          "Oswin So",
+          "Songyuan Zhang",
+          "Cooper Taylor",
+          "Chuchu Fan"
+        ],
+        "published": "2026-07-20T00:00:00Z",
+        "updated": "2026-07-20T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Multi-drone payload transportation has emerged as a promising research paradigm with potential applications in construction, logistics, and disaster response. However, the complex coupled dynamics among drones, cables, and payloads pose significant challenges, and existing approaches remain limited in safety and scalability, particularly in dynamic and unstructured environments. In this work, we propose a learning-based framework for safe and scalable multi-drone cooperative payload transport. We introduce a minimal 2D abstraction that preserves the task-relevant drone-payload coupling required for coordination and safety, while remaining computationally efficient for large-scale learning. Using domain randomization over team size and physical parameters, we train a fully distributed policy via Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO), enabling robust zero-shot sim-to-real transfer without fine-tuning. Extensive real-world evaluations demonstrate that a single learned policy generalizes across varying team sizes and task scenarios. Furthermore, multi-group hardware experiments show that the same policy can safely operate in dynamic environments, where other drone teams act as moving obstacles. These results indicate that the proposed framework enables efficient, safe, and scalable multi-drone payload transportation with strong generalization to complex real-world conditions.",
+        "abs_url": "https://arxiv.org/abs/2607.20665",
+        "pdf_url": "https://arxiv.org/pdf/2607.20665",
+        "research_fit": 40,
+        "video_potential": 24,
+        "matched_topics": [
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "sim-to-real",
+          "domain randomization",
+          "CBF",
+          "control barrier function"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real",
+              "domain randomization"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "CBF",
+              "control barrier function"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotics",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotics, sim-to-real"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
