@@ -1,0 +1,1138 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-03",
+  "generated_at": "2026-11-03T20:13:59+08:00",
+  "mode": "incremental",
+  "candidate_count": 3703,
+  "historical_candidate_count": 726,
+  "recommendation_count": 5,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 1,
+    "model_based_recent": 0,
+    "review_knowledge_map": 1,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2611.03647",
+      "title": "Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations",
+      "takeaway": "Pixel-UMI addresses the embodiment gap when learning whole-body mobile manipulation policies from sensorized human demonstrations. Environment-Aware Retargeting combines reconstructed scene geometry with demonstrated head and gripper trajectories to produce collision-aware joint and base targets, delay-calibrated action assignment converts them into actions, Retargeting-Error-Aware Masking downweights mismatched viewpoints during training, and on-policy human corrections via DAgger target contact-rich interactions. Across five tasks covering articulated objects, deformable objects, constrained-space reaching, whole-body collision avoidance, and contact-rich bimanual coordination, the authors report 87.0% average task progress. Inspect how retargeting residuals are computed and used for masking, and how DAgger corrections are integrated.",
+      "generated_at": "2026-11-03T12:20:11",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2611.03163",
+      "title": "FineCraft: Enhancing VLA Models for Fine-Grained Manipulation",
+      "takeaway": "FineCraft targets fine-grained manipulation, where instruction grounding, local visual precision, and sustained execution must hold together, in the MetaFine Challenge setting. It routes tasks through a mixture of independently adapted DINOv2-DiT or pretrained π_{0.5} policies behind a common observation-action interface, using local visual features to locate instructed object parts, demonstrations and expert continuations to teach actions, and new observations for replanning. The authors report fourth place with an overall score of 0.878, exceeding the published reference on all five tasks, with official results and local diagnostics covering visual perturbations, instruction changes, and multi-stage manipulation. Inspect the routing rule and how local features are injected into each policy.",
+      "generated_at": "2026-11-03T12:20:11",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7212056598",
+      "title": "Anti-Gravity Walking by a Flying Humanoid Robot via Thrust-Rate Input Whole-Body Model Predictive Control",
+      "takeaway": "This work formulates real-time whole-body MPC for anti-gravity bipedal walking by a flying humanoid, where contact switching during walking causes discontinuous dynamic structure and thrust spikes. Using thrust-rate as the control input keeps thrust trajectories continuous across contact switches while preserving the sparse optimal-control structure for fast computation, and lower bounds on the foot-normal contact force are introduced and smoothly transferred during double support. The authors report simulation and hardware demonstration of anti-gravity walking, describing it as the first demonstration of multi-contact whole-body MPC for a transformable aerial robot and walking beyond the ground. Inspect the thrust-rate formulation and contact-force bound transfer.",
+      "generated_at": "2026-11-03T12:20:11",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4398796510",
+      "title": "A Survey on Vision--Language--Action Models for Embodied AI",
+      "takeaway": "This survey maps vision-language-action models for embodied AI, organizing the literature into three lines: individual VLA components, VLA-based control policies that predict low-level actions, and high-level task planners that decompose long-horizon tasks into subtasks to guide VLAs under general instructions. It also summarizes relevant resources including datasets, simulators, and benchmarks, then discusses challenges and future directions, with a curated repository linked. Use it as a knowledge map for locating work along the component, policy, and planner axes and for finding associated datasets and benchmarks; it is a review and does not propose a new method.",
+      "generated_at": "2026-11-03T12:20:11",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7170072204",
+      "title": "Embodied Tree of Thoughts: Deliberate Manipulation Planning With Embodied World Model",
+      "takeaway": "The supplied metadata for this paper contains no abstract, so only the title can be reported: Embodied Tree of Thoughts, described as deliberate manipulation planning with an embodied world model, published in IEEE Robotics and Automation Letters. No problem statement, method details, reported evidence, or technical point to inspect can be stated from the available source, and the title alone should not be treated as a validated claim. Consult the full text before relying on any characterization of its approach or results.",
+      "generated_at": "2026-11-03T12:20:11",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 78 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation, robot_data_scaling_sim2real",
+        "Specific keywords matched: whole-body manipulation, mobile manipulation, UMI",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched whole-body manipulation, whole body manipulation, mobile manipulation)",
+        "recommendation_utility 84.0 = base 78.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.03647",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 78.0,
+      "recommendation_utility": 84.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.03647v1",
+        "base_id": "2611.03647",
+        "version": 1,
+        "title": "Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations",
+        "authors": [
+          "Jason Jingzhou Liu",
+          "Tony Tao",
+          "Deepak Pathak",
+          "Ruslan Salakhutdinov"
+        ],
+        "published": "2026-11-02T18:59:32Z",
+        "updated": "2026-11-02T18:59:32Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.CV",
+          "cs.LG",
+          "eess.SY"
+        ],
+        "summary": "Sensorized human demonstrations offer scalable data for mobile manipulation, but embodiment differences complicate policy learning. We present Pixel-UMI, a pipeline for learning environment-aware whole-body policies from human data. We first introduce Environment-Aware Retargeting (EAR), which combines reconstructed scene geometry with demonstrated head and gripper trajectories to determine robot posture and generate collision-aware joint and base targets. Delay-calibrated action assignment converts these trajectories into actions. However, kinematic differences can leave residual pose errors, creating viewpoint mismatches between human demonstrations and robot observations. We therefore introduce Retargeting-Error-Aware Masking (REAM), which uses these errors during training to reduce reliance on mismatched views at deployment. Finally, because estimated actions cannot fully capture contact-rich interactions, we collect on-policy human corrections through DAgger to improve performance. We evaluate Pixel-UMI on five challenging tasks spanning articulated-object manipulation, deformable-object handling, constrained-space reaching, whole-body collision avoidance, and contact-rich bimanual coordination, achieving 87.0% average task progress. Video results are available at https://pixel-robot.com/pixel-umi",
+        "abs_url": "https://arxiv.org/abs/2611.03647v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.03647v1",
+        "research_fit": 78,
+        "video_potential": 47,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "whole-body manipulation",
+          "mobile manipulation",
+          "UMI"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "whole-body manipulation",
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "UMI"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "mobile manipulation",
+              "whole-body manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "mobile manipulation",
+              "whole-body manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, mobile manipulation, whole-body manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "whole-body"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "policy learning"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 52 ≥ 40",
+        "Core topics matched: vla_robot_foundation",
+        "Specific keywords matched: VLA",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.03163",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 52.0,
+      "recommendation_utility": 52.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.03163v1",
+        "base_id": "2611.03163",
+        "version": 1,
+        "title": "FineCraft: Enhancing VLA Models for Fine-Grained Manipulation",
+        "authors": [
+          "Shuaike Zhang",
+          "Ziheng Quan",
+          "Junhao Ran",
+          "Muhe Ding",
+          "Shaokun Wang",
+          "Jianlong Wu"
+        ],
+        "published": "2026-11-02T14:03:49Z",
+        "updated": "2026-11-02T14:03:49Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Fine-grained manipulation couples instruction grounding, local visual precision, and sustained execution. We present FineCraft, a framework that adapts pretrained models for fine-grained manipulation in the MetaFine Challenge. A task-routed mixture of policies selects independently adapted DINOv2-DiT or pretrained $π_{0.5}$ policies through a common observation-action interface. Local visual features help identify the instructed object parts, demonstrations and expert continuations teach the required actions, and new observations guide replanning during execution. FineCraft ranks fourth with an overall score of $0.878$, exceeding the published reference on all five tasks. Official results and local diagnostics characterize performance across visual perturbations, instruction changes, and multi-stage manipulation. Code is available at https://github.com/eqcy/FineCraft",
+        "abs_url": "https://arxiv.org/abs/2611.03163v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.03163v1",
+        "research_fit": 52,
+        "video_potential": 31,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 42 ≥ 35",
+        "Core topics matched: humanoid_loco_manipulation",
+        "Specific keywords matched: humanoid robot, model predictive control, MPC",
+        "Detected subtopics: model_predictive_control, trajectory_optimization",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "Subtopic: trajectory_optimization",
+        "Recently recommended: 5 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = model_predictive_control",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 43.8 = base 42.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7212056598",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7212056598",
+        "openalex_id": "W7212056598",
+        "base_arxiv_id": "2609.07544",
+        "doi": "10.1109/lra.2026.3734888",
+        "title": "Anti-Gravity Walking by a Flying Humanoid Robot via Thrust-Rate Input Whole-Body Model Predictive Control",
+        "authors": [
+          "Kazuki Sugihara",
+          "Kei Okada"
+        ],
+        "abstract": "Flying humanoids are expected to perform tasks in diverse environments, while their existing locomotion is mainly limited to aerial flight and ground walking. The capability to move in complex three-dimensional space can greatly expand their application range. For such walking motion on ceilings and similar anti-gravity environments, whole-body MPC is effective. However, the discontinuous changes in dynamic structure accompanying contact switching during walking can induce thrust spikes, resulting in control instability. Therefore, in this work, we propose and implement a real-time whole-body MPC framework for anti-gravity bipedal walking. First, we formulate whole-body MPC using the time derivative of thrust, namely thrust-rate, as the control input. This formulation guarantees continuity of the thrust trajectory during contact switching while preserving the sparse structure of the optimal control problem for fast computation. Second, we address the lack of natural support forces in anti-gravity environments. We introduce lower bounds on the foot-normal component of the contact force, and smoothly transfer them during the doublesupport phase. Finally, we implement the proposed framework and demonstrate anti-gravity walking by a flying humanoid through simulation and a hardware experiment. To the best of our knowledge, this is the first demonstration of multi-contact whole-body MPC for a transformable aerial robot and walking by a flying humanoid beyond the ground.",
+        "publication_date": "2026-09-18",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9926999807357788
+          },
+          {
+            "id": "https://openalex.org/T10791",
+            "display_name": "Advanced Control Systems Optimization",
+            "score": 0.0019000000320374966
+          },
+          {
+            "id": "https://openalex.org/T11615",
+            "display_name": "Control and Dynamics of Mobile Robots",
+            "score": 0.001500000013038516
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.58234711,
+        "referenced_works": [],
+        "related_works": [
+          "W2077941066",
+          "W2335044248",
+          "W2896324166",
+          "W2963536429",
+          "W4313549808",
+          "W4406051526",
+          "W6891925575",
+          "W7116741417",
+          "W7124153822",
+          "W7160506945"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-05T09:30:50",
+        "last_considered_at": "2026-11-03T20:13:59+08:00",
+        "recommended_at": "2026-11-03T20:13:59+08:00",
+        "recommendation_count": 3,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-02T09:50:06",
+        "openalex_url": "https://openalex.org/W7212056598",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3734888",
+        "open_access_url": "https://arxiv.org/abs/2609.07544",
+        "pdf_url": "https://arxiv.org/pdf/2609.07544",
+        "research_fit": 42,
+        "video_potential": 64,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "model predictive control",
+          "MPC",
+          "optimal control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC",
+              "optimal control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, humanoid"
+          }
+        ],
+        "historical_value_score": 56.1,
+        "historical_score_components": {
+          "research_relevance": 42.0,
+          "recency": 100.0,
+          "normalized_citation": 58.2,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 41.8%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "model_predictive_control",
+        "trajectory_optimization"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 42.0,
+      "recommendation_utility": 43.8,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2609.07544",
+        "base_id": "2609.07544",
+        "version": 1,
+        "title": "Anti-Gravity Walking by a Flying Humanoid Robot via Thrust-Rate Input Whole-Body Model Predictive Control",
+        "authors": [
+          "Kazuki Sugihara",
+          "Kei Okada"
+        ],
+        "published": "2026-09-18T00:00:00Z",
+        "updated": "2026-09-18T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Flying humanoids are expected to perform tasks in diverse environments, while their existing locomotion is mainly limited to aerial flight and ground walking. The capability to move in complex three-dimensional space can greatly expand their application range. For such walking motion on ceilings and similar anti-gravity environments, whole-body MPC is effective. However, the discontinuous changes in dynamic structure accompanying contact switching during walking can induce thrust spikes, resulting in control instability. Therefore, in this work, we propose and implement a real-time whole-body MPC framework for anti-gravity bipedal walking. First, we formulate whole-body MPC using the time derivative of thrust, namely thrust-rate, as the control input. This formulation guarantees continuity of the thrust trajectory during contact switching while preserving the sparse structure of the optimal control problem for fast computation. Second, we address the lack of natural support forces in anti-gravity environments. We introduce lower bounds on the foot-normal component of the contact force, and smoothly transfer them during the doublesupport phase. Finally, we implement the proposed framework and demonstrate anti-gravity walking by a flying humanoid through simulation and a hardware experiment. To the best of our knowledge, this is the first demonstration of multi-contact whole-body MPC for a transformable aerial robot and walking by a flying humanoid beyond the ground.",
+        "abs_url": "https://arxiv.org/abs/2609.07544",
+        "pdf_url": "https://arxiv.org/pdf/2609.07544",
+        "research_fit": 42,
+        "video_potential": 64,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "model predictive control",
+          "MPC",
+          "optimal control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC",
+              "optimal control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, humanoid"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robotic, vision-language-action",
+        "research_fit 32 ≥ 18",
+        "核心方向：vla_robot_foundation",
+        "特定关键词：vision-language-action, VLA",
+        "historical_value_score 77.6 ≥ 50.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 0.2%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 42.33",
+        "近 2 年年均引用 9.0；此前 1 年年均 2.0",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-08-24T03:32:01",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 77.6 = base 77.6 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4398796510",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4398796510",
+        "openalex_id": "W4398796510",
+        "base_arxiv_id": "2405.14093",
+        "doi": "10.1109/tnnls.2025.3650584",
+        "title": "A Survey on Vision--Language--Action Models for Embodied AI",
+        "authors": [
+          "Yueen Ma",
+          "Zixing Song",
+          "Yuzheng Zhuang",
+          "Jianye Hao",
+          "Irwin King"
+        ],
+        "abstract": "Embodied AI is widely recognized as a cornerstone of artificial general intelligence (AGI) because it involves controlling embodied agents to perform tasks in the physical world. Building on the success of large language models (LLMs) and vision-language models (VLMs), a new category of multimodal models-referred to as vision-language-action (VLA) models-has emerged to address language-conditioned robotic tasks in embodied AI by leveraging their distinct ability to generate actions. The recent proliferation of VLAs necessitates a comprehensive survey to capture the rapidly evolving landscape. To this end, we present the first survey on VLAs for embodied AI. This work provides a detailed taxonomy of VLAs, organized into three major lines of research. The first line focuses on individual components of VLAs. The second line is dedicated to developing VLA-based control policies adept at predicting low-level actions. The third line comprises high-level task planners capable of decomposing long-horizon tasks into a sequence of subtasks, thereby guiding VLAs to follow more general user instructions. Furthermore, we provide an extensive summary of relevant resources, including datasets, simulators, and benchmarks. Finally, we discuss the challenges facing VLAs and outline promising future directions in embodied AI. A curated repository associated with this survey is available at: https://github.com/yueen-ma/Awesome-VLA.",
+        "publication_date": "2026-04-28",
+        "publication_year": 2026,
+        "source_name": "IEEE Transactions on Neural Networks and Learning Systems",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.9171000123023987
+          }
+        ],
+        "cited_by_count": 20,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ],
+        "fwci": 42.3302,
+        "citation_normalized_percentile": 0.99818082,
+        "referenced_works": [],
+        "related_works": [
+          "W1001771077",
+          "W2001662723",
+          "W2062819913",
+          "W2133485962",
+          "W2149544884",
+          "W2513760693",
+          "W2753017648",
+          "W3204019825",
+          "W4211188312",
+          "W4246694033"
+        ],
+        "discovery_source": [
+          "knowledge_map_search:VLA robotics survey",
+          "topic_search:VLA robotics survey"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:19",
+        "last_considered_at": "2026-11-03T20:13:59+08:00",
+        "recommended_at": "2026-11-03T20:13:59+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:32:01",
+        "openalex_url": "https://openalex.org/W4398796510",
+        "landing_page_url": "https://doi.org/10.1109/tnnls.2025.3650584",
+        "open_access_url": "https://arxiv.org/abs/2405.14093",
+        "pdf_url": "https://arxiv.org/pdf/2405.14093",
+        "research_fit": 32,
+        "video_potential": 8,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotic",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotic",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotic, vision-language-action"
+          }
+        ],
+        "historical_value_score": 77.6,
+        "historical_score_components": {
+          "research_relevance": 32.0,
+          "recency": 100.0,
+          "normalized_citation": 99.8,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.2%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 42.33",
+          "近 2 年年均引用 9.0；此前 1 年年均 2.0",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "survey",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 77.6,
+      "recommendation_utility": 77.6,
+      "days_since_same_subtopic": 31,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2405.14093",
+        "base_id": "2405.14093",
+        "version": 1,
+        "title": "A Survey on Vision--Language--Action Models for Embodied AI",
+        "authors": [
+          "Yueen Ma",
+          "Zixing Song",
+          "Yuzheng Zhuang",
+          "Jianye Hao",
+          "Irwin King"
+        ],
+        "published": "2026-04-28T00:00:00Z",
+        "updated": "2026-04-28T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Embodied AI is widely recognized as a cornerstone of artificial general intelligence (AGI) because it involves controlling embodied agents to perform tasks in the physical world. Building on the success of large language models (LLMs) and vision-language models (VLMs), a new category of multimodal models-referred to as vision-language-action (VLA) models-has emerged to address language-conditioned robotic tasks in embodied AI by leveraging their distinct ability to generate actions. The recent proliferation of VLAs necessitates a comprehensive survey to capture the rapidly evolving landscape. To this end, we present the first survey on VLAs for embodied AI. This work provides a detailed taxonomy of VLAs, organized into three major lines of research. The first line focuses on individual components of VLAs. The second line is dedicated to developing VLA-based control policies adept at predicting low-level actions. The third line comprises high-level task planners capable of decomposing long-horizon tasks into a sequence of subtasks, thereby guiding VLAs to follow more general user instructions. Furthermore, we provide an extensive summary of relevant resources, including datasets, simulators, and benchmarks. Finally, we discuss the challenges facing VLAs and outline promising future directions in embodied AI. A curated repository associated with this survey is available at: https://github.com/yueen-ma/Awesome-VLA.",
+        "abs_url": "https://arxiv.org/abs/2405.14093",
+        "pdf_url": "https://arxiv.org/pdf/2405.14093",
+        "research_fit": 32,
+        "video_potential": 8,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotic",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotic",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotic, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, manipulation",
+        "research_fit 30 ≥ 18",
+        "核心方向：world_model_embodied_reasoning",
+        "特定关键词：embodied world model",
+        "historical_value_score 51.8 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 18.9%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-09-14T08:04:06",
+        "Detected subtopics: robot_world_model",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 51.8 = base 51.8 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7170072204",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7170072204",
+        "openalex_id": "W7170072204",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3716133",
+        "title": "Embodied Tree of Thoughts: Deliberate Manipulation Planning With Embodied World Model",
+        "authors": [
+          "Wenying Xu",
+          "Mingkang Zhang",
+          "Cindy Wang",
+          "Rui Fang",
+          "Lusong Li",
+          "Jing Xu",
+          "Jiayuan Gu",
+          "Zecui Zeng",
+          "Rui Chen"
+        ],
+        "abstract": null,
+        "publication_date": "2026-07-22",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T11883",
+            "display_name": "Embodied and Extended Cognition",
+            "score": 0.13330000638961792
+          },
+          {
+            "id": "https://openalex.org/T10709",
+            "display_name": "Social Robot Interaction and HRI",
+            "score": 0.07919999957084656
+          },
+          {
+            "id": "https://openalex.org/T11574",
+            "display_name": "Artificial Intelligence in Games",
+            "score": 0.06930000334978104
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.81124086,
+        "referenced_works": [
+          "W3164862896",
+          "W4382366145",
+          "W4402354046",
+          "W4402754209",
+          "W4402952516",
+          "W4411799533",
+          "W4412722243",
+          "W4413146350",
+          "W4414051079",
+          "W7133209886",
+          "W7133224126"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:50:41",
+        "last_considered_at": "2026-11-03T20:13:59+08:00",
+        "recommended_at": "2026-11-03T20:13:59+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-09-14T08:04:06",
+        "openalex_url": "https://openalex.org/W7170072204",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3716133",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 30,
+        "video_potential": 26,
+        "matched_topics": [
+          "world_model_embodied_reasoning"
+        ],
+        "matched_keywords": [
+          "embodied world model"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "embodied world model"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "historical_value_score": 51.8,
+        "historical_score_components": {
+          "research_relevance": 30.0,
+          "recency": 100.0,
+          "normalized_citation": 81.1,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 0.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 18.9%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning"
+      ],
+      "subtopics": [
+        "robot_world_model"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 51.8,
+      "recommendation_utility": 51.8,
+      "days_since_same_subtopic": 15,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7170072204",
+        "base_id": "openalex:W7170072204",
+        "version": 1,
+        "title": "Embodied Tree of Thoughts: Deliberate Manipulation Planning With Embodied World Model",
+        "authors": [
+          "Wenying Xu",
+          "Mingkang Zhang",
+          "Cindy Wang",
+          "Rui Fang",
+          "Lusong Li",
+          "Jing Xu",
+          "Jiayuan Gu",
+          "Zecui Zeng",
+          "Rui Chen"
+        ],
+        "published": "2026-07-22T00:00:00Z",
+        "updated": "2026-07-22T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3716133",
+        "pdf_url": "",
+        "research_fit": 30,
+        "video_potential": 26,
+        "matched_topics": [
+          "world_model_embodied_reasoning"
+        ],
+        "matched_keywords": [
+          "embodied world model"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "embodied world model"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
