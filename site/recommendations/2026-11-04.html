@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-11-04</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-11-04 20:25</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="recommendations" aria-label="Today's selected papers">
+      <article class="paper-card" id="arxiv:2611.04873" data-paper-id="arxiv:2611.04873" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2611.04873v1</span>
+        </div>
+        <h3>Trusting Imagined Futures: Auditing Imagined Rewards for VLA Post-Training</h3>
+        <p class="authors">Zicheng Kong, Zhenbo Xu, Haoyan Zhang, Jinghan Yang, Zhenzhen Li, Yiwei Ru, Liuyu Xiang, WanTing Xu, Min Ren, Zhaofeng He</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-03 21:26 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.CV</span>
+<span><b>Reading focus</b> vla_posttraining</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>TIF addresses reward overestimation in imagined-outcome selection for VLA post-training, where high predicted reward can favor trajectories that execute poorly. A multidimensional reward model predicts utility plus five execution-quality dimensions, and an auditor uses reward predictions and uncertainty to flag overestimation patterns learned from paired imagined videos and real executions; a candidate is accepted only if its advantage exceeds a margin and its audit risk passes a threshold, otherwise existing supervision is kept for behavior cloning. Across four LIBERO suites and three seeds, TIF reaches 76.25% mean success, 3.00 points above training on existing trajectories at the same trajectory count and budget, with audit gating contributing 1.47 points; on three real robot tasks, clean completion among selected trajectories rises from 58.33% to 70.00% over 60 candidate pools. Inspect how the auditor is trained and how the margin and risk thresholds are set.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Robot Learning &amp; Policy Post-Training</span>
+<span><b>Subtopics</b> vla_posttraining</span><span><b>Utility</b> 80.0 (base 80.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 80 ≥ 40</li><li>Core topics matched: vla_robot_foundation, robot_learning_posttraining</li><li>Specific keywords matched: VLA, vision-language-action, VLA post-training</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: vla_posttraining</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 80.0 = base 80.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Video world models enable candidate actions to be evaluated through imagined outcomes, but high predicted rewards can favor trajectories with poor execution quality. We introduce Trusting Imagined Futures (TIF), an offline supervision selection method for vision-language-action (VLA) post-training that audits predicted rewards using execution feedback. A multidimensional reward model predicts a utility score for candidate ranking and five dimensions of execution quality. An auditor uses reward predictions and uncertainty to identify overestimation patterns learned from paired imagined videos and real executions. TIF accepts the candidate with the highest predicted utility when its advantage over the existing trajectory exceeds a margin and its audit risk passes a threshold; otherwise, it retains the existing supervision. The retained real trajectories then supervise behavior cloning. Across four LIBERO suites and three training seeds, TIF achieves a mean success rate of 76.25%, improving over training on the existing trajectories by 3.00 percentage points with the same trajectory count and training budget. Adding audit gating yields 1.47 percentage points with the reward model and advantage margin held fixed. The gains persist against advantage ranking and logistic regression risk selection at matched replacement counts. On recorded videos from three real robot tasks, TIF increases clean completion among selected trajectories from 58.33% to 70.00% across 60 candidate pools.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.04873v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.04873v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.04873" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.04873" data-title="Trusting Imagined Futures: Auditing Imagined Rewards for VLA Post-Training" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.04873" data-title="Trusting Imagined Futures: Auditing Imagined Rewards for VLA Post-Training" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2611.05062" data-paper-id="arxiv:2611.05062" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2611.05062v1</span>
+        </div>
+        <h3>FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video</h3>
+        <p class="authors">Jeremy Collins, Namra Patel, Ayush Agarwal, Shitij Govil, Animesh Garg</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-03 23:25 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.CV, cs.AI</span>
+<span><b>Reading focus</b> world_action_model</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>FloMo argues that dense 3D motion, not full video, is the medium through which video pretraining best transfers to robot actions, and that predicting motion is more sample-efficient for action prediction. It fine-tunes a 5B video-generation model to predict 3D scene-flow and action tokens, rendering scene flow as RGB and encoding it into the same latent space as video so the pretrained backbone adapts efficiently; it is co-trained on action-free human video and action-labeled robot teleoperation data. Replacing motion prediction with a video objective degrades out-of-distribution generalization, adding a video target alongside motion lowers policy success, and action tokens attend far more to motion than to video. Inspect the scene-flow representation and the co-training data mixture.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Data Scaling &amp; Sim-to-Real</span>
+<span><b>Subtopics</b> world_action_model</span><span><b>Utility</b> 55.0 (base 55.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 55 ≥ 40</li><li>Core topics matched: world_model_embodied_reasoning, robot_data_scaling_sim2real</li><li>Specific keywords matched: world action model, robot teleoperation</li><li>Diversity topic: world_model_embodied_reasoning</li><li>Detected subtopics: world_action_model</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 55.0 = base 55.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Pretrained video generation models distill internet-scale motion priors into robot policies, but full video is a redundant signal for action prediction. We argue that dense 3D motion is the medium through which video pretraining best transfers to robot actions, and that predicting motion rather than video affords better sample-efficiency for action prediction. FloMo is a 5B video-generation model fine-tuned to predict 3D scene-flow and action tokens. Rendering scene flow as RGB and encoding it into the same latent space as video enables a pretrained video generation backbone to efficiently adapt to predict 3D scene flow. Co-trained on action-free human video and action-labeled robot teleoperation data, our model benefits from human-video pretraining and generalizes to unseen objects, motion primitives, and tasks. Replacing motion prediction with a video prediction objective degrades out-of-distribution generalization, while adding a video prediction target alongside motion lowers policy success rather than improving it. When motion, video, and action are predicted jointly, action tokens attend far more to motion than to video, suggesting that predicting video wastes model capacity. Together, these results indicate that motion effectively mediates the transfer from video pretraining to action. More information can be found at flomo-wam.github.io.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.05062v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.05062v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.05062" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.05062" data-title="FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.05062" data-title="FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7204587562" data-paper-id="openalex:W7204587562" data-category="high_impact_historical">
+        <div class="card-topline">
+          <span class="category category--high_impact_historical">领域内高影响力</span>
+          <span class="arxiv-id">W7204587562</span>
+        </div>
+        <h3>Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment</h3>
+        <p class="authors">Wenkai Guo, Peizhi Tang, Yukun Bai, Ziming Yan, Haoyuan Deng, Guanxing Lu, Shijie Li, Ziwei Wang</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-08-28</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>REMA targets online reinforcement learning for contact-rich manipulation, where sparse binary rewards and hand-designed goal-proximity shaping fail to separate informative near-success failures from uninformative divergent trials. Given a small set of successful demonstrations, it builds a reference manifold by spectral compression of successful trajectories, treating low-frequency components as task-relevant motion patterns, and during online learning penalizes failed trajectories by normalized spectral distance to that manifold to suppress their influence on value estimates. Experiments report that REMA outperforms the evaluated baselines on the studied simulation and real-world tasks, and in human-in-the-loop real-robot RL it lowers intervention from 60.8% to 29.9% and raises autonomous success from 62.5% to 80.6%. Inspect how the spectral manifold and distance penalty are computed.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Utility</b> 51.7 (base 51.7)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 0</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotic, robotics, manipulation</li><li>research_fit 26 ≥ 18</li><li>核心方向：robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>特定关键词：contact-rich manipulation</li><li>historical_value_score 51.7 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 35.6%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-10-26T08:01:52</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 51.7 = base 51.7 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Online reinforcement learning (RL) enables robots to continuously improve through real-world interaction, yet achieving high success rates in contact-rich manipulation remains challenging due to sparse binary rewards. Conventional reward-shaping methods rely on hand-designed goal-proximity heuristics and seldom differentiate informative near-success failures from uninformative divergent trials, leading to inefficient exploration and potential reward hacking. By contrast, we propose Reinforcement Learning with Explicit Manifold Alignment (REMA) to refine credit assignment by penalizing uninformative deviations while preserving informative trials. Specifically, given a small set of successful demonstrations, we formulate that trajectory informativeness can be quantified based on the deviation from the manifold of successful behaviors, where exploring off-manifold state space introduces task-irrelevant noise into value estimates. We first construct a reference manifold via spectral compression of successful trajectories, where low-frequency components encode task-relevant motion patterns and serve as a proxy for informativeness. During online learning, the informativeness of failed trajectories is assessed via normalized spectral distance to the manifold, with distant trajectories receiving penalties to suppress their influence on value learning. Experiments show that REMA outperforms the evaluated baselines on the studied simulation and real-world tasks. In human-in-the-loop real-robot RL, it lowers intervention from 60.8% to 29.9% and improves autonomous success from 62.5% to 80.6%.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7204587562" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3728323" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7204587562" data-title="Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7204587562" data-title="Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-04",
+  "generated_at": "2026-11-04T20:25:50+08:00",
+  "mode": "incremental",
+  "candidate_count": 3816,
+  "historical_candidate_count": 726,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2611.04873",
+      "title": "Trusting Imagined Futures: Auditing Imagined Rewards for VLA Post-Training",
+      "takeaway": "TIF addresses reward overestimation in imagined-outcome selection for VLA post-training, where high predicted reward can favor trajectories that execute poorly. A multidimensional reward model predicts utility plus five execution-quality dimensions, and an auditor uses reward predictions and uncertainty to flag overestimation patterns learned from paired imagined videos and real executions; a candidate is accepted only if its advantage exceeds a margin and its audit risk passes a threshold, otherwise existing supervision is kept for behavior cloning. Across four LIBERO suites and three seeds, TIF reaches 76.25% mean success, 3.00 points above training on existing trajectories at the same trajectory count and budget, with audit gating contributing 1.47 points; on three real robot tasks, clean completion among selected trajectories rises from 58.33% to 70.00% over 60 candidate pools. Inspect how the auditor is trained and how the margin and risk thresholds are set.",
+      "generated_at": "2026-11-04T12:32:36",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2611.05062",
+      "title": "FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video",
+      "takeaway": "FloMo argues that dense 3D motion, not full video, is the medium through which video pretraining best transfers to robot actions, and that predicting motion is more sample-efficient for action prediction. It fine-tunes a 5B video-generation model to predict 3D scene-flow and action tokens, rendering scene flow as RGB and encoding it into the same latent space as video so the pretrained backbone adapts efficiently; it is co-trained on action-free human video and action-labeled robot teleoperation data. Replacing motion prediction with a video objective degrades out-of-distribution generalization, adding a video target alongside motion lowers policy success, and action tokens attend far more to motion than to video. Inspect the scene-flow representation and the co-training data mixture.",
+      "generated_at": "2026-11-04T12:32:36",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7204587562",
+      "title": "Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment",
+      "takeaway": "REMA targets online reinforcement learning for contact-rich manipulation, where sparse binary rewards and hand-designed goal-proximity shaping fail to separate informative near-success failures from uninformative divergent trials. Given a small set of successful demonstrations, it builds a reference manifold by spectral compression of successful trajectories, treating low-frequency components as task-relevant motion patterns, and during online learning penalizes failed trajectories by normalized spectral distance to that manifold to suppress their influence on value estimates. Experiments report that REMA outperforms the evaluated baselines on the studied simulation and real-world tasks, and in human-in-the-loop real-robot RL it lowers intervention from 60.8% to 29.9% and raises autonomous success from 62.5% to 80.6%. Inspect how the spectral manifold and distance penalty are computed.",
+      "generated_at": "2026-11-04T12:32:36",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 80 ≥ 40",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining",
+        "Specific keywords matched: VLA, vision-language-action, VLA post-training",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: vla_posttraining",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 80.0 = base 80.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.04873",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "vla_posttraining"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 80.0,
+      "recommendation_utility": 80.0,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.04873v1",
+        "base_id": "2611.04873",
+        "version": 1,
+        "title": "Trusting Imagined Futures: Auditing Imagined Rewards for VLA Post-Training",
+        "authors": [
+          "Zicheng Kong",
+          "Zhenbo Xu",
+          "Haoyan Zhang",
+          "Jinghan Yang",
+          "Zhenzhen Li",
+          "Yiwei Ru",
+          "Liuyu Xiang",
+          "WanTing Xu",
+          "Min Ren",
+          "Zhaofeng He"
+        ],
+        "published": "2026-11-03T13:26:53Z",
+        "updated": "2026-11-03T13:26:53Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.CV"
+        ],
+        "summary": "Video world models enable candidate actions to be evaluated through imagined outcomes, but high predicted rewards can favor trajectories with poor execution quality. We introduce Trusting Imagined Futures (TIF), an offline supervision selection method for vision-language-action (VLA) post-training that audits predicted rewards using execution feedback. A multidimensional reward model predicts a utility score for candidate ranking and five dimensions of execution quality. An auditor uses reward predictions and uncertainty to identify overestimation patterns learned from paired imagined videos and real executions. TIF accepts the candidate with the highest predicted utility when its advantage over the existing trajectory exceeds a margin and its audit risk passes a threshold; otherwise, it retains the existing supervision. The retained real trajectories then supervise behavior cloning. Across four LIBERO suites and three training seeds, TIF achieves a mean success rate of 76.25%, improving over training on the existing trajectories by 3.00 percentage points with the same trajectory count and training budget. Adding audit gating yields 1.47 percentage points with the reward model and advantage margin held fixed. The gains persist against advantage ranking and logistic regression risk selection at matched replacement counts. On recorded videos from three real robot tasks, TIF increases clean completion among selected trajectories from 58.33% to 70.00% across 60 candidate pools.",
+        "abs_url": "https://arxiv.org/abs/2611.04873v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.04873v1",
+        "research_fit": 80,
+        "video_potential": 36,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action",
+          "VLA post-training",
+          "behavior cloning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "VLA post-training",
+              "behavior cloning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Physical robot demonstration",
+            "keywords": [
+              "real robot"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 55 ≥ 40",
+        "Core topics matched: world_model_embodied_reasoning, robot_data_scaling_sim2real",
+        "Specific keywords matched: world action model, robot teleoperation",
+        "Diversity topic: world_model_embodied_reasoning",
+        "Detected subtopics: world_action_model",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 55.0 = base 55.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.05062",
+      "historical_paper": null,
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "world_action_model"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 55.0,
+      "recommendation_utility": 55.0,
+      "days_since_same_subtopic": 12,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.05062v1",
+        "base_id": "2611.05062",
+        "version": 1,
+        "title": "FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video",
+        "authors": [
+          "Jeremy Collins",
+          "Namra Patel",
+          "Ayush Agarwal",
+          "Shitij Govil",
+          "Animesh Garg"
+        ],
+        "published": "2026-11-03T15:25:35Z",
+        "updated": "2026-11-03T15:25:35Z",
+        "primary_category": "cs.CV",
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "summary": "Pretrained video generation models distill internet-scale motion priors into robot policies, but full video is a redundant signal for action prediction. We argue that dense 3D motion is the medium through which video pretraining best transfers to robot actions, and that predicting motion rather than video affords better sample-efficiency for action prediction. FloMo is a 5B video-generation model fine-tuned to predict 3D scene-flow and action tokens. Rendering scene flow as RGB and encoding it into the same latent space as video enables a pretrained video generation backbone to efficiently adapt to predict 3D scene flow. Co-trained on action-free human video and action-labeled robot teleoperation data, our model benefits from human-video pretraining and generalizes to unseen objects, motion primitives, and tasks. Replacing motion prediction with a video prediction objective degrades out-of-distribution generalization, while adding a video prediction target alongside motion lowers policy success rather than improving it. When motion, video, and action are predicted jointly, action tokens attend far more to motion than to video, suggesting that predicting video wastes model capacity. Together, these results indicate that motion effectively mediates the transfer from video pretraining to action. More information can be found at flomo-wam.github.io.",
+        "abs_url": "https://arxiv.org/abs/2611.05062v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.05062v1",
+        "research_fit": 55,
+        "video_potential": 14,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "world action model",
+          "robot teleoperation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "world action model"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robot teleoperation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.AI",
+            "keywords": [
+              "cs.AI"
+            ],
+            "location": "category",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, teleoperation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.8
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics, manipulation",
+        "research_fit 26 ≥ 18",
+        "核心方向：robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "特定关键词：contact-rich manipulation",
+        "historical_value_score 51.7 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 35.6%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-10-26T08:01:52",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 51.7 = base 51.7 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7204587562",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7204587562",
+        "openalex_id": "W7204587562",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3728323",
+        "title": "Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment",
+        "authors": [
+          "Wenkai Guo",
+          "Peizhi Tang",
+          "Yukun Bai",
+          "Ziming Yan",
+          "Haoyuan Deng",
+          "Guanxing Lu",
+          "Shijie Li",
+          "Ziwei Wang"
+        ],
+        "abstract": "Online reinforcement learning (RL) enables robots to continuously improve through real-world interaction, yet achieving high success rates in contact-rich manipulation remains challenging due to sparse binary rewards. Conventional reward-shaping methods rely on hand-designed goal-proximity heuristics and seldom differentiate informative near-success failures from uninformative divergent trials, leading to inefficient exploration and potential reward hacking. By contrast, we propose Reinforcement Learning with Explicit Manifold Alignment (REMA) to refine credit assignment by penalizing uninformative deviations while preserving informative trials. Specifically, given a small set of successful demonstrations, we formulate that trajectory informativeness can be quantified based on the deviation from the manifold of successful behaviors, where exploring off-manifold state space introduces task-irrelevant noise into value estimates. We first construct a reference manifold via spectral compression of successful trajectories, where low-frequency components encode task-relevant motion patterns and serve as a proxy for informativeness. During online learning, the informativeness of failed trajectories is assessed via normalized spectral distance to the manifold, with distant trajectories receiving penalties to suppress their influence on value learning. Experiments show that REMA outperforms the evaluated baselines on the studied simulation and real-world tasks. In human-in-the-loop real-robot RL, it lowers intervention from 60.8% to 29.9% and improves autonomous success from 62.5% to 80.6%.",
+        "publication_date": "2026-08-28",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 1.0
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 9.999999747378752e-05
+          },
+          {
+            "id": "https://openalex.org/T11307",
+            "display_name": "Domain Adaptation and Few-Shot Learning",
+            "score": 0.0
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.64409797,
+        "referenced_works": [
+          "W2031614119",
+          "W2575705757",
+          "W2614839826",
+          "W2756826236",
+          "W4385430825",
+          "W4394872716",
+          "W4401607239",
+          "W4402354084",
+          "W4410887676",
+          "W4413362511",
+          "W7133189392",
+          "W7133230429",
+          "W7133233015",
+          "W7133245541",
+          "W7161175410"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-26T08:01:52",
+        "last_considered_at": "2026-11-04T20:25:50+08:00",
+        "recommended_at": "2026-11-04T20:25:50+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-10-26T08:01:52",
+        "openalex_url": "https://openalex.org/W7204587562",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3728323",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 26,
+        "video_potential": 48,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "online reinforcement learning",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "online reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation"
+          }
+        ],
+        "historical_value_score": 51.7,
+        "historical_score_components": {
+          "research_relevance": 26.0,
+          "recency": 100.0,
+          "normalized_citation": 64.4,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 35.6%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 51.7,
+      "recommendation_utility": 51.7,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7204587562",
+        "base_id": "openalex:W7204587562",
+        "version": 1,
+        "title": "Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment",
+        "authors": [
+          "Wenkai Guo",
+          "Peizhi Tang",
+          "Yukun Bai",
+          "Ziming Yan",
+          "Haoyuan Deng",
+          "Guanxing Lu",
+          "Shijie Li",
+          "Ziwei Wang"
+        ],
+        "published": "2026-08-28T00:00:00Z",
+        "updated": "2026-08-28T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Online reinforcement learning (RL) enables robots to continuously improve through real-world interaction, yet achieving high success rates in contact-rich manipulation remains challenging due to sparse binary rewards. Conventional reward-shaping methods rely on hand-designed goal-proximity heuristics and seldom differentiate informative near-success failures from uninformative divergent trials, leading to inefficient exploration and potential reward hacking. By contrast, we propose Reinforcement Learning with Explicit Manifold Alignment (REMA) to refine credit assignment by penalizing uninformative deviations while preserving informative trials. Specifically, given a small set of successful demonstrations, we formulate that trajectory informativeness can be quantified based on the deviation from the manifold of successful behaviors, where exploring off-manifold state space introduces task-irrelevant noise into value estimates. We first construct a reference manifold via spectral compression of successful trajectories, where low-frequency components encode task-relevant motion patterns and serve as a proxy for informativeness. During online learning, the informativeness of failed trajectories is assessed via normalized spectral distance to the manifold, with distant trajectories receiving penalties to suppress their influence on value learning. Experiments show that REMA outperforms the evaluated baselines on the studied simulation and real-world tasks. In human-in-the-loop real-robot RL, it lowers intervention from 60.8% to 29.9% and improves autonomous success from 62.5% to 80.6%.",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3728323",
+        "pdf_url": "",
+        "research_fit": 26,
+        "video_potential": 48,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "online reinforcement learning",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "online reinforcement learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
