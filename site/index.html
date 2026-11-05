@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-11-04</title>
+  <title>Paper Radar — 2026-11-05</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-11-04 20:25</p>
+        <p class="header-updated">2026-11-05 20:40</p>
       </div>
     </div>
   </header>
@@ -31,120 +31,202 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="arxiv:2611.04873" data-paper-id="arxiv:2611.04873" data-category="frontier_recent">
+      <article class="paper-card" id="arxiv:2611.06905" data-paper-id="arxiv:2611.06905" data-category="frontier_recent">
         <div class="card-topline">
           <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2611.04873v1</span>
+          <span class="arxiv-id">2611.06905v1</span>
         </div>
-        <h3>Trusting Imagined Futures: Auditing Imagined Rewards for VLA Post-Training</h3>
-        <p class="authors">Zicheng Kong, Zhenbo Xu, Haoyan Zhang, Jinghan Yang, Zhenzhen Li, Yiwei Ru, Liuyu Xiang, WanTing Xu, Min Ren, Zhaofeng He</p>
+        <h3>Reinforcement Learning Enables Scaling Generalist Robot Policy Improvement</h3>
+        <p class="authors">Michal Korniak, Marco Bagatella, Ralf Römer, Michal Nauman, Yarden As, Pranav Vignesh, Manan Agarwal, Leander Diaz-Bone, Piotr Zalewski, Mikołaj Czarnecki, Lenart Treven, Shashwat Saxena, Sreyas Venkataraman, Sarvesh Patil, Zhiyuan Zhou, Daniel Marta, Oier Mees, Nur Muhammad Mahi Shafiullah, Carmelo Sferrazza, Bhavya Sukhija, Angela P. Schoellig, Andreas Krause, Max Simchowitz, Andrew Wagenmaker</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-11-03 21:26 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO, cs.CV</span>
-<span><b>Reading focus</b> vla_posttraining</span>        </div>
+          <span><b>Published</b> 2026-11-05 02:52 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.LG, cs.RO</span>
+        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>TIF addresses reward overestimation in imagined-outcome selection for VLA post-training, where high predicted reward can favor trajectories that execute poorly. A multidimensional reward model predicts utility plus five execution-quality dimensions, and an auditor uses reward predictions and uncertainty to flag overestimation patterns learned from paired imagined videos and real executions; a candidate is accepted only if its advantage exceeds a margin and its audit risk passes a threshold, otherwise existing supervision is kept for behavior cloning. Across four LIBERO suites and three seeds, TIF reaches 76.25% mean success, 3.00 points above training on existing trajectories at the same trajectory count and budget, with audit gating contributing 1.47 points; on three real robot tasks, clean completion among selected trajectories rises from 58.33% to 70.00% over 60 candidate pools. Inspect how the auditor is trained and how the margin and risk thresholds are set.</p>
+          <p>This work asks whether generalist robot policies can be improved online across many diverse tasks at once, rather than only in the single-task settings where iterated RL self-improvement has mostly been explored. The authors build structured evaluations and systematically vary design choices in value estimation, policy extraction, and resource allocation, finding that generalist policies can be improved online across diverse tasks and that the right recipe can raise performance on tasks not seen during online training. They characterize when this generalization occurs and report that both the training task distribution and the use of value-based RL are critical. While reading, inspect how the structured evaluations define generalist improvement and how the recipe&#39;s task distribution and value-based components are isolated.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 前沿新论文</span>
             <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Robot Learning &amp; Policy Post-Training</span>
-<span><b>Subtopics</b> vla_posttraining</span><span><b>Utility</b> 80.0 (base 80.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>Utility</b> 80.0 (base 80.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
           </div>
           <ul>
-<li>research_fit 80 ≥ 40</li><li>Core topics matched: vla_robot_foundation, robot_learning_posttraining</li><li>Specific keywords matched: VLA, vision-language-action, VLA post-training</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: vla_posttraining</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 80.0 = base 80.0 + affinity +0 + redundancy -0</li>          </ul>
+<li>research_fit 80 ≥ 40</li><li>Core topics matched: vla_robot_foundation, robot_learning_posttraining</li><li>Specific keywords matched: generalist robot policy, robot policy improvement</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 80.0 = base 80.0 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Video world models enable candidate actions to be evaluated through imagined outcomes, but high predicted rewards can favor trajectories with poor execution quality. We introduce Trusting Imagined Futures (TIF), an offline supervision selection method for vision-language-action (VLA) post-training that audits predicted rewards using execution feedback. A multidimensional reward model predicts a utility score for candidate ranking and five dimensions of execution quality. An auditor uses reward predictions and uncertainty to identify overestimation patterns learned from paired imagined videos and real executions. TIF accepts the candidate with the highest predicted utility when its advantage over the existing trajectory exceeds a margin and its audit risk passes a threshold; otherwise, it retains the existing supervision. The retained real trajectories then supervise behavior cloning. Across four LIBERO suites and three training seeds, TIF achieves a mean success rate of 76.25%, improving over training on the existing trajectories by 3.00 percentage points with the same trajectory count and training budget. Adding audit gating yields 1.47 percentage points with the reward model and advantage margin held fixed. The gains persist against advantage ranking and logistic regression risk selection at matched replacement counts. On recorded videos from three real robot tasks, TIF increases clean completion among selected trajectories from 58.33% to 70.00% across 60 candidate pools.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>The introduction of generalist robot policies has enabled a single, large model to learn to perform a variety of tasks from a vast pre-training corpus. While these models often exhibit powerful zero-shot generalization capabilities, they typically require an adaptation phase to achieve sufficient performance in deployment. Iterated self-improvement via reinforcement learning (RL) has demonstrated promise in enabling this adaptation, yet such approaches have been largely explored in single-task settings - where the goal is to simply improve on a narrow deployment task - which lies in stark contrast to the multi-task capabilities of the base policy. In this work we ask whether generalist robot policies are capable of multi-task, generalist improvement in deployment - targeting many diverse tasks simultaneously - and what algorithmic recipe enables this. To answer this question, we first develop a set of structured evaluations to test generalist improvement capabilities, and systematically evaluate algorithmic and practical design choices regarding value estimation, policy extraction and resource allocation. We show that not only can generalist policies be improved online across diverse tasks, but that the right recipe can enable generalization and increase performance on tasks not considered during online training. We characterize when this generalization occurs and show that both the training task distribution and the use of value-based RL are critical. To the best of our knowledge, this is among the first evidence for online generalist improvement for robot foundation models.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2611.04873v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2611.04873v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2611.04873" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          <a href="https://arxiv.org/abs/2611.06905v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.06905v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.06905" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2611.04873" data-title="Trusting Imagined Futures: Auditing Imagined Rewards for VLA Post-Training" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.06905" data-title="Reinforcement Learning Enables Scaling Generalist Robot Policy Improvement" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.04873" data-title="Trusting Imagined Futures: Auditing Imagined Rewards for VLA Post-Training" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.06905" data-title="Reinforcement Learning Enables Scaling Generalist Robot Policy Improvement" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="arxiv:2611.05062" data-paper-id="arxiv:2611.05062" data-category="frontier_recent">
+      <article class="paper-card" id="arxiv:2611.06673" data-paper-id="arxiv:2611.06673" data-category="frontier_recent">
         <div class="card-topline">
           <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2611.05062v1</span>
+          <span class="arxiv-id">2611.06673v1</span>
         </div>
-        <h3>FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video</h3>
-        <p class="authors">Jeremy Collins, Namra Patel, Ayush Agarwal, Shitij Govil, Animesh Garg</p>
+        <h3>Which Physical Tactile Cues Matter for Contact-Rich Imitation Learning? A Controlled Real-Robot Study</h3>
+        <p class="authors">Xuhao Qin, Xiyan Huang, Haoyu Dong, Xi Zhang, Chenxi Xiao</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-11-03 23:25 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.CV, cs.AI</span>
-<span><b>Reading focus</b> world_action_model</span>        </div>
+          <span><b>Published</b> 2026-11-04 23:45 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>FloMo argues that dense 3D motion, not full video, is the medium through which video pretraining best transfers to robot actions, and that predicting motion is more sample-efficient for action prediction. It fine-tunes a 5B video-generation model to predict 3D scene-flow and action tokens, rendering scene flow as RGB and encoding it into the same latent space as video so the pretrained backbone adapts efficiently; it is co-trained on action-free human video and action-labeled robot teleoperation data. Replacing motion prediction with a video objective degrades out-of-distribution generalization, adding a video target alongside motion lowers policy success, and action tokens attend far more to motion than to video. Inspect the scene-flow representation and the co-training data mixture.</p>
+          <p>Vision-based tactile sensors encode contact appearance, geometry, indentation, and tangential deformation in one image stream, but policies that process tactile images directly obscure which physical cues drive learning. This controlled real-robot study on the LeRobot platform derives tactile RGB images, normal/depth maps, and marker-flow fields from the same stream and compares their individual and combined contributions under identical demonstrations and policy backbone, also comparing tactile encoders and fusion strategies. Across 720 real-robot trials, tactile perception raises overall success from 57.8% to 78.9%, marker flow is the most effective single cue at 74.4%, cue-factorized encoding consistently helps, and cross-attention fusion is comparable to pretrained tactile encoders. Inspect how cue-factorized encoding is implemented and how task-stage dependence is measured.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Data Scaling &amp; Sim-to-Real</span>
-<span><b>Subtopics</b> world_action_model</span><span><b>Utility</b> 55.0 (base 55.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Utility</b> 61.0 (base 61.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
           </div>
           <ul>
-<li>research_fit 55 ≥ 40</li><li>Core topics matched: world_model_embodied_reasoning, robot_data_scaling_sim2real</li><li>Specific keywords matched: world action model, robot teleoperation</li><li>Diversity topic: world_model_embodied_reasoning</li><li>Detected subtopics: world_action_model</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 55.0 = base 55.0 + affinity +0 + redundancy -0</li>          </ul>
+<li>research_fit 61 ≥ 40</li><li>Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: visuo-tactile</li><li>Diversity topic: robot_learning_posttraining</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 61.0 = base 61.0 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Pretrained video generation models distill internet-scale motion priors into robot policies, but full video is a redundant signal for action prediction. We argue that dense 3D motion is the medium through which video pretraining best transfers to robot actions, and that predicting motion rather than video affords better sample-efficiency for action prediction. FloMo is a 5B video-generation model fine-tuned to predict 3D scene-flow and action tokens. Rendering scene flow as RGB and encoding it into the same latent space as video enables a pretrained video generation backbone to efficiently adapt to predict 3D scene flow. Co-trained on action-free human video and action-labeled robot teleoperation data, our model benefits from human-video pretraining and generalizes to unseen objects, motion primitives, and tasks. Replacing motion prediction with a video prediction objective degrades out-of-distribution generalization, while adding a video prediction target alongside motion lowers policy success rather than improving it. When motion, video, and action are predicted jointly, action tokens attend far more to motion than to video, suggesting that predicting video wastes model capacity. Together, these results indicate that motion effectively mediates the transfer from video pretraining to action. More information can be found at flomo-wam.github.io.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Vision-based tactile sensors capture multiple aspects of physical interaction within a single image stream, including contact appearance, geometry, indentation depth, and tangential deformation. However, existing visuo-tactile policies often directly process tactile observations as images, making it difficult to determine which physical cues contribute to policy learning. This paper presents a controlled real-robot study that compares physically interpretable tactile signals using the LeRobot platform, enhanced with our visuo-tactile perception system. From the same tactile stream, we derive tactile RGB images, normal/depth maps, and marker-flow fields, representing contact appearance, geometry, and tangential deformation, respectively. Using identical task demonstrations and the same policy backbone, we evaluate the individual and combined contributions of these tactile cues. We further compare tactile encoders and visuo-tactile fusion strategies. Evaluation across 720 real-robot trials yields four key findings: (1) tactile perception substantially improves the overall success rate from 57.8% to 78.9%, although its contribution varies across task stages; (2) marker flow is the most effective individual cue, achieving a success rate of 74.4% and playing a particularly important role in regulating established contact; (3) cue-factorized encoding consistently improves performance, highlighting that different physical cues require tailored processing techniques; and (4) although the effectiveness of tactile fusion is task-dependent, cross-attention offers a lightweight solution with performance comparable to that of pretrained tactile encoders.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2611.05062v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2611.05062v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2611.05062" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          <a href="https://arxiv.org/abs/2611.06673v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.06673v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.06673" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2611.05062" data-title="FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.06673" data-title="Which Physical Tactile Cues Matter for Contact-Rich Imitation Learning? A Controlled Real-Robot Study" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.05062" data-title="FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.06673" data-title="Which Physical Tactile Cues Matter for Contact-Rich Imitation Learning? A Controlled Real-Robot Study" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="openalex:W7204587562" data-paper-id="openalex:W7204587562" data-category="high_impact_historical">
+      <article class="paper-card" id="arxiv:2611.06523" data-paper-id="arxiv:2611.06523" data-category="model_based_recent">
+        <div class="card-topline">
+          <span class="category category--model_based_recent">方法前沿</span>
+          <span class="arxiv-id">2611.06523v1</span>
+        </div>
+        <h3>H^2MARL: Hierarchical Heterogeneous Multi-agent Reinforcement Learning for Humanoid Robot Control</h3>
+        <p class="authors">Xuemin Hu, Kaixin Li, Qingqing Xia, Yuxin Wang, Wei Xie, Bo Tang, Long Chen</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-04 21:48 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> humanoid_whole_body, whole_body_control</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>Humanoid whole-body control is difficult because of high-dimensional coupled dynamics and physical heterogeneity across joint degrees of freedom, and existing multi-agent RL methods use coarse partitions or optimize planning and execution separately. H^2MARL formulates control with a JDoF-level physical-heterogeneity-aware policy factorization, conditioning each torque-actuated JDoF on a descriptor of its actuation, kinematic, and dynamic properties, and adds a closed-loop policy-executor co-optimization mechanism that jointly adapts the high-level pose planner and low-level joint executor using shared interaction trajectories. Experiments in MuJoCo and Isaac Gym report consistent improvements in locomotion stability, gait coordination, and motion quality over homogeneous, coarse-grained, and independently optimized alternatives. Inspect how the JDoF descriptors are constructed and how co-optimization reduces planner-executor distribution mismatch.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 方法前沿</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> humanoid_whole_body, whole_body_control</span><span><b>Utility</b> 59.8 (base 58.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span>          </div>
+          <ul>
+<li>Recent model-based robotics paper: published within 14 days</li><li>Robotics context: robot, robots, humanoid</li><li>Strong method signals: whole_body_control</li><li>research_fit 58 ≥ 28</li><li>Detected subtopics: humanoid_whole_body, whole_body_control</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>Subtopic: whole_body_control</li><li>Recently recommended: 5 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = humanoid_whole_body</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 59.8 = base 58.0 + affinity +6 + redundancy -4.2</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Coordinated whole-body control of humanoid robots remains challenging due to high-dimensional coupled dynamics and substantial physical heterogeneity across joint degrees of freedom (JDoFs). Existing multi-agent reinforcement learning methods either employ coarse agent partitions or directly apply generic heterogeneous-agent algorithms, while hierarchical controllers commonly optimize high-level planning and low-level execution independently, leading to uncoordinated motion. In this paper, we propose H^2MARL, a hierarchical heterogeneous multi-agent reinforcement learning framework with two key mechanisms. We first formulate humanoid whole-body control using a JDoF-level physical-heterogeneity-aware policy factorization, where each torque-actuated JDoF is conditioned on an explicit descriptor of its actuation, kinematic, and dynamic properties. Moreover, we develop a closed-loop policy-executor co-optimization mechanism that jointly adapts the high-level pose planner and the low-level joint executor using shared interaction trajectories, thereby reducing the distribution mismatch between planning and execution. Extensive experiments in MuJoCo and Isaac Gym demonstrate that H^2MARL consistently improves locomotion stability, gait coordination, and motion quality over homogeneous, coarse-grained, and independently optimized alternatives.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.06523v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.06523v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.06523" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.06523" data-title="H^2MARL: Hierarchical Heterogeneous Multi-agent Reinforcement Learning for Humanoid Robot Control" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.06523" data-title="H^2MARL: Hierarchical Heterogeneous Multi-agent Reinforcement Learning for Humanoid Robot Control" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2611.06475" data-paper-id="arxiv:2611.06475" data-category="review_knowledge_map">
+        <div class="card-topline">
+          <span class="category category--review_knowledge_map">综述 / 知识地图</span>
+          <span class="arxiv-id">2611.06475v1</span>
+        </div>
+        <h3>Robocasa-Mem: Benchmarking Environment and Process Memory in Long-Horizon Mobile Manipulation</h3>
+        <p class="authors">Sihang Chen, Chen Ye, Wei Chen, Xiaohan Lei, Zhipeng Tang, Sha Zhang, Yuan Zhang, Zixuan Chen, Jiajun Deng, Houqiang Li, Yanyong Zhang</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-04 21:16 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>RoboCasa-Mem targets memory-dependent decision-making in mobile manipulation, where task-relevant information is no longer observable at key decision points, a capability existing benchmarks evaluate only limitedly. It comprises nine tasks grouped into environment memory (spatial locations, object attributes, relationships) and process memory (single-task progress and multi-task scheduling), and introduces Behavior-Conditioned Evaluation that derives later task constraints from the robot&#39;s earlier actions rather than fixing a single target or trajectory, reducing shortcuts from fixed target assignments. It provides 1,800 successful demonstrations and a baseline, Hierarchical Memory-Augmented Policy (HMAP), whose high-level planner uses structured entity and process memories and whose low-level VLA controller uses subgoal-conditioned queries incorporating VGGT-Omega geometry. Inspect how behavior-conditioned constraints are derived and how memory categories are separated in scoring.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 72.0 (base 66.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+          </div>
+          <ul>
+<li>Knowledge-map signals: benchmark</li><li>Robotics context: robot, robots, manipulation, mobile manipulation</li><li>research_fit 66 ≥ 40</li><li>Core topics matched: vla_robot_foundation, humanoid_loco_manipulation</li><li>Specific keywords matched: VLA, mobile manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched mobile manipulation)</li><li>recommendation_utility 72.0 = base 66.0 + affinity +6 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>In the real world, mobile manipulation robots must perform complex object interactions and make multi-step decisions, often relying on task-relevant information that is no longer observable. However, existing benchmarks provide limited evaluation of such memory-dependent decision-making in mobile manipulation. To address this gap, we introduce RoboCasa-Mem, a new benchmark comprising nine mobile manipulation tasks that require agents to use interaction history at key decision points. Specifically, the tasks are grouped into two categories of memory: One is environment memory, which captures spatial locations, object attributes, and object relationships. The other is process memory, which captures single-task progress and multi-task scheduling. Particularly, we introduce Behavior-Conditioned Evaluation. For tasks with multiple valid execution paths, instead of fixing a single target or trajectory, the evaluator derives later task constraints from the robot&#39;s earlier actions. This allows us to evaluate whether later behavior is consistent with the robot&#39;s own interaction history while reducing shortcuts based on fixed target assignments. We provide 1,800 successful demonstrations for policy training. We also develop a baseline on our benchmark, namely Hierarchical Memory-Augmented Policy(HMAP). Its high-level planner uses structured entity and process memories to generate subtasks. Its low-level VLA controller uses subgoal-conditioned queries to incorporate VGGT-Omega geometry into action generation. Together, RoboCasa-Mem and HMAP baseline support systematic evaluation of memory-dependent behavior and the development of memory-aware mobile manipulation policies.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.06475v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.06475v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.06475" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.06475" data-title="Robocasa-Mem: Benchmarking Environment and Process Memory in Long-Horizon Mobile Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.06475" data-title="Robocasa-Mem: Benchmarking Environment and Process Memory in Long-Horizon Mobile Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7206206236" data-paper-id="openalex:W7206206236" data-category="high_impact_historical">
         <div class="card-topline">
           <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W7204587562</span>
+          <span class="arxiv-id">W7206206236</span>
         </div>
-        <h3>Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment</h3>
-        <p class="authors">Wenkai Guo, Peizhi Tang, Yukun Bai, Ziming Yan, Haoyuan Deng, Guanxing Lu, Shijie Li, Ziwei Wang</p>
+        <h3>Contact-Rich Manipulation of Cable-Suspended Objects for Accurate Fixture Loading Using Dexterous Cranes</h3>
+        <p class="authors">Noritsugu Miyazawa, Cormac O’Neill, H. Harry Asada</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-08-28</span>
+          <span><b>Published</b> 2026-09-02</span>
 <span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>REMA targets online reinforcement learning for contact-rich manipulation, where sparse binary rewards and hand-designed goal-proximity shaping fail to separate informative near-success failures from uninformative divergent trials. Given a small set of successful demonstrations, it builds a reference manifold by spectral compression of successful trajectories, treating low-frequency components as task-relevant motion patterns, and during online learning penalizes failed trajectories by normalized spectral distance to that manifold to suppress their influence on value estimates. Experiments report that REMA outperforms the evaluated baselines on the studied simulation and real-world tasks, and in human-in-the-loop real-robot RL it lowers intervention from 60.8% to 29.9% and raises autonomous success from 62.5% to 80.6%. Inspect how the spectral manifold and distance penalty are computed.</p>
+          <p>The supplied metadata for this paper contains only the title, authors, venue (IEEE Robotics and Automation Letters), year, and topic tags, with an empty abstract, so no problem statement, method details, or reported evidence can be summarized from the source. The title indicates work on contact-rich manipulation of cable-suspended objects for accurate fixture loading using dexterous cranes, which places it in dexterous manipulation rather than the reader&#39;s VLA or whole-body control lines. Because no abstract is available, the technical point to inspect cannot be specified; consult the full text for the control approach, contact modeling, and any quantitative loading-accuracy results before relying on it.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 领域内高影响力</span>
-            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
-<span><b>Utility</b> 51.7 (base 51.7)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+            <span><b>Core topics</b> Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Utility</b> 52.0 (base 52.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
 <span><b>OpenAlex citations</b> 0</span>          </div>
           <ul>
-<li>机器人语境：robot, robots, robotic, robotics, manipulation</li><li>research_fit 26 ≥ 18</li><li>核心方向：robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>特定关键词：contact-rich manipulation</li><li>historical_value_score 51.7 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 35.6%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-10-26T08:01:52</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 51.7 = base 51.7 + affinity +0 + redundancy -0</li>          </ul>
+<li>机器人语境：robot, robotics, manipulation</li><li>research_fit 28 ≥ 18</li><li>核心方向：dexterous_multimodal_manipulation</li><li>特定关键词：contact-rich manipulation</li><li>historical_value_score 52.0 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 34.0%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-10-26T08:01:52</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Online reinforcement learning (RL) enables robots to continuously improve through real-world interaction, yet achieving high success rates in contact-rich manipulation remains challenging due to sparse binary rewards. Conventional reward-shaping methods rely on hand-designed goal-proximity heuristics and seldom differentiate informative near-success failures from uninformative divergent trials, leading to inefficient exploration and potential reward hacking. By contrast, we propose Reinforcement Learning with Explicit Manifold Alignment (REMA) to refine credit assignment by penalizing uninformative deviations while preserving informative trials. Specifically, given a small set of successful demonstrations, we formulate that trajectory informativeness can be quantified based on the deviation from the manifold of successful behaviors, where exploring off-manifold state space introduces task-irrelevant noise into value estimates. We first construct a reference manifold via spectral compression of successful trajectories, where low-frequency components encode task-relevant motion patterns and serve as a proxy for informativeness. During online learning, the informativeness of failed trajectories is assessed via normalized spectral distance to the manifold, with distant trajectories receiving penalties to suppress their influence on value learning. Experiments show that REMA outperforms the evaluated baselines on the studied simulation and real-world tasks. In human-in-the-loop real-robot RL, it lowers intervention from 60.8% to 29.9% and improves autonomous success from 62.5% to 80.6%.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7204587562" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3728323" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7204587562" data-title="Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W7206206236" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3730223" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7206206236" data-title="Contact-Rich Manipulation of Cable-Suspended Objects for Accurate Fixture Loading Using Dexterous Cranes" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7204587562" data-title="Efficient Online Robotic Reinforcement Learning With Explicit Manifold Alignment" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7206206236" data-title="Contact-Rich Manipulation of Cable-Suspended Objects for Accurate Fixture Loading Using Dexterous Cranes" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
