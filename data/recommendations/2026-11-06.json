@@ -1,0 +1,916 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-06",
+  "generated_at": "2026-11-06T20:23:06+08:00",
+  "mode": "incremental",
+  "candidate_count": 4041,
+  "historical_candidate_count": 726,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 1,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2611.08372",
+      "title": "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation",
+      "takeaway": "MOMASPLAT addresses viewpoint sensitivity in imitation-learned mobile manipulation policies, where base-pose shifts from navigation uncertainty and localization drift break visuomotor policies, and prior novel-view synthesis augmentation fails because it assumes static scenes and cannot re-render the manipulated object after contact. The method combines 3D Gaussian Splatting, feed-forward 3D foundation models, and kinematics-based action retargeting to reconstruct scene and object separately, render unseen base poses, and produce geometrically consistent synthetic demonstrations with transformed actions. Across five real-world mobile manipulation tasks with rigid and articulated objects in three scenes, plus simulation fidelity checks, it more than doubles the strongest baseline's average success rate and retains non-trivial success at large base displacements where all baselines fail. Inspect how object reconstruction and action retargeting stay consistent under large viewpoint changes.",
+      "generated_at": "2026-11-06T12:29:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2611.08462",
+      "title": "OopsieRecover: Learning Transferable VLA Corrections from Semantic Interventions",
+      "takeaway": "OopsieRecover targets VLA deployment failures, where DAgger-like fine-tuning needs tens to hundreds of corrective interactions and still generalizes poorly beyond demonstrated scenarios. The framework uses abduction to infer intent behind a handful of corrective demonstrations and encodes that knowledge as dense spatial representations and conditional costs marking undesirable behavior and steering the policy toward better action regions. Across six tasks with variations in object poses, scenes, and related tasks, the authors report that a handful of corrections lets a VLA overcome failures across novel situations without new corrective data per variation. Inspect how inferred intent is converted into spatial costs and whether those costs transfer across task variations.",
+      "generated_at": "2026-11-06T12:29:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7161687616",
+      "title": "SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations",
+      "takeaway": "SADP addresses long-horizon manipulation where policies must coordinate intermediate subgoals and decide when to advance, while most imitation learning uses only task-level demonstrations and subgoal supervision is scarce. The framework uses foundation models to autonomously generate subgoal-annotated demonstrations, conditions diffusion policy action generation on both task-level and natural-language subgoal descriptions, and adds a lightweight auxiliary head predicting a continuation score for online subgoal switching and stage-level progress monitoring. RLBench simulation and real-world UR5e evaluations show competitive task performance while exposing temporally aligned subgoal-level execution signals, indicating explicit subgoal progression can be added without degrading task-level performance. Inspect how generated subgoal annotations are validated and how the continuation score triggers switching.",
+      "generated_at": "2026-11-06T12:29:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7222940980",
+      "title": "Robotic Ultra-Long-Horizon Manipulation Skills via Human-Guided Lifelong Code Generation",
+      "takeaway": "The supplied record for this paper contains only its title, authors, venue, year, and topic metadata, with an empty abstract, so no problem statement, method details, reported evidence, or results can be described from the source. The title indicates work on ultra-long-horizon manipulation skills through human-guided lifelong code generation, but the abstract provides no basis for summarizing its approach or findings. Read the full paper to determine its problem formulation, how human guidance and code generation interact over a lifelong setting, and what evidence supports its claims.",
+      "generated_at": "2026-11-06T12:29:31",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 63 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining",
+        "Specific keywords matched: mobile manipulation",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched mobile manipulation)",
+        "recommendation_utility 69.0 = base 63.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.08372",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 63.0,
+      "recommendation_utility": 69.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.08372v1",
+        "base_id": "2611.08372",
+        "version": 1,
+        "title": "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation",
+        "authors": [
+          "Sateesh Kumar",
+          "Arnav Balaji",
+          "Arpit Bahety",
+          "Skand Peri",
+          "Georgios Pavlakos",
+          "Roberto Martín-Martín"
+        ],
+        "published": "2026-11-05T17:50:35Z",
+        "updated": "2026-11-05T17:50:35Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.CV"
+        ],
+        "summary": "Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint. This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints. Recent approaches use novel-view synthesis (NVS) to augment demonstrations with unseen viewpoints, but they assume static scenes and therefore fail to re-render the manipulated object during the post-contact interaction phase, leaving the most critical parts of the demonstration unaugmented. We present MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions. Our key insight is that standard MoMa data collection naturally provides the multiview observations needed to reconstruct both the static scene and the manipulated object in 3D. MOMASPLAT combines 3D Gaussian Splatting, feed-forward 3D foundation models, and kinematics-based action retargeting to separately reconstruct the scene and manipulated object, render them from novel viewpoints, and generate geometrically consistent synthetic demonstrations paired with transformed actions. We evaluate MOMASPLAT on five real-world mobile manipulation tasks involving both rigid and articulated objects across three scenes, and validate the fidelity of its synthesized demonstrations against ground truth in simulation. MOMASPLAT substantially improves robustness to unseen base poses, more than doubling the average success rate of the strongest baseline and maintaining non-trivial success at large base displacements where all baselines fail, while reducing the need for largescale real-world data collection.",
+        "abs_url": "https://arxiv.org/abs/2611.08372v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.08372v1",
+        "research_fit": 63,
+        "video_potential": 43,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "mobile manipulation",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "manipulation",
+              "mobile manipulation",
+              "visuomotor"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "manipulation",
+              "mobile manipulation",
+              "visuomotor"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, manipulation, mobile manipulation, visuomotor"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "navigation"
+            ],
+            "location": "title",
+            "points": 18.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Learning policy",
+            "keywords": [
+              "imitation learning",
+              "visuomotor"
+            ],
+            "location": "abstract",
+            "points": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 52 ≥ 40",
+        "Core topics matched: vla_robot_foundation",
+        "Specific keywords matched: VLA, vision-language-action",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.08462",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 52.0,
+      "recommendation_utility": 52.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.08462v1",
+        "base_id": "2611.08462",
+        "version": 1,
+        "title": "OopsieRecover: Learning Transferable VLA Corrections from Semantic Interventions",
+        "authors": [
+          "Arpit Bahety",
+          "Skand Peri",
+          "Sriniket Ambatipudi",
+          "Chen Xu",
+          "Haruki Nishimura",
+          "Masha Itkina",
+          "Roberto Martín-Martín"
+        ],
+        "published": "2026-11-05T18:53:16Z",
+        "updated": "2026-11-05T18:53:16Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Vision-Language-Action (VLA) models can perform a wide range of robotic manipulation tasks, but often fail during deployment. Teaching them to recover from these failures requires substantial corrective data: existing approaches learn to recover from failures by directly associating corrective actions with the observations in which they were demonstrated. For instance, DAgger-like fine-tuning can require tens to hundreds of interactions, yet the resulting policy may still fail to generalize the learned corrections beyond the demonstrated scenarios. We hypothesize that semantics can capture the underlying reasons for failures and their corrections, enabling policies to learn from only a handful of corrective demonstrations and generalize those corrections to novel objects, and scene variations. We propose OopsieRecover, a framework that uses abduction to infer the intent behind a small set of corrective demonstrations and encodes the inferred knowledge as dense spatial representations and conditional costs. These costs capture when a behavior is undesirable and steer the policy toward more desirable action regions. We experiment across 6 tasks and variations in object poses, scenes, and related tasks, and find that only a handful of corrective demonstrations can enable a VLA to overcome failures across a broad range of novel situations, without requiring new corrective data for each variation. Please refer to https://robin-lab.cs.utexas.edu/oopsierecover for videos.",
+        "abs_url": "https://arxiv.org/abs/2611.08462v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.08462v1",
+        "research_fit": 52,
+        "video_potential": 25,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robotic",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robotic, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 13.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 58 ≥ 35",
+        "Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining",
+        "Specific keywords matched: long-horizon manipulation, diffusion policy",
+        "Detected subtopics: diffusion_flow_policy",
+        "Personal domain affinity: neutral (+0)",
+        "Subtopic: diffusion_flow_policy",
+        "Recently recommended: 5 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 46.0 = base 58.0 + affinity +0 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7161687616",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7161687616",
+        "openalex_id": "W7161687616",
+        "base_arxiv_id": "2605.16871",
+        "doi": "10.1109/lra.2026.3742285",
+        "title": "SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations",
+        "authors": [
+          "Site Hu",
+          "Takato Horii"
+        ],
+        "abstract": "Long-horizon robot manipulation requires policies to coordinate multiple intermediate subgoals and determine when to advance between them. However, most imitation learning methods are trained solely on task-level demonstrations, without explicitly modeling the active subgoal or its execution progress. This limitation is further exacerbated by the scarcity of subgoal-level supervision in standard robot learning datasets, which makes explicit subgoal-conditioned control and online transition modeling difficult to learn. To address this issue, this paper proposes Subgoal-Aware Diffusion Policy (SADP), a framework that leverages foundation models to autonomously generate subgoal-annotated demonstrations and trains diffusion policies on these datasets. SADP structures policy execution around explicit natural-language subgoals by conditioning action generation on both task-level and subgoal-level descriptions. A lightweight auxiliary head further predicts a continuation score that drives online subgoal switching and supports stage-level progress monitoring. Experiments in RLBench simulations and real-world evaluations on a UR5e robot demonstrate that SADP maintains competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring. These results show that explicit subgoal progression can be incorporated into a diffusion policy without degrading task-level performance.",
+        "publication_date": "2026-10-09",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.7422000169754028
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.25459998846054077
+          },
+          {
+            "id": "https://openalex.org/T10906",
+            "display_name": "AI-based Problem Solving and Planning",
+            "score": 0.0007999999797903001
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.27954667,
+        "referenced_works": [],
+        "related_works": [
+          "W4387725599",
+          "W4402753568",
+          "W4405718154",
+          "W4409263585",
+          "W4415003139",
+          "W4416818705",
+          "W7117752329",
+          "W7135636689",
+          "W7164171735",
+          "W7214722669"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-19T08:01:26",
+        "last_considered_at": "2026-11-06T20:23:06+08:00",
+        "recommended_at": "2026-11-06T20:23:06+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-02T09:50:06",
+        "openalex_url": "https://openalex.org/W7161687616",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3742285",
+        "open_access_url": "https://doi.org/10.1109/lra.2026.3742285",
+        "pdf_url": null,
+        "research_fit": 58,
+        "video_potential": 46,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "diffusion policy",
+          "robot learning",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy",
+              "robot learning",
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, robot learning"
+          }
+        ],
+        "historical_value_score": 56.4,
+        "historical_score_components": {
+          "research_relevance": 58.0,
+          "recency": 100.0,
+          "normalized_citation": 28.0,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 72.0%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 58.0,
+      "recommendation_utility": 46.0,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2605.16871",
+        "base_id": "2605.16871",
+        "version": 1,
+        "title": "SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations",
+        "authors": [
+          "Site Hu",
+          "Takato Horii"
+        ],
+        "published": "2026-10-09T00:00:00Z",
+        "updated": "2026-10-09T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Long-horizon robot manipulation requires policies to coordinate multiple intermediate subgoals and determine when to advance between them. However, most imitation learning methods are trained solely on task-level demonstrations, without explicitly modeling the active subgoal or its execution progress. This limitation is further exacerbated by the scarcity of subgoal-level supervision in standard robot learning datasets, which makes explicit subgoal-conditioned control and online transition modeling difficult to learn. To address this issue, this paper proposes Subgoal-Aware Diffusion Policy (SADP), a framework that leverages foundation models to autonomously generate subgoal-annotated demonstrations and trains diffusion policies on these datasets. SADP structures policy execution around explicit natural-language subgoals by conditioning action generation on both task-level and subgoal-level descriptions. A lightweight auxiliary head further predicts a continuation score that drives online subgoal switching and supports stage-level progress monitoring. Experiments in RLBench simulations and real-world evaluations on a UR5e robot demonstrate that SADP maintains competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring. These results show that explicit subgoal progression can be incorporated into a diffusion policy without degrading task-level performance.",
+        "abs_url": "https://arxiv.org/abs/2605.16871",
+        "pdf_url": "https://arxiv.org/pdf/2605.16871",
+        "research_fit": 58,
+        "video_potential": 46,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "diffusion policy",
+          "robot learning",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy",
+              "robot learning",
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, robot learning"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics, manipulation",
+        "research_fit 30 ≥ 18",
+        "核心方向：world_model_embodied_reasoning",
+        "特定关键词：long-horizon manipulation",
+        "historical_value_score 51.5 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 20.6%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-11-02T09:50:06",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 51.5 = base 51.5 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7222940980",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7222940980",
+        "openalex_id": "W7222940980",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3744999",
+        "title": "Robotic Ultra-Long-Horizon Manipulation Skills via Human-Guided Lifelong Code Generation",
+        "authors": [
+          "Yuan Meng",
+          "Zhenguo Sun",
+          "Max Fest",
+          "Xiangtong Yao",
+          "Xukun Li",
+          "Zhenshan Bing",
+          "Alois Knoll"
+        ],
+        "abstract": null,
+        "publication_date": "2026-10-19",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9897000193595886
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.006899999920278788
+          },
+          {
+            "id": "https://openalex.org/T10906",
+            "display_name": "AI-based Problem Solving and Planning",
+            "score": 0.0006000000284984708
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.79387466,
+        "referenced_works": [
+          "W4383097638",
+          "W4393160747",
+          "W4401415119",
+          "W4401417251",
+          "W4402354151",
+          "W4407163958",
+          "W4413917664",
+          "W4414079054",
+          "W7133220882",
+          "W7171640749"
+        ],
+        "related_works": [
+          "W7162770963",
+          "W4416049924",
+          "W7204555901",
+          "W7167488900",
+          "W3215163890",
+          "W7155022579",
+          "W7172265379",
+          "W7220672404",
+          "W7165686697",
+          "W7196926233"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-11-02T09:50:06",
+        "last_considered_at": "2026-11-06T20:23:06+08:00",
+        "recommended_at": "2026-11-06T20:23:06+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-02T09:50:06",
+        "openalex_url": "https://openalex.org/W7222940980",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3744999",
+        "open_access_url": null,
+        "pdf_url": null,
+        "research_fit": 30,
+        "video_potential": 35,
+        "matched_topics": [
+          "world_model_embodied_reasoning"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation"
+          }
+        ],
+        "historical_value_score": 51.5,
+        "historical_score_components": {
+          "research_relevance": 30.0,
+          "recency": 100.0,
+          "normalized_citation": 79.4,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 0.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 20.6%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 51.5,
+      "recommendation_utility": 51.5,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7222940980",
+        "base_id": "openalex:W7222940980",
+        "version": 1,
+        "title": "Robotic Ultra-Long-Horizon Manipulation Skills via Human-Guided Lifelong Code Generation",
+        "authors": [
+          "Yuan Meng",
+          "Zhenguo Sun",
+          "Max Fest",
+          "Xiangtong Yao",
+          "Xukun Li",
+          "Zhenshan Bing",
+          "Alois Knoll"
+        ],
+        "published": "2026-10-19T00:00:00Z",
+        "updated": "2026-10-19T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3744999",
+        "pdf_url": "",
+        "research_fit": 30,
+        "video_potential": 35,
+        "matched_topics": [
+          "world_model_embodied_reasoning"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
