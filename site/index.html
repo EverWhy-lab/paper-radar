@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-11-06</title>
+  <title>Paper Radar — 2026-11-07</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-11-06 20:23</p>
+        <p class="header-updated">2026-11-07 19:16</p>
       </div>
     </div>
   </header>
@@ -31,157 +31,38 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="arxiv:2611.08372" data-paper-id="arxiv:2611.08372" data-category="frontier_recent">
-        <div class="card-topline">
-          <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2611.08372v1</span>
-        </div>
-        <h3>MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation</h3>
-        <p class="authors">Sateesh Kumar, Arnav Balaji, Arpit Bahety, Skand Peri, Georgios Pavlakos, Roberto Martín-Martín</p>
-        <div class="metadata">
-          <span><b>Published</b> 2026-11-06 01:50 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO, cs.AI, cs.CV</span>
-        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>MOMASPLAT addresses viewpoint sensitivity in imitation-learned mobile manipulation policies, where base-pose shifts from navigation uncertainty and localization drift break visuomotor policies, and prior novel-view synthesis augmentation fails because it assumes static scenes and cannot re-render the manipulated object after contact. The method combines 3D Gaussian Splatting, feed-forward 3D foundation models, and kinematics-based action retargeting to reconstruct scene and object separately, render unseen base poses, and produce geometrically consistent synthetic demonstrations with transformed actions. Across five real-world mobile manipulation tasks with rigid and articulated objects in three scenes, plus simulation fidelity checks, it more than doubles the strongest baseline&#39;s average success rate and retains non-trivial success at large base displacements where all baselines fail. Inspect how object reconstruction and action retargeting stay consistent under large viewpoint changes.</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Learning &amp; Policy Post-Training</span>
-<span><b>Utility</b> 69.0 (base 63.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-          </div>
-          <ul>
-<li>research_fit 63 ≥ 40</li><li>Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining</li><li>Specific keywords matched: mobile manipulation</li><li>Diversity topic: humanoid_loco_manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched mobile manipulation)</li><li>recommendation_utility 69.0 = base 63.0 + affinity +6 + redundancy -0</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint. This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints. Recent approaches use novel-view synthesis (NVS) to augment demonstrations with unseen viewpoints, but they assume static scenes and therefore fail to re-render the manipulated object during the post-contact interaction phase, leaving the most critical parts of the demonstration unaugmented. We present MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions. Our key insight is that standard MoMa data collection naturally provides the multiview observations needed to reconstruct both the static scene and the manipulated object in 3D. MOMASPLAT combines 3D Gaussian Splatting, feed-forward 3D foundation models, and kinematics-based action retargeting to separately reconstruct the scene and manipulated object, render them from novel viewpoints, and generate geometrically consistent synthetic demonstrations paired with transformed actions. We evaluate MOMASPLAT on five real-world mobile manipulation tasks involving both rigid and articulated objects across three scenes, and validate the fidelity of its synthesized demonstrations against ground truth in simulation. MOMASPLAT substantially improves robustness to unseen base poses, more than doubling the average success rate of the strongest baseline and maintaining non-trivial success at large base displacements where all baselines fail, while reducing the need for largescale real-world data collection.</p></details>
-        <div class="actions">
-          <a href="https://arxiv.org/abs/2611.08372v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2611.08372v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2611.08372" target="_blank" rel="noopener noreferrer">BibTeX</a>
-        </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2611.08372" data-title="MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.08372" data-title="MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="arxiv:2611.08462" data-paper-id="arxiv:2611.08462" data-category="frontier_recent">
-        <div class="card-topline">
-          <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2611.08462v1</span>
-        </div>
-        <h3>OopsieRecover: Learning Transferable VLA Corrections from Semantic Interventions</h3>
-        <p class="authors">Arpit Bahety, Skand Peri, Sriniket Ambatipudi, Chen Xu, Haruki Nishimura, Masha Itkina, Roberto Martín-Martín</p>
-        <div class="metadata">
-          <span><b>Published</b> 2026-11-06 02:53 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO</span>
-        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>OopsieRecover targets VLA deployment failures, where DAgger-like fine-tuning needs tens to hundreds of corrective interactions and still generalizes poorly beyond demonstrated scenarios. The framework uses abduction to infer intent behind a handful of corrective demonstrations and encodes that knowledge as dense spatial representations and conditional costs marking undesirable behavior and steering the policy toward better action regions. Across six tasks with variations in object poses, scenes, and related tasks, the authors report that a handful of corrections lets a VLA overcome failures across novel situations without new corrective data per variation. Inspect how inferred intent is converted into spatial costs and whether those costs transfer across task variations.</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
-<span><b>Utility</b> 52.0 (base 52.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-          </div>
-          <ul>
-<li>research_fit 52 ≥ 40</li><li>Core topics matched: vla_robot_foundation</li><li>Specific keywords matched: VLA, vision-language-action</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Vision-Language-Action (VLA) models can perform a wide range of robotic manipulation tasks, but often fail during deployment. Teaching them to recover from these failures requires substantial corrective data: existing approaches learn to recover from failures by directly associating corrective actions with the observations in which they were demonstrated. For instance, DAgger-like fine-tuning can require tens to hundreds of interactions, yet the resulting policy may still fail to generalize the learned corrections beyond the demonstrated scenarios. We hypothesize that semantics can capture the underlying reasons for failures and their corrections, enabling policies to learn from only a handful of corrective demonstrations and generalize those corrections to novel objects, and scene variations. We propose OopsieRecover, a framework that uses abduction to infer the intent behind a small set of corrective demonstrations and encodes the inferred knowledge as dense spatial representations and conditional costs. These costs capture when a behavior is undesirable and steer the policy toward more desirable action regions. We experiment across 6 tasks and variations in object poses, scenes, and related tasks, and find that only a handful of corrective demonstrations can enable a VLA to overcome failures across a broad range of novel situations, without requiring new corrective data for each variation. Please refer to https://robin-lab.cs.utexas.edu/oopsierecover for videos.</p></details>
-        <div class="actions">
-          <a href="https://arxiv.org/abs/2611.08462v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2611.08462v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2611.08462" target="_blank" rel="noopener noreferrer">BibTeX</a>
-        </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2611.08462" data-title="OopsieRecover: Learning Transferable VLA Corrections from Semantic Interventions" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.08462" data-title="OopsieRecover: Learning Transferable VLA Corrections from Semantic Interventions" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="openalex:W7161687616" data-paper-id="openalex:W7161687616" data-category="journal_recent">
-        <div class="card-topline">
-          <span class="category category--journal_recent">期刊新论文</span>
-          <span class="arxiv-id">W7161687616</span>
-        </div>
-        <h3>SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations</h3>
-        <p class="authors">Site Hu, Takato Horii</p>
-        <div class="metadata">
-          <span><b>Published</b> 2026-10-09</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> diffusion_flow_policy</span>        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>SADP addresses long-horizon manipulation where policies must coordinate intermediate subgoals and decide when to advance, while most imitation learning uses only task-level demonstrations and subgoal supervision is scarce. The framework uses foundation models to autonomously generate subgoal-annotated demonstrations, conditions diffusion policy action generation on both task-level and natural-language subgoal descriptions, and adds a lightweight auxiliary head predicting a continuation score for online subgoal switching and stage-level progress monitoring. RLBench simulation and real-world UR5e evaluations show competitive task performance while exposing temporally aligned subgoal-level execution signals, indicating explicit subgoal progression can be added without degrading task-level performance. Inspect how generated subgoal annotations are validated and how the continuation score triggers switching.</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 期刊新论文</span>
-            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training</span>
-<span><b>Subtopics</b> diffusion_flow_policy</span><span><b>Utility</b> 46.0 (base 58.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>Recent overlap</b> -12</span><span><b>OpenAlex citations</b> 0</span>          </div>
-          <ul>
-<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 58 ≥ 35</li><li>Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining</li><li>Specific keywords matched: long-horizon manipulation, diffusion policy</li><li>Detected subtopics: diffusion_flow_policy</li><li>Personal domain affinity: neutral (+0)</li><li>Subtopic: diffusion_flow_policy</li><li>Recently recommended: 5 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 46.0 = base 58.0 + affinity +0 + redundancy -12</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Long-horizon robot manipulation requires policies to coordinate multiple intermediate subgoals and determine when to advance between them. However, most imitation learning methods are trained solely on task-level demonstrations, without explicitly modeling the active subgoal or its execution progress. This limitation is further exacerbated by the scarcity of subgoal-level supervision in standard robot learning datasets, which makes explicit subgoal-conditioned control and online transition modeling difficult to learn. To address this issue, this paper proposes Subgoal-Aware Diffusion Policy (SADP), a framework that leverages foundation models to autonomously generate subgoal-annotated demonstrations and trains diffusion policies on these datasets. SADP structures policy execution around explicit natural-language subgoals by conditioning action generation on both task-level and subgoal-level descriptions. A lightweight auxiliary head further predicts a continuation score that drives online subgoal switching and supports stage-level progress monitoring. Experiments in RLBench simulations and real-world evaluations on a UR5e robot demonstrate that SADP maintains competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring. These results show that explicit subgoal progression can be incorporated into a diffusion policy without degrading task-level performance.</p></details>
-        <div class="actions">
-<a href="https://openalex.org/W7161687616" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2605.16871" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.1109/lra.2026.3742285" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2605.16871" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7161687616" data-title="SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7161687616" data-title="SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="openalex:W7222940980" data-paper-id="openalex:W7222940980" data-category="high_impact_historical">
+      <article class="paper-card" id="openalex:W2940914777" data-paper-id="openalex:W2940914777" data-category="high_impact_historical">
         <div class="card-topline">
           <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W7222940980</span>
+          <span class="arxiv-id">W2940914777</span>
         </div>
-        <h3>Robotic Ultra-Long-Horizon Manipulation Skills via Human-Guided Lifelong Code Generation</h3>
-        <p class="authors">Yuan Meng, Zhenguo Sun, Max Fest, Xiangtong Yao, Xukun Li, Zhenshan Bing, Alois Knoll</p>
+        <h3>Robust Legged Robot State Estimation Using Factor Graph Optimization</h3>
+        <p class="authors">David Wisth, Marco Camurri, Maurice Fallon</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-19</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
+          <span><b>Published</b> 2019-08-08</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> robot_state_estimation</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>The supplied record for this paper contains only its title, authors, venue, year, and topic metadata, with an empty abstract, so no problem statement, method details, reported evidence, or results can be described from the source. The title indicates work on ultra-long-horizon manipulation skills through human-guided lifelong code generation, but the abstract provides no basis for summarizing its approach or findings. Read the full paper to determine its problem formulation, how human guidance and code generation interact over a lifelong setting, and what evidence supports its claims.</p>
+          <p>This method paper addresses legged-robot state estimation when foot contact classification fails under slipping and when dynamic gaits such as trotting cause position drift, aiming to reduce reliance on contact labels. The approach is a factor graph optimization that tightly fuses and smooths inertial navigation, leg odometry, and visual odometry. On the ANYmal quadruped in a realistic outdoor industrial environment, with trotting, walking, obstacle crossing, and stair ascent, the authors report decreased relative position error by up to 55% and absolute position error by 76% compared to kinematic-inertial odometry. When reading, inspect how the factor graph handles contact uncertainty and visual occlusion, and how the reported errors are defined and measured.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 领域内高影响力</span>
-            <span><b>Core topics</b> World Models &amp; Embodied Reasoning</span>
-<span><b>Utility</b> 51.5 (base 51.5)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>OpenAlex citations</b> 0</span>          </div>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> robot_state_estimation</span><span><b>Utility</b> 60.4 (base 54.4)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>OpenAlex citations</b> 82</span>          </div>
           <ul>
-<li>机器人语境：robot, robotic, robotics, manipulation</li><li>research_fit 30 ≥ 18</li><li>核心方向：world_model_embodied_reasoning</li><li>特定关键词：long-horizon manipulation</li><li>historical_value_score 51.5 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 20.6%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-11-02T09:50:06</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 51.5 = base 51.5 + affinity +0 + redundancy -0</li>          </ul>
+<li>机器人语境：robot, robots, robotic</li><li>research_fit 22 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：robot state estimation, factor graph</li><li>historical_value_score 54.4 ≥ 42.0</li><li>发表于 2019 年</li><li>同领域同年份引用标准化位于前 12.5%</li><li>阅读时效分 70/100（论文年龄 7 年）</li><li>OpenAlex FWCI 2.22</li><li>近 2 年年均引用 10.5；此前 2 年年均 17.0</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:03</li><li>Detected subtopics: robot_state_estimation</li><li>Personal domain affinity: preferred (+6; matched quadruped)</li><li>recommendation_utility 60.4 = base 54.4 + affinity +6 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Legged robots, specifically quadrupeds, are becoming increasingly attractive for industrial applications such as inspection. However, to leave the laboratory and to become useful to an end user requires reliability in harsh conditions. From the perspective of state estimation, it is essential to be able to accurately estimate the robot&#39;s state despite challenges such as uneven or slippery terrain, textureless and reflective scenes, as well as dynamic camera occlusions. We are motivated to reduce the dependency on foot contact classifications, which fail when slipping, and to reduce position drift during dynamic motions such as trotting. To this end, we present a factor graph optimization method for state estimation which tightly fuses and smooths inertial navigation, leg odometry and visual odometry. The effectiveness of the approach is demonstrated using the ANYmal quadruped robot navigating in a realistic outdoor industrial environment. This experiment included trotting, walking, crossing obstacles and ascending a staircase. The proposed approach decreased the relative position error by up to 55% and absolute position error by 76% compared to kinematic-inertial odometry.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7222940980" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3744999" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7222940980" data-title="Robotic Ultra-Long-Horizon Manipulation Skills via Human-Guided Lifelong Code Generation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W2940914777" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/1904.03048" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/1904.03048" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2019.2933768" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/1904.03048" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W2940914777" data-title="Robust Legged Robot State Estimation Using Factor Graph Optimization" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7222940980" data-title="Robotic Ultra-Long-Horizon Manipulation Skills via Human-Guided Lifelong Code Generation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W2940914777" data-title="Robust Legged Robot State Estimation Using Factor Graph Optimization" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
