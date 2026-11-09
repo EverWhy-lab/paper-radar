@@ -1,0 +1,1732 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-09",
+  "generated_at": "2026-11-09T21:15:12+08:00",
+  "mode": "incremental",
+  "candidate_count": 3234,
+  "historical_candidate_count": 784,
+  "recommendation_count": 5,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 2,
+    "model_based_recent": 0,
+    "review_knowledge_map": 1,
+    "rising_recent": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7155538002",
+      "title": "X2-N: A Transformable Wheel-Legged Humanoid Robot With Dual-Mode Locomotion and Manipulation",
+      "takeaway": "X2-N addresses the limited hip degrees of freedom and fixed-wheel feet of typical wheel-legged robots, as well as the absence of a full upper body, by introducing a high-DoF transformable robot that switches between humanoid and wheel-legged forms through joint reconfiguration. The authors propose a reinforcement learning-based whole-body control framework tailored to this morphology, covering hybrid locomotion, transformation, and manipulation. They report validation on dynamic skating-like motion, stair climbing, and package delivery, with the abstract truncated before stating quantitative outcomes. When reading, inspect how the joint-reconfiguration transition is represented and controlled within the RL framework, and how the same policy handles locomotion and manipulation modes.",
+      "generated_at": "2026-11-09T13:20:46",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7215053177",
+      "title": "CC-VLA: Learning Control-Aware Compliance VLA Model for Robust Contact-Rich Robotic Manipulation",
+      "takeaway": "CC-VLA targets force-aware VLA policies whose action-chunk execution and perception-to-control latency limit precise force tracking and rapid successive adjustment in contact-rich manipulation. The framework uses a multimodal mixture-of-experts to encode force signal sequences together with vision-language fused features, a multi-stage training strategy for force perception under sparse sampling, and a VLA-guided adaptive compliance controller for position tracking in free motion and force-position tracking in contact. The authors also describe an adversarial shared teleoperation strategy for collecting high-precision force/torque demonstrations. Real-world experiments are reported to improve success rates and force-control precision, with multi-level safety under tested partial-OOD pose shifts; inspect the controller-policy interface and the force encoding.",
+      "generated_at": "2026-11-09T13:20:46",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4415318125",
+      "title": "DPL: Depth-Only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction",
+      "takeaway": "DPL addresses terrain-aware humanoid locomotion, where depth-image end-to-end learning suffers training inefficiency and a sim-to-real depth gap, while elevation-map methods depend on multiple sensors and localization. The framework combines a terrain-aware locomotion policy with a blind backbone guided by pre-trained elevation-map perception, a multi-modality cross-attention Transformer that reconstructs structured terrain from noisy depth, and a realistic depth synthesis method using self-occlusion-aware ray casting and noise-aware modeling, reported to reduce terrain reconstruction error by over 30%. The authors validate on a full-sized humanoid across diverse challenging terrains. Inspect how the reconstructed terrain representation feeds the policy and how the synthetic depth distribution is matched to real sensors.",
+      "generated_at": "2026-11-09T13:20:46",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7162649222",
+      "title": "Colosseum V2: Benchmarking Generalization for Vision-Language-Action Models",
+      "takeaway": "Colosseum V2 is a large-scale simulation benchmark for studying how VLA models generalize under distribution shift, motivated by the gap between zero-shot perception and language ability and degraded task performance. It comprises 28 tasks across 13 task categories and two robot morphologies, covering manipulation primitives and long-horizon behaviors, built on the ManiSkill simulator for GPU-parallelized in-domain and out-of-domain evaluation. The authors evaluate ACT and Pi0.5 and report limitations in base performance and generalization, and they report correlations between simulation and real-world metrics supporting ecological validity. Use it as a knowledge map for standardized VLA generalization protocols; inspect task coverage and the out-of-domain split design.",
+      "generated_at": "2026-11-09T13:20:46",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4417082657",
+      "title": "VAMOS: A Hierarchical Vision-Language-Action Model for Capability-Modulated and Steerable Navigation",
+      "takeaway": "VAMOS addresses navigation policies that must generalize across environments while respecting embodiment-specific physical constraints, proposing a hierarchical VLA that decouples semantic planning from embodiment grounding. A generalist planner learns from diverse open-world data, while a specialist affordance model learns the robot's constraints in simulation; an interface lets the planner propose candidate paths in image space for the affordance model to evaluate and re-rank. Real-world experiments are reported to show higher success rates indoors and outdoors than model-based and end-to-end learning methods, cross-embodied deployment on legged and wheeled robots, natural-language steerability, and 3X higher single-robot success by rejecting infeasible plans. Inspect the image-space interface and affordance model.",
+      "generated_at": "2026-11-09T13:20:46",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 51 ≥ 35",
+        "Core topics matched: humanoid_loco_manipulation, dexterous_multimodal_manipulation",
+        "Specific keywords matched: humanoid robot, locomotion and manipulation, dexterous manipulation, whole-body control",
+        "Detected subtopics: loco_manipulation, dexterous_manipulation, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched humanoid, dexterous manipulation)",
+        "Subtopic: whole_body_control",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = dexterous_manipulation, loco_manipulation",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 52.8 = base 51.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7155538002",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7155538002",
+        "openalex_id": "W7155538002",
+        "base_arxiv_id": "2604.21541",
+        "doi": "10.1109/lra.2026.3739563",
+        "title": "X2-N: A Transformable Wheel-Legged Humanoid Robot With Dual-Mode Locomotion and Manipulation",
+        "authors": [
+          "Yan Ning",
+          "Xingzhou Chen",
+          "Delong Li",
+          "Hao Zhang",
+          "Hanfu Gai",
+          "Jinlei Zhao",
+          "Tongyuan Li",
+          "Cheng Zhang",
+          "Zhihui Peng",
+          "Ling Shi"
+        ],
+        "abstract": "Wheel-legged robots combine the efficiency of wheeled locomotion with the versatility of legged systems, enabling rapid traversal over both continuous and discrete terrains. However, conventional designs typically employ fixed wheels as feet and limited degrees of freedom (DoFs) at the hips, resulting in reduced stability and mobility during legged locomotion compared to humanoids with flat feet. In addition, most existing platforms lack a full upper body with arms, which limits their ability to perform dexterous manipulation tasks. In this letter, we present X2-N, a high-DoF transformable robot with dual-mode locomotion and manipulation. X2-N can operate in both humanoid and wheel-legged forms and transform seamlessly between them through joint reconfiguration. We further propose a reinforcement learning (RL)-based whole-body control framework tailored to this morphology, enabling control across hybrid locomotion, transformation, and manipulation. We validate X2-N in a range of challenging locomotion and manipulation tasks, including dynamic skating-like motion, stair climbing, and package delivery. Results demonstrate high",
+        "publication_date": "2026-10-06",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.98580002784729
+          },
+          {
+            "id": "https://openalex.org/T11615",
+            "display_name": "Control and Dynamics of Mobile Robots",
+            "score": 0.005100000184029341
+          },
+          {
+            "id": "https://openalex.org/T10571",
+            "display_name": "Robotic Mechanisms and Dynamics",
+            "score": 0.0035000001080334187
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.18455084,
+        "referenced_works": [
+          "W2019557253",
+          "W2049410986",
+          "W2051203581",
+          "W2143729862",
+          "W2573227850",
+          "W2736601468",
+          "W2928521819",
+          "W2972814924",
+          "W3206620955",
+          "W4221164057",
+          "W4297685602",
+          "W4313549808",
+          "W4395116617",
+          "W4405778899",
+          "W4410810166",
+          "W4412836816",
+          "W4417514306"
+        ],
+        "related_works": [
+          "W2064736763",
+          "W2750821667",
+          "W2755163439",
+          "W2888044609",
+          "W3076622104",
+          "W4390481142",
+          "W4410294575",
+          "W4413580746",
+          "W4416748765",
+          "W7166697465"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-26T08:01:51",
+        "last_considered_at": "2026-11-09T21:15:12+08:00",
+        "recommended_at": "2026-11-09T21:15:12+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:10",
+        "openalex_url": "https://openalex.org/W7155538002",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3739563",
+        "open_access_url": "https://arxiv.org/abs/2604.21541",
+        "pdf_url": "https://arxiv.org/pdf/2604.21541",
+        "research_fit": 51,
+        "video_potential": 60,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "dexterous_multimodal_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "locomotion and manipulation",
+          "dexterous manipulation",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot",
+              "locomotion and manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, manipulation, humanoid, dexterous manipulation"
+          }
+        ],
+        "historical_value_score": 52.4,
+        "historical_score_components": {
+          "research_relevance": 51.0,
+          "recency": 100.0,
+          "normalized_citation": 18.5,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 81.5%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "loco_manipulation",
+        "dexterous_manipulation",
+        "whole_body_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 51.0,
+      "recommendation_utility": 52.8,
+      "days_since_same_subtopic": 1,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2604.21541",
+        "base_id": "2604.21541",
+        "version": 1,
+        "title": "X2-N: A Transformable Wheel-Legged Humanoid Robot With Dual-Mode Locomotion and Manipulation",
+        "authors": [
+          "Yan Ning",
+          "Xingzhou Chen",
+          "Delong Li",
+          "Hao Zhang",
+          "Hanfu Gai",
+          "Jinlei Zhao",
+          "Tongyuan Li",
+          "Cheng Zhang",
+          "Zhihui Peng",
+          "Ling Shi"
+        ],
+        "published": "2026-10-06T00:00:00Z",
+        "updated": "2026-10-06T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Wheel-legged robots combine the efficiency of wheeled locomotion with the versatility of legged systems, enabling rapid traversal over both continuous and discrete terrains. However, conventional designs typically employ fixed wheels as feet and limited degrees of freedom (DoFs) at the hips, resulting in reduced stability and mobility during legged locomotion compared to humanoids with flat feet. In addition, most existing platforms lack a full upper body with arms, which limits their ability to perform dexterous manipulation tasks. In this letter, we present X2-N, a high-DoF transformable robot with dual-mode locomotion and manipulation. X2-N can operate in both humanoid and wheel-legged forms and transform seamlessly between them through joint reconfiguration. We further propose a reinforcement learning (RL)-based whole-body control framework tailored to this morphology, enabling control across hybrid locomotion, transformation, and manipulation. We validate X2-N in a range of challenging locomotion and manipulation tasks, including dynamic skating-like motion, stair climbing, and package delivery. Results demonstrate high",
+        "abs_url": "https://arxiv.org/abs/2604.21541",
+        "pdf_url": "https://arxiv.org/pdf/2604.21541",
+        "research_fit": 51,
+        "video_potential": 60,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "dexterous_multimodal_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "locomotion and manipulation",
+          "dexterous manipulation",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot",
+              "locomotion and manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "manipulation",
+              "humanoid",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, manipulation, humanoid, dexterous manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 45 ≥ 35",
+        "Core topics matched: vla_robot_foundation, robot_learning_posttraining",
+        "Specific keywords matched: VLA, vision-language-action",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 45.0 = base 45.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7215053177",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7215053177",
+        "openalex_id": "W7215053177",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3739025",
+        "title": "CC-VLA: Learning Control-Aware Compliance VLA Model for Robust Contact-Rich Robotic Manipulation",
+        "authors": [
+          "Zhaohong Mai",
+          "Chao Wang",
+          "Chao Zeng",
+          "Sitong Mao",
+          "Heng Zhang",
+          "Shunbo Zhou",
+          "Chenguang Yang"
+        ],
+        "abstract": "Integrating visuomotor policies or Vision-Language-Action (VLA) models with force/torque (F/T) perception has demonstrated significant progress in imitation learning for robotic manipulation. However, existing force-aware VLA models frequently exhibit limited capability in precise force tracking and rapid successive adjustments. This deficiency stems from the limitations of action-chunk execution strategies and the substantial latency between perception and real-time control. Such limitations can lead to task failures and safety risks, particularly when the execution of an action chunk exerts excessive interaction forces without timely adjustment. To overcome this challenge, we propose the Control-aware Compliance VLA (CC-VLA) framework for reactive control. The CC-VLA model employs a multimodal mixture-of-experts (MoE) to encode force signal sequences and vision-language fused feature. Furthermore, it utilizes a multi-stage training strategy to ensure robust perception within the visual-semantic space and effective force perception under sparse sampling conditions. Additionally, a VLA-guided adaptive compliance controller is designed to facilitate precise position tracking during contact-free motion and optimal force-position tracking for contact-rich tasks. To facilitate high-precision F/T data acquisition, we also implement an adversaria shared teleoperation strategy for contact-rich demonstrations that bolsters system safety and interactivity. Extensive real-world experiments demonstrate that CC-VLA significantly improves success rates in challenging force-perception tasks and enhances force-control precision, while providing multi-level safety and robustness under the tested partial-OOD pose-shift settings.",
+        "publication_date": "2026-10-01",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9976000189781189
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.0017999999690800905
+          },
+          {
+            "id": "https://openalex.org/T11687",
+            "display_name": "Teleoperation and Haptic Systems",
+            "score": 0.00019999999494757503
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.63355388,
+        "referenced_works": [
+          "W2111528514",
+          "W2517641405",
+          "W2593465928",
+          "W3005193778",
+          "W3130500701",
+          "W4221139340",
+          "W4288885957",
+          "W4385430674",
+          "W4390873054",
+          "W4396594865",
+          "W4400647416",
+          "W4401415597",
+          "W4403337227",
+          "W4409426912",
+          "W4413917780",
+          "W4413925194",
+          "W4413925274",
+          "W4413925798",
+          "W4413945067",
+          "W4414050525",
+          "W4414079054",
+          "W4415037842",
+          "W4415253988",
+          "W4415330742",
+          "W4416650019",
+          "W4417297116",
+          "W7124462858",
+          "W7133227004"
+        ],
+        "related_works": [
+          "W2152740345",
+          "W3145200372",
+          "W7125526615",
+          "W7167785295",
+          "W7172265379",
+          "W7212017135",
+          "W7214022764",
+          "W7217341500",
+          "W7220845164",
+          "W7220852085"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-12T09:37:12",
+        "last_considered_at": "2026-11-09T21:15:12+08:00",
+        "recommended_at": "2026-11-09T21:15:12+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:10",
+        "openalex_url": "https://openalex.org/W7215053177",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3739025",
+        "open_access_url": "https://doi.org/10.1109/lra.2026.3739025",
+        "pdf_url": null,
+        "research_fit": 45,
+        "video_potential": 38,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "visuomotor",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "visuomotor",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, visuomotor, vision-language-action, teleoperation"
+          }
+        ],
+        "historical_value_score": 58.0,
+        "historical_score_components": {
+          "research_relevance": 45.0,
+          "recency": 100.0,
+          "normalized_citation": 63.4,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 36.6%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 45.0,
+      "recommendation_utility": 45.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7215053177",
+        "base_id": "openalex:W7215053177",
+        "version": 1,
+        "title": "CC-VLA: Learning Control-Aware Compliance VLA Model for Robust Contact-Rich Robotic Manipulation",
+        "authors": [
+          "Zhaohong Mai",
+          "Chao Wang",
+          "Chao Zeng",
+          "Sitong Mao",
+          "Heng Zhang",
+          "Shunbo Zhou",
+          "Chenguang Yang"
+        ],
+        "published": "2026-10-01T00:00:00Z",
+        "updated": "2026-10-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Integrating visuomotor policies or Vision-Language-Action (VLA) models with force/torque (F/T) perception has demonstrated significant progress in imitation learning for robotic manipulation. However, existing force-aware VLA models frequently exhibit limited capability in precise force tracking and rapid successive adjustments. This deficiency stems from the limitations of action-chunk execution strategies and the substantial latency between perception and real-time control. Such limitations can lead to task failures and safety risks, particularly when the execution of an action chunk exerts excessive interaction forces without timely adjustment. To overcome this challenge, we propose the Control-aware Compliance VLA (CC-VLA) framework for reactive control. The CC-VLA model employs a multimodal mixture-of-experts (MoE) to encode force signal sequences and vision-language fused feature. Furthermore, it utilizes a multi-stage training strategy to ensure robust perception within the visual-semantic space and effective force perception under sparse sampling conditions. Additionally, a VLA-guided adaptive compliance controller is designed to facilitate precise position tracking during contact-free motion and optimal force-position tracking for contact-rich tasks. To facilitate high-precision F/T data acquisition, we also implement an adversaria shared teleoperation strategy for contact-rich demonstrations that bolsters system safety and interactivity. Extensive real-world experiments demonstrate that CC-VLA significantly improves success rates in challenging force-perception tasks and enhances force-control precision, while providing multi-level safety and robustness under the tested partial-OOD pose-shift settings.",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3739025",
+        "pdf_url": "",
+        "research_fit": 45,
+        "video_potential": 38,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "VLA",
+          "vision-language-action",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "VLA",
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "visuomotor",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "visuomotor",
+              "vision-language-action",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, visuomotor, vision-language-action, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "rising_recent",
+      "reasons": [
+        "rising_score 88.6 ≥ 55.0",
+        "Robotics context: robot, robotic, robotics, humanoid, sim-to-real",
+        "research_fit 43 ≥ 12",
+        "Source restricted to robotics_core (S4210169774)",
+        "Publication age 147 days",
+        "Paper age 147 days; citation velocity uses a 90-day floor",
+        "Smoothed citation velocity 5.80 citations/month",
+        "Field/year normalized citation percentile 0.999",
+        "OpenAlex FWCI 46.38",
+        "Observed snapshot growth 2.747 citations/day",
+        "Detected subtopics: sim_to_real",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 94.6 = base 88.6 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4415318125",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4415318125",
+        "openalex_id": "W4415318125",
+        "base_arxiv_id": "2510.07152",
+        "doi": "10.1109/lra.2026.3703584",
+        "title": "DPL: Depth-Only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction",
+        "authors": [
+          "Jingkai Sun",
+          "Gang Han",
+          "Pihai Sun",
+          "Wen Zhao",
+          "Jiahang Cao",
+          "Jiaxu Wang",
+          "Qiang Zhang",
+          "Yijie Guo"
+        ],
+        "abstract": "Recent advancements in legged robot perceptive locomotion have shown promising progress. However, terrain-aware humanoid locomotion remains largely constrained to two paradigms: depth image-based end-to-end learning and elevation map-based methods. The former suffers from limited training efficiency and a significant sim-to-real gap in depth perception, while the latter depends heavily on multiple vision sensors and localization systems, resulting in latency and reduced robustness. To overcome these challenges, we propose a novel framework that tightly integrates three key components: (1) Terrain-Aware Locomotion Policy with a Blind Backbone, which leverages pre-trained elevation map-based perception to guide reinforcement learning with minimal visual input; (2) Multi-Modality Cross-Attention Transformer, which reconstructs structured terrain representations from noisy depth images; (3) Realistic Depth Images Synthetic Method, which employs self-occlusion-aware ray casting and noise-aware modeling to synthesize realistic depth observations, achieving over 30% reduction in terrain reconstruction error. This combination enables efficient policy training with limited data and hardware resources, while preserving critical terrain features essential for generalization. We validate our framework on a full-sized humanoid robot, demonstrating agile and adaptive locomotion across diverse and challenging terrains.",
+        "publication_date": "2026-06-15",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.9047999978065491
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.08089999854564667
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.006899999920278788
+          }
+        ],
+        "cited_by_count": 28,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 46.3763,
+        "citation_normalized_percentile": 0.99867413,
+        "referenced_works": [
+          "W2016285927",
+          "W2041094000",
+          "W2157044442",
+          "W2736601468",
+          "W3147968035",
+          "W3178099496",
+          "W3193576605",
+          "W4285159888",
+          "W4312238192",
+          "W4312749288",
+          "W4386721362",
+          "W4392763392",
+          "W4399794508",
+          "W4401415792",
+          "W4401416668",
+          "W4402449733",
+          "W4403786572",
+          "W4405785208",
+          "W4412939602",
+          "W4413756046",
+          "W4413918531",
+          "W4414079195",
+          "W4416748605",
+          "W4416749978",
+          "W4417093931",
+          "W6910887707",
+          "W6929297797",
+          "W7115921319"
+        ],
+        "related_works": [
+          "W7127706667",
+          "W7128404289",
+          "W7128695283",
+          "W7131403349",
+          "W7147489662",
+          "W4413918531",
+          "W7139917215",
+          "W7204527642",
+          "W4309137642",
+          "W4416749713"
+        ],
+        "discovery_source": [
+          "rising_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:51:41",
+        "last_considered_at": "2026-11-09T21:15:12+08:00",
+        "recommended_at": "2026-11-09T21:15:12+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:09:01",
+        "openalex_url": "https://openalex.org/W4415318125",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3703584",
+        "open_access_url": "https://arxiv.org/abs/2510.07152",
+        "pdf_url": "https://arxiv.org/pdf/2510.07152",
+        "research_fit": 43,
+        "video_potential": 58,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion",
+          "humanoid robot",
+          "legged robot",
+          "sim-to-real"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid locomotion",
+              "humanoid robot",
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, humanoid, sim-to-real"
+          }
+        ],
+        "historical_value_score": 75.9,
+        "historical_score_components": {
+          "research_relevance": 43.0,
+          "recency": 100.0,
+          "normalized_citation": 99.9,
+          "fwci": 100.0,
+          "citation_momentum": 70.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 46.38",
+          "近年年均 OpenAlex 引用 14.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": 88.6,
+        "rising_score_components": {
+          "research_relevance": 43.0,
+          "citation_velocity": 100.0,
+          "normalized_citation": 99.9,
+          "fwci": 100.0,
+          "observed_growth": 100.0
+        },
+        "rising_score_reasons": [
+          "Robotics context: robot, robotic, robotics, humanoid, sim-to-real",
+          "research_fit 43 ≥ 12",
+          "Source restricted to robotics_core (S4210169774)",
+          "Publication age 147 days",
+          "Paper age 147 days; citation velocity uses a 90-day floor",
+          "Smoothed citation velocity 5.80 citations/month",
+          "Field/year normalized citation percentile 0.999",
+          "OpenAlex FWCI 46.38",
+          "Observed snapshot growth 2.747 citations/day"
+        ],
+        "rising_updated_at": "2026-11-09T18:08:44+08:00",
+        "rising_age_days": 147,
+        "rising_citation_velocity": 5.798,
+        "rising_observed_growth": {
+          "recent": {
+            "prior_captured_at": "2026-11-02T17:50:40+08:00",
+            "elapsed_days": 7.01,
+            "citation_delta": 26,
+            "citations_per_day": 3.7076
+          },
+          "approximately_28_day": {
+            "prior_captured_at": "2026-10-12T17:37:51+08:00",
+            "elapsed_days": 28.02,
+            "citation_delta": 27,
+            "citations_per_day": 0.9635
+          },
+          "blended_citations_per_day": 2.7472
+        }
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "sim_to_real"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 88.6,
+      "recommendation_utility": 94.6,
+      "days_since_same_subtopic": 8,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2510.07152",
+        "base_id": "2510.07152",
+        "version": 1,
+        "title": "DPL: Depth-Only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction",
+        "authors": [
+          "Jingkai Sun",
+          "Gang Han",
+          "Pihai Sun",
+          "Wen Zhao",
+          "Jiahang Cao",
+          "Jiaxu Wang",
+          "Qiang Zhang",
+          "Yijie Guo"
+        ],
+        "published": "2026-06-15T00:00:00Z",
+        "updated": "2026-06-15T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Recent advancements in legged robot perceptive locomotion have shown promising progress. However, terrain-aware humanoid locomotion remains largely constrained to two paradigms: depth image-based end-to-end learning and elevation map-based methods. The former suffers from limited training efficiency and a significant sim-to-real gap in depth perception, while the latter depends heavily on multiple vision sensors and localization systems, resulting in latency and reduced robustness. To overcome these challenges, we propose a novel framework that tightly integrates three key components: (1) Terrain-Aware Locomotion Policy with a Blind Backbone, which leverages pre-trained elevation map-based perception to guide reinforcement learning with minimal visual input; (2) Multi-Modality Cross-Attention Transformer, which reconstructs structured terrain representations from noisy depth images; (3) Realistic Depth Images Synthetic Method, which employs self-occlusion-aware ray casting and noise-aware modeling to synthesize realistic depth observations, achieving over 30% reduction in terrain reconstruction error. This combination enables efficient policy training with limited data and hardware resources, while preserving critical terrain features essential for generalization. We validate our framework on a full-sized humanoid robot, demonstrating agile and adaptive locomotion across diverse and challenging terrains.",
+        "abs_url": "https://arxiv.org/abs/2510.07152",
+        "pdf_url": "https://arxiv.org/pdf/2510.07152",
+        "research_fit": 43,
+        "video_potential": 58,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real"
+        ],
+        "matched_keywords": [
+          "humanoid locomotion",
+          "humanoid robot",
+          "legged robot",
+          "sim-to-real"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid locomotion",
+              "humanoid robot",
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "sim-to-real"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid",
+              "sim-to-real"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "humanoid",
+              "sim-to-real"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, humanoid, sim-to-real"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics, manipulation, robot learning, vision-language-action",
+        "research_fit 45 ≥ 18",
+        "核心方向：vla_robot_foundation, robot_learning_posttraining",
+        "特定关键词：vision-language-action, VLA, general-purpose robot, action chunking",
+        "historical_value_score 72.9 ≥ 50.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 1.4%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 10.31",
+        "近年年均 OpenAlex 引用 3.5（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-11-09T10:08:10",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 72.9 = base 72.9 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7162649222",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7162649222",
+        "openalex_id": "W7162649222",
+        "base_arxiv_id": "2605.27759",
+        "doi": "10.1109/lra.2026.3741771",
+        "title": "Colosseum V2: Benchmarking Generalization for Vision-Language-Action Models",
+        "authors": [
+          "Jeremy Morgan",
+          "Hyeonho Oh",
+          "Prajwal Vijay",
+          "Jincen Song",
+          "Ashvin Arora",
+          "Hojung Lim",
+          "Alina Du",
+          "Jesse Thomason",
+          "Gaurav S. Sukhatme",
+          "Ishika Singh"
+        ],
+        "abstract": "Vision-Language-Action (VLA) models demonstrate promising generalization in robotic manipulation, driven by advances in large-scale vision and language pre-training. This progress can be misleading. Despite the zero-shot perception and language capabilities of VLAs, their overall task performance often degrades under distribution shifts, revealing gaps in how these systems translate high-level understanding into robust behavior. To systematically study this gap, we introduce Colosseum V2, a large-scale simulation benchmark for evaluating VLA generalization in robot learning across diverse conditions. The benchmark comprises 28 tasks spanning 13 task categories and two robot morphologies, covering a wide range of manipulation primitives and long-horizon behaviors. Built on the ManiSkill simulator, Colosseum V2 enables fast, GPU-parallelized evaluation and supports both in-domain and out-of-domain testing at scale. We evaluate state-of-the-art methods, including Action Chunking Transformers (ACT) and Pi0.5, and reveal limitations in both base performance and generalization. We demonstrate strong correlations between simulation and real-world metrics that support the ecological validity of the benchmark. By standardizing tasks, metrics, and evaluation protocols within a unified benchmark, Colosseum V2 enables reproducible and fair comparisons, reduced evaluation overhead, and accelerated progress toward general-purpose robot policies.",
+        "publication_date": "2026-10-08",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9634000062942505
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.033399999141693115
+          },
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 0.00139999995008111
+          }
+        ],
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 10.3058,
+        "citation_normalized_percentile": 0.98556068,
+        "referenced_works": [
+          "W2194775991",
+          "W3007769740",
+          "W3135367836",
+          "W3174849255",
+          "W4226073959",
+          "W4302010007",
+          "W4303648971",
+          "W4323572061",
+          "W4385430674",
+          "W4385473486",
+          "W4390873312",
+          "W4399695759",
+          "W4399913002",
+          "W4401307635",
+          "W4402354093",
+          "W4402354166",
+          "W4405634593",
+          "W4405783861",
+          "W4414050916",
+          "W4415198390",
+          "W4417080391",
+          "W6891880646",
+          "W7133220882",
+          "W7133230418",
+          "W7135125976",
+          "W7147537669"
+        ],
+        "related_works": [
+          "W4404216506",
+          "W4414580806",
+          "W4414943162",
+          "W4416344002",
+          "W4417309052",
+          "W7117131819",
+          "W7128388565",
+          "W7131087984",
+          "W7131819932",
+          "W7161951754"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-26T08:01:51",
+        "last_considered_at": "2026-11-09T21:15:12+08:00",
+        "recommended_at": "2026-11-09T21:15:12+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:10",
+        "openalex_url": "https://openalex.org/W7162649222",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3741771",
+        "open_access_url": "https://arxiv.org/abs/2605.27759",
+        "pdf_url": "https://arxiv.org/pdf/2605.27759",
+        "research_fit": 45,
+        "video_potential": 39,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "general-purpose robot",
+          "robot learning",
+          "action chunking"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA",
+              "general-purpose robot"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning",
+              "action chunking"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "robot learning",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "robot learning",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, robot learning, vision-language-action"
+          }
+        ],
+        "historical_value_score": 72.9,
+        "historical_score_components": {
+          "research_relevance": 45.0,
+          "recency": 100.0,
+          "normalized_citation": 98.6,
+          "fwci": 100.0,
+          "citation_momentum": 17.5,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 1.4%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 10.31",
+          "近年年均 OpenAlex 引用 3.5（无更早窗口可比较）",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "vla_robot_foundation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 72.9,
+      "recommendation_utility": 72.9,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2605.27759",
+        "base_id": "2605.27759",
+        "version": 1,
+        "title": "Colosseum V2: Benchmarking Generalization for Vision-Language-Action Models",
+        "authors": [
+          "Jeremy Morgan",
+          "Hyeonho Oh",
+          "Prajwal Vijay",
+          "Jincen Song",
+          "Ashvin Arora",
+          "Hojung Lim",
+          "Alina Du",
+          "Jesse Thomason",
+          "Gaurav S. Sukhatme",
+          "Ishika Singh"
+        ],
+        "published": "2026-10-08T00:00:00Z",
+        "updated": "2026-10-08T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Vision-Language-Action (VLA) models demonstrate promising generalization in robotic manipulation, driven by advances in large-scale vision and language pre-training. This progress can be misleading. Despite the zero-shot perception and language capabilities of VLAs, their overall task performance often degrades under distribution shifts, revealing gaps in how these systems translate high-level understanding into robust behavior. To systematically study this gap, we introduce Colosseum V2, a large-scale simulation benchmark for evaluating VLA generalization in robot learning across diverse conditions. The benchmark comprises 28 tasks spanning 13 task categories and two robot morphologies, covering a wide range of manipulation primitives and long-horizon behaviors. Built on the ManiSkill simulator, Colosseum V2 enables fast, GPU-parallelized evaluation and supports both in-domain and out-of-domain testing at scale. We evaluate state-of-the-art methods, including Action Chunking Transformers (ACT) and Pi0.5, and reveal limitations in both base performance and generalization. We demonstrate strong correlations between simulation and real-world metrics that support the ecological validity of the benchmark. By standardizing tasks, metrics, and evaluation protocols within a unified benchmark, Colosseum V2 enables reproducible and fair comparisons, reduced evaluation overhead, and accelerated progress toward general-purpose robot policies.",
+        "abs_url": "https://arxiv.org/abs/2605.27759",
+        "pdf_url": "https://arxiv.org/pdf/2605.27759",
+        "research_fit": 45,
+        "video_potential": 39,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "general-purpose robot",
+          "robot learning",
+          "action chunking"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA",
+              "general-purpose robot"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning",
+              "action chunking"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "robot learning",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "robot learning",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, robot learning, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotics, manipulation, vision-language-action",
+        "research_fit 32 ≥ 18",
+        "核心方向：vla_robot_foundation",
+        "特定关键词：vision-language-action, VLA",
+        "historical_value_score 71.3 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 0.8%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 17.82",
+        "近年年均 OpenAlex 引用 12.0（无更早窗口可比较）",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-11-09T10:08:10",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0; matched navigation)",
+        "recommendation_utility 71.3 = base 71.3 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4417082657",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4417082657",
+        "openalex_id": "W4417082657",
+        "base_arxiv_id": "2510.20818",
+        "doi": "10.1109/lra.2026.3734870",
+        "title": "VAMOS: A Hierarchical Vision-Language-Action Model for Capability-Modulated and Steerable Navigation",
+        "authors": [
+          "Mateo Guaman Castro",
+          "Sidharth Rajagopal",
+          "Daniel Gorbatov",
+          "Matt Schmittle",
+          "Rohan Baijal",
+          "Octi Zhang",
+          "Rosario Scalise",
+          "Sidharth Talia",
+          "Emma Romig",
+          "Celso de Melo",
+          "Byron Boots",
+          "Abhishek Gupta"
+        ],
+        "abstract": "A fundamental challenge in robot navigation lies in learning policies that generalize across diverse environments while conforming to the unique physical constraints and capabilities of a specific embodiment (e.g., quadrupeds can walk up stairs, but rovers cannot). We propose VAMOS, a hierarchical VLA that decouples semantic planning from embodiment grounding: a generalist planner learns from diverse, open-world data, while a specialist affordance model learns the robot's physical constraints and capabilities in safe, low-cost simulation. We enabled this separation by carefully designing an interface that lets a high-level planner propose candidate paths directly in image space that the affordance model then evaluates and re-ranks. Our real-world experiments show that VAMOS achieves higher success rates in both indoor and complex outdoor navigation than state-of-the-art model-based and end-to-end learning methods. We also show that our hierarchical design enables cross-embodied navigation across legged and wheeled robots and is easily steerable using natural language. Real-world ablations confirm that the specialist model is key to embodiment grounding, enabling a single high-level planner to be deployed across physically distinct wheeled and legged robots. Finally, this model significantly enhances single-robot reliability, achieving 3X higher success rates by rejecting physically infeasible plans. Website: https://vamos-vla.github.io/",
+        "publication_date": "2026-09-16",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.8363999724388123
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.07519999891519547
+          },
+          {
+            "id": "https://openalex.org/T10906",
+            "display_name": "AI-based Problem Solving and Planning",
+            "score": 0.03150000050663948
+          }
+        ],
+        "cited_by_count": 12,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 12
+          }
+        ],
+        "fwci": 17.8154,
+        "citation_normalized_percentile": 0.99187096,
+        "referenced_works": [
+          "W2406067508",
+          "W2736601468",
+          "W2992526251",
+          "W3118216348",
+          "W4281479885",
+          "W4285117889",
+          "W4312441173",
+          "W4367016688",
+          "W4383108302",
+          "W4383171997",
+          "W4385416313",
+          "W4389667371",
+          "W4396910000",
+          "W4399794484",
+          "W4400709947",
+          "W4401414569",
+          "W4401416917",
+          "W4401417422",
+          "W4402354117",
+          "W4402701972",
+          "W4405090824",
+          "W4407384835",
+          "W4413065665",
+          "W4413147031",
+          "W4413559025",
+          "W4414050442",
+          "W4414079054",
+          "W4414079245",
+          "W4414991724",
+          "W4417166500"
+        ],
+        "related_works": [
+          "W7134960988",
+          "W4416756242",
+          "W4415249329",
+          "W7202145315",
+          "W4413917771",
+          "W4415901659",
+          "W7160955516",
+          "W4403815823",
+          "W7081975628",
+          "W7083292721"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-11-09T10:08:10",
+        "last_considered_at": "2026-11-09T21:15:12+08:00",
+        "recommended_at": "2026-11-09T21:15:12+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:10",
+        "openalex_url": "https://openalex.org/W4417082657",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3734870",
+        "open_access_url": "http://arxiv.org/abs/2510.20818",
+        "pdf_url": "https://arxiv.org/pdf/2510.20818",
+        "research_fit": 32,
+        "video_potential": 35,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, manipulation, vision-language-action"
+          }
+        ],
+        "historical_value_score": 71.3,
+        "historical_score_components": {
+          "research_relevance": 32.0,
+          "recency": 100.0,
+          "normalized_citation": 99.2,
+          "fwci": 100.0,
+          "citation_momentum": 60.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.8%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 17.82",
+          "近年年均 OpenAlex 引用 12.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 71.3,
+      "recommendation_utility": 71.3,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2510.20818",
+        "base_id": "2510.20818",
+        "version": 1,
+        "title": "VAMOS: A Hierarchical Vision-Language-Action Model for Capability-Modulated and Steerable Navigation",
+        "authors": [
+          "Mateo Guaman Castro",
+          "Sidharth Rajagopal",
+          "Daniel Gorbatov",
+          "Matt Schmittle",
+          "Rohan Baijal",
+          "Octi Zhang",
+          "Rosario Scalise",
+          "Sidharth Talia",
+          "Emma Romig",
+          "Celso de Melo",
+          "Byron Boots",
+          "Abhishek Gupta"
+        ],
+        "published": "2026-09-16T00:00:00Z",
+        "updated": "2026-09-16T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "A fundamental challenge in robot navigation lies in learning policies that generalize across diverse environments while conforming to the unique physical constraints and capabilities of a specific embodiment (e.g., quadrupeds can walk up stairs, but rovers cannot). We propose VAMOS, a hierarchical VLA that decouples semantic planning from embodiment grounding: a generalist planner learns from diverse, open-world data, while a specialist affordance model learns the robot's physical constraints and capabilities in safe, low-cost simulation. We enabled this separation by carefully designing an interface that lets a high-level planner propose candidate paths directly in image space that the affordance model then evaluates and re-ranks. Our real-world experiments show that VAMOS achieves higher success rates in both indoor and complex outdoor navigation than state-of-the-art model-based and end-to-end learning methods. We also show that our hierarchical design enables cross-embodied navigation across legged and wheeled robots and is easily steerable using natural language. Real-world ablations confirm that the specialist model is key to embodiment grounding, enabling a single high-level planner to be deployed across physically distinct wheeled and legged robots. Finally, this model significantly enhances single-robot reliability, achieving 3X higher success rates by rejecting physically infeasible plans. Website: https://vamos-vla.github.io/",
+        "abs_url": "https://arxiv.org/abs/2510.20818",
+        "pdf_url": "https://arxiv.org/pdf/2510.20818",
+        "research_fit": 32,
+        "video_potential": 35,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
