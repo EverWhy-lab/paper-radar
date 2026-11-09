@@ -133,7 +133,7 @@
       "identifier": "10.15607/rss.2023.xix.026",
       "added_at": "2026-08-05T20:11:45+08:00",
       "openalex_id": "W4385403811",
-      "base_arxiv_id": null,
+      "base_arxiv_id": "2303.04137",
       "doi": "10.15607/rss.2023.xix.026",
       "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion"
     },
