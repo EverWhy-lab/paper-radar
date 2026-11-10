@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-11-10</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-11-10 20:54</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="recommendations" aria-label="Today's selected papers">
+      <article class="paper-card" id="arxiv:2611.12409" data-paper-id="arxiv:2611.12409" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2611.12409v1</span>
+        </div>
+        <h3>Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation</h3>
+        <p class="authors">Emanuele Cuzzocrea, Giuseppina Iannotti, Luca Rossini, Arturo Laurenzi, Nikos Tsagarakis</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-09 21:43 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.AI</span>
+<span><b>Reading focus</b> bimanual_manipulation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This benchmark-style work targets language-conditioned bimanual manipulation on humanoid platforms, where clutter demands joint reasoning about task objectives and execution feasibility. The framework is zero-shot and vision-language: planning is grounded in a structured scene representation combining semantic object relations with execution constraints, actions are organized into parallel bimanual stages with explicit pre- and post-conditions, and a hierarchical validator checks these under perceptual uncertainty, using stage-level history for local recovery or targeted replanning. On the CENTAURO hybrid wheeled-legged humanoid across nine scenarios, the authors report higher task success than a non-execution-aware baseline, and fewer model queries than always replanning in dedicated failure scenarios. Inspect how execution constraints enter the scene representation and how the validator handles perceptual uncertainty.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Humanoid &amp; Whole-Body Loco-Manipulation, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> bimanual_manipulation</span><span><b>Utility</b> 84.0 (base 78.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+          </div>
+          <ul>
+<li>research_fit 78 ≥ 40</li><li>Core topics matched: vla_robot_foundation, humanoid_loco_manipulation, dexterous_multimodal_manipulation</li><li>Specific keywords matched: language-conditioned manipulation, humanoid robot, bimanual humanoid, bimanual manipulation</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: bimanual_manipulation</li><li>Personal domain affinity: preferred (+6; matched humanoid, bimanual manipulation)</li><li>recommendation_utility 84.0 = base 78.0 + affinity +6 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Robots are increasingly expected to execute natural-language manipulation tasks in real-world environments. This is particularly relevant in household assistance and logistics, where clutter requires reasoning about both task objectives and execution feasibility. This challenge becomes even more pronounced for bimanual humanoid platforms, where coordinating two manipulators introduces additional interaction and kinematic constraints. We present a zero-shot vision-language framework for execution-aware bimanual manipulation that jointly reasons about task objectives and physical feasibility. Planning is grounded in a structured scene representation that combines semantic object relations with execution constraints, enabling the selection of obstacle relocations and execution choices while preserving task semantics. Compatible actions are organised into parallel bimanual stages with explicit pre- and post-conditions. A hierarchical validator evaluates these conditions under perceptual uncertainty and uses stage-level execution history to support local recovery or targeted replanning. Experiments on the CENTAURO hybrid wheeled-legged humanoid robot across nine language-conditioned manipulation scenarios show higher task success than a non-execution-aware baseline. In dedicated failure scenarios, hierarchical validation recovers from execution failures with fewer model queries than always replanning. These results demonstrate the benefits of combining execution reasoning directly into task planning. Videos and additional material are available on the Project Webpage: https://advrhumanoids.github.io/bridging-planning-execution/.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.12409v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.12409v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.12409" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.12409" data-title="Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.12409" data-title="Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7223363944" data-paper-id="openalex:W7223363944" data-category="journal_recent">
+        <div class="card-topline">
+          <span class="category category--journal_recent">期刊新论文</span>
+          <span class="arxiv-id">W7223363944</span>
+        </div>
+        <h3>Hemispheric Diffusion: A Compositional Generative Policy for Coordinated Bimanual Manipulation</h3>
+        <p class="authors">Yechen Fan, Jinhua Ye, Xianyou Ji, Chenyang Song, Haibin Wu, Gengfeng Zheng, Jiafu Wan</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-23</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> diffusion_flow_policy, bimanual_manipulation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>HemiDiff addresses bimanual imitation policies that couple all sensory inputs through fixed early fusion, which the authors argue can amplify modality conflicts under asymmetric observations or local perception degradation. The compositional diffusion policy decomposes multimodal conditioning into independent modality experts, recomposes denoising predictions through an asymmetric perception router assigning arm-specific modality weights at inference, and adds a coordination energy expert guiding denoising toward demonstration-consistent relative motion. On RLBench2 and a real bimanual robot, the authors report a 76% average real-world success rate, 19 percentage points above the strongest baseline, with robustness to occlusion, sensor degradation, and viewpoint perturbations. Inspect how the router weights are assigned and how the coordination energy term is formulated.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 期刊新论文</span>
+            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> diffusion_flow_policy, bimanual_manipulation</span><span><b>Utility</b> 42.8 (base 41.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span><span><b>OpenAlex citations</b> 0</span>          </div>
+          <ul>
+<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 41 ≥ 35</li><li>Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: diffusion policy, bimanual manipulation</li><li>Detected subtopics: diffusion_flow_policy, bimanual_manipulation</li><li>Personal domain affinity: preferred (+6; matched bimanual manipulation)</li><li>Subtopic: diffusion_flow_policy</li><li>Recently recommended: 4 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = bimanual_manipulation</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 42.8 = base 41.0 + affinity +6 + redundancy -4.2</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Bimanual manipulation requires both adaptive multimodal perception and physically consistent inter-arm coordination. Yet existing imitation policies typically couple all sensory inputs through fixed early-fusion structures, which can amplify modality conflicts and fail under asymmetric observations or local perception degradation. We introduce Hemispheric Diffusion (HemiDiff), a compositional diffusion policy for coordinated bimanual manipulation. HemiDiff decomposes multimodal conditioning into independent modality experts and recomposes their denoising predictions through an asymmetric perception router that assigns arm-specific modality weights at inference time. A coordination energy expert further guides the denoising process toward demonstration-consistent relative motion, preserving inter-arm coordination under decoupled perception. Experiments on RLBench2 and a real bimanual robot demonstrate that HemiDiff achieves a 76% average success rate on real-world tasks, outperforming the strongest baseline by 19 percentage points while remaining robust to occlusion, sensor degradation, and viewpoint perturbations.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7223363944" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3746919" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7223363944" data-title="Hemispheric Diffusion: A Compositional Generative Policy for Coordinated Bimanual Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7223363944" data-title="Hemispheric Diffusion: A Compositional Generative Policy for Coordinated Bimanual Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7155097025" data-paper-id="openalex:W7155097025" data-category="journal_recent">
+        <div class="card-topline">
+          <span class="category category--journal_recent">期刊新论文</span>
+          <span class="arxiv-id">W7155097025</span>
+        </div>
+        <h3>Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning</h3>
+        <p class="authors">Gehan Zheng, Sanjay Seenivasan, Matthew Johnson‐Roberson, Weiming Zhi</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-09-16</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>Rewind-IL targets deployment failures of long-horizon action-chunked imitation policies that drift off the demonstration manifold and keep producing locally plausible actions. It is a training-free online safeguard combining a zero-shot failure detector, the Temporal Inter-chunk Discrepancy Estimate (TIDE), calibrated with split conformal prediction, with state respawning to a semantically verified safe intermediate state; offline, a vision-language model marks recovery checkpoints and the frozen policy encoder builds a compact checkpoint feature database, while online monitoring tracks self-consistency across overlapping chunks and similarity to that library. Real-world and simulated long-horizon experiments, including transfer to flow-matching action-chunked policies, are reported as demonstrating the approach, though the abstract gives no quantitative results. Inspect the conformal calibration and checkpoint verification.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 期刊新论文</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training</span>
+<span><b>Utility</b> 42.0 (base 42.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 9</span>          </div>
+          <ul>
+<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 42 ≥ 35</li><li>Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining</li><li>Specific keywords matched: long-horizon manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 42.0 = base 42.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Imitation learning has enabled robots to acquire complex visuomotor manipulation skills from demonstrations, but deployment failures remain a major obstacle, especially for long-horizon action-chunked policies. Once execution drifts off the demonstration manifold, these policies often continue producing locally plausible actions without recovering from the failure. Existing runtime monitors either require failure data, over-trigger under benign feature drift, or stop at failure detection without providing a recovery mechanism. We present Rewind-IL, a training-free online safeguard framework for generative action-chunked imitation policies. Rewind-IL combines a zero-shot failure detector based on Temporal Inter-chunk Discrepancy Estimate (TIDE), calibrated with split conformal prediction, with a state-respawning mechanism that returns the robot to a semantically verified safe intermediate state. Offline, a vision-language model identifies recovery checkpoints in demonstrations, and the frozen policy encoder is used to construct a compact checkpoint feature database. Online, Rewind-IL monitors self-consistency in overlapping action chunks, tracks similarity to the checkpoint library, and, upon failure, rewinds execution to the latest verified safe state before restarting inference from a clean policy state. Experiments on real-world and simulated long-horizon manipulation tasks, including transfer to flow-matching action-chunked policies, demonstrate that policy-internal consistency coupled with semantically grounded respawning offers a practical route to improved reliability in imitation learning. Supplemental materials are available at https://sjay05.github.io/rewind-il</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7155097025" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2604.16683" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2604.16683" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3734897" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2604.16683" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7155097025" data-title="Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7155097025" data-title="Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7160832405" data-paper-id="openalex:W7160832405" data-category="rising_recent">
+        <div class="card-topline">
+          <span class="category category--rising_recent">近期升温</span>
+          <span class="arxiv-id">W7160832405</span>
+        </div>
+        <h3>VLA-Touch: Enhancing Vision-Language-Action Model With Dual-Level Tactile Feedback</h3>
+        <p class="authors">Jianxin Bi, Kevin Ma, Ce Hao, Mike Shou Zheng, Harold Soh</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-05-11</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> tactile_manipulation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>VLA-Touch addresses the inability of Vision-Language-Action models to interpret and use tactile signals in contact-rich tasks, motivated by the absence of large multimodal datasets. The approach enhances generalist policies without fine-tuning the base VLA through two components: a pipeline using a pretrained tactile-language model to supply semantic tactile feedback for high-level task planning, and a diffusion-based controller that refines VLA-generated actions with tactile signals for contact-rich manipulation. Real-world experiments are said to show that this dual-level integration improves task planning efficiency and execution precision, but the abstract reports no quantitative numbers. Inspect how tactile-language feedback conditions the planner and how the diffusion controller refines actions.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 近期升温</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> tactile_manipulation</span><span><b>Utility</b> 89.0 (base 89.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 74</span>            <span><b>Rising score</b> 89.0</span>
+            <span><b>Paper age</b> 182 days</span>
+            <span><b>Citation percentile</b> 1.000</span>
+            <span><b>FWCI</b> 107.48</span>
+            <span><b>Citation velocity</b> 12.38 citations/month</span>
+            <span><b>Observed growth</b> 7.060 citations/day</span>
+          </div>
+          <ul>
+<li>rising_score 89.0 ≥ 55.0</li><li>Robotics context: robot, robotics, manipulation, vision-language-action</li><li>research_fit 45 ≥ 12</li><li>Source restricted to robotics_core (S4210169774)</li><li>Publication age 182 days</li><li>Paper age 182 days; citation velocity uses a 90-day floor</li><li>Smoothed citation velocity 12.38 citations/month</li><li>Field/year normalized citation percentile 1.000</li><li>OpenAlex FWCI 107.48</li><li>Observed snapshot growth 7.060 citations/day</li><li>Detected subtopics: tactile_manipulation</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 89.0 = base 89.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Tactile feedback is generally recognized to be crucial for effective interaction with the physical world. However, state-of-the-art Vision-Language-Action (VLA) models lack the ability to interpret and use tactile signals, limiting their effectiveness in contact-rich tasks. Incorporating tactile feedback into these systems is challenging due to the absence of large multi-modal datasets. We present VLA-Touch, an approach that enhances generalist robot policies with tactile sensing \emph{without fine-tuning} the base VLA. Our method introduces two key innovations: (1) a pipeline that leverages a pretrained tactile-language model that provides semantic tactile feedback for high-level task planning, and (2) a diffusion-based controller that refines VLA-generated actions with tactile signals for contact-rich manipulation. Through real-world experiments, we demonstrate that our dual-level integration of tactile feedback improves task planning efficiency while enhancing execution precision. Code is open-sourced at \href{https://github.com/jxbi1010/VLA-Touch}{this URL}.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7160832405" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2507.17294" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2507.17294" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3692345" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2507.17294" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7160832405" data-title="VLA-Touch: Enhancing Vision-Language-Action Model With Dual-Level Tactile Feedback" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7160832405" data-title="VLA-Touch: Enhancing Vision-Language-Action Model With Dual-Level Tactile Feedback" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7133303946" data-paper-id="openalex:W7133303946" data-category="high_impact_historical">
+        <div class="card-topline">
+          <span class="category category--high_impact_historical">领域内高影响力</span>
+          <span class="arxiv-id">W7133303946</span>
+        </div>
+        <h3>Layered Safety: Enhancing Autonomous Collision Avoidance via Multistage CBF Safety Filters</h3>
+        <p class="authors">Erina Yamaguchi, Ryan M. Bena, Gilbert Bahati, Aaron D. Ames</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-09-22</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> safety_critical_control</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This method paper presents an end-to-end framework for layered safety filters performing dynamic collision avoidance from local perception only. From a robot-centric point cloud it builds an occupancy map and synthesizes a Poisson safety function (PSF) used as a control barrier function in two stages: a predictive safety filter computing optimal safe trajectories from nominal potentially-unsafe commands over a finite horizon, then a real-time CBF-based filter refining instantaneous velocity commands tracked by the full-order low-level controller, with formal safety guarantees for the full-order system assuming accurate velocity tracking. A Pareto analysis compares the multistage architecture with single-stage filters, and legged robot platforms are demonstrated across real-world dynamic scenarios. Inspect the tracking assumption and the Pareto comparison.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> safety_critical_control</span><span><b>Utility</b> 64.2 (base 64.2)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 7</span>          </div>
+          <ul>
+<li>机器人语境：robot, robotic, robotics</li><li>research_fit 18 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：CBF, control barrier function</li><li>historical_value_score 64.2 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 1.2%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 12.02</li><li>近年年均 OpenAlex 引用 7.0（无更早窗口可比较）</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-11-09T10:08:10</li><li>Detected subtopics: safety_critical_control</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 64.2 = base 64.2 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>This paper presents a general end-to-end framework for constructing robust and reliable layered safety filters that can be leveraged to perform dynamic collision avoidance over a broad range of applications using only local perception data. Given a robot-centric point cloud, we begin by constructing an occupancy map which is used to synthesize a Poisson safety function (PSF). The resultant PSF is employed as a control barrier function (CBF) within two distinct safety filtering stages. In the first stage, we propose a predictive safety filter to compute optimal safe trajectories based on nominal potentially-unsafe commands. The resultant short-term plans are constrained to satisfy the CBF condition along a finite prediction horizon. In the second stage, instantaneous velocity commands are further refined by a real-time CBF-based safety filter and tracked by the full-order low-level robot controller. Assuming accurate tracking of velocity commands, we obtain formal guarantees of safety for the full-order system. We validate the optimality and robustness of our multistage architecture, in comparison to traditional single-stage safety filters, via a detailed Pareto analysis. We further demonstrate the effectiveness and generality of our collision avoidance methodology on multiple legged robot platforms across a variety of real-world dynamic scenarios.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7133303946" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2603.00338" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2603.00338" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3737045" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2603.00338" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7133303946" data-title="Layered Safety: Enhancing Autonomous Collision Avoidance via Multistage CBF Safety Filters" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7133303946" data-title="Layered Safety: Enhancing Autonomous Collision Avoidance via Multistage CBF Safety Filters" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>

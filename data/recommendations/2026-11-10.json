@@ -1,0 +1,1486 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-10",
+  "generated_at": "2026-11-10T20:54:06+08:00",
+  "mode": "incremental",
+  "candidate_count": 4123,
+  "historical_candidate_count": 784,
+  "recommendation_count": 5,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 1,
+    "journal_recent": 2,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2611.12409",
+      "title": "Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation",
+      "takeaway": "This benchmark-style work targets language-conditioned bimanual manipulation on humanoid platforms, where clutter demands joint reasoning about task objectives and execution feasibility. The framework is zero-shot and vision-language: planning is grounded in a structured scene representation combining semantic object relations with execution constraints, actions are organized into parallel bimanual stages with explicit pre- and post-conditions, and a hierarchical validator checks these under perceptual uncertainty, using stage-level history for local recovery or targeted replanning. On the CENTAURO hybrid wheeled-legged humanoid across nine scenarios, the authors report higher task success than a non-execution-aware baseline, and fewer model queries than always replanning in dedicated failure scenarios. Inspect how execution constraints enter the scene representation and how the validator handles perceptual uncertainty.",
+      "generated_at": "2026-11-10T13:01:24",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7223363944",
+      "title": "Hemispheric Diffusion: A Compositional Generative Policy for Coordinated Bimanual Manipulation",
+      "takeaway": "HemiDiff addresses bimanual imitation policies that couple all sensory inputs through fixed early fusion, which the authors argue can amplify modality conflicts under asymmetric observations or local perception degradation. The compositional diffusion policy decomposes multimodal conditioning into independent modality experts, recomposes denoising predictions through an asymmetric perception router assigning arm-specific modality weights at inference, and adds a coordination energy expert guiding denoising toward demonstration-consistent relative motion. On RLBench2 and a real bimanual robot, the authors report a 76% average real-world success rate, 19 percentage points above the strongest baseline, with robustness to occlusion, sensor degradation, and viewpoint perturbations. Inspect how the router weights are assigned and how the coordination energy term is formulated.",
+      "generated_at": "2026-11-10T13:01:24",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7155097025",
+      "title": "Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning",
+      "takeaway": "Rewind-IL targets deployment failures of long-horizon action-chunked imitation policies that drift off the demonstration manifold and keep producing locally plausible actions. It is a training-free online safeguard combining a zero-shot failure detector, the Temporal Inter-chunk Discrepancy Estimate (TIDE), calibrated with split conformal prediction, with state respawning to a semantically verified safe intermediate state; offline, a vision-language model marks recovery checkpoints and the frozen policy encoder builds a compact checkpoint feature database, while online monitoring tracks self-consistency across overlapping chunks and similarity to that library. Real-world and simulated long-horizon experiments, including transfer to flow-matching action-chunked policies, are reported as demonstrating the approach, though the abstract gives no quantitative results. Inspect the conformal calibration and checkpoint verification.",
+      "generated_at": "2026-11-10T13:01:24",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7160832405",
+      "title": "VLA-Touch: Enhancing Vision-Language-Action Model With Dual-Level Tactile Feedback",
+      "takeaway": "VLA-Touch addresses the inability of Vision-Language-Action models to interpret and use tactile signals in contact-rich tasks, motivated by the absence of large multimodal datasets. The approach enhances generalist policies without fine-tuning the base VLA through two components: a pipeline using a pretrained tactile-language model to supply semantic tactile feedback for high-level task planning, and a diffusion-based controller that refines VLA-generated actions with tactile signals for contact-rich manipulation. Real-world experiments are said to show that this dual-level integration improves task planning efficiency and execution precision, but the abstract reports no quantitative numbers. Inspect how tactile-language feedback conditions the planner and how the diffusion controller refines actions.",
+      "generated_at": "2026-11-10T13:01:24",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7133303946",
+      "title": "Layered Safety: Enhancing Autonomous Collision Avoidance via Multistage CBF Safety Filters",
+      "takeaway": "This method paper presents an end-to-end framework for layered safety filters performing dynamic collision avoidance from local perception only. From a robot-centric point cloud it builds an occupancy map and synthesizes a Poisson safety function (PSF) used as a control barrier function in two stages: a predictive safety filter computing optimal safe trajectories from nominal potentially-unsafe commands over a finite horizon, then a real-time CBF-based filter refining instantaneous velocity commands tracked by the full-order low-level controller, with formal safety guarantees for the full-order system assuming accurate velocity tracking. A Pareto analysis compares the multistage architecture with single-stage filters, and legged robot platforms are demonstrated across real-world dynamic scenarios. Inspect the tracking assumption and the Pareto comparison.",
+      "generated_at": "2026-11-10T13:01:24",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 78 ≥ 40",
+        "Core topics matched: vla_robot_foundation, humanoid_loco_manipulation, dexterous_multimodal_manipulation",
+        "Specific keywords matched: language-conditioned manipulation, humanoid robot, bimanual humanoid, bimanual manipulation",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: bimanual_manipulation",
+        "Personal domain affinity: preferred (+6; matched humanoid, bimanual manipulation)",
+        "recommendation_utility 84.0 = base 78.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.12409",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "humanoid_loco_manipulation",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "bimanual_manipulation"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 78.0,
+      "recommendation_utility": 84.0,
+      "days_since_same_subtopic": 18,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.12409v1",
+        "base_id": "2611.12409",
+        "version": 1,
+        "title": "Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation",
+        "authors": [
+          "Emanuele Cuzzocrea",
+          "Giuseppina Iannotti",
+          "Luca Rossini",
+          "Arturo Laurenzi",
+          "Nikos Tsagarakis"
+        ],
+        "published": "2026-11-09T13:43:11Z",
+        "updated": "2026-11-09T13:43:11Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "summary": "Robots are increasingly expected to execute natural-language manipulation tasks in real-world environments. This is particularly relevant in household assistance and logistics, where clutter requires reasoning about both task objectives and execution feasibility. This challenge becomes even more pronounced for bimanual humanoid platforms, where coordinating two manipulators introduces additional interaction and kinematic constraints. We present a zero-shot vision-language framework for execution-aware bimanual manipulation that jointly reasons about task objectives and physical feasibility. Planning is grounded in a structured scene representation that combines semantic object relations with execution constraints, enabling the selection of obstacle relocations and execution choices while preserving task semantics. Compatible actions are organised into parallel bimanual stages with explicit pre- and post-conditions. A hierarchical validator evaluates these conditions under perceptual uncertainty and uses stage-level execution history to support local recovery or targeted replanning. Experiments on the CENTAURO hybrid wheeled-legged humanoid robot across nine language-conditioned manipulation scenarios show higher task success than a non-execution-aware baseline. In dedicated failure scenarios, hierarchical validation recovers from execution failures with fewer model queries than always replanning. These results demonstrate the benefits of combining execution reasoning directly into task planning. Videos and additional material are available on the Project Webpage: https://advrhumanoids.github.io/bridging-planning-execution/.",
+        "abs_url": "https://arxiv.org/abs/2611.12409v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.12409v1",
+        "research_fit": 78,
+        "video_potential": 50,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "language-conditioned manipulation",
+          "humanoid robot",
+          "bimanual humanoid",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "language-conditioned manipulation"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot",
+              "bimanual humanoid"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "manipulation",
+              "manipulators",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "manipulation",
+              "manipulators",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, manipulation, manipulators, humanoid"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 41 ≥ 35",
+        "Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: diffusion policy, bimanual manipulation",
+        "Detected subtopics: diffusion_flow_policy, bimanual_manipulation",
+        "Personal domain affinity: preferred (+6; matched bimanual manipulation)",
+        "Subtopic: diffusion_flow_policy",
+        "Recently recommended: 4 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = bimanual_manipulation",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 42.8 = base 41.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7223363944",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7223363944",
+        "openalex_id": "W7223363944",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3746919",
+        "title": "Hemispheric Diffusion: A Compositional Generative Policy for Coordinated Bimanual Manipulation",
+        "authors": [
+          "Yechen Fan",
+          "Jinhua Ye",
+          "Xianyou Ji",
+          "Chenyang Song",
+          "Haibin Wu",
+          "Gengfeng Zheng",
+          "Jiafu Wan"
+        ],
+        "abstract": "Bimanual manipulation requires both adaptive multimodal perception and physically consistent inter-arm coordination. Yet existing imitation policies typically couple all sensory inputs through fixed early-fusion structures, which can amplify modality conflicts and fail under asymmetric observations or local perception degradation. We introduce Hemispheric Diffusion (HemiDiff), a compositional diffusion policy for coordinated bimanual manipulation. HemiDiff decomposes multimodal conditioning into independent modality experts and recomposes their denoising predictions through an asymmetric perception router that assigns arm-specific modality weights at inference time. A coordination energy expert further guides the denoising process toward demonstration-consistent relative motion, preserving inter-arm coordination under decoupled perception. Experiments on RLBench2 and a real bimanual robot demonstrate that HemiDiff achieves a 76% average success rate on real-world tasks, outperforming the strongest baseline by 19 percentage points while remaining robust to occlusion, sensor degradation, and viewpoint perturbations.",
+        "publication_date": "2026-10-23",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.975600004196167
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.023499999195337296
+          },
+          {
+            "id": "https://openalex.org/T10982",
+            "display_name": "Motor Control and Adaptation",
+            "score": 9.999999747378752e-05
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.7289042,
+        "referenced_works": [
+          "W3007769740",
+          "W4312824283",
+          "W4385430674",
+          "W4402354045",
+          "W4402354171",
+          "W4403337227",
+          "W4405254485",
+          "W4405753615",
+          "W4405784982",
+          "W4409426912",
+          "W4413926048",
+          "W4414079054",
+          "W4415971176",
+          "W4417485419",
+          "W7083814039",
+          "W7134848214",
+          "W7153091484",
+          "W7155004873",
+          "W7171395944",
+          "W7202159309"
+        ],
+        "related_works": [
+          "W7220861357",
+          "W7222958375",
+          "W7220844834",
+          "W7172422791",
+          "W7220835973",
+          "W3124318676",
+          "W7220866612",
+          "W7220852290",
+          "W7196956939",
+          "W7214106455"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-11-09T10:08:10",
+        "last_considered_at": "2026-11-10T20:54:06+08:00",
+        "recommended_at": "2026-11-10T20:54:06+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:10",
+        "openalex_url": "https://openalex.org/W7223363944",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3746919",
+        "open_access_url": "https://doi.org/10.1109/lra.2026.3746919",
+        "pdf_url": null,
+        "research_fit": 41,
+        "video_potential": 37,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "diffusion policy",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation"
+          }
+        ],
+        "historical_value_score": 58.3,
+        "historical_score_components": {
+          "research_relevance": 41.0,
+          "recency": 100.0,
+          "normalized_citation": 72.9,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 27.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy",
+        "bimanual_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 41.0,
+      "recommendation_utility": 42.8,
+      "days_since_same_subtopic": 4,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7223363944",
+        "base_id": "openalex:W7223363944",
+        "version": 1,
+        "title": "Hemispheric Diffusion: A Compositional Generative Policy for Coordinated Bimanual Manipulation",
+        "authors": [
+          "Yechen Fan",
+          "Jinhua Ye",
+          "Xianyou Ji",
+          "Chenyang Song",
+          "Haibin Wu",
+          "Gengfeng Zheng",
+          "Jiafu Wan"
+        ],
+        "published": "2026-10-23T00:00:00Z",
+        "updated": "2026-10-23T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Bimanual manipulation requires both adaptive multimodal perception and physically consistent inter-arm coordination. Yet existing imitation policies typically couple all sensory inputs through fixed early-fusion structures, which can amplify modality conflicts and fail under asymmetric observations or local perception degradation. We introduce Hemispheric Diffusion (HemiDiff), a compositional diffusion policy for coordinated bimanual manipulation. HemiDiff decomposes multimodal conditioning into independent modality experts and recomposes their denoising predictions through an asymmetric perception router that assigns arm-specific modality weights at inference time. A coordination energy expert further guides the denoising process toward demonstration-consistent relative motion, preserving inter-arm coordination under decoupled perception. Experiments on RLBench2 and a real bimanual robot demonstrate that HemiDiff achieves a 76% average success rate on real-world tasks, outperforming the strongest baseline by 19 percentage points while remaining robust to occlusion, sensor degradation, and viewpoint perturbations.",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3746919",
+        "pdf_url": "",
+        "research_fit": 41,
+        "video_potential": 37,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "diffusion policy",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 42 ≥ 35",
+        "Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining",
+        "Specific keywords matched: long-horizon manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 42.0 = base 42.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7155097025",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7155097025",
+        "openalex_id": "W7155097025",
+        "base_arxiv_id": "2604.16683",
+        "doi": "10.1109/lra.2026.3734897",
+        "title": "Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning",
+        "authors": [
+          "Gehan Zheng",
+          "Sanjay Seenivasan",
+          "Matthew Johnson‐Roberson",
+          "Weiming Zhi"
+        ],
+        "abstract": "Imitation learning has enabled robots to acquire complex visuomotor manipulation skills from demonstrations, but deployment failures remain a major obstacle, especially for long-horizon action-chunked policies. Once execution drifts off the demonstration manifold, these policies often continue producing locally plausible actions without recovering from the failure. Existing runtime monitors either require failure data, over-trigger under benign feature drift, or stop at failure detection without providing a recovery mechanism. We present Rewind-IL, a training-free online safeguard framework for generative action-chunked imitation policies. Rewind-IL combines a zero-shot failure detector based on Temporal Inter-chunk Discrepancy Estimate (TIDE), calibrated with split conformal prediction, with a state-respawning mechanism that returns the robot to a semantically verified safe intermediate state. Offline, a vision-language model identifies recovery checkpoints in demonstrations, and the frozen policy encoder is used to construct a compact checkpoint feature database. Online, Rewind-IL monitors self-consistency in overlapping action chunks, tracks similarity to the checkpoint library, and, upon failure, rewinds execution to the latest verified safe state before restarting inference from a clean policy state. Experiments on real-world and simulated long-horizon manipulation tasks, including transfer to flow-matching action-chunked policies, demonstrate that policy-internal consistency coupled with semantically grounded respawning offers a practical route to improved reliability in imitation learning. Supplemental materials are available at https://sjay05.github.io/rewind-il",
+        "publication_date": "2026-09-16",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.5346999764442444
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.45210000872612
+          },
+          {
+            "id": "https://openalex.org/T11689",
+            "display_name": "Adversarial Robustness in Machine Learning",
+            "score": 0.0010999999940395355
+          }
+        ],
+        "cited_by_count": 9,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          }
+        ],
+        "fwci": 15.4588,
+        "citation_normalized_percentile": 0.99164517,
+        "referenced_works": [
+          "W2067191022",
+          "W2129905273",
+          "W2925329277",
+          "W2994446013",
+          "W4361012985",
+          "W4383108496",
+          "W4385430674",
+          "W4402354126",
+          "W4403337227",
+          "W4405429500",
+          "W4414050564",
+          "W4414079054",
+          "W4414079221",
+          "W4415332095",
+          "W4415339012",
+          "W4416148793",
+          "W4417002554",
+          "W7102411402",
+          "W7104692456",
+          "W7117534470",
+          "W7118502657",
+          "W7128626225",
+          "W7128859932",
+          "W7131069359",
+          "W7168372353"
+        ],
+        "related_works": [
+          "W4403964156",
+          "W4413947061",
+          "W4414050564",
+          "W7090617787",
+          "W7102411402",
+          "W7160296391",
+          "W7160955667",
+          "W7202139451",
+          "W7220705188",
+          "W7221014984"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-12T09:37:12",
+        "last_considered_at": "2026-11-10T20:54:06+08:00",
+        "recommended_at": "2026-11-10T20:54:06+08:00",
+        "recommendation_count": 3,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:10",
+        "openalex_url": "https://openalex.org/W7155097025",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3734897",
+        "open_access_url": "https://arxiv.org/abs/2604.16683",
+        "pdf_url": "https://arxiv.org/pdf/2604.16683",
+        "research_fit": 42,
+        "video_potential": 36,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "visuomotor"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "visuomotor"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, manipulation, visuomotor"
+          }
+        ],
+        "historical_value_score": 72.8,
+        "historical_score_components": {
+          "research_relevance": 42.0,
+          "recency": 100.0,
+          "normalized_citation": 99.2,
+          "fwci": 100.0,
+          "citation_momentum": 45.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.8%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 15.46",
+          "近年年均 OpenAlex 引用 9.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "world_model_embodied_reasoning",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 42.0,
+      "recommendation_utility": 42.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2604.16683",
+        "base_id": "2604.16683",
+        "version": 1,
+        "title": "Rewind-IL: Online Failure Detection and State Respawning for Imitation Learning",
+        "authors": [
+          "Gehan Zheng",
+          "Sanjay Seenivasan",
+          "Matthew Johnson‐Roberson",
+          "Weiming Zhi"
+        ],
+        "published": "2026-09-16T00:00:00Z",
+        "updated": "2026-09-16T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Imitation learning has enabled robots to acquire complex visuomotor manipulation skills from demonstrations, but deployment failures remain a major obstacle, especially for long-horizon action-chunked policies. Once execution drifts off the demonstration manifold, these policies often continue producing locally plausible actions without recovering from the failure. Existing runtime monitors either require failure data, over-trigger under benign feature drift, or stop at failure detection without providing a recovery mechanism. We present Rewind-IL, a training-free online safeguard framework for generative action-chunked imitation policies. Rewind-IL combines a zero-shot failure detector based on Temporal Inter-chunk Discrepancy Estimate (TIDE), calibrated with split conformal prediction, with a state-respawning mechanism that returns the robot to a semantically verified safe intermediate state. Offline, a vision-language model identifies recovery checkpoints in demonstrations, and the frozen policy encoder is used to construct a compact checkpoint feature database. Online, Rewind-IL monitors self-consistency in overlapping action chunks, tracks similarity to the checkpoint library, and, upon failure, rewinds execution to the latest verified safe state before restarting inference from a clean policy state. Experiments on real-world and simulated long-horizon manipulation tasks, including transfer to flow-matching action-chunked policies, demonstrate that policy-internal consistency coupled with semantically grounded respawning offers a practical route to improved reliability in imitation learning. Supplemental materials are available at https://sjay05.github.io/rewind-il",
+        "abs_url": "https://arxiv.org/abs/2604.16683",
+        "pdf_url": "https://arxiv.org/pdf/2604.16683",
+        "research_fit": 42,
+        "video_potential": 36,
+        "matched_topics": [
+          "world_model_embodied_reasoning",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "long-horizon manipulation",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "long-horizon manipulation"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "visuomotor"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "visuomotor"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, manipulation, visuomotor"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "rising_recent",
+      "reasons": [
+        "rising_score 89.0 ≥ 55.0",
+        "Robotics context: robot, robotics, manipulation, vision-language-action",
+        "research_fit 45 ≥ 12",
+        "Source restricted to robotics_core (S4210169774)",
+        "Publication age 182 days",
+        "Paper age 182 days; citation velocity uses a 90-day floor",
+        "Smoothed citation velocity 12.38 citations/month",
+        "Field/year normalized citation percentile 1.000",
+        "OpenAlex FWCI 107.48",
+        "Observed snapshot growth 7.060 citations/day",
+        "Detected subtopics: tactile_manipulation",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 89.0 = base 89.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7160832405",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7160832405",
+        "openalex_id": "W7160832405",
+        "base_arxiv_id": "2507.17294",
+        "doi": "10.1109/lra.2026.3692345",
+        "title": "VLA-Touch: Enhancing Vision-Language-Action Model With Dual-Level Tactile Feedback",
+        "authors": [
+          "Jianxin Bi",
+          "Kevin Ma",
+          "Ce Hao",
+          "Mike Shou Zheng",
+          "Harold Soh"
+        ],
+        "abstract": "Tactile feedback is generally recognized to be crucial for effective interaction with the physical world. However, state-of-the-art Vision-Language-Action (VLA) models lack the ability to interpret and use tactile signals, limiting their effectiveness in contact-rich tasks. Incorporating tactile feedback into these systems is challenging due to the absence of large multi-modal datasets. We present VLA-Touch, an approach that enhances generalist robot policies with tactile sensing \\emph{without fine-tuning} the base VLA. Our method introduces two key innovations: (1) a pipeline that leverages a pretrained tactile-language model that provides semantic tactile feedback for high-level task planning, and (2) a diffusion-based controller that refines VLA-generated actions with tactile signals for contact-rich manipulation. Through real-world experiments, we demonstrate that our dual-level integration of tactile feedback improves task planning efficiency while enhancing execution precision. Code is open-sourced at \\href{https://github.com/jxbi1010/VLA-Touch}{this URL}.",
+        "publication_date": "2026-05-11",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9970999956130981
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.0024999999441206455
+          },
+          {
+            "id": "https://openalex.org/T11714",
+            "display_name": "Multimodal Machine Learning Applications",
+            "score": 9.999999747378752e-05
+          }
+        ],
+        "cited_by_count": 74,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 63
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          }
+        ],
+        "fwci": 107.4762,
+        "citation_normalized_percentile": 0.99981873,
+        "referenced_works": [
+          "W1756292534",
+          "W2151137320",
+          "W2152017481",
+          "W3008303301",
+          "W4383108596",
+          "W4385430679",
+          "W4390873312",
+          "W4392901633",
+          "W4402354011",
+          "W4402354164",
+          "W4402354165",
+          "W4409426912",
+          "W4413917725",
+          "W4414050525",
+          "W4414079054",
+          "W4414940030",
+          "W7122803719",
+          "W7140311487"
+        ],
+        "related_works": [
+          "W7167224584",
+          "W4414879557",
+          "W7166692036",
+          "W7166871254",
+          "W7160867151",
+          "W7220470568",
+          "W7138099466",
+          "W7203669296",
+          "W7171513667",
+          "W7203870124"
+        ],
+        "discovery_source": [
+          "rising_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:51:43",
+        "last_considered_at": "2026-11-10T20:54:06+08:00",
+        "recommended_at": "2026-11-10T20:54:06+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:09:02",
+        "openalex_url": "https://openalex.org/W7160832405",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3692345",
+        "open_access_url": "http://arxiv.org/abs/2507.17294",
+        "pdf_url": "https://arxiv.org/pdf/2507.17294",
+        "research_fit": 45,
+        "video_potential": 32,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, vision-language-action"
+          }
+        ],
+        "historical_value_score": 79.6,
+        "historical_score_components": {
+          "research_relevance": 45.0,
+          "recency": 100.0,
+          "normalized_citation": 100.0,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 107.48",
+          "近年年均 OpenAlex 引用 37.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": 89.0,
+        "rising_score_components": {
+          "research_relevance": 45.0,
+          "citation_velocity": 100.0,
+          "normalized_citation": 100.0,
+          "fwci": 100.0,
+          "observed_growth": 100.0
+        },
+        "rising_score_reasons": [
+          "Robotics context: robot, robotics, manipulation, vision-language-action",
+          "research_fit 45 ≥ 12",
+          "Source restricted to robotics_core (S4210169774)",
+          "Publication age 182 days",
+          "Paper age 182 days; citation velocity uses a 90-day floor",
+          "Smoothed citation velocity 12.38 citations/month",
+          "Field/year normalized citation percentile 1.000",
+          "OpenAlex FWCI 107.48",
+          "Observed snapshot growth 7.060 citations/day"
+        ],
+        "rising_updated_at": "2026-11-09T18:08:44+08:00",
+        "rising_age_days": 182,
+        "rising_citation_velocity": 12.376,
+        "rising_observed_growth": {
+          "recent": {
+            "prior_captured_at": "2026-11-02T17:50:40+08:00",
+            "elapsed_days": 7.01,
+            "citation_delta": 67,
+            "citations_per_day": 9.5543
+          },
+          "approximately_28_day": {
+            "prior_captured_at": "2026-10-12T17:37:51+08:00",
+            "elapsed_days": 28.02,
+            "citation_delta": 68,
+            "citations_per_day": 2.4267
+          },
+          "blended_citations_per_day": 7.0596
+        }
+      },
+      "core_topics": [
+        "vla_robot_foundation",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "tactile_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 89.0,
+      "recommendation_utility": 89.0,
+      "days_since_same_subtopic": 11,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2507.17294",
+        "base_id": "2507.17294",
+        "version": 1,
+        "title": "VLA-Touch: Enhancing Vision-Language-Action Model With Dual-Level Tactile Feedback",
+        "authors": [
+          "Jianxin Bi",
+          "Kevin Ma",
+          "Ce Hao",
+          "Mike Shou Zheng",
+          "Harold Soh"
+        ],
+        "published": "2026-05-11T00:00:00Z",
+        "updated": "2026-05-11T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Tactile feedback is generally recognized to be crucial for effective interaction with the physical world. However, state-of-the-art Vision-Language-Action (VLA) models lack the ability to interpret and use tactile signals, limiting their effectiveness in contact-rich tasks. Incorporating tactile feedback into these systems is challenging due to the absence of large multi-modal datasets. We present VLA-Touch, an approach that enhances generalist robot policies with tactile sensing \\emph{without fine-tuning} the base VLA. Our method introduces two key innovations: (1) a pipeline that leverages a pretrained tactile-language model that provides semantic tactile feedback for high-level task planning, and (2) a diffusion-based controller that refines VLA-generated actions with tactile signals for contact-rich manipulation. Through real-world experiments, we demonstrate that our dual-level integration of tactile feedback improves task planning efficiency while enhancing execution precision. Code is open-sourced at \\href{https://github.com/jxbi1010/VLA-Touch}{this URL}.",
+        "abs_url": "https://arxiv.org/abs/2507.17294",
+        "pdf_url": "https://arxiv.org/pdf/2507.17294",
+        "research_fit": 45,
+        "video_potential": 32,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics",
+        "research_fit 18 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：CBF, control barrier function",
+        "historical_value_score 64.2 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 1.2%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 12.02",
+        "近年年均 OpenAlex 引用 7.0（无更早窗口可比较）",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-11-09T10:08:10",
+        "Detected subtopics: safety_critical_control",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 64.2 = base 64.2 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7133303946",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7133303946",
+        "openalex_id": "W7133303946",
+        "base_arxiv_id": "2603.00338",
+        "doi": "10.1109/lra.2026.3737045",
+        "title": "Layered Safety: Enhancing Autonomous Collision Avoidance via Multistage CBF Safety Filters",
+        "authors": [
+          "Erina Yamaguchi",
+          "Ryan M. Bena",
+          "Gilbert Bahati",
+          "Aaron D. Ames"
+        ],
+        "abstract": "This paper presents a general end-to-end framework for constructing robust and reliable layered safety filters that can be leveraged to perform dynamic collision avoidance over a broad range of applications using only local perception data. Given a robot-centric point cloud, we begin by constructing an occupancy map which is used to synthesize a Poisson safety function (PSF). The resultant PSF is employed as a control barrier function (CBF) within two distinct safety filtering stages. In the first stage, we propose a predictive safety filter to compute optimal safe trajectories based on nominal potentially-unsafe commands. The resultant short-term plans are constrained to satisfy the CBF condition along a finite prediction horizon. In the second stage, instantaneous velocity commands are further refined by a real-time CBF-based safety filter and tracked by the full-order low-level robot controller. Assuming accurate tracking of velocity commands, we obtain formal guarantees of safety for the full-order system. We validate the optimality and robustness of our multistage architecture, in comparison to traditional single-stage safety filters, via a detailed Pareto analysis. We further demonstrate the effectiveness and generality of our collision avoidance methodology on multiple legged robot platforms across a variety of real-world dynamic scenarios.",
+        "publication_date": "2026-09-22",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9585000276565552
+          },
+          {
+            "id": "https://openalex.org/T10142",
+            "display_name": "Formal Methods in Verification",
+            "score": 0.009600000455975533
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.004699999932199717
+          }
+        ],
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 7
+          }
+        ],
+        "fwci": 12.0235,
+        "citation_normalized_percentile": 0.98750409,
+        "referenced_works": [
+          "W2560504659",
+          "W2749680651",
+          "W2925329277",
+          "W3012468020",
+          "W3096210450",
+          "W3136686816",
+          "W3145762295",
+          "W3164515101",
+          "W3180711880",
+          "W3186317065",
+          "W3199400169",
+          "W4205451316",
+          "W4226195072",
+          "W4285102174",
+          "W4382935962",
+          "W4383108357",
+          "W4389317836",
+          "W4389665353",
+          "W4392887407",
+          "W4399436552",
+          "W4401415870",
+          "W4402262072",
+          "W4406548562",
+          "W4406947749",
+          "W4413393832",
+          "W4413394622",
+          "W4414050556",
+          "W4415524403",
+          "W4416749311",
+          "W4417251976",
+          "W7123351089",
+          "W7123356763"
+        ],
+        "related_works": [
+          "W7155562108",
+          "W4401415361",
+          "W7161581163",
+          "W7212046766",
+          "W4417081043",
+          "W7082655031",
+          "W4400727413",
+          "W7134826228",
+          "W7163003341",
+          "W7213286385"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-11-09T10:08:10",
+        "last_considered_at": "2026-11-10T20:54:06+08:00",
+        "recommended_at": "2026-11-10T20:54:06+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:10",
+        "openalex_url": "https://openalex.org/W7133303946",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3737045",
+        "open_access_url": "https://arxiv.org/abs/2603.00338",
+        "pdf_url": "https://arxiv.org/pdf/2603.00338",
+        "research_fit": 18,
+        "video_potential": 24,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "CBF",
+          "control barrier function"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "CBF",
+              "control barrier function"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics"
+          }
+        ],
+        "historical_value_score": 64.2,
+        "historical_score_components": {
+          "research_relevance": 18.0,
+          "recency": 100.0,
+          "normalized_citation": 98.8,
+          "fwci": 100.0,
+          "citation_momentum": 35.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 1.2%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 12.02",
+          "近年年均 OpenAlex 引用 7.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "safety_critical_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 64.2,
+      "recommendation_utility": 64.2,
+      "days_since_same_subtopic": 9,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2603.00338",
+        "base_id": "2603.00338",
+        "version": 1,
+        "title": "Layered Safety: Enhancing Autonomous Collision Avoidance via Multistage CBF Safety Filters",
+        "authors": [
+          "Erina Yamaguchi",
+          "Ryan M. Bena",
+          "Gilbert Bahati",
+          "Aaron D. Ames"
+        ],
+        "published": "2026-09-22T00:00:00Z",
+        "updated": "2026-09-22T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "This paper presents a general end-to-end framework for constructing robust and reliable layered safety filters that can be leveraged to perform dynamic collision avoidance over a broad range of applications using only local perception data. Given a robot-centric point cloud, we begin by constructing an occupancy map which is used to synthesize a Poisson safety function (PSF). The resultant PSF is employed as a control barrier function (CBF) within two distinct safety filtering stages. In the first stage, we propose a predictive safety filter to compute optimal safe trajectories based on nominal potentially-unsafe commands. The resultant short-term plans are constrained to satisfy the CBF condition along a finite prediction horizon. In the second stage, instantaneous velocity commands are further refined by a real-time CBF-based safety filter and tracked by the full-order low-level robot controller. Assuming accurate tracking of velocity commands, we obtain formal guarantees of safety for the full-order system. We validate the optimality and robustness of our multistage architecture, in comparison to traditional single-stage safety filters, via a detailed Pareto analysis. We further demonstrate the effectiveness and generality of our collision avoidance methodology on multiple legged robot platforms across a variety of real-world dynamic scenarios.",
+        "abs_url": "https://arxiv.org/abs/2603.00338",
+        "pdf_url": "https://arxiv.org/pdf/2603.00338",
+        "research_fit": 18,
+        "video_potential": 24,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "CBF",
+          "control barrier function"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "CBF",
+              "control barrier function"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
