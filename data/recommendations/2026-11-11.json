@@ -1,0 +1,1021 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-11",
+  "generated_at": "2026-11-11T20:03:59+08:00",
+  "mode": "incremental",
+  "candidate_count": 4125,
+  "historical_candidate_count": 784,
+  "recommendation_count": 4,
+  "category_counts": {
+    "frontier_recent": 1,
+    "high_impact_historical": 1,
+    "journal_recent": 1,
+    "model_based_recent": 1,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2611.14048",
+      "title": "LaST0.5: A Generalist World Action Model with Interaction-Centric Latent Reasoning",
+      "takeaway": "LaST0.5 targets a mismatch in World Action Models: global scene representations may underemphasize the local robot-object interactions that manipulation requires. The method learns a compact interaction-centric latent space supervised by visual interaction cues, instantiated as a latent expert bridging world and action experts in a Mixture-of-Transformers architecture, and performs adaptive world-to-action transfer by jointly predicting future representations and progress values, with progress consistency adjusting execution and triggering resampling. Pretraining uses a corpus of over 14k hours; the abstract reports 99.5% on LIBERO, gains over the prior state of the art on ten RLBench tasks, and real-world long-horizon and dexterous results. Inspect how the interaction latent is supervised and how progress consistency gates resampling.",
+      "generated_at": "2026-11-11T12:10:43",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7225106180",
+      "title": "Compliant residual DAgger: Improving real-world contact-rich manipulation with human corrections",
+      "takeaway": "CR-DAgger addresses two DAgger problems for real-world contact-rich manipulation: collecting informative human corrections and updating policies effectively from them. It combines a Compliant Intervention Interface that lets humans supply gentle delta action corrections without interrupting policy execution, and a Compliant Residual Policy formulation that learns from corrections while incorporating force feedback and force control. The abstract reports a 64% improvement in base policy success rates across four tasks (book flipping, belt assembly, cable routing, gear insertion) with minimal correction data, outperforming retraining-from-scratch and finetuning. Inspect how compliance control shapes the residual action space and how force signals enter the policy update.",
+      "generated_at": "2026-11-11T12:10:43",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2611.14049",
+      "title": "RedirectMimic: Local Motion Content Redaction for Humanoid Whole-Body Control",
+      "takeaway": "RedirectMimic addresses local motion content redaction for humanoid whole-body control: a controller must replace selected movements while still receiving the original reference, and removing tracking incentive leaves the replacement unspecified. The method separates the reference observed by the actor from the target used to train execution, using a rule-generated edited reference to guide tracking rewards during proximal policy optimization while deployed observation and action interfaces stay unchanged. In Unitree G1 simulation with a tracker pretrained on 7,509 motion clips, the overhead-arm task reports core-window content occurrence of 2.7% versus 58.9% for reward zeroing and 32.8% for anti-tracking, with 94.2% core-window joint success. Inspect how edited references are generated and kept consistent with unedited tracking.",
+      "generated_at": "2026-11-11T12:10:43",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7223693101",
+      "title": "Worker Preferences for Humanoid Robot Safety in the United States",
+      "takeaway": "This study measures worker preferences for humanoid robot safety attributes rather than proposing a control method, using an experiment with 1,096 U.S. frontline manufacturing and logistics workers plus qualitative interviews with 24 of them, with randomized hypothetical job profiles quantifying wage trade-offs. The abstract reports willingness to give up up to 5% of hourly wage for clear communication intent and up to 4% for safety-enhancing use of humanoid-collected data, a 2% wage premium desired for centaur morphology due to psychological discomfort, and exploratory evidence that prior robot exposure reduces preference for an active-steering e-stop. Read it as a knowledge map for safety-attribute design and worker-facing evaluation.",
+      "generated_at": "2026-11-11T12:10:43",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 79 ≥ 40",
+        "Core topics matched: vla_robot_foundation, world_model_embodied_reasoning, dexterous_multimodal_manipulation",
+        "Specific keywords matched: action expert, world action model, physical reasoning, dexterous manipulation",
+        "Diversity topic: vla_robot_foundation",
+        "Detected subtopics: world_action_model, dexterous_manipulation",
+        "Personal domain affinity: preferred (+6; matched dexterous manipulation)",
+        "Subtopic: world_action_model",
+        "Recently recommended: 7 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = dexterous_manipulation",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 80.8 = base 79.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.14048",
+      "historical_paper": null,
+      "core_topics": [
+        "vla_robot_foundation",
+        "world_model_embodied_reasoning",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "world_action_model",
+        "dexterous_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 79.0,
+      "recommendation_utility": 80.8,
+      "days_since_same_subtopic": 2,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.14048v1",
+        "base_id": "2611.14048",
+        "version": 1,
+        "title": "LaST0.5: A Generalist World Action Model with Interaction-Centric Latent Reasoning",
+        "authors": [
+          "Xuheng Zhang",
+          "Yiming Zhang",
+          "Jialin Gao",
+          "Hao Chen",
+          "Jiaming Liu",
+          "Ji Li",
+          "Runzhong Huang",
+          "Yinxi Wang",
+          "Chenyang Gu",
+          "Zihan Yang",
+          "Yaowei Liu",
+          "Zhonghao Yan",
+          "Ziyu Guo",
+          "Renrui Zhang",
+          "Peng Jia",
+          "Pheng-Ann Heng",
+          "Shanghang Zhang"
+        ],
+        "published": "2026-11-10T13:15:11Z",
+        "updated": "2026-11-10T13:15:11Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "World Action Models (WAMs) have recently emerged as a promising paradigm for robotic manipulation, endowing policies with strong capabilities for modeling temporal and physical dynamics. Existing WAMs, encompassing both video-first action prediction and joint video-action modeling, directly transfer global physical representations from world models to action generation. However, global scene representations may underemphasize local robot-object interactions, creating a mismatch between representations optimized for world evolution and those required for manipulation. To bridge this gap, we propose LaST0.5, a novel WAM that introduces an interaction-centric physical representation between world modeling and action generation. Specifically, LaST0.5 learns a compact interaction-centric latent space under the supervision of visual interaction cues between the robot and the environment. This reasoning space is instantiated as a latent expert that bridges the world expert and the action expert within a Mixture-of-Transformers architecture. Furthermore, LaST0.5 performs adaptive world-to-action transfer by jointly predicting future representations and progress values, using progress consistency to adjust action execution and trigger future resampling. Finally, we pretrain LaST0.5 on a large-scale robotic data corpus comprising over 14k hours of data, establishing interaction-centric physical reasoning as a scalable and effective paradigm. LaST0.5 achieves 99.5% on LIBERO, surpasses the previous state of the art on ten evaluated RLBench tasks, and demonstrates robust long-horizon execution and precise dexterous manipulation in real-world experiments.",
+        "abs_url": "https://arxiv.org/abs/2611.14048v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.14048v1",
+        "research_fit": 79,
+        "video_potential": 31,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "world_model_embodied_reasoning",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "action expert",
+          "world action model",
+          "physical reasoning",
+          "dexterous manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "action expert"
+            ],
+            "location": "abstract",
+            "points": 15.6
+          },
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "world action model",
+              "physical reasoning"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "dexterous manipulation"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "manipulation",
+              "dexterous manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, manipulation, dexterous manipulation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 19.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation",
+              "dexterous"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: The International Journal of Robotics Research",
+        "research_fit 41 ≥ 35",
+        "Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: contact-rich manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 41.0 = base 41.0 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7225106180",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7225106180",
+        "openalex_id": "W7225106180",
+        "base_arxiv_id": null,
+        "doi": "10.1177/02783649261498061",
+        "title": "Compliant residual DAgger: Improving real-world contact-rich manipulation with human corrections",
+        "authors": [
+          "Xiaomeng Xu",
+          "Yifan Hou",
+          "Chendong Xin",
+          "Zeyi Liu",
+          "Shuran Song"
+        ],
+        "abstract": "We address key challenges in Dataset Aggregation (DAgger) for real-world contact-rich manipulation: how to collect informative human correction data and how to effectively update policies with this new data. We introduce Compliant Residual DAgger (CR-DAgger), which contains two novel components: (1) a Compliant Intervention Interface that leverages compliance control, allowing humans to provide gentle, accurate delta action corrections without interrupting the ongoing robot policy execution; and (2) a Compliant Residual Policy formulation that learns from human corrections while incorporating force feedback and force control. Our system significantly enhances performance on precise contact-rich manipulation tasks using minimal correction data, improving base policy success rates by 64% on four challenging tasks (book flipping, belt assembly, cable routing, and gear insertion) while outperforming both retraining-from-scratch and finetuning approaches. Through extensive real-world experiments, we provide practical guidance for implementing effective DAgger in real-world robot learning tasks. Result videos are available at: https://compliant-residual-dagger.github.io/ .",
+        "publication_date": "2026-11-02",
+        "publication_year": 2026,
+        "source_name": "The International Journal of Robotics Research",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.8798999786376953
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.11959999799728394
+          },
+          {
+            "id": "https://openalex.org/T10868",
+            "display_name": "Soft Robotics and Applications",
+            "score": 9.999999747378752e-05
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.76310436,
+        "referenced_works": [
+          "W1978023077",
+          "W2105660272",
+          "W2113839990",
+          "W2519091744",
+          "W2560647685",
+          "W2775635818",
+          "W2895144567",
+          "W2918308866",
+          "W3000439273",
+          "W3038618902",
+          "W3039439950",
+          "W3110682054",
+          "W3200105264",
+          "W4226369981",
+          "W4250391287",
+          "W4303647933",
+          "W4385403811",
+          "W4385430582",
+          "W4386071486",
+          "W4389164224",
+          "W4392181918",
+          "W4399469378",
+          "W4399695759",
+          "W4400034095",
+          "W4401415761",
+          "W4402353985",
+          "W4402354127",
+          "W4405254492",
+          "W4405626335",
+          "W4406072763",
+          "W4407208992",
+          "W4413362511",
+          "W4413917780",
+          "W4413918134",
+          "W4413918695",
+          "W4414050721",
+          "W4414079285",
+          "W4414566217",
+          "W4415192088",
+          "W4415202784",
+          "W4415312716",
+          "W4415339012",
+          "W6910664373",
+          "W7133195264",
+          "W7133225416"
+        ],
+        "related_works": [
+          "W7213245261",
+          "W7214022453",
+          "W7133775448",
+          "W7162509790",
+          "W2292715172",
+          "W7154251735",
+          "W4413926164",
+          "W7220991376",
+          "W4409882904",
+          "W7221770684"
+        ],
+        "discovery_source": [
+          "journal_search:The International Journal of Robotics Research"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-11-09T10:08:08",
+        "last_considered_at": "2026-11-11T20:03:59+08:00",
+        "recommended_at": "2026-11-11T20:03:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:08",
+        "openalex_url": "https://openalex.org/W7225106180",
+        "landing_page_url": "https://doi.org/10.1177/02783649261498061",
+        "open_access_url": "https://doi.org/10.1177/02783649261498061",
+        "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/02783649261498061?download=true",
+        "research_fit": 41,
+        "video_potential": 53,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "robot learning",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot policy",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot policy",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, robot policy, robot learning"
+          }
+        ],
+        "historical_value_score": 58.9,
+        "historical_score_components": {
+          "research_relevance": 41.0,
+          "recency": 100.0,
+          "normalized_citation": 76.3,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 23.7%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S73484101",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 41.0,
+      "recommendation_utility": 41.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7225106180",
+        "base_id": "openalex:W7225106180",
+        "version": 1,
+        "title": "Compliant residual DAgger: Improving real-world contact-rich manipulation with human corrections",
+        "authors": [
+          "Xiaomeng Xu",
+          "Yifan Hou",
+          "Chendong Xin",
+          "Zeyi Liu",
+          "Shuran Song"
+        ],
+        "published": "2026-11-02T00:00:00Z",
+        "updated": "2026-11-02T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "We address key challenges in Dataset Aggregation (DAgger) for real-world contact-rich manipulation: how to collect informative human correction data and how to effectively update policies with this new data. We introduce Compliant Residual DAgger (CR-DAgger), which contains two novel components: (1) a Compliant Intervention Interface that leverages compliance control, allowing humans to provide gentle, accurate delta action corrections without interrupting the ongoing robot policy execution; and (2) a Compliant Residual Policy formulation that learns from human corrections while incorporating force feedback and force control. Our system significantly enhances performance on precise contact-rich manipulation tasks using minimal correction data, improving base policy success rates by 64% on four challenging tasks (book flipping, belt assembly, cable routing, and gear insertion) while outperforming both retraining-from-scratch and finetuning approaches. Through extensive real-world experiments, we provide practical guidance for implementing effective DAgger in real-world robot learning tasks. Result videos are available at: https://compliant-residual-dagger.github.io/ .",
+        "abs_url": "https://doi.org/10.1177/02783649261498061",
+        "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/02783649261498061?download=true",
+        "research_fit": 41,
+        "video_potential": 53,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "robot learning",
+          "contact-rich manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "contact-rich manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot policy",
+              "robot learning"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation",
+              "robot policy",
+              "robot learning"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation, robot policy, robot learning"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "model_based_recent",
+      "reasons": [
+        "Recent model-based robotics paper: published within 14 days",
+        "Robotics context: humanoid",
+        "Strong method signals: whole_body_control",
+        "research_fit 62 ≥ 28",
+        "Detected subtopics: humanoid_whole_body, whole_body_control",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "Subtopic: humanoid_whole_body, whole_body_control",
+        "Recently recommended: 6 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 56.0 = base 62.0 + affinity +6 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.14049",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "humanoid_whole_body",
+        "whole_body_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 62.0,
+      "recommendation_utility": 56.0,
+      "days_since_same_subtopic": 2,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.14049v1",
+        "base_id": "2611.14049",
+        "version": 1,
+        "title": "RedirectMimic: Local Motion Content Redaction for Humanoid Whole-Body Control",
+        "authors": [
+          "Zepeng Wang",
+          "Xiaochuan Shi"
+        ],
+        "published": "2026-11-10T13:15:54Z",
+        "updated": "2026-11-10T13:15:54Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Humanoid motion interfaces should accommodate application-specific movement constraints while retaining useful reference behavior. Local content redaction requires a controller to replace selected movements even when it continues to receive the original reference. Removing the tracking incentive for those movements leaves their replacement unspecified. We introduce RedirectMimic, which separates the reference observed by the actor from the target used to train its execution. A rule-generated edited reference guides tracking rewards during proximal policy optimization, while the deployed observation and action interfaces remain unchanged. We evaluate pose- and speed-defined arm editing in Unitree G1 simulation using a tracker pretrained on 7,509 motion clips. On the overhead-arm task, RedirectMimic reduces core-window content occurrence to 2.7%, compared with 58.9% for reward zeroing and 32.8% for anti-tracking. It achieves 94.2% core-window joint success, combining content suppression, fall-free execution, and local retention. On the speed-defined task, fast outward arm movements occurred at similarly low rates under all three local editing methods. Across both tasks, RedirectMimic achieved the lowest replacement error among these methods and tracked unedited motions with accuracy comparable to that of the pretrained controller. Project page: https://xiaopeng-whu.github.io/RedirectMimic/.",
+        "abs_url": "https://arxiv.org/abs/2611.14049v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.14049v1",
+        "research_fit": 62,
+        "video_potential": 54,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "humanoid whole-body control",
+          "whole-body control"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid whole-body control"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "whole-body control"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: humanoid"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "whole-body"
+            ],
+            "location": "title",
+            "points": 18.0
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotics, manipulation, humanoid",
+        "research_fit 30 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：humanoid robot",
+        "historical_value_score 56.4 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 16.3%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-11-09T10:08:10",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 62.4 = base 56.4 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7223693101",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7223693101",
+        "openalex_id": "W7223693101",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3747603",
+        "title": "Worker Preferences for Humanoid Robot Safety in the United States",
+        "authors": [
+          "Nozomi Nakajima",
+          "Yaminette Díaz‐Linhart",
+          "Caitrin Lynch",
+          "Zaidat Ibrahim",
+          "Pedro Reynolds-Cuéllar"
+        ],
+        "abstract": "For humanoid robots to transition from isolated environments to shared workspaces, safety is a key requirement. While technical safety standards for humanoid robots are currently under development, the perspectives of the workers who will collaborate with these machines remain limited. This paper studies worker preferences for humanoid safety by conducting an experiment with 1,096 U.S. frontline workers in manufacturing and logistics, followed by in-depth qualitative interviews with a subset of 24 workers. By presenting participants with randomized hypothetical job profiles, we quantify the trade-offs workers make between various safety attributes. We find the following key results. First, U.S. workers are willing to give up as much as 5% of their hourly wage to work with humanoids that have clear communication intent. Second, despite potential data privacy concerns, workers are willing to give up as much as 4% of their hourly wage to work in conditions where data collected by humanoids are used to enhance workplace safety. Third, due to psychological discomfort with unconventional humanoid morphology, workers desire a 2% wage premium to work alongside a centaur humanoid despite its relatively stable, low center of gravity. Finally, exploratory analysis indicates that prior workplace exposure to robots reduces preference for an active-steering e-stop among experienced users. These findings offer critical empirical data for roboticists, industry leaders, and policymakers to develop humanoids that are technically safe and take into account workers' perspectives, contributing to the successful integration of robots into the workplace.",
+        "publication_date": "2026-10-26",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10709",
+            "display_name": "Social Robot Interaction and HRI",
+            "score": 0.9312000274658203
+          },
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.02800000086426735
+          },
+          {
+            "id": "https://openalex.org/T13382",
+            "display_name": "Robotics and Automated Systems",
+            "score": 0.010700000450015068
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.83718544,
+        "referenced_works": [
+          "W123430343",
+          "W2010928525",
+          "W2089014225",
+          "W2099019320",
+          "W2132918912",
+          "W2169549255",
+          "W2171380100",
+          "W2201087437",
+          "W2202612703",
+          "W2301568312",
+          "W2618733545",
+          "W2745098867",
+          "W2907158933",
+          "W2912365230",
+          "W2929884532",
+          "W3021916629",
+          "W3166943233",
+          "W3178993634",
+          "W3182780155",
+          "W3184254257",
+          "W3207144782",
+          "W4229856339",
+          "W4289464906",
+          "W4377704938",
+          "W4383108204",
+          "W4383674599",
+          "W4385871723",
+          "W4390674194",
+          "W4403918526",
+          "W4414303941",
+          "W4415033774",
+          "W4415821503",
+          "W4416240347",
+          "W7128029637",
+          "W7128508584",
+          "W7140452175",
+          "W7170144068"
+        ],
+        "related_works": [
+          "W2304574258",
+          "W7220927633",
+          "W4210529945",
+          "W2394536583",
+          "W2323012154",
+          "W2978685937",
+          "W2522009086",
+          "W366657828",
+          "W7135037350",
+          "W6903701288"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-11-09T10:08:10",
+        "last_considered_at": "2026-11-11T20:03:59+08:00",
+        "recommended_at": "2026-11-11T20:03:59+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:10",
+        "openalex_url": "https://openalex.org/W7223693101",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3747603",
+        "open_access_url": "https://doi.org/10.1109/lra.2026.3747603",
+        "pdf_url": null,
+        "research_fit": 30,
+        "video_potential": 39,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, manipulation, humanoid"
+          }
+        ],
+        "historical_value_score": 56.4,
+        "historical_score_components": {
+          "research_relevance": 30.0,
+          "recency": 100.0,
+          "normalized_citation": 83.7,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 16.3%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 56.4,
+      "recommendation_utility": 62.4,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7223693101",
+        "base_id": "openalex:W7223693101",
+        "version": 1,
+        "title": "Worker Preferences for Humanoid Robot Safety in the United States",
+        "authors": [
+          "Nozomi Nakajima",
+          "Yaminette Díaz‐Linhart",
+          "Caitrin Lynch",
+          "Zaidat Ibrahim",
+          "Pedro Reynolds-Cuéllar"
+        ],
+        "published": "2026-10-26T00:00:00Z",
+        "updated": "2026-10-26T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "For humanoid robots to transition from isolated environments to shared workspaces, safety is a key requirement. While technical safety standards for humanoid robots are currently under development, the perspectives of the workers who will collaborate with these machines remain limited. This paper studies worker preferences for humanoid safety by conducting an experiment with 1,096 U.S. frontline workers in manufacturing and logistics, followed by in-depth qualitative interviews with a subset of 24 workers. By presenting participants with randomized hypothetical job profiles, we quantify the trade-offs workers make between various safety attributes. We find the following key results. First, U.S. workers are willing to give up as much as 5% of their hourly wage to work with humanoids that have clear communication intent. Second, despite potential data privacy concerns, workers are willing to give up as much as 4% of their hourly wage to work in conditions where data collected by humanoids are used to enhance workplace safety. Third, due to psychological discomfort with unconventional humanoid morphology, workers desire a 2% wage premium to work alongside a centaur humanoid despite its relatively stable, low center of gravity. Finally, exploratory analysis indicates that prior workplace exposure to robots reduces preference for an active-steering e-stop among experienced users. These findings offer critical empirical data for roboticists, industry leaders, and policymakers to develop humanoids that are technically safe and take into account workers' perspectives, contributing to the successful integration of robots into the workplace.",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3747603",
+        "pdf_url": "",
+        "research_fit": 30,
+        "video_potential": 39,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "manipulation",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, manipulation, humanoid"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}

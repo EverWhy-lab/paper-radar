@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-11-11</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-11-11 20:03</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="recommendations" aria-label="Today's selected papers">
+      <article class="paper-card" id="arxiv:2611.14048" data-paper-id="arxiv:2611.14048" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2611.14048v1</span>
+        </div>
+        <h3>LaST0.5: A Generalist World Action Model with Interaction-Centric Latent Reasoning</h3>
+        <p class="authors">Xuheng Zhang, Yiming Zhang, Jialin Gao, Hao Chen, Jiaming Liu, Ji Li, Runzhong Huang, Yinxi Wang, Chenyang Gu, Zihan Yang, Yaowei Liu, Zhonghao Yan, Ziyu Guo, Renrui Zhang, Peng Jia, Pheng-Ann Heng, Shanghang Zhang</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-10 21:15 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> world_action_model, dexterous_manipulation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>LaST0.5 targets a mismatch in World Action Models: global scene representations may underemphasize the local robot-object interactions that manipulation requires. The method learns a compact interaction-centric latent space supervised by visual interaction cues, instantiated as a latent expert bridging world and action experts in a Mixture-of-Transformers architecture, and performs adaptive world-to-action transfer by jointly predicting future representations and progress values, with progress consistency adjusting execution and triggering resampling. Pretraining uses a corpus of over 14k hours; the abstract reports 99.5% on LIBERO, gains over the prior state of the art on ten RLBench tasks, and real-world long-horizon and dexterous results. Inspect how the interaction latent is supervised and how progress consistency gates resampling.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, World Models &amp; Embodied Reasoning, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> world_action_model, dexterous_manipulation</span><span><b>Utility</b> 80.8 (base 79.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span>          </div>
+          <ul>
+<li>research_fit 79 ≥ 40</li><li>Core topics matched: vla_robot_foundation, world_model_embodied_reasoning, dexterous_multimodal_manipulation</li><li>Specific keywords matched: action expert, world action model, physical reasoning, dexterous manipulation</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: world_action_model, dexterous_manipulation</li><li>Personal domain affinity: preferred (+6; matched dexterous manipulation)</li><li>Subtopic: world_action_model</li><li>Recently recommended: 7 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = dexterous_manipulation</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 80.8 = base 79.0 + affinity +6 + redundancy -4.2</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>World Action Models (WAMs) have recently emerged as a promising paradigm for robotic manipulation, endowing policies with strong capabilities for modeling temporal and physical dynamics. Existing WAMs, encompassing both video-first action prediction and joint video-action modeling, directly transfer global physical representations from world models to action generation. However, global scene representations may underemphasize local robot-object interactions, creating a mismatch between representations optimized for world evolution and those required for manipulation. To bridge this gap, we propose LaST0.5, a novel WAM that introduces an interaction-centric physical representation between world modeling and action generation. Specifically, LaST0.5 learns a compact interaction-centric latent space under the supervision of visual interaction cues between the robot and the environment. This reasoning space is instantiated as a latent expert that bridges the world expert and the action expert within a Mixture-of-Transformers architecture. Furthermore, LaST0.5 performs adaptive world-to-action transfer by jointly predicting future representations and progress values, using progress consistency to adjust action execution and trigger future resampling. Finally, we pretrain LaST0.5 on a large-scale robotic data corpus comprising over 14k hours of data, establishing interaction-centric physical reasoning as a scalable and effective paradigm. LaST0.5 achieves 99.5% on LIBERO, surpasses the previous state of the art on ten evaluated RLBench tasks, and demonstrates robust long-horizon execution and precise dexterous manipulation in real-world experiments.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.14048v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.14048v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.14048" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.14048" data-title="LaST0.5: A Generalist World Action Model with Interaction-Centric Latent Reasoning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.14048" data-title="LaST0.5: A Generalist World Action Model with Interaction-Centric Latent Reasoning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7225106180" data-paper-id="openalex:W7225106180" data-category="journal_recent">
+        <div class="card-topline">
+          <span class="category category--journal_recent">期刊新论文</span>
+          <span class="arxiv-id">W7225106180</span>
+        </div>
+        <h3>Compliant residual DAgger: Improving real-world contact-rich manipulation with human corrections</h3>
+        <p class="authors">Xiaomeng Xu, Yifan Hou, Chendong Xin, Zeyi Liu, Shuran Song</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-02</span>
+<span><b>Source</b> The International Journal of Robotics Research</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>CR-DAgger addresses two DAgger problems for real-world contact-rich manipulation: collecting informative human corrections and updating policies effectively from them. It combines a Compliant Intervention Interface that lets humans supply gentle delta action corrections without interrupting policy execution, and a Compliant Residual Policy formulation that learns from corrections while incorporating force feedback and force control. The abstract reports a 64% improvement in base policy success rates across four tasks (book flipping, belt assembly, cable routing, gear insertion) with minimal correction data, outperforming retraining-from-scratch and finetuning. Inspect how compliance control shapes the residual action space and how force signals enter the policy update.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 期刊新论文</span>
+            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Utility</b> 41.0 (base 41.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 0</span>          </div>
+          <ul>
+<li>期刊新论文: The International Journal of Robotics Research</li><li>research_fit 41 ≥ 35</li><li>Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: contact-rich manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 41.0 = base 41.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>We address key challenges in Dataset Aggregation (DAgger) for real-world contact-rich manipulation: how to collect informative human correction data and how to effectively update policies with this new data. We introduce Compliant Residual DAgger (CR-DAgger), which contains two novel components: (1) a Compliant Intervention Interface that leverages compliance control, allowing humans to provide gentle, accurate delta action corrections without interrupting the ongoing robot policy execution; and (2) a Compliant Residual Policy formulation that learns from human corrections while incorporating force feedback and force control. Our system significantly enhances performance on precise contact-rich manipulation tasks using minimal correction data, improving base policy success rates by 64% on four challenging tasks (book flipping, belt assembly, cable routing, and gear insertion) while outperforming both retraining-from-scratch and finetuning approaches. Through extensive real-world experiments, we provide practical guidance for implementing effective DAgger in real-world robot learning tasks. Result videos are available at: https://compliant-residual-dagger.github.io/ .</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7225106180" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://journals.sagepub.com/doi/pdf/10.1177/02783649261498061?download=true" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1177/02783649261498061" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7225106180" data-title="Compliant residual DAgger: Improving real-world contact-rich manipulation with human corrections" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7225106180" data-title="Compliant residual DAgger: Improving real-world contact-rich manipulation with human corrections" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2611.14049" data-paper-id="arxiv:2611.14049" data-category="model_based_recent">
+        <div class="card-topline">
+          <span class="category category--model_based_recent">方法前沿</span>
+          <span class="arxiv-id">2611.14049v1</span>
+        </div>
+        <h3>RedirectMimic: Local Motion Content Redaction for Humanoid Whole-Body Control</h3>
+        <p class="authors">Zepeng Wang, Xiaochuan Shi</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-10 21:15 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> humanoid_whole_body, whole_body_control</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>RedirectMimic addresses local motion content redaction for humanoid whole-body control: a controller must replace selected movements while still receiving the original reference, and removing tracking incentive leaves the replacement unspecified. The method separates the reference observed by the actor from the target used to train execution, using a rule-generated edited reference to guide tracking rewards during proximal policy optimization while deployed observation and action interfaces stay unchanged. In Unitree G1 simulation with a tracker pretrained on 7,509 motion clips, the overhead-arm task reports core-window content occurrence of 2.7% versus 58.9% for reward zeroing and 32.8% for anti-tracking, with 94.2% core-window joint success. Inspect how edited references are generated and kept consistent with unedited tracking.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 方法前沿</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> humanoid_whole_body, whole_body_control</span><span><b>Utility</b> 56.0 (base 62.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -12</span>          </div>
+          <ul>
+<li>Recent model-based robotics paper: published within 14 days</li><li>Robotics context: humanoid</li><li>Strong method signals: whole_body_control</li><li>research_fit 62 ≥ 28</li><li>Detected subtopics: humanoid_whole_body, whole_body_control</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>Subtopic: humanoid_whole_body, whole_body_control</li><li>Recently recommended: 6 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 56.0 = base 62.0 + affinity +6 + redundancy -12</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Humanoid motion interfaces should accommodate application-specific movement constraints while retaining useful reference behavior. Local content redaction requires a controller to replace selected movements even when it continues to receive the original reference. Removing the tracking incentive for those movements leaves their replacement unspecified. We introduce RedirectMimic, which separates the reference observed by the actor from the target used to train its execution. A rule-generated edited reference guides tracking rewards during proximal policy optimization, while the deployed observation and action interfaces remain unchanged. We evaluate pose- and speed-defined arm editing in Unitree G1 simulation using a tracker pretrained on 7,509 motion clips. On the overhead-arm task, RedirectMimic reduces core-window content occurrence to 2.7%, compared with 58.9% for reward zeroing and 32.8% for anti-tracking. It achieves 94.2% core-window joint success, combining content suppression, fall-free execution, and local retention. On the speed-defined task, fast outward arm movements occurred at similarly low rates under all three local editing methods. Across both tasks, RedirectMimic achieved the lowest replacement error among these methods and tracked unedited motions with accuracy comparable to that of the pretrained controller. Project page: https://xiaopeng-whu.github.io/RedirectMimic/.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.14049v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.14049v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.14049" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.14049" data-title="RedirectMimic: Local Motion Content Redaction for Humanoid Whole-Body Control" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.14049" data-title="RedirectMimic: Local Motion Content Redaction for Humanoid Whole-Body Control" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7223693101" data-paper-id="openalex:W7223693101" data-category="high_impact_historical">
+        <div class="card-topline">
+          <span class="category category--high_impact_historical">领域内高影响力</span>
+          <span class="arxiv-id">W7223693101</span>
+        </div>
+        <h3>Worker Preferences for Humanoid Robot Safety in the United States</h3>
+        <p class="authors">Nozomi Nakajima, Yaminette Díaz‐Linhart, Caitrin Lynch, Zaidat Ibrahim, Pedro Reynolds-Cuéllar</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-26</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This study measures worker preferences for humanoid robot safety attributes rather than proposing a control method, using an experiment with 1,096 U.S. frontline manufacturing and logistics workers plus qualitative interviews with 24 of them, with randomized hypothetical job profiles quantifying wage trade-offs. The abstract reports willingness to give up up to 5% of hourly wage for clear communication intent and up to 4% for safety-enhancing use of humanoid-collected data, a 2% wage premium desired for centaur morphology due to psychological discomfort, and exploratory evidence that prior robot exposure reduces preference for an active-steering e-stop. Read it as a knowledge map for safety-attribute design and worker-facing evaluation.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 62.4 (base 56.4)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>OpenAlex citations</b> 0</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotics, manipulation, humanoid</li><li>research_fit 30 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：humanoid robot</li><li>historical_value_score 56.4 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 16.3%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-11-09T10:08:10</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 62.4 = base 56.4 + affinity +6 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>For humanoid robots to transition from isolated environments to shared workspaces, safety is a key requirement. While technical safety standards for humanoid robots are currently under development, the perspectives of the workers who will collaborate with these machines remain limited. This paper studies worker preferences for humanoid safety by conducting an experiment with 1,096 U.S. frontline workers in manufacturing and logistics, followed by in-depth qualitative interviews with a subset of 24 workers. By presenting participants with randomized hypothetical job profiles, we quantify the trade-offs workers make between various safety attributes. We find the following key results. First, U.S. workers are willing to give up as much as 5% of their hourly wage to work with humanoids that have clear communication intent. Second, despite potential data privacy concerns, workers are willing to give up as much as 4% of their hourly wage to work in conditions where data collected by humanoids are used to enhance workplace safety. Third, due to psychological discomfort with unconventional humanoid morphology, workers desire a 2% wage premium to work alongside a centaur humanoid despite its relatively stable, low center of gravity. Finally, exploratory analysis indicates that prior workplace exposure to robots reduces preference for an active-steering e-stop among experienced users. These findings offer critical empirical data for roboticists, industry leaders, and policymakers to develop humanoids that are technically safe and take into account workers&#39; perspectives, contributing to the successful integration of robots into the workplace.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7223693101" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3747603" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7223693101" data-title="Worker Preferences for Humanoid Robot Safety in the United States" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7223693101" data-title="Worker Preferences for Humanoid Robot Safety in the United States" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>
