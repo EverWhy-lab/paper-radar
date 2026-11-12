@@ -1,0 +1,849 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-12",
+  "generated_at": "2026-11-12T21:07:47+08:00",
+  "mode": "incremental",
+  "candidate_count": 3490,
+  "historical_candidate_count": 784,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 1,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7131065284",
+      "title": "GrandTour: A legged robotics dataset in the wild for multi-modal perception and state estimation",
+      "takeaway": "GrandTour targets the lack of a large-scale public legged-robot dataset for state estimation, perception, and navigation in real-world conditions. It provides time-synchronized data from spinning LiDARs, multiple RGB cameras, proprioceptive sensors, six ANYmal-mounted Intel RealSense D435i depth cameras, and a ZED2i stereo RGB-D camera, collected with an ANYbotics ANYmal-D and Boxi payload across alpine, forest, demolished-building, and urban sites, with ground-truth trajectories from RTK-GNSS and a Leica Geosystems total station. The authors describe it as the largest open-access legged-robotics dataset to date and position it for SLAM, high-precision state estimation, and multi-modal sensor-fusion evaluation. While reading, check how ground-truth trajectories are aligned with sensor streams and how environment and weather variation are documented.",
+      "generated_at": "2026-11-12T13:13:31",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7163374003",
+      "title": "Human2Humanoid: Physics-Aware Cross-Morphology Motion Retargeting for Humanoid Robots",
+      "takeaway": "Human2Humanoid addresses human-to-humanoid motion retargeting under skeletal topology, limb-proportion, and degree-of-freedom mismatches plus scarce paired motion data. The unsupervised framework uses a CycleGAN-based architecture with a skeleton-aware graph convolutional network, a morphology-invariant end-effector consistency loss aligning normalized end-effector trajectories, and explicit physics-aware feasibility constraints encouraging source contact patterns. The authors report successful retargeting to the Unitree G1 humanoid without paired data and claim outperformance of existing methods in downstream controllability and physical feasibility. While reading, inspect how the physics-aware constraints are formulated and how controllability and feasibility are evaluated.",
+      "generated_at": "2026-11-12T13:13:31",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "review_knowledge_map",
+      "reasons": [
+        "机器人语境：robot, robots, robotic, robotics",
+        "research_fit 42 ≥ 18",
+        "核心方向：humanoid_loco_manipulation, robot_data_scaling_sim2real",
+        "特定关键词：robotics dataset, robot state estimation",
+        "historical_value_score 80.8 ≥ 50.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 0.2%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 40.45",
+        "近年年均 OpenAlex 引用 25.0（无更早窗口可比较）",
+        "标题、类型或主题元数据命中综述/教程/知识地图规则",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-11-09T10:08:08",
+        "Detected subtopics: robot_state_estimation",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "Subtopic: robot_state_estimation",
+        "Recently recommended: 5 days ago",
+        "Redundancy penalty: -12",
+        "recommendation_utility 74.8 = base 80.8 + affinity +6 + redundancy -12"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7131065284",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7131065284",
+        "openalex_id": "W7131065284",
+        "base_arxiv_id": "2602.18164",
+        "doi": "10.1177/02783649261480737",
+        "title": "GrandTour: A legged robotics dataset in the wild for multi-modal perception and state estimation",
+        "authors": [
+          "Turcan Tuna",
+          "Jonas Frey",
+          "Frank Fu",
+          "Katharine Patterson",
+          "Tian’ao Xu",
+          "Maurice F. Fallon",
+          "César Cadena",
+          "Marco Hutter"
+        ],
+        "abstract": "Accurate state estimation and multi-modal perception are prerequisites for autonomous legged robots in complex, large-scale environments. To date, no large-scale public legged-robot dataset captures the real-world conditions needed to develop and benchmark algorithms for legged-robot state estimation, perception, and navigation. To address this, we introduce the GrandTour dataset, a multi-modal legged-robotics dataset collected across challenging outdoor and indoor environments, featuring an ANYbotics ANYmal-D quadruped equipped with the Boxi multi-modal sensor payload. GrandTour spans a broad range of environments and operational scenarios across distinct test sites, from alpine scenery and forests to demolished buildings and urban areas, and covers a wide variation in scale, complexity, illumination, and weather conditions. The dataset provides time-synchronized sensor data from spinning LiDARs, multiple RGB cameras with complementary characteristics, proprioceptive sensors, six ANYmal-mounted Intel RealSense D435i depth cameras, and the ZED2i stereo RGB-D camera. Moreover, it includes high-precision ground-truth trajectories from satellite-based RTK-GNSS and a Leica Geosystems total station. This dataset supports research in SLAM, high-precision state estimation, and multi-modal learning, enabling rigorous evaluation and development of new approaches to sensor fusion in legged robotic systems. With its extensive scope, GrandTour represents the largest open-access legged-robotics dataset to date. The dataset is available at https://grand-tour.leggedrobotics.com , on HuggingFace (ROS-independent), and in ROS formats, along with tools and demo resources.",
+        "publication_date": "2026-10-01",
+        "publication_year": 2026,
+        "source_name": "The International Journal of Robotics Research",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9955999851226807
+          },
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.003800000064074993
+          },
+          {
+            "id": "https://openalex.org/T11099",
+            "display_name": "Autonomous Vehicle Technology and Safety",
+            "score": 0.0
+          }
+        ],
+        "cited_by_count": 25,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 25
+          }
+        ],
+        "fwci": 40.4511,
+        "citation_normalized_percentile": 0.9981265,
+        "referenced_works": [
+          "W1998058414",
+          "W2100893637",
+          "W2103544971",
+          "W2115579991",
+          "W2125188427",
+          "W2128019145",
+          "W2277848489",
+          "W2396274919",
+          "W2418849765",
+          "W2558027072",
+          "W2745859992",
+          "W2754177129",
+          "W2768737714",
+          "W2797395780",
+          "W2887564721",
+          "W2945772959",
+          "W2965591307",
+          "W3008115128",
+          "W3012175130",
+          "W3091337047",
+          "W3091667825",
+          "W3159400523",
+          "W3178351738",
+          "W3200664388",
+          "W3201923677",
+          "W3211389689",
+          "W4205430897",
+          "W4205833767",
+          "W4210423514",
+          "W4221156665",
+          "W4237726214",
+          "W4250058668",
+          "W4285512293",
+          "W4292544413",
+          "W4311463255",
+          "W4312492713",
+          "W4312749288",
+          "W4315778466",
+          "W4317796409",
+          "W4321033118",
+          "W4327692895",
+          "W4362698359",
+          "W4378450585",
+          "W4379507289",
+          "W4383108438",
+          "W4383108462",
+          "W4383109468",
+          "W4385430534",
+          "W4385430650",
+          "W4385805093",
+          "W4386736796",
+          "W4387196969",
+          "W4388145520",
+          "W4388555342",
+          "W4388983935",
+          "W4389665561",
+          "W4389667371",
+          "W4389891020",
+          "W4390590927",
+          "W4390691142",
+          "W4390778110",
+          "W4391305576",
+          "W4391590977",
+          "W4394862961",
+          "W4395097881",
+          "W4399167850",
+          "W4400453648",
+          "W4400975091",
+          "W4401413639",
+          "W4401413872",
+          "W4401415682",
+          "W4401416030",
+          "W4402300083",
+          "W4402350442",
+          "W4402389300",
+          "W4402727243",
+          "W4402727356",
+          "W4402727750",
+          "W4402816534",
+          "W4402890475",
+          "W4403600987",
+          "W4404370924",
+          "W4404520519",
+          "W4405489826",
+          "W4405786897",
+          "W4405787342",
+          "W4406604158",
+          "W4406947038",
+          "W4407265439",
+          "W4407574895",
+          "W4407901406",
+          "W4408609999",
+          "W4409474089",
+          "W4410100142",
+          "W4410204291",
+          "W4410986253",
+          "W4413146238",
+          "W4413925398",
+          "W4413925403",
+          "W4413925412",
+          "W4413925677",
+          "W4413926287",
+          "W4414050705",
+          "W4414079245",
+          "W4414818134",
+          "W4415055448",
+          "W4415056117",
+          "W4415353261",
+          "W4415879015",
+          "W4415913019",
+          "W4417244000",
+          "W7101627438",
+          "W7106825805",
+          "W7117157969",
+          "W7125774796",
+          "W7125904773",
+          "W7125932692",
+          "W7125938948",
+          "W7130728053"
+        ],
+        "related_works": [
+          "W2140030375",
+          "W4285512293",
+          "W4391305576",
+          "W4391305703",
+          "W4399167850",
+          "W4407091651",
+          "W4413925403",
+          "W4413925677",
+          "W7125787346",
+          "W7221809263"
+        ],
+        "discovery_source": [
+          "journal_search:The International Journal of Robotics Research"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-05T09:30:48",
+        "last_considered_at": "2026-11-12T21:07:47+08:00",
+        "recommended_at": "2026-11-12T21:07:47+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:08",
+        "openalex_url": "https://openalex.org/W7131065284",
+        "landing_page_url": "https://doi.org/10.1177/02783649261480737",
+        "open_access_url": "https://arxiv.org/abs/2602.18164",
+        "pdf_url": "https://arxiv.org/pdf/2602.18164",
+        "research_fit": 42,
+        "video_potential": 42,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "robotics dataset",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robotics dataset"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "historical_value_score": 80.8,
+        "historical_score_components": {
+          "research_relevance": 42.0,
+          "recency": 100.0,
+          "normalized_citation": 99.8,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 100.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.2%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 40.45",
+          "近年年均 OpenAlex 引用 25.0（无更早窗口可比较）",
+          "标题、类型或主题元数据命中综述/教程/知识地图规则",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": true,
+        "source_id": "S73484101",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_data_scaling_sim2real"
+      ],
+      "subtopics": [
+        "robot_state_estimation"
+      ],
+      "document_type": "benchmark",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -12.0,
+      "recommendation_base_score": 80.8,
+      "recommendation_utility": 74.8,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2602.18164",
+        "base_id": "2602.18164",
+        "version": 1,
+        "title": "GrandTour: A legged robotics dataset in the wild for multi-modal perception and state estimation",
+        "authors": [
+          "Turcan Tuna",
+          "Jonas Frey",
+          "Frank Fu",
+          "Katharine Patterson",
+          "Tian’ao Xu",
+          "Maurice F. Fallon",
+          "César Cadena",
+          "Marco Hutter"
+        ],
+        "published": "2026-10-01T00:00:00Z",
+        "updated": "2026-10-01T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Accurate state estimation and multi-modal perception are prerequisites for autonomous legged robots in complex, large-scale environments. To date, no large-scale public legged-robot dataset captures the real-world conditions needed to develop and benchmark algorithms for legged-robot state estimation, perception, and navigation. To address this, we introduce the GrandTour dataset, a multi-modal legged-robotics dataset collected across challenging outdoor and indoor environments, featuring an ANYbotics ANYmal-D quadruped equipped with the Boxi multi-modal sensor payload. GrandTour spans a broad range of environments and operational scenarios across distinct test sites, from alpine scenery and forests to demolished buildings and urban areas, and covers a wide variation in scale, complexity, illumination, and weather conditions. The dataset provides time-synchronized sensor data from spinning LiDARs, multiple RGB cameras with complementary characteristics, proprioceptive sensors, six ANYmal-mounted Intel RealSense D435i depth cameras, and the ZED2i stereo RGB-D camera. Moreover, it includes high-precision ground-truth trajectories from satellite-based RTK-GNSS and a Leica Geosystems total station. This dataset supports research in SLAM, high-precision state estimation, and multi-modal learning, enabling rigorous evaluation and development of new approaches to sensor fusion in legged robotic systems. With its extensive scope, GrandTour represents the largest open-access legged-robotics dataset to date. The dataset is available at https://grand-tour.leggedrobotics.com , on HuggingFace (ROS-independent), and in ROS formats, along with tools and demo resources.",
+        "abs_url": "https://arxiv.org/abs/2602.18164",
+        "pdf_url": "https://arxiv.org/pdf/2602.18164",
+        "research_fit": 42,
+        "video_potential": 42,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_data_scaling_sim2real",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "legged robot",
+          "robotics dataset",
+          "robot state estimation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Data Scaling & Sim-to-Real",
+            "keywords": [
+              "robotics dataset"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "robot state estimation"
+            ],
+            "location": "abstract",
+            "points": 7.8
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotics, humanoid, teleoperation",
+        "research_fit 27 ≥ 18",
+        "核心方向：humanoid_loco_manipulation, robot_learning_posttraining",
+        "特定关键词：humanoid robot",
+        "historical_value_score 66.6 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 1.1%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 12.72",
+        "近年年均 OpenAlex 引用 6.0（无更早窗口可比较）",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-11-09T10:08:10",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 72.6 = base 66.6 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7163374003",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7163374003",
+        "openalex_id": "W7163374003",
+        "base_arxiv_id": "2606.03476",
+        "doi": "10.1109/lra.2026.3733563",
+        "title": "Human2Humanoid: Physics-Aware Cross-Morphology Motion Retargeting for Humanoid Robots",
+        "authors": [
+          "Tianqi Huang",
+          "Feiyang Yuan",
+          "Junchi Gu",
+          "Shurui Fang",
+          "Xiaohu Zhang",
+          "Yu Wang",
+          "Wei Gao",
+          "Shiwu Zhang"
+        ],
+        "abstract": "Retargeting human motion to humanoid robots is critical for teleoperation, imitation learning and human-robot interaction. However, it remains challenging because of substantial morphological discrepancies between humans and robots, including differences in skeletal topology, limb proportions and degrees of freedom, as well as the scarcity of paired motion data. This paper presents Human2Humanoid, an unsupervised motion retargeting framework that transfers human motions to humanoid robot behaviors with high fidelity. To bridge the domain gap under unpaired data, we adopt a CycleGAN-based architecture equipped with a skeleton-aware graph convolutional network to capture topology-dependent motion features. To address cross-domain scale mismatches, we introduce a morphology-invariant end-effector consistency loss that aligns normalized end-effector trajectories to preserve motion semantics across embodiments. To improve physical plausibility and reduce contact artifacts, we impose explicit physics-aware feasibility constraints to encourage reproduction of the contact patterns in the source motion. Experimental results show that the proposed method successfully retargets human motion to the Unitree G1 humanoid robot without paired data, and outperforms existing methods in both downstream controllability and physical feasibility.",
+        "publication_date": "2026-09-15",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T12290",
+            "display_name": "Human Motion and Animation",
+            "score": 0.9984999895095825
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.00019999999494757503
+          },
+          {
+            "id": "https://openalex.org/T10719",
+            "display_name": "3D Shape Modeling and Analysis",
+            "score": 9.999999747378752e-05
+          }
+        ],
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          }
+        ],
+        "fwci": 12.7159,
+        "citation_normalized_percentile": 0.98944262,
+        "referenced_works": [
+          "W2137267908",
+          "W2593414223",
+          "W2762522875",
+          "W2796290181",
+          "W2797849678",
+          "W2896690662",
+          "W2962793481",
+          "W2973421611",
+          "W3023742365",
+          "W3025281718",
+          "W3048474702",
+          "W3205547335",
+          "W4205559380",
+          "W4377142668",
+          "W4386075543",
+          "W4390480930",
+          "W4390874171",
+          "W4403249547",
+          "W4409410141",
+          "W7133212334"
+        ],
+        "related_works": [
+          "W2762522875",
+          "W4390480930",
+          "W4400494183",
+          "W4401943163",
+          "W4414696119",
+          "W4416749962",
+          "W7140212981",
+          "W7160710656",
+          "W7207516823",
+          "W7214376626"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-09-28T08:53:38",
+        "last_considered_at": "2026-11-12T21:07:47+08:00",
+        "recommended_at": "2026-11-12T21:07:47+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-09T10:08:10",
+        "openalex_url": "https://openalex.org/W7163374003",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3733563",
+        "open_access_url": "https://arxiv.org/abs/2606.03476",
+        "pdf_url": "https://arxiv.org/pdf/2606.03476",
+        "research_fit": 27,
+        "video_potential": 36,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "humanoid",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "humanoid",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, humanoid, teleoperation"
+          }
+        ],
+        "historical_value_score": 66.6,
+        "historical_score_components": {
+          "research_relevance": 27.0,
+          "recency": 100.0,
+          "normalized_citation": 98.9,
+          "fwci": 100.0,
+          "citation_momentum": 30.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 1.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 12.72",
+          "近年年均 OpenAlex 引用 6.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 66.6,
+      "recommendation_utility": 72.6,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2606.03476",
+        "base_id": "2606.03476",
+        "version": 1,
+        "title": "Human2Humanoid: Physics-Aware Cross-Morphology Motion Retargeting for Humanoid Robots",
+        "authors": [
+          "Tianqi Huang",
+          "Feiyang Yuan",
+          "Junchi Gu",
+          "Shurui Fang",
+          "Xiaohu Zhang",
+          "Yu Wang",
+          "Wei Gao",
+          "Shiwu Zhang"
+        ],
+        "published": "2026-09-15T00:00:00Z",
+        "updated": "2026-09-15T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Retargeting human motion to humanoid robots is critical for teleoperation, imitation learning and human-robot interaction. However, it remains challenging because of substantial morphological discrepancies between humans and robots, including differences in skeletal topology, limb proportions and degrees of freedom, as well as the scarcity of paired motion data. This paper presents Human2Humanoid, an unsupervised motion retargeting framework that transfers human motions to humanoid robot behaviors with high fidelity. To bridge the domain gap under unpaired data, we adopt a CycleGAN-based architecture equipped with a skeleton-aware graph convolutional network to capture topology-dependent motion features. To address cross-domain scale mismatches, we introduce a morphology-invariant end-effector consistency loss that aligns normalized end-effector trajectories to preserve motion semantics across embodiments. To improve physical plausibility and reduce contact artifacts, we impose explicit physics-aware feasibility constraints to encourage reproduction of the contact patterns in the source motion. Experimental results show that the proposed method successfully retargets human motion to the Unitree G1 humanoid robot without paired data, and outperforms existing methods in both downstream controllability and physical feasibility.",
+        "abs_url": "https://arxiv.org/abs/2606.03476",
+        "pdf_url": "https://arxiv.org/pdf/2606.03476",
+        "research_fit": 27,
+        "video_potential": 36,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "humanoid robot",
+          "imitation learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "imitation learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotics",
+              "humanoid",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotics",
+              "humanoid",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotics, humanoid, teleoperation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}

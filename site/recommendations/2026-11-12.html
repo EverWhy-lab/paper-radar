@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-11-12</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-11-12 21:07</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="recommendations" aria-label="Today's selected papers">
+      <article class="paper-card" id="openalex:W7131065284" data-paper-id="openalex:W7131065284" data-category="review_knowledge_map">
+        <div class="card-topline">
+          <span class="category category--review_knowledge_map">综述 / 知识地图</span>
+          <span class="arxiv-id">W7131065284</span>
+        </div>
+        <h3>GrandTour: A legged robotics dataset in the wild for multi-modal perception and state estimation</h3>
+        <p class="authors">Turcan Tuna, Jonas Frey, Frank Fu, Katharine Patterson, Tian’ao Xu, Maurice F. Fallon, César Cadena, Marco Hutter</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-01</span>
+<span><b>Source</b> The International Journal of Robotics Research</span><span><b>Reading focus</b> robot_state_estimation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>GrandTour targets the lack of a large-scale public legged-robot dataset for state estimation, perception, and navigation in real-world conditions. It provides time-synchronized data from spinning LiDARs, multiple RGB cameras, proprioceptive sensors, six ANYmal-mounted Intel RealSense D435i depth cameras, and a ZED2i stereo RGB-D camera, collected with an ANYbotics ANYmal-D and Boxi payload across alpine, forest, demolished-building, and urban sites, with ground-truth trajectories from RTK-GNSS and a Leica Geosystems total station. The authors describe it as the largest open-access legged-robotics dataset to date and position it for SLAM, high-precision state estimation, and multi-modal sensor-fusion evaluation. While reading, check how ground-truth trajectories are aligned with sensor streams and how environment and weather variation are documented.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Data Scaling &amp; Sim-to-Real</span>
+<span><b>Subtopics</b> robot_state_estimation</span><span><b>Utility</b> 74.8 (base 80.8)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -12</span><span><b>OpenAlex citations</b> 25</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotic, robotics</li><li>research_fit 42 ≥ 18</li><li>核心方向：humanoid_loco_manipulation, robot_data_scaling_sim2real</li><li>特定关键词：robotics dataset, robot state estimation</li><li>historical_value_score 80.8 ≥ 50.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 0.2%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 40.45</li><li>近年年均 OpenAlex 引用 25.0（无更早窗口可比较）</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-11-09T10:08:08</li><li>Detected subtopics: robot_state_estimation</li><li>Personal domain affinity: preferred (+6; matched quadruped)</li><li>Subtopic: robot_state_estimation</li><li>Recently recommended: 5 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 74.8 = base 80.8 + affinity +6 + redundancy -12</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Accurate state estimation and multi-modal perception are prerequisites for autonomous legged robots in complex, large-scale environments. To date, no large-scale public legged-robot dataset captures the real-world conditions needed to develop and benchmark algorithms for legged-robot state estimation, perception, and navigation. To address this, we introduce the GrandTour dataset, a multi-modal legged-robotics dataset collected across challenging outdoor and indoor environments, featuring an ANYbotics ANYmal-D quadruped equipped with the Boxi multi-modal sensor payload. GrandTour spans a broad range of environments and operational scenarios across distinct test sites, from alpine scenery and forests to demolished buildings and urban areas, and covers a wide variation in scale, complexity, illumination, and weather conditions. The dataset provides time-synchronized sensor data from spinning LiDARs, multiple RGB cameras with complementary characteristics, proprioceptive sensors, six ANYmal-mounted Intel RealSense D435i depth cameras, and the ZED2i stereo RGB-D camera. Moreover, it includes high-precision ground-truth trajectories from satellite-based RTK-GNSS and a Leica Geosystems total station. This dataset supports research in SLAM, high-precision state estimation, and multi-modal learning, enabling rigorous evaluation and development of new approaches to sensor fusion in legged robotic systems. With its extensive scope, GrandTour represents the largest open-access legged-robotics dataset to date. The dataset is available at https://grand-tour.leggedrobotics.com , on HuggingFace (ROS-independent), and in ROS formats, along with tools and demo resources.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7131065284" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2602.18164" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2602.18164" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1177/02783649261480737" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2602.18164" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7131065284" data-title="GrandTour: A legged robotics dataset in the wild for multi-modal perception and state estimation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7131065284" data-title="GrandTour: A legged robotics dataset in the wild for multi-modal perception and state estimation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7163374003" data-paper-id="openalex:W7163374003" data-category="high_impact_historical">
+        <div class="card-topline">
+          <span class="category category--high_impact_historical">领域内高影响力</span>
+          <span class="arxiv-id">W7163374003</span>
+        </div>
+        <h3>Human2Humanoid: Physics-Aware Cross-Morphology Motion Retargeting for Humanoid Robots</h3>
+        <p class="authors">Tianqi Huang, Feiyang Yuan, Junchi Gu, Shurui Fang, Xiaohu Zhang, Yu Wang, Wei Gao, Shiwu Zhang</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-09-15</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>Human2Humanoid addresses human-to-humanoid motion retargeting under skeletal topology, limb-proportion, and degree-of-freedom mismatches plus scarce paired motion data. The unsupervised framework uses a CycleGAN-based architecture with a skeleton-aware graph convolutional network, a morphology-invariant end-effector consistency loss aligning normalized end-effector trajectories, and explicit physics-aware feasibility constraints encouraging source contact patterns. The authors report successful retargeting to the Unitree G1 humanoid without paired data and claim outperformance of existing methods in downstream controllability and physical feasibility. While reading, inspect how the physics-aware constraints are formulated and how controllability and feasibility are evaluated.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Learning &amp; Policy Post-Training</span>
+<span><b>Utility</b> 72.6 (base 66.6)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>OpenAlex citations</b> 6</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotics, humanoid, teleoperation</li><li>research_fit 27 ≥ 18</li><li>核心方向：humanoid_loco_manipulation, robot_learning_posttraining</li><li>特定关键词：humanoid robot</li><li>historical_value_score 66.6 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 1.1%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 12.72</li><li>近年年均 OpenAlex 引用 6.0（无更早窗口可比较）</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-11-09T10:08:10</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 72.6 = base 66.6 + affinity +6 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Retargeting human motion to humanoid robots is critical for teleoperation, imitation learning and human-robot interaction. However, it remains challenging because of substantial morphological discrepancies between humans and robots, including differences in skeletal topology, limb proportions and degrees of freedom, as well as the scarcity of paired motion data. This paper presents Human2Humanoid, an unsupervised motion retargeting framework that transfers human motions to humanoid robot behaviors with high fidelity. To bridge the domain gap under unpaired data, we adopt a CycleGAN-based architecture equipped with a skeleton-aware graph convolutional network to capture topology-dependent motion features. To address cross-domain scale mismatches, we introduce a morphology-invariant end-effector consistency loss that aligns normalized end-effector trajectories to preserve motion semantics across embodiments. To improve physical plausibility and reduce contact artifacts, we impose explicit physics-aware feasibility constraints to encourage reproduction of the contact patterns in the source motion. Experimental results show that the proposed method successfully retargets human motion to the Unitree G1 humanoid robot without paired data, and outperforms existing methods in both downstream controllability and physical feasibility.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7163374003" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2606.03476" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2606.03476" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3733563" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2606.03476" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7163374003" data-title="Human2Humanoid: Physics-Aware Cross-Morphology Motion Retargeting for Humanoid Robots" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7163374003" data-title="Human2Humanoid: Physics-Aware Cross-Morphology Motion Retargeting for Humanoid Robots" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>
