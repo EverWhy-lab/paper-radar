@@ -1,0 +1,398 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13T20:31:10+08:00",
+  "mode": "incremental",
+  "candidate_count": 3866,
+  "historical_candidate_count": 784,
+  "recommendation_count": 1,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7221111138",
+      "title": "Nonlinear model predictive control of legged robots with accelerated first-order optimization",
+      "takeaway": "This method paper addresses nonlinearly constrained, nonconvex MPC for legged robots by proposing a nonmonotone Accelerated Projected Gradient (APG) algorithm with Nesterov momentum and backtracking line search, which uses only gradient information and closed-form projections to handle friction-cone and box constraints without Hessian or constraint-derivative computations. Against a Sequential Quadratic Programming (SQP) baseline, the abstract reports shorter computation times and lower objective values in the considered test scenarios, with improved tracking performance, and states that the low per-iteration cost enables real-time nonlinear MPC at 100 Hz on an embedded single-board computer. Evidence comes from offline comparisons, real-time simulations, and experiments on a quadruped robot plus biped simulations. Inspect how the nonmonotone APG and line search are configured, how constraints are projected, and how the SQP comparison and embedded timing were set up.",
+      "generated_at": "2026-11-13T12:37:35",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robots, robotic",
+        "research_fit 18 ≥ 18",
+        "核心方向：humanoid_loco_manipulation",
+        "特定关键词：model predictive control, MPC",
+        "historical_value_score 51.9 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 18.6%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-10-19T08:01:29",
+        "Detected subtopics: model_predictive_control",
+        "Personal domain affinity: preferred (+6; matched quadruped)",
+        "recommendation_utility 57.9 = base 51.9 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7221111138",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7221111138",
+        "openalex_id": "W7221111138",
+        "base_arxiv_id": null,
+        "doi": "10.1016/j.conengprac.2026.107296",
+        "title": "Nonlinear model predictive control of legged robots with accelerated first-order optimization",
+        "authors": [
+          "SeongWon Nam",
+          "Young Hun Lee",
+          "Hyunyong Lee",
+          "Hansol Kang",
+          "Jiman Park",
+          "Yeongwoo Son",
+          "Bumsu Yi",
+          "Jaeyoung Oh",
+          "Hyouk Ryeol Choi"
+        ],
+        "abstract": "This paper presents an accelerated first-order approach for solving nonlinearly constrained, nonconvex model predictive control (MPC) problems in legged robots. The proposed method employs a nonmonotone Accelerated Projected Gradient (APG) algorithm with Nesterov momentum and backtracking line search, relying only on gradient information and closed-form projection operators. This enables efficient handling of typical control constraints, such as friction cones and box constraints, without requiring Hessian or constraint derivative computations. Compared to a Sequential Quadratic Programming (SQP) baseline, the method achieves shorter computation times and lower objective values in the considered test scenarios, leading to improved tracking performance. Its low per-iteration computational cost enables real-time nonlinear MPC at 100 Hz on an embedded single-board computer with limited computational resources. The effectiveness of the proposed framework is validated through offline comparisons, real-time simulations, and experiments on a quadruped robot, as well as simulations on a biped system. These results demonstrate that the proposed approach provides an efficient and practical solution for real-time control of legged robots under nonlinear dynamics and control constraints within the evaluated scenarios.",
+        "publication_date": "2026-10-09",
+        "publication_year": 2026,
+        "source_name": "Control Engineering Practice",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10791",
+            "display_name": "Advanced Control Systems Optimization",
+            "score": 0.9657999873161316
+          },
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.03310000151395798
+          },
+          {
+            "id": "https://openalex.org/T11615",
+            "display_name": "Control and Dynamics of Mobile Robots",
+            "score": 0.0003000000142492354
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.81431652,
+        "referenced_works": [
+          "W2049670620",
+          "W2076605490",
+          "W2100556411",
+          "W2142224912",
+          "W2482726005",
+          "W2771691050",
+          "W3043795300",
+          "W3113616534",
+          "W4296966920",
+          "W4378696928"
+        ],
+        "related_works": [],
+        "discovery_source": [
+          "journal_search:Control Engineering Practice"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-12T09:37:15",
+        "last_considered_at": "2026-11-13T20:31:10+08:00",
+        "recommended_at": "2026-11-13T20:31:10+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-10-19T08:01:29",
+        "openalex_url": "https://openalex.org/W7221111138",
+        "landing_page_url": "https://doi.org/10.1016/j.conengprac.2026.107296",
+        "open_access_url": "https://doi.org/10.1016/j.conengprac.2026.107296",
+        "pdf_url": null,
+        "research_fit": 18,
+        "video_potential": 29,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "model predictive control",
+          "MPC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic"
+          }
+        ],
+        "historical_value_score": 51.9,
+        "historical_score_components": {
+          "research_relevance": 18.0,
+          "recency": 100.0,
+          "normalized_citation": 81.4,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 18.6%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S105928092",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [
+        "model_predictive_control"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 51.9,
+      "recommendation_utility": 57.9,
+      "days_since_same_subtopic": 10,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7221111138",
+        "base_id": "openalex:W7221111138",
+        "version": 1,
+        "title": "Nonlinear model predictive control of legged robots with accelerated first-order optimization",
+        "authors": [
+          "SeongWon Nam",
+          "Young Hun Lee",
+          "Hyunyong Lee",
+          "Hansol Kang",
+          "Jiman Park",
+          "Yeongwoo Son",
+          "Bumsu Yi",
+          "Jaeyoung Oh",
+          "Hyouk Ryeol Choi"
+        ],
+        "published": "2026-10-09T00:00:00Z",
+        "updated": "2026-10-09T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "This paper presents an accelerated first-order approach for solving nonlinearly constrained, nonconvex model predictive control (MPC) problems in legged robots. The proposed method employs a nonmonotone Accelerated Projected Gradient (APG) algorithm with Nesterov momentum and backtracking line search, relying only on gradient information and closed-form projection operators. This enables efficient handling of typical control constraints, such as friction cones and box constraints, without requiring Hessian or constraint derivative computations. Compared to a Sequential Quadratic Programming (SQP) baseline, the method achieves shorter computation times and lower objective values in the considered test scenarios, leading to improved tracking performance. Its low per-iteration computational cost enables real-time nonlinear MPC at 100 Hz on an embedded single-board computer with limited computational resources. The effectiveness of the proposed framework is validated through offline comparisons, real-time simulations, and experiments on a quadruped robot, as well as simulations on a biped system. These results demonstrate that the proposed approach provides an efficient and practical solution for real-time control of legged robots under nonlinear dynamics and control constraints within the evaluated scenarios.",
+        "abs_url": "https://doi.org/10.1016/j.conengprac.2026.107296",
+        "pdf_url": "",
+        "research_fit": 18,
+        "video_potential": 29,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_control_optimization"
+        ],
+        "matched_keywords": [
+          "quadruped robot",
+          "model predictive control",
+          "MPC"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "quadruped robot"
+            ],
+            "location": "abstract",
+            "points": 6.4
+          },
+          {
+            "kind": "topic",
+            "label": "Planning, Control & Estimation",
+            "keywords": [
+              "model predictive control",
+              "MPC"
+            ],
+            "location": "title",
+            "points": 12.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
