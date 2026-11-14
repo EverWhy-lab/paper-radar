@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-11-13</title>
+  <title>Paper Radar — 2026-11-14</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-11-13 20:31</p>
+        <p class="header-updated">2026-11-14 19:41</p>
       </div>
     </div>
   </header>
@@ -31,38 +31,38 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="openalex:W7221111138" data-paper-id="openalex:W7221111138" data-category="high_impact_historical">
+      <article class="paper-card" id="openalex:W7163026747" data-paper-id="openalex:W7163026747" data-category="journal_recent">
         <div class="card-topline">
-          <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W7221111138</span>
+          <span class="category category--journal_recent">期刊新论文</span>
+          <span class="arxiv-id">W7163026747</span>
         </div>
-        <h3>Nonlinear model predictive control of legged robots with accelerated first-order optimization</h3>
-        <p class="authors">SeongWon Nam, Young Hun Lee, Hyunyong Lee, Hansol Kang, Jiman Park, Yeongwoo Son, Bumsu Yi, Jaeyoung Oh, Hyouk Ryeol Choi</p>
+        <h3>Learning Terrain-Aware Whole-Body Control for Perceptive Legged Loco-Manipulation</h3>
+        <p class="authors">Sikai Guo, Yudong Zhong, Guoyang Zhao, Botao Dang, Zhihai Bi, Jun Ma</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-09</span>
-<span><b>Source</b> Control Engineering Practice</span><span><b>Reading focus</b> model_predictive_control</span>        </div>
+          <span><b>Published</b> 2026-09-18</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> loco_manipulation, whole_body_control</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>This method paper addresses nonlinearly constrained, nonconvex MPC for legged robots by proposing a nonmonotone Accelerated Projected Gradient (APG) algorithm with Nesterov momentum and backtracking line search, which uses only gradient information and closed-form projections to handle friction-cone and box constraints without Hessian or constraint-derivative computations. Against a Sequential Quadratic Programming (SQP) baseline, the abstract reports shorter computation times and lower objective values in the considered test scenarios, with improved tracking performance, and states that the low per-iteration cost enables real-time nonlinear MPC at 100 Hz on an embedded single-board computer. Evidence comes from offline comparisons, real-time simulations, and experiments on a quadruped robot plus biped simulations. Inspect how the nonmonotone APG and line search are configured, how constraints are projected, and how the SQP comparison and embedded timing were set up.</p>
+          <p>Legged manipulators need whole-body control that reacts to terrain, yet many controllers rely mainly on proprioception and omit the exteroception needed for terrain topology perception. TA-WBC addresses this with an RL-based unified policy that uses a hierarchical exteroceptive encoder to extract terrain features for proactive posture and foothold adaptation, plus an end-effector sampling method based on the foot contact plane that decouples the manipulation target from base height, roll, and pitch variations. A dual-policy distillation module aims to combine expansive whole-body motion with terrain adaptability without catastrophic forgetting. The abstract reports that simulation and real-world experiments validate robustness, yielding a larger reachable space, less tracking error, and reduced unexpected stumbles; inspect how terrain features enter the policy and how the distillation preserves prior motion.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
-            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Category</b> 期刊新论文</span>
             <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
-<span><b>Subtopics</b> model_predictive_control</span><span><b>Utility</b> 57.9 (base 51.9)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>OpenAlex citations</b> 0</span>          </div>
+<span><b>Subtopics</b> loco_manipulation, whole_body_control</span><span><b>Utility</b> 36.0 (base 42.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -12</span><span><b>OpenAlex citations</b> 0</span>          </div>
           <ul>
-<li>机器人语境：robot, robots, robotic</li><li>research_fit 18 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：model predictive control, MPC</li><li>historical_value_score 51.9 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 18.6%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-10-19T08:01:29</li><li>Detected subtopics: model_predictive_control</li><li>Personal domain affinity: preferred (+6; matched quadruped)</li><li>recommendation_utility 57.9 = base 51.9 + affinity +6 + redundancy -0</li>          </ul>
+<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 42 ≥ 35</li><li>Core topics matched: humanoid_loco_manipulation</li><li>Specific keywords matched: loco-manipulation, mobile manipulation, whole-body control, WBC</li><li>Detected subtopics: loco_manipulation, whole_body_control</li><li>Personal domain affinity: preferred (+6; matched loco-manipulation, mobile manipulation)</li><li>Subtopic: loco_manipulation, whole_body_control</li><li>Recently recommended: 5 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 36.0 = base 42.0 + affinity +6 + redundancy -12</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>This paper presents an accelerated first-order approach for solving nonlinearly constrained, nonconvex model predictive control (MPC) problems in legged robots. The proposed method employs a nonmonotone Accelerated Projected Gradient (APG) algorithm with Nesterov momentum and backtracking line search, relying only on gradient information and closed-form projection operators. This enables efficient handling of typical control constraints, such as friction cones and box constraints, without requiring Hessian or constraint derivative computations. Compared to a Sequential Quadratic Programming (SQP) baseline, the method achieves shorter computation times and lower objective values in the considered test scenarios, leading to improved tracking performance. Its low per-iteration computational cost enables real-time nonlinear MPC at 100 Hz on an embedded single-board computer with limited computational resources. The effectiveness of the proposed framework is validated through offline comparisons, real-time simulations, and experiments on a quadruped robot, as well as simulations on a biped system. These results demonstrate that the proposed approach provides an efficient and practical solution for real-time control of legged robots under nonlinear dynamics and control constraints within the evaluated scenarios.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Legged manipulators integrate exceptional terrain adaptability along with mobile manipulation capabilities, which make them highly promising for deployment in human-centric environments. By coordinating the control of both legs and arms, a whole-body controller can significantly expand the operational workspace of legged manipulators. However, many existing whole-body controllers primarily depend on proprioception and do not incorporate the critical exteroception required for effective terrain topology perception. This limitation can hinder their ability to adapt to varying environmental conditions and navigate complex terrains effectively. In this paper, we introduce TA-WBC, a terrain-aware whole-body control framework for legged manipulators, which features a novel RL-based unified policy tailored to whole-body loco-manipulation tasks in various terrains. Specifically, we employ a \rev{hierarchical exteroceptive encoder} to extract terrain features, providing an essential basis for the robot to proactively adapt posture and footholds. Furthermore, to facilitate stable cross-terrain loco-manipulation, we propose a novel end-effector sampling method based on the foot contact plane, \rev{decoupling the manipulation target from base height, roll, and pitch variations}. Moreover, a dual-policy distillation module is introduced to integrate expansive whole-body motion with terrain adaptability without catastrophic forgetting. The simulation and real-world experiments validate the robustness of our proposed controller, which leads to a larger reachable space, less tracking error, and reduced unexpected stumbles. This unified policy highlights the promising capabilities of legged manipulators in performing loco-manipulation tasks across complex terrains.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7221111138" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1016/j.conengprac.2026.107296" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7221111138" data-title="Nonlinear model predictive control of legged robots with accelerated first-order optimization" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W7163026747" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2605.31343" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2605.31343" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3732842" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2605.31343" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7163026747" data-title="Learning Terrain-Aware Whole-Body Control for Perceptive Legged Loco-Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7221111138" data-title="Nonlinear model predictive control of legged robots with accelerated first-order optimization" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7163026747" data-title="Learning Terrain-Aware Whole-Body Control for Perceptive Legged Loco-Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
