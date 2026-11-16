@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-11-15</title>
+  <title>Paper Radar — 2026-11-16</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-11-15 20:10</p>
+        <p class="header-updated">2026-11-16 21:13</p>
       </div>
     </div>
   </header>
@@ -31,75 +31,81 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="openalex:W7138116831" data-paper-id="openalex:W7138116831" data-category="journal_recent">
+      <article class="paper-card" id="openalex:W7160948545" data-paper-id="openalex:W7160948545" data-category="rising_recent">
         <div class="card-topline">
-          <span class="category category--journal_recent">期刊新论文</span>
-          <span class="arxiv-id">W7138116831</span>
+          <span class="category category--rising_recent">近期升温</span>
+          <span class="arxiv-id">W7160948545</span>
         </div>
-        <h3>Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation</h3>
-        <p class="authors">Xingting Li, Yifan Xie, Han Liu, Wei Hou, Guangyu Chen, Shoujie Li, Wenbo Ding</p>
+        <h3>UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots</h3>
+        <p class="authors">Kangning Yin, Weishuai Zeng, Ke Fan, Minyue Dai, Zirui Wang, Qiang Zhang, Zheng Tian, Jingbo Wang, Jiangmiao Pang, Weinan Zhang</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-01</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> diffusion_flow_policy</span>        </div>
+          <span><b>Published</b> 2026-05-12</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>This paper addresses contact-rich, fine-grained manipulation, where visual imitation learning misses cues such as friction variation and incipient slip and struggles to balance long-horizon coherence with local reactive feedback. M2-ResiPolicy pairs a 10 Hz Master-Guidance Policy that generates action chunks from a diffusion-based backbone and uses tactile-intensity-driven adaptive fusion to modulate vision-touch perceptual weights with a 60 Hz Micro-Residual Corrector, a lightweight GRU producing real-time compensation from TCP wrench feedback, plus a force-mixed PBIC execution layer. The abstract reports that across fragile grasping and precision insertion tasks it outperforms standard Diffusion Policy (DP) and Reactive Diffusion Policy (RDP), reaching a 93% damage-free success rate in chip grasping with stable force regulation. Inspect how the adaptive tactile fusion weights are computed and how the two timescales are coordinated.</p>
+          <p>UniTracker addresses whole-body motion tracking on humanoids, where MLP policies trained under partial observations show limited expressiveness and orientation drift. Its three-stage framework first learns a privileged teacher policy, then trains a CVAE-based universal policy with a global motion latent aligned to a full-observation encoder, and finally fine-tunes a student via a lightweight adaptation module supporting per-instance and batch adaptation. The abstract reports validation in simulation and on a Unitree G1 humanoid, claiming better tracking accuracy, motion diversity, and deployment robustness than current baselines, without giving numbers. Inspect how the latent alignment is enforced and how adaptation is scoped.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
-            <span><b>Category</b> 期刊新论文</span>
-            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training, Dexterous &amp; Multimodal Manipulation</span>
-<span><b>Subtopics</b> diffusion_flow_policy</span><span><b>Utility</b> 43.0 (base 55.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>Recent overlap</b> -12</span><span><b>OpenAlex citations</b> 6</span>          </div>
+            <span><b>Category</b> 近期升温</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 88.8 (base 82.8)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>OpenAlex citations</b> 58</span>            <span><b>Rising score</b> 82.8</span>
+            <span><b>Paper age</b> 188 days</span>
+            <span><b>Citation percentile</b> 0.999</span>
+            <span><b>FWCI</b> 72.50</span>
+            <span><b>Citation velocity</b> 9.39 citations/month</span>
+            <span><b>Observed growth</b> 0.791 citations/day</span>
+          </div>
           <ul>
-<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 55 ≥ 35</li><li>Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining, dexterous_multimodal_manipulation</li><li>Specific keywords matched: long-horizon planning, diffusion policy, contact-rich manipulation</li><li>Detected subtopics: diffusion_flow_policy</li><li>Personal domain affinity: neutral (+0)</li><li>Subtopic: diffusion_flow_policy</li><li>Recently recommended: 5 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 43.0 = base 55.0 + affinity +0 + redundancy -12</li>          </ul>
+<li>rising_score 82.8 ≥ 55.0</li><li>Robotics context: robot, robots, robotic, robotics, humanoid</li><li>research_fit 14 ≥ 12</li><li>Source restricted to robotics_core (S4210169774)</li><li>Publication age 188 days</li><li>Paper age 188 days; citation velocity uses a 90-day floor</li><li>Smoothed citation velocity 9.39 citations/month</li><li>Field/year normalized citation percentile 0.999</li><li>OpenAlex FWCI 72.50</li><li>Observed snapshot growth 0.791 citations/day</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 88.8 = base 82.8 + affinity +6 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Robotic contact-rich and fine-grained manipulation remains a significant challenge due to complex interaction dynamics and the competing requirements of multi-timescale control. While current visual imitation learning methods excel at long-horizon planning, they often fail to perceive critical interaction cues like friction variations or incipient slip, and struggle to balance global task coherence with local reactive feedback. To address these challenges, we propose M2-ResiPolicy, a novel Master-Micro residual control architecture that synergizes high-level action guidance with low-level correction. The framework consists of a Master-Guidance Policy (MGP) operating at 10 Hz, which generates temporally consistent action chunks via a diffusion-based backbone and employs a tactile-intensity-driven adaptive fusion mechanism to dynamically modulate perceptual weights between vision and touch. Simultaneously, a high-frequency (60 Hz) Micro-Residual Corrector (MRC) utilizes a lightweight GRU to provide real-time action compensation based on TCP wrench feedback. This policy is further integrated with a force-mixed PBIC execution layer, effectively regulating contact forces to ensure interaction safety. Experiments across several demanding tasks including fragile object grasping and precision insertion, demonstrate that M2-ResiPolicy significantly outperforms standard Diffusion Policy (DP) and state-of-the-art Reactive Diffusion Policy (RDP), achieving a 93\% damage-free success rate in chip grasping and superior force regulation stability.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Achieving generalizable whole-body motion control is essential for deploying humanoid robots in real-world environments. However, existing MLP-based policies trained under partial observations often suffer from limited expressiveness and struggle to maintain global consistency. These shortcomings manifest as less expressive motion, orientation drift, and poor generalization across diverse behaviors. To address these limitations, we propose UniTracker, a three-stage framework for scalable and adaptive motion tracking. The first stage learns a privileged teacher policy that produces high-fidelity reference actions. Building on this, the second stage trains a CVAE-based universal policy that captures a global latent representation of motion, enabling robust performance under partial observations. Crucially, we align the partial-observation prior with a full-observation encoder, injecting global intent into the latent space. In the final stage, a lightweight adaptation module fine-tunes the student policy on challenging sequences, supporting both per-instance and batch adaptation. We validate UniTracker in simulation and on a Unitree G1 humanoid robot, demonstrating superior tracking accuracy, motion diversity, and deployment robustness compared to current baselines. Project page is available athttps://yinkangning0124.github.io/Humanoid-UniTracker/</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7138116831" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2603.15152" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2603.15152" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3739024" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2603.15152" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7138116831" data-title="Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W7160948545" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2507.07356" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2507.07356" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3692091" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2507.07356" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7160948545" data-title="UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7138116831" data-title="Master–Micro Residual Correction With Adaptive Tactile Fusion and Force-Mixed Control for Contact-Rich Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7160948545" data-title="UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="openalex:W4401414436" data-paper-id="openalex:W4401414436" data-category="high_impact_historical">
+      <article class="paper-card" id="openalex:W4414050442" data-paper-id="openalex:W4414050442" data-category="high_impact_historical">
         <div class="card-topline">
           <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W4401414436</span>
+          <span class="arxiv-id">W4414050442</span>
         </div>
-        <h3>Sim-to-Real Learning for Humanoid Box Loco-Manipulation</h3>
-        <p class="authors">Jeremy Dao, Helei Duan, Alan Fern</p>
+        <h3>NaVILA: Legged Robot Vision-Language-Action Model for Navigation</h3>
+        <p class="authors">An‐Chieh Cheng, Yandong Ji, Zhaojing Yang, Zaitian Gongye, Xueyan Zou, Jan Kautz, Erdem Bıyık, Hongxu Yin, Sifei Liu, Xiaolong Wang</p>
         <div class="metadata">
-          <span><b>Published</b> 2024-05-13</span>
-<span><b>Reading focus</b> sim_to_real, loco_manipulation</span>        </div>
+          <span><b>Published</b> 2025-06-21</span>
+        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>This work targets humanoid box loco-manipulation, which requires whole-body coordination to lift boxes of varying weight, position, and orientation while maintaining balance. The authors present a sim-to-real reinforcement learning approach that trains general box pickup and carrying skills for the bipedal robot Digit, with reward functions designed to shape the desired box interactions while valuing balance and gait quality, and they combine the learned skills into a full system for moving boxes between tables. Beyond quantitative simulation results, the abstract reports successful sim-to-real transfer on Digit and states that, to the authors&#39; knowledge, this is the first demonstration of a learned controller for such a task on real hardware. Inspect the reward design and skill composition.</p>
+          <p>NaVILA is presented as a vision-language-action model for navigation by legged robots, but the supplied abstract contains only a project URL and states no problem formulation, method details, or results. Because the source gives no reported evidence, the technical claims cannot be summarized from this record alone; consult the full paper for the model design, evaluation setup, and findings. Treat the navigation VLA framing as the authors&#39; stated direction rather than an independently validated result.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 领域内高影响力</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Data Scaling &amp; Sim-to-Real</span>
-<span><b>Subtopics</b> sim_to_real, loco_manipulation</span><span><b>Utility</b> 84.5 (base 82.7)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>Recent overlap</b> -4.2</span><span><b>OpenAlex citations</b> 31</span>          </div>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 76.2 (base 76.2)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 33</span>          </div>
           <ul>
-<li>机器人语境：robot, robotic, manipulation, humanoid, loco-manipulation, sim-to-real</li><li>research_fit 58 ≥ 18</li><li>核心方向：humanoid_loco_manipulation, robot_data_scaling_sim2real</li><li>特定关键词：loco-manipulation, humanoid robot, bipedal robot</li><li>historical_value_score 82.7 ≥ 42.0</li><li>发表于 2024 年</li><li>同领域同年份引用标准化位于前 2.0%</li><li>阅读时效分 100/100（论文年龄 2 年）</li><li>OpenAlex FWCI 7.37</li><li>近 2 年年均引用 15.0；此前 1 年年均 1.0</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-24T03:31:57</li><li>Detected subtopics: sim_to_real, loco_manipulation</li><li>Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)</li><li>Subtopic: loco_manipulation</li><li>Recently recommended: 6 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = sim_to_real</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 84.5 = base 82.7 + affinity +6 + redundancy -4.2</li>          </ul>
+<li>机器人语境：robot, robotic, robotics, vision-language-action</li><li>research_fit 42 ≥ 18</li><li>核心方向：vla_robot_foundation, humanoid_loco_manipulation</li><li>特定关键词：vision-language-action</li><li>historical_value_score 76.2 ≥ 42.0</li><li>发表于 2025 年</li><li>同领域同年份引用标准化位于前 0.1%</li><li>阅读时效分 100/100（论文年龄 1 年）</li><li>OpenAlex FWCI 39.09</li><li>近年年均 OpenAlex 引用 16.5（无更早窗口可比较）</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-24T03:31:56</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0; matched navigation)</li><li>recommendation_utility 76.2 = base 76.2 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>In this work we propose a learning-based approach to box loco-manipulation for a humanoid robot. This is a particularly challenging problem due to the need for whole-body coordination in order to lift boxes of varying weight, position, and orientation while maintaining balance. To address this challenge, we present a sim-to-real reinforcement learning approach for training general box pickup and carrying skills for the bipedal robot Digit. Our reward functions are designed to produce the desired interactions with the box while also valuing balance and gait quality. We combine the learned skills into a full system for box loco-manipulation to achieve the task of moving boxes from one table to another with a variety of sizes, weights, and initial configurations. In addition to quantitative simulation results, we demonstrate successful sim-to-real transfer on the humanoid robot Digit. To our knowledge this is the first demonstration of a learned controller for such a task on real world hardware.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>https://navila-bot.github</p></details>
         <div class="actions">
-<a href="https://openalex.org/W4401414436" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/icra57147.2024.10610977" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W4401414436" data-title="Sim-to-Real Learning for Humanoid Box Loco-Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W4414050442" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.15607/rss.2025.xxi.018" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.15607/rss.2025.xxi.018" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W4414050442" data-title="NaVILA: Legged Robot Vision-Language-Action Model for Navigation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W4401414436" data-title="Sim-to-Real Learning for Humanoid Box Loco-Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W4414050442" data-title="NaVILA: Legged Robot Vision-Language-Action Model for Navigation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>

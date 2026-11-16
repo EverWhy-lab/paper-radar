@@ -1,0 +1,731 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-16",
+  "generated_at": "2026-11-16T21:13:17+08:00",
+  "mode": "incremental",
+  "candidate_count": 2633,
+  "historical_candidate_count": 801,
+  "recommendation_count": 2,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 1
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7160948545",
+      "title": "UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots",
+      "takeaway": "UniTracker addresses whole-body motion tracking on humanoids, where MLP policies trained under partial observations show limited expressiveness and orientation drift. Its three-stage framework first learns a privileged teacher policy, then trains a CVAE-based universal policy with a global motion latent aligned to a full-observation encoder, and finally fine-tunes a student via a lightweight adaptation module supporting per-instance and batch adaptation. The abstract reports validation in simulation and on a Unitree G1 humanoid, claiming better tracking accuracy, motion diversity, and deployment robustness than current baselines, without giving numbers. Inspect how the latent alignment is enforced and how adaptation is scoped.",
+      "generated_at": "2026-11-16T13:17:33",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W4414050442",
+      "title": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+      "takeaway": "NaVILA is presented as a vision-language-action model for navigation by legged robots, but the supplied abstract contains only a project URL and states no problem formulation, method details, or results. Because the source gives no reported evidence, the technical claims cannot be summarized from this record alone; consult the full paper for the model design, evaluation setup, and findings. Treat the navigation VLA framing as the authors' stated direction rather than an independently validated result.",
+      "generated_at": "2026-11-16T13:17:33",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "rising_recent",
+      "reasons": [
+        "rising_score 82.8 ≥ 55.0",
+        "Robotics context: robot, robots, robotic, robotics, humanoid",
+        "research_fit 14 ≥ 12",
+        "Source restricted to robotics_core (S4210169774)",
+        "Publication age 188 days",
+        "Paper age 188 days; citation velocity uses a 90-day floor",
+        "Smoothed citation velocity 9.39 citations/month",
+        "Field/year normalized citation percentile 0.999",
+        "OpenAlex FWCI 72.50",
+        "Observed snapshot growth 0.791 citations/day",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 88.8 = base 82.8 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7160948545",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7160948545",
+        "openalex_id": "W7160948545",
+        "base_arxiv_id": "2507.07356",
+        "doi": "10.1109/lra.2026.3692091",
+        "title": "UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots",
+        "authors": [
+          "Kangning Yin",
+          "Weishuai Zeng",
+          "Ke Fan",
+          "Minyue Dai",
+          "Zirui Wang",
+          "Qiang Zhang",
+          "Zheng Tian",
+          "Jingbo Wang",
+          "Jiangmiao Pang",
+          "Weinan Zhang"
+        ],
+        "abstract": "Achieving generalizable whole-body motion control is essential for deploying humanoid robots in real-world environments. However, existing MLP-based policies trained under partial observations often suffer from limited expressiveness and struggle to maintain global consistency. These shortcomings manifest as less expressive motion, orientation drift, and poor generalization across diverse behaviors. To address these limitations, we propose UniTracker, a three-stage framework for scalable and adaptive motion tracking. The first stage learns a privileged teacher policy that produces high-fidelity reference actions. Building on this, the second stage trains a CVAE-based universal policy that captures a global latent representation of motion, enabling robust performance under partial observations. Crucially, we align the partial-observation prior with a full-observation encoder, injecting global intent into the latent space. In the final stage, a lightweight adaptation module fine-tunes the student policy on challenging sequences, supporting both per-instance and batch adaptation. We validate UniTracker in simulation and on a Unitree G1 humanoid robot, demonstrating superior tracking accuracy, motion diversity, and deployment robustness compared to current baselines. Project page is available athttps://yinkangning0124.github.io/Humanoid-UniTracker/",
+        "publication_date": "2026-05-12",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.4611999988555908
+          },
+          {
+            "id": "https://openalex.org/T12290",
+            "display_name": "Human Motion and Animation",
+            "score": 0.2655999958515167
+          },
+          {
+            "id": "https://openalex.org/T10879",
+            "display_name": "Robotic Locomotion and Control",
+            "score": 0.2305999994277954
+          }
+        ],
+        "cited_by_count": 58,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 52
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          }
+        ],
+        "fwci": 72.5025,
+        "citation_normalized_percentile": 0.99915139,
+        "referenced_works": [
+          "W1967554269",
+          "W2135929901",
+          "W2158782408",
+          "W2605102758",
+          "W2736601468",
+          "W2796290181",
+          "W2928521819",
+          "W3193576605",
+          "W3206363598",
+          "W4298186886",
+          "W4313598687",
+          "W4390874171",
+          "W4399695336",
+          "W4399794218",
+          "W4402354017",
+          "W4403624672",
+          "W4405786155",
+          "W4407231231",
+          "W4413918871",
+          "W4413947089",
+          "W4414050909",
+          "W4414051111",
+          "W4414051129",
+          "W4415032559",
+          "W4415112555",
+          "W4415312709",
+          "W4416241902",
+          "W6910769791",
+          "W7196996350"
+        ],
+        "related_works": [
+          "W4415312709",
+          "W7133259863",
+          "W7128769216",
+          "W4414586291",
+          "W4414745288",
+          "W7170175998",
+          "W7117134161",
+          "W4405562798",
+          "W7127172708",
+          "W7082154238"
+        ],
+        "discovery_source": [
+          "rising_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-31T08:51:43",
+        "last_considered_at": "2026-11-16T21:13:17+08:00",
+        "recommended_at": "2026-11-16T21:13:17+08:00",
+        "recommendation_count": 1,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-16T10:04:15",
+        "openalex_url": "https://openalex.org/W7160948545",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3692091",
+        "open_access_url": "http://arxiv.org/abs/2507.07356",
+        "pdf_url": "https://arxiv.org/pdf/2507.07356",
+        "research_fit": 14,
+        "video_potential": 51,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, humanoid"
+          }
+        ],
+        "historical_value_score": 69.9,
+        "historical_score_components": {
+          "research_relevance": 14.0,
+          "recency": 100.0,
+          "normalized_citation": 99.9,
+          "fwci": 100.0,
+          "citation_momentum": 100.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 72.50",
+          "近年年均 OpenAlex 引用 29.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": 82.8,
+        "rising_score_components": {
+          "research_relevance": 14.0,
+          "citation_velocity": 100.0,
+          "normalized_citation": 99.9,
+          "fwci": 100.0,
+          "observed_growth": 100.0
+        },
+        "rising_score_reasons": [
+          "Robotics context: robot, robots, robotic, robotics, humanoid",
+          "research_fit 14 ≥ 12",
+          "Source restricted to robotics_core (S4210169774)",
+          "Publication age 188 days",
+          "Paper age 188 days; citation velocity uses a 90-day floor",
+          "Smoothed citation velocity 9.39 citations/month",
+          "Field/year normalized citation percentile 0.999",
+          "OpenAlex FWCI 72.50",
+          "Observed snapshot growth 0.791 citations/day"
+        ],
+        "rising_updated_at": "2026-11-16T18:04:01+08:00",
+        "rising_age_days": 188,
+        "rising_citation_velocity": 9.39,
+        "rising_observed_growth": {
+          "recent": {
+            "prior_captured_at": "2026-11-09T18:08:44+08:00",
+            "elapsed_days": 7.0,
+            "citation_delta": 1,
+            "citations_per_day": 0.1429
+          },
+          "approximately_28_day": {
+            "prior_captured_at": "2026-10-19T16:02:04+08:00",
+            "elapsed_days": 28.08,
+            "citation_delta": 56,
+            "citations_per_day": 1.994
+          },
+          "blended_citations_per_day": 0.7908
+        }
+      },
+      "core_topics": [
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 82.8,
+      "recommendation_utility": 88.8,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2507.07356",
+        "base_id": "2507.07356",
+        "version": 1,
+        "title": "UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots",
+        "authors": [
+          "Kangning Yin",
+          "Weishuai Zeng",
+          "Ke Fan",
+          "Minyue Dai",
+          "Zirui Wang",
+          "Qiang Zhang",
+          "Zheng Tian",
+          "Jingbo Wang",
+          "Jiangmiao Pang",
+          "Weinan Zhang"
+        ],
+        "published": "2026-05-12T00:00:00Z",
+        "updated": "2026-05-12T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Achieving generalizable whole-body motion control is essential for deploying humanoid robots in real-world environments. However, existing MLP-based policies trained under partial observations often suffer from limited expressiveness and struggle to maintain global consistency. These shortcomings manifest as less expressive motion, orientation drift, and poor generalization across diverse behaviors. To address these limitations, we propose UniTracker, a three-stage framework for scalable and adaptive motion tracking. The first stage learns a privileged teacher policy that produces high-fidelity reference actions. Building on this, the second stage trains a CVAE-based universal policy that captures a global latent representation of motion, enabling robust performance under partial observations. Crucially, we align the partial-observation prior with a full-observation encoder, injecting global intent into the latent space. In the final stage, a lightweight adaptation module fine-tunes the student policy on challenging sequences, supporting both per-instance and batch adaptation. We validate UniTracker in simulation and on a Unitree G1 humanoid robot, demonstrating superior tracking accuracy, motion diversity, and deployment robustness compared to current baselines. Project page is available athttps://yinkangning0124.github.io/Humanoid-UniTracker/",
+        "abs_url": "https://arxiv.org/abs/2507.07356",
+        "pdf_url": "https://arxiv.org/pdf/2507.07356",
+        "research_fit": 14,
+        "video_potential": 51,
+        "matched_topics": [
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "humanoid robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "humanoid robot"
+            ],
+            "location": "abstract",
+            "points": 14.3
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robots",
+              "robotic",
+              "robotics",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robots, robotic, robotics, humanoid"
+          }
+        ],
+        "video_reasons": []
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics, vision-language-action",
+        "research_fit 42 ≥ 18",
+        "核心方向：vla_robot_foundation, humanoid_loco_manipulation",
+        "特定关键词：vision-language-action",
+        "historical_value_score 76.2 ≥ 42.0",
+        "发表于 2025 年",
+        "同领域同年份引用标准化位于前 0.1%",
+        "阅读时效分 100/100（论文年龄 1 年）",
+        "OpenAlex FWCI 39.09",
+        "近年年均 OpenAlex 引用 16.5（无更早窗口可比较）",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 88%",
+        "影响力元数据更新于 2026-08-24T03:31:56",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0; matched navigation)",
+        "recommendation_utility 76.2 = base 76.2 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W4414050442",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W4414050442",
+        "openalex_id": "W4414050442",
+        "base_arxiv_id": null,
+        "doi": "10.15607/rss.2025.xxi.018",
+        "title": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+        "authors": [
+          "An‐Chieh Cheng",
+          "Yandong Ji",
+          "Zhaojing Yang",
+          "Zaitian Gongye",
+          "Xueyan Zou",
+          "Jan Kautz",
+          "Erdem Bıyık",
+          "Hongxu Yin",
+          "Sifei Liu",
+          "Xiaolong Wang"
+        ],
+        "abstract": "https://navila-bot.github",
+        "publication_date": "2025-06-21",
+        "publication_year": 2025,
+        "source_name": null,
+        "source_type": "conference-paper",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 0.9955000281333923
+          },
+          {
+            "id": "https://openalex.org/T10191",
+            "display_name": "Robotics and Sensor-Based Localization",
+            "score": 0.9887999892234802
+          },
+          {
+            "id": "https://openalex.org/T13382",
+            "display_name": "Robotics and Automated Systems",
+            "score": 0.98580002784729
+          }
+        ],
+        "cited_by_count": 33,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 9
+          }
+        ],
+        "fwci": 39.0865,
+        "citation_normalized_percentile": 0.99866982,
+        "referenced_works": [],
+        "related_works": [
+          "W2083994890",
+          "W2093507260",
+          "W2122871747",
+          "W2360994936",
+          "W2369541203",
+          "W2378318959",
+          "W2523265608",
+          "W2562628082",
+          "W3081536868",
+          "W3114279067"
+        ],
+        "discovery_source": [
+          "topic_search:vision language action robotics"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-08-17T03:28:09",
+        "last_considered_at": "2026-11-16T21:13:17+08:00",
+        "recommended_at": "2026-11-16T21:13:17+08:00",
+        "recommendation_count": 3,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-08-24T03:31:56",
+        "openalex_url": "https://openalex.org/W4414050442",
+        "landing_page_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "open_access_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "pdf_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "research_fit": 42,
+        "video_potential": 48,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "legged robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, vision-language-action"
+          }
+        ],
+        "historical_value_score": 76.2,
+        "historical_score_components": {
+          "research_relevance": 42.0,
+          "recency": 100.0,
+          "normalized_citation": 99.9,
+          "fwci": 100.0,
+          "citation_momentum": 82.5,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 87.5
+        },
+        "historical_score_reasons": [
+          "发表于 2025 年",
+          "同领域同年份引用标准化位于前 0.1%",
+          "阅读时效分 100/100（论文年龄 1 年）",
+          "OpenAlex FWCI 39.09",
+          "近年年均 OpenAlex 引用 16.5（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 88%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": null,
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "vla_robot_foundation",
+        "humanoid_loco_manipulation"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 76.2,
+      "recommendation_utility": 76.2,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W4414050442",
+        "base_id": "openalex:W4414050442",
+        "version": 1,
+        "title": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+        "authors": [
+          "An‐Chieh Cheng",
+          "Yandong Ji",
+          "Zhaojing Yang",
+          "Zaitian Gongye",
+          "Xueyan Zou",
+          "Jan Kautz",
+          "Erdem Bıyık",
+          "Hongxu Yin",
+          "Sifei Liu",
+          "Xiaolong Wang"
+        ],
+        "published": "2025-06-21T00:00:00Z",
+        "updated": "2025-06-21T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "https://navila-bot.github",
+        "abs_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "pdf_url": "https://doi.org/10.15607/rss.2025.xxi.018",
+        "research_fit": 42,
+        "video_potential": 48,
+        "matched_topics": [
+          "vla_robot_foundation",
+          "humanoid_loco_manipulation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "legged robot"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "legged robot"
+            ],
+            "location": "title",
+            "points": 9.9
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
