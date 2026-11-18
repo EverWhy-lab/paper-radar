@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-11-18</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-11-18 21:28</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="recommendations" aria-label="Today's selected papers">
+      <article class="paper-card" id="arxiv:2611.23118" data-paper-id="arxiv:2611.23118" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2611.23118v1</span>
+        </div>
+        <h3>Auditing a Learned Simulator for Legged Robots: The Robotic World Model on ANYmal D</h3>
+        <p class="authors">Joyjeet Singh</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-18 01:36 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.LG</span>
+        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This audit examines whether one-step prediction accuracy in a learned simulator, the Robotic World Model (RWM) for the ANYmal D quadruped, reflects multi-step rollout quality and policy performance, rebuilding the model to match the released code&#39;s outputs, losses and gradients. Training on the model&#39;s own rollouts beat one-step training at 368 steps on all ten held-out episodes, while pruning 30% of weights kept 90% of one-step skill but 39% at 2 s, and ensemble disagreement ranked rollout error well (Spearman +0.90 at 100 steps) yet covered only 4.6% of outcomes at one sigma. At the robot level, all 18 fine-tuned copies predicted better than the released model one and eight steps ahead, yet 13 gave failing policies. Inspect the registered tests and the authors&#39; nine withdrawn claims; scope is one robot, one gait, simulated data, no hardware.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 62.0 (base 56.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+          </div>
+          <ul>
+<li>research_fit 56 ≥ 40</li><li>Core topics matched: world_model_embodied_reasoning, humanoid_loco_manipulation</li><li>Specific keywords matched: robotic world model</li><li>Diversity topic: world_model_embodied_reasoning</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched quadruped)</li><li>recommendation_utility 62.0 = base 56.0 + affinity +6 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>A legged robot can learn to walk inside a learned simulator: a neural network that predicts the robot&#39;s next state and is run forward on its own predictions. They are usually trained and checked one step ahead, although a policy uses them for a hundred steps or more. We audit one published system end to end, without a GPU: the dynamics model of the Robotic World Model (RWM) for the ANYmal D quadruped, and the uncertainty estimate of its follow-up, RWM-U. We rebuilt the model to match the released code&#39;s outputs, losses and gradients exactly, measured 101 trained simulators, 200 compressed copies and 38 simulators of three other architectures, and trained policies inside simulators that we tested in a hand-built MuJoCo model of the robot. Training on the model&#39;s own rollouts beat one-step training at 368 steps on all ten held-out episodes (registered), although one-step training was better one step ahead. One-step checks therefore misjudge design choices: pruning 30% of the weights kept 90% of the model&#39;s skill one step ahead and 39% at 2 s. Ensemble disagreement ranked rollout error well (Spearman +0.90 at 100 steps), yet covered 4.6% of outcomes at one sigma, against 68% for a calibrated estimate, as each network&#39;s own variance collapses under the implemented loss. Two checks that need no recorded future ranked some pools of simulators well, but neither was shown better than 8-step error in a primary test. At the robot level, accuracy has not predicted walking: all 18 fine-tuned copies we tested predicted better than the released model one and eight steps ahead, yet 13 gave failing policies, and registered tests of whether any check ranks simulators by their policies were not settled. In a secondary test, running the authors&#39; policy inside each simulator ranked them well. We also report nine of our own claims that we withdrew. Scope: one robot, one gait, simulated data, no hardware.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.23118v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.23118v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.23118" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.23118" data-title="Auditing a Learned Simulator for Legged Robots: The Robotic World Model on ANYmal D" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.23118" data-title="Auditing a Learned Simulator for Legged Robots: The Robotic World Model on ANYmal D" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2611.22852" data-paper-id="arxiv:2611.22852" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2611.22852v1</span>
+        </div>
+        <h3>Technical Report of Mobile Manipulator Robot for Industrial Environments</h3>
+        <p class="authors">Aria Dadnavi, Matin Jamshidi, Kian Khatibi, Shahriar Karimi Makhsous, Saina Najafi Shabestari, Seyed Sobhan Hosseini Hajibekandeh, Zahra Mahaam, Reyhane Mohasseli, Ghazal Ghoreishi, Amirhossein Gholizadeh Behbahani, Mohammad Hossein Moaiyeri</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-17 22:34 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.CV, eess.SY</span>
+        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This technical report describes the design and implementation of Auriga Robotics&#39; @Work Robot, a mobile manipulator for industrial tasks aimed at repetitive or hazardous work environments. The platform combines a 4-wheel Mecanum drive for omnidirectional movement with a 5-degree-of-freedom manipulator arm and a 3D-printed gripper, custom ESP32-based PCB boards, and an NVIDIA Jetson Orin NX for high-level processing and real-time control; software uses Hector SLAM for mapping and localization, A* for path planning, and YOLO for real-time object detection on fused sensor data. The abstract reports consistent performance in autonomous navigation, object handling, and task execution in industrial-like settings without quantitative results. Inspect how the modules are integrated and what evidence supports the collision-avoidance and task-execution claims.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Utility</b> 50.0 (base 50.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 50 ≥ 40</li><li>Core topics matched: humanoid_loco_manipulation</li><li>Specific keywords matched: mobile manipulator</li><li>Diversity topic: humanoid_loco_manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0; matched navigation, manipulator)</li><li>recommendation_utility 50.0 = base 50.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>This paper presents the design and implementation of Auriga Robotics&#39; mobile manipulator robot, developed at the Robotics and Intelligent Automation Laboratory, Department of Electrical Engineering, Shahid Beheshti University. Hereafter, this platform is referred to as the @Work Robot. The robot targets industrial tasks, with an emphasis on improving efficiency in repetitive or hazardous work environments. It uses a 4-wheel Mecanum drive for omnidirectional movement and a 5-degree-of-freedom manipulator arm with a 3D-printed gripper for object handling and navigation. The electronics consist of custom PCB boards built around ESP32 microcontrollers, together with an NVIDIA Jetson Orin NX that handles high-level processing and real-time system control. On the software side, Hector SLAM provides mapping and localization, A* handles path planning, and YOLO performs real-time object detection. These modules draw on fused sensor data to deliver robust navigation and reliable collision avoidance. Overall, the system shows effective hardware-software integration, with consistent performance in autonomous navigation, object handling, and task execution in industrial-like settings.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.22852v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.22852v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.22852" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.22852" data-title="Technical Report of Mobile Manipulator Robot for Industrial Environments" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.22852" data-title="Technical Report of Mobile Manipulator Robot for Industrial Environments" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2611.22954" data-paper-id="arxiv:2611.22954" data-category="model_based_recent">
+        <div class="card-topline">
+          <span class="category category--model_based_recent">方法前沿</span>
+          <span class="arxiv-id">2611.22954v1</span>
+        </div>
+        <h3>Sim2CBF: From Forward Simulations to Implicit Control Barrier Function Safety Filtering without Model Derivatives</h3>
+        <p class="authors">Luzia Knoedler, Yihan Liu, Shaohang Han, Yifei Dong, Jana Tumova</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-17 23:42 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, eess.SY</span>
+<span><b>Reading focus</b> safety_critical_control</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>Sim2CBF addresses failure avoidance when dynamics are hard to model and predictive models lack reliable derivatives, solving the Control Barrier Function (CBF)-Safety Filter (SF) optimization using only forward-model evaluations. It approximates the CBF constraint via finite differences and local linear interpolation over sampled control inputs while preserving failure-avoidance guarantees, with an implicit CBF built from backup-policy rollouts so physics-based simulators and learned world models can be used. The abstract claims fewer control samples than purely sampling-based SFs and less conservative behavior than direct nominal-backup blending, with evaluation in simulation, hardware box-toppling, and vision-based control tasks. Inspect how the guarantees are established under finite-difference approximation and interpolation.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 方法前沿</span>
+<span><b>Subtopics</b> safety_critical_control</span><span><b>Utility</b> 32.0 (base 32.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>Recent model-based robotics paper: published within 14 days</li><li>Robotics context: robot</li><li>Strong method signals: safety_critical_control</li><li>research_fit 32 ≥ 28</li><li>Detected subtopics: safety_critical_control</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 32.0 = base 32.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Failure avoidance in complex robot-environment interactions is challenging because the underlying dynamics are difficult to model accurately, and available predictive models may not provide reliable derivatives. We present Sim2CBF, a failure-avoidance framework that solves the Control Barrier Function (CBF)-Safety Filter (SF) optimization problem using only forward-model evaluations, thereby avoiding differentiation of the predictive model. Specifically, we approximate the CBF constraint using finite differences and local linear interpolation over sampled control inputs while preserving failure-avoidance guarantees. The underlying CBF is implicit and constructed from backup-policy rollouts, enabling the use of expressive predictive models such as physics-based simulators and learned world models. Compared with purely sampling-based SFs, our formulation requires fewer control samples and yields less conservative behavior than direct nominal-backup blending. We evaluate Sim2CBF in simulation, hardware box-toppling, and vision-based control tasks, demonstrating its applicability to contact-rich and learned dynamics, as well as its adaptability to changes in the predictive model.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.22954v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.22954v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.22954" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.22954" data-title="Sim2CBF: From Forward Simulations to Implicit Control Barrier Function Safety Filtering without Model Derivatives" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.22954" data-title="Sim2CBF: From Forward Simulations to Implicit Control Barrier Function Safety Filtering without Model Derivatives" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W4403878347" data-paper-id="openalex:W4403878347" data-category="high_impact_historical">
+        <div class="card-topline">
+          <span class="category category--high_impact_historical">领域内高影响力</span>
+          <span class="arxiv-id">W4403878347</span>
+        </div>
+        <h3>QUAR-VLA: Vision-Language-Action Model for Quadruped Robots</h3>
+        <p class="authors">Pengxiang Ding, Han Zhao, Wenjie Zhang, Wenxuan Song, Min Zhang, Siteng Huang, Ningxi Yang, Donglin Wang</p>
+        <div class="metadata">
+          <span><b>Published</b> 2024-10-29</span>
+<span><b>Source</b> Lecture notes in computer science</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>QUAR-VLA presents a Vision-Language-Action model for quadruped robots, addressing how to ground visual and language input into locomotion and action for a legged platform. The supplied metadata identifies it as a method paper published in Lecture Notes in Computer Science (2024), but no abstract is available, so the specific architecture, training data, and reported evidence cannot be summarized here. Read the full text to identify the vision-language backbone, the action representation for the quadruped, and any quantitative evaluation the paper reports; do not assume benchmark results or hardware details from the title alone.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
+<span><b>Utility</b> 77.8 (base 71.8)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>OpenAlex citations</b> 22</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotic, manipulation, vision-language-action</li><li>research_fit 32 ≥ 18</li><li>核心方向：vla_robot_foundation</li><li>特定关键词：vision-language-action, VLA</li><li>historical_value_score 71.8 ≥ 42.0</li><li>发表于 2024 年</li><li>同领域同年份引用标准化位于前 0.3%</li><li>阅读时效分 100/100（论文年龄 2 年）</li><li>OpenAlex FWCI 19.42</li><li>近 2 年年均引用 10.0；此前 1 年年均 2.0</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-17T03:28:09</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched quadruped)</li><li>recommendation_utility 77.8 = base 71.8 + affinity +6 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W4403878347" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1007/978-3-031-72652-1_21" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W4403878347" data-title="QUAR-VLA: Vision-Language-Action Model for Quadruped Robots" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W4403878347" data-title="QUAR-VLA: Vision-Language-Action Model for Quadruped Robots" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>
