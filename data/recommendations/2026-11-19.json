@@ -1,0 +1,682 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-19",
+  "generated_at": "2026-11-19T21:45:49+08:00",
+  "mode": "incremental",
+  "candidate_count": 3590,
+  "historical_candidate_count": 801,
+  "recommendation_count": 3,
+  "category_counts": {
+    "frontier_recent": 2,
+    "high_impact_historical": 1,
+    "journal_recent": 0,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "arxiv:2611.24499",
+      "title": "Single-Controller Teleoperation and Multimodal Dataset Generation for a Mobile Manipulator",
+      "takeaway": "This method paper addresses the fragmented teleoperation interfaces and manual post-processing that slow multimodal demonstration collection on mobile manipulators. The framework combines single-controller operation of a Clearpath Dingo-O base, Kinova Gen3 Lite arm, and recording process with an automated ROS pipeline for capture, image-quality filtering, temporal synchronization, visualization, and export to Zarr datasets. Validation on a pick-and-place task transporting a bottle between two surfaces shows the unified controller completes task execution and recording without external commands, while the pipeline produces synchronized datasets for short demonstrations and flags corrupted visual frames. Inspect how synchronization and frame filtering are implemented, since the abstract reports no quantitative learning results.",
+      "generated_at": "2026-11-19T13:52:00",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "arxiv:2611.24925",
+      "title": "Render the Robot, Generate the World: One Video World Model Across Embodiments",
+      "takeaway": "Doppel targets video world modeling that predicts both body motion and environment response, arguing that geometry and kinematics already specify intended motion better than numerical actions alone. It conditions an embodiment-agnostic video model on camera-aligned renderings of future body configurations plus action trajectories, recovering camera poses to align rendered trajectories with recorded observations, and jointly trains one shared backbone and adapter on eight robot and human embodiments using about 600 hours of video without embodiment labels. Across three robot-arm datasets it reports PSNR gains of 1.00 dB on held-out trajectories and 1.20 dB out-of-distribution over action-only baselines, with Doppel-8 improving over Doppel-3 on four of six evaluation sets. Inspect the rendering-conditioning and camera-alignment procedure.",
+      "generated_at": "2026-11-19T13:52:00",
+      "model": "deepseek-chat"
+    },
+    {
+      "canonical_paper_id": "openalex:W7213542062",
+      "title": "PARMA: A Pose-Aware Risk Mitigation Approach for End-Effector Execution in Vision-Language-Action Models",
+      "takeaway": "PARMA is presented as a benchmark-style evaluation of a low-cost post-policy correction scheme for VLA execution, motivated by limited physical-world awareness that leaves manipulation vulnerable to pose-induced, gripper-local collision risks. The method leaves the gripper command and upstream VLA policy unchanged, building first-order QP constraints from gripper-local proxy points and the end-effector pose Jacobian, with active obstacle alignment, contact-scope filtering, hand-priority top-K selection, correction clipping, and risk-adaptive blending. Across all 400 official Level I and Level II initial states of SafeLIBERO Spatial, it reports task success up 34.0 percentage points, EE-local safe success up 27.3 points, and 47.5% relative reduction in EE-local collisions, plus a 600-trial SO101 study reducing visible gripper-obstacle contact rate by 30.0 points versus center-point correction. Inspect how the QP constraints and blending preserve the upstream trajectory.",
+      "generated_at": "2026-11-19T13:52:00",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 63 ≥ 40",
+        "Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining",
+        "Specific keywords matched: mobile manipulator, mobile manipulation",
+        "Diversity topic: humanoid_loco_manipulation",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched mobile manipulation)",
+        "recommendation_utility 69.0 = base 63.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.24499",
+      "historical_paper": null,
+      "core_topics": [
+        "humanoid_loco_manipulation",
+        "robot_learning_posttraining"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 63.0,
+      "recommendation_utility": 69.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.24499v1",
+        "base_id": "2611.24499",
+        "version": 1,
+        "title": "Single-Controller Teleoperation and Multimodal Dataset Generation for a Mobile Manipulator",
+        "authors": [
+          "Fardien Azizi",
+          "Sitor Sla",
+          "Christiaan Peppelman",
+          "Dion van Santen",
+          "Andrei-Carlo Papuc",
+          "Khaled Mustafa",
+          "Diego Martinez-Baselga",
+          "Javier Alonso-Mora"
+        ],
+        "published": "2026-11-18T14:26:21Z",
+        "updated": "2026-11-18T14:26:21Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Robot learning systems require synchronized, high-quality demonstrations that combine visual, proprioceptive, and action data. However, collecting such datasets with mobile manipulators is often slowed down by fragmented teleoperation interfaces and manual post-processing workflows. This paper presents an integrated framework for teleoperated multimodal data collection on a Clearpath Dingo-O mobile base equipped with a Kinova Gen3 Lite manipulator and an Intel RealSense RGB-D camera. The framework combines single-controller operation of the base, arm, and recording process with an automated ROS-based pipeline for data capture, image-quality filtering, temporal synchronization, visualization, and export to machine-learning-ready Zarr datasets. We validate the system on a pick-and-place mobile-manipulation task in which the robot transports a bottle between two surfaces. The results show that the unified controller supports complete task execution and recording without external commands, while the data pipeline produces synchronized datasets for short demonstrations and identifies corrupted visual frames. The proposed framework provides a practical basis for producing structured demonstrations for robot-learning research.",
+        "abs_url": "https://arxiv.org/abs/2611.24499v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.24499v1",
+        "research_fit": 63,
+        "video_potential": 47,
+        "matched_topics": [
+          "humanoid_loco_manipulation",
+          "robot_learning_posttraining"
+        ],
+        "matched_keywords": [
+          "mobile manipulator",
+          "mobile manipulation",
+          "robot learning"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Humanoid & Whole-Body Loco-Manipulation",
+            "keywords": [
+              "mobile manipulator",
+              "mobile manipulation"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "robot learning"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "manipulation",
+              "manipulator",
+              "manipulators",
+              "mobile manipulation",
+              "robot learning",
+              "teleoperation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "manipulation",
+              "manipulator",
+              "manipulators",
+              "mobile manipulation",
+              "robot learning",
+              "teleoperation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, manipulation, manipulator, manipulators, mobile manipulation, robot learning, teleoperation"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 15.8
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "mobile manipulator"
+            ],
+            "location": "title",
+            "points": 20.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "manipulation"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          }
+        ]
+      }
+    },
+    {
+      "category": "frontier_recent",
+      "reasons": [
+        "research_fit 50 ≥ 40",
+        "Core topics matched: world_model_embodied_reasoning",
+        "Specific keywords matched: video world model",
+        "Diversity topic: world_model_embodied_reasoning",
+        "Detected subtopics: none",
+        "Personal domain affinity: preferred (+6; matched humanoid)",
+        "recommendation_utility 56.0 = base 50.0 + affinity +6 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "arxiv:2611.24925",
+      "historical_paper": null,
+      "core_topics": [
+        "world_model_embodied_reasoning"
+      ],
+      "subtopics": [],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 50.0,
+      "recommendation_utility": 56.0,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "2611.24925v1",
+        "base_id": "2611.24925",
+        "version": 1,
+        "title": "Render the Robot, Generate the World: One Video World Model Across Embodiments",
+        "authors": [
+          "Yash Jangir",
+          "Karan Mirakhor",
+          "Renos Zabounidis",
+          "Muhammad Zubair Irshad",
+          "Sergey Zakharov",
+          "Yonatan Bisk",
+          "Homanga Bharadhwaj"
+        ],
+        "published": "2026-11-18T18:52:28Z",
+        "updated": "2026-11-18T18:52:28Z",
+        "primary_category": "cs.RO",
+        "categories": [
+          "cs.RO"
+        ],
+        "summary": "Predicting the consequences of an agent's actions requires modeling both the body's motion and the environment's response. Most video world models attempt to learn both from numerical actions, even though geometry and kinematics already specify the intended motion. We introduce Doppel, an embodiment-agnostic video world model conditioned on camera-aligned renderings of future body configurations and numerical action trajectories. By explicitly providing the intended motion, Doppel can focus on predicting object motion and interaction-driven changes in the environment. Rendered motion also provides a common visual interface across different embodiments and action spaces. To train on robot datasets without camera extrinsics, we recover camera poses and align rendered trajectories with recorded observations. We jointly train a single shared video backbone and conditioning adapter on eight datasets spanning eight robot and human embodiments, from single- and bimanual robot arms to a dexterous humanoid and human hands and bodies, using about 600 hours of video without embodiment labels. Across three robot-arm datasets, Doppel improves PSNR over action-only baselines by 1.00 dB on held-out trajectories and 1.20 dB under out-of-distribution evaluation, while predicting more consistent object motion. Training on all eight embodiments (Doppel-8) improves robot predictions over the three-robot model (Doppel-3) on four of six evaluation sets. Project page: https://doppelwm.github.io/.",
+        "abs_url": "https://arxiv.org/abs/2611.24925v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.24925v1",
+        "research_fit": 50,
+        "video_potential": 44,
+        "matched_topics": [
+          "world_model_embodied_reasoning"
+        ],
+        "matched_keywords": [
+          "video world model"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "World Models & Embodied Reasoning",
+            "keywords": [
+              "video world model"
+            ],
+            "location": "title",
+            "points": 30.0
+          },
+          {
+            "kind": "category",
+            "label": "cs.RO",
+            "keywords": [
+              "cs.RO"
+            ],
+            "location": "category",
+            "points": 20.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "humanoid"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "humanoid"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, humanoid"
+          }
+        ],
+        "video_reasons": [
+          {
+            "kind": "research_fit",
+            "label": "Research alignment component",
+            "keywords": [],
+            "location": "score",
+            "points": 12.5
+          },
+          {
+            "kind": "video_signal",
+            "label": "Visually distinctive platform",
+            "keywords": [
+              "humanoid"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "video_signal",
+            "label": "Dynamic task",
+            "keywords": [
+              "dexterous"
+            ],
+            "location": "abstract",
+            "points": 11.7
+          },
+          {
+            "kind": "video_signal",
+            "label": "Benchmark or comparison",
+            "keywords": [
+              "evaluation"
+            ],
+            "location": "abstract",
+            "points": 6.5
+          }
+        ]
+      }
+    },
+    {
+      "category": "high_impact_historical",
+      "reasons": [
+        "机器人语境：robot, robotic, robotics, manipulation, vision-language-action",
+        "research_fit 32 ≥ 18",
+        "核心方向：vla_robot_foundation",
+        "特定关键词：vision-language-action, VLA",
+        "historical_value_score 42.8 ≥ 42.0",
+        "发表于 2026 年",
+        "同领域同年份引用标准化位于前 100.0%",
+        "阅读时效分 100/100（论文年龄 0 年）",
+        "OpenAlex FWCI 0.00",
+        "标题或摘要命中可配置的方法类信号",
+        "元数据完整度 100%",
+        "影响力元数据更新于 2026-11-16T10:03:40",
+        "Detected subtopics: none",
+        "Personal domain affinity: neutral (+0)",
+        "recommendation_utility 42.8 = base 42.8 + affinity +0 + redundancy -0"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7213542062",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7213542062",
+        "openalex_id": "W7213542062",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3734926",
+        "title": "PARMA: A Pose-Aware Risk Mitigation Approach for End-Effector Execution in Vision-Language-Action Models",
+        "authors": [
+          "Shuo Li",
+          "Jialiang Fu",
+          "Nianwen Ning",
+          "Liqin Fu",
+          "Lei Shi",
+          "Yi Fan Zhou"
+        ],
+        "abstract": "Vision-language-action (VLA) models generate semantically meaningful manipulation actions but often lack sufficient physical-world awareness, making downstream execution vulnerable to task failures caused by physical interaction risks. To address this limitation, we propose a low-cost post-policy correction scheme. The central challenge is to mitigate pose-induced, gripper-local collision risks without aggressive projections that distort the task trajectory encoded by the upstream policy. We formulate VLA execution-risk reduction as a low-intervention, end-effector-local, pose-aware action-space correction problem. Our method leaves both the gripper command and upstream VLA policy unchanged, constructs first-order QP constraints using gripper-local proxy points and the end-effector pose Jacobian, and integrates active obstacle alignment, contact-scope filtering, hand-priority top-$K$selection, correction clipping, and risk-adaptive blending for targeted intervention. Across all 400 official Level I and Level II initial states of SafeLIBERO Spatial, the method increases task success by34.0 percentage pointsand EE-local safe success by27.3 percentage points, while reducing EE-local collision events by47.5%(relative). A 600-trial SO101 feasibility study across two challenge scenes further reduces the visible gripper–obstacle contact rate by30.0 percentage pointscompared with center-point correction. These results demonstrate that pose-aware, gripper-local reasoning achieves a more favorable balance between task progress and local risk reduction without policy retraining or global replanning.",
+        "publication_date": "2026-09-18",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.9984999895095825
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.0010999999940395355
+          },
+          {
+            "id": "https://openalex.org/T10586",
+            "display_name": "Robotic Path Planning Algorithms",
+            "score": 9.999999747378752e-05
+          }
+        ],
+        "cited_by_count": 0,
+        "counts_by_year": [],
+        "fwci": 0.0,
+        "citation_normalized_percentile": 0.0,
+        "referenced_works": [
+          "W2004139909",
+          "W2099893201",
+          "W2103120971",
+          "W2142224528",
+          "W2158782408",
+          "W2560504659",
+          "W2963293747",
+          "W3132777934",
+          "W4385430679",
+          "W4414883426",
+          "W7133220882"
+        ],
+        "related_works": [
+          "W7104370111",
+          "W7131146181",
+          "W7135406014",
+          "W7165087701",
+          "W7165395307",
+          "W7202368374",
+          "W7204493690",
+          "W7204748983",
+          "W7220672404",
+          "W7220857456"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-10-05T09:30:50",
+        "last_considered_at": "2026-11-19T21:45:49+08:00",
+        "recommended_at": "2026-11-19T21:45:49+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-16T10:03:40",
+        "openalex_url": "https://openalex.org/W7213542062",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3734926",
+        "open_access_url": "https://doi.org/10.1109/lra.2026.3734926",
+        "pdf_url": null,
+        "research_fit": 32,
+        "video_potential": 29,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, vision-language-action"
+          }
+        ],
+        "historical_value_score": 42.8,
+        "historical_score_components": {
+          "research_relevance": 32.0,
+          "recency": 100.0,
+          "normalized_citation": 0.0,
+          "fwci": 0.0,
+          "citation_momentum": null,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 100.0%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 0.00",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "vla_robot_foundation"
+      ],
+      "subtopics": [],
+      "document_type": "benchmark",
+      "domain_affinity": "neutral",
+      "domain_affinity_adjustment": 0.0,
+      "redundancy_penalty": -0.0,
+      "recommendation_base_score": 42.8,
+      "recommendation_utility": 42.8,
+      "days_since_same_subtopic": null,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7213542062",
+        "base_id": "openalex:W7213542062",
+        "version": 1,
+        "title": "PARMA: A Pose-Aware Risk Mitigation Approach for End-Effector Execution in Vision-Language-Action Models",
+        "authors": [
+          "Shuo Li",
+          "Jialiang Fu",
+          "Nianwen Ning",
+          "Liqin Fu",
+          "Lei Shi",
+          "Yi Fan Zhou"
+        ],
+        "published": "2026-09-18T00:00:00Z",
+        "updated": "2026-09-18T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Vision-language-action (VLA) models generate semantically meaningful manipulation actions but often lack sufficient physical-world awareness, making downstream execution vulnerable to task failures caused by physical interaction risks. To address this limitation, we propose a low-cost post-policy correction scheme. The central challenge is to mitigate pose-induced, gripper-local collision risks without aggressive projections that distort the task trajectory encoded by the upstream policy. We formulate VLA execution-risk reduction as a low-intervention, end-effector-local, pose-aware action-space correction problem. Our method leaves both the gripper command and upstream VLA policy unchanged, constructs first-order QP constraints using gripper-local proxy points and the end-effector pose Jacobian, and integrates active obstacle alignment, contact-scope filtering, hand-priority top-$K$selection, correction clipping, and risk-adaptive blending for targeted intervention. Across all 400 official Level I and Level II initial states of SafeLIBERO Spatial, the method increases task success by34.0 percentage pointsand EE-local safe success by27.3 percentage points, while reducing EE-local collision events by47.5%(relative). A 600-trial SO101 feasibility study across two challenge scenes further reduces the visible gripper–obstacle contact rate by30.0 percentage pointscompared with center-point correction. These results demonstrate that pose-aware, gripper-local reasoning achieves a more favorable balance between task progress and local risk reduction without policy retraining or global replanning.",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3734926",
+        "pdf_url": "",
+        "research_fit": 32,
+        "video_potential": 29,
+        "matched_topics": [
+          "vla_robot_foundation"
+        ],
+        "matched_keywords": [
+          "vision-language-action",
+          "VLA"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "VLA & Robot Foundation Models",
+            "keywords": [
+              "vision-language-action",
+              "VLA"
+            ],
+            "location": "title",
+            "points": 32.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotic",
+              "robotics",
+              "manipulation",
+              "vision-language-action"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotic, robotics, manipulation, vision-language-action"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
