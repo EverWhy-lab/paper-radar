@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-11-20</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-11-20 21:29</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="recommendations" aria-label="Today's selected papers">
+      <article class="paper-card" id="arxiv:2611.26405" data-paper-id="arxiv:2611.26405" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2611.26405v1</span>
+        </div>
+        <h3>TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action</h3>
+        <p class="authors">Weile Li, Yunfan Lou, Muqing Shi, Zihao Zhang, Zhenbiao Huang, Boxian Yao, Xiyu Zhu, Zhibo Pang</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-20 00:53 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.CV</span>
+<span><b>Reading focus</b> tactile_manipulation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>TacInno targets the observation that adding tactile input to VLA models yields inconsistent gains, since much tactile change (such as gel deformation during gripper closure) is predictable from vision and executed actions. The method isolates contact dynamics that vision and actions cannot explain, termed tactile innovation, and uses it only as a training target: a tokenizer conditioned on visual observations and executed actions compresses future tactile change into a discrete code, and TacInno-VLA learns to predict that code without adding a deployment module. Reported results are average success rates of 87.5% across six simulation tasks and 70.5% across four real-world tasks, exceeding the strongest visuo-tactile baseline by 10.7 and 9.0 percentage points, with ablations supporting visual and action conditioning, multi-frame encoding, and auxiliary code prediction. Inspect how tactile innovation is computed and whether the gains hold when tactile change is largely visually predictable.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> tactile_manipulation</span><span><b>Utility</b> 65.0 (base 65.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 65 ≥ 40</li><li>Core topics matched: vla_robot_foundation, dexterous_multimodal_manipulation</li><li>Specific keywords matched: vision-language-action, VLA, contact-rich manipulation, visuo-tactile</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: tactile_manipulation</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 65.0 = base 65.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Vision-Language-Action (VLA) models have recently been equipped with tactile sensing to perceive visually subtle contact events in contact-rich manipulation. However, adding tactile input yields inconsistent gains, and some visuo-tactile VLA models rely little on tactile input, because much of the tactile change, such as the gel deformation during gripper closure, is predictable from visual observations and executed actions. To address this problem, we introduce TacInno, which isolates the contact dynamics that vision and executed actions cannot explain, termed tactile innovation, and uses tactile innovation only as a training target. Specifically, the TacInno tokenizer, conditioned on visual observations and executed actions, compresses the future tactile change into a discrete code, and the policy, TacInno-VLA, learns to predict the code, adding no module for the code at deployment. TacInno-VLA achieves average success rates of 87.5% across six simulation tasks and 70.5% across four real-world tasks, outperforming the strongest visuo-tactile baseline by 10.7 and 9.0 percentage points, respectively. Ablation studies validate the contributions of visual and action conditioning, multi-frame encoding, and auxiliary code prediction. Together, these results demonstrate the effectiveness of tactile innovation as a supervision signal for contact-rich manipulation.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.26405v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.26405v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.26405" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.26405" data-title="TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.26405" data-title="TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7161687616" data-paper-id="openalex:W7161687616" data-category="journal_recent">
+        <div class="card-topline">
+          <span class="category category--journal_recent">期刊新论文</span>
+          <span class="arxiv-id">W7161687616</span>
+        </div>
+        <h3>SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations</h3>
+        <p class="authors">Site Hu, Takato Horii</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-10-09</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> diffusion_flow_policy</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>SADP addresses long-horizon manipulation, where policies must coordinate intermediate subgoals and decide when to advance, while most imitation learning uses only task-level demonstrations and subgoal-level supervision is scarce. The framework uses foundation models to autonomously generate subgoal-annotated demonstrations, trains diffusion policies conditioned on both task-level and natural-language subgoal descriptions, and adds a lightweight auxiliary head predicting a continuation score that drives online subgoal switching and stage-level progress monitoring. Experiments in RLBench simulations and real-world evaluations on a UR5e robot show competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring. Inspect how generated subgoal annotations are validated and how the continuation score threshold affects switching behavior.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 期刊新论文</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training</span>
+<span><b>Subtopics</b> diffusion_flow_policy</span><span><b>Utility</b> 46.0 (base 58.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>Recent overlap</b> -12</span><span><b>OpenAlex citations</b> 1</span>          </div>
+          <ul>
+<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 58 ≥ 35</li><li>Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining</li><li>Specific keywords matched: long-horizon manipulation, diffusion policy</li><li>Detected subtopics: diffusion_flow_policy</li><li>Personal domain affinity: neutral (+0)</li><li>Subtopic: diffusion_flow_policy</li><li>Recently recommended: 5 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 46.0 = base 58.0 + affinity +0 + redundancy -12</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Long-horizon robot manipulation requires policies to coordinate multiple intermediate subgoals and determine when to advance between them. However, most imitation learning methods are trained solely on task-level demonstrations, without explicitly modeling the active subgoal or its execution progress. This limitation is further exacerbated by the scarcity of subgoal-level supervision in standard robot learning datasets, which makes explicit subgoal-conditioned control and online transition modeling difficult to learn. To address this issue, this paper proposes Subgoal-Aware Diffusion Policy (SADP), a framework that leverages foundation models to autonomously generate subgoal-annotated demonstrations and trains diffusion policies on these datasets. SADP structures policy execution around explicit natural-language subgoals by conditioning action generation on both task-level and subgoal-level descriptions. A lightweight auxiliary head further predicts a continuation score that drives online subgoal switching and supports stage-level progress monitoring. Experiments in RLBench simulations and real-world evaluations on a UR5e robot demonstrate that SADP maintains competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring. These results show that explicit subgoal progression can be incorporated into a diffusion policy without degrading task-level performance.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W7161687616" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2605.16871" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.1109/lra.2026.3742285" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2605.16871" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7161687616" data-title="SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7161687616" data-title="SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2611.26565" data-paper-id="arxiv:2611.26565" data-category="review_knowledge_map">
+        <div class="card-topline">
+          <span class="category category--review_knowledge_map">综述 / 知识地图</span>
+          <span class="arxiv-id">2611.26565v1</span>
+        </div>
+        <h3>PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity</h3>
+        <p class="authors">Hao Vo, Taisei Hanyu, Yuki Ikebe, Pham Tri Quang, Sreevenkata Anjani Tishita Godavarthi, Nghi D. Q. Bui, Daniel Sonntag, Chase Rainwater, Duy Minh Ho Nguyen, Anh Nguyen, Ngan Le</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-20 02:33 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> motion_planning</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>PhyDEX is a benchmark for physical reasoning in VLA models, arguing that existing benchmarks mainly evaluate gripper-object contact and largely ignore gravity, friction, inertia, and mass distribution. Built around dynamic extrinsic dexterity, it is a throwing benchmark requiring inference of an object&#39;s mass, center of mass, and friction to reach destinations beyond the kinematic workspace, with 35K trajectories (143 hours) across nine tasks and 100 scenes covering uniform, irregular, and dynamic-mass objects and static, multiple, and moving destinations, generated by an automatic pipeline combining grasp generation, motion planning, and closed-loop throw optimization. Evaluating GR00T N1.7, DynamicVLA, and ForceVLA, all achieve success rates below 3%, with failures attributed to limited pretrained robustness and physical blindness, since ground-truth physical properties roughly double success; the same patterns appear on a humanoid robot and in the real world. Inspect task construction and how physical-property inputs are supplied in the analysis.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, World Models &amp; Embodied Reasoning, Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> motion_planning</span><span><b>Utility</b> 106.0 (base 100.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+          </div>
+          <ul>
+<li>Knowledge-map signals: benchmark</li><li>Robotics context: robot, robotic, manipulation, humanoid, vision-language-action</li><li>research_fit 100 ≥ 40</li><li>Core topics matched: vla_robot_foundation, world_model_embodied_reasoning, humanoid_loco_manipulation</li><li>Specific keywords matched: vision-language-action, VLA, physical reasoning, humanoid robot, motion planning</li><li>Detected subtopics: motion_planning</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 106.0 = base 100.0 + affinity +6 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Vision-Language-Action (VLA) models have advanced rapidly in language-conditioned robotic manipulation, yet existing benchmarks mainly evaluate gripper--object contact and largely ignore how objects interact with the environment through gravity, friction, inertia, and mass distribution. As a result, it remains unclear whether current policies truly understand physics or merely interpolate from their training data. We address this gap through the lens of dynamic extrinsic dexterity and introduce PhyDEX, a throwing benchmark in which a robot must infer an object&#39;s mass, center of mass, and friction to send it to a destination beyond its kinematic workspace. PhyDEX contains 35K trajectories (143 hours) across nine tasks and 100 scenes, covering uniform, irregular, and dynamic-mass objects with static, multiple, and moving destinations. All data are generated by a scalable, fully automatic pipeline that combines grasp generation, motion planning, and closed-loop throw optimization under randomized physical properties. We evaluate three representative VLAs, GR00T N1.7, DynamicVLA, and ForceVLA, and find that all achieve success rates below 3\%. Our analysis reveals two key bottlenecks: limited robustness of pretrained models, which causes most failures before the throw, and physical blindness, as providing ground-truth physical properties roughly doubles success. Experiments on a humanoid robot and in the real world show the same failure patterns. We hope PhyDEX will drive the development of physically grounded robot policies.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.26565v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.26565v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.26565" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.26565" data-title="PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.26565" data-title="PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W3000625188" data-paper-id="openalex:W3000625188" data-category="high_impact_historical">
+        <div class="card-topline">
+          <span class="category category--high_impact_historical">领域内高影响力</span>
+          <span class="arxiv-id">W3000625188</span>
+        </div>
+        <h3>Contact-aided invariant extended Kalman filtering for robot state estimation</h3>
+        <p class="authors">Ross Hartley, Maani Ghaffari, Ryan M. Eustice, Jessy W. Grizzle</p>
+        <div class="metadata">
+          <span><b>Published</b> 2020-01-16</span>
+<span><b>Source</b> The International Journal of Robotics Research</span><span><b>Reading focus</b> robot_state_estimation</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This work addresses legged robot pose and velocity estimation, where vision is sensitive to environmental and lighting conditions and existing alternatives fuse kinematic and contact data with IMU measurements. It develops a contact-aided invariant extended Kalman filter (InEKF) using Lie group theory and invariant observer design, combining contact-inertial dynamics with forward kinematic corrections to estimate pose, velocity, and current contact points, with error dynamics following a log-linear autonomous differential equation; it also covers IMU biases, contact addition and removal, and world-centric and robo-centric formulations. Comparisons with a quaternion-based EKF via simulations and experiments on a Cassie-series bipedal robot, with accuracy analyzed using motion capture and a LiDAR mapping use case, report better performance for the InEKF. Inspect the observability and convergence arguments and the contact-schedule handling.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> robot_state_estimation</span><span><b>Utility</b> 61.1 (base 61.1)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 300</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotic, robotics</li><li>research_fit 26 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：bipedal robot, robot state estimation, InEKF</li><li>historical_value_score 61.1 ≥ 42.0</li><li>发表于 2020 年</li><li>同领域同年份引用标准化位于前 0.6%</li><li>阅读时效分 70/100（论文年龄 6 年）</li><li>OpenAlex FWCI 11.12</li><li>近 2 年年均引用 41.0；此前 2 年年均 60.5</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:03</li><li>Detected subtopics: robot_state_estimation</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 61.1 = base 61.1 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Legged robots require knowledge of pose and velocity in order to maintain stability and execute walking paths. Current solutions either rely on vision data, which is susceptible to environmental and lighting conditions, or fusion of kinematic and contact data with measurements from an inertial measurement unit (IMU). In this work, we develop a contact-aided invariant extended Kalman filter (InEKF) using the theory of Lie groups and invariant observer design. This filter combines contact-inertial dynamics with forward kinematic corrections to estimate pose and velocity along with all current contact points. We show that the error dynamics follows a log-linear autonomous differential equation with several important consequences: (a) the observable state variables can be rendered convergent with a domain of attraction that is independent of the system’s trajectory; (b) unlike the standard EKF, neither the linearized error dynamics nor the linearized observation model depend on the current state estimate, which (c) leads to improved convergence properties and (d) a local observability matrix that is consistent with the underlying nonlinear system. Furthermore, we demonstrate how to include IMU biases, add/remove contacts, and formulate both world-centric and robo-centric versions. We compare the convergence of the proposed InEKF with the commonly used quaternion-based extended Kalman filter (EKF) through both simulations and experiments on a Cassie-series bipedal robot. Filter accuracy is analyzed using motion capture, while a LiDAR mapping experiment provides a practical use case. Overall, the developed contact-aided InEKF provides better performance in comparison with the quaternion-based EKF as a result of exploiting symmetries present in system.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W3000625188" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1177/0278364919894385" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W3000625188" data-title="Contact-aided invariant extended Kalman filtering for robot state estimation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W3000625188" data-title="Contact-aided invariant extended Kalman filtering for robot state estimation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>

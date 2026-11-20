@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-11-19</title>
+  <title>Paper Radar — 2026-11-20</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-11-19 21:45</p>
+        <p class="header-updated">2026-11-20 21:29</p>
       </div>
     </div>
   </header>
@@ -31,120 +31,157 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="arxiv:2611.24499" data-paper-id="arxiv:2611.24499" data-category="frontier_recent">
+      <article class="paper-card" id="arxiv:2611.26405" data-paper-id="arxiv:2611.26405" data-category="frontier_recent">
         <div class="card-topline">
           <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2611.24499v1</span>
+          <span class="arxiv-id">2611.26405v1</span>
         </div>
-        <h3>Single-Controller Teleoperation and Multimodal Dataset Generation for a Mobile Manipulator</h3>
-        <p class="authors">Fardien Azizi, Sitor Sla, Christiaan Peppelman, Dion van Santen, Andrei-Carlo Papuc, Khaled Mustafa, Diego Martinez-Baselga, Javier Alonso-Mora</p>
+        <h3>TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action</h3>
+        <p class="authors">Weile Li, Yunfan Lou, Muqing Shi, Zihao Zhang, Zhenbiao Huang, Boxian Yao, Xiyu Zhu, Zhibo Pang</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-11-18 22:26 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO</span>
-        </div>
+          <span><b>Published</b> 2026-11-20 00:53 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.CV</span>
+<span><b>Reading focus</b> tactile_manipulation</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>This method paper addresses the fragmented teleoperation interfaces and manual post-processing that slow multimodal demonstration collection on mobile manipulators. The framework combines single-controller operation of a Clearpath Dingo-O base, Kinova Gen3 Lite arm, and recording process with an automated ROS pipeline for capture, image-quality filtering, temporal synchronization, visualization, and export to Zarr datasets. Validation on a pick-and-place task transporting a bottle between two surfaces shows the unified controller completes task execution and recording without external commands, while the pipeline produces synchronized datasets for short demonstrations and flags corrupted visual frames. Inspect how synchronization and frame filtering are implemented, since the abstract reports no quantitative learning results.</p>
+          <p>TacInno targets the observation that adding tactile input to VLA models yields inconsistent gains, since much tactile change (such as gel deformation during gripper closure) is predictable from vision and executed actions. The method isolates contact dynamics that vision and actions cannot explain, termed tactile innovation, and uses it only as a training target: a tokenizer conditioned on visual observations and executed actions compresses future tactile change into a discrete code, and TacInno-VLA learns to predict that code without adding a deployment module. Reported results are average success rates of 87.5% across six simulation tasks and 70.5% across four real-world tasks, exceeding the strongest visuo-tactile baseline by 10.7 and 9.0 percentage points, with ablations supporting visual and action conditioning, multi-frame encoding, and auxiliary code prediction. Inspect how tactile innovation is computed and whether the gains hold when tactile change is largely visually predictable.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Learning &amp; Policy Post-Training</span>
-<span><b>Utility</b> 69.0 (base 63.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Subtopics</b> tactile_manipulation</span><span><b>Utility</b> 65.0 (base 65.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
           </div>
           <ul>
-<li>research_fit 63 ≥ 40</li><li>Core topics matched: humanoid_loco_manipulation, robot_learning_posttraining</li><li>Specific keywords matched: mobile manipulator, mobile manipulation</li><li>Diversity topic: humanoid_loco_manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched mobile manipulation)</li><li>recommendation_utility 69.0 = base 63.0 + affinity +6 + redundancy -0</li>          </ul>
+<li>research_fit 65 ≥ 40</li><li>Core topics matched: vla_robot_foundation, dexterous_multimodal_manipulation</li><li>Specific keywords matched: vision-language-action, VLA, contact-rich manipulation, visuo-tactile</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: tactile_manipulation</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 65.0 = base 65.0 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Robot learning systems require synchronized, high-quality demonstrations that combine visual, proprioceptive, and action data. However, collecting such datasets with mobile manipulators is often slowed down by fragmented teleoperation interfaces and manual post-processing workflows. This paper presents an integrated framework for teleoperated multimodal data collection on a Clearpath Dingo-O mobile base equipped with a Kinova Gen3 Lite manipulator and an Intel RealSense RGB-D camera. The framework combines single-controller operation of the base, arm, and recording process with an automated ROS-based pipeline for data capture, image-quality filtering, temporal synchronization, visualization, and export to machine-learning-ready Zarr datasets. We validate the system on a pick-and-place mobile-manipulation task in which the robot transports a bottle between two surfaces. The results show that the unified controller supports complete task execution and recording without external commands, while the data pipeline produces synchronized datasets for short demonstrations and identifies corrupted visual frames. The proposed framework provides a practical basis for producing structured demonstrations for robot-learning research.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Vision-Language-Action (VLA) models have recently been equipped with tactile sensing to perceive visually subtle contact events in contact-rich manipulation. However, adding tactile input yields inconsistent gains, and some visuo-tactile VLA models rely little on tactile input, because much of the tactile change, such as the gel deformation during gripper closure, is predictable from visual observations and executed actions. To address this problem, we introduce TacInno, which isolates the contact dynamics that vision and executed actions cannot explain, termed tactile innovation, and uses tactile innovation only as a training target. Specifically, the TacInno tokenizer, conditioned on visual observations and executed actions, compresses the future tactile change into a discrete code, and the policy, TacInno-VLA, learns to predict the code, adding no module for the code at deployment. TacInno-VLA achieves average success rates of 87.5% across six simulation tasks and 70.5% across four real-world tasks, outperforming the strongest visuo-tactile baseline by 10.7 and 9.0 percentage points, respectively. Ablation studies validate the contributions of visual and action conditioning, multi-frame encoding, and auxiliary code prediction. Together, these results demonstrate the effectiveness of tactile innovation as a supervision signal for contact-rich manipulation.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2611.24499v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2611.24499v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2611.24499" target="_blank" rel="noopener noreferrer">BibTeX</a>
+          <a href="https://arxiv.org/abs/2611.26405v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.26405v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.26405" target="_blank" rel="noopener noreferrer">BibTeX</a>
         </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2611.24499" data-title="Single-Controller Teleoperation and Multimodal Dataset Generation for a Mobile Manipulator" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.26405" data-title="TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.24499" data-title="Single-Controller Teleoperation and Multimodal Dataset Generation for a Mobile Manipulator" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.26405" data-title="TacInno: Teaching Vision-Language-Action Models the Contact Dynamics Beyond Vision and Action" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="arxiv:2611.24925" data-paper-id="arxiv:2611.24925" data-category="frontier_recent">
+      <article class="paper-card" id="openalex:W7161687616" data-paper-id="openalex:W7161687616" data-category="journal_recent">
         <div class="card-topline">
-          <span class="category category--frontier_recent">前沿新论文</span>
-          <span class="arxiv-id">2611.24925v1</span>
+          <span class="category category--journal_recent">期刊新论文</span>
+          <span class="arxiv-id">W7161687616</span>
         </div>
-        <h3>Render the Robot, Generate the World: One Video World Model Across Embodiments</h3>
-        <p class="authors">Yash Jangir, Karan Mirakhor, Renos Zabounidis, Muhammad Zubair Irshad, Sergey Zakharov, Yonatan Bisk, Homanga Bharadhwaj</p>
+        <h3>SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations</h3>
+        <p class="authors">Site Hu, Takato Horii</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-11-19 02:52 Asia/Shanghai</span>
-          <span><b>Categories</b> cs.RO</span>
-        </div>
+          <span><b>Published</b> 2026-10-09</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> diffusion_flow_policy</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>Doppel targets video world modeling that predicts both body motion and environment response, arguing that geometry and kinematics already specify intended motion better than numerical actions alone. It conditions an embodiment-agnostic video model on camera-aligned renderings of future body configurations plus action trajectories, recovering camera poses to align rendered trajectories with recorded observations, and jointly trains one shared backbone and adapter on eight robot and human embodiments using about 600 hours of video without embodiment labels. Across three robot-arm datasets it reports PSNR gains of 1.00 dB on held-out trajectories and 1.20 dB out-of-distribution over action-only baselines, with Doppel-8 improving over Doppel-3 on four of six evaluation sets. Inspect the rendering-conditioning and camera-alignment procedure.</p>
+          <p>SADP addresses long-horizon manipulation, where policies must coordinate intermediate subgoals and decide when to advance, while most imitation learning uses only task-level demonstrations and subgoal-level supervision is scarce. The framework uses foundation models to autonomously generate subgoal-annotated demonstrations, trains diffusion policies conditioned on both task-level and natural-language subgoal descriptions, and adds a lightweight auxiliary head predicting a continuation score that drives online subgoal switching and stage-level progress monitoring. Experiments in RLBench simulations and real-world evaluations on a UR5e robot show competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring. Inspect how generated subgoal annotations are validated and how the continuation score threshold affects switching behavior.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
-            <span><b>Category</b> 前沿新论文</span>
-            <span><b>Core topics</b> World Models &amp; Embodied Reasoning</span>
-<span><b>Utility</b> 56.0 (base 50.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-          </div>
+            <span><b>Category</b> 期刊新论文</span>
+            <span><b>Core topics</b> World Models &amp; Embodied Reasoning, Robot Learning &amp; Policy Post-Training</span>
+<span><b>Subtopics</b> diffusion_flow_policy</span><span><b>Utility</b> 46.0 (base 58.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>Recent overlap</b> -12</span><span><b>OpenAlex citations</b> 1</span>          </div>
           <ul>
-<li>research_fit 50 ≥ 40</li><li>Core topics matched: world_model_embodied_reasoning</li><li>Specific keywords matched: video world model</li><li>Diversity topic: world_model_embodied_reasoning</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 56.0 = base 50.0 + affinity +6 + redundancy -0</li>          </ul>
+<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 58 ≥ 35</li><li>Core topics matched: world_model_embodied_reasoning, robot_learning_posttraining</li><li>Specific keywords matched: long-horizon manipulation, diffusion policy</li><li>Detected subtopics: diffusion_flow_policy</li><li>Personal domain affinity: neutral (+0)</li><li>Subtopic: diffusion_flow_policy</li><li>Recently recommended: 5 days ago</li><li>Redundancy penalty: -12</li><li>recommendation_utility 46.0 = base 58.0 + affinity +0 + redundancy -12</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Predicting the consequences of an agent&#39;s actions requires modeling both the body&#39;s motion and the environment&#39;s response. Most video world models attempt to learn both from numerical actions, even though geometry and kinematics already specify the intended motion. We introduce Doppel, an embodiment-agnostic video world model conditioned on camera-aligned renderings of future body configurations and numerical action trajectories. By explicitly providing the intended motion, Doppel can focus on predicting object motion and interaction-driven changes in the environment. Rendered motion also provides a common visual interface across different embodiments and action spaces. To train on robot datasets without camera extrinsics, we recover camera poses and align rendered trajectories with recorded observations. We jointly train a single shared video backbone and conditioning adapter on eight datasets spanning eight robot and human embodiments, from single- and bimanual robot arms to a dexterous humanoid and human hands and bodies, using about 600 hours of video without embodiment labels. Across three robot-arm datasets, Doppel improves PSNR over action-only baselines by 1.00 dB on held-out trajectories and 1.20 dB under out-of-distribution evaluation, while predicting more consistent object motion. Training on all eight embodiments (Doppel-8) improves robot predictions over the three-robot model (Doppel-3) on four of six evaluation sets. Project page: https://doppelwm.github.io/.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Long-horizon robot manipulation requires policies to coordinate multiple intermediate subgoals and determine when to advance between them. However, most imitation learning methods are trained solely on task-level demonstrations, without explicitly modeling the active subgoal or its execution progress. This limitation is further exacerbated by the scarcity of subgoal-level supervision in standard robot learning datasets, which makes explicit subgoal-conditioned control and online transition modeling difficult to learn. To address this issue, this paper proposes Subgoal-Aware Diffusion Policy (SADP), a framework that leverages foundation models to autonomously generate subgoal-annotated demonstrations and trains diffusion policies on these datasets. SADP structures policy execution around explicit natural-language subgoals by conditioning action generation on both task-level and subgoal-level descriptions. A lightweight auxiliary head further predicts a continuation score that drives online subgoal switching and supports stage-level progress monitoring. Experiments in RLBench simulations and real-world evaluations on a UR5e robot demonstrate that SADP maintains competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring. These results show that explicit subgoal progression can be incorporated into a diffusion policy without degrading task-level performance.</p></details>
         <div class="actions">
-          <a href="https://arxiv.org/abs/2611.24925v1" target="_blank" rel="noopener noreferrer">arXiv</a>
-          <a href="https://arxiv.org/pdf/2611.24925v1" target="_blank" rel="noopener noreferrer">PDF</a>
-          <a href="https://arxiv.org/bibtex/2611.24925" target="_blank" rel="noopener noreferrer">BibTeX</a>
-        </div>
-        <button type="button" class="save-button" data-paper-id="arxiv:2611.24925" data-title="Render the Robot, Generate the World: One Video World Model Across Embodiments" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W7161687616" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2605.16871" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://doi.org/10.1109/lra.2026.3742285" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2605.16871" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7161687616" data-title="SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.24925" data-title="Render the Robot, Generate the World: One Video World Model Across Embodiments" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7161687616" data-title="SADP: Subgoal-Aware Diffusion Policy for Long-Horizon Manipulation Learned From Foundation Model Generated Demonstrations" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="openalex:W7213542062" data-paper-id="openalex:W7213542062" data-category="high_impact_historical">
+      <article class="paper-card" id="arxiv:2611.26565" data-paper-id="arxiv:2611.26565" data-category="review_knowledge_map">
+        <div class="card-topline">
+          <span class="category category--review_knowledge_map">综述 / 知识地图</span>
+          <span class="arxiv-id">2611.26565v1</span>
+        </div>
+        <h3>PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity</h3>
+        <p class="authors">Hao Vo, Taisei Hanyu, Yuki Ikebe, Pham Tri Quang, Sreevenkata Anjani Tishita Godavarthi, Nghi D. Q. Bui, Daniel Sonntag, Chase Rainwater, Duy Minh Ho Nguyen, Anh Nguyen, Ngan Le</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-20 02:33 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO</span>
+<span><b>Reading focus</b> motion_planning</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>PhyDEX is a benchmark for physical reasoning in VLA models, arguing that existing benchmarks mainly evaluate gripper-object contact and largely ignore gravity, friction, inertia, and mass distribution. Built around dynamic extrinsic dexterity, it is a throwing benchmark requiring inference of an object&#39;s mass, center of mass, and friction to reach destinations beyond the kinematic workspace, with 35K trajectories (143 hours) across nine tasks and 100 scenes covering uniform, irregular, and dynamic-mass objects and static, multiple, and moving destinations, generated by an automatic pipeline combining grasp generation, motion planning, and closed-loop throw optimization. Evaluating GR00T N1.7, DynamicVLA, and ForceVLA, all achieve success rates below 3%, with failures attributed to limited pretrained robustness and physical blindness, since ground-truth physical properties roughly double success; the same patterns appear on a humanoid robot and in the real world. Inspect task construction and how physical-property inputs are supplied in the analysis.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 综述 / 知识地图</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, World Models &amp; Embodied Reasoning, Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> motion_planning</span><span><b>Utility</b> 106.0 (base 100.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+          </div>
+          <ul>
+<li>Knowledge-map signals: benchmark</li><li>Robotics context: robot, robotic, manipulation, humanoid, vision-language-action</li><li>research_fit 100 ≥ 40</li><li>Core topics matched: vla_robot_foundation, world_model_embodied_reasoning, humanoid_loco_manipulation</li><li>Specific keywords matched: vision-language-action, VLA, physical reasoning, humanoid robot, motion planning</li><li>Detected subtopics: motion_planning</li><li>Personal domain affinity: preferred (+6; matched humanoid)</li><li>recommendation_utility 106.0 = base 100.0 + affinity +6 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Vision-Language-Action (VLA) models have advanced rapidly in language-conditioned robotic manipulation, yet existing benchmarks mainly evaluate gripper--object contact and largely ignore how objects interact with the environment through gravity, friction, inertia, and mass distribution. As a result, it remains unclear whether current policies truly understand physics or merely interpolate from their training data. We address this gap through the lens of dynamic extrinsic dexterity and introduce PhyDEX, a throwing benchmark in which a robot must infer an object&#39;s mass, center of mass, and friction to send it to a destination beyond its kinematic workspace. PhyDEX contains 35K trajectories (143 hours) across nine tasks and 100 scenes, covering uniform, irregular, and dynamic-mass objects with static, multiple, and moving destinations. All data are generated by a scalable, fully automatic pipeline that combines grasp generation, motion planning, and closed-loop throw optimization under randomized physical properties. We evaluate three representative VLAs, GR00T N1.7, DynamicVLA, and ForceVLA, and find that all achieve success rates below 3\%. Our analysis reveals two key bottlenecks: limited robustness of pretrained models, which causes most failures before the throw, and physical blindness, as providing ground-truth physical properties roughly doubles success. Experiments on a humanoid robot and in the real world show the same failure patterns. We hope PhyDEX will drive the development of physically grounded robot policies.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.26565v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.26565v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.26565" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.26565" data-title="PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.26565" data-title="PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W3000625188" data-paper-id="openalex:W3000625188" data-category="high_impact_historical">
         <div class="card-topline">
           <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W7213542062</span>
+          <span class="arxiv-id">W3000625188</span>
         </div>
-        <h3>PARMA: A Pose-Aware Risk Mitigation Approach for End-Effector Execution in Vision-Language-Action Models</h3>
-        <p class="authors">Shuo Li, Jialiang Fu, Nianwen Ning, Liqin Fu, Lei Shi, Yi Fan Zhou</p>
+        <h3>Contact-aided invariant extended Kalman filtering for robot state estimation</h3>
+        <p class="authors">Ross Hartley, Maani Ghaffari, Ryan M. Eustice, Jessy W. Grizzle</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-09-18</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
+          <span><b>Published</b> 2020-01-16</span>
+<span><b>Source</b> The International Journal of Robotics Research</span><span><b>Reading focus</b> robot_state_estimation</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>PARMA is presented as a benchmark-style evaluation of a low-cost post-policy correction scheme for VLA execution, motivated by limited physical-world awareness that leaves manipulation vulnerable to pose-induced, gripper-local collision risks. The method leaves the gripper command and upstream VLA policy unchanged, building first-order QP constraints from gripper-local proxy points and the end-effector pose Jacobian, with active obstacle alignment, contact-scope filtering, hand-priority top-K selection, correction clipping, and risk-adaptive blending. Across all 400 official Level I and Level II initial states of SafeLIBERO Spatial, it reports task success up 34.0 percentage points, EE-local safe success up 27.3 points, and 47.5% relative reduction in EE-local collisions, plus a 600-trial SO101 study reducing visible gripper-obstacle contact rate by 30.0 points versus center-point correction. Inspect how the QP constraints and blending preserve the upstream trajectory.</p>
+          <p>This work addresses legged robot pose and velocity estimation, where vision is sensitive to environmental and lighting conditions and existing alternatives fuse kinematic and contact data with IMU measurements. It develops a contact-aided invariant extended Kalman filter (InEKF) using Lie group theory and invariant observer design, combining contact-inertial dynamics with forward kinematic corrections to estimate pose, velocity, and current contact points, with error dynamics following a log-linear autonomous differential equation; it also covers IMU biases, contact addition and removal, and world-centric and robo-centric formulations. Comparisons with a quaternion-based EKF via simulations and experiments on a Cassie-series bipedal robot, with accuracy analyzed using motion capture and a LiDAR mapping use case, report better performance for the InEKF. Inspect the observability and convergence arguments and the contact-schedule handling.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 领域内高影响力</span>
-            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
-<span><b>Utility</b> 42.8 (base 42.8)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>OpenAlex citations</b> 0</span>          </div>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> robot_state_estimation</span><span><b>Utility</b> 61.1 (base 61.1)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 300</span>          </div>
           <ul>
-<li>机器人语境：robot, robotic, robotics, manipulation, vision-language-action</li><li>research_fit 32 ≥ 18</li><li>核心方向：vla_robot_foundation</li><li>特定关键词：vision-language-action, VLA</li><li>historical_value_score 42.8 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 100.0%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 0.00</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-11-16T10:03:40</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 42.8 = base 42.8 + affinity +0 + redundancy -0</li>          </ul>
+<li>机器人语境：robot, robots, robotic, robotics</li><li>research_fit 26 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：bipedal robot, robot state estimation, InEKF</li><li>historical_value_score 61.1 ≥ 42.0</li><li>发表于 2020 年</li><li>同领域同年份引用标准化位于前 0.6%</li><li>阅读时效分 70/100（论文年龄 6 年）</li><li>OpenAlex FWCI 11.12</li><li>近 2 年年均引用 41.0；此前 2 年年均 60.5</li><li>由 1 个独立种子论文的单层引用图发现</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:03</li><li>Detected subtopics: robot_state_estimation</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 61.1 = base 61.1 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Vision-language-action (VLA) models generate semantically meaningful manipulation actions but often lack sufficient physical-world awareness, making downstream execution vulnerable to task failures caused by physical interaction risks. To address this limitation, we propose a low-cost post-policy correction scheme. The central challenge is to mitigate pose-induced, gripper-local collision risks without aggressive projections that distort the task trajectory encoded by the upstream policy. We formulate VLA execution-risk reduction as a low-intervention, end-effector-local, pose-aware action-space correction problem. Our method leaves both the gripper command and upstream VLA policy unchanged, constructs first-order QP constraints using gripper-local proxy points and the end-effector pose Jacobian, and integrates active obstacle alignment, contact-scope filtering, hand-priority top-$K$selection, correction clipping, and risk-adaptive blending for targeted intervention. Across all 400 official Level I and Level II initial states of SafeLIBERO Spatial, the method increases task success by34.0 percentage pointsand EE-local safe success by27.3 percentage points, while reducing EE-local collision events by47.5%(relative). A 600-trial SO101 feasibility study across two challenge scenes further reduces the visible gripper–obstacle contact rate by30.0 percentage pointscompared with center-point correction. These results demonstrate that pose-aware, gripper-local reasoning achieves a more favorable balance between task progress and local risk reduction without policy retraining or global replanning.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Legged robots require knowledge of pose and velocity in order to maintain stability and execute walking paths. Current solutions either rely on vision data, which is susceptible to environmental and lighting conditions, or fusion of kinematic and contact data with measurements from an inertial measurement unit (IMU). In this work, we develop a contact-aided invariant extended Kalman filter (InEKF) using the theory of Lie groups and invariant observer design. This filter combines contact-inertial dynamics with forward kinematic corrections to estimate pose and velocity along with all current contact points. We show that the error dynamics follows a log-linear autonomous differential equation with several important consequences: (a) the observable state variables can be rendered convergent with a domain of attraction that is independent of the system’s trajectory; (b) unlike the standard EKF, neither the linearized error dynamics nor the linearized observation model depend on the current state estimate, which (c) leads to improved convergence properties and (d) a local observability matrix that is consistent with the underlying nonlinear system. Furthermore, we demonstrate how to include IMU biases, add/remove contacts, and formulate both world-centric and robo-centric versions. We compare the convergence of the proposed InEKF with the commonly used quaternion-based extended Kalman filter (EKF) through both simulations and experiments on a Cassie-series bipedal robot. Filter accuracy is analyzed using motion capture, while a LiDAR mapping experiment provides a practical use case. Overall, the developed contact-aided InEKF provides better performance in comparison with the quaternion-based EKF as a result of exploiting symmetries present in system.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7213542062" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3734926" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7213542062" data-title="PARMA: A Pose-Aware Risk Mitigation Approach for End-Effector Execution in Vision-Language-Action Models" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W3000625188" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1177/0278364919894385" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W3000625188" data-title="Contact-aided invariant extended Kalman filtering for robot state estimation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7213542062" data-title="PARMA: A Pose-Aware Risk Mitigation Approach for End-Effector Execution in Vision-Language-Action Models" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W3000625188" data-title="Contact-aided invariant extended Kalman filtering for robot state estimation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
