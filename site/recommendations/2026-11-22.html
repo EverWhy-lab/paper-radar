@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
+  <title>Paper Radar — 2026-11-22</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/reader.css">
+</head>
+<body data-repo="EverWhy-lab/paper-radar">
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="title-block">
+        <h1>Paper Radar</h1>
+        <p class="header-updated">2026-11-22 20:48</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="navigation-row">
+      <div class="nav-left">
+        <a class="favorites-link" href="../history.html">History</a>
+        <a class="favorites-link" href="../favorites.html">Favorites</a>
+        <button type="button" class="sync-button" id="sync-feedback" hidden>同步反馈</button>
+        <span class="dismiss-hint" id="sync-hint" role="status"></span>
+      </div>
+    </div>
+
+    <section class="recommendations" aria-label="Today's selected papers">
+      <article class="paper-card" id="openalex:W4390480938" data-paper-id="openalex:W4390480938" data-category="high_impact_historical">
+        <div class="card-topline">
+          <span class="category category--high_impact_historical">领域内高影响力</span>
+          <span class="arxiv-id">W4390480938</span>
+        </div>
+        <h3>Kinodynamic Pose Optimization for Humanoid Loco-Manipulation</h3>
+        <p class="authors">Junheng Li, Quan Dong Nguyen</p>
+        <div class="metadata">
+          <span><b>Published</b> 2023-12-12</span>
+<span><b>Reading focus</b> loco_manipulation, model_predictive_control</span>        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>This method paper addresses humanoid pushing of heavy objects by combining kinodynamic pose optimization with loco-manipulation model predictive control (MPC). The pose optimization uses an object-robot dynamics model, robot kinematic constraints, and object parameters to plan a pushing pose, which the MPC tracks by coordinating pushing and ground reaction forces. Numerical validation reports that the pose optimization solves as a nonlinear programming (NLP) problem in an average of 250 ms, that the robot pushes objects up to 20 kg (118% of its mass), and that the controller recovers from a 120 N force disturbance on the object. When reading, inspect how the object-robot dynamics model and constraints enter the pose optimization and how the MPC coordinates pushing with ground reaction forces.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 领域内高影响力</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation</span>
+<span><b>Subtopics</b> loco_manipulation, model_predictive_control</span><span><b>Utility</b> 76.2 (base 74.4)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span><span><b>OpenAlex citations</b> 11</span>          </div>
+          <ul>
+<li>机器人语境：robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation</li><li>research_fit 38 ≥ 18</li><li>核心方向：humanoid_loco_manipulation</li><li>特定关键词：loco-manipulation, humanoid robot, model predictive control, MPC, robot dynamics</li><li>historical_value_score 74.4 ≥ 42.0</li><li>发表于 2023 年</li><li>同领域同年份引用标准化位于前 1.8%</li><li>阅读时效分 90/100（论文年龄 3 年）</li><li>OpenAlex FWCI 6.99</li><li>近 2 年年均引用 4.5；此前 1 年年均 2.0</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-24T03:31:57</li><li>Detected subtopics: loco_manipulation, model_predictive_control</li><li>Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)</li><li>Subtopic: model_predictive_control</li><li>Recently recommended: 5 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = loco_manipulation</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 76.2 = base 74.4 + affinity +6 + redundancy -4.2</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>This paper presents a novel approach for controlling humanoid robots to push heavy objects. The approach combines kinodynamic pose optimization and loco-manipulation model predictive control (MPC). The proposed pose optimization considers the object-robot dynamics model, robot kinematic constraints, and object parameters to plan the optimal pushing pose for the robot. The loco-manipulation MPC is used to track the optimal pose by coordinating pushing and ground reaction forces, ensuring accurate manipulation and stable locomotion. Numerical validation demonstrates the effectiveness of the framework, enabling the humanoid robot to push objects with various parameter setups. The pose optimization can be solved as a nonlinear programming (NLP) problem within an average of 250 ms. The proposed control scheme allows the humanoid robot to push objects weighing up to 20 kg (118% of the robot&#39;s mass). Additionally, when applying a 120 N force disturbance to the object, the proposed controller can recover the system effectively.</p></details>
+        <div class="actions">
+<a href="https://openalex.org/W4390480938" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/humanoids57100.2023.10375151" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W4390480938" data-title="Kinodynamic Pose Optimization for Humanoid Loco-Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W4390480938" data-title="Kinodynamic Pose Optimization for Humanoid Loco-Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var repo = document.body.getAttribute("data-repo") || "";
+      function readList(key) {
+        try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; }
+      }
+      function writeList(key, list) {
+        localStorage.setItem(key, JSON.stringify(list));
+      }
+      function pendingItems() {
+        return readList("paper-radar-pending");
+      }
+      function filledKey(type) {
+        return type === "favorite" ? "paper-radar-favorited" : "paper-radar-dismissed";
+      }
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".dismiss-button, .save-button"));
+      function markFilled(button) {
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      }
+      function clearFilled(button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+      }
+      function showHint(hint, text) {
+        if (!hint) { return; }
+        hint.textContent = text;
+        hint.classList.add("show");
+        clearTimeout(hint._hintTimer);
+        hint._hintTimer = setTimeout(function () {
+          hint.classList.remove("show");
+        }, 2600);
+      }
+      var syncButton = document.getElementById("sync-feedback");
+      var syncHint = document.getElementById("sync-hint");
+      function refreshSync() {
+        var count = pendingItems().length;
+        if (syncButton) {
+          syncButton.hidden = count === 0;
+          syncButton.textContent = "同步反馈 (" + count + ")";
+        }
+      }
+      function typeOf(button) {
+        return button.classList.contains("save-button") ? "favorite" : "not-interested";
+      }
+      buttons.forEach(function (button) {
+        var type = typeOf(button);
+        var id = button.getAttribute("data-paper-id");
+        if (readList(filledKey(type)).indexOf(id) !== -1) {
+          markFilled(button);
+        }
+      });
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var type = typeOf(button);
+          var id = button.getAttribute("data-paper-id");
+          var title = button.getAttribute("data-title") || "";
+          var list = readList(filledKey(type));
+          var items = pendingItems();
+          var hint = button.parentElement.querySelector(".dismiss-hint");
+          if (button.classList.contains("active")) {
+            clearFilled(button);
+            var index = list.indexOf(id);
+            if (index !== -1) {
+              list.splice(index, 1);
+              writeList(filledKey(type), list);
+            }
+            items = items.filter(function (item) {
+              return !(item.id === id && item.type === type);
+            });
+            writeList("paper-radar-pending", items);
+            showHint(hint, "已撤销本设备标记");
+            refreshSync();
+            return;
+          }
+          markFilled(button);
+          if (list.indexOf(id) === -1) {
+            list.push(id);
+            writeList(filledKey(type), list);
+          }
+          if (!items.some(function (item) { return item.id === id && item.type === type; })) {
+            items.push({ id: id, type: type, title: title });
+            writeList("paper-radar-pending", items);
+          }
+          showHint(hint, type === "favorite" ? "已收藏 · 点击「同步反馈」后保存" : "已标记 · 点击「同步反馈」后提交");
+          refreshSync();
+        });
+      });
+      if (syncButton) {
+        syncButton.addEventListener("click", function () {
+          var items = pendingItems();
+          if (items.length === 0 || !repo) { return; }
+          var lines = items.map(function (item) {
+            return item.type + " " + item.id + " — " + item.title;
+          });
+          var url = "https://github.com/" + repo + "/issues/new?title=" +
+            encodeURIComponent("feedback: batch") +
+            "&body=" + encodeURIComponent(lines.join("\n") + "\n\nThis issue is created automatically by the paper page.");
+          writeList("paper-radar-pending", []);
+          refreshSync();
+          window.open(url, "_blank", "noopener");
+          showHint(syncHint, "已打开提交页面，提交后生效");
+        });
+      }
+      refreshSync();
+    })();
+  </script>
+</body>
+</html>
