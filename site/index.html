@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="A personal daily shortlist of robotics papers selected by transparent rules.">
-  <title>Paper Radar — 2026-11-23</title>
+  <title>Paper Radar — 2026-11-24</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/reader.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="shell header-row">
       <div class="title-block">
         <h1>Paper Radar</h1>
-        <p class="header-updated">2026-11-23 23:12</p>
+        <p class="header-updated">2026-11-24 23:10</p>
       </div>
     </div>
   </header>
@@ -31,192 +31,200 @@
     </div>
 
     <section class="recommendations" aria-label="Today's selected papers">
-      <article class="paper-card" id="openalex:W7224248833" data-paper-id="openalex:W7224248833" data-category="journal_recent">
+      <article class="paper-card" id="arxiv:2606.21406" data-paper-id="arxiv:2606.21406" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2606.21406v2</span>
+        </div>
+        <h3>Learning from Failure: Robot Self-Improvement via Human Videos</h3>
+        <p class="authors">Hanzhi Chen, Anran Zhang, Simon Schaefer, Kejia Chen, Shi Chen, Daniel Cremers, Oier Mees, Stefan Leutenegger</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-06-19 21:17 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.CV</span>
+        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>Failed executions do not reveal which actions would have succeeded, and expert corrections require costly monitoring, so this work introduces Dynamics-Guided Action Correction (DGAC), which uses dynamics and value models pretrained on human videos to construct alternative actions at failed states and evaluate their outcomes without executing each candidate. Across seven real-world manipulation tasks and two robot embodiments, the authors report that average success rises from 40% to 81% with no expert corrections during self-improvement, and that the generated corrections outperform imagined policy rollouts using the same models and data. They also report that human-video dynamics and value models provide corrective supervision for policies pretrained on either human or robot data. When reading, inspect how candidate actions are generated and scored at failed states and how the human-video models are adapted to the robot embodiment.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> Robot Learning &amp; Policy Post-Training, Robot Data Scaling &amp; Sim-to-Real</span>
+<span><b>Utility</b> 61.0 (base 61.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 61 ≥ 40</li><li>Core topics matched: robot_learning_posttraining, robot_data_scaling_sim2real</li><li>Specific keywords matched: robot self-improvement, robot data</li><li>Diversity topic: robot_learning_posttraining</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 61.0 = base 61.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Learning from deployment experience is essential for robots to improve their performance in the real world. A robot should be able to learn from failed executions, but these do not reveal which actions would have succeeded, and obtaining corrections from human experts requires costly monitoring and intervention. Human videos offer a rich source of interaction experience, showing how actions change the environment and lead to task completion. To turn this experience into corrective supervision, we introduce Dynamics-Guided Action Correction (DGAC), which uses dynamics and value models pretrained on human videos to construct alternative actions at failed states and evaluate their outcomes without executing each candidate. We evaluate our method on seven real-world manipulation tasks across two robot embodiments and demonstrate that it improves the average success rate from 40% to 81%, requiring no expert corrections during self-improvement. We further show that generated corrections enable recovery from failed executions and provide more effective training targets than imagined policy rollouts using the same models and data. Finally, we demonstrate that human-video dynamics and value models provide effective corrective supervision for policies pretrained on either human or robot data, suggesting that human videos benefit robot learning in addition to policy initialization.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2606.21406v2" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2606.21406v2" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2606.21406" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2606.21406" data-title="Learning from Failure: Robot Self-Improvement via Human Videos" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2606.21406" data-title="Learning from Failure: Robot Self-Improvement via Human Videos" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="arxiv:2611.31126" data-paper-id="arxiv:2611.31126" data-category="frontier_recent">
+        <div class="card-topline">
+          <span class="category category--frontier_recent">前沿新论文</span>
+          <span class="arxiv-id">2611.31126v1</span>
+        </div>
+        <h3>WeaveVLA: 3D Relational Grounding for Vision-Language-Action Models</h3>
+        <p class="authors">Zien Wang, Yuhao Pan, Yunfeng Fan, Nan Cheng, Xin Xia, Wenchao Xu</p>
+        <div class="metadata">
+          <span><b>Published</b> 2026-11-24 01:59 Asia/Shanghai</span>
+          <span><b>Categories</b> cs.RO, cs.CV</span>
+        </div>
+        <div class="card-guide">
+          <p class="guide-tag">Takeaway</p>
+          <p>WeaveVLA targets the implicit understanding of task-relevant 3D relations and their evolution during manipulation in VLA models, encoding relative 3D relations among objects, the gripper, and nearby references with a task-conditioned sparse graph neural network, maintaining spatial context through pair-specific recurrent edge states, and summarizing the graph into relational tokens that condition the action expert alongside the vision-language context, with an auxiliary geometry reconstruction objective. Instantiated on StarVLA-GR00T and π0.5, it reports over 98% average success on LIBERO, LIBERO-Plus gains from 74.9% to 82.0% and from 85.7% to 87.8%, and on three real-world tasks an improvement from 55.6% to 70.0% under standard conditions and from 33.3% to 53.3% under OOD perturbations. Inspect how relational tokens are integrated with the action expert and what the geometry reconstruction objective adds.</p>
+        </div>
+        <details class="selection-diagnostics">
+          <summary>Why selected</summary>
+          <div class="diagnostic-grid">
+            <span><b>Category</b> 前沿新论文</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
+<span><b>Utility</b> 52.0 (base 52.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+          </div>
+          <ul>
+<li>research_fit 52 ≥ 40</li><li>Core topics matched: vla_robot_foundation</li><li>Specific keywords matched: vision-language-action, VLA, action expert</li><li>Diversity topic: vla_robot_foundation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 52.0 = base 52.0 + affinity +0 + redundancy -0</li>          </ul>
+        </details>
+        <details class="abstract"><summary>Original abstract</summary><p>Vision-language-action (VLA) models leverage pretrained vision-language representations for instruction-conditioned robot control, yet their understanding of task-relevant 3D relations and how these relations evolve during manipulation remains largely implicit. To address this challenge, we introduce \textbf{WeaveVLA}, a framework that enhances VLA action generation by explicitly modeling task-relevant relative 3D relations and maintaining relational context across observations. WeaveVLA employs a task-conditioned sparse graph neural network to encode relative 3D relations among objects, the gripper, and nearby references. Pair-specific recurrent edge states integrate geometric evidence across observations to maintain evolving spatial context. A learned-query readout summarizes the updated graph representations into compact relational tokens, which condition the action expert alongside the original vision-language context. An auxiliary geometry reconstruction objective further encourages spatial structure preservation. We instantiate WeaveVLA on StarVLA-GR00T and $π_{0.5}$, achieving over 98\% average success on LIBERO with both backbones. On LIBERO-Plus, WeaveVLA improves success from 74.9\% to 82.0\% and from 85.7\% to 87.8\%, respectively, with additional improvements on CALVIN D$\rightarrow$D. On three real-world tasks, the StarVLA-GR00T-based variant improves average success from 55.6\% to 70.0\% under standard conditions and from 33.3\% to 53.3\% under OOD perturbations, surpassing the $π_{0.5}$ baseline in both settings.</p></details>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2611.31126v1" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://arxiv.org/pdf/2611.31126v1" target="_blank" rel="noopener noreferrer">PDF</a>
+          <a href="https://arxiv.org/bibtex/2611.31126" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        </div>
+        <button type="button" class="save-button" data-paper-id="arxiv:2611.31126" data-title="WeaveVLA: 3D Relational Grounding for Vision-Language-Action Models" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="dismiss-label">Save</span>
+        </button>
+        <button type="button" class="dismiss-button" data-paper-id="arxiv:2611.31126" data-title="WeaveVLA: 3D Relational Grounding for Vision-Language-Action Models" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+          <span class="dismiss-label">Not Relevant</span>
+        </button>
+        <span class="dismiss-hint" role="status"></span>
+      </article>
+      <article class="paper-card" id="openalex:W7215053177" data-paper-id="openalex:W7215053177" data-category="journal_recent">
         <div class="card-topline">
           <span class="category category--journal_recent">期刊新论文</span>
-          <span class="arxiv-id">W7224248833</span>
+          <span class="arxiv-id">W7215053177</span>
         </div>
-        <h3>DT-TacVLA: A Dual-Timescale Tactile-Enhanced Vision-Language-Action Model for Contact-Rich Manipulation</h3>
-        <p class="authors">Zhaokun Yue, Junyu Wang, Ling Tong, Bo Zhou, Kun Qian</p>
+        <h3>CC-VLA: Learning Control-Aware Compliance VLA Model for Robust Contact-Rich Robotic Manipulation</h3>
+        <p class="authors">Zhaohong Mai, Chao Wang, Chao Zeng, Sitong Mao, Heng Zhang, Shunbo Zhou, Chenguang Yang</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-10-29</span>
+          <span><b>Published</b> 2026-10-01</span>
 <span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>DT-TacVLA targets contact-rich manipulation, where vision-centric VLA perception struggles to capture contact establishment, in-hand slip, and normal and shear contact interactions. Built on SmolVLA, it adds a dual-timescale tactile fusion framework: a slow semantic pathway that fuses tactile image sequences with VLM features through semantic-guided gating to produce a task-contact context, and a fast reflex pathway that encodes tactile marker displacements into tokens injected into the action expert via a Tactile-Marker Adapter. Across power plug insertion, USB connector insertion, and test tube placement, the abstract reports consistently higher success rates than vision-only VLA baselines and ablation variants. Inspect how the slow context is reused across fast reflex updates and how the adapter modulates action chunks.</p>
+          <p>Force-aware VLA models often show limited precise force tracking and rapid successive adjustment because of action-chunk execution and perception-to-control latency, which can cause excessive interaction forces without timely correction. CC-VLA addresses this with a multimodal mixture-of-experts (MoE) encoding force signal sequences together with vision-language fused features, a multi-stage training strategy for force perception under sparse sampling, a VLA-guided adaptive compliance controller for position tracking in contact-free motion and force-position tracking in contact-rich tasks, and an adversarial shared teleoperation strategy for collecting high-precision force/torque demonstrations. Real-world experiments report improved success rates on challenging force-perception tasks and enhanced force-control precision, with multi-level safety and robustness under tested partial-OOD pose-shift settings. Inspect how the compliance controller interfaces with action-chunk execution and how force signals enter the MoE.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 期刊新论文</span>
-            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Dexterous &amp; Multimodal Manipulation</span>
-<span><b>Utility</b> 60.0 (base 60.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+            <span><b>Core topics</b> VLA &amp; Robot Foundation Models, Robot Learning &amp; Policy Post-Training</span>
+<span><b>Utility</b> 45.0 (base 45.0)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
 <span><b>OpenAlex citations</b> 0</span>          </div>
           <ul>
-<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 60 ≥ 35</li><li>Core topics matched: vla_robot_foundation, dexterous_multimodal_manipulation</li><li>Specific keywords matched: vision-language-action, VLA, action expert, contact-rich manipulation</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 60.0 = base 60.0 + affinity +0 + redundancy -0</li>          </ul>
+<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 45 ≥ 35</li><li>Core topics matched: vla_robot_foundation, robot_learning_posttraining</li><li>Specific keywords matched: VLA, vision-language-action</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 45.0 = base 45.0 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Vision-Language-Action (VLA) models exhibit strong semantic understanding and policy generalization, yet their predominantly vision-centric perception struggles to characterize key contact states such as contact establishment, in-hand slip, and normal and shear contact interactions. This limits their performance in contact-rich manipulation. In this paper, we proposeDT-TacVLA(Dual-Timescale Tactile-Enhanced VLA), a dual-timescale tactile fusion framework built on top of SmolVLA that processes tactile inputs along two complementary slow and fast pathways. Theslow semantic pathwayoperates at a lower update rate and adaptively fuses tactile image sequences with VLM features through a semantic-guided gating mechanism, producing a task-contact context that can be reused across multiple fast reflex updates. Thefast reflex pathwayis updated multiple times within each slow-context window. Under the fixed slow-context conditioning, it encodes the current tactile marker displacements into compact tokens and injects them into the action expert through a Tactile-Marker Adapter, modulating the action chunk with real-time contact feedback. Across three contact-rich real-world manipulation tasks, including power plug insertion, USB connector insertion, and test tube placement, DT-TacVLA consistently achieves higher success rates than vision-only VLA baselines and its ablation variants.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Integrating visuomotor policies or Vision-Language-Action (VLA) models with force/torque (F/T) perception has demonstrated significant progress in imitation learning for robotic manipulation. However, existing force-aware VLA models frequently exhibit limited capability in precise force tracking and rapid successive adjustments. This deficiency stems from the limitations of action-chunk execution strategies and the substantial latency between perception and real-time control. Such limitations can lead to task failures and safety risks, particularly when the execution of an action chunk exerts excessive interaction forces without timely adjustment. To overcome this challenge, we propose the Control-aware Compliance VLA (CC-VLA) framework for reactive control. The CC-VLA model employs a multimodal mixture-of-experts (MoE) to encode force signal sequences and vision-language fused feature. Furthermore, it utilizes a multi-stage training strategy to ensure robust perception within the visual-semantic space and effective force perception under sparse sampling conditions. Additionally, a VLA-guided adaptive compliance controller is designed to facilitate precise position tracking during contact-free motion and optimal force-position tracking for contact-rich tasks. To facilitate high-precision F/T data acquisition, we also implement an adversaria shared teleoperation strategy for contact-rich demonstrations that bolsters system safety and interactivity. Extensive real-world experiments demonstrate that CC-VLA significantly improves success rates in challenging force-perception tasks and enhances force-control precision, while providing multi-level safety and robustness under the tested partial-OOD pose-shift settings.</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7224248833" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3748688" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7224248833" data-title="DT-TacVLA: A Dual-Timescale Tactile-Enhanced Vision-Language-Action Model for Contact-Rich Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W7215053177" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/lra.2026.3739025" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7215053177" data-title="CC-VLA: Learning Control-Aware Compliance VLA Model for Robust Contact-Rich Robotic Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7224248833" data-title="DT-TacVLA: A Dual-Timescale Tactile-Enhanced Vision-Language-Action Model for Contact-Rich Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7215053177" data-title="CC-VLA: Learning Control-Aware Compliance VLA Model for Robust Contact-Rich Robotic Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="openalex:W7155538002" data-paper-id="openalex:W7155538002" data-category="journal_recent">
-        <div class="card-topline">
-          <span class="category category--journal_recent">期刊新论文</span>
-          <span class="arxiv-id">W7155538002</span>
-        </div>
-        <h3>X2-N: A Transformable Wheel-Legged Humanoid Robot With Dual-Mode Locomotion and Manipulation</h3>
-        <p class="authors">Yan Ning, Xingzhou Chen, Delong Li, Hao Zhang, Hanfu Gai, Jinlei Zhao, Tongyuan Li, Cheng Zhang, Zhihui Peng, Ling Shi</p>
-        <div class="metadata">
-          <span><b>Published</b> 2026-10-06</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> loco_manipulation, dexterous_manipulation, whole_body_control</span>        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>X2-N addresses the reduced legged stability of fixed-wheel feet and limited hip degrees of freedom in wheel-legged robots, plus the absence of a full upper body for dexterous manipulation. The proposed high-DoF transformable robot operates in humanoid and wheel-legged forms and transforms between them through joint reconfiguration, with a reinforcement learning-based whole-body control framework tailored to this morphology for hybrid locomotion, transformation, and manipulation. The abstract reports validation on dynamic skating-like motion, stair climbing, and package delivery, but its results sentence is truncated, so no specific metrics are available. Inspect the joint-reconfiguration mechanism and how one control framework spans the hybrid modes.</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 期刊新论文</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Dexterous &amp; Multimodal Manipulation</span>
-<span><b>Subtopics</b> loco_manipulation, dexterous_manipulation, whole_body_control</span><span><b>Utility</b> 52.8 (base 51.0)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>Recent overlap</b> -4.2</span><span><b>OpenAlex citations</b> 0</span>          </div>
-          <ul>
-<li>期刊新论文: IEEE Robotics and Automation Letters</li><li>research_fit 51 ≥ 35</li><li>Core topics matched: humanoid_loco_manipulation, dexterous_multimodal_manipulation</li><li>Specific keywords matched: humanoid robot, locomotion and manipulation, dexterous manipulation, whole-body control</li><li>Detected subtopics: loco_manipulation, dexterous_manipulation, whole_body_control</li><li>Personal domain affinity: preferred (+6; matched humanoid, dexterous manipulation)</li><li>Subtopic: dexterous_manipulation</li><li>Recently recommended: 6 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = loco_manipulation, whole_body_control</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 52.8 = base 51.0 + affinity +6 + redundancy -4.2</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Wheel-legged robots combine the efficiency of wheeled locomotion with the versatility of legged systems, enabling rapid traversal over both continuous and discrete terrains. However, conventional designs typically employ fixed wheels as feet and limited degrees of freedom (DoFs) at the hips, resulting in reduced stability and mobility during legged locomotion compared to humanoids with flat feet. In addition, most existing platforms lack a full upper body with arms, which limits their ability to perform dexterous manipulation tasks. In this letter, we present X2-N, a high-DoF transformable robot with dual-mode locomotion and manipulation. X2-N can operate in both humanoid and wheel-legged forms and transform seamlessly between them through joint reconfiguration. We further propose a reinforcement learning (RL)-based whole-body control framework tailored to this morphology, enabling control across hybrid locomotion, transformation, and manipulation. We validate X2-N in a range of challenging locomotion and manipulation tasks, including dynamic skating-like motion, stair climbing, and package delivery. Results demonstrate high</p></details>
-        <div class="actions">
-<a href="https://openalex.org/W7155538002" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2604.21541" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2604.21541" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3739563" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2604.21541" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7155538002" data-title="X2-N: A Transformable Wheel-Legged Humanoid Robot With Dual-Mode Locomotion and Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7155538002" data-title="X2-N: A Transformable Wheel-Legged Humanoid Robot With Dual-Mode Locomotion and Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="openalex:W7124172512" data-paper-id="openalex:W7124172512" data-category="rising_recent">
+      <article class="paper-card" id="openalex:W4415121671" data-paper-id="openalex:W4415121671" data-category="rising_recent">
         <div class="card-topline">
           <span class="category category--rising_recent">近期升温</span>
-          <span class="arxiv-id">W7124172512</span>
+          <span class="arxiv-id">W4415121671</span>
         </div>
-        <h3>EMMA: Scaling Mobile Manipulation via Egocentric Human Data</h3>
-        <p class="authors">L. Zhu, Pranav Kuppili, Ryan Punamiya, Patcharapong Aphiwetsa, Dhruv Patel, Simar Kareer, Sehoon Ha, Danfei Xu</p>
+        <h3>Opt2Skill: Imitating Dynamically-Feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation</h3>
+        <p class="authors">Fukang Liu, Zhaoyuan Gu, Yilin Cai, Ziyi Zhou, Hyunyoung Jung, Jaehwi Jang, Shijie Zhao, Sehoon Ha, Yue Chen, Danfei Xu, Ye Zhao</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-01-14</span>
-<span><b>Source</b> IEEE Robotics and Automation Letters</span>        </div>
+          <span><b>Published</b> 2025-10-13</span>
+<span><b>Source</b> IEEE Robotics and Automation Letters</span><span><b>Reading focus</b> sim_to_real, loco_manipulation, trajectory_optimization</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>EMMA tackles the bottleneck of expensive mobile robot teleoperation for scaling mobile manipulation imitation learning by training policies from human mobile manipulation data together with static robot data, sidestepping mobile teleoperation. The framework co-trains human full-body motion data with static robot data end-to-end. Across four real-world tasks, the abstract reports comparable performance to baselines trained on teleoperated mobile robot data (Mobile ALOHA), with higher or equivalent full task success, generalization to new spatial configurations and scenes, and positive performance scaling as hours of human data increase. Inspect how the human and static robot data are combined and what the scaling observation covers.</p>
+          <p>Humanoid loco-manipulation is difficult because of high-dimensional unstable dynamics and contact-rich tasks, with model-based optimal control limited by computation and contact sensing and RL limited by inefficient learning, unnatural motion, and sim-to-real gaps. Opt2Skill combines model-based trajectory optimization with RL: differential dynamic programming (DDP) generates dynamically feasible, contact-consistent reference motions for the Digit humanoid, and RL policies are trained to track these trajectories. The authors report that Opt2Skill outperforms baselines using human demonstrations and inverse-kinematics-based references in motion tracking and task success, that trajectories with torque information improve contact force tracking in tasks such as wiping a table, and that the approach was transferred to real-world applications. Inspect how DDP references are made contact-consistent and how torque information is incorporated into tracking.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 近期升温</span>
-            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Learning &amp; Policy Post-Training, Robot Data Scaling &amp; Sim-to-Real</span>
-<span><b>Utility</b> 94.1 (base 88.1)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
-<span><b>OpenAlex citations</b> 45</span>            <span><b>Rising score</b> 88.1</span>
-            <span><b>Paper age</b> 313 days</span>
+            <span><b>Core topics</b> Humanoid &amp; Whole-Body Loco-Manipulation, Robot Data Scaling &amp; Sim-to-Real</span>
+<span><b>Subtopics</b> sim_to_real, loco_manipulation, trajectory_optimization</span><span><b>Utility</b> 92.0 (base 90.2)</span>            <span><b>Domain affinity</b> preferred (+6)</span>
+<span><b>Recent overlap</b> -4.2</span><span><b>OpenAlex citations</b> 94</span>            <span><b>Rising score</b> 90.2</span>
+            <span><b>Paper age</b> 406 days</span>
             <span><b>Citation percentile</b> 0.999</span>
-            <span><b>FWCI</b> 51.39</span>
-            <span><b>Citation velocity</b> 4.38 citations/month</span>
-            <span><b>Observed growth</b> 2.264 citations/day</span>
+            <span><b>FWCI</b> 20.58</span>
+            <span><b>Citation velocity</b> 7.05 citations/month</span>
+            <span><b>Observed growth</b> 5.149 citations/day</span>
           </div>
           <ul>
-<li>rising_score 88.1 ≥ 55.0</li><li>Robotics context: robot, robotic, robotics, manipulation, mobile manipulation, teleoperation</li><li>research_fit 56 ≥ 12</li><li>Source restricted to robotics_core (S4210169774)</li><li>Publication age 313 days</li><li>Paper age 313 days; citation velocity uses a 90-day floor</li><li>Smoothed citation velocity 4.38 citations/month</li><li>Field/year normalized citation percentile 0.999</li><li>OpenAlex FWCI 51.39</li><li>Observed snapshot growth 2.264 citations/day</li><li>Detected subtopics: none</li><li>Personal domain affinity: preferred (+6; matched mobile manipulation)</li><li>recommendation_utility 94.1 = base 88.1 + affinity +6 + redundancy -0</li>          </ul>
+<li>rising_score 90.2 ≥ 55.0</li><li>Robotics context: robot, robots, robotic, robotics, manipulation, humanoid, loco-manipulation, sim-to-real</li><li>research_fit 51 ≥ 12</li><li>Source restricted to robotics_core (S4210169774)</li><li>Publication age 406 days</li><li>Paper age 406 days; citation velocity uses a 90-day floor</li><li>Smoothed citation velocity 7.05 citations/month</li><li>Field/year normalized citation percentile 0.999</li><li>OpenAlex FWCI 20.58</li><li>Observed snapshot growth 5.149 citations/day</li><li>Detected subtopics: sim_to_real, loco_manipulation, trajectory_optimization</li><li>Personal domain affinity: preferred (+6; matched humanoid, loco-manipulation)</li><li>Subtopic: trajectory_optimization</li><li>Recently recommended: 7 days ago</li><li>Subtopic cooldown bypassed: new secondary topic = loco_manipulation, sim_to_real</li><li>Redundancy penalty: -4.2</li><li>recommendation_utility 92.0 = base 90.2 + affinity +6 + redundancy -4.2</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>Scaling mobile manipulation imitation learning is bottlenecked by expensive mobile robot teleoperation. We present Egocentric Mobile MAnipulation (EMMA), an end-to-end framework training mobile manipulation policies from human mobile manipulation data with static robot data, sidestepping mobile teleoperation. To accomplish this, we co-train human full-body motion data with static robot data. In our experiments across four real-world tasks, EMMA demonstrates comparable performance to baselines trained on teleoperated mobile robot data (Mobile ALOHA), achieving higher or equivalent task performance in full task success. We find that EMMA is able to generalize to new spatial configurations and scenes, and we observe positive performance scaling as we increase the hours of human data, opening new avenues for scalable robotic learning in real-world environments. Details of this project can be found at:https://ego-moma.github.io</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>Humanoid robots are designed to perform diverse loco-manipulation tasks. However, they face challenges due to their high-dimensional and unstable dynamics, as well as the complex contact-rich nature of the tasks. Model-based optimal control methods offer flexibility to define precise motion but are limited by high computational complexity and accurate contact sensing. On the other hand, reinforcement learning (RL) handles high-dimensional spaces with strong robustness but suffers from inefficient learning, unnatural motion, and sim-to-real gaps. To address these challenges, we introduce Opt2Skill, an end-to-end pipeline that combines model-based trajectory optimization with RL to achieve robust whole-body loco-manipulation. Opt2Skill generates dynamic feasible and contact-consistent reference motions for the Digit humanoid robot using differential dynamic programming (DDP) and trains RL policies to track these optimal trajectories. Our results demonstrate that Opt2Skill outperforms baselines that rely on human demonstrations and inverse kinematics-based references, both in motion tracking and task success rates. Furthermore, we show that incorporating trajectories with torque information improves contact force tracking in contact-involved tasks, such as wiping a table. We have successfully transferred our approach to real-world applications.https://opt2skill.github.io</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7124172512" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2509.04443" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2509.04443" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2026.3653320" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2509.04443" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7124172512" data-title="EMMA: Scaling Mobile Manipulation via Egocentric Human Data" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W4415121671" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2409.20514" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2409.20514" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1109/lra.2025.3620620" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2409.20514" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W4415121671" data-title="Opt2Skill: Imitating Dynamically-Feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7124172512" data-title="EMMA: Scaling Mobile Manipulation via Egocentric Human Data" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W4415121671" data-title="Opt2Skill: Imitating Dynamically-Feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
         <span class="dismiss-hint" role="status"></span>
       </article>
-      <article class="paper-card" id="openalex:W3212580602" data-paper-id="openalex:W3212580602" data-category="review_knowledge_map">
-        <div class="card-topline">
-          <span class="category category--review_knowledge_map">综述 / 知识地图</span>
-          <span class="arxiv-id">W3212580602</span>
-        </div>
-        <h3>Crossing the Reality Gap: A Survey on Sim-to-Real Transferability of Robot Controllers in Reinforcement Learning</h3>
-        <p class="authors">Erica Salvato, Gianfranco Fenu, Eric Medvet, Felice Andrea Pellegrino</p>
-        <div class="metadata">
-          <span><b>Published</b> 2021-01-01</span>
-<span><b>Source</b> IEEE Access</span><span><b>Reading focus</b> sim_to_real</span>        </div>
-        <div class="card-guide">
-          <p class="guide-tag">Takeaway</p>
-          <p>This survey addresses the reality gap in reinforcement learning for robot control, where approximate simulated dynamics cause simulated and real control-law performance to mismatch and transferred controllers can fail on the real robot. Its stated goals are to identify the main approaches to the reality gap problem in RL-based robot control, point out their shortcomings, and outline new potential research areas. It is useful as a knowledge map for organizing sim-to-real methods and their limitations rather than as a new method. Inspect how the approaches are categorized and which shortcomings the authors attribute to each category.</p>
-        </div>
-        <details class="selection-diagnostics">
-          <summary>Why selected</summary>
-          <div class="diagnostic-grid">
-            <span><b>Category</b> 综述 / 知识地图</span>
-            <span><b>Core topics</b> Robot Data Scaling &amp; Sim-to-Real</span>
-<span><b>Subtopics</b> sim_to_real</span><span><b>Utility</b> 70.9 (base 70.9)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>OpenAlex citations</b> 182</span>          </div>
-          <ul>
-<li>机器人语境：robot, robots, robotics, manipulation, sim-to-real</li><li>research_fit 36 ≥ 18</li><li>核心方向：robot_data_scaling_sim2real</li><li>特定关键词：robot dynamics</li><li>historical_value_score 70.9 ≥ 50.0</li><li>发表于 2021 年</li><li>同领域同年份引用标准化位于前 0.9%</li><li>阅读时效分 90/100（论文年龄 5 年）</li><li>OpenAlex FWCI 13.39</li><li>近 2 年年均引用 39.5；此前 2 年年均 44.0</li><li>标题、类型或主题元数据命中综述/教程/知识地图规则</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-08-04T06:56:04</li><li>Detected subtopics: sim_to_real</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 70.9 = base 70.9 + affinity +0 + redundancy -0</li>          </ul>
-        </details>
-        <details class="abstract"><summary>Original abstract</summary><p>The growing demand for robots able to act autonomously in complex scenarios has widely accelerated the introduction of Reinforcement Learning (RL) in robots control applications. However, the trial and error intrinsic nature of RL may result in long training time on real robots and, moreover, it may lead to dangerous outcomes. While simulators are useful tools to accelerate RL training and to ensure safety, they often are provided only with an approximated model of robot dynamics and of its interaction with the surrounding environment, thus resulting in what is called the reality gap (RG): a mismatch of simulated and real control-law performances caused by the inaccurate representation of the real environment in simulation. The most undesirable result occurs when the controller learnt in simulation fails the task on the real robot, thus resulting in an unsuccessful sim-to-real transfer. The goal of the present survey is threefold: (1) to identify the main approaches to face the RG problem in the context of robot control with RL, (2) to point out their shortcomings, and (3) to outline new potential research areas.</p></details>
-        <div class="actions">
-<a href="https://openalex.org/W3212580602" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://doi.org/10.1109/access.2021.3126658" target="_blank" rel="noopener noreferrer">DOI</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W3212580602" data-title="Crossing the Reality Gap: A Survey on Sim-to-Real Transferability of Robot Controllers in Reinforcement Learning" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <span class="dismiss-label">Save</span>
-        </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W3212580602" data-title="Crossing the Reality Gap: A Survey on Sim-to-Real Transferability of Robot Controllers in Reinforcement Learning" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
-          <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
-          <span class="dismiss-label">Not Relevant</span>
-        </button>
-        <span class="dismiss-hint" role="status"></span>
-      </article>
-      <article class="paper-card" id="openalex:W7126053009" data-paper-id="openalex:W7126053009" data-category="high_impact_historical">
+      <article class="paper-card" id="openalex:W7161726631" data-paper-id="openalex:W7161726631" data-category="high_impact_historical">
         <div class="card-topline">
           <span class="category category--high_impact_historical">领域内高影响力</span>
-          <span class="arxiv-id">W7126053009</span>
+          <span class="arxiv-id">W7161726631</span>
         </div>
-        <h3>Information-theoretic graph fusion with vision-language-action model for policy reasoning and dual robotic control</h3>
-        <p class="authors">Shunlei Li, Longsen Gao, Jin Wang, Chang Che, Xi Xiao, Jiuwen Cao, Yingbai Hu, Hamid Reza Karimi</p>
+        <h3>From a single demonstration to a general policy for contact-rich manipulation</h3>
+        <p class="authors">Xing Li, Oliver Brock</p>
         <div class="metadata">
-          <span><b>Published</b> 2026-01-29</span>
-<span><b>Source</b> Information Fusion</span>        </div>
+          <span><b>Published</b> 2026-11-20</span>
+<span><b>Source</b> The International Journal of Robotics Research</span>        </div>
         <div class="card-guide">
           <p class="guide-tag">Takeaway</p>
-          <p>The supplied record for this paper contains only its title, authors, venue, year, and topic metadata; the abstract is empty, so no problem statement, method details, or reported results can be summarized. The title indicates information-theoretic graph fusion with a vision-language-action model for policy reasoning and dual robotic control, but this is a title-level description only and should not be treated as a validated claim. Read the full text to determine the actual problem formulation, fusion mechanism, and evidence before relying on it.</p>
+          <p>This work presents a four-stage Learning from Demonstration (LfD) pipeline that incrementally builds a general policy for multi-stage contact-rich manipulation from a single human demonstration, organized around environmental constraints as an inductive bias that separates general task structure from instance-specific details. The authors argue that on top of this bias, simple and well-established components suffice for an interactive LfD system that generalizes to unseen variations in object pose, local geometry, and contact conditions under real-world uncertainty. They report validation on seven real-world multi-stage contact-rich manipulation tasks with over 90% success across tasks. Inspect how environmental constraints are represented and used at each stage, and how the pipeline handles transitions between stages.</p>
         </div>
         <details class="selection-diagnostics">
           <summary>Why selected</summary>
           <div class="diagnostic-grid">
             <span><b>Category</b> 领域内高影响力</span>
-            <span><b>Core topics</b> VLA &amp; Robot Foundation Models</span>
-<span><b>Utility</b> 74.1 (base 74.1)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
-<span><b>OpenAlex citations</b> 37</span>          </div>
+            <span><b>Core topics</b> Dexterous &amp; Multimodal Manipulation</span>
+<span><b>Utility</b> 60.9 (base 60.9)</span>            <span><b>Domain affinity</b> neutral (+0)</span>
+<span><b>OpenAlex citations</b> 2</span>          </div>
           <ul>
-<li>机器人语境：robot, robotic, manipulation, vision-language-action</li><li>research_fit 32 ≥ 18</li><li>核心方向：vla_robot_foundation</li><li>特定关键词：vision-language-action</li><li>historical_value_score 74.1 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 0.1%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 119.48</li><li>近年年均 OpenAlex 引用 18.5（无更早窗口可比较）</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 88%</li><li>影响力元数据更新于 2026-08-24T03:31:56</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 74.1 = base 74.1 + affinity +0 + redundancy -0</li>          </ul>
+<li>机器人语境：robot, robotics, manipulation</li><li>research_fit 28 ≥ 18</li><li>核心方向：dexterous_multimodal_manipulation</li><li>特定关键词：contact-rich manipulation</li><li>historical_value_score 60.9 ≥ 42.0</li><li>发表于 2026 年</li><li>同领域同年份引用标准化位于前 13.5%</li><li>阅读时效分 100/100（论文年龄 0 年）</li><li>OpenAlex FWCI 2.45</li><li>近年年均 OpenAlex 引用 2.0（无更早窗口可比较）</li><li>标题或摘要命中可配置的方法类信号</li><li>元数据完整度 100%</li><li>影响力元数据更新于 2026-11-23T11:04:25</li><li>Detected subtopics: none</li><li>Personal domain affinity: neutral (+0)</li><li>recommendation_utility 60.9 = base 60.9 + affinity +0 + redundancy -0</li>          </ul>
         </details>
-        <details class="abstract"><summary>Original abstract</summary><p>NoneOpenAlex metadata did not include an abstract.</p></details>
+        <details class="abstract"><summary>Original abstract</summary><p>We present a four-stage Learning from Demonstration (LfD) pipeline that incrementally constructs a general policy for multi-stage contact-rich manipulation from a single human demonstration. The pipeline is built around a crucial inductive bias—environmental constraints—that separates general task structure from hard-to-model instance-specific details. We show that, on top of this inductive bias, simple and well-established components are already sufficient to build an interactive LfD system that generalizes to unseen variations in object pose, local geometry, and contact conditions under real-world uncertainty. We validate the system on seven real-world multi-stage contact-rich manipulation tasks and achieve over 90% success across tasks. These results establish environmental constraints as fundamental building blocks for efficient generalization in learning from demonstration. The project website can be found at https://lfdec.github.io/ .</p></details>
         <div class="actions">
-<a href="https://openalex.org/W7126053009" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2508.05342" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2508.05342" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1016/j.inffus.2026.104193" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2508.05342" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
-        <button type="button" class="save-button" data-paper-id="openalex:W7126053009" data-title="Information-theoretic graph fusion with vision-language-action model for policy reasoning and dual robotic control" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
+<a href="https://openalex.org/W7161726631" target="_blank" rel="noopener noreferrer">OpenAlex</a><a href="https://arxiv.org/abs/2605.17601" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://arxiv.org/pdf/2605.17601" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://doi.org/10.1177/02783649261501176" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/bibtex/2605.17601" target="_blank" rel="noopener noreferrer">BibTeX</a>        </div>
+        <button type="button" class="save-button" data-paper-id="openalex:W7161726631" data-title="From a single demonstration to a general policy for contact-rich manipulation" aria-pressed="false" aria-label="Save to favorites" title="收藏这篇论文；点击同步并提交打开的 issue 后保存到收藏夹，再点一次可撤销本设备收藏">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <span class="dismiss-label">Save</span>
         </button>
-        <button type="button" class="dismiss-button" data-paper-id="openalex:W7126053009" data-title="Information-theoretic graph fusion with vision-language-action model for policy reasoning and dual robotic control" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
+        <button type="button" class="dismiss-button" data-paper-id="openalex:W7161726631" data-title="From a single demonstration to a general policy for contact-rich manipulation" aria-pressed="false" aria-label="Mark as not relevant" title="标记不相关；点击同步并提交打开的 issue 后永久生效，再点一次可撤销本设备标记">
           <svg class="dismiss-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
           <span class="dismiss-label">Not Relevant</span>
         </button>
