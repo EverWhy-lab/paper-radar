@@ -1,0 +1,424 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-25",
+  "generated_at": "2026-11-25T22:50:38+08:00",
+  "mode": "incremental",
+  "candidate_count": 3813,
+  "historical_candidate_count": 831,
+  "recommendation_count": 1,
+  "category_counts": {
+    "frontier_recent": 0,
+    "high_impact_historical": 0,
+    "journal_recent": 1,
+    "model_based_recent": 0,
+    "review_knowledge_map": 0,
+    "rising_recent": 0
+  },
+  "selection_config": {
+    "max_total": 5,
+    "max_recent_total": 3,
+    "selection_order": [
+      "frontier_recent",
+      "journal_recent",
+      "model_based_recent",
+      "rising_recent",
+      "review_knowledge_map",
+      "high_impact_historical"
+    ],
+    "journal_recent": {
+      "max_count": 2,
+      "min_research_fit": 35,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "recency_days": 60,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 32,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "frontier_recent": {
+      "max_count": 2,
+      "min_research_fit": 40,
+      "min_core_topic_matches": 1,
+      "min_non_generic_keyword_matches": 1,
+      "cooldown_days": 14,
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "model_based_recent": {
+      "max_count": 1,
+      "min_research_fit": 28,
+      "min_journal_research_fit": 12,
+      "journal_source_adjustment": 20,
+      "max_age_days": 14,
+      "cooldown_days": 14,
+      "min_recommendation_utility": 32,
+      "min_redundant_utility": 44,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "method_subtopics": [
+        "motion_planning",
+        "kinodynamic_planning",
+        "model_predictive_control",
+        "whole_body_control",
+        "trajectory_optimization",
+        "safety_critical_control",
+        "robot_state_estimation"
+      ]
+    },
+    "rising_recent": {
+      "max_count": 1,
+      "max_count_per_7_days": 2,
+      "min_rising_score": 55,
+      "min_research_fit": 12,
+      "max_age_days": 540,
+      "cooldown_days": 45,
+      "min_recommendation_utility": 55,
+      "min_redundant_utility": 65,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ]
+    },
+    "high_impact_historical": {
+      "max_count": 1,
+      "min_historical_value_score": 42,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "max_same_primary_topic": 1,
+      "max_topic_overlap": 0.66,
+      "min_recommendation_utility": 36,
+      "min_redundant_utility": 70
+    },
+    "review_knowledge_map": {
+      "max_count": 1,
+      "min_historical_value_score": 50,
+      "cooldown_days": 45,
+      "eligible_statuses": [
+        "unread",
+        "queued"
+      ],
+      "document_signals": [
+        "review",
+        "survey",
+        "tutorial",
+        "taxonomy",
+        "benchmark"
+      ],
+      "min_recommendation_utility": 70,
+      "min_redundant_utility": 70
+    }
+  },
+  "llm_analysis": [
+    {
+      "canonical_paper_id": "openalex:W7223363944",
+      "title": "Hemispheric Diffusion: A Compositional Generative Policy for Coordinated Bimanual Manipulation",
+      "takeaway": "HemiDiff addresses bimanual imitation policies that fuse all sensory inputs early, which the authors argue can amplify modality conflicts and fail under asymmetric or degraded observations. The method decomposes multimodal conditioning into independent modality experts and recomposes their denoising predictions via an asymmetric perception router that assigns arm-specific modality weights at inference, with a coordination energy expert guiding denoising toward demonstration-consistent relative motion. Experiments on RLBench2 and a real bimanual robot report a 76% average success rate on real-world tasks, 19 percentage points above the strongest baseline, with stated robustness to occlusion, sensor degradation, and viewpoint perturbations. While reading, inspect how the router weights are computed at inference and how the coordination energy term is defined and weighted against the diffusion objective.",
+      "generated_at": "2026-11-25T14:56:59",
+      "model": "deepseek-chat"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "journal_recent",
+      "reasons": [
+        "期刊新论文: IEEE Robotics and Automation Letters",
+        "research_fit 41 ≥ 35",
+        "Core topics matched: robot_learning_posttraining, dexterous_multimodal_manipulation",
+        "Specific keywords matched: diffusion policy, bimanual manipulation",
+        "Detected subtopics: diffusion_flow_policy, bimanual_manipulation",
+        "Personal domain affinity: preferred (+6; matched bimanual manipulation)",
+        "Subtopic: diffusion_flow_policy",
+        "Recently recommended: 5 days ago",
+        "Subtopic cooldown bypassed: new secondary topic = bimanual_manipulation",
+        "Redundancy penalty: -4.2",
+        "recommendation_utility 42.8 = base 41.0 + affinity +6 + redundancy -4.2"
+      ],
+      "pool_reason": null,
+      "canonical_paper_id": "openalex:W7223363944",
+      "historical_paper": {
+        "canonical_paper_id": "openalex:W7223363944",
+        "openalex_id": "W7223363944",
+        "base_arxiv_id": null,
+        "doi": "10.1109/lra.2026.3746919",
+        "title": "Hemispheric Diffusion: A Compositional Generative Policy for Coordinated Bimanual Manipulation",
+        "authors": [
+          "Yechen Fan",
+          "Jinhua Ye",
+          "Xianyou Ji",
+          "Chenyang Song",
+          "Haibin Wu",
+          "Gengfeng Zheng",
+          "Jiafu Wan"
+        ],
+        "abstract": "Bimanual manipulation requires both adaptive multimodal perception and physically consistent inter-arm coordination. Yet existing imitation policies typically couple all sensory inputs through fixed early-fusion structures, which can amplify modality conflicts and fail under asymmetric observations or local perception degradation. We introduce Hemispheric Diffusion (HemiDiff), a compositional diffusion policy for coordinated bimanual manipulation. HemiDiff decomposes multimodal conditioning into independent modality experts and recomposes their denoising predictions through an asymmetric perception router that assigns arm-specific modality weights at inference time. A coordination energy expert further guides the denoising process toward demonstration-consistent relative motion, preserving inter-arm coordination under decoupled perception. Experiments on RLBench2 and a real bimanual robot demonstrate that HemiDiff achieves a 76% average success rate on real-world tasks, outperforming the strongest baseline by 19 percentage points while remaining robust to occlusion, sensor degradation, and viewpoint perturbations.",
+        "publication_date": "2026-10-23",
+        "publication_year": 2026,
+        "source_name": "IEEE Robotics and Automation Letters",
+        "source_type": "article",
+        "topics": [
+          {
+            "id": "https://openalex.org/T10653",
+            "display_name": "Robot Manipulation and Learning",
+            "score": 0.975600004196167
+          },
+          {
+            "id": "https://openalex.org/T10462",
+            "display_name": "Reinforcement Learning in Robotics",
+            "score": 0.023499999195337296
+          },
+          {
+            "id": "https://openalex.org/T10982",
+            "display_name": "Motor Control and Adaptation",
+            "score": 9.999999747378752e-05
+          }
+        ],
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ],
+        "fwci": 1.2312,
+        "citation_normalized_percentile": 0.73662283,
+        "referenced_works": [
+          "W2922772346",
+          "W2997843561",
+          "W3007769740",
+          "W4312824283",
+          "W4382334328",
+          "W4385430674",
+          "W4386501213",
+          "W4392538920",
+          "W4400267248",
+          "W4402354045",
+          "W4402354171",
+          "W4403337227",
+          "W4403364995",
+          "W4405254485",
+          "W4405753615",
+          "W4405784982",
+          "W4409426912",
+          "W4413926048",
+          "W4414079054",
+          "W4415947131",
+          "W4415971176",
+          "W4417485419",
+          "W7083814039",
+          "W7127967073",
+          "W7134848214",
+          "W7153091484",
+          "W7155004873",
+          "W7171395944",
+          "W7202159309"
+        ],
+        "related_works": [
+          "W3124318676",
+          "W7172422791",
+          "W7196956939",
+          "W7214106455",
+          "W7220835973",
+          "W7220844834",
+          "W7220852290",
+          "W7220861357",
+          "W7220866612",
+          "W7222958375"
+        ],
+        "discovery_source": [
+          "journal_search:IEEE Robotics and Automation Letters"
+        ],
+        "seed_paper_id": [],
+        "discovered_at": "2026-11-09T10:08:10",
+        "last_considered_at": "2026-11-25T22:50:38+08:00",
+        "recommended_at": "2026-11-25T22:50:38+08:00",
+        "recommendation_count": 2,
+        "reading_status": "unread",
+        "dismissed": false,
+        "metadata_updated_at": "2026-11-23T11:04:27",
+        "openalex_url": "https://openalex.org/W7223363944",
+        "landing_page_url": "https://doi.org/10.1109/lra.2026.3746919",
+        "open_access_url": "https://doi.org/10.1109/lra.2026.3746919",
+        "pdf_url": null,
+        "research_fit": 41,
+        "video_potential": 37,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "diffusion policy",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation"
+          }
+        ],
+        "historical_value_score": 58.3,
+        "historical_score_components": {
+          "research_relevance": 41.0,
+          "recency": 100.0,
+          "normalized_citation": 73.7,
+          "fwci": 41.0,
+          "citation_momentum": 5.0,
+          "seed_provenance": null,
+          "work_signal": 60.0,
+          "metadata_completeness": 100.0
+        },
+        "historical_score_reasons": [
+          "发表于 2026 年",
+          "同领域同年份引用标准化位于前 26.3%",
+          "阅读时效分 100/100（论文年龄 0 年）",
+          "OpenAlex FWCI 1.23",
+          "近年年均 OpenAlex 引用 1.0（无更早窗口可比较）",
+          "标题或摘要命中可配置的方法类信号",
+          "元数据完整度 100%"
+        ],
+        "is_knowledge_map": false,
+        "source_id": "S4210169774",
+        "is_retracted": false,
+        "rising_score": null,
+        "rising_score_components": {},
+        "rising_score_reasons": [],
+        "rising_updated_at": null,
+        "rising_age_days": null,
+        "rising_citation_velocity": null,
+        "rising_observed_growth": {}
+      },
+      "core_topics": [
+        "robot_learning_posttraining",
+        "dexterous_multimodal_manipulation"
+      ],
+      "subtopics": [
+        "diffusion_flow_policy",
+        "bimanual_manipulation"
+      ],
+      "document_type": "method",
+      "domain_affinity": "preferred",
+      "domain_affinity_adjustment": 6.0,
+      "redundancy_penalty": -4.2,
+      "recommendation_base_score": 41.0,
+      "recommendation_utility": 42.8,
+      "days_since_same_subtopic": 5,
+      "semantic_suppressed": false,
+      "paper": {
+        "arxiv_id": "openalex:W7223363944",
+        "base_id": "openalex:W7223363944",
+        "version": 1,
+        "title": "Hemispheric Diffusion: A Compositional Generative Policy for Coordinated Bimanual Manipulation",
+        "authors": [
+          "Yechen Fan",
+          "Jinhua Ye",
+          "Xianyou Ji",
+          "Chenyang Song",
+          "Haibin Wu",
+          "Gengfeng Zheng",
+          "Jiafu Wan"
+        ],
+        "published": "2026-10-23T00:00:00Z",
+        "updated": "2026-10-23T00:00:00Z",
+        "primary_category": "",
+        "categories": [],
+        "summary": "Bimanual manipulation requires both adaptive multimodal perception and physically consistent inter-arm coordination. Yet existing imitation policies typically couple all sensory inputs through fixed early-fusion structures, which can amplify modality conflicts and fail under asymmetric observations or local perception degradation. We introduce Hemispheric Diffusion (HemiDiff), a compositional diffusion policy for coordinated bimanual manipulation. HemiDiff decomposes multimodal conditioning into independent modality experts and recomposes their denoising predictions through an asymmetric perception router that assigns arm-specific modality weights at inference time. A coordination energy expert further guides the denoising process toward demonstration-consistent relative motion, preserving inter-arm coordination under decoupled perception. Experiments on RLBench2 and a real bimanual robot demonstrate that HemiDiff achieves a 76% average success rate on real-world tasks, outperforming the strongest baseline by 19 percentage points while remaining robust to occlusion, sensor degradation, and viewpoint perturbations.",
+        "abs_url": "https://doi.org/10.1109/lra.2026.3746919",
+        "pdf_url": "",
+        "research_fit": 41,
+        "video_potential": 37,
+        "matched_topics": [
+          "robot_learning_posttraining",
+          "dexterous_multimodal_manipulation"
+        ],
+        "matched_keywords": [
+          "diffusion policy",
+          "bimanual manipulation"
+        ],
+        "research_reasons": [
+          {
+            "kind": "topic",
+            "label": "Robot Learning & Policy Post-Training",
+            "keywords": [
+              "diffusion policy"
+            ],
+            "location": "abstract",
+            "points": 13.0
+          },
+          {
+            "kind": "topic",
+            "label": "Dexterous & Multimodal Manipulation",
+            "keywords": [
+              "bimanual manipulation"
+            ],
+            "location": "title",
+            "points": 28.0
+          },
+          {
+            "kind": "robotics_context",
+            "label": "Robotics context gate",
+            "keywords": [
+              "robot",
+              "robotics",
+              "manipulation"
+            ],
+            "location": "title/abstract/topics",
+            "points": 0.0,
+            "eligible": true,
+            "positive_matches": [
+              "robot",
+              "robotics",
+              "manipulation"
+            ],
+            "negative_matches": [],
+            "reason": "Explicit robotics context: robot, robotics, manipulation"
+          }
+        ],
+        "video_reasons": []
+      }
+    }
+  ]
+}
